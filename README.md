@@ -1,139 +1,113 @@
-<div align="center">
+<p align="center">
+  <a href="https://blog.gaoredu.com">
+    <img src="./public/brand/logo.png" alt="ReactPress" width="320" />
+  </a>
+</p>
 
-<a href="https://blog.gaoredu.com" title="ReactPress">
-  <img height="88" src="./public/brand/logo.png" alt="ReactPress">
-</a>
+<h3 align="center">Write with Focus. Publish with Joy.</h3>
 
-<img src="./public/poster.png" alt="ReactPress — The Modern Web Creation Platform." width="100%" />
+<p align="center">
+  A self-hosted publishing platform to write, manage, and publish — all in one place.
+</p>
 
-# ReactPress
+<p align="center">
+  <a href="https://github.com/fecommunity/reactpress/stargazers">
+    <img src="https://img.shields.io/github/stars/fecommunity/reactpress?style=social" alt="GitHub stars" />
+  </a>
+  <a href="https://www.npmjs.com/package/@fecommunity/reactpress">
+    <img src="https://img.shields.io/npm/v/@fecommunity/reactpress" alt="npm version" />
+  </a>
+  <a href="./LICENSE">
+    <img src="https://img.shields.io/github/license/fecommunity/reactpress" alt="License" />
+  </a>
+</p>
 
-### The Modern Web Creation Platform.
+<p align="center">
+  <a href="https://blog.gaoredu.com">Live Demo</a> ·
+  <a href="https://reactpress-theme-starter.vercel.app">Theme Demo</a> ·
+  <a href="https://reactpress.cc/">Documentation</a> ·
+  <a href="./README-zh_CN.md">简体中文</a>
+</p>
 
-**Build. Manage. Extend.**
+<p align="center">
+  <img src="./public/poster.png" alt="ReactPress" width="100%" />
+</p>
 
-A writing Admin, a Next.js site you own, and themes & plugins to grow — all from one install.
+## Features
 
-[Live demo](https://blog.gaoredu.com) · [Theme demo](https://reactpress-theme-starter.vercel.app) · [Docs](https://reactpress.cc/) · [中文](./README-zh_CN.md)
+<img src="./public/desktop.gif" alt="ReactPress Desktop App" width="100%" />
 
-[![npm](https://img.shields.io/npm/v/@fecommunity/reactpress.svg?style=flat-square&label=npm)](https://www.npmjs.com/package/@fecommunity/reactpress)
-[![stars](https://img.shields.io/github/stars/fecommunity/reactpress?style=flat-square)](https://github.com/fecommunity/reactpress/stargazers)
-[![license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](./LICENSE)
+- ✍️ **Writing & Content** — Create, organize, and publish from a focused editor.
+- 🎨 **Themes** — Customize the look and feel of your site. [Starter](https://github.com/fecommunity/reactpress-theme-starter) · [Guide](./themes/README.md)
+- 🧩 **Plugins** — Extend ReactPress with plugins. [Guide](./plugins/README.md)
+- 🖥️ **Desktop App** — The same experience, on the desktop. [Guide](./desktop/README.md)
+- 📱 **Multi-device** — Works on desktop, tablet, and mobile browsers.
 
-</div>
+## Quick Start
 
----
-
-## Who it's for
-
-- **Independent developers** who want a personal blog, notes, or docs site they own — not a SaaS tenant.
-- **Small teams** where someone writes in an admin UI and someone else owns the public site.
-- **WordPress leavers** who want the same “open admin, hit publish” habit, without a PHP theme stack.
-- **Static-site users** (Hugo, Hexo, Astro, Next.js Markdown) who are tired of asking non-developers to open a Git repo.
-
-If you are assembling Strapi or Payload _plus_ an admin _plus_ a frontend _plus_ deploy glue, this is the product-shaped alternative.
-
----
-
-## What it solves
-
-Publishing is still a mess for React people:
-
-| You want…                         | What you usually get                                   |
-| :-------------------------------- | :----------------------------------------------------- |
-| Editors who are not engineers     | A Git-based static site                                |
-| A site that looks like _your_ app | WordPress or Ghost, with someone else’s frontend       |
-| To ship this week                 | A headless CMS that still needs a site, admin, and ops |
-| To write on a plane               | A browser tab and a running server                     |
-
-ReactPress is the middle path: **writers get an editor, you get a React site, nobody stitches the stack.**
-
----
-
-## vs the usual options
-
-|                          | ReactPress       | [WordPress](https://wordpress.org) | [Ghost](https://github.com/TryGhost/Ghost) | [Strapi](https://github.com/strapi/strapi) / [Payload](https://github.com/payloadcms/payload) | [Hugo](https://github.com/gohugoio/hugo) / [Astro](https://github.com/withastro/astro) |
-| :----------------------- | :--------------- | :--------------------------------- | :----------------------------------------- | :-------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------- |
-| Who publishes            | Writers in Admin | Writers in Admin                   | Writers in Admin                           | You still build the site                                                                      | Developers (Git)                                                                       |
-| Who owns the public site | You (Next.js)    | PHP themes                         | Ghost themes                               | You, separately                                                                               | You, at build time                                                                     |
-| Time to a working site   | One CLI command  | Install + theme + plugins          | Install + theme                            | CMS + frontend + glue                                                                         | Fast — until someone needs a CMS                                                       |
-| Offline writing          | Desktop app      | No                                 | No                                         | No                                                                                            | Local files                                                                            |
-
-- **WordPress** — unbeatable editing culture; you inherit PHP.
-- **Ghost** — excellent independent publishing; membership-first, not a React app you own.
-- **Strapi / Payload** — excellent engines; you still assemble the product.
-- **Hugo / Hexo / Astro** — excellent pages; publishing still happens in Git.
-
----
-
-## Try it
+Requires Node.js 20+.
 
 ```bash
-npm i -g @fecommunity/reactpress
+npm install -g @fecommunity/reactpress
 mkdir my-site && cd my-site
 reactpress init
 ```
 
-Then open **http://localhost:3001** (site) and **http://localhost:3001/admin/** (`admin` / `admin`).
+| Service         | URL                          |
+| --------------- | ---------------------------- |
+| Website         | http://localhost:3001        |
+| Admin Dashboard | http://localhost:3001/admin/ |
 
-Node 20+. No Docker, no extra database for the default path. If something fails: `reactpress doctor`.
+Default credentials: `admin` / `admin` — change the password before going public.
 
----
+Run `reactpress doctor` to diagnose issues.
 
-## See it
+### Deploy to Vercel
 
-<div align="center">
+<p align="left">
+  <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Ffecommunity%2Freactpress-theme-starter">
+    <img src="https://vercel.com/button" alt="Deploy with Vercel" />
+  </a>
+</p>
 
-![ReactPress — from empty folder to a running site](./public/usage.gif)
+Based on the [Theme Starter](https://github.com/fecommunity/reactpress-theme-starter) · [Live Demo](https://reactpress-theme-starter.vercel.app)
 
-<table>
-  <tr>
-    <td width="50%" align="center" valign="top">
-      <a href="./desktop/README.md">
-        <img src="./public/desktop.gif" alt="Write offline in the desktop app" width="100%" />
-      </a>
-      <br/>
-      <sub>Write offline. Sync when you are back.</sub>
-    </td>
-    <td width="50%" align="center" valign="top">
-      <a href="https://reactpress-theme-starter.vercel.app">
-        <img src="./public/demo.gif" alt="Visitor site with search, comments, and knowledge base" width="100%" />
-      </a>
-      <br/>
-      <sub>The site visitors actually see.</sub>
-    </td>
-  </tr>
-</table>
+## Resources
 
-</div>
+| Resource      | Link                                                                               |
+| ------------- | ---------------------------------------------------------------------------------- |
+| Live Website  | [blog.gaoredu.com](https://blog.gaoredu.com)                                       |
+| Theme Demo    | [reactpress-theme-starter.vercel.app](https://reactpress-theme-starter.vercel.app) |
+| Documentation | [reactpress.cc](https://reactpress.cc/)                                            |
+| npm Package   | [@fecommunity/reactpress](https://www.npmjs.com/package/@fecommunity/reactpress)   |
+| Themes        | [Theme Guide](./themes/README.md)                                                  |
+| Plugins       | [Plugin Guide](./plugins/README.md)                                                |
+| Desktop App   | [Desktop Guide](./desktop/README.md)                                               |
 
----
+## Community
 
-## Next
+- [GitHub Issues](https://github.com/fecommunity/reactpress/issues)
+- [Contributing Guide](./CONTRIBUTING.md)
+- [Changelog](./CHANGELOG.md)
 
-|                        |                                                                                                   |
-| :--------------------- | :------------------------------------------------------------------------------------------------ |
-| Docs                   | [reactpress.cc](https://reactpress.cc/)                                                           |
-| Swap the public theme  | [themes](./themes/README.md) · [starter](https://github.com/fecommunity/reactpress-theme-starter) |
-| Extend without forking | [plugins](./plugins/README.md)                                                                    |
-| Desktop writing        | [desktop](./desktop/README.md)                                                                    |
-| Host it                | [Deployment](https://reactpress.cc/)                                                              |
+If you find ReactPress useful, please consider giving it a star.
 
-[Contributing](./CONTRIBUTING.md) · [Changelog](./CHANGELOG.md) · [MIT License](./LICENSE)
+<p align="center">
+  <a href="https://github.com/fecommunity/reactpress">
+    <img src="https://img.shields.io/github/stars/fecommunity/reactpress?style=social" alt="Star ReactPress" />
+  </a>
+</p>
 
----
+## Star History
 
-<div align="center">
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="public/star-history/star-history-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="public/star-history/star-history-light.svg" />
+    <img src="public/star-history/star-history-light.svg" alt="ReactPress Star History" width="100%" />
+  </picture>
+</p>
 
-If this saves you from wiring a CMS, an editor, and a frontend yourself — [**star the repo**](https://github.com/fecommunity/reactpress/stargazers).
+## License
 
-<br/>
-
-<!-- star-history:start -->
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="public/star-history/star-history-dark.svg">
-  <img alt="Star History Chart" src="public/star-history/star-history-light.svg">
-</picture>
-<!-- star-history:end -->
-
-</div>
+See [LICENSE](./LICENSE).
