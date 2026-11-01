@@ -65,12 +65,11 @@ html[data-theme='dark'] .eyebrow {
   display: block;
   text-decoration: none !important;
   color: inherit;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--home-background);
+  border: 1px solid var(--home-border);
   border-radius: 14px;
   padding: 1.3rem 1.35rem 1.25rem;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 6px 28px rgba(8, 126, 164, 0.06);
   transition:
     border-color 0.3s ease,
     box-shadow 0.3s ease,
@@ -78,16 +77,21 @@ html[data-theme='dark'] .eyebrow {
   animation: fadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-html[data-theme='light'] .card {
-  background: rgba(255, 255, 255, 0.78);
-  border-color: var(--home-border);
-  box-shadow: 0 6px 28px rgba(8, 126, 164, 0.08);
+html[data-theme='dark'] .card {
+  background: rgba(255, 255, 255, 0.035);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.18);
 }
 
 .card:hover {
+  border-color: rgba(8, 126, 164, 0.35);
+  box-shadow: 0 12px 36px rgba(8, 126, 164, 0.12);
+  transform: translateY(-3px);
+}
+
+html[data-theme='dark'] .card:hover {
   border-color: rgba(65, 209, 255, 0.45);
   box-shadow: 0 12px 36px rgba(65, 209, 255, 0.14);
-  transform: translateY(-3px);
 }
 
 .iconWrap {

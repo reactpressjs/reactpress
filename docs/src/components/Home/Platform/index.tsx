@@ -1,41 +1,40 @@
 import { translate } from '@docusaurus/Translate';
 import Translate from '@docusaurus/Translate';
-import { IconLayers, IconPen, IconRocket } from '@site/src/components/Home/icons';
 import React from 'react';
 
 import styles from './styles.module.css';
 
 type Pillar = {
-  Icon: React.ComponentType<{ className?: string }>;
   title: string;
+  tagline: string;
   description: string;
   accent: 'build' | 'manage' | 'extend';
 };
 
 const pillars: Pillar[] = [
   {
-    Icon: IconPen,
     title: translate({ message: 'Write', id: 'home.platform.build.title' }),
+    tagline: translate({ message: 'Focus first.', id: 'home.platform.build.tagline' }),
     description: translate({
-      message: 'Stay in flow with a focused editor — Markdown, media, and structure without ceremony.',
+      message: 'A calm editor for posts, pages, and media — stay in flow, not in tooling.',
       id: 'home.platform.build.desc',
     }),
     accent: 'build',
   },
   {
-    Icon: IconLayers,
     title: translate({ message: 'Manage', id: 'home.platform.manage.title' }),
+    tagline: translate({ message: 'One place.', id: 'home.platform.manage.tagline' }),
     description: translate({
-      message: 'One CMS for posts, pages, comments, SEO, themes, and plugins — self-hosted on your terms.',
+      message: 'Content, SEO, themes, and plugins in one self-hosted CMS — on your terms.',
       id: 'home.platform.manage.desc',
     }),
     accent: 'manage',
   },
   {
-    Icon: IconRocket,
     title: translate({ message: 'Publish', id: 'home.platform.extend.title' }),
+    tagline: translate({ message: 'Ship with joy.', id: 'home.platform.extend.tagline' }),
     description: translate({
-      message: 'Ship beautiful Next.js sites, extend with plugins, or go headless — from CLI to Vercel.',
+      message: 'Next.js themes, plugins, or Headless API — from CLI to a live site.',
       id: 'home.platform.extend.desc',
     }),
     accent: 'extend',
@@ -47,15 +46,15 @@ export default function Platform() {
     <section className={styles.section} aria-labelledby="home-platform-heading">
       <header className={styles.header}>
         <p className={styles.eyebrow}>
-          <Translate id="home.platform.eyebrow">Core value</Translate>
+          <Translate id="home.platform.eyebrow">What is ReactPress</Translate>
         </p>
         <h2 id="home-platform-heading" className={styles.heading}>
           <Translate id="home.platform.title">Write. Manage. Publish.</Translate>
         </h2>
         <p className={styles.subheading}>
           <Translate id="home.platform.subtitle">
-            A self-hosted publishing platform that keeps writing joyful and shipping simple — for creators and React
-            developers alike.
+            The whole publishing stack in one product — so creators and React developers ship without stitching five
+            tools together.
           </Translate>
         </p>
       </header>
@@ -70,10 +69,8 @@ export default function Platform() {
             <span className={styles.step} aria-hidden>
               {String(index + 1).padStart(2, '0')}
             </span>
-            <span className={styles.iconWrap} aria-hidden>
-              <pillar.Icon className={styles.icon} />
-            </span>
             <h3 className={styles.cardTitle}>{pillar.title}</h3>
+            <p className={styles.tagline}>{pillar.tagline}</p>
             <p className={styles.cardDesc}>{pillar.description}</p>
           </article>
         ))}

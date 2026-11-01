@@ -1,9 +1,17 @@
 import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
-import Features from '@site/src/components/Features';
+import { VERCEL_DEPLOY_URL } from '@site/src/constants/deploy';
 import React from 'react';
 
 import styles from './styles.module.css';
+
+function VercelIcon() {
+  return (
+    <svg className={styles.deployIcon} viewBox="0 0 16 16" fill="currentColor" aria-hidden>
+      <path d="M8 1L15 14H1L8 1z" />
+    </svg>
+  );
+}
 
 function CallToAction() {
   return (
@@ -16,12 +24,15 @@ function CallToAction() {
           </h2>
           <p className={styles.subtitle}>
             <Translate id="home.call.subtitle">
-              Self-hosted writing, management, and publishing — themes, plugins, and a desktop app when you need them.
+              Deploy in one click, explore the docs, or open a Live Demo and feel the stack.
             </Translate>
           </p>
         </header>
-        <Features />
         <div className={styles.footerCta}>
+          <a className={styles.deployButton} href={VERCEL_DEPLOY_URL} target="_blank" rel="noopener noreferrer">
+            <VercelIcon />
+            <Translate id="home.call.deploy">Deploy</Translate>
+          </a>
           <Link className={styles.primaryButton} to="/docs/intro">
             <Translate id="home.call.cta">Explore the full documentation</Translate>
           </Link>

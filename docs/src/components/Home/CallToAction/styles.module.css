@@ -67,31 +67,70 @@ html[data-theme='light'] .title {
 }
 
 .footerCta {
-  margin-top: 2rem;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
 }
 
+.deployButton,
 .primaryButton {
-  background: linear-gradient(135deg, #087ea4 0%, #41d1ff 100%);
-  color: #fff !important;
   border: none;
-  padding: 13px 32px;
+  padding: 13px 28px;
   border-radius: 12px;
   font-weight: 650;
   font-size: 1rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.45rem;
   text-decoration: none !important;
-  box-shadow: 0 8px 28px rgba(8, 126, 164, 0.3);
   transition:
     transform 0.2s ease,
-    box-shadow 0.2s ease;
+    box-shadow 0.2s ease,
+    color 0.2s ease;
 }
 
-.primaryButton:hover {
+.deployButton {
+  background: linear-gradient(135deg, #087ea4 0%, #41d1ff 100%);
+  color: #fff !important;
+  box-shadow: 0 8px 28px rgba(8, 126, 164, 0.3);
+}
+
+.deployButton:hover {
   color: #fff !important;
   transform: translateY(-2px);
   box-shadow: 0 12px 36px rgba(8, 126, 164, 0.38);
+}
+
+.deployIcon {
+  width: 0.9rem;
+  height: 0.9rem;
+  flex-shrink: 0;
+}
+
+.primaryButton {
+  color: var(--home-button-secondary-text) !important;
+  border: 1px solid var(--home-button-secondary-border);
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: none;
+}
+
+.primaryButton:hover {
+  color: var(--home-button-primary) !important;
+  border-color: var(--home-button-primary);
+  transform: translateY(-2px);
+}
+
+html[data-theme='dark'] .primaryButton {
+  background: rgba(255, 255, 255, 0.06);
+  color: #e5e7eb !important;
+}
+
+html[data-theme='dark'] .primaryButton:hover {
+  color: #7ddfff !important;
+  border-color: rgba(65, 209, 255, 0.45);
 }
 
 @media (max-width: 600px) {

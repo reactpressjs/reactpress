@@ -1,17 +1,23 @@
 import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
-import CliCommandBlock from '@site/src/components/CliCommandBlock';
-import Devices from '@site/src/components/Home/Hero/Devices';
-import FloorBackground from '@site/src/components/Home/Hero/FloorBackground';
-import GridBackground from '@site/src/components/Home/Hero/GridBackground';
 import Logo from '@site/src/components/Home/Logo';
+import { VERCEL_DEPLOY_URL } from '@site/src/constants/deploy';
 import { buildGitHubReleaseTagUrl } from '@site/src/npm/packageVersions';
 import { useReactPressVersions } from '@site/src/npm/useReactPressVersions';
 import clsx from 'clsx';
 import React from 'react';
 import GitHubButton from 'react-github-btn';
 
+import HeroCarousel from './HeroCarousel';
 import styles from './styles.module.css';
+
+function VercelIcon() {
+  return (
+    <svg className={styles.deployIcon} viewBox="0 0 16 16" fill="currentColor" aria-hidden>
+      <path d="M8 1L15 14H1L8 1z" />
+    </svg>
+  );
+}
 
 function Hero() {
   const { latest } = useReactPressVersions();
@@ -22,25 +28,27 @@ function Hero() {
         <span className={styles.orb1} />
         <span className={styles.orb2} />
         <span className={styles.orb3} />
+        <span className={styles.gridLines} />
       </div>
 
-      <div className={styles.scene} aria-hidden>
-        <div className={styles.gridBackground}>
-          <GridBackground />
-        </div>
-        <div className={styles.devices}>
-          <Devices />
-        </div>
-        <div className={styles.floorBackground}>
-          <FloorBackground />
-        </div>
-      </div>
-
-      <div className={styles.content}>
+      <div className={styles.shell}>
         <div className={styles.intro}>
           <Logo className={styles.logo} />
           <div className={styles.titleRow}>
-            <h1 className={styles.title}>ReactPress</h1>
+            <h1 className={styles.title} aria-label="ReactPress">
+              <span className={styles.titleText} aria-hidden>
+                {'ReactPress'.split('').map((char, index) => (
+                  <span
+                    key={`${char}-${index}`}
+                    className={styles.titleChar}
+                    style={{ '--char-index': index } as React.CSSProperties}
+                  >
+                    {char}
+                  </span>
+                ))}
+              </span>
+              <span className={styles.titleUnderline} aria-hidden />
+            </h1>
             <div className={styles.versionTags} aria-label="package release version">
               <a
                 className={clsx(styles.versionTag, styles.versionTagLatest)}
@@ -70,12 +78,17 @@ function Hero() {
           </p>
           <p className={styles.subTitle}>
             <Translate id="home.hero.subTitle">
-              A self-hosted publishing platform to write, manage, and publish — all in one place.
+              A self-hosted publishing platform — write, manage, and publish in one place. Not another Headless CMS to
+              assemble.
             </Translate>
           </p>
 
           <div className={styles.actions}>
             <div className={styles.buttonContainer}>
+              <a href={VERCEL_DEPLOY_URL} target="_blank" rel="noopener noreferrer" className={styles.deployButton}>
+                <VercelIcon />
+                <Translate id="home.hero.deploy">Deploy</Translate>
+              </a>
               <Link className={styles.primaryButton} to="/docs/getting-started/first-site">
                 <Translate id="home.hero.intro">Get Started</Translate>
               </Link>
@@ -87,15 +100,19 @@ function Hero() {
               >
                 <Translate id="home.hero.try">Live Demo</Translate>
               </a>
-              <Link className={styles.ghostButton} to="/docs/intro">
-                <Translate id="home.hero.docs">Documentation</Translate>
-              </Link>
             </div>
 
-            <div className={styles.cliWrap}>
-              <CliCommandBlock variant="hero" showHint={false} />
-            </div>
+            <p className={styles.localHint}>
+              <Translate id="home.hero.localHint">Prefer the terminal?</Translate>{' '}
+              <a className={styles.localHintLink} href="#quickstart-local">
+                <Translate id="home.hero.localHintLink">Install locally in ~60s</Translate>
+              </a>
+            </p>
           </div>
+        </div>
+
+        <div className={styles.mediaStage}>
+          <HeroCarousel />
         </div>
       </div>
     </header>

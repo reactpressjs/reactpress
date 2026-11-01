@@ -3,12 +3,12 @@
   z-index: 3;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0.5rem 1.25rem 2.5rem;
+  padding: 0.75rem 1.25rem 2.5rem;
 }
 
 .header {
   text-align: center;
-  margin-bottom: 1.75rem;
+  margin-bottom: 2rem;
 }
 
 .eyebrow {
@@ -26,21 +26,21 @@ html[data-theme='dark'] .eyebrow {
 }
 
 .heading {
-  font-size: clamp(1.55rem, 3.8vw, 2rem);
+  font-size: clamp(1.85rem, 5vw, 2.65rem);
   font-weight: 800;
   margin: 0;
-  letter-spacing: -0.03em;
-  line-height: 1.25;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
   color: var(--home-text);
   animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .subheading {
-  font-size: 0.95rem;
-  line-height: 1.55;
+  font-size: 1rem;
+  line-height: 1.6;
   color: var(--home-secondary-text);
-  max-width: 36rem;
-  margin: 0.55rem auto 0;
+  max-width: 34rem;
+  margin: 0.7rem auto 0;
   animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both;
 }
 
@@ -58,92 +58,81 @@ html[data-theme='dark'] .eyebrow {
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.9rem;
+  gap: 0;
+  border-top: 1px solid var(--home-border);
 }
 
 .card {
   position: relative;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
-  padding: 1.35rem 1.35rem 1.45rem;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  transition:
-    border-color 0.3s ease,
-    box-shadow 0.3s ease,
-    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  padding: 1.75rem 1.5rem 1.85rem;
+  border-right: 1px solid var(--home-border);
   animation: fadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+  transition: background 0.25s ease;
 }
 
-html[data-theme='light'] .card {
-  background: rgba(255, 255, 255, 0.78);
-  border-color: var(--home-border);
-  box-shadow: 0 6px 28px rgba(8, 126, 164, 0.08);
+.card:last-child {
+  border-right: none;
 }
 
 .card:hover {
-  border-color: rgba(65, 209, 255, 0.4);
-  box-shadow: 0 10px 36px rgba(65, 209, 255, 0.12);
-  transform: translateY(-3px);
+  background: rgba(8, 126, 164, 0.04);
+}
+
+html[data-theme='dark'] .card:hover {
+  background: rgba(65, 209, 255, 0.04);
 }
 
 .step {
-  position: absolute;
-  top: 1rem;
-  right: 1.1rem;
+  display: block;
+  margin-bottom: 1.1rem;
   font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  color: var(--home-secondary-text);
-  opacity: 0.55;
+  letter-spacing: 0.1em;
+  color: var(--home-button-primary);
+  opacity: 0.75;
 }
 
-.iconWrap {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 10px;
-  margin-bottom: 0.85rem;
-}
-
-.card[data-accent='build'] .iconWrap {
-  background: rgba(65, 209, 255, 0.12);
-  color: #41d1ff;
-}
-
-.card[data-accent='manage'] .iconWrap {
-  background: rgba(8, 126, 164, 0.12);
-  color: #087ea4;
-}
-
-.card[data-accent='extend'] .iconWrap {
-  background: rgba(14, 165, 180, 0.12);
-  color: #0ea5b4;
-}
-
-html[data-theme='dark'] .card[data-accent='manage'] .iconWrap,
-html[data-theme='dark'] .card[data-accent='extend'] .iconWrap {
+html[data-theme='dark'] .step {
   color: #7ddfff;
 }
 
-.icon {
-  width: 1.3rem;
-  height: 1.3rem;
+.cardTitle {
+  font-size: clamp(1.45rem, 3vw, 1.75rem);
+  font-weight: 800;
+  margin: 0 0 0.35rem;
+  color: var(--home-text);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
 }
 
-.cardTitle {
-  font-size: 1.15rem;
-  font-weight: 750;
-  margin: 0 0 0.45rem;
+.card[data-accent='build'] .cardTitle {
+  background: linear-gradient(115deg, #087ea4 0%, #41d1ff 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card[data-accent='manage'] .cardTitle {
+  background: linear-gradient(115deg, #0ea5b4 0%, #087ea4 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card[data-accent='extend'] .cardTitle {
+  background: linear-gradient(115deg, #41d1ff 0%, #0ea5b4 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tagline {
+  font-size: 1.02rem;
+  font-weight: 650;
+  margin: 0 0 0.55rem;
   color: var(--home-text);
   letter-spacing: -0.01em;
 }
 
 .cardDesc {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   line-height: 1.55;
   margin: 0;
   color: var(--home-secondary-text);
@@ -160,5 +149,12 @@ html[data-theme='dark'] .card[data-accent='extend'] .iconWrap {
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: 1fr;
+    border-top: none;
+  }
+
+  .card {
+    border-right: none;
+    border-top: 1px solid var(--home-border);
+    padding: 1.5rem 0.25rem 1.6rem;
   }
 }

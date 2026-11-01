@@ -1,6 +1,6 @@
 import { translate } from '@docusaurus/Translate';
 import Translate from '@docusaurus/Translate';
-import { IconDesktop, IconLayers, IconPen, IconPlugins, IconThemes } from '@site/src/components/Home/icons';
+import { IconApi, IconDesktop, IconLayers, IconPen, IconThemes } from '@site/src/components/Home/icons';
 import React from 'react';
 
 import styles from './styles.module.css';
@@ -15,45 +15,45 @@ type HighlightItem = {
 const items: HighlightItem[] = [
   {
     Icon: IconPen,
-    title: translate({ message: 'Writing & content', id: 'home.highlight.writing.title' }),
+    title: translate({ message: 'Blogs that rank', id: 'home.highlight.writing.title' }),
     description: translate({
-      message: 'Create, organize, and publish from a focused Markdown editor — posts, pages, tags, and media.',
+      message: 'Personal or team blogs with Markdown, SSR SEO, sitemap, and OG — ready to publish, not assemble.',
       id: 'home.highlight.writing.desc',
     }),
     accent: 'teal',
   },
   {
-    Icon: IconThemes,
-    title: translate({ message: 'Themes', id: 'home.highlight.themes.title' }),
+    Icon: IconLayers,
+    title: translate({ message: 'Docs & changelogs', id: 'home.highlight.themes.title' }),
     description: translate({
-      message: 'Customize the look with Next.js SSR themes from npm — starter scaffold and one-click catalog install.',
+      message: 'Ship documentation and release notes from a real CMS — structured content, not a static-only stack.',
       id: 'home.highlight.themes.desc',
     }),
     accent: 'cyan',
   },
   {
-    Icon: IconPlugins,
-    title: translate({ message: 'Plugins', id: 'home.highlight.plugins.title' }),
+    Icon: IconThemes,
+    title: translate({ message: 'Marketing sites', id: 'home.highlight.plugins.title' }),
     description: translate({
-      message: 'Extend Admin and API with Hooks — SEO, auto-summary, image pipelines, and custom Admin slots.',
+      message: 'Pages, media, and swappable Next.js themes — product and company sites you can actually own.',
       id: 'home.highlight.plugins.desc',
     }),
     accent: 'blue',
   },
   {
     Icon: IconDesktop,
-    title: translate({ message: 'Desktop app', id: 'home.highlight.desktop.title' }),
+    title: translate({ message: 'Local-first writing', id: 'home.highlight.desktop.title' }),
     description: translate({
-      message: 'The same experience on the desktop — Electron with local SQLite, or sync to a remote API.',
+      message: 'Desktop app with local SQLite — write offline, sync to a remote API when you are ready.',
       id: 'home.highlight.desktop.desc',
     }),
     accent: 'teal',
   },
   {
-    Icon: IconLayers,
-    title: translate({ message: 'Multi-device', id: 'home.highlight.multidevice.title' }),
+    Icon: IconApi,
+    title: translate({ message: 'Headless React apps', id: 'home.highlight.multidevice.title' }),
     description: translate({
-      message: 'Works on desktop, tablet, and mobile browsers — one publishing stack across every screen.',
+      message: 'REST APIs, keys, and webhooks — feed any React client while Admin stays the source of truth.',
       id: 'home.highlight.multidevice.desc',
     }),
     accent: 'cyan',
@@ -65,15 +65,14 @@ export default function Highlights() {
     <section className={styles.section} aria-labelledby="home-highlights-heading">
       <header className={styles.header}>
         <p className={styles.eyebrow}>
-          <Translate id="home.highlights.eyebrow">Why ReactPress</Translate>
+          <Translate id="home.highlights.eyebrow">What you can ship</Translate>
         </p>
         <h2 id="home-highlights-heading" className={styles.heading}>
-          <Translate id="home.highlights.title">Everything you need to publish</Translate>
+          <Translate id="home.highlights.title">What ReactPress helps you do</Translate>
         </h2>
         <p className={styles.subheading}>
           <Translate id="home.highlights.subtitle">
-            Write with focus, manage in one place, and publish with joy — themes, plugins, and desktop when you need
-            them.
+            From a focused blog to a headless content app — one publishing platform, your outcomes.
           </Translate>
         </p>
       </header>

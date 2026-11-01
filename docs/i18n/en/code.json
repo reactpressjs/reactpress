@@ -323,7 +323,40 @@
     "message": "Open source · Self-hosted · React-native"
   },
   "home.hero.subTitle": {
-    "message": "A self-hosted publishing platform to write, manage, and publish — all in one place."
+    "message": "A self-hosted publishing platform — write, manage, and publish in one place. Not another Headless CMS to assemble."
+  },
+  "home.hero.media.caption": {
+    "message": "Admin, theme, and publishing — the real product, not a mock."
+  },
+  "home.hero.carousel.aria": {
+    "message": "ReactPress product tour"
+  },
+  "home.hero.carousel.prev": {
+    "message": "Previous slide"
+  },
+  "home.hero.carousel.next": {
+    "message": "Next slide"
+  },
+  "home.hero.carousel.dots": {
+    "message": "Slides"
+  },
+  "home.hero.slide.usage.label": {
+    "message": "CLI — live in ~60 seconds"
+  },
+  "home.hero.slide.usage.caption": {
+    "message": "Install the CLI, run init, and Site + Admin + API come up together."
+  },
+  "home.hero.slide.demo.label": {
+    "message": "Published site — the reader experience"
+  },
+  "home.hero.slide.demo.caption": {
+    "message": "A real Next.js theme blog: archives, tags, and SEO-ready pages out of the box."
+  },
+  "home.hero.slide.desktop.label": {
+    "message": "Admin & desktop — write locally"
+  },
+  "home.hero.slide.desktop.caption": {
+    "message": "Sign in to manage content, or write offline in the desktop app with local SQLite."
   },
   "home.hero.docs": {
     "message": "Documentation"
@@ -339,6 +372,15 @@
   },
   "home.hero.chip.plugins": {
     "message": "Plugin hooks"
+  },
+  "home.hero.deploy": {
+    "message": "Deploy"
+  },
+  "home.hero.localHint": {
+    "message": "Prefer the terminal?"
+  },
+  "home.hero.localHintLink": {
+    "message": "Install locally in ~60s"
   },
   "home.hero.intro": {
     "message": "Get Started"
@@ -425,7 +467,7 @@
     "message": "Write. Manage. Publish. — for creators and React developers."
   },
   "home.quickstart.eyebrow": {
-    "message": "Get started in ~60 seconds"
+    "message": "How to start"
   },
   "home.quickstart.step1.title": {
     "message": "Install CLI"
@@ -463,50 +505,110 @@
   "home.quickstart.sixty": {
     "message": "60-second Next.js blog"
   },
+  "home.quickstart.aria": {
+    "message": "Quick start"
+  },
+  "home.quickstart.title": {
+    "message": "From zero to a live site in ~60 seconds"
+  },
+  "home.quickstart.desc": {
+    "message": "One-click cloud deploy, or three local commands with embedded SQLite. No Docker required."
+  },
+  "home.quickstart.path.aria": {
+    "message": "Start path"
+  },
+  "home.quickstart.path.deploy": {
+    "message": "One-click Deploy"
+  },
+  "home.quickstart.path.local": {
+    "message": "Install locally"
+  },
+  "home.quickstart.deploy.title": {
+    "message": "Ship a theme site on Vercel"
+  },
+  "home.quickstart.deploy.desc": {
+    "message": "Clone the Theme Starter and deploy in one click. Connect your ReactPress API when you are ready."
+  },
+  "home.quickstart.deploy.demo": {
+    "message": "Theme Demo"
+  },
+  "home.quickstart.deploy.meta": {
+    "message": "Based on"
+  },
+  "home.quickstart.deploy.visual": {
+    "message": "Click → clone → live"
+  },
   "home.quickstart.vercel": {
     "message": "Deploy to Vercel"
+  },
+  "home.call.deploy": {
+    "message": "Deploy"
+  },
+  "home.call.subtitle": {
+    "message": "Deploy in one click, explore the docs, or open a Live Demo and feel the stack."
   },
   "home.cli.terminal.aria": {
     "message": "ReactPress quick start command demo"
   },
   "home.highlights.eyebrow": {
-    "message": "Why ReactPress"
+    "message": "What you can ship"
   },
   "home.highlights.title": {
-    "message": "Everything you need to publish"
+    "message": "What ReactPress helps you do"
   },
   "home.highlights.subtitle": {
-    "message": "Write with focus, manage in one place, and publish with joy — themes, plugins, and desktop when you need them."
+    "message": "From a focused blog to a headless content app — one publishing platform, your outcomes."
   },
   "home.highlight.writing.title": {
-    "message": "Writing & content"
+    "message": "Blogs that rank"
   },
   "home.highlight.writing.desc": {
-    "message": "Create, organize, and publish from a focused Markdown editor — posts, pages, tags, and media."
+    "message": "Personal or team blogs with Markdown, SSR SEO, sitemap, and OG — ready to publish, not assemble."
   },
   "home.highlight.plugins.title": {
-    "message": "Plugins"
+    "message": "Marketing sites"
   },
   "home.highlight.plugins.desc": {
-    "message": "Extend Admin and API with Hooks — SEO, auto-summary, image pipelines, and custom Admin slots."
+    "message": "Pages, media, and swappable Next.js themes — product and company sites you can actually own."
   },
   "home.highlight.desktop.title": {
-    "message": "Desktop app"
+    "message": "Local-first writing"
   },
   "home.highlight.desktop.desc": {
-    "message": "The same experience on the desktop — Electron with local SQLite, or sync to a remote API."
+    "message": "Desktop app with local SQLite — write offline, sync to a remote API when you are ready."
   },
   "home.highlight.themes.title": {
-    "message": "Themes"
+    "message": "Docs & changelogs"
   },
   "home.highlight.themes.desc": {
-    "message": "Customize the look with Next.js SSR themes from npm — starter scaffold and one-click catalog install."
+    "message": "Ship documentation and release notes from a real CMS — structured content, not a static-only stack."
   },
   "home.highlight.multidevice.title": {
-    "message": "Multi-device"
+    "message": "Headless React apps"
   },
   "home.highlight.multidevice.desc": {
-    "message": "Works on desktop, tablet, and mobile browsers — one publishing stack across every screen."
+    "message": "REST APIs, keys, and webhooks — feed any React client while Admin stays the source of truth."
+  },
+  "home.proof.eyebrow": {
+    "message": "See it in action"
+  },
+  "home.proof.title": {
+    "message": "Built for readers — and for SEO"
+  },
+  "home.proof.subtitle": {
+    "message": "SSR themes ship with solid Core Web Vitals. Open a Live Demo or theme preview when you want to click around."
+  },
+  "home.proof.desktop": {
+    "message": "Desktop — the same publishing experience, locally."
+  },
+  "home.proof.lighthouse": {
+    "message": "SSR themes built for SEO performance."
+  },
+  "home.proof.demo": {
+    "message": "Live Demo"
+  },
+  "home.proof.themeDemo": {
+    "message": "Theme Demo"
   },
   "复制命令，立即开始": {
     "message": "Copy commands to get started"
@@ -565,12 +667,6 @@
   "home.highlight.dx.desc": {
     "message": "CMS, admin, API, themes, plugins, and desktop — no stitching together five repos to ship content."
   },
-  "home.quickstart.title": {
-    "message": "From zero to a live site"
-  },
-  "home.quickstart.desc": {
-    "message": "Three commands. Embedded SQLite. No Docker. Default login is admin / admin — change it before going public."
-  },
   "home.quickstart.link30": {
     "message": "ReactPress 4.0 guide"
   },
@@ -580,35 +676,41 @@
   "home.quickstart.linkMigrate": {
     "message": "Migrate from 2.x"
   },
-  "home.quickstart.aria": {
-    "message": "Quick start"
-  },
   "home.platform.eyebrow": {
-    "message": "Core value"
+    "message": "What is ReactPress"
   },
   "home.platform.title": {
     "message": "Write. Manage. Publish."
   },
   "home.platform.subtitle": {
-    "message": "A self-hosted publishing platform that keeps writing joyful and shipping simple — for creators and React developers alike."
+    "message": "The whole publishing stack in one product — so creators and React developers ship without stitching five tools together."
   },
   "home.platform.build.title": {
     "message": "Write"
   },
+  "home.platform.build.tagline": {
+    "message": "Focus first."
+  },
   "home.platform.build.desc": {
-    "message": "Stay in flow with a focused editor — Markdown, media, and structure without ceremony."
+    "message": "A calm editor for posts, pages, and media — stay in flow, not in tooling."
   },
   "home.platform.manage.title": {
     "message": "Manage"
   },
+  "home.platform.manage.tagline": {
+    "message": "One place."
+  },
   "home.platform.manage.desc": {
-    "message": "One CMS for posts, pages, comments, SEO, themes, and plugins — self-hosted on your terms."
+    "message": "Content, SEO, themes, and plugins in one self-hosted CMS — on your terms."
   },
   "home.platform.extend.title": {
     "message": "Publish"
   },
+  "home.platform.extend.tagline": {
+    "message": "Ship with joy."
+  },
   "home.platform.extend.desc": {
-    "message": "Ship beautiful Next.js sites, extend with plugins, or go headless — from CLI to Vercel."
+    "message": "Next.js themes, plugins, or Headless API — from CLI to a live site."
   },
   "home.ecosystem.eyebrow": {
     "message": "Ecosystem"
@@ -617,7 +719,7 @@
     "message": "Themes, plugins, and guides — one hub"
   },
   "home.ecosystem.subtitle": {
-    "message": "ReactPress.cc is the entry point for the whole platform: publishing core today, extensions and best practices growing with you."
+    "message": "Themes, plugins, templates, and guides — extend the core when you need more."
   },
   "home.ecosystem.themes.title": {
     "message": "Themes"
@@ -657,9 +759,6 @@
   },
   "home.call.feature": {
     "message": "Write with focus. Publish with joy."
-  },
-  "home.call.subtitle": {
-    "message": "Self-hosted writing, management, and publishing — themes, plugins, and a desktop app when you need them."
   },
   "home.call.cta": {
     "message": "Explore the full documentation"

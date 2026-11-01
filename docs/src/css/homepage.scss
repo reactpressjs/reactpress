@@ -44,6 +44,11 @@ html[data-theme='dark'] .homepage :global(.main-wrapper > main) {
     radial-gradient(ellipse 50% 35% at 90% 60%, rgba(8, 126, 164, 0.05), transparent);
 }
 
+/* Tighter vertical rhythm between homepage story sections */
+.homepage :global(.main-wrapper > main) > section + section {
+  scroll-margin-top: 5rem;
+}
+
 /* Docs content reading comfort (site-wide light touch) */
 .markdown h2 {
   letter-spacing: -0.02em;

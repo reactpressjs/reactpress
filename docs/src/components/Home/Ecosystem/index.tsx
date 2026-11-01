@@ -74,8 +74,7 @@ export default function Ecosystem() {
         </h2>
         <p className={styles.subheading}>
           <Translate id="home.ecosystem.subtitle">
-            ReactPress.cc is the entry point for the whole platform: core CMS today, extensions and best practices
-            growing with you.
+            Themes, plugins, templates, and guides — extend the core when you need more.
           </Translate>
         </p>
       </header>
