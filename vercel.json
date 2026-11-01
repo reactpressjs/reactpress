@@ -4,7 +4,7 @@
   "buildCommand": "pnpm run build:docs",
   "outputDirectory": "docs/build",
   "framework": null,
-  "ignoreCommand": "git diff --quiet HEAD^ HEAD -- docs/ pnpm-lock.yaml",
+  "ignoreCommand": "git rev-parse --verify HEAD^ >/dev/null 2>&1 && git diff --quiet HEAD^ HEAD -- docs/ pnpm-lock.yaml || exit 1",
   "redirects": [
     {
       "source": "/docs/tutorial-extras/help",
