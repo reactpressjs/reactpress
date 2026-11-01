@@ -10,11 +10,13 @@ keywords: [reactpress, 联系, 支持, github issues]
 
 ## 支持渠道
 
-| 渠道 | 适用场景 | 链接 |
-| --- | --- | --- |
-| **GitHub Issues** | Bug、可复现问题 | [github.com/fecommunity/reactpress/issues](https://github.com/fecommunity/reactpress/issues) |
-| **GitHub Discussions** | 提问、想法、展示 | [github.com/fecommunity/reactpress/discussions](https://github.com/fecommunity/reactpress/discussions) |
-| **邮件** | 私人咨询、安全报告 | [admin@gaoredu.com](mailto:admin@gaoredu.com) |
+| 渠道                   | 适用场景                       | 链接                                                                                                   |
+| ---------------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| **GitHub Issues**      | Bug、可复现问题                | [github.com/fecommunity/reactpress/issues](https://github.com/fecommunity/reactpress/issues)           |
+| **GitHub Discussions** | 提问、想法、展示               | [github.com/fecommunity/reactpress/discussions](https://github.com/fecommunity/reactpress/discussions) |
+| **微信**               | 社区动态（任意页面右侧可扫码） | 见页面右侧浮动「微信」按钮                                                                             |
+| **X**                  | 产品动态与公告                 | [x.com/reactpre](https://x.com/reactpre)                                                               |
+| **邮件**               | 私人咨询、安全报告             | [admin@gaoredu.com](mailto:admin@gaoredu.com)                                                          |
 
 ## 提交 Issue 前
 

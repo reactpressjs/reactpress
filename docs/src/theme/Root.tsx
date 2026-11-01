@@ -5,6 +5,7 @@ import { useLocation } from '@docusaurus/router';
 import Root from '@theme-original/Root';
 import type { Props } from '@theme/Root';
 import { Analytics } from '@vercel/analytics/react';
+import ContactFloat from '@site/src/components/ContactFloat';
 import { isFaqDocPath, shouldNoIndexPath } from '@site/src/seo/paths';
 import { buildFaqPageJsonLd, FAQ_ENTRIES_EN, FAQ_ENTRIES_ZH } from '@site/src/seo/structuredData';
 
@@ -35,6 +36,7 @@ export default function RootWrapper(props: Props): React.JSX.Element {
   return (
     <>
       <Root {...props} />
+      <ContactFloat />
       <RouteSeoHead />
       <Analytics />
     </>

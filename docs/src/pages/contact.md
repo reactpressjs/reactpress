@@ -10,11 +10,13 @@ We welcome questions, bug reports, feature ideas, and contributions from the Rea
 
 ## Support channels
 
-| Channel | Best for | Link |
-| --- | --- | --- |
-| **GitHub Issues** | Bugs, reproducible problems | [github.com/fecommunity/reactpress/issues](https://github.com/fecommunity/reactpress/issues) |
-| **GitHub Discussions** | Questions, ideas, show-and-tell | [github.com/fecommunity/reactpress/discussions](https://github.com/fecommunity/reactpress/discussions) |
-| **Email** | Private inquiries, security reports | [admin@gaoredu.com](mailto:admin@gaoredu.com) |
+| Channel                | Best for                                             | Link                                                                                                   |
+| ---------------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| **GitHub Issues**      | Bugs, reproducible problems                          | [github.com/fecommunity/reactpress/issues](https://github.com/fecommunity/reactpress/issues)           |
+| **GitHub Discussions** | Questions, ideas, show-and-tell                      | [github.com/fecommunity/reactpress/discussions](https://github.com/fecommunity/reactpress/discussions) |
+| **WeChat**             | Community updates (scan the floating QR on any page) | See the WeChat button on the right side of every page                                                  |
+| **X**                  | Product news and announcements                       | [x.com/reactpre](https://x.com/reactpre)                                                               |
+| **Email**              | Private inquiries, security reports                  | [admin@gaoredu.com](mailto:admin@gaoredu.com)                                                          |
 
 ## Before opening an issue
 

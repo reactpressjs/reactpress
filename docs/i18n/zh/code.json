@@ -430,5 +430,23 @@
   },
   "home.feature.i18n.desc": {
     "message": "中英文界面开箱即用 — 在电脑、平板与手机上都有原生般的体验。"
+  },
+  "contact.float.aria": {
+    "message": "联系 ReactPress"
+  },
+  "contact.float.wechat": {
+    "message": "微信"
+  },
+  "contact.float.wechatHint": {
+    "message": "微信扫码关注"
+  },
+  "contact.float.wechatQrAlt": {
+    "message": "扫码关注 ReactPress 微信"
+  },
+  "contact.float.x": {
+    "message": "X"
+  },
+  "contact.float.email": {
+    "message": "邮箱"
   }
 }

@@ -67,6 +67,10 @@
     "message": "GitHub Releases",
     "description": "The label of footer link with label=GitHub Releases"
   },
+  "link.item.label.X": {
+    "message": "X",
+    "description": "The label of footer link with label=X"
+  },
   "link.item.label.About": {
     "message": "关于",
     "description": "The label of footer link with label=About"

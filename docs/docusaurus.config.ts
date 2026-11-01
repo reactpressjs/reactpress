@@ -241,6 +241,10 @@ const config: Config = {
               href: 'https://github.com/fecommunity/reactpress/releases',
             },
             {
+              label: 'X',
+              href: 'https://x.com/reactpre',
+            },
+            {
               label: 'Blog',
               to: '/blog',
             },

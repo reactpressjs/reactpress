@@ -957,5 +957,23 @@
   },
   "全局安装后，在空目录初始化，约 1 分钟即可零配置起站": {
     "message": "After global install, initialize in an empty folder — your site is ready in about a minute"
+  },
+  "contact.float.aria": {
+    "message": "Contact ReactPress"
+  },
+  "contact.float.wechat": {
+    "message": "WeChat"
+  },
+  "contact.float.wechatHint": {
+    "message": "Scan with WeChat"
+  },
+  "contact.float.wechatQrAlt": {
+    "message": "Scan to follow ReactPress on WeChat"
+  },
+  "contact.float.x": {
+    "message": "X"
+  },
+  "contact.float.email": {
+    "message": "Email"
   }
 }
