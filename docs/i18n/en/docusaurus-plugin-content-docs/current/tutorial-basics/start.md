@@ -19,7 +19,7 @@ ReactPress 4.0 offers three local paths — choose by scenario.
 
 ```bash
 npm i -g @fecommunity/reactpress
-mkdir my-blog && cd my-blog
+mkdir my-site && cd my-site
 reactpress init
 ```
 

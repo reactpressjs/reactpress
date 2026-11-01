@@ -46,7 +46,7 @@ Monorepo 本地开发时，Admin Vite dev server 可能在 `http://localhost:300
 <details>
 <summary><strong>ReactPress 是什么？</strong></summary>
 
-面向 React 开发者的开源**现代化 Web 创作平台**（Admin + NestJS API + Next.js 主题 + 插件 + 桌面客户端），不是只提供 API 的 Headless CMS。口号：**Build. Manage. Extend.** 详见 [ReactPress 是什么？](../getting-started/what-is-reactpress.md)。
+可自托管的**发布平台**（Admin + NestJS API + Next.js 主题 + 插件 + 桌面客户端），写作、管理、发布一站式完成 — 不是只提供 API 的 Headless CMS。口号：**Write with Focus. Publish with Joy.** 详见 [ReactPress 是什么？](../getting-started/what-is-reactpress.md)。
 
 </details>
 

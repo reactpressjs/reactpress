@@ -3,12 +3,12 @@ sidebar_position: 1
 id: intro
 title: Introduction
 description: >-
-  Official ReactPress docs — The Modern Web Creation Platform. Build, manage, and
-  extend modern websites with React. One CLI, ~60 seconds to live.
+  Official ReactPress docs — a self-hosted publishing platform to write, manage,
+  and publish in one place. Themes, plugins, desktop, and one CLI. Live in ~60s.
 keywords:
   [
     reactpress,
-    modern web creation platform,
+    self-hosted publishing,
     react cms,
     wordpress alternative,
     headless cms,
@@ -21,9 +21,15 @@ keywords:
   ]
 ---
 
+## Core idea
+
+**Write with Focus. Publish with Joy.**
+
+**ReactPress** is a **self-hosted publishing platform** to write, manage, and publish — all in one place. The core product is ReactPress CMS; one global CLI ships the API, Web Admin, swappable Next.js themes, plugins, and an Electron desktop client.
+
 ## Learning path (0 → 100)
 
-Choose a starting point by role. Every doc includes an SEO summary and next-step links.
+Choose a starting point by role. Every doc includes a summary and next-step links.
 
 | Stage            | Who you are                         | Start here                                                                                                                                                                                                  |
 | ---------------- | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -34,129 +40,80 @@ Choose a starting point by role. Every doc includes an SEO summary and next-step
 | **Go live**      | Operations                          | [Production deployment](./tutorial-basics/deploy-your-site.md) → [Docker](./tutorial-extras/docker-deployment.md)                                                                                           |
 | **Troubleshoot** | Hit a problem                       | [FAQ](./reference/faq.md) → [Troubleshooting](./reference/troubleshooting.md)                                                                                                                               |
 
-## Introduction
+## Features
 
-**ReactPress** is **The Modern Web Creation Platform** — build, manage, and extend modern websites with React. The core product is ReactPress CMS; one CLI ships CMS API, Web Admin, swappable Next.js themes, plugins, and an Electron desktop client. Slogan: **Build. Manage. Extend.**
+- ✍️ **Writing & content** — Create, organize, and publish from a focused editor
+- 🎨 **Themes** — Customize the look and feel. [Starter](https://github.com/fecommunity/reactpress-theme-starter) · [Guide](./developer-guide/theme-development.md)
+- 🧩 **Plugins** — Extend ReactPress with hooks. [Guide](./developer-guide/plugin-development.md)
+- 🖥️ **Desktop app** — The same experience on the desktop. [Guide](./tutorial-extras/desktop-client.md)
+- 📱 **Multi-device** — Works on desktop, tablet, and mobile browsers
 
-**ReactPress 4.0** (codename **Extend**) adds a **plugin system**, **desktop client**, and **npm theme catalog** on top of 3.x. New users: `npm i -g @fecommunity/reactpress`. See [ReactPress 4.0 Extend](./tutorial-extras/reactpress-4-0.md). Install the desktop app: [Desktop client](./tutorial-extras/desktop-client.md). Still on 3.x? See [ReactPress 3.0 Platform](./tutorial-extras/reactpress-3-0.md).
+**ReactPress 4.0** (codename **Extend**) adds a **plugin system**, **desktop client**, and **npm theme catalog** on top of 3.x. See [ReactPress 4.0 Extend](./tutorial-extras/reactpress-4-0.md).
 
-## 🆚 Comparison
+## Quick start
 
-**Comparison of ReactPress, WordPress, and VuePress**
-
-| **Feature**                         | **ReactPress**                                                            | **WordPress**                                           | **VuePress**                                      |
-| ----------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------- |
-| **Technology Stack**                | React + Next.js + SQLite/MySQL + NestJS                                   | PHP + MySQL                                             | Vue.js                                            |
-| **Type**                            | Modern Web Creation Platform / CMS                                        | Open-source publishing platform / CMS                   | Static site generator / Documentation tool        |
-| **Front-end & Back-end Separation** | Supported                                                                 | Not supported (traditional approach)                    | Supported                                         |
-| **Component-based Development**     | Supported                                                                 | Limited support (via plugins and themes)                | Supported                                         |
-| **Performance Optimization**        | Virtual DOM, Code Splitting, Lazy Loading                                 | Plugin-dependent optimization                           | Static page generation, excellent performance     |
-| **SEO Performance**                 | Excellent (SSR support)                                                   | Good                                                    | Outstanding (static pages)                        |
-| **Customizability**                 | High (fully customizable themes and styles)                               | High (via plugins and themes)                           | Moderate (theme and component customization)      |
-| **Extensibility**                   | Strong (API, plugin hooks, independent front-end and back-end extensions) | Strong (plugin extensions)                              | Moderate (plugin and theme extensions)            |
-| **User Interface**                  | Modern, component-based design based on React                             | User-friendly backend interface                         | Minimalist, optimized for technical documentation |
-| **Security**                        | Depends on the security of the framework and database                     | Depends on plugin and theme updates and maintenance     | Static site, high security                        |
-| **Application Scenarios**           | Complex functionality, high concurrent access, SEO optimization needs     | Quick website setup, content publishing, and management | Technical documentation, static blogs             |
-| **User Groups**                     | Developers, technical teams, Personal blogs, small businesses             | Personal blogs, small businesses, startups              | Technical documentation writers, developers       |
-| **Community Support**               | Active and growing                                                        | Very active, with a large user base                     | Supported by the Vue.js community                 |
-
-## ✨ Features
-
-### 4.0 Extend
-
-- 🔌 **Plugins**: Hooks + `plugin.json` + Admin UI slots; built-in SEO, auto-summary, batch WebP optimization
-- 🖥️ **Desktop**: Electron + SQLite local mode; connect remote API and sync content
-- 🎨 **Theme catalog**: install official themes from npm in Admin (`init` auto-installs the featured theme)
-
-### Platform (since 3.x)
-
-- 📦 **Single entry**: `@fecommunity/reactpress` — `init`, `doctor`, `logs`, `stop`
-- ⚡ **Zero-config setup**: auto-generated `.reactpress/config.json`, `.env`, embedded SQLite
-- 🩺 **Diagnostics**: `reactpress doctor` and `reactpress logs`
-- 🌈 Componentization with Ant Design
-- 🌍 i18n (Chinese / English)
-- 🌞 Light / dark theme
-- 🖌️ Markdown editor, posts, categories, tags
-- 📃 Pages, 💬 comments, 📷 media (local + OSS upload)
-- 🔌 **Headless**: API Key, Webhook, health check, toolkit SDK
-
-## 🔥 Live Demo
-
-[ReactPress Demo](https://blog.gaoredu.com/) · [Official theme demo](https://reactpress-theme-starter.vercel.app)
-
-## ⌨️ Quick start (4.0 recommended)
-
-### End users — one global package
+Requires **Node.js 20+**.
 
 ```bash
-npm i -g @fecommunity/reactpress
-mkdir my-blog && cd my-blog
+npm install -g @fecommunity/reactpress
+mkdir my-site && cd my-site
 reactpress init
 ```
 
+| Service         | URL                          |
+| --------------- | ---------------------------- |
+| Website         | http://localhost:3001        |
+| Admin Dashboard | http://localhost:3001/admin/ |
+
+Default credentials: `admin` / `admin` — **change the password before going public**.
+
+Run `reactpress doctor` to diagnose issues. Stop services with `reactpress stop`.
+
 :::info 4.0 note
-`init` **auto-starts** API, Admin, and theme — no need to run `reactpress dev` (removed from the global CLI). Stop services with `reactpress stop`.
+`init` **auto-starts** API, Admin, and theme — no need to run `reactpress dev` (removed from the global CLI).
 :::
 
-| Service       | Port           | URL                              |
-| ------------- | -------------- | -------------------------------- |
-| Admin         | 3001 `/admin/` | http://localhost:3001/admin/     |
-| Site theme    | 3001           | http://localhost:3001            |
-| API           | 3002           | http://localhost:3002/api/health |
-| Theme preview | 3003           | http://localhost:3003            |
+### Deploy to Vercel
 
-Run `reactpress` for the banner and help. Upgrade from 3.x: [migration guide](./tutorial-extras/migration-3-to-4.md). From 2.x: [2.x → 3.0](./tutorial-extras/migration-2-to-3.md).
+Based on the [Theme Starter](https://github.com/fecommunity/reactpress-theme-starter):
 
-### Desktop client (4.0, no Docker)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Ffecommunity%2Freactpress-theme-starter)
 
-```bash
-# at monorepo root
-pnpm dev:desktop
-```
+Theme demo: [reactpress-theme-starter.vercel.app](https://reactpress-theme-starter.vercel.app)
 
-Local SQLite mode, default account `admin` / `admin`. See [ReactPress 4.0 Extend](./tutorial-extras/reactpress-4-0.md).
+## Live demos
 
-### Monorepo contributors
+[ReactPress Demo](https://blog.gaoredu.com/) · [Official theme demo](https://reactpress-theme-starter.vercel.app)
 
-```bash
-git clone --depth=1 https://github.com/fecommunity/reactpress.git
-cd reactpress
-npm i -g pnpm
-pnpm install
-pnpm run dev
-```
+## Comparison
 
-Node.js 20+ required. Default development uses SQLite (no Docker); optional `pnpm docker:dev` for embedded MySQL. `pnpm run init` prepares the environment without starting services. Run `pnpm run build:plugins` before plugin development.
+| Feature           | ReactPress                              | WordPress             | VuePress              |
+| ----------------- | --------------------------------------- | --------------------- | --------------------- |
+| **Stack**         | React + Next.js + SQLite/MySQL + NestJS | PHP + MySQL           | Vue.js                |
+| **Type**          | Self-hosted publishing platform / CMS   | Open-source CMS       | Static site generator |
+| **Separation**    | Front-end & back-end separated          | Traditional monolith  | Supported             |
+| **SEO**           | Excellent (SSR)                         | Good                  | Excellent (static)    |
+| **Extensibility** | Themes + plugin hooks + Headless API    | Huge plugin ecosystem | Themes & plugins      |
+| **Best for**      | React teams, bloggers, self-hosters     | Non-technical editors | Documentation authors |
 
-## 📦 NPM Packages
+Full comparison: [ReactPress vs WordPress](./getting-started/reactpress-vs-wordpress.md).
 
-| Package                                                              | Description                                                  |
-| -------------------------------------------------------------------- | ------------------------------------------------------------ |
-| [**@fecommunity/reactpress**](./tutorial-extras/reactpress-4-0.md)   | **4.0 main package** (CLI + bundled API + plugins + desktop) |
-| [Desktop client](./tutorial-extras/desktop-client.md)                | Download, local / remote modes, sync                         |
-| [ReactPress 4.0 Extend](./tutorial-extras/reactpress-4-0.md)         | 4.0 overview                                                 |
-| [ReactPress 3.0 Platform](./tutorial-extras/reactpress-3-0.md)       | 3.0 historical docs                                          |
-| [@fecommunity/reactpress-toolkit](./tutorial-extras/toolkit-package) | TypeScript API SDK (Headless)                                |
+## Packages & docs
 
-## 🔗 Links
+| Resource                                                                         | Description                                      |
+| -------------------------------------------------------------------------------- | ------------------------------------------------ |
+| [@fecommunity/reactpress](https://www.npmjs.com/package/@fecommunity/reactpress) | 4.0 main package (CLI + API + plugins + desktop) |
+| [Desktop client](./tutorial-extras/desktop-client.md)                            | Install, local / remote modes                    |
+| [ReactPress 4.0](./tutorial-extras/reactpress-4-0.md)                            | 4.0 overview                                     |
+| [Migrate 3.x → 4.0](./tutorial-extras/migration-3-to-4.md)                       | Upgrade guide                                    |
+| [@fecommunity/reactpress-toolkit](./tutorial-extras/toolkit-package)             | TypeScript API SDK (Headless)                    |
 
-- [Home](https://github.com/fecommunity/reactpress)
-- [Desktop client](./tutorial-extras/desktop-client.md)
-- [4.0 Extend](./tutorial-extras/reactpress-4-0.md)
-- [3.x → 4.0 migration](./tutorial-extras/migration-3-to-4.md)
-- [3.0 Platform](./tutorial-extras/reactpress-3-0.md)
-- [2.x → 3.0 migration](./tutorial-extras/migration-2-to-3.md)
-- [Architecture (ARCHITECTURE.md)](https://github.com/fecommunity/reactpress/blob/master/ARCHITECTURE.md)
-- [Issues](https://github.com/fecommunity/reactpress/issues)
-- [Pull Request](https://github.com/fecommunity/reactpress/pulls)
-
-> We recommend [How To Ask Questions The Smart Way](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way) and [How to Report Bugs Effectively](http://www.chiark.greenend.org.uk/~sgtatham/bugs.html) — better questions get better answers.
-
-## 👥 Community
+## Community
 
 1. Run `reactpress doctor` and `reactpress logs` first
 2. [GitHub Issues](https://github.com/fecommunity/reactpress/issues)
 3. [GitHub Discussions](https://github.com/fecommunity/reactpress/discussions)
+4. [Contributing guide](https://github.com/fecommunity/reactpress/blob/master/CONTRIBUTING.md)
 
 Email: admin@gaoredu.com
 
@@ -165,29 +122,29 @@ Email: admin@gaoredu.com
 <details>
 <summary><strong>What is ReactPress?</strong></summary>
 
-The Modern Web Creation Platform for React developers — build, manage, and extend modern websites with React. CMS API, Web Admin, Next.js themes, plugins, and desktop client in one CLI.
+A self-hosted publishing platform to write, manage, and publish in one place. One CLI ships CMS API, Web Admin, Next.js themes, plugins, and a desktop client.
 
 </details>
 
 <details>
 <summary><strong>Is ReactPress free?</strong></summary>
 
-Yes. MIT licensed. Install with `npm i -g @fecommunity/reactpress`.
+Yes — MIT open source. Install with `npm i -g @fecommunity/reactpress`.
 
 </details>
 
 <details>
-<summary><strong>ReactPress vs WordPress — which should I choose?</strong></summary>
+<summary><strong>ReactPress vs WordPress?</strong></summary>
 
-See the full [ReactPress vs WordPress (2026)](./getting-started/reactpress-vs-wordpress.md) guide. Short answer: WordPress wins on plugin catalog and non-technical editors; ReactPress wins on React/Next.js stack, SSR SEO, and Headless-first architecture.
+See [ReactPress vs WordPress (2026)](./getting-started/reactpress-vs-wordpress.md). Short version: WordPress wins on plugin ecosystem and non-technical editors; ReactPress fits React/Next.js stacks, SSR SEO, and Headless workflows.
 
 </details>
 
 <details>
 <summary><strong>Can I migrate from WordPress?</strong></summary>
 
-Content can be migrated via export scripts or Headless API integration; themes must be rebuilt in Next.js. See [FAQ](./reference/faq.md) and [Headless API](./developer-guide/headless-api.md).
+Content can move via export scripts or the Headless API; themes need to be rebuilt in Next.js. See [FAQ](./reference/faq.md) and [Headless API](./developer-guide/headless-api.md).
 
 </details>
 
-More answers: [Full FAQ](./reference/faq.md) · [About ReactPress](/about) · [Contact](/contact)
+More: [Full FAQ](./reference/faq.md) · [About](/about) · [Contact](/contact)

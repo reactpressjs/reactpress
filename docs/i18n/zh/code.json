@@ -1,18 +1,21 @@
 {
   "theme.tagline": {
-    "message": "现代化 Web 创作平台。"
+    "message": "专注写作，愉快发布。"
   },
   "home.meta.title": {
-    "message": "ReactPress — 现代化 Web 创作平台"
+    "message": "ReactPress — 专注写作，愉快发布"
   },
   "home.meta.description": {
-    "message": "ReactPress 是面向 React 开发者的开源现代化 Web 创作平台。构建、管理并扩展现代网站 — CMS 核心、主题、插件与开发者指南。一条 CLI，约 60 秒上线。"
+    "message": "ReactPress 是可自托管的发布平台：写作、管理、发布一站式完成。主题、插件、桌面端与一条 CLI，约 60 秒上线。"
   },
   "home.hero.eyebrow": {
     "message": "开源 · 自托管 · React 原生"
   },
   "home.hero.subTitle": {
-    "message": "用 React 构建、管理并扩展现代网站。"
+    "message": "可自托管的发布平台，写作、管理、发布，一站式完成。"
+  },
+  "home.hero.docs": {
+    "message": "文档"
   },
   "home.hero.chip.cms": {
     "message": "内容 CMS"
@@ -72,7 +75,49 @@
     "message": "插件体系"
   },
   "home.stats.tagline": {
-    "message": "Build. Manage. Extend. — 为 React 开发者而生。"
+    "message": "Write. Manage. Publish. — 为创作者与 React 开发者而生。"
+  },
+  "home.quickstart.eyebrow": {
+    "message": "约 60 秒上手"
+  },
+  "home.quickstart.step1.title": {
+    "message": "安装 CLI"
+  },
+  "home.quickstart.step1.detail": {
+    "message": "需要 Node.js 20+。"
+  },
+  "home.quickstart.step2.title": {
+    "message": "创建站点目录"
+  },
+  "home.quickstart.step2.detail": {
+    "message": "任意空目录即可。"
+  },
+  "home.quickstart.step3.title": {
+    "message": "初始化"
+  },
+  "home.quickstart.step3.detail": {
+    "message": "自动启动 API、Admin 与主题。"
+  },
+  "home.quickstart.endpoint.site": {
+    "message": "网站"
+  },
+  "home.quickstart.endpoint.admin": {
+    "message": "管理后台"
+  },
+  "home.quickstart.after": {
+    "message": "然后打开"
+  },
+  "home.quickstart.hint": {
+    "message": "遇到问题？运行 reactpress doctor — 或跟随首站教程。"
+  },
+  "home.quickstart.guide": {
+    "message": "5 分钟创建第一个站点"
+  },
+  "home.quickstart.sixty": {
+    "message": "60 秒 Next.js 博客"
+  },
+  "home.quickstart.vercel": {
+    "message": "部署到 Vercel"
   },
   "home.cli.running": {
     "message": "运行中"
@@ -105,31 +150,43 @@
     "message": "复制全部命令，粘贴到终端按序执行即可起站"
   },
   "home.highlights.eyebrow": {
-    "message": "核心产品 · ReactPress CMS"
+    "message": "为什么选择 ReactPress"
   },
   "home.highlights.title": {
-    "message": "聚焦的 CMS，成长的平台"
+    "message": "发布所需，一应俱全"
   },
   "home.highlights.subtitle": {
-    "message": "今天用一条 CLI 上线网站 — 需要时再叠加插件、主题与生态能力。"
+    "message": "专注写作、统一管理、愉快发布 — 需要时再叠加主题、插件与桌面端。"
+  },
+  "home.highlight.writing.title": {
+    "message": "写作与内容"
+  },
+  "home.highlight.writing.desc": {
+    "message": "在专注的 Markdown 编辑器中创建、整理并发布 — 文章、页面、标签与媒体。"
   },
   "home.highlight.plugins.title": {
-    "message": "插件生态"
+    "message": "插件"
   },
   "home.highlight.plugins.desc": {
-    "message": "Hook 体系、plugin.json 清单与 Admin 插槽 — SEO、自动摘要与图片流水线开箱即用。"
+    "message": "用 Hook 扩展后台与 API — SEO、自动摘要、图片流水线与自定义插槽。"
   },
   "home.highlight.desktop.title": {
-    "message": "桌面客户端"
+    "message": "桌面应用"
   },
   "home.highlight.desktop.desc": {
-    "message": "离线写作、联网同步 — Electron 壳 + SQLite 本地模式，无缝远程发布。"
+    "message": "在桌面端获得同样的体验 — Electron + 本地 SQLite，或同步到远程 API。"
   },
   "home.highlight.themes.title": {
-    "message": "npm 主题目录"
+    "message": "主题"
   },
   "home.highlight.themes.desc": {
-    "message": "从 npm 安装生产级主题 — 官方目录、theme-starter 脚手架与 hello-world 模板。"
+    "message": "用 Next.js SSR 主题定制外观 — 起步模板与 npm catalog 一键安装。"
+  },
+  "home.highlight.multidevice.title": {
+    "message": "多端访问"
+  },
+  "home.highlight.multidevice.desc": {
+    "message": "支持桌面、平板与移动端浏览器 — 一套发布栈覆盖每块屏幕。"
   },
   "home.highlight.zero.title": {
     "message": "零配置起站"
@@ -150,31 +207,31 @@
     "message": "CMS、后台、API、主题、插件与桌面端 — 不必拼凑五个仓库才能发布内容。"
   },
   "home.platform.eyebrow": {
-    "message": "ReactPress 平台"
+    "message": "核心价值"
   },
   "home.platform.title": {
-    "message": "Build. Manage. Extend."
+    "message": "写作 · 管理 · 发布"
   },
   "home.platform.subtitle": {
-    "message": "开源平台，将网站创建、内容管理与扩展能力合而为一，专为现代 Web 开发者设计。"
+    "message": "可自托管的发布平台，让写作保持专注、上线保持简单 — 创作者与 React 开发者都能上手。"
   },
   "home.platform.build.title": {
-    "message": "Build"
+    "message": "写作"
   },
   "home.platform.build.desc": {
-    "message": "用 React 与开发者优先的工作流创建现代网站。"
+    "message": "用专注的编辑器保持心流 — Markdown、媒体与结构，无需繁琐仪式。"
   },
   "home.platform.manage.title": {
-    "message": "Manage"
+    "message": "管理"
   },
   "home.platform.manage.desc": {
-    "message": "通过统一的 CMS 管理内容与网站。"
+    "message": "文章、页面、评论、SEO、主题与插件统一管理 — 自托管，由你掌控。"
   },
   "home.platform.extend.title": {
-    "message": "Extend"
+    "message": "发布"
   },
   "home.platform.extend.desc": {
-    "message": "用插件、主题、模板与组件定制并扩展能力。"
+    "message": "上线精美的 Next.js 站点，用插件扩展，或走 Headless — 从 CLI 到 Vercel。"
   },
   "home.ecosystem.eyebrow": {
     "message": "生态"
@@ -183,7 +240,7 @@
     "message": "主题、插件与指南 — 统一入口"
   },
   "home.ecosystem.subtitle": {
-    "message": "ReactPress.cc 是整个平台的流量入口：今天是 CMS 核心，扩展与最佳实践与你一同成长。"
+    "message": "ReactPress.cc 是整个平台的入口：今天是发布核心，扩展与最佳实践与你一同成长。"
   },
   "home.ecosystem.themes.title": {
     "message": "主题"
@@ -222,46 +279,55 @@
     "message": "阅读指南"
   },
   "home.call.feature": {
-    "message": "一个平台，开发者优先的工作流"
+    "message": "专注写作，愉快发布"
   },
   "home.call.subtitle": {
-    "message": "网站创建、内容管理与扩展能力 — 统一在 React 原生技术栈中。"
+    "message": "自托管写作、管理与发布 — 需要时再叠加主题、插件与桌面应用。"
   },
   "home.call.cta": {
     "message": "探索完整文档"
+  },
+  "home.quickstart.title": {
+    "message": "从零到上线"
+  },
+  "home.quickstart.desc": {
+    "message": "三条命令。嵌入式 SQLite。无需 Docker。默认账号 admin / admin — 对外发布前请修改密码。"
+  },
+  "home.quickstart.aria": {
+    "message": "快速开始"
   },
   "home.feature.zero.title": {
     "message": "零配置起站"
   },
   "home.feature.zero.desc": {
-    "message": "安装向导自动完成站点与数据库配置 — 两条命令、嵌入式 SQLite，默认无需 Docker。"
+    "message": "三条命令、嵌入式 SQLite、默认无需 Docker — 配置与 .env 自动生成。"
   },
   "home.feature.cli.title": {
-    "message": "命令行一站式"
+    "message": "主题与插件"
   },
   "home.feature.cli.desc": {
-    "message": "init、doctor、logs、stop 共用一个二进制 — 启动即见直达链接。"
+    "message": "从 npm 更换 Next.js SSR 主题，需要时用 Hook 扩展后台与 API。"
   },
   "home.feature.ui.title": {
-    "message": "现代界面"
+    "message": "桌面应用"
   },
   "home.feature.ui.desc": {
-    "message": "精致的管理后台与前台，亮/暗主题 — 为日常编辑工作而生。"
+    "message": "在桌面端获得同样的发布体验 — 本地 SQLite，或同步到远程 API。"
   },
   "home.feature.content.title": {
-    "message": "创作与内容"
+    "message": "写作与内容"
   },
   "home.feature.content.desc": {
-    "message": "Markdown 原生编辑器，文章、分类、标签、页面、评论与媒体 — 写作者与编辑者所需一应俱全。"
+    "message": "在专注的 Markdown 编辑器中创建、整理并发布 — 文章、页面、标签、评论与媒体。"
   },
   "home.feature.headless.title": {
     "message": "开放集成"
   },
   "home.feature.headless.desc": {
-    "message": "REST API、访问密钥与 Webhook — 接入 CI、移动应用或数据流水线。"
+    "message": "REST API、访问密钥与 Webhook — 接入 CI、应用或自定义前端。"
   },
   "home.feature.i18n.title": {
-    "message": "国际化"
+    "message": "多端访问"
   },
   "home.feature.i18n.desc": {
     "message": "中英文界面开箱即用 — 在电脑、平板与手机上都有原生般的体验。"

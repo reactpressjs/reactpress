@@ -21,7 +21,7 @@ keywords: [reactpress 4.0, extend, plugin, desktop, theme catalog, wordpress alt
 
 ```bash
 npm i -g @fecommunity/reactpress
-mkdir my-blog && cd my-blog
+mkdir my-site && cd my-site
 reactpress init
 ```
 

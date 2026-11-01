@@ -1,6 +1,5 @@
 import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import CliCommandBlock from '@site/src/components/CliCommandBlock';
 import Devices from '@site/src/components/Home/Hero/Devices';
 import FloorBackground from '@site/src/components/Home/Hero/FloorBackground';
@@ -15,7 +14,6 @@ import GitHubButton from 'react-github-btn';
 import styles from './styles.module.css';
 
 function Hero() {
-  const { siteConfig } = useDocusaurusContext();
   const { latest } = useReactPressVersions();
 
   return (
@@ -42,7 +40,7 @@ function Hero() {
         <div className={styles.intro}>
           <Logo className={styles.logo} />
           <div className={styles.titleRow}>
-            <h1 className={styles.title}>{siteConfig.title}</h1>
+            <h1 className={styles.title}>ReactPress</h1>
             <div className={styles.versionTags} aria-label="package release version">
               <a
                 className={clsx(styles.versionTag, styles.versionTagLatest)}
@@ -68,28 +66,30 @@ function Hero() {
             </span>
           </div>
           <p className={styles.slogan}>
-            <Translate id="theme.tagline">The Modern Web Creation Platform.</Translate>
+            <Translate id="theme.tagline">Write with Focus. Publish with Joy.</Translate>
           </p>
           <p className={styles.subTitle}>
-            <Translate id="home.hero.subTitle">Build, manage, and extend modern websites with React.</Translate>
+            <Translate id="home.hero.subTitle">
+              A self-hosted publishing platform to write, manage, and publish — all in one place.
+            </Translate>
           </p>
 
           <div className={styles.actions}>
             <div className={styles.buttonContainer}>
-              <Link className={styles.primaryButton} to="/docs/intro">
+              <Link className={styles.primaryButton} to="/docs/getting-started/first-site">
                 <Translate id="home.hero.intro">Get Started</Translate>
-              </Link>
-              <Link className={styles.secondaryButton} to="/docs/tutorial-extras/reactpress-4-0">
-                <Translate id="home.hero.whatsNew">What&apos;s New in 4.0</Translate>
               </Link>
               <a
                 href="https://blog.gaoredu.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={styles.ghostButton}
+                className={styles.secondaryButton}
               >
                 <Translate id="home.hero.try">Live Demo</Translate>
               </a>
+              <Link className={styles.ghostButton} to="/docs/intro">
+                <Translate id="home.hero.docs">Documentation</Translate>
+              </Link>
             </div>
 
             <div className={styles.cliWrap}>

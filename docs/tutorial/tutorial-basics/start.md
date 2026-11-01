@@ -19,7 +19,7 @@ ReactPress 4.0 提供三条本地路径，按场景选择。
 
 ```bash
 npm i -g @fecommunity/reactpress
-mkdir my-blog && cd my-blog
+mkdir my-site && cd my-site
 reactpress init
 ```
 

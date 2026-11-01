@@ -106,8 +106,8 @@ html[data-theme='light'] .card {
 }
 
 .card[data-accent='plugins'] .iconWrap {
-  background: rgba(189, 52, 254, 0.12);
-  color: #bd34fe;
+  background: rgba(14, 165, 180, 0.12);
+  color: #0ea5b4;
 }
 
 .card[data-accent='templates'] .iconWrap {

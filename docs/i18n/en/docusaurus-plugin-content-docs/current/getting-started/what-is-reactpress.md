@@ -2,14 +2,14 @@
 sidebar_position: 2
 title: What is ReactPress?
 description: >-
-  What is ReactPress? The Modern Web Creation Platform for React developers —
-  build, manage, and extend modern websites. CMS Admin, NestJS API, Next.js
-  themes, plugins, and a desktop client in one CLI.
+  What is ReactPress? A self-hosted publishing platform to write, manage, and
+  publish in one place. CMS Admin, NestJS API, Next.js themes, plugins, and a
+  desktop client in one CLI.
 keywords:
   [
     what is reactpress,
     reactpress,
-    modern web creation platform,
+    self-hosted publishing,
     react cms,
     next.js cms,
     open source cms,
@@ -20,9 +20,11 @@ keywords:
 
 # What is ReactPress?
 
-**ReactPress** is **The Modern Web Creation Platform** for React developers. Build, manage, and extend modern websites with React — without assembling a Headless CMS, Admin UI, and frontend from scratch.
+**Write with Focus. Publish with Joy.**
 
-The core product is **ReactPress CMS**. Plugins, themes, templates, and components are the extension layer. A public Marketplace is a later ecosystem phase — today the focus is a CMS React developers actually want to use.
+**ReactPress** is a **self-hosted publishing platform** to write, manage, and publish — all in one place. No need to assemble a Headless CMS, Admin UI, and frontend from scratch.
+
+The core product is **ReactPress CMS**. Plugins, themes, templates, and components are the extension layer. A public Marketplace is a later ecosystem phase — today the focus is a publishing stack creators and React developers actually want to use.
 
 One global CLI ships:
 
@@ -49,9 +51,9 @@ reactpress init
 
 Many tools in the React ecosystem deliver **only an API** (Strapi, Payload, Contentful, Sanity). You still build Admin screens, the marketing site, media workflows, and deploy scripts yourself.
 
-ReactPress is a **complete web creation platform** (not “WordPress rewritten in React”):
+ReactPress is a **complete self-hosted publishing platform** (not “WordPress rewritten in React”):
 
-> **Build with React · Manage with CMS · Extend with plugins & themes**
+> **Write with focus · Manage in one place · Publish with joy**
 
 > Admin manages content · Theme manages presentation · Plugin manages logic · API manages data · Toolkit manages contracts
 

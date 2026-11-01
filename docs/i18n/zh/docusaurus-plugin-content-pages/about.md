@@ -1,28 +1,28 @@
 ---
 title: 关于 ReactPress
 description: >-
-  关于 ReactPress — 面向 React 开发者的现代化 Web 创作平台。构建、管理并扩展现代网站。
-  开源 CMS 核心，主题与插件可扩展。
-keywords: [reactpress, 关于, 开源, 现代化 web 创作平台, react cms]
+  关于 ReactPress — 专注写作，愉快发布。可自托管的发布平台，写作、管理、发布一站式完成。
+  开源 CMS，主题与插件可扩展。
+keywords: [reactpress, 关于, 开源, 自托管发布平台, react cms]
 ---
 
 # 关于 ReactPress
 
-**ReactPress** 是面向 React 开发者的 **现代化 Web 创作平台（The Modern Web Creation Platform）**。
+**Write with Focus. Publish with Joy.**
 
-用 React 构建、管理并扩展现代网站。核心产品是 **ReactPress CMS**；插件、主题、模板与组件提供扩展能力。长期愿景是现代 Web 创作生态——同时保证当前 CMS 足够聚焦、真正好用。
+**ReactPress** 是一个**可自托管的发布平台**：写作、管理、发布，一站式完成。核心产品是 **ReactPress CMS**；插件、主题、模板与组件提供扩展能力。长期愿景是现代发布生态——同时保证当前产品足够聚焦、真正好用。
 
 ## 品牌定位
 
-| 项目     | 定义                                                            |
-| -------- | --------------------------------------------------------------- |
-| 品牌名称 | ReactPress                                                      |
-| 官方域名 | [reactpress.cc](https://www.reactpress.cc/)                     |
-| 产品品类 | Modern Web Creation Platform                                    |
-| 核心用户 | React 开发者、独立开发者、网站建设者                            |
-| 核心产品 | ReactPress CMS                                                  |
-| 口号     | **Build. Manage. Extend.**                                      |
-| 使命     | Make building and managing websites easier for React developers |
+| 项目     | 定义                                        |
+| -------- | ------------------------------------------- |
+| 品牌名称 | ReactPress                                  |
+| 官方域名 | [reactpress.cc](https://www.reactpress.cc/) |
+| 产品品类 | 自托管发布平台                              |
+| 核心用户 | 创作者、React 开发者、独立开发者、站长      |
+| 核心产品 | ReactPress CMS                              |
+| 口号     | **Write with Focus. Publish with Joy.**     |
+| 使命     | 让写作、管理与发布更简单 — 自托管，由你掌控 |
 
 ## 我们提供什么
 
@@ -44,19 +44,20 @@ npm i -g @fecommunity/reactpress
 ## 平台模型
 
 ```text
-BUILD · MANAGE · EXTEND
+WRITE · MANAGE · PUBLISH
 
-ReactPress CMS     → 网站构建、内容管理、发布部署
+ReactPress CMS     → 写作、内容管理、发布
 Plugins / Themes   → 功能扩展与外观定制
 Templates / Components → 加速交付
 Marketplace（远期） → 发现、安装与交易扩展产品
 ```
 
-我们**不会**把 ReactPress 宣传成「React 版 WordPress」，而是强调面向 React 开发者的**现代工作流**。
+我们**不会**把 ReactPress 宣传成「React 版 WordPress」，而是强调现代 JavaScript 栈上的**专注发布工作流**。
 
 ## 适用人群
 
-- **React 开发者**：一体化平台构建与运营网站
+- **写作者与站长**：专注的编辑器与自托管掌控力
+- **React 开发者**：一体化技术栈构建与运营网站
 - **独立开发者**：无需拼装五套工具即可获得 CMS + 主题 + CLI
 - **评估现代 CMS 的团队** — 见 [ReactPress vs WordPress](/zh/docs/getting-started/reactpress-vs-wordpress)
 - **自托管用户** — 见 [面向 React 的自托管 CMS](/zh/docs/getting-started/self-hosted-cms-for-react)

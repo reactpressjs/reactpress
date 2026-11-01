@@ -1,6 +1,6 @@
 import { translate } from '@docusaurus/Translate';
 import Translate from '@docusaurus/Translate';
-import { IconCode, IconLayers, IconPlugins } from '@site/src/components/Home/icons';
+import { IconLayers, IconPen, IconRocket } from '@site/src/components/Home/icons';
 import React from 'react';
 
 import styles from './styles.module.css';
@@ -14,10 +14,10 @@ type Pillar = {
 
 const pillars: Pillar[] = [
   {
-    Icon: IconCode,
-    title: translate({ message: 'Build', id: 'home.platform.build.title' }),
+    Icon: IconPen,
+    title: translate({ message: 'Write', id: 'home.platform.build.title' }),
     description: translate({
-      message: 'Create modern websites with React and a developer-first workflow.',
+      message: 'Stay in flow with a focused editor — Markdown, media, and structure without ceremony.',
       id: 'home.platform.build.desc',
     }),
     accent: 'build',
@@ -26,16 +26,16 @@ const pillars: Pillar[] = [
     Icon: IconLayers,
     title: translate({ message: 'Manage', id: 'home.platform.manage.title' }),
     description: translate({
-      message: 'Manage content and websites through a unified CMS.',
+      message: 'One CMS for posts, pages, comments, SEO, themes, and plugins — self-hosted on your terms.',
       id: 'home.platform.manage.desc',
     }),
     accent: 'manage',
   },
   {
-    Icon: IconPlugins,
-    title: translate({ message: 'Extend', id: 'home.platform.extend.title' }),
+    Icon: IconRocket,
+    title: translate({ message: 'Publish', id: 'home.platform.extend.title' }),
     description: translate({
-      message: 'Customize and expand with plugins, themes, templates, and components.',
+      message: 'Ship beautiful Next.js sites, extend with plugins, or go headless — from CLI to Vercel.',
       id: 'home.platform.extend.desc',
     }),
     accent: 'extend',
@@ -47,15 +47,15 @@ export default function Platform() {
     <section className={styles.section} aria-labelledby="home-platform-heading">
       <header className={styles.header}>
         <p className={styles.eyebrow}>
-          <Translate id="home.platform.eyebrow">ReactPress Platform</Translate>
+          <Translate id="home.platform.eyebrow">Core value</Translate>
         </p>
         <h2 id="home-platform-heading" className={styles.heading}>
-          <Translate id="home.platform.title">Build. Manage. Extend.</Translate>
+          <Translate id="home.platform.title">Write. Manage. Publish.</Translate>
         </h2>
         <p className={styles.subheading}>
           <Translate id="home.platform.subtitle">
-            An open-source platform that brings website creation, content management, and extensibility together for
-            modern web developers.
+            A self-hosted publishing platform that keeps writing joyful and shipping simple — for creators and React
+            developers alike.
           </Translate>
         </p>
       </header>

@@ -5,7 +5,7 @@ export const QUICK_START_INSTALL_COMMAND = buildInstallCommand();
 
 export const QUICK_START_COMMANDS = [
   QUICK_START_INSTALL_COMMAND,
-  'mkdir my-blog && cd my-blog',
+  'mkdir my-site && cd my-site',
   'reactpress init',
 ] as const;
 
@@ -42,7 +42,7 @@ export const QUICK_START_DEMO_OUTPUTS = getQuickStartDemoOutputs('en', QUICK_STA
 export const QUICK_START_DEV_READY_LINES = QUICK_START_DEV_READY_LINES_EN;
 
 export function buildQuickStartCommands(installCommand = QUICK_START_INSTALL_COMMAND) {
-  return [installCommand, 'mkdir my-blog && cd my-blog', 'reactpress init'] as const;
+  return [installCommand, 'mkdir my-site && cd my-site', 'reactpress init'] as const;
 }
 
 export function getInstallDemoOutput(_version: string = FALLBACK_REACTPRESS_LATEST): readonly string[] {
@@ -54,7 +54,7 @@ export function getQuickStartDemoOutputs(locale: string, installCommand: string)
   const installDemoOutput = getInstallDemoOutput();
   return {
     [installCommand]: installDemoOutput,
-    'mkdir my-blog && cd my-blog': [],
+    'mkdir my-site && cd my-site': [],
     'reactpress init': [],
   };
 }

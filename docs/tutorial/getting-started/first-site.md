@@ -20,7 +20,7 @@ npm install -g @fecommunity/reactpress
 在任意空目录执行：
 
 ```bash
-mkdir my-blog && cd my-blog
+mkdir my-site && cd my-site
 reactpress init
 ```
 

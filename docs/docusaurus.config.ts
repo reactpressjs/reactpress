@@ -14,7 +14,7 @@ const algoliaConfig = resolveAlgoliaConfig();
 const config: Config = {
   title: 'ReactPress',
   titleDelimiter: '-',
-  tagline: 'The Modern Web Creation Platform.',
+  tagline: 'Write with Focus. Publish with Joy.',
   // Default meta description for non-home pages (home overrides in src/pages/index.tsx)
   favicon: 'img/favicon.ico',
 
@@ -84,7 +84,7 @@ const config: Config = {
           showReadingTime: true,
           blogTitle: 'Blog',
           blogDescription:
-            'ReactPress blog — guides on the modern web creation platform: React CMS, Next.js sites, themes, plugins, and open-source updates. Release notes live under Changelog.',
+            'ReactPress blog — guides on self-hosted publishing with React: CMS, Next.js themes, plugins, desktop, and open-source updates. Release notes live under Changelog.',
           feedOptions: {
             type: ['rss', 'atom'],
             xslt: true,

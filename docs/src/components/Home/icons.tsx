@@ -13,7 +13,12 @@ export function IconPlugins({ className }: IconProps) {
         strokeWidth="1.6"
         strokeLinejoin="round"
       />
-      <path d="M19 15v5M16.5 17.5H21.5M5 15v5M2.5 17.5H7.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      <path
+        d="M19 15v5M16.5 17.5H21.5M5 15v5M2.5 17.5H7.5"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+      />
     </svg>
   );
 }
@@ -62,7 +67,13 @@ export function IconTerminal({ className }: IconProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden>
       <rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" strokeWidth="1.6" />
-      <path d="M7 9l3 3-3 3M12 15h5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+      <path
+        d="M7 9l3 3-3 3M12 15h5"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   );
 }
@@ -88,7 +99,13 @@ export function IconClock({ className }: IconProps) {
 export function IconCode({ className }: IconProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden>
-      <path d="M8 8L4 12l4 4M16 8l4 4-4 4M14 5l-4 14" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+      <path
+        d="M8 8L4 12l4 4M16 8l4 4-4 4M14 5l-4 14"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   );
 }
@@ -100,6 +117,20 @@ export function IconApi({ className }: IconProps) {
       <circle cx="18" cy="6" r="2.5" stroke="currentColor" strokeWidth="1.6" />
       <circle cx="18" cy="18" r="2.5" stroke="currentColor" strokeWidth="1.6" />
       <path d="M8.5 11l7-4M8.5 13l7 4" stroke="currentColor" strokeWidth="1.6" />
+    </svg>
+  );
+}
+
+export function IconPen({ className }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path
+        d="M4 20l4.2-.8L19.5 7.9a2.1 2.1 0 00-3-3L5.2 16.2 4 20z"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+      <path d="M13.5 6.5l3 3" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
     </svg>
   );
 }

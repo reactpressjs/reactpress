@@ -17,11 +17,11 @@ const Index = () => {
   const canonicalUrl = `${siteConfig.url}${siteConfig.baseUrl}`.replace(/\/$/, '') + '/';
   const title = translate({
     id: 'home.meta.title',
-    message: 'ReactPress — The Modern Web Creation Platform.',
+    message: 'ReactPress — Write with Focus. Publish with Joy.',
   });
   const description = translate({
     message:
-      'ReactPress is an open-source platform for building, managing, and extending modern websites with React. CMS core, themes, plugins, and developer guides — one CLI, ~60 seconds to live.',
+      'ReactPress is a self-hosted publishing platform to write, manage, and publish — all in one place. Themes, plugins, desktop app, and one CLI. Live in about 60 seconds.',
     id: 'home.meta.description',
   });
   const faqEntries = i18n.currentLocale === 'zh' ? FAQ_ENTRIES_ZH : FAQ_ENTRIES_EN;

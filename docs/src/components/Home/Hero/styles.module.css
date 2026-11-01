@@ -25,30 +25,32 @@
 }
 
 .orb1 {
-  width: 380px;
-  height: 380px;
-  top: -60px;
-  left: 8%;
-  background: radial-gradient(circle, #bd34fe 0%, transparent 70%);
+  width: 420px;
+  height: 420px;
+  top: -80px;
+  left: 6%;
+  background: radial-gradient(circle, rgba(8, 126, 164, 0.55) 0%, transparent 70%);
+  opacity: 0.4;
 }
 
 .orb2 {
-  width: 320px;
-  height: 320px;
-  top: 12%;
-  right: 6%;
-  background: radial-gradient(circle, #41d1ff 0%, transparent 70%);
+  width: 340px;
+  height: 340px;
+  top: 10%;
+  right: 4%;
+  background: radial-gradient(circle, rgba(65, 209, 255, 0.5) 0%, transparent 70%);
   animation-delay: -5s;
+  opacity: 0.38;
 }
 
 .orb3 {
-  width: 260px;
-  height: 260px;
-  bottom: 28%;
-  left: 38%;
-  background: radial-gradient(circle, #087ea4 0%, transparent 70%);
+  width: 280px;
+  height: 280px;
+  bottom: 26%;
+  left: 40%;
+  background: radial-gradient(circle, rgba(14, 165, 180, 0.45) 0%, transparent 70%);
   animation-delay: -9s;
-  opacity: 0.35;
+  opacity: 0.28;
 }
 
 @keyframes orbDrift {
@@ -165,13 +167,13 @@
   padding: 0;
   overflow: visible;
   transition: transform 0.25s ease, filter 0.25s ease;
-  filter: drop-shadow(0 0 18px rgba(65, 209, 255, 0.32));
+  filter: drop-shadow(0 8px 20px rgba(8, 126, 164, 0.18));
   will-change: transform;
 }
 
 .logo:hover {
-  transform: scale(1.05);
-  filter: drop-shadow(0 0 24px rgba(189, 52, 254, 0.4));
+  transform: scale(1.04);
+  filter: drop-shadow(0 10px 24px rgba(8, 126, 164, 0.28));
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -198,18 +200,19 @@
 }
 
 .title {
-  font-size: clamp(2rem, 4.8vw, 2.85rem);
+  font-size: clamp(2.1rem, 5vw, 3rem);
   margin: 0;
-  background: linear-gradient(120deg, #bd34fe 0%, #41d1ff 45%, #087ea4 100%);
-  background-size: 200% auto;
+  letter-spacing: -0.03em;
+  background: linear-gradient(115deg, #087ea4 0%, #41d1ff 55%, #0ea5b4 100%);
+  background-size: 180% auto;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: titleShine 5s linear infinite;
+  animation: titleShine 7s ease-in-out infinite alternate;
 }
 
 @keyframes titleShine {
   to {
-    background-position: 200% center;
+    background-position: 100% center;
   }
 }
 
@@ -304,21 +307,22 @@ html[data-theme='dark'] .versionTagLatest:hover {
 }
 
 .slogan {
-  font-weight: 600;
+  font-weight: 700;
   color: var(--ifm-font-color-base);
-  font-size: clamp(1rem, 2.4vw, 1.2rem);
-  line-height: 1.45;
-  max-width: 36rem;
-  margin: 0.5rem auto 0;
+  font-size: clamp(1.15rem, 2.8vw, 1.45rem);
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  max-width: 38rem;
+  margin: 0.65rem auto 0;
 }
 
 .subTitle {
   font-weight: 400;
   color: var(--home-secondary-text);
-  font-size: clamp(0.88rem, 2vw, 1rem);
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
   line-height: 1.6;
-  max-width: 42rem;
-  margin: 0.4rem auto 0;
+  max-width: 40rem;
+  margin: 0.45rem auto 0;
 }
 
 .actions {
@@ -340,9 +344,9 @@ html[data-theme='dark'] .versionTagLatest:hover {
 .secondaryButton,
 .ghostButton {
   border: none;
-  padding: 10px 22px;
-  border-radius: 99rem;
-  font-weight: 600;
+  padding: 11px 22px;
+  border-radius: 12px;
+  font-weight: 650;
   font-size: 0.92rem;
   display: inline-flex;
   align-items: center;
@@ -359,13 +363,13 @@ html[data-theme='dark'] .versionTagLatest:hover {
 .primaryButton {
   background: linear-gradient(135deg, #087ea4 0%, #41d1ff 100%);
   color: #fff !important;
-  box-shadow: 0 4px 20px rgba(8, 126, 164, 0.32);
+  box-shadow: 0 4px 18px rgba(8, 126, 164, 0.28);
 }
 
 .primaryButton:hover {
   color: #fff !important;
   transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(65, 209, 255, 0.4);
+  box-shadow: 0 8px 24px rgba(8, 126, 164, 0.35);
 }
 
 .secondaryButton {
@@ -376,7 +380,7 @@ html[data-theme='dark'] .versionTagLatest:hover {
 }
 
 html[data-theme='light'] .secondaryButton {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .secondaryButton:hover {
@@ -386,15 +390,25 @@ html[data-theme='light'] .secondaryButton {
 }
 
 .ghostButton {
-  color: #bd34fe !important;
+  color: var(--home-button-primary) !important;
   background: transparent;
-  border: 1px solid rgba(189, 52, 254, 0.4);
+  border: 1px solid rgba(8, 126, 164, 0.28);
 }
 
 .ghostButton:hover {
   transform: translateY(-2px);
-  background: rgba(189, 52, 254, 0.08);
-  box-shadow: 0 4px 16px rgba(189, 52, 254, 0.18);
+  background: rgba(8, 126, 164, 0.08);
+  border-color: rgba(8, 126, 164, 0.45);
+}
+
+html[data-theme='dark'] .ghostButton {
+  color: #7ddfff !important;
+  border-color: rgba(65, 209, 255, 0.28);
+}
+
+html[data-theme='dark'] .ghostButton:hover {
+  background: rgba(65, 209, 255, 0.08);
+  border-color: rgba(65, 209, 255, 0.45);
 }
 
 .cliWrap {

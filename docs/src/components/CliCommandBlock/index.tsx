@@ -97,9 +97,9 @@ function CommandLine({ text }: { text: string }) {
   if (text.includes('mkdir') && text.includes('cd')) {
     return (
       <>
-        <span className={styles.cmdKeyword}>mkdir</span> <span className={styles.cmdPath}>my-blog</span>{' '}
+        <span className={styles.cmdKeyword}>mkdir</span> <span className={styles.cmdPath}>my-site</span>{' '}
         <span className={styles.cmdOperator}>&&</span> <span className={styles.cmdKeyword}>cd</span>{' '}
-        <span className={styles.cmdPath}>my-blog</span>
+        <span className={styles.cmdPath}>my-site</span>
       </>
     );
   }
@@ -149,8 +149,8 @@ function SuccessLine({ text }: { text: string }) {
 
 function resolveToolbarCwd(history: { kind: string; text: string }[], activeInput: string): string {
   const entered = [...history.filter((line) => line.kind === 'input').map((line) => line.text), activeInput];
-  if (entered.some((line) => line.includes('cd my-blog') || line.trim() === 'reactpress init')) {
-    return '~/my-blog';
+  if (entered.some((line) => line.includes('cd my-site') || line.trim() === 'reactpress init')) {
+    return '~/my-site';
   }
   return '~';
 }

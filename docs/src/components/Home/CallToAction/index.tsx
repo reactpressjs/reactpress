@@ -12,11 +12,11 @@ function CallToAction() {
       <div className={styles.container}>
         <header className={styles.header}>
           <h2 className={styles.title}>
-            <Translate id="home.call.feature">One platform. Developer-first workflow.</Translate>
+            <Translate id="home.call.feature">Write with focus. Publish with joy.</Translate>
           </h2>
           <p className={styles.subtitle}>
             <Translate id="home.call.subtitle">
-              Website creation, content management, and extensibility — together in a React-native stack.
+              Self-hosted writing, management, and publishing — themes, plugins, and a desktop app when you need them.
             </Translate>
           </p>
         </header>

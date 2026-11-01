@@ -311,19 +311,22 @@
     "description": "The title of the tag list page"
   },
   "theme.tagline": {
-    "message": "The Modern Web Creation Platform."
+    "message": "Write with Focus. Publish with Joy."
   },
   "home.meta.title": {
-    "message": "ReactPress — The Modern Web Creation Platform."
+    "message": "ReactPress — Write with Focus. Publish with Joy."
   },
   "home.meta.description": {
-    "message": "ReactPress is an open-source platform for building, managing, and extending modern websites with React. CMS core, themes, plugins, and developer guides — one CLI, ~60 seconds to live."
+    "message": "ReactPress is a self-hosted publishing platform to write, manage, and publish — all in one place. Themes, plugins, desktop app, and one CLI. Live in about 60 seconds."
   },
   "home.hero.eyebrow": {
     "message": "Open source · Self-hosted · React-native"
   },
   "home.hero.subTitle": {
-    "message": "Build, manage, and extend modern websites with React."
+    "message": "A self-hosted publishing platform to write, manage, and publish — all in one place."
+  },
+  "home.hero.docs": {
+    "message": "Documentation"
   },
   "home.hero.chip.cms": {
     "message": "Editorial CMS"
@@ -419,37 +422,91 @@
     "message": "Plugin system"
   },
   "home.stats.tagline": {
-    "message": "Build. Manage. Extend. — for React developers."
+    "message": "Write. Manage. Publish. — for creators and React developers."
+  },
+  "home.quickstart.eyebrow": {
+    "message": "Get started in ~60 seconds"
+  },
+  "home.quickstart.step1.title": {
+    "message": "Install CLI"
+  },
+  "home.quickstart.step1.detail": {
+    "message": "Node.js 20+ required."
+  },
+  "home.quickstart.step2.title": {
+    "message": "Create a site"
+  },
+  "home.quickstart.step2.detail": {
+    "message": "Any empty folder works."
+  },
+  "home.quickstart.step3.title": {
+    "message": "Initialize"
+  },
+  "home.quickstart.step3.detail": {
+    "message": "Starts API, Admin, and theme automatically."
+  },
+  "home.quickstart.endpoint.site": {
+    "message": "Website"
+  },
+  "home.quickstart.endpoint.admin": {
+    "message": "Admin"
+  },
+  "home.quickstart.after": {
+    "message": "Then open"
+  },
+  "home.quickstart.hint": {
+    "message": "Stuck? Run reactpress doctor — or follow the first-site guide."
+  },
+  "home.quickstart.guide": {
+    "message": "5-minute first site"
+  },
+  "home.quickstart.sixty": {
+    "message": "60-second Next.js blog"
+  },
+  "home.quickstart.vercel": {
+    "message": "Deploy to Vercel"
   },
   "home.cli.terminal.aria": {
     "message": "ReactPress quick start command demo"
   },
   "home.highlights.eyebrow": {
-    "message": "Core product · ReactPress CMS"
+    "message": "Why ReactPress"
   },
   "home.highlights.title": {
-    "message": "A focused CMS. A growing platform."
+    "message": "Everything you need to publish"
   },
   "home.highlights.subtitle": {
-    "message": "Ship websites with one CLI today — plugins, themes, and ecosystem layers when you need them."
+    "message": "Write with focus, manage in one place, and publish with joy — themes, plugins, and desktop when you need them."
+  },
+  "home.highlight.writing.title": {
+    "message": "Writing & content"
+  },
+  "home.highlight.writing.desc": {
+    "message": "Create, organize, and publish from a focused Markdown editor — posts, pages, tags, and media."
   },
   "home.highlight.plugins.title": {
-    "message": "Plugin ecosystem"
+    "message": "Plugins"
   },
   "home.highlight.plugins.desc": {
-    "message": "Hook system, plugin.json manifest, and Admin slots — SEO, auto-summary, and image pipelines ship built-in."
+    "message": "Extend Admin and API with Hooks — SEO, auto-summary, image pipelines, and custom Admin slots."
   },
   "home.highlight.desktop.title": {
-    "message": "Desktop client"
+    "message": "Desktop app"
   },
   "home.highlight.desktop.desc": {
-    "message": "Write offline, sync when ready — Electron shell with SQLite local mode and seamless remote publishing."
+    "message": "The same experience on the desktop — Electron with local SQLite, or sync to a remote API."
   },
   "home.highlight.themes.title": {
-    "message": "npm theme catalog"
+    "message": "Themes"
   },
   "home.highlight.themes.desc": {
-    "message": "Install production themes from npm — official catalog, theme-starter scaffold, and hello-world template."
+    "message": "Customize the look with Next.js SSR themes from npm — starter scaffold and one-click catalog install."
+  },
+  "home.highlight.multidevice.title": {
+    "message": "Multi-device"
+  },
+  "home.highlight.multidevice.desc": {
+    "message": "Works on desktop, tablet, and mobile browsers — one publishing stack across every screen."
   },
   "复制命令，立即开始": {
     "message": "Copy commands to get started"
@@ -509,10 +566,10 @@
     "message": "CMS, admin, API, themes, plugins, and desktop — no stitching together five repos to ship content."
   },
   "home.quickstart.title": {
-    "message": "Your CMS in one minute"
+    "message": "From zero to a live site"
   },
   "home.quickstart.desc": {
-    "message": "Run these commands in an empty folder to start the blog and admin with zero manual setup."
+    "message": "Three commands. Embedded SQLite. No Docker. Default login is admin / admin — change it before going public."
   },
   "home.quickstart.link30": {
     "message": "ReactPress 4.0 guide"
@@ -524,34 +581,34 @@
     "message": "Migrate from 2.x"
   },
   "home.quickstart.aria": {
-    "message": "Quick start commands"
+    "message": "Quick start"
   },
   "home.platform.eyebrow": {
-    "message": "ReactPress Platform"
+    "message": "Core value"
   },
   "home.platform.title": {
-    "message": "Build. Manage. Extend."
+    "message": "Write. Manage. Publish."
   },
   "home.platform.subtitle": {
-    "message": "An open-source platform that brings website creation, content management, and extensibility together for modern web developers."
+    "message": "A self-hosted publishing platform that keeps writing joyful and shipping simple — for creators and React developers alike."
   },
   "home.platform.build.title": {
-    "message": "Build"
+    "message": "Write"
   },
   "home.platform.build.desc": {
-    "message": "Create modern websites with React and a developer-first workflow."
+    "message": "Stay in flow with a focused editor — Markdown, media, and structure without ceremony."
   },
   "home.platform.manage.title": {
     "message": "Manage"
   },
   "home.platform.manage.desc": {
-    "message": "Manage content and websites through a unified CMS."
+    "message": "One CMS for posts, pages, comments, SEO, themes, and plugins — self-hosted on your terms."
   },
   "home.platform.extend.title": {
-    "message": "Extend"
+    "message": "Publish"
   },
   "home.platform.extend.desc": {
-    "message": "Customize and expand with plugins, themes, templates, and components."
+    "message": "Ship beautiful Next.js sites, extend with plugins, or go headless — from CLI to Vercel."
   },
   "home.ecosystem.eyebrow": {
     "message": "Ecosystem"
@@ -560,7 +617,7 @@
     "message": "Themes, plugins, and guides — one hub"
   },
   "home.ecosystem.subtitle": {
-    "message": "ReactPress.cc is the entry point for the whole platform: core CMS today, extensions and best practices growing with you."
+    "message": "ReactPress.cc is the entry point for the whole platform: publishing core today, extensions and best practices growing with you."
   },
   "home.ecosystem.themes.title": {
     "message": "Themes"
@@ -599,10 +656,10 @@
     "message": "Read guides"
   },
   "home.call.feature": {
-    "message": "One platform. Developer-first workflow."
+    "message": "Write with focus. Publish with joy."
   },
   "home.call.subtitle": {
-    "message": "Website creation, content management, and extensibility — together in a React-native stack."
+    "message": "Self-hosted writing, management, and publishing — themes, plugins, and a desktop app when you need them."
   },
   "home.call.cta": {
     "message": "Explore the full documentation"
@@ -611,34 +668,34 @@
     "message": "Zero-config setup"
   },
   "home.feature.zero.desc": {
-    "message": "Installer-style wizard configures your site and database automatically — two commands, embedded SQLite, no Docker required by default."
+    "message": "Three commands, embedded SQLite, no Docker by default — config and .env generated for you."
   },
   "home.feature.cli.title": {
-    "message": "All-in-one CLI"
+    "message": "Themes & plugins"
   },
   "home.feature.cli.desc": {
-    "message": "One binary for init, doctor, logs, and stop — live URLs the moment your stack is up."
+    "message": "Swap Next.js SSR themes from npm and extend Admin/API with Hooks when you need more."
   },
   "home.feature.ui.title": {
-    "message": "Modern interface"
+    "message": "Desktop app"
   },
   "home.feature.ui.desc": {
-    "message": "Polished admin and public site with light/dark themes — built for daily editorial work."
+    "message": "The same publishing experience on the desktop — local SQLite or sync to a remote API."
   },
   "home.feature.content.title": {
-    "message": "Content & authoring"
+    "message": "Writing & content"
   },
   "home.feature.content.desc": {
-    "message": "Markdown-native editor with articles, taxonomies, pages, comments, and media — everything writers and editors expect."
+    "message": "Create, organize, and publish from a focused Markdown editor — posts, pages, tags, comments, and media."
   },
   "home.feature.headless.title": {
     "message": "Open integrations"
   },
   "home.feature.headless.desc": {
-    "message": "REST APIs, access keys, and webhooks — wire ReactPress into your CI, mobile apps, or data pipeline."
+    "message": "REST APIs, access keys, and webhooks — wire ReactPress into CI, apps, or your own frontend."
   },
   "home.feature.i18n.title": {
-    "message": "Internationalization"
+    "message": "Multi-device"
   },
   "home.feature.i18n.desc": {
     "message": "Bilingual UI out of the box — responsive layouts that feel native on desktop, tablet, and phone."

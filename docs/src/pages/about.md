@@ -1,28 +1,28 @@
 ---
 title: About ReactPress
 description: >-
-  About ReactPress — The Modern Web Creation Platform. Build, manage, and extend
-  modern websites with React. Open-source CMS core with themes and plugins.
-keywords: [reactpress, about, open source, modern web creation platform, react cms]
+  About ReactPress — Write with Focus. Publish with Joy. A self-hosted publishing
+  platform to write, manage, and publish in one place. Open-source CMS with themes and plugins.
+keywords: [reactpress, about, open source, self-hosted publishing, react cms]
 ---
 
 # About ReactPress
 
-**ReactPress** is **The Modern Web Creation Platform** for React developers.
+**Write with Focus. Publish with Joy.**
 
-Build, manage, and extend modern websites with React. The core product is **ReactPress CMS**; plugins, themes, templates, and components expand what you can ship. Long-term we are building an open ecosystem for modern web creators — while keeping the CMS focused and usable today.
+**ReactPress** is a **self-hosted publishing platform** to write, manage, and publish — all in one place. The core product is **ReactPress CMS**; plugins, themes, templates, and components expand what you can ship. Long-term we are building an open ecosystem for modern publishers — while keeping the product focused and usable today.
 
 ## Positioning
 
-| Item         | Definition                                                      |
-| ------------ | --------------------------------------------------------------- |
-| Brand        | ReactPress                                                      |
-| Domain       | [reactpress.cc](https://www.reactpress.cc/)                     |
-| Category     | Modern Web Creation Platform                                    |
-| Core users   | React developers, indie builders, site creators                 |
-| Core product | ReactPress CMS                                                  |
-| Slogan       | **Build. Manage. Extend.**                                      |
-| Mission      | Make building and managing websites easier for React developers |
+| Item         | Definition                                                           |
+| ------------ | -------------------------------------------------------------------- |
+| Brand        | ReactPress                                                           |
+| Domain       | [reactpress.cc](https://www.reactpress.cc/)                          |
+| Category     | Self-hosted publishing platform                                      |
+| Core users   | Creators, React developers, indie builders, site owners              |
+| Core product | ReactPress CMS                                                       |
+| Slogan       | **Write with Focus. Publish with Joy.**                              |
+| Mission      | Make writing, managing, and publishing websites simple — self-hosted |
 
 ## What we build
 
@@ -44,19 +44,20 @@ npm i -g @fecommunity/reactpress
 ## Platform model
 
 ```text
-BUILD · MANAGE · EXTEND
+WRITE · MANAGE · PUBLISH
 
-ReactPress CMS     → website creation, content, publish
+ReactPress CMS     → writing, content, publish
 Plugins / Themes   → extend and customize
 Templates / Components → accelerate delivery
 Marketplace (later) → discover, install, trade extensions
 ```
 
-We are **not** positioning ReactPress as “WordPress rewritten in React.” The difference is a **developer-first workflow** on a modern JavaScript stack.
+We are **not** positioning ReactPress as “WordPress rewritten in React.” The difference is a **focused publishing workflow** on a modern JavaScript stack.
 
 ## Who ReactPress is for
 
-- **React developers** who want one platform to build and operate websites
+- **Writers & site owners** who want a focused editor and self-hosted control
+- **React developers** who want one stack to build and operate websites
 - **Indie builders** who need CMS + theme + CLI without assembling five tools
 - **Teams evaluating modern CMS options** — see [ReactPress vs WordPress](/docs/getting-started/reactpress-vs-wordpress)
 - **Self-hosters** — see [Self-hosted CMS for React](/docs/getting-started/self-hosted-cms-for-react)

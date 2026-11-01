@@ -46,7 +46,7 @@ First bootstrap: `admin` / `admin`. Change password immediately after login; in 
 <details>
 <summary><strong>What is ReactPress?</strong></summary>
 
-An open-source **Modern Web Creation Platform** for React developers (Admin + NestJS API + Next.js themes + plugins + desktop client) — not a Headless-only API. Slogan: **Build. Manage. Extend.** See [What is ReactPress?](../getting-started/what-is-reactpress.md).
+A **self-hosted publishing platform** (Admin + NestJS API + Next.js themes + plugins + desktop client) to write, manage, and publish in one place — not a Headless-only API. Slogan: **Write with Focus. Publish with Joy.** See [What is ReactPress?](../getting-started/what-is-reactpress.md).
 
 </details>
 

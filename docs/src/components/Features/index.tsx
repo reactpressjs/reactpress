@@ -14,40 +14,39 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: translate({ message: 'Zero-config setup', id: 'home.feature.zero.title' }),
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: translate({ message: 'Writing & content', id: 'home.feature.content.title' }),
+    Svg: require('@site/static/img/undraw_typewriter.svg').default,
     description: translate({
       message:
-        'Installer-style wizard configures your site and database automatically — two commands, embedded SQLite, no Docker required by default.',
-      id: 'home.feature.zero.desc',
+        'Create, organize, and publish from a focused Markdown editor — posts, pages, tags, comments, and media.',
+      id: 'home.feature.content.desc',
     }),
     accent: 1,
   },
   {
-    title: translate({ message: 'All-in-one CLI', id: 'home.feature.cli.title' }),
-    Svg: require('@site/static/img/undraw_version_control.svg').default,
+    title: translate({ message: 'Zero-config setup', id: 'home.feature.zero.title' }),
+    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: translate({
-      message: 'One binary for init, doctor, logs, and stop — live URLs the moment your stack is up.',
-      id: 'home.feature.cli.desc',
+      message: 'Three commands, embedded SQLite, no Docker by default — config and .env generated for you.',
+      id: 'home.feature.zero.desc',
     }),
     accent: 2,
   },
   {
-    title: translate({ message: 'Modern interface', id: 'home.feature.ui.title' }),
-    Svg: require('@site/static/img/undraw_react.svg').default,
+    title: translate({ message: 'Themes & plugins', id: 'home.feature.cli.title' }),
+    Svg: require('@site/static/img/undraw_version_control.svg').default,
     description: translate({
-      message: 'Polished admin and public site with light/dark themes — built for daily editorial work.',
-      id: 'home.feature.ui.desc',
+      message: 'Swap Next.js SSR themes from npm and extend Admin/API with Hooks when you need more.',
+      id: 'home.feature.cli.desc',
     }),
     accent: 3,
   },
   {
-    title: translate({ message: 'Content & authoring', id: 'home.feature.content.title' }),
-    Svg: require('@site/static/img/undraw_typewriter.svg').default,
+    title: translate({ message: 'Desktop app', id: 'home.feature.ui.title' }),
+    Svg: require('@site/static/img/undraw_react.svg').default,
     description: translate({
-      message:
-        'Markdown-native editor with articles, taxonomies, pages, comments, and media — everything writers and editors expect.',
-      id: 'home.feature.content.desc',
+      message: 'The same publishing experience on the desktop — local SQLite or sync to a remote API.',
+      id: 'home.feature.ui.desc',
     }),
     accent: 1,
   },
@@ -55,13 +54,13 @@ const FeatureList: FeatureItem[] = [
     title: translate({ message: 'Open integrations', id: 'home.feature.headless.title' }),
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: translate({
-      message: 'REST APIs, access keys, and webhooks — wire ReactPress into your CI, mobile apps, or data pipeline.',
+      message: 'REST APIs, access keys, and webhooks — wire ReactPress into CI, apps, or your own frontend.',
       id: 'home.feature.headless.desc',
     }),
     accent: 2,
   },
   {
-    title: translate({ message: 'Internationalization', id: 'home.feature.i18n.title' }),
+    title: translate({ message: 'Multi-device', id: 'home.feature.i18n.title' }),
     Svg: require('@site/static/img/undraw_around_the_world.svg').default,
     description: translate({
       message: 'Bilingual UI out of the box — responsive layouts that feel native on desktop, tablet, and phone.',

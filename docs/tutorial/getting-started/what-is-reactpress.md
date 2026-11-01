@@ -2,17 +2,18 @@
 sidebar_position: 2
 title: ReactPress 是什么？
 description: >-
-  ReactPress 是什么？面向 React 开发者的现代化 Web 创作平台 — 构建、管理并扩展现代网站。
+  ReactPress 是什么？可自托管的发布平台 — 写作、管理、发布一站式完成。
   一条 CLI 提供 CMS 后台、NestJS API、Next.js 主题、插件与桌面客户端。
-keywords:
-  [reactpress 是什么, reactpress, 现代化 web 创作平台, react cms, next.js cms, 开源 cms, wordpress 替代, 自托管博客]
+keywords: [reactpress 是什么, reactpress, 自托管发布平台, react cms, next.js cms, 开源 cms, wordpress 替代, 自托管博客]
 ---
 
 # ReactPress 是什么？
 
-**ReactPress** 是面向 React 开发者的 **现代化 Web 创作平台（The Modern Web Creation Platform）**。用 React 构建、管理并扩展现代网站 — 无需从零拼装 Headless CMS、管理后台与前端。
+**Write with Focus. Publish with Joy.**
 
-核心产品是 **ReactPress CMS**；插件、主题、模板与组件是扩展层。公开 Marketplace 属于后续生态阶段——当前重点是让 React 开发者真正愿意用的 CMS。
+**ReactPress** 是一个**可自托管的发布平台**：写作、管理、发布，一站式完成 — 无需从零拼装 Headless CMS、管理后台与前端。
+
+核心产品是 **ReactPress CMS**；插件、主题、模板与组件是扩展层。公开 Marketplace 属于后续生态阶段——当前重点是让创作者与 React 开发者真正愿意用的发布栈。
 
 一条全局 CLI 即可获得：
 
@@ -39,9 +40,9 @@ reactpress init
 
 React 生态里很多工具只交付 **API**（Strapi、Payload、Contentful、Sanity）。管理界面、营销站、媒体流程与部署脚本仍需自己拼。
 
-ReactPress 是 **完整的 Web 创作平台**（不是「React 版 WordPress」）：
+ReactPress 是 **完整的自托管发布平台**（不是「React 版 WordPress」）：
 
-> **Build 用 React 构建 · Manage 用 CMS 管理 · Extend 用插件与主题扩展**
+> **Write 专注写作 · Manage 统一管理 · Publish 愉快发布**
 
 > Admin 管内容 · 主题管呈现 · 插件管逻辑 · API 管数据 · Toolkit 管契约
 

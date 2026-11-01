@@ -1,13 +1,6 @@
 import { translate } from '@docusaurus/Translate';
 import Translate from '@docusaurus/Translate';
-import {
-  IconDesktop,
-  IconLayers,
-  IconPlugins,
-  IconRocket,
-  IconTerminal,
-  IconThemes,
-} from '@site/src/components/Home/icons';
+import { IconDesktop, IconLayers, IconPen, IconPlugins, IconThemes } from '@site/src/components/Home/icons';
 import React from 'react';
 
 import styles from './styles.module.css';
@@ -16,66 +9,54 @@ type HighlightItem = {
   Icon: React.ComponentType<{ className?: string }>;
   title: string;
   description: string;
-  accent: 'purple' | 'cyan' | 'teal';
+  accent: 'teal' | 'cyan' | 'blue';
 };
 
 const items: HighlightItem[] = [
   {
-    Icon: IconPlugins,
-    title: translate({ message: 'Plugin ecosystem', id: 'home.highlight.plugins.title' }),
+    Icon: IconPen,
+    title: translate({ message: 'Writing & content', id: 'home.highlight.writing.title' }),
     description: translate({
-      message:
-        'Hook system, plugin.json manifest, and Admin slots — SEO, auto-summary, and image pipelines ship built-in.',
-      id: 'home.highlight.plugins.desc',
+      message: 'Create, organize, and publish from a focused Markdown editor — posts, pages, tags, and media.',
+      id: 'home.highlight.writing.desc',
     }),
-    accent: 'purple',
-  },
-  {
-    Icon: IconDesktop,
-    title: translate({ message: 'Desktop client', id: 'home.highlight.desktop.title' }),
-    description: translate({
-      message: 'Write offline, sync when ready — Electron shell with SQLite local mode and seamless remote publishing.',
-      id: 'home.highlight.desktop.desc',
-    }),
-    accent: 'cyan',
+    accent: 'teal',
   },
   {
     Icon: IconThemes,
-    title: translate({ message: 'npm theme catalog', id: 'home.highlight.themes.title' }),
+    title: translate({ message: 'Themes', id: 'home.highlight.themes.title' }),
     description: translate({
-      message:
-        'Install production themes from npm — official catalog, theme-starter scaffold, and hello-world template.',
+      message: 'Customize the look with Next.js SSR themes from npm — starter scaffold and one-click catalog install.',
       id: 'home.highlight.themes.desc',
-    }),
-    accent: 'teal',
-  },
-  {
-    Icon: IconRocket,
-    title: translate({ message: 'Zero-config setup', id: 'home.highlight.zero.title' }),
-    description: translate({
-      message:
-        'One command, one minute — auto-generated config, .env, and embedded SQLite. No Docker or manual environment wiring.',
-      id: 'home.highlight.zero.desc',
-    }),
-    accent: 'purple',
-  },
-  {
-    Icon: IconTerminal,
-    title: translate({ message: 'One command line tool', id: 'home.highlight.cli.title' }),
-    description: translate({
-      message: 'init, doctor, logs, stop — the entire lifecycle from a single global install in your terminal.',
-      id: 'home.highlight.cli.desc',
     }),
     accent: 'cyan',
   },
   {
-    Icon: IconLayers,
-    title: translate({ message: 'Full-stack in one box', id: 'home.highlight.dx.title' }),
+    Icon: IconPlugins,
+    title: translate({ message: 'Plugins', id: 'home.highlight.plugins.title' }),
     description: translate({
-      message: 'CMS, admin, API, themes, plugins, and desktop — no stitching together five repos to ship content.',
-      id: 'home.highlight.dx.desc',
+      message: 'Extend Admin and API with Hooks — SEO, auto-summary, image pipelines, and custom Admin slots.',
+      id: 'home.highlight.plugins.desc',
+    }),
+    accent: 'blue',
+  },
+  {
+    Icon: IconDesktop,
+    title: translate({ message: 'Desktop app', id: 'home.highlight.desktop.title' }),
+    description: translate({
+      message: 'The same experience on the desktop — Electron with local SQLite, or sync to a remote API.',
+      id: 'home.highlight.desktop.desc',
     }),
     accent: 'teal',
+  },
+  {
+    Icon: IconLayers,
+    title: translate({ message: 'Multi-device', id: 'home.highlight.multidevice.title' }),
+    description: translate({
+      message: 'Works on desktop, tablet, and mobile browsers — one publishing stack across every screen.',
+      id: 'home.highlight.multidevice.desc',
+    }),
+    accent: 'cyan',
   },
 ];
 
@@ -84,14 +65,15 @@ export default function Highlights() {
     <section className={styles.section} aria-labelledby="home-highlights-heading">
       <header className={styles.header}>
         <p className={styles.eyebrow}>
-          <Translate id="home.highlights.eyebrow">Core product · ReactPress CMS</Translate>
+          <Translate id="home.highlights.eyebrow">Why ReactPress</Translate>
         </p>
         <h2 id="home-highlights-heading" className={styles.heading}>
-          <Translate id="home.highlights.title">A focused CMS. A growing platform.</Translate>
+          <Translate id="home.highlights.title">Everything you need to publish</Translate>
         </h2>
         <p className={styles.subheading}>
           <Translate id="home.highlights.subtitle">
-            Ship websites with one CLI today — plugins, themes, and ecosystem layers when you need them.
+            Write with focus, manage in one place, and publish with joy — themes, plugins, and desktop when you need
+            them.
           </Translate>
         </p>
       </header>
