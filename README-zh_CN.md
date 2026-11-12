@@ -106,16 +106,6 @@ reactpress init
   </a>
 </p>
 
-## Star 趋势
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="public/star-history/star-history-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="public/star-history/star-history-light.svg" />
-    <img src="public/star-history/star-history-light.svg" alt="ReactPress Star 趋势" width="100%" />
-  </picture>
-</p>
-
 ## 许可证
 
 详见 [LICENSE](./LICENSE)。

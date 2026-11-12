@@ -102,16 +102,6 @@ If you find ReactPress useful, please consider giving it a star.
   </a>
 </p>
 
-## Star History
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="public/star-history/star-history-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="public/star-history/star-history-light.svg" />
-    <img src="public/star-history/star-history-light.svg" alt="ReactPress Star History" width="100%" />
-  </picture>
-</p>
-
 ## License
 
 See [LICENSE](./LICENSE).

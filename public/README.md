@@ -20,10 +20,9 @@ pnpm export:brand
 
 Root-level demo media (`usage.gif`, `demo.gif`, `desktop.gif`, `lighthouse.png`) is referenced by [README.md](../README.md) and [README-zh_CN](../README-zh_CN.md).
 
-| Directory       | Contents                                                                                                                                                                    |
-| :-------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `admin/`        | Admin UI screenshots for [web/README](../web/README.md) and [docs site](https://reactpress.cc/): `post.png`, `midia.png`, `plugins.png`, `theme-custom.png`, `settings.png` |
-| `star-history/` | GitHub star history charts for root README files                                                                                                                            |
+| Directory | Contents                                                                                                                                                                    |
+| :-------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `admin/`  | Admin UI screenshots for [web/README](../web/README.md) and [docs site](https://reactpress.cc/): `post.png`, `midia.png`, `plugins.png`, `theme-custom.png`, `settings.png` |
 
 A copy of `admin/` is synced to `docs/static/img/admin/` for the documentation site.
 
