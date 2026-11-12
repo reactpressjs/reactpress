@@ -83,7 +83,7 @@ reactpress init
 | **Headless**  | `/api/article` 与 toolkit SDK，对接自定义 React 应用 |
 | **换肤**      | npm catalog — 保留 Admin，替换前端                   |
 
-自定义主题：[主题开发](../developer-guide/theme-development.md) · starter：[reactpress-theme-starter](https://github.com/fecommunity/reactpress-theme-starter)
+自定义主题：[主题开发](../developer-guide/theme-development.md) · starter：[reactpress-theme-starter](https://github.com/reactpressjs/reactpress-theme-starter)
 
 ## 可选 — 验证 API 与 Headless
 

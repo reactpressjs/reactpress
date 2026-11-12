@@ -15,16 +15,16 @@ keywords: [reactpress, migration, 2.x, 3.0, upgrade]
 
 ## 命令对照
 
-| 2.x | 3.0 |
-|-----|-----|
-| `npm i -g @fecommunity/reactpress-cli` | `npm i -g @fecommunity/reactpress@3` |
-| `reactpress-cli init` | `reactpress init` |
-| `reactpress-cli start` | `reactpress dev` 或 `reactpress server start` |
-| `npx @fecommunity/reactpress-server` | `reactpress dev --api-only` 或 `reactpress server start` |
-| `npx @fecommunity/reactpress-client` | `reactpress dev`（全栈）或 `reactpress dev --client-only` |
-| `pnpm dev:server` | `pnpm dev:api` 或 `reactpress dev --api-only` |
-| 多包分别安装 | **一个包** `@fecommunity/reactpress` |
-| 无环境诊断 | `reactpress doctor` / `reactpress status` |
+| 2.x                                    | 3.0                                                       |
+| -------------------------------------- | --------------------------------------------------------- |
+| `npm i -g @fecommunity/reactpress-cli` | `npm i -g @fecommunity/reactpress@3`                      |
+| `reactpress-cli init`                  | `reactpress init`                                         |
+| `reactpress-cli start`                 | `reactpress dev` 或 `reactpress server start`             |
+| `npx @fecommunity/reactpress-server`   | `reactpress dev --api-only` 或 `reactpress server start`  |
+| `npx @fecommunity/reactpress-client`   | `reactpress dev`（全栈）或 `reactpress dev --client-only` |
+| `pnpm dev:server`                      | `pnpm dev:api` 或 `reactpress dev --api-only`             |
+| 多包分别安装                           | **一个包** `@fecommunity/reactpress`                      |
+| 无环境诊断                             | `reactpress doctor` / `reactpress status`                 |
 
 > `reactpress-cli` 命令在 3.0 仍可用但会打印 deprecated 警告，3.1 移除。请统一改用 `reactpress`。
 
@@ -71,4 +71,4 @@ curl http://localhost:3002/api/health
 ## 获取帮助
 
 - [ReactPress 3.0 平台版](./reactpress-3-0.md)
-- [GitHub Issues](https://github.com/fecommunity/reactpress/issues)
+- [GitHub Issues](https://github.com/reactpressjs/reactpress/issues)

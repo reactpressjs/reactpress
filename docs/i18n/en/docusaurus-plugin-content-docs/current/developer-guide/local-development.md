@@ -12,18 +12,18 @@ For developers **contributing to the ReactPress repository** or debugging core /
 ## Environment setup
 
 ```bash
-git clone --depth=1 https://github.com/fecommunity/reactpress.git
+git clone --depth=1 https://github.com/reactpressjs/reactpress.git
 cd reactpress
 npm i -g pnpm
 pnpm install
 ```
 
-| Requirement | Notes |
-|------|------|
-| Node.js | ≥ 20 |
-| pnpm | 9.x (see `packageManager` field) |
-| Docker | Optional; default SQLite needs none |
-| OS | macOS / Linux / Windows |
+| Requirement | Notes                               |
+| ----------- | ----------------------------------- |
+| Node.js     | ≥ 20                                |
+| pnpm        | 9.x (see `packageManager` field)    |
+| Docker      | Optional; default SQLite needs none |
+| OS          | macOS / Linux / Windows             |
 
 ## Repository layout
 
@@ -51,13 +51,13 @@ Equivalent to end-user `reactpress init` full stack, but uses workspace source i
 
 ## Per-process development
 
-| Command | Purpose |
-|------|------|
-| `pnpm dev:api` | Debug Server only |
-| `pnpm dev:web` | Admin + API |
-| `pnpm dev:client` | Theme only |
-| `pnpm dev:desktop` | Electron + SQLite |
-| `pnpm dev:docs` | Docs site http://localhost:3000 (docs package uses its own port — see terminal output) |
+| Command            | Purpose                                                                                |
+| ------------------ | -------------------------------------------------------------------------------------- |
+| `pnpm dev:api`     | Debug Server only                                                                      |
+| `pnpm dev:web`     | Admin + API                                                                            |
+| `pnpm dev:client`  | Theme only                                                                             |
+| `pnpm dev:desktop` | Electron + SQLite                                                                      |
+| `pnpm dev:docs`    | Docs site http://localhost:3000 (docs package uses its own port — see terminal output) |
 
 ## Build and test
 
@@ -92,18 +92,18 @@ Source docs: `docs/tutorial/` (Chinese). English translations: `docs/i18n/en/doc
 
 - Code and commit messages: **English**
 - User docs: English README + Chinese `README-zh_CN.md`; this site is Chinese-primary with English i18n sync
-- See repo [CONTRIBUTING.md](https://github.com/fecommunity/reactpress/blob/master/CONTRIBUTING.md)
+- See repo [CONTRIBUTING.md](https://github.com/reactpressjs/reactpress/blob/master/CONTRIBUTING.md)
 
 ## Global CLI vs Monorepo
 
-| | Global `@fecommunity/reactpress` | Monorepo `pnpm dev` |
-|---|-------------------------------|---------------------|
-| API source | bundled in CLI | workspace `server/` |
-| Commands | init / doctor / logs / stop | full dev / build / pm2 |
-| For | Site builders | core / theme / plugin contributors |
+|            | Global `@fecommunity/reactpress` | Monorepo `pnpm dev`                |
+| ---------- | -------------------------------- | ---------------------------------- |
+| API source | bundled in CLI                   | workspace `server/`                |
+| Commands   | init / doctor / logs / stop      | full dev / build / pm2             |
+| For        | Site builders                    | core / theme / plugin contributors |
 
 ## Related docs
 
 - [Architecture overview](./architecture-overview.md)
 - [CLI command reference](./cli-reference.md)
-- [ARCHITECTURE.md](https://github.com/fecommunity/reactpress/blob/master/ARCHITECTURE.md)
+- [ARCHITECTURE.md](https://github.com/reactpressjs/reactpress/blob/master/ARCHITECTURE.md)

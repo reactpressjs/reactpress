@@ -53,7 +53,7 @@ A **self-hosted publishing platform** (Admin + NestJS API + Next.js themes + plu
 <details>
 <summary><strong>Can I use my own frontend?</strong></summary>
 
-Yes. ReactPress provides Headless REST + API Key. Fork [reactpress-theme-starter](https://github.com/fecommunity/reactpress-theme-starter) or integrate `/api/article` and other endpoints. See [Headless API guide](../developer-guide/headless-api.md).
+Yes. ReactPress provides Headless REST + API Key. Fork [reactpress-theme-starter](https://github.com/reactpressjs/reactpress-theme-starter) or integrate `/api/article` and other endpoints. See [Headless API guide](../developer-guide/headless-api.md).
 
 </details>
 
@@ -81,7 +81,7 @@ Personal blogs, team knowledge bases, developer doc sites, marketing sites with 
 <details>
 <summary><strong>Can I migrate from WordPress?</strong></summary>
 
-Content can be exported and re-imported via scripts or integrated through the Headless REST API. PHP themes are not portable — rebuild the visitor frontend in Next.js or use [reactpress-theme-starter](https://github.com/fecommunity/reactpress-theme-starter). See [Headless API guide](../developer-guide/headless-api.md) and [ReactPress vs WordPress](../getting-started/reactpress-vs-wordpress.md).
+Content can be exported and re-imported via scripts or integrated through the Headless REST API. PHP themes are not portable — rebuild the visitor frontend in Next.js or use [reactpress-theme-starter](https://github.com/reactpressjs/reactpress-theme-starter). See [Headless API guide](../developer-guide/headless-api.md) and [ReactPress vs WordPress](../getting-started/reactpress-vs-wordpress.md).
 
 </details>
 
@@ -160,8 +160,8 @@ Monorepo dev requires `pnpm run build:plugins` then API restart. Confirm plugin 
 ## Getting help
 
 1. `reactpress doctor` and `reactpress logs`
-2. [GitHub Issues](https://github.com/fecommunity/reactpress/issues)
-3. [GitHub Discussions](https://github.com/fecommunity/reactpress/discussions)
+2. [GitHub Issues](https://github.com/reactpressjs/reactpress/issues)
+3. [GitHub Discussions](https://github.com/reactpressjs/reactpress/discussions)
 
 Before asking, read [How To Ask Questions The Smart Way](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way) and include Node version, OS, `doctor` output, and relevant logs.
 

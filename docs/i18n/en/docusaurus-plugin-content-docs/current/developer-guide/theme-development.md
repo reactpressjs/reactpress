@@ -26,7 +26,7 @@ pnpm dev
 
 ```bash
 npx create-next-app@latest my-blog \
-  --example "https://github.com/fecommunity/reactpress-theme-starter" \
+  --example "https://github.com/reactpressjs/reactpress-theme-starter" \
   --use-pnpm
 ```
 
@@ -34,11 +34,11 @@ Mock mode (no API): `pnpm dev:mock`
 
 ## Three-layer directory model
 
-| Layer | Path | Meaning |
-|----|------|------|
-| Registry | `themes/{id}/` | Available theme source |
-| Runtime | `.reactpress/runtime/{id}/` | Runtime copy after CLI install |
-| Active | DB + `active-theme.json` | Currently enabled theme → `:3001` |
+| Layer    | Path                        | Meaning                           |
+| -------- | --------------------------- | --------------------------------- |
+| Registry | `themes/{id}/`              | Available theme source            |
+| Runtime  | `.reactpress/runtime/{id}/` | Runtime copy after CLI install    |
+| Active   | DB + `active-theme.json`    | Currently enabled theme → `:3001` |
 
 ## theme.json (local theme)
 
@@ -56,7 +56,7 @@ Mock mode (no API): `pnpm dev:mock`
 
 ## npm theme catalog
 
-Standalone npm packages register via **anchor directories** — see repo [themes/README.md](https://github.com/fecommunity/reactpress/blob/master/themes/README.md).
+Standalone npm packages register via **anchor directories** — see repo [themes/README.md](https://github.com/reactpressjs/reactpress/blob/master/themes/README.md).
 
 Install from Admin or `reactpress theme add @scope/pkg@version` (Monorepo).
 
@@ -77,25 +77,21 @@ Align env vars with `CLIENT_SITE_URL` / API URL from `reactpress init`.
 
 Official starter uses Next.js App Router dynamic segments:
 
-| Route | Purpose |
-|------|------|
-| `/` | Home / post list |
-| `/post/[slug]` | Post detail |
-| `/page/[slug]` | Static page |
-| `/category/[slug]` | Category archive |
-| `/tag/[slug]` | Tag archive |
-| `/search` | Site search |
-| `/knowledge` | Knowledge base (starter extension) |
+| Route              | Purpose                            |
+| ------------------ | ---------------------------------- |
+| `/`                | Home / post list                   |
+| `/post/[slug]`     | Post detail                        |
+| `/page/[slug]`     | Static page                        |
+| `/category/[slug]` | Category archive                   |
+| `/tag/[slug]`      | Tag archive                        |
+| `/search`          | Site search                        |
+| `/knowledge`       | Knowledge base (starter extension) |
 
 ### Dynamic route example
 
 ```tsx
 // app/post/[slug]/page.tsx
-export default async function PostPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default async function PostPage({ params }: { params: { slug: string } }) {
   const article = await fetchArticleBySlug(params.slug);
   if (!article) notFound();
   return <ArticleView article={article} />;

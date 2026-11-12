@@ -11,13 +11,13 @@ ReactPress 桌面端是 **Electron 壳 + 同一套 Admin SPA**，适合离线写
 
 ## 下载安装
 
-预构建安装包随 [GitHub Releases](https://github.com/fecommunity/reactpress/releases) 发布（`Release Desktop` 工作流自动构建）。
+预构建安装包随 [GitHub Releases](https://github.com/reactpressjs/reactpress/releases) 发布（`Release Desktop` 工作流自动构建）。
 
-| 平台 | 安装包 | 说明 |
-|------|--------|------|
-| **macOS** | `ReactPress-{version}.dmg` | 打开 DMG，将 ReactPress 拖入「应用程序」 |
-| **Windows** | `ReactPress Setup {version}.exe` | 运行 NSIS 安装向导 |
-| **Linux** | `ReactPress-{version}.AppImage` | `chmod +x` 后直接运行，或集成到桌面环境 |
+| 平台        | 安装包                           | 说明                                     |
+| ----------- | -------------------------------- | ---------------------------------------- |
+| **macOS**   | `ReactPress-{version}.dmg`       | 打开 DMG，将 ReactPress 拖入「应用程序」 |
+| **Windows** | `ReactPress Setup {version}.exe` | 运行 NSIS 安装向导                       |
+| **Linux**   | `ReactPress-{version}.AppImage`  | `chmod +x` 后直接运行，或集成到桌面环境  |
 
 > 若 Release 尚未附带安装包，可在 monorepo 根目录执行 `pnpm build:desktop` 自行打包，产物位于 `desktop/release/`。
 
@@ -27,10 +27,10 @@ ReactPress 桌面端是 **Electron 壳 + 同一套 Admin SPA**，适合离线写
 
 ## 运行模式
 
-| 模式 | 适用场景 | 行为 |
-|------|----------|------|
-| **本地模式**（默认） | 离线写作、无 Docker 试用 | 主进程启动内嵌 SQLite API（默认 `http://127.0.0.1:3002/api`） |
-| **远程模式** | 对接已有生产/ staging API | Admin 指向远程 REST，与 Web 后台共用同一后端 |
+| 模式                 | 适用场景                  | 行为                                                          |
+| -------------------- | ------------------------- | ------------------------------------------------------------- |
+| **本地模式**（默认） | 离线写作、无 Docker 试用  | 主进程启动内嵌 SQLite API（默认 `http://127.0.0.1:3002/api`） |
+| **远程模式**         | 对接已有生产/ staging API | Admin 指向远程 REST，与 Web 后台共用同一后端                  |
 
 ### 切换到远程 API
 
@@ -63,7 +63,7 @@ pnpm build:desktop
 pnpm build:desktop:dir && pnpm open:desktop
 ```
 
-详见仓库 [desktop/README.md](https://github.com/fecommunity/reactpress/blob/master/desktop/README.md)。
+详见仓库 [desktop/README.md](https://github.com/reactpressjs/reactpress/blob/master/desktop/README.md)。
 
 ## 相关文档
 

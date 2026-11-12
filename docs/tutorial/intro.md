@@ -44,7 +44,7 @@ keywords:
 ## 功能特性
 
 - ✍️ **写作与内容管理** — 在专注的编辑器中创建、整理并发布内容
-- 🎨 **主题** — 自定义网站外观。[起步模板](https://github.com/fecommunity/reactpress-theme-starter) · [主题指南](./developer-guide/theme-development.md)
+- 🎨 **主题** — 自定义网站外观。[起步模板](https://github.com/reactpressjs/reactpress-theme-starter) · [主题指南](./developer-guide/theme-development.md)
 - 🧩 **插件** — 通过 Hook 扩展 ReactPress。[插件指南](./developer-guide/plugin-development.md)
 - 🖥️ **桌面应用** — 在桌面端获得同样的使用体验。[桌面端指南](./tutorial-extras/desktop-client.md)
 - 📱 **多端访问** — 支持桌面、平板与移动端浏览器
@@ -78,9 +78,9 @@ reactpress init
 
 ### 部署到 Vercel
 
-基于 [主题起步模板](https://github.com/fecommunity/reactpress-theme-starter)：
+基于 [主题起步模板](https://github.com/reactpressjs/reactpress-theme-starter)：
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Ffecommunity%2Freactpress-theme-starter)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Freactpressjs%2Freactpress-theme-starter)
 
 主题演示：[reactpress-theme-starter.vercel.app](https://reactpress-theme-starter.vercel.app)
 
@@ -105,6 +105,9 @@ reactpress init
 
 | 资源                                                                             | 说明                                |
 | -------------------------------------------------------------------------------- | ----------------------------------- |
+| [官网 reactpress.cc](https://www.reactpress.cc/)                                 | 官方唯一站点                        |
+| [源码仓库](https://github.com/reactpressjs/reactpress)                           | 官方唯一仓库（reactpressjs）        |
+| [npm](https://www.npmjs.com/~reactpressjs)                                       | 官方 npm 账号                       |
 | [@fecommunity/reactpress](https://www.npmjs.com/package/@fecommunity/reactpress) | 4.0 主包（CLI + API + 插件 + 桌面） |
 | [桌面客户端](./tutorial-extras/desktop-client.md)                                | 下载安装、本地 / 远程模式           |
 | [ReactPress 4.0](./tutorial-extras/reactpress-4-0.md)                            | 4.0 能力总览                        |
@@ -114,9 +117,9 @@ reactpress init
 ## 社区互助
 
 1. 先运行 `reactpress doctor` 与 `reactpress logs`
-2. [GitHub Issues](https://github.com/fecommunity/reactpress/issues)
-3. [GitHub Discussions](https://github.com/fecommunity/reactpress/discussions)
-4. [贡献指南](https://github.com/fecommunity/reactpress/blob/master/CONTRIBUTING.md)
+2. [GitHub Issues](https://github.com/reactpressjs/reactpress/issues)
+3. [GitHub Discussions](https://github.com/reactpressjs/reactpress/discussions)
+4. [贡献指南](https://github.com/reactpressjs/reactpress/blob/master/CONTRIBUTING.md)
 
 Email: admin@gaoredu.com
 

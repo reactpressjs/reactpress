@@ -93,7 +93,7 @@ More UI detail: [Create your first site](./first-site.md) · [Create a post](../
 | **Headless**    | `/api/article` and toolkit SDK for custom React apps |
 | **Swap themes** | npm catalog — keep Admin, change the frontend        |
 
-Custom theme path: [Theme development](../developer-guide/theme-development.md) · starter repo: [reactpress-theme-starter](https://github.com/fecommunity/reactpress-theme-starter)
+Custom theme path: [Theme development](../developer-guide/theme-development.md) · starter repo: [reactpress-theme-starter](https://github.com/reactpressjs/reactpress-theme-starter)
 
 ## Optional — verify API & Headless
 

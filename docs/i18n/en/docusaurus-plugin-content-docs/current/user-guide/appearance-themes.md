@@ -42,7 +42,7 @@ Experience theme UI without connecting to API:
 
 ```bash
 npx create-next-app@latest my-blog \
-  --example "https://github.com/fecommunity/reactpress-theme-starter" \
+  --example "https://github.com/reactpressjs/reactpress-theme-starter" \
   --use-pnpm
 cd my-blog && pnpm dev:mock
 ```
@@ -64,7 +64,7 @@ Customization is stored in API; themes read via settings API.
 Developers fork the official starter or copy from `themes/hello-world`:
 
 - [Theme development guide](../developer-guide/theme-development.md)
-- Repo [themes/README.md](https://github.com/fecommunity/reactpress/blob/master/themes/README.md)
+- Repo [themes/README.md](https://github.com/reactpressjs/reactpress/blob/master/themes/README.md)
 
 ## Architecture notes
 

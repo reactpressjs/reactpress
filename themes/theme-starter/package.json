@@ -5,7 +5,7 @@
   "private": true,
   "description": "Official Next.js 15 theme — Tailwind CSS, knowledge base, comments, dark mode, Lighthouse 95+.",
   "author": "ReactPress",
-  "homepage": "https://github.com/fecommunity/reactpress-theme-starter",
+  "homepage": "https://github.com/reactpressjs/reactpress-theme-starter",
   "license": "MIT",
   "dependencies": {
     "@fecommunity/reactpress-theme-starter": "1.0.0-beta.0"
@@ -14,9 +14,14 @@
     "theme": {
       "id": "reactpress-theme-starter",
       "name": "ReactPress Theme Starter",
-      "themeUri": "https://github.com/fecommunity/reactpress-theme-starter",
+      "themeUri": "https://github.com/reactpressjs/reactpress-theme-starter",
       "previewUrl": "https://reactpress-theme-starter.vercel.app",
-      "tags": ["official", "Tailwind", "App Router", "Next.js 15"],
+      "tags": [
+        "official",
+        "Tailwind",
+        "App Router",
+        "Next.js 15"
+      ],
       "featured": true,
       "requires": ">=3.0.0"
     }

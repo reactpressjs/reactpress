@@ -43,7 +43,7 @@ Choose a starting point by role. Every doc includes a summary and next-step link
 ## Features
 
 - ✍️ **Writing & content** — Create, organize, and publish from a focused editor
-- 🎨 **Themes** — Customize the look and feel. [Starter](https://github.com/fecommunity/reactpress-theme-starter) · [Guide](./developer-guide/theme-development.md)
+- 🎨 **Themes** — Customize the look and feel. [Starter](https://github.com/reactpressjs/reactpress-theme-starter) · [Guide](./developer-guide/theme-development.md)
 - 🧩 **Plugins** — Extend ReactPress with hooks. [Guide](./developer-guide/plugin-development.md)
 - 🖥️ **Desktop app** — The same experience on the desktop. [Guide](./tutorial-extras/desktop-client.md)
 - 📱 **Multi-device** — Works on desktop, tablet, and mobile browsers
@@ -75,9 +75,9 @@ Run `reactpress doctor` to diagnose issues. Stop services with `reactpress stop`
 
 ### Deploy to Vercel
 
-Based on the [Theme Starter](https://github.com/fecommunity/reactpress-theme-starter):
+Based on the [Theme Starter](https://github.com/reactpressjs/reactpress-theme-starter):
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Ffecommunity%2Freactpress-theme-starter)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Freactpressjs%2Freactpress-theme-starter)
 
 Theme demo: [reactpress-theme-starter.vercel.app](https://reactpress-theme-starter.vercel.app)
 
@@ -102,6 +102,9 @@ Full comparison: [ReactPress vs WordPress](./getting-started/reactpress-vs-wordp
 
 | Resource                                                                         | Description                                      |
 | -------------------------------------------------------------------------------- | ------------------------------------------------ |
+| [Site reactpress.cc](https://www.reactpress.cc/)                                 | Official website                                 |
+| [Source repo](https://github.com/reactpressjs/reactpress)                        | Official repository (reactpressjs)               |
+| [npm](https://www.npmjs.com/~reactpressjs)                                       | Official npm account                             |
 | [@fecommunity/reactpress](https://www.npmjs.com/package/@fecommunity/reactpress) | 4.0 main package (CLI + API + plugins + desktop) |
 | [Desktop client](./tutorial-extras/desktop-client.md)                            | Install, local / remote modes                    |
 | [ReactPress 4.0](./tutorial-extras/reactpress-4-0.md)                            | 4.0 overview                                     |
@@ -111,9 +114,9 @@ Full comparison: [ReactPress vs WordPress](./getting-started/reactpress-vs-wordp
 ## Community
 
 1. Run `reactpress doctor` and `reactpress logs` first
-2. [GitHub Issues](https://github.com/fecommunity/reactpress/issues)
-3. [GitHub Discussions](https://github.com/fecommunity/reactpress/discussions)
-4. [Contributing guide](https://github.com/fecommunity/reactpress/blob/master/CONTRIBUTING.md)
+2. [GitHub Issues](https://github.com/reactpressjs/reactpress/issues)
+3. [GitHub Discussions](https://github.com/reactpressjs/reactpress/discussions)
+4. [Contributing guide](https://github.com/reactpressjs/reactpress/blob/master/CONTRIBUTING.md)
 
 Email: admin@gaoredu.com
 

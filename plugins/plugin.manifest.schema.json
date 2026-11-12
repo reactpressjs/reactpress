@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/fecommunity/reactpress/blob/master/plugins/plugin.manifest.schema.json",
+  "$id": "https://github.com/reactpressjs/reactpress/blob/master/plugins/plugin.manifest.schema.json",
   "title": "Plugin Manifest",
   "description": "Portable plugin manifest for ReactPress. Stored at plugins/{id}/plugin.json.",
   "type": "object",
@@ -58,10 +58,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "enum": [
-                  "article.editor.meta.afterSummary",
-                  "article.editor.sidebar.afterPublish"
-                ]
+                "enum": ["article.editor.meta.afterSummary", "article.editor.sidebar.afterPublish"]
               },
               "uniqueItems": true,
               "minItems": 1

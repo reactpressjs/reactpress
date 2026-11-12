@@ -109,7 +109,7 @@ const MOCK_CATALOG_THEME: MockTheme = {
   catalog: {
     npm: "@fecommunity/reactpress-theme-starter@1.0.0-beta.0",
     featured: true,
-    themeUri: "https://github.com/fecommunity/reactpress-theme-starter",
+    themeUri: "https://github.com/reactpressjs/reactpress-theme-starter",
   },
 };
 

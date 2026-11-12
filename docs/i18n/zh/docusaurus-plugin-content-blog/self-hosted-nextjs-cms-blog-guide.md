@@ -5,7 +5,7 @@ description: >-
   2026 年如何自托管带真实 CMS 的 Next.js 博客 — SQLite 或 MySQL、SSR SEO、Admin 编辑与数据主权。
   为什么 ReactPress 优于 DIY Strapi + starter 拼装。
 date: 2026-07-24
-authors: [fecommunity]
+authors: [reactpressjs]
 tags:
   - article
   - reactpress
@@ -24,7 +24,7 @@ keywords:
 
 <!--truncate-->
 
-![ReactPress — The Modern Web Creation Platform.](/img/blog/poster.png)
+![ReactPress: Write with Focus. Publish with Joy.](/img/blog/poster.png)
 
 「我们要一个**自托管的 Next.js 博客**」听起来简单。实操上往往会拆成三个项目：CMS、Admin、主题 — 外加备份、SEO 与鉴权。本指南给出一条**务实的 2026 路径**：数据留在自有基础设施上，体验仍像产品，而不是周末硬拼。
 

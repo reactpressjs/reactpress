@@ -1,6 +1,6 @@
 export const REACTPRESS_NPM_PACKAGE = '@fecommunity/reactpress';
 
-export const REACTPRESS_NPM_REGISTRY_URL = 'https://registry.npmjs.org/@fecommunity%2Freactpress';
+export const REACTPRESS_NPM_REGISTRY_URL = 'https://registry.npmjs.org/@reactpressjs%2Freactpress';
 
 export const REACTPRESS_NPM_PAGE_URL = 'https://www.npmjs.com/package/@fecommunity/reactpress';
 
@@ -11,7 +11,7 @@ export function buildNpmVersionPageUrl(version: string): string {
 
 /** GitHub release tag page, e.g. …/releases/tag/v4.0.0 */
 export function buildGitHubReleaseTagUrl(version: string): string {
-  return `https://github.com/fecommunity/reactpress/releases/tag/v${encodeURIComponent(version)}`;
+  return `https://github.com/reactpressjs/reactpress/releases/tag/v${encodeURIComponent(version)}`;
 }
 
 /** Fallback when the registry is unreachable (SSR / offline). */

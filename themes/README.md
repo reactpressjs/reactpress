@@ -2,7 +2,7 @@
 
 Visitor-facing sites in ReactPress 4.0 are **swappable Next.js themes** — npm-installable frontends that fetch from the headless API. Themes own presentation; [plugins](../plugins/) own server-side logic.
 
-> Official starter: [@fecommunity/reactpress-theme-starter](https://github.com/fecommunity/reactpress-theme-starter) · Lighthouse 95 · [live demo](https://reactpress-theme-starter.vercel.app)
+> Official starter: [@fecommunity/reactpress-theme-starter](https://github.com/reactpressjs/reactpress-theme-starter) · Lighthouse 95 · [live demo](https://reactpress-theme-starter.vercel.app)
 
 The theme system uses **two sources and three directories**; local and npm themes follow separate registration rules.
 
@@ -25,10 +25,10 @@ The theme system uses **two sources and three directories**; local and npm theme
 
 ## Two registration specs
 
-| Source | Spec file | Registry location | Example |
-| :--- | :--- | :--- | :--- |
-| **local** | [`theme.manifest.schema.json`](./theme.manifest.schema.json) | `themes/{id}/theme.json` + `package.json` `local` list | `hello-world/` |
-| **npm** | [`npm-catalog.schema.json`](./npm-catalog.schema.json) | `themes/{anchor}/package.json` → `reactpress.theme` + `npm` list | `theme-starter/` |
+| Source    | Spec file                                                    | Registry location                                                | Example          |
+| :-------- | :----------------------------------------------------------- | :--------------------------------------------------------------- | :--------------- |
+| **local** | [`theme.manifest.schema.json`](./theme.manifest.schema.json) | `themes/{id}/theme.json` + `package.json` `local` list           | `hello-world/`   |
+| **npm**   | [`npm-catalog.schema.json`](./npm-catalog.schema.json)       | `themes/{anchor}/package.json` → `reactpress.theme` + `npm` list | `theme-starter/` |
 
 Master registry [`themes/package.json`](./package.json):
 
@@ -120,38 +120,38 @@ themes/
 
 ## Install & activation
 
-| Action | Behavior |
-| :--- | :--- |
-| **Install local** | Copy `themes/{id}/` → runtime |
-| **Install npm** | `npm pack` → write runtime + `themes.lock.json` |
-| **Preview** | `preview-theme.json` → **:3003** (does not change :3001) |
-| **Enable** | DB + `active-theme.json` → restart **:3001** |
+| Action            | Behavior                                                 |
+| :---------------- | :------------------------------------------------------- |
+| **Install local** | Copy `themes/{id}/` → runtime                            |
+| **Install npm**   | `npm pack` → write runtime + `themes.lock.json`          |
+| **Preview**       | `preview-theme.json` → **:3003** (does not change :3001) |
+| **Enable**        | DB + `active-theme.json` → restart **:3001**             |
 
 ## API `source` field
 
-| Value | Meaning |
-| :--- | :--- |
-| `local` | Local registry, not yet installed |
-| `npm` | npm catalog entry, not yet installed |
-| `installed` | Already in runtime |
+| Value       | Meaning                              |
+| :---------- | :----------------------------------- |
+| `local`     | Local registry, not yet installed    |
+| `npm`       | npm catalog entry, not yet installed |
+| `installed` | Already in runtime                   |
 
 ## Dev ports
 
-| Port | Purpose |
-| :---: | :--- |
-| **3001** | Visitor site |
+|   Port   | Purpose       |
+| :------: | :------------ |
+| **3001** | Visitor site  |
 | **3003** | Admin preview |
-| **3002** | API |
-| **3000** | Admin |
+| **3002** | API           |
+| **3000** | Admin         |
 
 ## Code modules
 
-| Module | Role |
-| :--- | :--- |
-| `cli/out/lib/theme-sources.js` | Read local / npm sources |
+| Module                          | Role                                 |
+| :------------------------------ | :----------------------------------- |
+| `cli/out/lib/theme-sources.js`  | Read local / npm sources             |
 | `cli/out/lib/theme-registry.js` | Catalog aggregation, spec resolution |
-| `cli/out/lib/theme-install.js` | Install to runtime |
-| `server/…/theme.service.ts` | REST API |
+| `cli/out/lib/theme-install.js`  | Install to runtime                   |
+| `server/…/theme.service.ts`     | REST API                             |
 
 ## CLI
 
@@ -164,10 +164,10 @@ pnpm run --dir themes sync:catalog
 
 ## WordPress comparison (local themes)
 
-| WordPress | ReactPress |
-| --- | --- |
-| `style.css` header | `theme.json` |
-| `functions.php` | `pages/_app.tsx` → `createThemeApp()` |
-| Customizer | `appearance.sections` |
+| WordPress          | ReactPress                            |
+| ------------------ | ------------------------------------- |
+| `style.css` header | `theme.json`                          |
+| `functions.php`    | `pages/_app.tsx` → `createThemeApp()` |
+| Customizer         | `appearance.sections`                 |
 
 Full Next.js 15 capabilities: npm package **@fecommunity/reactpress-theme-starter** (install via `theme-starter` anchor).

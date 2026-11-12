@@ -14,15 +14,18 @@ keywords: [reactpress, about, open source, self-hosted publishing, react cms]
 
 ## Positioning
 
-| Item         | Definition                                                           |
-| ------------ | -------------------------------------------------------------------- |
-| Brand        | ReactPress                                                           |
-| Domain       | [reactpress.cc](https://www.reactpress.cc/)                          |
-| Category     | Self-hosted publishing platform                                      |
-| Core users   | Creators, React developers, indie builders, site owners              |
-| Core product | ReactPress CMS                                                       |
-| Slogan       | **Write with Focus. Publish with Joy.**                              |
-| Mission      | Make writing, managing, and publishing websites simple — self-hosted |
+| Item         | Definition                                                                       |
+| ------------ | -------------------------------------------------------------------------------- |
+| Brand        | ReactPress                                                                       |
+| Slogan       | **Write with Focus. Publish with Joy.**                                          |
+| Site         | [reactpress.cc](https://www.reactpress.cc/)                                      |
+| GitHub       | [github.com/reactpressjs](https://github.com/reactpressjs)                       |
+| Source repo  | [reactpressjs/reactpress](https://github.com/reactpressjs/reactpress) (official) |
+| npm          | [npmjs.com/~reactpressjs](https://www.npmjs.com/~reactpressjs)                   |
+| Category     | Self-hosted publishing platform                                                  |
+| Core users   | Creators, React developers, indie builders, site owners                          |
+| Core product | ReactPress CMS                                                                   |
+| Mission      | Make writing, managing, and publishing websites simple — self-hosted             |
 
 ## What we build
 
@@ -64,14 +67,15 @@ We are **not** positioning ReactPress as “WordPress rewritten in React.” The
 
 ## Open source & license
 
-ReactPress is developed by [fecommunity](https://github.com/fecommunity) and released under the **MIT License**. Source, issues, and contributions live on [GitHub](https://github.com/fecommunity/reactpress).
+ReactPress is developed by [reactpressjs](https://github.com/reactpressjs) and released under the **MIT License**. The official source repository is **[reactpressjs/reactpress](https://github.com/reactpressjs/reactpress)** — issues and contributions belong there.
 
 ## Live demo & hubs
 
+- [Official site](https://www.reactpress.cc/) · [Documentation](/docs/intro)
+- [GitHub](https://github.com/reactpressjs) · [Source repo](https://github.com/reactpressjs/reactpress)
+- [npm](https://www.npmjs.com/~reactpressjs) · [CLI package](https://www.npmjs.com/package/@fecommunity/reactpress)
 - [Live demo](https://blog.gaoredu.com/) — production site powered by ReactPress
-- [Themes](/themes) · [Plugins](/plugins) · [Best practices](/best-practices)
-- [Documentation](/docs/intro) · [Changelog](/blog/changelog)
-- [npm package](https://www.npmjs.com/package/@fecommunity/reactpress)
+- [Themes](/themes) · [Plugins](/plugins) · [Best practices](/best-practices) · [Changelog](/blog/changelog)
 
 ## Contact
 

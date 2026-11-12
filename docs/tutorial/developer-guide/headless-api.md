@@ -41,17 +41,17 @@ API Key 等同于管理员权限，勿提交到公开仓库。生产环境使用
 
 ## 常用端点
 
-| 方法 | 路径 | 说明 |
-|------|------|------|
-| GET | `/api/health` | 健康检查 |
-| GET | `/api/article/headless/list` | 已发布文章分页列表 |
-| GET | `/api/article/:id` | 单篇文章 |
-| GET | `/api/page/list` | 页面列表 |
-| GET | `/api/category/list` | 分类 |
-| GET | `/api/tag/list` | 标签 |
-| GET | `/api/comment/list` | 评论 |
-| GET | `/api/setting/public` | 公开站点设置 |
-| POST | `/api/article` | 创建文章（需鉴权） |
+| 方法 | 路径                         | 说明               |
+| ---- | ---------------------------- | ------------------ |
+| GET  | `/api/health`                | 健康检查           |
+| GET  | `/api/article/headless/list` | 已发布文章分页列表 |
+| GET  | `/api/article/:id`           | 单篇文章           |
+| GET  | `/api/page/list`             | 页面列表           |
+| GET  | `/api/category/list`         | 分类               |
+| GET  | `/api/tag/list`              | 标签               |
+| GET  | `/api/comment/list`          | 评论               |
+| GET  | `/api/setting/public`        | 公开站点设置       |
+| POST | `/api/article`               | 创建文章（需鉴权） |
 
 精确路径与参数以 Swagger 为准。
 
@@ -101,7 +101,7 @@ Server 在内容变更时向配置的 URL 发送 HTTP POST，例如 `article.pub
 
 ## 自定义前端路径
 
-1. Fork [reactpress-theme-starter](https://github.com/fecommunity/reactpress-theme-starter)
+1. Fork [reactpress-theme-starter](https://github.com/reactpressjs/reactpress-theme-starter)
 2. 设置环境变量指向 API：`NEXT_PUBLIC_API_URL`
 3. 部署到 Vercel / 自托管 Node
 4. 内容仍在 ReactPress API，前端独立发布

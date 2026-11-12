@@ -21,11 +21,11 @@ ReactPress 4.0 **插件**扩展服务端逻辑（Hook），类似 WordPress 插�
 
 ## 内置插件
 
-| ID | 名称 | 能力 |
-|----|------|------|
-| `hello-world` | 自动摘要 | 发布文章时生成摘要字段 |
-| `seo` | SEO 增强 | 别名、关键词、meta 描述；编辑器 Admin 插槽 |
-| `image-optimizer` | 图片优化 | 媒体库历史图片分析与批量 WebP 转换 |
+| ID                | 名称     | 能力                                       |
+| ----------------- | -------- | ------------------------------------------ |
+| `hello-world`     | 自动摘要 | 发布文章时生成摘要字段                     |
+| `seo`             | SEO 增强 | 别名、关键词、meta 描述；编辑器 Admin 插槽 |
+| `image-optimizer` | 图片优化 | 媒体库历史图片分析与批量 WebP 转换         |
 
 ### SEO 插件
 
@@ -58,16 +58,16 @@ reactpress plugin install hello-world   # 需 Monorepo / 完整 CLI
 
 ## 插件 vs Webhook
 
-| 类型 | 触发 | 用途 |
-|------|------|------|
-| **Plugin Hook** | 进程内、同步、可改数据 | 摘要、SEO、校验 |
-| **Webhook** | 出站 HTTP、异步 | Slack、CI、外部 CMS |
+| 类型            | 触发                   | 用途                |
+| --------------- | ---------------------- | ------------------- |
+| **Plugin Hook** | 进程内、同步、可改数据 | 摘要、SEO、校验     |
+| **Webhook**     | 出站 HTTP、异步        | Slack、CI、外部 CMS |
 
 Webhook 在 **设置 → Webhook** 配置，与插件互补。
 
 ## 开发自定义插件
 
-见 [插件开发指南](../developer-guide/plugin-development.md) 与仓库 [plugins/README.md](https://github.com/fecommunity/reactpress/blob/master/plugins/README.md)。
+见 [插件开发指南](../developer-guide/plugin-development.md) 与仓库 [plugins/README.md](https://github.com/reactpressjs/reactpress/blob/master/plugins/README.md)。
 
 ## 相关文档
 

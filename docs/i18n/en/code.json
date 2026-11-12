@@ -464,7 +464,7 @@
     "message": "Plugin system"
   },
   "home.stats.tagline": {
-    "message": "Write. Manage. Publish. — for creators and React developers."
+    "message": "Write with Focus. Publish with Joy. — for creators and React developers."
   },
   "home.quickstart.eyebrow": {
     "message": "How to start"
@@ -866,7 +866,7 @@
     "message": "Read full documentation"
   },
   "装一个包，一分钟拥有自己的 CMS。": {
-    "message": "The Modern Web Creation Platform."
+    "message": "Write with Focus. Publish with Joy."
   },
   "装一个包，一分钟拥有自己的 CMS — 基于 React、Next.js 与 NestJS 的全栈发布平台。": {
     "message": "Build, manage, and extend modern websites with React."
@@ -941,16 +941,16 @@
     "message": "Chinese/English UI, comfortable on desktop, tablet, and mobile."
   },
   "ReactPress 4.0：装一个包、一分钟拥有自己的 CMS。插件生态、桌面写作与 npm 主题，零配置开箱即用。": {
-    "message": "ReactPress 4.0 — The Modern Web Creation Platform. Plugins, desktop, and npm themes. One CLI, ~60 seconds to live."
+    "message": "ReactPress 4.0 — Write with Focus. Publish with Joy. Plugins, desktop, and npm themes. One CLI, ~60 seconds to live."
   },
   "ReactPress 4.0：插件生态、桌面写作与 npm 主题 catalog，零配置一分钟拥有自己的 CMS。": {
-    "message": "ReactPress 4.0 — The Modern Web Creation Platform. Plugins, desktop, and npm themes. One CLI, ~60 seconds to live."
+    "message": "ReactPress 4.0 — Write with Focus. Publish with Joy. Plugins, desktop, and npm themes. One CLI, ~60 seconds to live."
   },
   "ReactPress 3.0：装一个包、一分钟拥有自己的 CMS。零配置安装，开箱即用的博客与内容发布平台。": {
-    "message": "ReactPress — The Modern Web Creation Platform. Build. Manage. Extend. WordPress-style editing, headless REST, Next.js themes."
+    "message": "ReactPress: Write with Focus. Publish with Joy. WordPress-style editing, headless REST, Next.js themes."
   },
   "ReactPress 3.0：装一个包、一分钟拥有自己的 CMS。基于 React、Next.js 与 NestJS 的全栈发布平台，零配置 init + dev。": {
-    "message": "ReactPress — The Modern Web Creation Platform. Build. Manage. Extend. WordPress-style editing, headless REST, Next.js themes."
+    "message": "ReactPress: Write with Focus. Publish with Joy. WordPress-style editing, headless REST, Next.js themes."
   },
   "插件生态、桌面客户端与 npm 主题 — 装一个包，一分钟拥有自己的 CMS。": {
     "message": "Build blogs, documentation, company websites, and content-driven applications with React."

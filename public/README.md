@@ -1,6 +1,6 @@
 # Repository root static assets
 
-Marketing, demo, and brand assets for ReactPress — The Modern Web Creation Platform. Root [README](../README.md), [README-zh_CN](../README-zh_CN.md), and [docs site](https://reactpress.cc/).
+Marketing, demo, and brand assets for ReactPress: Write with Focus. Publish with Joy. Root [README](../README.md), [README-zh_CN](../README-zh_CN.md), and [docs site](https://reactpress.cc/).
 
 ## Brand & icons
 

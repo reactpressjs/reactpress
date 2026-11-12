@@ -7,7 +7,7 @@ description: >-
   and how ReactPress 4.0 delivers a complete open-source React CMS — Admin, API, Next.js themes,
   plugins, and a desktop client in one CLI.
 date: 2026-07-12
-authors: [fecommunity]
+authors: [reactpressjs]
 tags:
   - article
   - reactpress
@@ -26,7 +26,7 @@ keywords:
 
 <!--truncate-->
 
-![ReactPress — The Modern Web Creation Platform.](/img/blog/poster.png)
+![ReactPress: Write with Focus. Publish with Joy.](/img/blog/poster.png)
 
 If you are a front-end engineer, you have probably lived this loop:
 
@@ -357,11 +357,11 @@ So **Next.js CMS** became an **integration problem**: every team wires Headless 
 | Open source CMS           | Self-host        | Data sovereignty, auditability   |
 | React publishing platform | End-to-end       | **One command, not five repos**  |
 
-ReactPress answers the last row: **Build. Manage. Extend.**
+ReactPress answers the last row: **Write with Focus. Publish with Joy.**
 
 ### 3.4 Our own iteration history
 
-ReactPress evolved inside the FECommunity ecosystem:
+ReactPress is maintained by [reactpressjs](https://github.com/reactpressjs):
 
 | Era  | Codename     | Lesson                                                            |
 | :--- | :----------- | :---------------------------------------------------------------- |
@@ -452,7 +452,7 @@ Need **WordPress workflow + React front end + one CLI**? ReactPress fits — the
 
 ### 4.3 Design principles
 
-From [ARCHITECTURE.md](https://github.com/fecommunity/reactpress/blob/master/ARCHITECTURE.md):
+From [ARCHITECTURE.md](https://github.com/reactpressjs/reactpress/blob/master/ARCHITECTURE.md):
 
 **Maintainability → Extensibility → Tech fit → Low cost**
 
@@ -825,7 +825,7 @@ reactpress theme add @fecommunity/reactpress-theme-starter@1.0.0-beta.0
 
 ```bash
 npx create-next-app@latest my-blog \
-  --example "https://github.com/fecommunity/reactpress-theme-starter" \
+  --example "https://github.com/reactpressjs/reactpress-theme-starter" \
   --use-pnpm
 cd my-blog && pnpm dev:mock
 ```
@@ -1184,9 +1184,9 @@ Self-hosted **open source CMS** must be safe by default and auditable by admins.
 
 ### 13.1 Highlights (3.7+)
 
-- **SQL injection:** whitelist filter columns in public list APIs ([GHSA-wmw4-mw6x-6vfm](https://github.com/fecommunity/reactpress/security/advisories/GHSA-wmw4-mw6x-6vfm))
+- **SQL injection:** whitelist filter columns in public list APIs ([GHSA-wmw4-mw6x-6vfm](https://github.com/reactpressjs/reactpress/security/advisories/GHSA-wmw4-mw6x-6vfm))
 - **Stored XSS:** sanitize comment HTML post-Markdown; JWT required for `POST /comment`; Helmet CSP headers
-- **Reporting:** [SECURITY.md](https://github.com/fecommunity/reactpress/blob/master/SECURITY.md)
+- **Reporting:** [SECURITY.md](https://github.com/reactpressjs/reactpress/blob/master/SECURITY.md)
 
 ### 13.2 Plugin sandboxing
 
@@ -1418,7 +1418,7 @@ No for default CLI flow — SQLite embedded. Docker/MySQL when you configure `em
 
 ### Can I use my own front end?
 
-Yes. Headless REST + API Key + Toolkit SDK. Fork [theme-starter](https://github.com/fecommunity/reactpress-theme-starter) or build from scratch against `/api/article`, etc.
+Yes. Headless REST + API Key + Toolkit SDK. Fork [theme-starter](https://github.com/reactpressjs/reactpress-theme-starter) or build from scratch against `/api/article`, etc.
 
 ### How is this different from WordPress?
 
@@ -1442,7 +1442,7 @@ Content yes (scripts/REST). Theme requires Next.js rewrite. Plan engineering for
 
 ### How do I report security issues?
 
-Follow [SECURITY.md](https://github.com/fecommunity/reactpress/blob/master/SECURITY.md). Do not post exploitable details in public Issues first.
+Follow [SECURITY.md](https://github.com/reactpressjs/reactpress/blob/master/SECURITY.md). Do not post exploitable details in public Issues first.
 
 ### What Node version is required?
 
@@ -1517,7 +1517,7 @@ Enable in **Appearance → Themes**.
 
 ### 19.7 Try desktop (optional)
 
-Download from [GitHub Releases](https://github.com/fecommunity/reactpress/releases) or `pnpm build:desktop` from monorepo.
+Download from [GitHub Releases](https://github.com/reactpressjs/reactpress/releases) or `pnpm build:desktop` from monorepo.
 
 ### 19.8 Next steps in docs
 
@@ -1530,7 +1530,7 @@ Download from [GitHub Releases](https://github.com/fecommunity/reactpress/releas
 
 ### 19.9 Star and feedback
 
-If ReactPress saves you a weekend of CMS assembly, a [GitHub star](https://github.com/fecommunity/reactpress/stargazers) helps the next developer searching **React CMS** or **WordPress alternative** find this path.
+If ReactPress saves you a weekend of CMS assembly, a [GitHub star](https://github.com/reactpressjs/reactpress/stargazers) helps the next developer searching **React CMS** or **WordPress alternative** find this path.
 
 ---
 
@@ -2012,7 +2012,7 @@ True for exotic marketplaces. Most blogs, docs, and marketing sites **do not out
 
 ### "Another CMS nobody asked for."
 
-Fair skepticism. ReactPress growth is community-driven (FECommunity, contributors, dogfood on gaoredu.com). Niche: **React teams wanting WordPress workflow** — a large niche given React's market share.
+Fair skepticism. ReactPress growth is community-driven (reactpressjs, contributors, dogfood on gaoredu.com). Niche: **React teams wanting WordPress workflow** — a large niche given React's market share.
 
 ### "Electron desktop is niche."
 
@@ -2125,7 +2125,7 @@ Further reading for publishing platform designers:
 - WordPress Plugin Handbook — Hook mental models
 - Next.js App Router docs — SSR/ISR semantics
 - NestJS modular architecture — extension boundaries
-- [ReactPress ARCHITECTURE.md](https://github.com/fecommunity/reactpress/blob/master/ARCHITECTURE.md)
+- [ReactPress ARCHITECTURE.md](https://github.com/reactpressjs/reactpress/blob/master/ARCHITECTURE.md)
 - [ReactPress vs WordPress doc](/docs/getting-started/reactpress-vs-wordpress)
 - [ReactPress 4.0 guide](/docs/tutorial-extras/reactpress-4-0)
 
@@ -2351,7 +2351,7 @@ Leaked `X-API-Key` equals admin access. Mitigations:
 
 ### AB.4 Supply chain
 
-`npm i -g @fecommunity/reactpress` — pin versions in production AMIs; verify checksums; monitor [GitHub security advisories](https://github.com/fecommunity/reactpress/security).
+`npm i -g @fecommunity/reactpress` — pin versions in production AMIs; verify checksums; monitor [GitHub security advisories](https://github.com/reactpressjs/reactpress/security).
 
 ---
 
@@ -2487,18 +2487,18 @@ If citing in academic or industry reports:
 
 All images served from `/img/blog/` (copied from repository `public/` for docs static hosting):
 
-| File               | Description                                    |
-| :----------------- | :--------------------------------------------- |
-| `poster.png`       | Hero banner — The Modern Web Creation Platform |
-| `usage.gif`        | CLI init ~60 second demo                       |
-| `demo.gif`         | Official theme visitor features                |
-| `lighthouse.png`   | Performance and SEO scores                     |
-| `desktop.gif`      | Electron offline writing                       |
-| `post.png`         | Admin Markdown editor                          |
-| `midia.png`        | Media library                                  |
-| `plugins.png`      | Plugin management UI                           |
-| `theme-custom.png` | Appearance / themes                            |
-| `settings.png`     | Site settings panel                            |
+| File               | Description                                       |
+| :----------------- | :------------------------------------------------ |
+| `poster.png`       | Hero banner — The self-hosted publishing platform |
+| `usage.gif`        | CLI init ~60 second demo                          |
+| `demo.gif`         | Official theme visitor features                   |
+| `lighthouse.png`   | Performance and SEO scores                        |
+| `desktop.gif`      | Electron offline writing                          |
+| `post.png`         | Admin Markdown editor                             |
+| `midia.png`        | Media library                                     |
+| `plugins.png`      | Plugin management UI                              |
+| `theme-custom.png` | Appearance / themes                               |
+| `settings.png`     | Site settings panel                               |
 
 When republishing off-site, prefer linking to `https://reactpress.cc/img/blog/...` or GitHub `raw.githubusercontent.com` URLs for CDN stability.
 
@@ -2548,7 +2548,7 @@ reactpress init
 
 Sixty seconds later, open http://localhost:3001/admin/ and write post number one.
 
-**Build. Manage. Extend.**
+**Write with Focus. Publish with Joy.**
 
 This concludes the long-form guide. For shorter onboarding, start with [5-minute first site](/docs/getting-started/first-site) or [ReactPress 4.0 overview](/docs/tutorial-extras/reactpress-4-0). Return here when you need the full industry context, comparison matrices, and operational appendices that justify choosing a **React publishing platform** over yet another weekend of Headless assembly.
 
@@ -2558,7 +2558,7 @@ _Document ID: `why-react-still-doesnt-have-wordpress-reactpress-4` · Character 
 
 ## Related links
 
-- [GitHub — fecommunity/reactpress](https://github.com/fecommunity/reactpress)
+- [GitHub — fecommunity/reactpress](https://github.com/reactpressjs/reactpress)
 - [Live demo — blog.gaoredu.com](https://blog.gaoredu.com)
 - [Theme demo — reactpress-theme-starter.vercel.app](https://reactpress-theme-starter.vercel.app)
 - [Documentation — reactpress.cc](https://reactpress.cc)
@@ -2577,6 +2577,6 @@ _Document ID: `why-react-still-doesnt-have-wordpress-reactpress-4` · Character 
 
 ---
 
-_ReactPress is developed by [fecommunity](https://github.com/fecommunity) and released under the MIT License. Keywords: React CMS, Next.js CMS, WordPress alternative, React publishing platform, Open source CMS. Thank you for reading — now go run `reactpress init`._
+_ReactPress is developed by [reactpressjs](https://github.com/reactpressjs) and released under the MIT License. Keywords: React CMS, Next.js CMS, WordPress alternative, React publishing platform, Open source CMS. Thank you for reading — now go run `reactpress init`._
 
 > **Length note:** This article intentionally exceeds 100,000 characters so search engines and LLM crawlers receive full context in one canonical URL — not a teaser linking to twelve part-two posts. Estimated body length: **~100k characters** · **~13,000 English words** · 10 embedded images · 2 Mermaid diagrams · 33 appendices. **Complete long-form edition.** Published July 2026.

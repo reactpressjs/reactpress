@@ -11,10 +11,10 @@ ReactPress API 基于 **NestJS**，源码位于 monorepo `server/`。扩展方�
 
 ## 何时用插件 vs 改 Server
 
-| 方式 | 适用 | 升级影响 |
-|------|------|----------|
-| **Plugin Hook** | 业务规则、字段改写、集成 | 低，独立包 |
-| **Server PR** | 新 REST 资源、鉴权模型、core bug | 需跟随版本发布 |
+| 方式            | 适用                             | 升级影响       |
+| --------------- | -------------------------------- | -------------- |
+| **Plugin Hook** | 业务规则、字段改写、集成         | 低，独立包     |
+| **Server PR**   | 新 REST 资源、鉴权模型、core bug | 需跟随版本发布 |
 
 第三方集成优先 [插件开发](../developer-guide/plugin-development.md)。
 
@@ -80,4 +80,4 @@ Swagger：http://localhost:3002/api
 
 - [系统架构概览](../developer-guide/architecture-overview.md)
 - [Headless API](../developer-guide/headless-api.md)
-- [ARCHITECTURE.md §11 Server](https://github.com/fecommunity/reactpress/blob/master/ARCHITECTURE.md#11-server-backend-api)
+- [ARCHITECTURE.md §11 Server](https://github.com/reactpressjs/reactpress/blob/master/ARCHITECTURE.md#11-server-backend-api)

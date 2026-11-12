@@ -11,11 +11,11 @@ keywords: [reactpress, plugin development, hook, plugin.json, extension]
 
 > **主题 = 呈现 · 插件 = 逻辑**
 
-完整规范见仓库 [plugins/README.md](https://github.com/fecommunity/reactpress/blob/master/plugins/README.md)。
+完整规范见仓库 [plugins/README.md](https://github.com/reactpressjs/reactpress/blob/master/plugins/README.md)。
 
 ## 快速脚手架
 
-**独立仓库（推荐第三方插件）：** 使用 [reactpress-plugin-starter](https://github.com/fecommunity/reactpress-plugin-starter) 模板 — 含 Hook、Admin 插槽、设置页与构建脚本。在 monorepo 外开发，后续通过 npm（阶段 2）安装或复制到 `plugins/{id}/`。
+**独立仓库（推荐第三方插件）：** 使用 [reactpress-plugin-starter](https://github.com/reactpressjs/reactpress-plugin-starter) 模板 — 含 Hook、Admin 插槽、设置页与构建脚本。在 monorepo 外开发，后续通过 npm（阶段 2）安装或复制到 `plugins/{id}/`。
 
 **本 monorepo 内：**
 
@@ -123,7 +123,7 @@ SEO 插件示例：在文章编辑器注册侧边栏 panel，读写文章 meta �
 
 ## 相关文档
 
-- [reactpress-plugin-starter](https://github.com/fecommunity/reactpress-plugin-starter) — 独立插件脚手架（Hook、Admin UI、设置页）
+- [reactpress-plugin-starter](https://github.com/reactpressjs/reactpress-plugin-starter) — 独立插件脚手架（Hook、Admin UI、设置页）
 - [插件使用指南（用户）](../user-guide/plugins-in-admin.md)
 - [系统架构概览](./architecture-overview.md)
 - [ReactPress 4.0 扩展版](../tutorial-extras/reactpress-4-0.md)

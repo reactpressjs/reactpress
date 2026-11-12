@@ -64,7 +64,7 @@ function Hero() {
             </div>
             <span className={styles.githubWrap}>
               <GitHubButton
-                href="https://github.com/fecommunity/reactpress"
+                href="https://github.com/reactpressjs/reactpress"
                 data-size="large"
                 data-show-count="true"
                 aria-label="Star fecommunity/reactpress on GitHub"

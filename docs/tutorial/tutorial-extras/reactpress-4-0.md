@@ -55,9 +55,9 @@ pnpm dev:desktop
 
 打包：`pnpm build:desktop` → `desktop/release/`。
 
-预构建安装包：[桌面客户端文档](https://reactpress.cc/docs/tutorial-extras/desktop-client) · [GitHub Releases](https://github.com/fecommunity/reactpress/releases)
+预构建安装包：[桌面客户端文档](https://reactpress.cc/docs/tutorial-extras/desktop-client) · [GitHub Releases](https://github.com/reactpressjs/reactpress/releases)
 
-详见仓库 [desktop/README.md](https://github.com/fecommunity/reactpress/blob/master/desktop/README.md)。
+详见仓库 [desktop/README.md](https://github.com/reactpressjs/reactpress/blob/master/desktop/README.md)。
 
 ## 插件系统（新）
 
@@ -74,7 +74,7 @@ pnpm dev:desktop
 | `seo`             | 别名、关键词、meta 描述；文章编辑器 Admin 插槽 |
 | `image-optimizer` | 历史图片素材分析与批量 WebP 优化               |
 
-开发插件见 [plugins/README.md](https://github.com/fecommunity/reactpress/blob/master/plugins/README.md) · 脚手架：[reactpress-plugin-starter](https://github.com/fecommunity/reactpress-plugin-starter)
+开发插件见 [plugins/README.md](https://github.com/reactpressjs/reactpress/blob/master/plugins/README.md) · 脚手架：[reactpress-plugin-starter](https://github.com/reactpressjs/reactpress-plugin-starter)
 
 | 模板                      | 来源       | 适用                   |
 | ------------------------- | ---------- | ---------------------- |
@@ -116,7 +116,7 @@ reactpress theme add @fecommunity/reactpress-theme-starter@1.0.0-beta.0
 
 ## 路线图（4.x 后续）
 
-- 插件 npm catalog、`reactpress plugin create`（脚手架：[reactpress-plugin-starter](https://github.com/fecommunity/reactpress-plugin-starter)）
+- 插件 npm catalog、`reactpress plugin create`（脚手架：[reactpress-plugin-starter](https://github.com/reactpressjs/reactpress-plugin-starter)）
 - Desktop 自动更新、托盘、快捷键
 - `reactpress theme create` 脚手架
 - 主题/插件市场
@@ -127,4 +127,4 @@ reactpress theme add @fecommunity/reactpress-theme-starter@1.0.0-beta.0
 - [3.0 平台版](./reactpress-3-0.md)
 - [3.x → 4.0 迁移](./migration-3-to-4.md)
 - [2.x → 3.0 迁移](./migration-2-to-3.md)
-- [ARCHITECTURE.md](https://github.com/fecommunity/reactpress/blob/master/ARCHITECTURE.md)
+- [ARCHITECTURE.md](https://github.com/reactpressjs/reactpress/blob/master/ARCHITECTURE.md)

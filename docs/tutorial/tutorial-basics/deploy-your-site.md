@@ -52,7 +52,7 @@ cp .reactpress/reactpress.db /backup/reactpress-$(date +%F).db
 ### 环境准备
 
 ```bash
-git clone --depth=1 https://github.com/fecommunity/reactpress.git
+git clone --depth=1 https://github.com/reactpressjs/reactpress.git
 cd reactpress
 npm i -g pnpm
 pnpm install

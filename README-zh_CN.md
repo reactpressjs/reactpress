@@ -11,14 +11,14 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/fecommunity/reactpress/stargazers">
-    <img src="https://img.shields.io/github/stars/fecommunity/reactpress?style=social" alt="GitHub stars" />
+  <a href="https://github.com/reactpressjs/reactpress/stargazers">
+    <img src="https://img.shields.io/github/stars/reactpressjs/reactpress?style=social" alt="GitHub stars" />
   </a>
   <a href="https://www.npmjs.com/package/@fecommunity/reactpress">
     <img src="https://img.shields.io/npm/v/@fecommunity/reactpress" alt="npm version" />
   </a>
   <a href="./LICENSE">
-    <img src="https://img.shields.io/github/license/fecommunity/reactpress" alt="License" />
+    <img src="https://img.shields.io/github/license/reactpressjs/reactpress" alt="License" />
   </a>
 </p>
 
@@ -38,7 +38,7 @@
 <img src="./public/desktop.gif" alt="ReactPress 桌面应用" width="100%" />
 
 - ✍️ **写作与内容管理** — 在专注的编辑器中创建、整理并发布内容。
-- 🎨 **主题** — 自定义网站外观与风格。[起步模板](https://github.com/fecommunity/reactpress-theme-starter) · [主题指南](./themes/README.md)
+- 🎨 **主题** — 自定义网站外观与风格。[起步模板](https://github.com/reactpressjs/reactpress-theme-starter) · [主题指南](./themes/README.md)
 - 🧩 **插件** — 通过插件扩展 ReactPress。[插件指南](./plugins/README.md)
 - 🖥️ **桌面应用** — 在桌面端获得同样的使用体验。[桌面端指南](./desktop/README.md)
 - 📱 **多端访问** — 支持桌面、平板与移动端浏览器。
@@ -67,21 +67,25 @@ reactpress init
 ### 部署到 Vercel
 
 <p align="left">
-  <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Ffecommunity%2Freactpress-theme-starter">
+  <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Freactpressjs%2Freactpress-theme-starter">
     <img src="https://vercel.com/button" alt="Deploy with Vercel" />
   </a>
 </p>
 
-基于[主题起步模板](https://github.com/fecommunity/reactpress-theme-starter) · [在线演示](https://reactpress-theme-starter.vercel.app)
+基于[主题起步模板](https://github.com/reactpressjs/reactpress-theme-starter) · [在线演示](https://reactpress-theme-starter.vercel.app)
 
 ## 相关资源
 
 | 资源     | 链接                                                                               |
 | -------- | ---------------------------------------------------------------------------------- |
+| 官网     | [reactpress.cc](https://www.reactpress.cc/)                                        |
+| 文档     | [reactpress.cc](https://reactpress.cc/)                                            |
+| GitHub   | [github.com/reactpressjs](https://github.com/reactpressjs)                         |
+| 源码仓库 | [reactpressjs/reactpress](https://github.com/reactpressjs/reactpress)（官方唯一）  |
+| npm      | [npmjs.com/~reactpressjs](https://www.npmjs.com/~reactpressjs)                     |
+| CLI 包   | [@fecommunity/reactpress](https://www.npmjs.com/package/@fecommunity/reactpress)   |
 | 线上网站 | [blog.gaoredu.com](https://blog.gaoredu.com)                                       |
 | 主题演示 | [reactpress-theme-starter.vercel.app](https://reactpress-theme-starter.vercel.app) |
-| 文档     | [reactpress.cc](https://reactpress.cc/)                                            |
-| npm 包   | [@fecommunity/reactpress](https://www.npmjs.com/package/@fecommunity/reactpress)   |
 | 主题     | [主题指南](./themes/README.md)                                                     |
 | 插件     | [插件指南](./plugins/README.md)                                                    |
 | 桌面应用 | [桌面端指南](./desktop/README.md)                                                  |
@@ -90,15 +94,15 @@ reactpress init
 
 欢迎贡献代码、反馈问题与提出想法。
 
-- [GitHub Issues](https://github.com/fecommunity/reactpress/issues)
+- [GitHub Issues](https://github.com/reactpressjs/reactpress/issues)
 - [贡献指南](./CONTRIBUTING.md)
 - [更新日志](./CHANGELOG.md)
 
 如果 ReactPress 对你有帮助，欢迎点个 Star 支持一下。
 
 <p align="center">
-  <a href="https://github.com/fecommunity/reactpress">
-    <img src="https://img.shields.io/github/stars/fecommunity/reactpress?style=social" alt="Star ReactPress" />
+  <a href="https://github.com/reactpressjs/reactpress">
+    <img src="https://img.shields.io/github/stars/reactpressjs/reactpress?style=social" alt="Star ReactPress" />
   </a>
 </p>
 

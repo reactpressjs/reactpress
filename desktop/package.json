@@ -4,7 +4,7 @@
   "private": true,
   "description": "ReactPress desktop client — offline writing with SQLite, sync to production API",
   "main": "out/main/index.js",
-  "author": "fecommunity",
+  "author": "reactpressjs",
   "license": "ISC",
   "scripts": {
     "build": "electron-vite build",

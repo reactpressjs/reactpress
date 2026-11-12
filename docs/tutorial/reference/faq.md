@@ -53,7 +53,7 @@ Monorepo 本地开发时，Admin Vite dev server 可能在 `http://localhost:300
 <details>
 <summary><strong>可以用自己的前端吗？</strong></summary>
 
-可以。ReactPress 提供 Headless REST + API Key。可 fork [reactpress-theme-starter](https://github.com/fecommunity/reactpress-theme-starter) 或自行对接 `/api/article` 等端点。见 [Headless API 指南](../developer-guide/headless-api.md)。
+可以。ReactPress 提供 Headless REST + API Key。可 fork [reactpress-theme-starter](https://github.com/reactpressjs/reactpress-theme-starter) 或自行对接 `/api/article` 等端点。见 [Headless API 指南](../developer-guide/headless-api.md)。
 
 </details>
 
@@ -81,7 +81,7 @@ WordPress 是面向广泛站长的 PHP CMS。ReactPress 强调 **React 开发者
 <details>
 <summary><strong>能从 WordPress 迁移吗？</strong></summary>
 
-内容可通过导出脚本或 Headless REST API 对接；PHP 主题无法直接迁移，需在 Next.js 中重建访客前端，或使用 [reactpress-theme-starter](https://github.com/fecommunity/reactpress-theme-starter)。见 [Headless API 指南](../developer-guide/headless-api.md) 与 [ReactPress vs WordPress](../getting-started/reactpress-vs-wordpress.md)。
+内容可通过导出脚本或 Headless REST API 对接；PHP 主题无法直接迁移，需在 Next.js 中重建访客前端，或使用 [reactpress-theme-starter](https://github.com/reactpressjs/reactpress-theme-starter)。见 [Headless API 指南](../developer-guide/headless-api.md) 与 [ReactPress vs WordPress](../getting-started/reactpress-vs-wordpress.md)。
 
 </details>
 
@@ -160,8 +160,8 @@ Monorepo 开发需 `pnpm run build:plugins` 后重启 API。确认 Admin 中插�
 ## 获取帮助
 
 1. `reactpress doctor` 与 `reactpress logs`
-2. [GitHub Issues](https://github.com/fecommunity/reactpress/issues)
-3. [GitHub Discussions](https://github.com/fecommunity/reactpress/discussions)
+2. [GitHub Issues](https://github.com/reactpressjs/reactpress/issues)
+3. [GitHub Discussions](https://github.com/reactpressjs/reactpress/discussions)
 
 提问前请阅读 [提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way)，附上 Node 版本、操作系统、`doctor` 输出与相关日志。
 

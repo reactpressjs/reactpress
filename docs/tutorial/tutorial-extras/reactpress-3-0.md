@@ -15,11 +15,11 @@ keywords: [reactpress 3.0, platform, history, migration]
 
 ## 三大重点
 
-| 重点 | 用户感知 | 3.0 交付 |
-|------|----------|----------|
-| **零配置** | 不用手写 `.env`、不用先装六个包 | `init` + `dev`，默认嵌入式 Docker MySQL |
-| **唯一入口** | 只记一个包名、一个命令 | `npm i -g @fecommunity/reactpress@3` → `reactpress` |
-| **极致 DX** | 少查文档、状态一眼可见 | 交互菜单、`doctor`、`status`、dev 成功链接提示 |
+| 重点         | 用户感知                        | 3.0 交付                                            |
+| ------------ | ------------------------------- | --------------------------------------------------- |
+| **零配置**   | 不用手写 `.env`、不用先装六个包 | `init` + `dev`，默认嵌入式 Docker MySQL             |
+| **唯一入口** | 只记一个包名、一个命令          | `npm i -g @fecommunity/reactpress@3` → `reactpress` |
+| **极致 DX**  | 少查文档、状态一眼可见          | 交互菜单、`doctor`、`status`、dev 成功链接提示      |
 
 ## 一分钟快速开始
 
@@ -32,13 +32,13 @@ reactpress init    # 生成 .reactpress、.env、Docker MySQL
 reactpress dev     # API + 前台 + 管理端
 ```
 
-| 地址 | 说明 |
-|------|------|
-| http://localhost:3001 | 前台站点 |
-| http://localhost:3001/admin | 管理后台 |
-| http://localhost:3002/api | API 根路径 |
-| http://localhost:3002/api/health | 健康检查 |
-| Swagger | `dev` 成功后在终端查看完整链接 |
+| 地址                             | 说明                           |
+| -------------------------------- | ------------------------------ |
+| http://localhost:3001            | 前台站点                       |
+| http://localhost:3001/admin      | 管理后台                       |
+| http://localhost:3002/api        | API 根路径                     |
+| http://localhost:3002/api/health | 健康检查                       |
+| Swagger                          | `dev` 成功后在终端查看完整链接 |
 
 **「1 分钟」**指二次冷启动（`init` + `dev` 合计 ≤ 60s）；首次拉取 Docker 镜像可能更久，属正常现象。
 
@@ -52,43 +52,43 @@ reactpress
 
 ## 命令参考
 
-| 命令 | 作用 |
-|------|------|
-| `reactpress` | 交互式菜单 |
-| `reactpress init` | 零配置初始化项目 |
-| `reactpress dev` | 全栈开发（默认） |
-| `reactpress dev --api-only` | 仅 API（Headless） |
-| `reactpress dev --client-only` | 仅前台（需已有 API） |
-| `reactpress doctor` | 环境诊断（Node、Docker、端口、DB、API） |
-| `reactpress status` | 运行状态一页汇总 |
-| `reactpress config` | 查看/修改 `.reactpress/config.json` |
-| `reactpress start` / `stop` / `restart` | 生产生命周期 |
-| `reactpress docker *` | Docker 开发环境 |
-| `reactpress db backup` | 数据库备份 |
+| 命令                                    | 作用                                    |
+| --------------------------------------- | --------------------------------------- |
+| `reactpress`                            | 交互式菜单                              |
+| `reactpress init`                       | 零配置初始化项目                        |
+| `reactpress dev`                        | 全栈开发（默认）                        |
+| `reactpress dev --api-only`             | 仅 API（Headless）                      |
+| `reactpress dev --client-only`          | 仅前台（需已有 API）                    |
+| `reactpress doctor`                     | 环境诊断（Node、Docker、端口、DB、API） |
+| `reactpress status`                     | 运行状态一页汇总                        |
+| `reactpress config`                     | 查看/修改 `.reactpress/config.json`     |
+| `reactpress start` / `stop` / `restart` | 生产生命周期                            |
+| `reactpress docker *`                   | Docker 开发环境                         |
+| `reactpress db backup`                  | 数据库备份                              |
 
 ## 零配置说明
 
 `reactpress init` 自动完成：
 
-| 产出 | 说明 |
-|------|------|
-| `.reactpress/config.json` | 端口、数据库模式、站点 URL |
-| `.reactpress/docker-compose.yml` | 默认 embedded-docker MySQL |
-| `.env` | 由 CLI 从 config 同步，一般无需手改 |
-| 数据库 | 等待就绪后自动迁移/同步 |
+| 产出                             | 说明                                |
+| -------------------------------- | ----------------------------------- |
+| `.reactpress/config.json`        | 端口、数据库模式、站点 URL          |
+| `.reactpress/docker-compose.yml` | 默认 embedded-docker MySQL          |
+| `.env`                           | 由 CLI 从 config 同步，一般无需手改 |
+| 数据库                           | 等待就绪后自动迁移/同步             |
 
 仅在需要时改配置，例如外部 MySQL：编辑 `database.mode` 后执行 `reactpress config --apply`。
 
 ## 包模型（3.0）
 
-| npm 包 | 角色 |
-|--------|------|
-| **`@fecommunity/reactpress`** | **唯一对外主包**：CLI + 内置 API + 模板 |
-| `@fecommunity/reactpress-client` | 进阶：仅部署前台、连接远程 API |
-| `@fecommunity/reactpress-toolkit` | Headless / 自建前台用的 TS SDK |
-| `@fecommunity/reactpress-template-*` | `reactpress new --template` 可选 |
-| `@fecommunity/reactpress-cli` | **Deprecated**：re-export 主包，会打警告 |
-| `@fecommunity/reactpress-server` | **Deprecated**：API 已内置主包 |
+| npm 包                               | 角色                                     |
+| ------------------------------------ | ---------------------------------------- |
+| **`@fecommunity/reactpress`**        | **唯一对外主包**：CLI + 内置 API + 模板  |
+| `@fecommunity/reactpress-client`     | 进阶：仅部署前台、连接远程 API           |
+| `@fecommunity/reactpress-toolkit`    | Headless / 自建前台用的 TS SDK           |
+| `@fecommunity/reactpress-template-*` | `reactpress new --template` 可选         |
+| `@fecommunity/reactpress-cli`        | **Deprecated**：re-export 主包，会打警告 |
+| `@fecommunity/reactpress-server`     | **Deprecated**：API 已内置主包           |
 
 ```bash
 # ✅ 3.0 推荐
@@ -116,7 +116,7 @@ npx @fecommunity/reactpress-server
 克隆 monorepo 开发时仍使用 `pnpm install` + `pnpm dev`，底层与全局 `reactpress dev` 一致：
 
 ```bash
-git clone https://github.com/fecommunity/reactpress.git
+git clone https://github.com/reactpressjs/reactpress.git
 cd reactpress
 pnpm install
 pnpm dev

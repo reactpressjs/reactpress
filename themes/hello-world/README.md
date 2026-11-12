@@ -2,7 +2,7 @@
 
 > **Official ReactPress starter theme — learn the platform, ship your own.**
 
-**Minimal Next.js 15 theme** for the [ReactPress](https://github.com/fecommunity/reactpress) publishing platform. Pages Router blog with home, articles, categories, tags, search, and custom pages — the reference template to copy and customize.
+**Minimal Next.js 15 theme** for the [ReactPress](https://github.com/reactpressjs/reactpress) publishing platform. Pages Router blog with home, articles, categories, tags, search, and custom pages — the reference template to copy and customize.
 
 | Item         | Details                                                |
 | :----------- | :----------------------------------------------------- |
@@ -12,7 +12,7 @@
 | **Contract** | `theme.json` (manifest + appearance + templates)       |
 | **SDK**      | `@fecommunity/reactpress-toolkit/app`, `/theme`, `/ui` |
 
-[Theme demo (production)](https://github.com/fecommunity/reactpress-theme-starter) · [Theme system](../README.md) · [Documentation](https://reactpress.cc/)
+[Theme demo (production)](https://github.com/reactpressjs/reactpress-theme-starter) · [Theme system](../README.md) · [Documentation](https://reactpress.cc/)
 
 ## Directory structure
 
@@ -106,4 +106,4 @@ This package can be published as `@fecommunity/reactpress-template-hello-world`.
 - [ARCHITECTURE.md](../../ARCHITECTURE.md) — theme lifecycle
 - [toolkit/README.md](../../toolkit/README.md) — SDK reference
 
-<p align="center"><sub>Part of <a href="https://github.com/fecommunity/reactpress">ReactPress</a> — Next.js delivery for the publishing platform.</sub></p>
+<p align="center"><sub>Part of <a href="https://github.com/reactpressjs/reactpress">ReactPress</a> — Next.js delivery for the publishing platform.</sub></p>

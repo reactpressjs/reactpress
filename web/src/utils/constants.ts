@@ -41,7 +41,7 @@ export const APP_LOGO_SRC = publicAssetUrl("/logo.svg");
 export const APP_BRAND_NAME = "ReactPress";
 
 /** Official ReactPress monorepo on GitHub. */
-export const REACTPRESS_GITHUB_URL = "https://github.com/fecommunity/reactpress";
+export const REACTPRESS_GITHUB_URL = "https://github.com/reactpressjs/reactpress";
 
 /** Public docs site (Docusaurus). Override with `VITE_REACTPRESS_DOCS_URL`. */
 export const REACTPRESS_DOCS_BASE_URL =

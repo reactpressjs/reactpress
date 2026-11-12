@@ -5,7 +5,7 @@ description: >-
   React 统治前端十年，却始终没有默认的发布平台。本文从行业痛点、WordPress 成功基因、Headless CMS 缺口出发，
   介绍开源 React 发布平台 ReactPress 4.0 的理念、架构、主题、插件、桌面端与路线图。
 date: 2026-07-12
-authors: [fecommunity]
+authors: [reactpressjs]
 tags:
   - article
   - reactpress
@@ -24,7 +24,7 @@ keywords:
 
 <!--truncate-->
 
-![ReactPress — The Modern Web Creation Platform.](/img/blog/poster.png)
+![ReactPress: Write with Focus. Publish with Joy.](/img/blog/poster.png)
 
 如果你是一名前端工程师，大概率经历过这样的循环：
 
@@ -469,7 +469,7 @@ WordPress 没有原生的离线本地写作对等物。ReactPress Desktop = **El
 | **本地模式** | 离线写作、SQLite 内嵌 API |
 | **远程模式** | 对接生产/staging API      |
 
-安装包：[GitHub Releases](https://github.com/fecommunity/reactpress/releases) · [桌面客户端文档](/docs/tutorial-extras/desktop-client)
+安装包：[GitHub Releases](https://github.com/reactpressjs/reactpress/releases) · [桌面客户端文档](/docs/tutorial-extras/desktop-client)
 
 ---
 
@@ -511,7 +511,7 @@ Swagger：`http://localhost:3002/api`
 
 - SQL 注入：公开列表 API 列名白名单
 - 存储型 XSS：评论 HTML 消毒、JWT、`Helmet` CSP
-- 报告：[SECURITY.md](https://github.com/fecommunity/reactpress/blob/master/SECURITY.md)
+- 报告：[SECURITY.md](https://github.com/reactpressjs/reactpress/blob/master/SECURITY.md)
 
 生产清单：改默认密码、HTTPS、定期备份 `.reactpress/` 与 `uploads/`。
 
@@ -706,17 +706,17 @@ mkdir my-blog && cd my-blog
 reactpress init
 ```
 
-**Build. Manage. Extend.**
+**Write with Focus. Publish with Joy.**
 
 ---
 
 ## 相关链接
 
-- [GitHub 仓库](https://github.com/fecommunity/reactpress)
+- [GitHub 仓库](https://github.com/reactpressjs/reactpress)
 - [在线 Demo](https://blog.gaoredu.com)
 - [英文版长文](pathname:///blog/why-react-still-doesnt-have-wordpress-reactpress-4)
 - [ReactPress 4.0 指南](/docs/tutorial-extras/reactpress-4-0)
 - [ReactPress vs WordPress](/docs/getting-started/reactpress-vs-wordpress)
 - [更新日志](/blog/changelog)
 
-_ReactPress 由 [fecommunity](https://github.com/fecommunity) 开发，MIT 许可证发布。_
+_ReactPress 由 [reactpressjs](https://github.com/reactpressjs) 开发，MIT 许可证发布。_

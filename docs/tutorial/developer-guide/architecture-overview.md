@@ -9,7 +9,7 @@ keywords: [reactpress, architecture, monorepo, nestjs, next.js, toolkit, system 
 
 ReactPress 采用 **Monorepo + 多进程** 模型：内容管理、访客呈现、API 服务解耦；**Toolkit** 统一类型与 API 契约。
 
-完整细节见仓库 [ARCHITECTURE.md](https://github.com/fecommunity/reactpress/blob/master/ARCHITECTURE.md)。
+完整细节见仓库 [ARCHITECTURE.md](https://github.com/reactpressjs/reactpress/blob/master/ARCHITECTURE.md)。
 
 ## 架构图
 

@@ -89,7 +89,7 @@ See [Project configuration](../tutorial-extras/config-intro.md), [Docker deploym
 
 You can use the [desktop client](../tutorial-extras/desktop-client.md) for offline writing without the CLI:
 
-- Download: [GitHub Releases](https://github.com/fecommunity/reactpress/releases)
+- Download: [GitHub Releases](https://github.com/reactpressjs/reactpress/releases)
 - Local SQLite mode, default account `admin` / `admin`
 
 ## Next steps

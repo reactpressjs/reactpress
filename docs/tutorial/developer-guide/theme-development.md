@@ -26,7 +26,7 @@ pnpm dev
 
 ```bash
 npx create-next-app@latest my-blog \
-  --example "https://github.com/fecommunity/reactpress-theme-starter" \
+  --example "https://github.com/reactpressjs/reactpress-theme-starter" \
   --use-pnpm
 ```
 
@@ -34,11 +34,11 @@ Mock 模式（无 API）：`pnpm dev:mock`
 
 ## 三层目录模型
 
-| 层 | 路径 | 含义 |
-|----|------|------|
-| Registry | `themes/{id}/` | 可用主题源码 |
-| Runtime | `.reactpress/runtime/{id}/` | CLI 安装后的运行副本 |
-| Active | DB + `active-theme.json` | 当前启用主题 → `:3001` |
+| 层       | 路径                        | 含义                   |
+| -------- | --------------------------- | ---------------------- |
+| Registry | `themes/{id}/`              | 可用主题源码           |
+| Runtime  | `.reactpress/runtime/{id}/` | CLI 安装后的运行副本   |
+| Active   | DB + `active-theme.json`    | 当前启用主题 → `:3001` |
 
 ## theme.json（local 主题）
 
@@ -56,7 +56,7 @@ Mock 模式（无 API）：`pnpm dev:mock`
 
 ## npm 主题 catalog
 
-独立 npm 包通过 **anchor 目录**注册，见仓库 [themes/README.md](https://github.com/fecommunity/reactpress/blob/master/themes/README.md)。
+独立 npm 包通过 **anchor 目录**注册，见仓库 [themes/README.md](https://github.com/reactpressjs/reactpress/blob/master/themes/README.md)。
 
 Admin 或 `reactpress theme add @scope/pkg@version`（Monorepo）安装。
 
@@ -77,25 +77,21 @@ const { data } = await api.article.list({ status: 'publish', page: 1 });
 
 官方 starter 使用 Next.js App Router 动态段：
 
-| 路由 | 用途 |
-|------|------|
-| `/` | 首页 / 文章列表 |
-| `/post/[slug]` | 文章详情 |
-| `/page/[slug]` | 静态页面 |
-| `/category/[slug]` | 分类归档 |
-| `/tag/[slug]` | 标签归档 |
-| `/search` | 站内搜索 |
-| `/knowledge` | 知识库（starter 扩展） |
+| 路由               | 用途                   |
+| ------------------ | ---------------------- |
+| `/`                | 首页 / 文章列表        |
+| `/post/[slug]`     | 文章详情               |
+| `/page/[slug]`     | 静态页面               |
+| `/category/[slug]` | 分类归档               |
+| `/tag/[slug]`      | 标签归档               |
+| `/search`          | 站内搜索               |
+| `/knowledge`       | 知识库（starter 扩展） |
 
 ### 动态路由示例
 
 ```tsx
 // app/post/[slug]/page.tsx
-export default async function PostPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default async function PostPage({ params }: { params: { slug: string } }) {
   const article = await fetchArticleBySlug(params.slug);
   if (!article) notFound();
   return <ArticleView article={article} />;

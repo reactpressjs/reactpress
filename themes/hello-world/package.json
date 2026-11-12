@@ -4,11 +4,11 @@
   "description": "Official ReactPress hello-world theme — Next.js 15 Pages Router starter for blogs, categories, tags, and search",
   "homepage": "https://reactpress.cc/",
   "bugs": {
-    "url": "https://github.com/fecommunity/reactpress/issues"
+    "url": "https://github.com/reactpressjs/reactpress/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fecommunity/reactpress.git",
+    "url": "git+https://github.com/reactpressjs/reactpress.git",
     "directory": "themes/hello-world"
   },
   "keywords": [
@@ -23,7 +23,7 @@
     "typescript",
     "publishing-platform"
   ],
-  "author": "fecommunity",
+  "author": "reactpressjs",
   "license": "MIT",
   "publishConfig": {
     "access": "public",

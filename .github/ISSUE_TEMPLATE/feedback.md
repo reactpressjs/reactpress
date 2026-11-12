@@ -29,4 +29,4 @@ What would better look like? Examples or references welcome.
 
 **Additional context**
 
-Version, screenshot, or workflow — optional. For **security** issues use [SECURITY.md](https://github.com/fecommunity/reactpress/blob/master/SECURITY.md) instead.
+Version, screenshot, or workflow — optional. For **security** issues use [SECURITY.md](https://github.com/reactpressjs/reactpress/blob/master/SECURITY.md) instead.

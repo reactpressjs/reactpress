@@ -21,10 +21,10 @@ ReactPress 4.0 **plugins** extend server-side logic (Hooks), similar to WordPres
 
 ## Built-in plugins
 
-| ID | Name | Capability |
-|----|------|------|
-| `hello-world` | Auto-summary | Generates summary field when publishing posts |
-| `seo` | SEO enhancement | Slug, keywords, meta description; Admin editor slot |
+| ID                | Name               | Capability                                              |
+| ----------------- | ------------------ | ------------------------------------------------------- |
+| `hello-world`     | Auto-summary       | Generates summary field when publishing posts           |
+| `seo`             | SEO enhancement    | Slug, keywords, meta description; Admin editor slot     |
 | `image-optimizer` | Image optimization | Analyze media library history and batch WebP conversion |
 
 ### SEO plugin
@@ -58,16 +58,16 @@ reactpress plugin install hello-world   # requires Monorepo / full CLI
 
 ## Plugins vs Webhooks
 
-| Type | Trigger | Use case |
-|------|------|------|
+| Type            | Trigger                                  | Use case                 |
+| --------------- | ---------------------------------------- | ------------------------ |
 | **Plugin Hook** | In-process, synchronous, can mutate data | Summary, SEO, validation |
-| **Webhook** | Outbound HTTP, async | Slack, CI, external CMS |
+| **Webhook**     | Outbound HTTP, async                     | Slack, CI, external CMS  |
 
 Configure Webhooks in **Settings → Webhook**; they complement plugins.
 
 ## Develop custom plugins
 
-See [Plugin development guide](../developer-guide/plugin-development.md) and repo [plugins/README.md](https://github.com/fecommunity/reactpress/blob/master/plugins/README.md).
+See [Plugin development guide](../developer-guide/plugin-development.md) and repo [plugins/README.md](https://github.com/reactpressjs/reactpress/blob/master/plugins/README.md).
 
 ## Related docs
 

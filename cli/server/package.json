@@ -3,11 +3,11 @@
   "version": "4.0.0",
   "deprecated": "Bundled in @fecommunity/reactpress CLI from v3.1. Run `npx @fecommunity/reactpress init` for new projects.",
   "description": "ReactPress NestJS REST API (deprecated). Bundled in @fecommunity/reactpress CLI from v3.1. Headless CMS for articles, media, plugins, and themes",
-  "author": "fecommunity",
+  "author": "reactpressjs",
   "license": "MIT",
   "homepage": "https://reactpress.cc/",
   "bugs": {
-    "url": "https://github.com/fecommunity/reactpress/issues"
+    "url": "https://github.com/reactpressjs/reactpress/issues"
   },
   "main": "dist/main.js",
   "bin": {
@@ -35,7 +35,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fecommunity/reactpress.git",
+    "url": "git+https://github.com/reactpressjs/reactpress.git",
     "directory": "server"
   },
   "publishConfig": {

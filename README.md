@@ -11,14 +11,14 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/fecommunity/reactpress/stargazers">
-    <img src="https://img.shields.io/github/stars/fecommunity/reactpress?style=social" alt="GitHub stars" />
+  <a href="https://github.com/reactpressjs/reactpress/stargazers">
+    <img src="https://img.shields.io/github/stars/reactpressjs/reactpress?style=social" alt="GitHub stars" />
   </a>
   <a href="https://www.npmjs.com/package/@fecommunity/reactpress">
     <img src="https://img.shields.io/npm/v/@fecommunity/reactpress" alt="npm version" />
   </a>
   <a href="./LICENSE">
-    <img src="https://img.shields.io/github/license/fecommunity/reactpress" alt="License" />
+    <img src="https://img.shields.io/github/license/reactpressjs/reactpress" alt="License" />
   </a>
 </p>
 
@@ -38,7 +38,7 @@
 <img src="./public/desktop.gif" alt="ReactPress Desktop App" width="100%" />
 
 - ✍️ **Writing & Content** — Create, organize, and publish from a focused editor.
-- 🎨 **Themes** — Customize the look and feel of your site. [Starter](https://github.com/fecommunity/reactpress-theme-starter) · [Guide](./themes/README.md)
+- 🎨 **Themes** — Customize the look and feel of your site. [Starter](https://github.com/reactpressjs/reactpress-theme-starter) · [Guide](./themes/README.md)
 - 🧩 **Plugins** — Extend ReactPress with plugins. [Guide](./plugins/README.md)
 - 🖥️ **Desktop App** — The same experience, on the desktop. [Guide](./desktop/README.md)
 - 📱 **Multi-device** — Works on desktop, tablet, and mobile browsers.
@@ -65,36 +65,40 @@ Run `reactpress doctor` to diagnose issues.
 ### Deploy to Vercel
 
 <p align="left">
-  <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Ffecommunity%2Freactpress-theme-starter">
+  <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Freactpressjs%2Freactpress-theme-starter">
     <img src="https://vercel.com/button" alt="Deploy with Vercel" />
   </a>
 </p>
 
-Based on the [Theme Starter](https://github.com/fecommunity/reactpress-theme-starter) · [Live Demo](https://reactpress-theme-starter.vercel.app)
+Based on the [Theme Starter](https://github.com/reactpressjs/reactpress-theme-starter) · [Live Demo](https://reactpress-theme-starter.vercel.app)
 
 ## Resources
 
 | Resource      | Link                                                                               |
 | ------------- | ---------------------------------------------------------------------------------- |
+| Site          | [reactpress.cc](https://www.reactpress.cc/)                                        |
+| Documentation | [reactpress.cc/docs](https://reactpress.cc/)                                       |
+| GitHub        | [github.com/reactpressjs](https://github.com/reactpressjs)                         |
+| Source repo   | [reactpressjs/reactpress](https://github.com/reactpressjs/reactpress) (official)   |
+| npm           | [npmjs.com/~reactpressjs](https://www.npmjs.com/~reactpressjs)                     |
+| CLI package   | [@fecommunity/reactpress](https://www.npmjs.com/package/@fecommunity/reactpress)   |
 | Live Website  | [blog.gaoredu.com](https://blog.gaoredu.com)                                       |
 | Theme Demo    | [reactpress-theme-starter.vercel.app](https://reactpress-theme-starter.vercel.app) |
-| Documentation | [reactpress.cc](https://reactpress.cc/)                                            |
-| npm Package   | [@fecommunity/reactpress](https://www.npmjs.com/package/@fecommunity/reactpress)   |
 | Themes        | [Theme Guide](./themes/README.md)                                                  |
 | Plugins       | [Plugin Guide](./plugins/README.md)                                                |
 | Desktop App   | [Desktop Guide](./desktop/README.md)                                               |
 
 ## Community
 
-- [GitHub Issues](https://github.com/fecommunity/reactpress/issues)
+- [GitHub Issues](https://github.com/reactpressjs/reactpress/issues)
 - [Contributing Guide](./CONTRIBUTING.md)
 - [Changelog](./CHANGELOG.md)
 
 If you find ReactPress useful, please consider giving it a star.
 
 <p align="center">
-  <a href="https://github.com/fecommunity/reactpress">
-    <img src="https://img.shields.io/github/stars/fecommunity/reactpress?style=social" alt="Star ReactPress" />
+  <a href="https://github.com/reactpressjs/reactpress">
+    <img src="https://img.shields.io/github/stars/reactpressjs/reactpress?style=social" alt="Star ReactPress" />
   </a>
 </p>
 

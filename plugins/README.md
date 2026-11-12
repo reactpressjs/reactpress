@@ -309,7 +309,7 @@ Same hook name sorted by `priority` (default 10); failed plugins write `loadErro
 
 ## Build a new plugin
 
-**Standalone repo (recommended for third-party plugins):** use the [reactpress-plugin-starter](https://github.com/fecommunity/reactpress-plugin-starter) template — hooks, Admin slots, settings page, and build scripts out of the box. Develop outside the monorepo, then install via npm (phase 2) or copy into `plugins/{id}/`.
+**Standalone repo (recommended for third-party plugins):** use the [reactpress-plugin-starter](https://github.com/reactpressjs/reactpress-plugin-starter) template — hooks, Admin slots, settings page, and build scripts out of the box. Develop outside the monorepo, then install via npm (phase 2) or copy into `plugins/{id}/`.
 
 **In this monorepo:**
 
@@ -410,11 +410,11 @@ Full `pnpm build` includes plugins after toolkit, before server.
 
 - npm catalog and `reactpress plugin add`
 - Dynamic plugin Admin `admin.entry` loading (custom React settings UI)
-- `reactpress plugin create` CLI (scaffold: [reactpress-plugin-starter](https://github.com/fecommunity/reactpress-plugin-starter)), plugin marketplace
+- `reactpress plugin create` CLI (scaffold: [reactpress-plugin-starter](https://github.com/reactpressjs/reactpress-plugin-starter)), plugin marketplace
 
 ## References
 
-- [reactpress-plugin-starter](https://github.com/fecommunity/reactpress-plugin-starter) — standalone plugin template (hooks, Admin UI, settings)
+- [reactpress-plugin-starter](https://github.com/reactpressjs/reactpress-plugin-starter) — standalone plugin template (hooks, Admin UI, settings)
 - [WordPress Plugin Handbook](https://developer.wordpress.org/plugins/)
 - Root [ARCHITECTURE.md](../ARCHITECTURE.md) — system architecture and extensibility
 - [`themes/README.md`](../themes/README.md) — theme registry and three-layer model

@@ -1,13 +1,13 @@
 # @fecommunity/reactpress
 
-> **The Modern Web Creation Platform.**
+> **Write with Focus. Publish with Joy.**
 >
-> **Build. Manage. Extend.** — CMS, Admin, Headless API, Next.js themes, plugins & desktop in one CLI.
+> CMS, Admin, Headless API, Next.js themes, plugins & desktop in one CLI.
 
 [![npm latest](https://img.shields.io/npm/v/@fecommunity/reactpress.svg?label=latest)](https://www.npmjs.com/package/@fecommunity/reactpress)
 [![npm beta](https://img.shields.io/npm/v/@fecommunity/reactpress/beta.svg?label=beta)](https://www.npmjs.com/package/@fecommunity/reactpress/v/beta)
 [![npm downloads](https://img.shields.io/npm/dm/@fecommunity/reactpress.svg)](https://www.npmjs.com/package/@fecommunity/reactpress)
-[![License: MIT](https://img.shields.io/npm/l/@fecommunity/reactpress.svg)](https://github.com/fecommunity/reactpress/blob/master/LICENSE)
+[![License: MIT](https://img.shields.io/npm/l/@fecommunity/reactpress.svg)](https://github.com/reactpressjs/reactpress/blob/master/LICENSE)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D20-brightgreen?style=flat-square&logo=node.js&logoColor=white)](https://nodejs.org/)
 
 The official **ReactPress CLI** — install a complete, self-hosted publishing stack in ~60 seconds. CMS API, Web Admin, and Next.js theme support ship together. No Docker, nginx, or external database required for local development.
@@ -21,7 +21,7 @@ The official **ReactPress CLI** — install a complete, self-hosted publishing s
 
 Built for frontend teams who want WordPress-grade editing without wiring five repos together.
 
-[Documentation](https://reactpress.cc/) · [Live demo](https://blog.gaoredu.com) · [Theme demo](https://reactpress-theme-starter.vercel.app) · [GitHub](https://github.com/fecommunity/reactpress) · [Chinese overview](../README-zh_CN.md)
+[Documentation](https://reactpress.cc/) · [Live demo](https://blog.gaoredu.com) · [Theme demo](https://reactpress-theme-starter.vercel.app) · [GitHub](https://github.com/reactpressjs/reactpress) · [Chinese overview](../README-zh_CN.md)
 
 ## Install
 
@@ -75,6 +75,6 @@ Run `reactpress doctor` if something does not start correctly.
 
 ## License
 
-MIT © [FECommunity](https://github.com/fecommunity)
+MIT © [reactpressjs](https://github.com/reactpressjs)
 
-<p align="center"><sub>Part of <a href="https://github.com/fecommunity/reactpress">ReactPress</a> — The Modern Web Creation Platform. Build. Manage. Extend.</sub></p>
+<p align="center"><sub>Part of <a href="https://github.com/reactpressjs/reactpress">ReactPress</a> — Write with Focus. Publish with Joy.</sub></p>

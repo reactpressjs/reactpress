@@ -41,17 +41,17 @@ API Keys grant admin-level access. Never commit them to public repos. Use HTTPS 
 
 ## Common endpoints
 
-| Method | Path | Description |
-|------|------|------|
-| GET | `/api/health` | Health check |
-| GET | `/api/article/headless/list` | Paginated published posts |
-| GET | `/api/article/:id` | Single post |
-| GET | `/api/page/list` | Page list |
-| GET | `/api/category/list` | Categories |
-| GET | `/api/tag/list` | Tags |
-| GET | `/api/comment/list` | Comments |
-| GET | `/api/setting/public` | Public site settings |
-| POST | `/api/article` | Create post (auth required) |
+| Method | Path                         | Description                 |
+| ------ | ---------------------------- | --------------------------- |
+| GET    | `/api/health`                | Health check                |
+| GET    | `/api/article/headless/list` | Paginated published posts   |
+| GET    | `/api/article/:id`           | Single post                 |
+| GET    | `/api/page/list`             | Page list                   |
+| GET    | `/api/category/list`         | Categories                  |
+| GET    | `/api/tag/list`              | Tags                        |
+| GET    | `/api/comment/list`          | Comments                    |
+| GET    | `/api/setting/public`        | Public site settings        |
+| POST   | `/api/article`               | Create post (auth required) |
 
 Exact paths and parameters are defined in Swagger.
 
@@ -101,7 +101,7 @@ Configure: Admin → **Settings → Webhook**
 
 ## Custom frontend path
 
-1. Fork [reactpress-theme-starter](https://github.com/fecommunity/reactpress-theme-starter)
+1. Fork [reactpress-theme-starter](https://github.com/reactpressjs/reactpress-theme-starter)
 2. Point API via env: `NEXT_PUBLIC_API_URL`
 3. Deploy to Vercel / self-hosted Node
 4. Content stays on ReactPress API; frontend deploys independently

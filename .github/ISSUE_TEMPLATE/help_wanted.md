@@ -33,5 +33,5 @@ N/A if you are implementing an agreed task from the roadmap doc.
 **Additional context**
 
 - **Claiming a roadmap item?** Comment `I'll take: …` on the parent epic before opening the PR.
-- **First contribution?** See [CONTRIBUTING.md](https://github.com/fecommunity/reactpress/blob/master/CONTRIBUTING.md)
+- **First contribution?** See [CONTRIBUTING.md](https://github.com/reactpressjs/reactpress/blob/master/CONTRIBUTING.md)
 - **Blocked on design?** Open as draft and ask early.

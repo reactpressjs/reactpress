@@ -25,7 +25,7 @@ keywords: [reactpress, 使用条款, 许可, 免责声明]
 
 ## 开源软件
 
-ReactPress 软件采用 **MIT License** 分发。使用、修改或部署 ReactPress 受 [GitHub 仓库](https://github.com/fecommunity/reactpress/blob/master/LICENSE) 中的许可约束，而非本网站条款。
+ReactPress 软件采用 **MIT License** 分发。使用、修改或部署 ReactPress 受 [GitHub 仓库](https://github.com/reactpressjs/reactpress/blob/master/LICENSE) 中的许可约束，而非本网站条款。
 
 ## 文档免责声明
 

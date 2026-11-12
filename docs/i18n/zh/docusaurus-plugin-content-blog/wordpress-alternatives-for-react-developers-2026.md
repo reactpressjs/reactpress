@@ -5,7 +5,7 @@ description: >-
   在找为 React 打造的 WordPress 替代？对比 ReactPress、Headless CMS、Next.js + MDX 与
   Headless WordPress，按团队情况选对技术栈。
 date: 2026-07-28
-authors: [fecommunity]
+authors: [reactpressjs]
 tags:
   - article
   - reactpress
@@ -24,7 +24,7 @@ keywords:
 
 <!--truncate-->
 
-![ReactPress — The Modern Web Creation Platform.](/img/blog/poster.png)
+![ReactPress: Write with Focus. Publish with Joy.](/img/blog/poster.png)
 
 WordPress 仍占据很大份额。但对 **React 开发者**来说，痛点很熟悉：PHP 主题、插件体积、以及与产品其他部分不一致的前端栈。
 
@@ -126,14 +126,14 @@ reactpress init
 ## 迁移草图（WordPress → ReactPress）
 
 1. 导出文章（XML/API），经脚本或 Headless API 映射到 ReactPress
-2. 用 Next.js 重建主题（或从 [theme-starter](https://github.com/fecommunity/reactpress-theme-starter) 开始）
+2. 用 Next.js 重建主题（或从 [theme-starter](https://github.com/reactpressjs/reactpress-theme-starter) 开始）
 3. 旧固定链接 301 到新路由
 4. 复查 sitemap、canonical 与 Core Web Vitals
 
 FAQ：[能否从 WordPress 迁移？](/zh/docs/reference/faq)
 
 :::tip 名称消歧
-**ReactPress**（fecommunity）是 NestJS + Next.js 发布平台，**不是**把 React 应用嵌入现有 WP 站点的那个 WordPress 插件。
+**ReactPress**（[reactpressjs](https://github.com/reactpressjs)）是 NestJS + Next.js 发布平台，**不是**把 React 应用嵌入现有 WP 站点的那个 WordPress 插件。
 :::
 
 ---

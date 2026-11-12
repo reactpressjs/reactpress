@@ -87,7 +87,10 @@ export function buildOrganizationGraph(baseUrl: string) {
         'url': `${baseUrl}/`,
         'logo': `${baseUrl}/img/reactpress-social-card.png`,
         'sameAs': [
-          'https://github.com/fecommunity/reactpress',
+          'https://www.reactpress.cc/',
+          'https://github.com/reactpressjs',
+          'https://github.com/reactpressjs/reactpress',
+          'https://www.npmjs.com/~reactpressjs',
           'https://www.npmjs.com/package/@fecommunity/reactpress',
         ],
         'contactPoint': {

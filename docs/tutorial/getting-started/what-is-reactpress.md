@@ -94,10 +94,10 @@ flowchart LR
 - npm 主题 catalog（Admin 安装；`init` 自动启用 featured 主题）
 - 默认嵌入式 SQLite（Docker / MySQL 可选）
 
-许可：**MIT**。包：[@fecommunity/reactpress](https://www.npmjs.com/package/@fecommunity/reactpress) · 源码：[fecommunity/reactpress](https://github.com/fecommunity/reactpress)
+许可：**MIT**。包：[@fecommunity/reactpress](https://www.npmjs.com/package/@fecommunity/reactpress) · 源码：[reactpressjs/reactpress](https://github.com/reactpressjs/reactpress)（官方唯一仓库）
 
 :::tip 名称消歧
-此处的 ReactPress 指 **fecommunity 开源发布平台**（NestJS + Next.js CMS），**不是**把 React 应用嵌入现有 WordPress 站点的那个 WordPress 插件。
+此处的 ReactPress 指 **reactpressjs 开源发布平台**（NestJS + Next.js CMS），**不是**把 React 应用嵌入现有 WordPress 站点的那个 WordPress 插件。
 :::
 
 ## 快速问答

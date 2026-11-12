@@ -11,13 +11,13 @@ The ReactPress desktop app is an **Electron shell around the same Admin SPA** �
 
 ## Download and install
 
-Prebuilt installers are published on [GitHub Releases](https://github.com/fecommunity/reactpress/releases) (built automatically by the **Release Desktop** workflow).
+Prebuilt installers are published on [GitHub Releases](https://github.com/reactpressjs/reactpress/releases) (built automatically by the **Release Desktop** workflow).
 
-| Platform | Artifact | Notes |
-|----------|----------|-------|
-| **macOS** | `ReactPress-{version}.dmg` | Open the DMG and drag ReactPress into Applications |
-| **Windows** | `ReactPress Setup {version}.exe` | Run the NSIS installer |
-| **Linux** | `ReactPress-{version}.AppImage` | `chmod +x` and run, or integrate with your desktop |
+| Platform    | Artifact                         | Notes                                              |
+| ----------- | -------------------------------- | -------------------------------------------------- |
+| **macOS**   | `ReactPress-{version}.dmg`       | Open the DMG and drag ReactPress into Applications |
+| **Windows** | `ReactPress Setup {version}.exe` | Run the NSIS installer                             |
+| **Linux**   | `ReactPress-{version}.AppImage`  | `chmod +x` and run, or integrate with your desktop |
 
 > If a release has no assets yet, build locally from the monorepo root: `pnpm build:desktop` → `desktop/release/`.
 
@@ -27,10 +27,10 @@ Prebuilt installers are published on [GitHub Releases](https://github.com/fecomm
 
 ## Operating modes
 
-| Mode | When to use | Behavior |
-|------|-------------|----------|
-| **Local** (default) | Offline writing, no Docker | Main process spawns embedded SQLite API (default `http://127.0.0.1:3002/api`) |
-| **Remote API** | Connect to staging or production | Admin targets your live REST backend — same as web Admin |
+| Mode                | When to use                      | Behavior                                                                      |
+| ------------------- | -------------------------------- | ----------------------------------------------------------------------------- |
+| **Local** (default) | Offline writing, no Docker       | Main process spawns embedded SQLite API (default `http://127.0.0.1:3002/api`) |
+| **Remote API**      | Connect to staging or production | Admin targets your live REST backend — same as web Admin                      |
 
 ### Switch to remote API
 
@@ -63,7 +63,7 @@ pnpm build:desktop
 pnpm build:desktop:dir && pnpm open:desktop
 ```
 
-See [desktop/README.md](https://github.com/fecommunity/reactpress/blob/master/desktop/README.md) in the repo.
+See [desktop/README.md](https://github.com/reactpressjs/reactpress/blob/master/desktop/README.md) in the repo.
 
 ## Related docs
 

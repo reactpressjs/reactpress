@@ -26,7 +26,7 @@ const config: Config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'fecommunity', // Usually your GitHub org/user name.
+  organizationName: 'reactpressjs', // Usually your GitHub org/user name.
   projectName: 'reactpress', // Usually your repo name.
 
   onBrokenLinks: 'throw',
@@ -73,7 +73,7 @@ const config: Config = {
           showLastUpdateTime: true,
           editUrl: ({ docPath, locale }) => {
             const branch = 'master';
-            const base = `https://github.com/fecommunity/reactpress/edit/${branch}`;
+            const base = `https://github.com/reactpressjs/reactpress/edit/${branch}`;
             if (locale === 'en') {
               return `${base}/docs/i18n/en/docusaurus-plugin-content-docs/current/${docPath}`;
             }
@@ -91,7 +91,7 @@ const config: Config = {
           },
           editUrl: ({ blogPath, locale }) => {
             const branch = 'master';
-            const base = `https://github.com/fecommunity/reactpress/edit/${branch}`;
+            const base = `https://github.com/reactpressjs/reactpress/edit/${branch}`;
             if (locale === 'zh') {
               return `${base}/docs/i18n/zh/docusaurus-plugin-content-blog/${blogPath}`;
             }
@@ -174,7 +174,7 @@ const config: Config = {
           position: 'right',
         },
         {
-          href: 'https://github.com/fecommunity/reactpress',
+          href: 'https://github.com/reactpressjs/reactpress',
           label: 'GitHub',
           position: 'right',
         },
@@ -234,11 +234,11 @@ const config: Config = {
           items: [
             {
               label: 'GitHub Issues',
-              href: 'https://github.com/fecommunity/reactpress/issues',
+              href: 'https://github.com/reactpressjs/reactpress/issues',
             },
             {
               label: 'GitHub Releases',
-              href: 'https://github.com/fecommunity/reactpress/releases',
+              href: 'https://github.com/reactpressjs/reactpress/releases',
             },
             {
               label: 'X',
@@ -278,7 +278,11 @@ const config: Config = {
               to: '/terms',
             },
             {
-              label: 'npm package',
+              label: 'npm',
+              href: 'https://www.npmjs.com/~reactpressjs',
+            },
+            {
+              label: 'CLI package',
               href: 'https://www.npmjs.com/package/@fecommunity/reactpress',
             },
           ],

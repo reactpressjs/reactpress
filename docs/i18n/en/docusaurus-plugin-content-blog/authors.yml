@@ -1,5 +1,5 @@
-fecommunity:
-  name: reactpress
-  title: reactpress
-  url: https://github.com/fecommunity/reactpress
-  image_url: https://github.com/fecommunity.png
+reactpressjs:
+  name: ReactPress
+  title: ReactPress
+  url: https://github.com/reactpressjs/reactpress
+  image_url: https://github.com/reactpressjs.png

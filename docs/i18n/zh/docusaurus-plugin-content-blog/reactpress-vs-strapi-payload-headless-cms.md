@@ -5,7 +5,7 @@ description: >-
   为 React 团队对比 ReactPress、Strapi 与 Payload。弄清何时只要 Headless API 就够，
   何时需要带 Admin、Next.js 主题与 SEO 的完整发布平台。
 date: 2026-07-20
-authors: [fecommunity]
+authors: [reactpressjs]
 tags:
   - article
   - reactpress
@@ -24,7 +24,7 @@ keywords:
 
 <!--truncate-->
 
-![ReactPress — The Modern Web Creation Platform.](/img/blog/poster.png)
+![ReactPress: Write with Focus. Publish with Joy.](/img/blog/poster.png)
 
 如果团队以 **React / Next.js** 为主栈，内容基础设施候选往往是：**Strapi**、**Payload**，再加上 Contentful 或 Sanity — 然后有人问：_「博客本身放哪？」_
 
@@ -102,7 +102,7 @@ ReactPress **具备** Headless 能力：
 
 但产品承诺更广：**Admin 管内容 · 主题管呈现 · 插件管逻辑 · API 管数据**。
 
-用官方主题快速上线；需要定制前端时 fork [reactpress-theme-starter](https://github.com/fecommunity/reactpress-theme-starter) — 不必丢掉 Admin。
+用官方主题快速上线；需要定制前端时 fork [reactpress-theme-starter](https://github.com/reactpressjs/reactpress-theme-starter) — 不必丢掉 Admin。
 
 ---
 

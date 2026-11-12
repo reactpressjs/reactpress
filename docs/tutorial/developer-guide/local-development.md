@@ -12,18 +12,18 @@ keywords: [reactpress, monorepo, contributing, pnpm dev, local development]
 ## 环境准备
 
 ```bash
-git clone --depth=1 https://github.com/fecommunity/reactpress.git
+git clone --depth=1 https://github.com/reactpressjs/reactpress.git
 cd reactpress
 npm i -g pnpm
 pnpm install
 ```
 
-| 要求 | 说明 |
-|------|------|
-| Node.js | ≥ 20 |
-| pnpm | 9.x（见 `packageManager` 字段） |
-| Docker | 可选；默认 SQLite 可不装 |
-| OS | macOS / Linux / Windows |
+| 要求    | 说明                            |
+| ------- | ------------------------------- |
+| Node.js | ≥ 20                            |
+| pnpm    | 9.x（见 `packageManager` 字段） |
+| Docker  | 可选；默认 SQLite 可不装        |
+| OS      | macOS / Linux / Windows         |
 
 ## 仓库结构
 
@@ -51,13 +51,13 @@ pnpm dev               # API :3002 + Admin :3000 + Theme :3001
 
 ## 分进程开发
 
-| 命令 | 用途 |
-|------|------|
-| `pnpm dev:api` | 仅调试 Server |
-| `pnpm dev:web` | Admin + API |
-| `pnpm dev:client` | 仅主题 |
-| `pnpm dev:desktop` | Electron + SQLite |
-| `pnpm dev:docs` | 文档站 `http://localhost:3000`（docs 包独立端口，见终端输出） |
+| 命令               | 用途                                                          |
+| ------------------ | ------------------------------------------------------------- |
+| `pnpm dev:api`     | 仅调试 Server                                                 |
+| `pnpm dev:web`     | Admin + API                                                   |
+| `pnpm dev:client`  | 仅主题                                                        |
+| `pnpm dev:desktop` | Electron + SQLite                                             |
+| `pnpm dev:docs`    | 文档站 `http://localhost:3000`（docs 包独立端口，见终端输出） |
 
 ## 构建与测试
 
@@ -92,18 +92,18 @@ cd docs && pnpm dev
 
 - 代码与 commit message：**English**
 - 用户文档：英文 README + 中文 `README-zh_CN.md`；本站中文为主、英文 i18n 同步
-- 见仓库 [CONTRIBUTING.md](https://github.com/fecommunity/reactpress/blob/master/CONTRIBUTING.md)
+- 见仓库 [CONTRIBUTING.md](https://github.com/reactpressjs/reactpress/blob/master/CONTRIBUTING.md)
 
 ## 与全局 CLI 的差异
 
-| | 全局 `@fecommunity/reactpress` | Monorepo `pnpm dev` |
-|---|-------------------------------|---------------------|
-| API 来源 | bundled in CLI | workspace `server/` |
-| 命令 | init / doctor / logs / stop | 完整 dev / build / pm2 |
-| 适用 | 建站用户 | core / 主题 / 插件贡献 |
+|          | 全局 `@fecommunity/reactpress` | Monorepo `pnpm dev`    |
+| -------- | ------------------------------ | ---------------------- |
+| API 来源 | bundled in CLI                 | workspace `server/`    |
+| 命令     | init / doctor / logs / stop    | 完整 dev / build / pm2 |
+| 适用     | 建站用户                       | core / 主题 / 插件贡献 |
 
 ## 相关文档
 
 - [系统架构概览](./architecture-overview.md)
 - [CLI 命令参考](./cli-reference.md)
-- [ARCHITECTURE.md](https://github.com/fecommunity/reactpress/blob/master/ARCHITECTURE.md)
+- [ARCHITECTURE.md](https://github.com/reactpressjs/reactpress/blob/master/ARCHITECTURE.md)

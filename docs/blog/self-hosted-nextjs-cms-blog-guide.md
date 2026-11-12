@@ -5,7 +5,7 @@ description: >-
   How to self-host a Next.js blog with a real CMS in 2026 — SQLite or MySQL, SSR SEO,
   Admin editing, and data ownership. Why ReactPress beats DIY Strapi + starter stacks.
 date: 2026-07-24
-authors: [fecommunity]
+authors: [reactpressjs]
 tags:
   - article
   - reactpress
@@ -24,7 +24,7 @@ keywords:
 
 <!--truncate-->
 
-![ReactPress — The Modern Web Creation Platform.](/img/blog/poster.png)
+![ReactPress: Write with Focus. Publish with Joy.](/img/blog/poster.png)
 
 “We want a **self-hosted Next.js blog**” sounds simple. In practice it splits into three projects: a CMS, an Admin, and a theme — plus backups, SEO, and auth. This guide shows a **practical 2026 path** that keeps data on your infrastructure and still feels like a product, not a weekend mash-up.
 

@@ -5,7 +5,7 @@ description: >-
   Looking for a WordPress alternative built for React? Compare ReactPress, Headless CMS,
   Next.js + MDX, and headless WordPress — and pick the stack that matches your team.
 date: 2026-07-28
-authors: [fecommunity]
+authors: [reactpressjs]
 tags:
   - article
   - reactpress
@@ -24,7 +24,7 @@ keywords:
 
 <!--truncate-->
 
-![ReactPress — The Modern Web Creation Platform.](/img/blog/poster.png)
+![ReactPress: Write with Focus. Publish with Joy.](/img/blog/poster.png)
 
 WordPress still runs a huge share of the web. For **React developers**, though, the pain is familiar: PHP themes, plugin weight, and a frontend stack that does not match the rest of the product.
 
@@ -126,14 +126,14 @@ Otherwise, if the rest of your company is React, keeping PHP only for the market
 ## Migration sketch (WordPress → ReactPress)
 
 1. Export posts (XML/API) and map to ReactPress articles via scripts or Headless API
-2. Rebuild the theme in Next.js (or start from [theme-starter](https://github.com/fecommunity/reactpress-theme-starter))
+2. Rebuild the theme in Next.js (or start from [theme-starter](https://github.com/reactpressjs/reactpress-theme-starter))
 3. Redirect old permalinks → new routes
 4. Re-verify sitemap, canonical, and Core Web Vitals
 
 FAQ: [Can I migrate from WordPress?](/docs/reference/faq)
 
 :::tip Name disambiguation
-**ReactPress** (fecommunity) is a NestJS + Next.js publishing platform. It is **not** the WordPress plugin that embeds React apps into existing WP sites.
+**ReactPress** ([reactpressjs](https://github.com/reactpressjs)) is a NestJS + Next.js publishing platform. It is **not** the WordPress plugin that embeds React apps into existing WP sites.
 :::
 
 ---

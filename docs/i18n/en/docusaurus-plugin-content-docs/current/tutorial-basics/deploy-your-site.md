@@ -50,7 +50,7 @@ When you need the full lifecycle (`pm2`, split processes, official plugin builds
 ### Environment
 
 ```bash
-git clone --depth=1 https://github.com/fecommunity/reactpress.git
+git clone --depth=1 https://github.com/reactpressjs/reactpress.git
 cd reactpress
 npm i -g pnpm
 pnpm install

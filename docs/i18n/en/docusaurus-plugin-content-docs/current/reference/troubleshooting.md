@@ -138,7 +138,7 @@ See [Production deployment](../tutorial-basics/deploy-your-site.md) and [Docker 
 
 ## Still stuck?
 
-When opening a [GitHub Issue](https://github.com/fecommunity/reactpress/issues), include:
+When opening a [GitHub Issue](https://github.com/reactpressjs/reactpress/issues), include:
 
 - OS and Node version
 - `@fecommunity/reactpress` version

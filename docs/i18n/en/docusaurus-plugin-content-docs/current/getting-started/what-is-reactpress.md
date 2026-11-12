@@ -105,10 +105,10 @@ Deeper model: [Core concepts](./core-concepts.md) · [Architecture overview](../
 - npm theme catalog (install in Admin; `init` auto-activates the featured theme)
 - Embedded SQLite by default (Docker / MySQL optional)
 
-License: **MIT**. Package: [@fecommunity/reactpress](https://www.npmjs.com/package/@fecommunity/reactpress) · Source: [fecommunity/reactpress](https://github.com/fecommunity/reactpress)
+License: **MIT**. Package: [@fecommunity/reactpress](https://www.npmjs.com/package/@fecommunity/reactpress) · Source: [reactpressjs/reactpress](https://github.com/reactpressjs/reactpress) (official)
 
 :::tip Name disambiguation
-ReactPress here is the **fecommunity open-source publishing platform** (NestJS + Next.js CMS). It is **not** the WordPress plugin that embeds React apps into existing WP sites.
+ReactPress here is the **reactpressjs open-source publishing platform** (NestJS + Next.js CMS). It is **not** the WordPress plugin that embeds React apps into existing WP sites.
 :::
 
 ## Quick answers

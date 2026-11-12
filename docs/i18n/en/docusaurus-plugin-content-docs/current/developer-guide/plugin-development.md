@@ -11,7 +11,7 @@ Plugins extend **NestJS server logic** and optional **Admin UI slots**, followin
 
 > **Theme = presentation · Plugin = logic**
 
-Full spec: repo [plugins/README.md](https://github.com/fecommunity/reactpress/blob/master/plugins/README.md).
+Full spec: repo [plugins/README.md](https://github.com/reactpressjs/reactpress/blob/master/plugins/README.md).
 
 ## Quick scaffold
 

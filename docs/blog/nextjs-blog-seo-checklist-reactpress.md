@@ -5,7 +5,7 @@ description: >-
   A practical Next.js blog SEO checklist for 2026: SSR titles, meta, sitemap, OG, Core Web Vitals,
   and structured data — plus how ReactPress themes and the SEO plugin cover the defaults.
 date: 2026-08-01
-authors: [fecommunity]
+authors: [reactpressjs]
 tags:
   - article
   - reactpress
@@ -23,7 +23,7 @@ keywords:
 
 <!--truncate-->
 
-![ReactPress — The Modern Web Creation Platform.](/img/blog/poster.png)
+![ReactPress: Write with Focus. Publish with Joy.](/img/blog/poster.png)
 
 A Next.js blog can rank — or disappear — based on defaults you forget on day one: client-only post pages, missing sitemap, thin meta, and bloated images. This **2026 SEO checklist** is written for teams shipping a **Next.js blog with a real CMS**, and shows how **ReactPress** covers the boring essentials so you can focus on content.
 

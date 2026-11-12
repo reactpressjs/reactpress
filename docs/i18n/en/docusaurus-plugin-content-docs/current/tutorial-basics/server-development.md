@@ -11,10 +11,10 @@ ReactPress API is built on **NestJS**; source lives in monorepo `server/`. Two e
 
 ## When to use plugins vs Server changes
 
-| Approach | For | Upgrade impact |
-|------|------|----------|
+| Approach        | For                                            | Upgrade impact            |
+| --------------- | ---------------------------------------------- | ------------------------- |
 | **Plugin Hook** | Business rules, field transforms, integrations | Low — independent package |
-| **Server PR** | New REST resources, auth model, core bugs | Follows release cycle |
+| **Server PR**   | New REST resources, auth model, core bugs      | Follows release cycle     |
 
 Third-party integrations should prefer [Plugin development](../developer-guide/plugin-development.md).
 
@@ -80,4 +80,4 @@ Swagger: http://localhost:3002/api
 
 - [Architecture overview](../developer-guide/architecture-overview.md)
 - [Headless API](../developer-guide/headless-api.md)
-- [ARCHITECTURE.md §11 Server](https://github.com/fecommunity/reactpress/blob/master/ARCHITECTURE.md#11-server-backend-api)
+- [ARCHITECTURE.md §11 Server](https://github.com/reactpressjs/reactpress/blob/master/ARCHITECTURE.md#11-server-backend-api)

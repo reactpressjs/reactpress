@@ -1,7 +1,7 @@
 import './node-polyfills';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { existsSync, unlinkSync, writeFileSync } from 'fs';
+import { existsSync, mkdirSync, unlinkSync, writeFileSync } from 'fs';
 import { join } from 'path';
 
 import { AppModule } from './app.module';
@@ -18,7 +18,6 @@ async function generateSwaggerJson() {
 
     // 获取配置服务
     const configService = app.get('ConfigService');
-    const apiPrefix = configService.get('SERVER_API_PREFIX', '/api');
 
     console.log('📝 Configuring Swagger documentation...');
 
@@ -29,8 +28,8 @@ async function generateSwaggerJson() {
         'Comprehensive API documentation for ReactPress - A modern content management system built with NestJS'
       )
       .setVersion('2.0')
-      .setContact('ReactPress Team', 'https://github.com/fecommunity/reactpress', 'admin@gaoredu.com')
-      .setLicense('MIT', 'https://github.com/fecommunity/reactpress/blob/main/LICENSE')
+      .setContact('ReactPress Team', 'https://github.com/reactpressjs/reactpress', 'admin@gaoredu.com')
+      .setLicense('MIT', 'https://github.com/reactpressjs/reactpress/blob/main/LICENSE')
       .addServer(configService.get('SERVER_SITE_URL', 'http://localhost:3002'), 'API Server')
       .build();
 
@@ -45,7 +44,7 @@ async function generateSwaggerJson() {
     const publicDir = join(__dirname, '../public');
     if (!existsSync(publicDir)) {
       console.log('📁 Creating public directory...');
-      require('fs').mkdirSync(publicDir, { recursive: true });
+      mkdirSync(publicDir, { recursive: true });
     }
 
     // 如果文件已经存在，就覆盖掉

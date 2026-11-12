@@ -42,7 +42,7 @@ reactpress theme add @fecommunity/reactpress-theme-starter@1.0.0-beta.0
 
 ```bash
 npx create-next-app@latest my-blog \
-  --example "https://github.com/fecommunity/reactpress-theme-starter" \
+  --example "https://github.com/reactpressjs/reactpress-theme-starter" \
   --use-pnpm
 cd my-blog && pnpm dev:mock
 ```
@@ -64,7 +64,7 @@ cd my-blog && pnpm dev:mock
 开发者 fork 官方 starter 或从 `themes/hello-world` 复制：
 
 - [主题开发指南](../developer-guide/theme-development.md)
-- 仓库 [themes/README.md](https://github.com/fecommunity/reactpress/blob/master/themes/README.md)
+- 仓库 [themes/README.md](https://github.com/reactpressjs/reactpress/blob/master/themes/README.md)
 
 ## 架构要点
 

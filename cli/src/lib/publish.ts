@@ -33,7 +33,7 @@ const CORE_PUBLISH_PACKAGES = [
   {
     name: '@fecommunity/reactpress',
     path: 'cli',
-    description: 'The Modern Web Creation Platform. Build. Manage. Extend.',
+    description: 'Write with Focus. Publish with Joy.',
   },
 ];
 

@@ -36,8 +36,8 @@ const LOGO_GRADIENTS = [
   [palette.accent, palette.primary],
 ];
 
-const REPO_URL = 'https://github.com/fecommunity/reactpress';
-const REPO_DISPLAY = 'github.com/fecommunity/reactpress';
+const REPO_URL = 'https://github.com/reactpressjs/reactpress';
+const REPO_DISPLAY = 'github.com/reactpressjs/reactpress';
 const CARD_MIN = 68;
 const ASCII_CARD_PAD = 8;
 
@@ -147,9 +147,7 @@ function componentStatusPill(component) {
 function appendComponentStatusRows(lines, innerWidth, status, lw) {
   if (!status || !Array.isArray(status.components)) return;
   for (const component of status.components) {
-    lines.push(
-      cardRow(infoRow(componentLabel(component), componentStatusPill(component), lw), innerWidth),
-    );
+    lines.push(cardRow(infoRow(componentLabel(component), componentStatusPill(component), lw), innerWidth));
   }
 }
 
@@ -241,17 +239,11 @@ function renderAnimatedLogoLines(frame = 0, revealRatio = 1) {
     const rowThreshold = (rowIndex + 1) / TECH_LOGO.length;
     if (revealRatio < rowThreshold - 0.06) {
       const ghost = mixHexLocal(palette.border, palette.surface, 0.5);
-      return chalk.hex(ghost)(
-        [...line]
-          .map((ch) => (ch === ' ' ? ch : '░'))
-          .join(''),
-      );
+      return chalk.hex(ghost)([...line].map((ch) => (ch === ' ' ? ch : '░')).join(''));
     }
 
     const colors = LOGO_GRADIENTS[rowIndex];
-    return [...line]
-      .map((ch, ci) => paintChar(ch, ci, rowIndex, colors, line.length))
-      .join('');
+    return [...line].map((ch, ci) => paintChar(ch, ci, rowIndex, colors, line.length)).join('');
   });
 }
 
@@ -266,9 +258,7 @@ function startupPulseRow(innerWidth, { completed = 0, total = 0, ready = false, 
   }
   const label = brand.muted(padRight(t('banner.pulseLabel').trim(), 6));
   const bar = pulseBar(barWidth, filled);
-  const status = ready
-    ? brand.success(t('banner.pulseReady'))
-    : brand.warn(t('banner.pulsePending'));
+  const status = ready ? brand.success(t('banner.pulseReady')) : brand.warn(t('banner.pulsePending'));
   return centerLine(`${label}${bar}  ${status}`, innerWidth);
 }
 
@@ -311,9 +301,7 @@ function titleBarRow(innerWidth, version, systemState) {
 }
 
 function repoRow(innerWidth) {
-  const link =
-    brand.dim(icon.link + ' ') +
-    hyperlink(REPO_URL, brand.dim.underline(REPO_DISPLAY));
+  const link = brand.dim(icon.link + ' ') + hyperlink(REPO_URL, brand.dim.underline(REPO_DISPLAY));
   return centerLine(link, innerWidth);
 }
 
@@ -348,9 +336,7 @@ function renderAnimatedWordmark(frame = 0) {
       const dimBase = mixHexLocal(base, palette.surface, 0.65);
       if (glow <= 0.05) return chalk.hex(dimBase).bold(ch);
       const lit =
-        glow > 0.75
-          ? mixHexLocal(streamHot, palette.accent, 1 - glow)
-          : mixHexLocal(dimBase, palette.accent, glow);
+        glow > 0.75 ? mixHexLocal(streamHot, palette.accent, 1 - glow) : mixHexLocal(dimBase, palette.accent, glow);
       const c = chalk.hex(lit);
       return glow > 0.5 ? c.bold(ch) : c(ch);
     })
@@ -369,12 +355,21 @@ function softRule(innerWidth) {
 
 function modeChip(type) {
   if (type === 'monorepo') {
-    return chalk.bgHex(palette.primary).hex('#0B1220').bold(` ${t('banner.mode.monorepo').trim()} `);
+    return chalk
+      .bgHex(palette.primary)
+      .hex('#0B1220')
+      .bold(` ${t('banner.mode.monorepo').trim()} `);
   }
   if (type === 'standalone') {
-    return chalk.bgHex(palette.accent).hex('#0B1220').bold(` ${t('banner.mode.standalone').trim()} `);
+    return chalk
+      .bgHex(palette.accent)
+      .hex('#0B1220')
+      .bold(` ${t('banner.mode.standalone').trim()} `);
   }
-  return chalk.bgHex(palette.gray).hex('#0B1220').bold(` ${t('banner.mode.uninitialized').trim()} `);
+  return chalk
+    .bgHex(palette.gray)
+    .hex('#0B1220')
+    .bold(` ${t('banner.mode.uninitialized').trim()} `);
 }
 
 function infoRow(label, value, lw) {
@@ -387,15 +382,11 @@ function commandRail() {
 
 function appendInfoRows(lines, innerWidth, options, lw) {
   if (options.project) {
-    lines.push(
-      cardRow(infoRow(t('banner.label.mode').trim(), modeChip(options.project.type), lw), innerWidth),
-    );
+    lines.push(cardRow(infoRow(t('banner.label.mode').trim(), modeChip(options.project.type), lw), innerWidth));
   }
   if (options.projectRoot) {
     const pathValue =
-      brand.primary('▶') +
-      brand.dim(' ') +
-      brand.dim(truncateText(homify(options.projectRoot), innerWidth - lw - 8));
+      brand.primary('▶') + brand.dim(' ') + brand.dim(truncateText(homify(options.projectRoot), innerWidth - lw - 8));
     lines.push(cardRow(infoRow(t('banner.label.path').trim(), pathValue, lw), innerWidth));
   }
   appendComponentStatusRows(lines, innerWidth, options.status, lw);
@@ -416,10 +407,7 @@ function composeBannerLines(version, options, { showAscii, width, startup } = {}
   lines.push(cardGap(innerWidth));
 
   if (showAscii) {
-    const logoLines =
-      startup && !startup.ready
-        ? renderAnimatedLogoLines(startup.frame || 0, 1)
-        : renderLogoLines();
+    const logoLines = startup && !startup.ready ? renderAnimatedLogoLines(startup.frame || 0, 1) : renderLogoLines();
     for (const logoLine of logoLines) {
       lines.push(cardRow(centerLine(logoLine, innerWidth), innerWidth));
     }
@@ -434,13 +422,12 @@ function composeBannerLines(version, options, { showAscii, width, startup } = {}
             ready: startup.ready,
             frame: startup.frame || 0,
           }),
-          innerWidth,
-        ),
+          innerWidth
+        )
       );
     }
   } else {
-    const wordmark =
-      startup && !startup.ready ? renderAnimatedWordmark(startup.frame || 0) : wordmarkHero();
+    const wordmark = startup && !startup.ready ? renderAnimatedWordmark(startup.frame || 0) : wordmarkHero();
     lines.push(cardRow(centerLine(wordmark, innerWidth), innerWidth));
     lines.push(cardRow(centerLine(taglineRow(), innerWidth), innerWidth));
     if (startup && !startup.ready) {
@@ -452,8 +439,8 @@ function composeBannerLines(version, options, { showAscii, width, startup } = {}
             ready: startup.ready,
             frame: startup.frame || 0,
           }),
-          innerWidth,
-        ),
+          innerWidth
+        )
       );
     }
   }
@@ -476,7 +463,7 @@ function printCompactServiceStatus(status) {
   const lw = computeLabelWidth(status.components);
   for (const component of status.components) {
     console.log(
-      `  ${brand.muted(padRight(componentLabel(component), lw))}${brand.border('│ ')}${componentStatusPill(component)}`,
+      `  ${brand.muted(padRight(componentLabel(component), lw))}${brand.border('│ ')}${componentStatusPill(component)}`
     );
   }
 }
@@ -485,9 +472,7 @@ function printCompactBanner(version, options) {
   const systemState = resolveSystemState(options);
 
   console.log('');
-  console.log(
-    `  ${macTrafficLights()}  ${brand.dim(`reactpress · v${version}`)}  ${systemStatusBadge(systemState)}`,
-  );
+  console.log(`  ${macTrafficLights()}  ${brand.dim(`reactpress · v${version}`)}  ${systemStatusBadge(systemState)}`);
   console.log(`  ${brand.muted(icon.link)} ${hyperlink(REPO_URL, brand.dim.underline(REPO_DISPLAY))}`);
   console.log('');
   for (const logoLine of renderLogoLines()) {
@@ -517,9 +502,7 @@ function printBanner(options = {}) {
 }
 
 function box(lines, { width } = {}) {
-  const innerWidth = width
-    ? width - 4
-    : lines.reduce((max, line) => Math.max(max, visibleLength(line)), 0);
+  const innerWidth = width ? width - 4 : lines.reduce((max, line) => Math.max(max, visibleLength(line)), 0);
 
   const horizontal = '─'.repeat(innerWidth + 2);
   const top = brand.border(`  ╭${horizontal}╮`);

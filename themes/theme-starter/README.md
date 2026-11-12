@@ -8,12 +8,12 @@ Schema: [`../npm-catalog.schema.json`](../npm-catalog.schema.json).
 
 ## Anchor vs local theme
 
-| | npm anchor (this directory) | Local theme (e.g. `hello-world/`) |
-| :--- | :--- | :--- |
-| Metadata | `package.json` → `reactpress.theme` | `theme.json` |
-| Source | npm package installed to runtime | Copy `themes/{id}/` to runtime |
-| Registry | `themes/package.json` → `npm: ["theme-starter"]` | `local: ["hello-world"]` |
-| Directory name | May differ from `theme.id` | Must match `theme.json` `id` |
+|                | npm anchor (this directory)                      | Local theme (e.g. `hello-world/`) |
+| :------------- | :----------------------------------------------- | :-------------------------------- |
+| Metadata       | `package.json` → `reactpress.theme`              | `theme.json`                      |
+| Source         | npm package installed to runtime                 | Copy `themes/{id}/` to runtime    |
+| Registry       | `themes/package.json` → `npm: ["theme-starter"]` | `local: ["hello-world"]`          |
+| Directory name | May differ from `theme.id`                       | Must match `theme.json` `id`      |
 
 ## Install
 
@@ -24,11 +24,11 @@ pnpm run --dir themes add:starter
 
 ## Source & documentation
 
-| Resource | Link |
-| :--- | :--- |
-| npm | [@fecommunity/reactpress-theme-starter](https://www.npmjs.com/package/@fecommunity/reactpress-theme-starter) |
-| Repository | [github.com/fecommunity/reactpress-theme-starter](https://github.com/fecommunity/reactpress-theme-starter) |
-| Live demo | [reactpress-theme-starter.vercel.app](https://reactpress-theme-starter.vercel.app) |
+| Resource   | Link                                                                                                         |
+| :--------- | :----------------------------------------------------------------------------------------------------------- |
+| npm        | [@fecommunity/reactpress-theme-starter](https://www.npmjs.com/package/@fecommunity/reactpress-theme-starter) |
+| Repository | [github.com/reactpressjs/reactpress-theme-starter](https://github.com/reactpressjs/reactpress-theme-starter) |
+| Live demo  | [reactpress-theme-starter.vercel.app](https://reactpress-theme-starter.vercel.app)                           |
 
 After install, materializes to `.reactpress/runtime/reactpress-theme-starter/`.
 

@@ -13,6 +13,8 @@ import { existsSync } from 'fs';
 import { join } from 'path';
 import { SwaggerTheme, SwaggerThemeNameEnum } from 'swagger-themes';
 
+import { buildDevPortRedirectUrl, shouldRedirectDevPortToNginx } from '@fecommunity/reactpress-toolkit/plugin/dev';
+
 import { AppModule } from './app.module';
 import { ApiMsg } from './common/api-messages';
 import { HttpExceptionFilter } from './filters/http-exception.filter';
@@ -119,9 +121,8 @@ export async function bootstrap() {
     const listenPort = Number(configService.get('SERVER_PORT', configuredPort));
 
     app.use((req: express.Request, res: express.Response, next: express.NextFunction) => {
-      const { shouldRedirectDevPortToNginx, buildDevPortRedirectUrl } = require('@fecommunity/reactpress-toolkit/plugin/dev');
       if (
-        !        shouldRedirectDevPortToNginx({
+        !shouldRedirectDevPortToNginx({
           host: req.headers.host,
           method: req.method,
           accept: req.headers.accept,
@@ -219,8 +220,8 @@ export async function bootstrap() {
         'Comprehensive API documentation for ReactPress - A modern content management system built with NestJS'
       )
       .setVersion('3.0')
-      .setContact('ReactPress Team', 'https://github.com/fecommunity/reactpress', 'admin@gaoredu.com')
-      .setLicense('MIT', 'https://github.com/fecommunity/reactpress/blob/main/LICENSE')
+      .setContact('ReactPress Team', 'https://github.com/reactpressjs/reactpress', 'admin@gaoredu.com')
+      .setLicense('MIT', 'https://github.com/reactpressjs/reactpress/blob/main/LICENSE')
       .addServer(configService.get('SERVER_SITE_URL', 'http://localhost:3002'), 'API Server')
       .build();
 
@@ -266,7 +267,7 @@ export async function bootstrap() {
     if (isLocalApiQuiet()) {
       const dbType = String(configService.get('DB_TYPE') || 'mysql').toLowerCase();
       console.log(
-        `[ReactPress] Local API ready · ${dbType === 'sqlite' ? 'SQLite' : dbType} · http://127.0.0.1:${listenPort}${listenPrefix}/health`,
+        `[ReactPress] Local API ready · ${dbType === 'sqlite' ? 'SQLite' : dbType} · http://127.0.0.1:${listenPort}${listenPrefix}/health`
       );
     } else {
       console.log(`[ReactPress] Application started on http://localhost:${listenPort}`);

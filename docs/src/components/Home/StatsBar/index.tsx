@@ -60,7 +60,7 @@ export default function StatsBar() {
           </div>
         ))}
         <p className={styles.tagline}>
-          <Translate id="home.stats.tagline">Build. Manage. Extend. — for React developers.</Translate>
+          <Translate id="home.stats.tagline">Write with Focus. Publish with Joy. — for React developers.</Translate>
         </p>
       </div>
     </section>

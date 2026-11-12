@@ -3,7 +3,16 @@
   "version": "4.0.0",
   "private": true,
   "packageManager": "pnpm@9.15.9",
-  "description": "ReactPress — The Modern Web Creation Platform. Build. Manage. Extend. CMS, Admin, Headless API, Next.js themes, plugins, desktop — one CLI.",
+  "description": "ReactPress: Write with Focus. Publish with Joy. CMS, Admin, Headless API, Next.js themes, plugins, desktop — one CLI.",
+  "homepage": "https://www.reactpress.cc/",
+  "bugs": {
+    "url": "https://github.com/reactpressjs/reactpress/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reactpressjs/reactpress.git"
+  },
+  "author": "reactpressjs",
   "bin": {
     "reactpress": "./cli/bin/reactpress.js"
   },

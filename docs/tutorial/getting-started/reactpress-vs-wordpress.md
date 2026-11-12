@@ -42,7 +42,7 @@ ReactPress 按 React 团队习惯拆分职责：
 4. **插件 Hook** — 类似 WordPress，但基于 JavaScript
 5. **Electron 桌面** — SQLite 本地写作，可同步远程
 
-可用 catalog 主题快速上线，或 fork [reactpress-theme-starter](https://github.com/fecommunity/reactpress-theme-starter)，同时保留同一套 Admin 工作流。
+可用 catalog 主题快速上线，或 fork [reactpress-theme-starter](https://github.com/reactpressjs/reactpress-theme-starter)，同时保留同一套 Admin 工作流。
 
 ```mermaid
 flowchart LR

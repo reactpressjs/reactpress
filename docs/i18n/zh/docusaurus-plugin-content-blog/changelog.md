@@ -2,15 +2,15 @@
 slug: changelog
 title: 更新日志
 date: 2026-06-14
-authors: [fecommunity]
+authors: [reactpressjs]
 tags: [reactpress, release]
 ---
 
 <!--truncate-->
 
-## [4.0.0](https://github.com/fecommunity/reactpress/compare/v4.0.0-beta.18...v4.0.0) (2026-08-09)
+## [4.0.0](https://github.com/reactpressjs/reactpress/compare/v4.0.0-beta.18...v4.0.0) (2026-08-09)
 
-**ReactPress 4.0.0 稳定版** — npm `@latest`（[#88](https://github.com/fecommunity/reactpress/issues/88)）。安装：`npm i -g @fecommunity/reactpress`。
+**ReactPress 4.0.0 稳定版** — npm `@latest`（[#88](https://github.com/reactpressjs/reactpress/issues/88)）。安装：`npm i -g @fecommunity/reactpress`。
 
 ### 亮点
 
@@ -20,7 +20,7 @@ tags: [reactpress, release]
 
 ---
 
-## [4.0.0-beta.18](https://github.com/fecommunity/reactpress/compare/v4.0.0-beta.0...v4.0.0-beta.18) (2026-07-12)
+## [4.0.0-beta.18](https://github.com/reactpressjs/reactpress/compare/v4.0.0-beta.0...v4.0.0-beta.18) (2026-07-12)
 
 **ReactPress 4.0 beta.18** — 当时 npm `@beta` 标签。安装：`npm i -g @fecommunity/reactpress@beta`。
 
@@ -33,20 +33,20 @@ tags: [reactpress, release]
 
 ---
 
-## [4.0.0-beta.0](https://github.com/fecommunity/reactpress/compare/v3.7.0...v4.0.0-beta.0) (2026-06-27)
+## [4.0.0-beta.0](https://github.com/reactpressjs/reactpress/compare/v3.7.0...v4.0.0-beta.0) (2026-06-27)
 
 **ReactPress 4.0 扩展版（beta）** — 插件、桌面客户端、主题 catalog。安装：`npm i -g @fecommunity/reactpress@beta`。
 
 ### 新特性
 
-- **插件系统** ([#69](https://github.com/fecommunity/reactpress/issues/69))：Hook + `plugin.json` manifest + Admin 插槽；内置 `hello-world`（自动摘要）、`seo`（SEO 增强）、`image-optimizer`（历史图片 WebP 批量优化）
-- **桌面客户端** ([#70](https://github.com/fecommunity/reactpress/issues/70))：Electron + SQLite 本地模式；远程 API 与内容同步
-- **主题系统** ([#71](https://github.com/fecommunity/reactpress/issues/71))：npm catalog（`theme-starter`）、`theme add`/`list`、预览池；hello-world 文档与结构对齐
+- **插件系统** ([#69](https://github.com/reactpressjs/reactpress/issues/69))：Hook + `plugin.json` manifest + Admin 插槽；内置 `hello-world`（自动摘要）、`seo`（SEO 增强）、`image-optimizer`（历史图片 WebP 批量优化）
+- **桌面客户端** ([#70](https://github.com/reactpressjs/reactpress/issues/70))：Electron + SQLite 本地模式；远程 API 与内容同步
+- **主题系统** ([#71](https://github.com/reactpressjs/reactpress/issues/71))：npm catalog（`theme-starter`）、`theme add`/`list`、预览池；hello-world 文档与结构对齐
 - **迁移指南**：[3.x → 4.0](/docs/tutorial-extras/migration-3-to-4)
 
 ---
 
-## [3.7.0](https://github.com/fecommunity/reactpress/compare/v3.6.0...v3.7.0) (2026-06-23)
+## [3.7.0](https://github.com/reactpressjs/reactpress/compare/v3.6.0...v3.7.0) (2026-06-23)
 
 **安全修复** — SQL 注入与存储型 XSS 修复。
 
@@ -58,7 +58,7 @@ tags: [reactpress, release]
 
 ---
 
-## [3.6.0](https://github.com/fecommunity/reactpress/compare/v3.5.0...v3.6.0) (2026-06-14)
+## [3.6.0](https://github.com/reactpressjs/reactpress/compare/v3.5.0...v3.6.0) (2026-06-14)
 
 **文档 CI/CD 与部署** — 自动化文档流水线，Vercel 配置迁移。
 
@@ -71,7 +71,7 @@ tags: [reactpress, release]
 
 ---
 
-## [3.5.0](https://github.com/fecommunity/reactpress/compare/v3.4.0...v3.5.0) (2026-06-14)
+## [3.5.0](https://github.com/reactpressjs/reactpress/compare/v3.4.0...v3.5.0) (2026-06-14)
 
 **主题目录** — 基于 npm 的主题发现与管理。
 
@@ -81,7 +81,7 @@ tags: [reactpress, release]
 
 ---
 
-## [3.4.0](https://github.com/fecommunity/reactpress/compare/v3.3.0...v3.4.0) (2026-06-12)
+## [3.4.0](https://github.com/reactpressjs/reactpress/compare/v3.3.0...v3.4.0) (2026-06-12)
 
 **社区** — 更清晰的 Issue 反馈体验。
 
@@ -91,7 +91,7 @@ tags: [reactpress, release]
 
 ---
 
-## [3.3.0](https://github.com/fecommunity/reactpress/compare/v3.2.0...v3.3.0) (2026-06-07)
+## [3.3.0](https://github.com/reactpressjs/reactpress/compare/v3.2.0...v3.3.0) (2026-06-07)
 
 **社区与安全** — 行为准则与漏洞报告机制。
 
@@ -101,7 +101,7 @@ tags: [reactpress, release]
 
 ---
 
-## [3.2.0](https://github.com/fecommunity/reactpress/compare/v3.1.1...v3.2.0) (2026-06-07)
+## [3.2.0](https://github.com/reactpressjs/reactpress/compare/v3.1.1...v3.2.0) (2026-06-07)
 
 **主题开发** — 面向主题作者的 Next.js 工具链。
 
@@ -111,7 +111,7 @@ tags: [reactpress, release]
 
 ---
 
-## [3.1.1](https://github.com/fecommunity/reactpress/compare/v3.1.0...v3.1.1) (2026-06-07)
+## [3.1.1](https://github.com/reactpressjs/reactpress/compare/v3.1.0...v3.1.1) (2026-06-07)
 
 ### Bug Fixes
 
@@ -119,7 +119,7 @@ tags: [reactpress, release]
 
 ---
 
-## [3.1.0](https://github.com/fecommunity/reactpress/compare/v3.0.0...v3.1.0) (2026-06-07)
+## [3.1.0](https://github.com/reactpressjs/reactpress/compare/v3.0.0...v3.1.0) (2026-06-07)
 
 **Toolkit 主题化重构** — 模块化导出，主题开发一等公民。
 
@@ -136,7 +136,7 @@ tags: [reactpress, release]
 
 ---
 
-## [3.0.0](https://github.com/fecommunity/reactpress/compare/v2.0.2...v3.0.0) (2026-05-17)
+## [3.0.0](https://github.com/reactpressjs/reactpress/compare/v2.0.2...v3.0.0) (2026-05-17)
 
 **ReactPress 3.0 平台版** — 装一个包，敲一条命令，一分钟拥有自己的 CMS。
 
@@ -161,50 +161,50 @@ tags: [reactpress, release]
 
 ---
 
-## [2.0.1](https://github.com/fecommunity/reactpress/compare/v2.0.0...v2.0.1) (2025-09-26)
+## [2.0.1](https://github.com/reactpressjs/reactpress/compare/v2.0.0...v2.0.1) (2025-09-26)
 
 ### Bug Fixes
 
-- 修正 HttpClient 文件名大小写 ([7dd892a](https://github.com/fecommunity/reactpress/commit/7dd892a8d5b05a3ab24eaf73577848eb25b06450))
+- 修正 HttpClient 文件名大小写 ([7dd892a](https://github.com/reactpressjs/reactpress/commit/7dd892a8d5b05a3ab24eaf73577848eb25b06450))
 
 ### Features
 
-- 新增 toolkit 包配置 ([0ed839d](https://github.com/fecommunity/reactpress/commit/0ed839d4667d671ea06b088c0bac5a2890680445))
+- 新增 toolkit 包配置 ([0ed839d](https://github.com/reactpressjs/reactpress/commit/0ed839d4667d671ea06b088c0bac5a2890680445))
 
-## [2.0.0](https://github.com/fecommunity/reactpress/compare/v1.10.0...v2.0.0) (2025-09-21)
+## [2.0.0](https://github.com/reactpressjs/reactpress/compare/v1.10.0...v2.0.0) (2025-09-21)
 
 ### Bug Fixes
 
-- 修复 server 加载问题 ([a6f759b](https://github.com/fecommunity/reactpress/commit/a6f759b386e32727501b0eea3ea38f5a89dfe700))
-- 类型定义修复 ([d6491d5](https://github.com/fecommunity/reactpress/commit/d6491d56f2ffdd19d5a47fda7273958cd4243fb3))
+- 修复 server 加载问题 ([a6f759b](https://github.com/reactpressjs/reactpress/commit/a6f759b386e32727501b0eea3ea38f5a89dfe700))
+- 类型定义修复 ([d6491d5](https://github.com/reactpressjs/reactpress/commit/d6491d56f2ffdd19d5a47fda7273958cd4243fb3))
 
 ### Features
 
-- 新增 hello-world 模板 ([7e2c948](https://github.com/fecommunity/reactpress/commit/7e2c9487ddc6023d7b382250b131fbe828013680))
-- 新增 reactpress toolkit ([58f9312](https://github.com/fecommunity/reactpress/commit/58f9312644736aceb362e517fad8c3b3a83f275f))
-- 新增 swagger v2 UI ([ef9fdc1](https://github.com/fecommunity/reactpress/commit/ef9fdc166955b4659c81fb559138ce38ef599cfe))
-- 新增 twentytwentyfive 主题 ([715281f](https://github.com/fecommunity/reactpress/commit/715281fedcf8072348e4b8b6794891c7e67e1f99))
-- 支持 npx 安装 server ([e7f7b97](https://github.com/fecommunity/reactpress/commit/e7f7b970bb4dd8b845fcd8dde4048678a403557a))
-- 支持快速安装 ([96c1d0a](https://github.com/fecommunity/reactpress/commit/96c1d0a7cc1c72b7f6c489ba236ab6eb78472dee))
+- 新增 hello-world 模板 ([7e2c948](https://github.com/reactpressjs/reactpress/commit/7e2c9487ddc6023d7b382250b131fbe828013680))
+- 新增 reactpress toolkit ([58f9312](https://github.com/reactpressjs/reactpress/commit/58f9312644736aceb362e517fad8c3b3a83f275f))
+- 新增 swagger v2 UI ([ef9fdc1](https://github.com/reactpressjs/reactpress/commit/ef9fdc166955b4659c81fb559138ce38ef599cfe))
+- 新增 twentytwentyfive 主题 ([715281f](https://github.com/reactpressjs/reactpress/commit/715281fedcf8072348e4b8b6794891c7e67e1f99))
+- 支持 npx 安装 server ([e7f7b97](https://github.com/reactpressjs/reactpress/commit/e7f7b970bb4dd8b845fcd8dde4048678a403557a))
+- 支持快速安装 ([96c1d0a](https://github.com/reactpressjs/reactpress/commit/96c1d0a7cc1c72b7f6c489ba236ab6eb78472dee))
 
-## [1.10.0](https://github.com/fecommunity/reactpress/compare/v1.9.0...v1.10.0) (2025-08-03)
+## [1.10.0](https://github.com/reactpressjs/reactpress/compare/v1.9.0...v1.10.0) (2025-08-03)
 
 ### Features
 
-- 新增 config 类型定义 ([d8a6fed](https://github.com/fecommunity/reactpress/commit/d8a6fed7bc13f74be0916f80497590c7e737fb86))
+- 新增 config 类型定义 ([d8a6fed](https://github.com/reactpressjs/reactpress/commit/d8a6fed7bc13f74be0916f80497590c7e737fb86))
 
 ---
 
-## [1.9.0](https://github.com/fecommunity/reactpress/compare/v1.8.0...v1.9.0) (2025-05-21)
+## [1.9.0](https://github.com/reactpressjs/reactpress/compare/v1.8.0...v1.9.0) (2025-05-21)
 
-## [1.8.0](https://github.com/fecommunity/reactpress/compare/v1.7.0...v1.8.0) (2025-03-22)
-
-### Features
-
-- upgrade next version ([64cac4d](https://github.com/fecommunity/reactpress/commit/64cac4dcb9268a6bbb14fbbfe6995406638f7508))
-
-## [1.0.0](https://github.com/fecommunity/reactpress/compare/a6b73a189090e0199cc6f803bfb498cdeb7868a5...v1.0.0) (2024-09-28)
+## [1.8.0](https://github.com/reactpressjs/reactpress/compare/v1.7.0...v1.8.0) (2025-03-22)
 
 ### Features
 
-- init easy-blog project ([a6b73a1](https://github.com/fecommunity/reactpress/commit/a6b73a189090e0199cc6f803bfb498cdeb7868a5))
+- upgrade next version ([64cac4d](https://github.com/reactpressjs/reactpress/commit/64cac4dcb9268a6bbb14fbbfe6995406638f7508))
+
+## [1.0.0](https://github.com/reactpressjs/reactpress/compare/a6b73a189090e0199cc6f803bfb498cdeb7868a5...v1.0.0) (2024-09-28)
+
+### Features
+
+- init easy-blog project ([a6b73a1](https://github.com/reactpressjs/reactpress/commit/a6b73a189090e0199cc6f803bfb498cdeb7868a5))

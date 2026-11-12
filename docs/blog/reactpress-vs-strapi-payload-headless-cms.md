@@ -5,7 +5,7 @@ description: >-
   Comparing ReactPress with Strapi and Payload for React teams. Learn when a Headless API
   is enough — and when you need a full publishing platform with Admin, Next.js themes, and SEO.
 date: 2026-07-20
-authors: [fecommunity]
+authors: [reactpressjs]
 tags:
   - article
   - reactpress
@@ -24,7 +24,7 @@ keywords:
 
 <!--truncate-->
 
-![ReactPress — The Modern Web Creation Platform.](/img/blog/poster.png)
+![ReactPress: Write with Focus. Publish with Joy.](/img/blog/poster.png)
 
 If your team builds on **React / Next.js**, the shortlist for content infrastructure usually looks like this: **Strapi**, **Payload**, maybe Contentful or Sanity — and then someone asks, _“Where do we put the actual blog?”_
 
@@ -102,7 +102,7 @@ ReactPress **is** Headless-capable:
 
 But the product promise is broader: **Admin manages content · Theme manages presentation · Plugin manages logic · API manages data**.
 
-Use the official theme to launch. Fork [reactpress-theme-starter](https://github.com/fecommunity/reactpress-theme-starter) when you need a custom frontend — without throwing away Admin.
+Use the official theme to launch. Fork [reactpress-theme-starter](https://github.com/reactpressjs/reactpress-theme-starter) when you need a custom frontend — without throwing away Admin.
 
 ---
 

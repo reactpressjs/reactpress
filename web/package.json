@@ -18,13 +18,13 @@
   ],
   "homepage": "https://reactpress.cc/",
   "bugs": {
-    "url": "https://github.com/fecommunity/reactpress/issues"
+    "url": "https://github.com/reactpressjs/reactpress/issues"
   },
   "license": "MIT",
-  "author": "fecommunity",
+  "author": "reactpressjs",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fecommunity/reactpress.git",
+    "url": "git+https://github.com/reactpressjs/reactpress.git",
     "directory": "web"
   },
   "bin": {

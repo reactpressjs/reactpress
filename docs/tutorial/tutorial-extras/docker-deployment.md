@@ -48,7 +48,7 @@ docker-compose --version
 ### 2. 克隆项目
 
 ```bash
-git clone https://github.com/fecommunity/reactpress.git
+git clone https://github.com/reactpressjs/reactpress.git
 cd reactpress
 ```
 
@@ -91,24 +91,24 @@ docker-compose -f docker-compose.prod.yml logs -f
 
 ### 环境变量
 
-| 变量名 | 默认值 | 说明 |
-|--------|--------|------|
-| DB_HOST | db | 数据库主机地址 |
-| DB_PORT | 3306 | 数据库端口 |
-| DB_USER | reactpress | 数据库用户名 |
-| DB_PASSWD | reactpress | 数据库密码 |
-| DB_DATABASE | reactpress | 数据库名称 |
-| CLIENT_SITE_URL | http://localhost:8080 | 客户端站点URL |
-| SERVER_SITE_URL | http://localhost:8080 | 服务端站点URL |
-| SERVER_API_URL | http://nginx/api | API服务URL |
+| 变量名          | 默认值                | 说明           |
+| --------------- | --------------------- | -------------- |
+| DB_HOST         | db                    | 数据库主机地址 |
+| DB_PORT         | 3306                  | 数据库端口     |
+| DB_USER         | reactpress            | 数据库用户名   |
+| DB_PASSWD       | reactpress            | 数据库密码     |
+| DB_DATABASE     | reactpress            | 数据库名称     |
+| CLIENT_SITE_URL | http://localhost:8080 | 客户端站点URL  |
+| SERVER_SITE_URL | http://localhost:8080 | 服务端站点URL  |
+| SERVER_API_URL  | http://nginx/api      | API服务URL     |
 
 ### 端口映射
 
-| 服务 | 容器端口 | 主机端口 | 说明 |
-|------|----------|----------|------|
-| nginx | 80 | 8080 | 反向代理入口 |
-| server | 3002 | 3002 | 后端 API（宿主机，经 nginx 转发） |
-| theme | 3001 | 3001 | 访客主题服务 |
+| 服务   | 容器端口 | 主机端口 | 说明                              |
+| ------ | -------- | -------- | --------------------------------- |
+| nginx  | 80       | 8080     | 反向代理入口                      |
+| server | 3002     | 3002     | 后端 API（宿主机，经 nginx 转发） |
+| theme  | 3001     | 3001     | 访客主题服务                      |
 
 ## 🛠️ 开发环境
 
@@ -131,19 +131,19 @@ services:
       MYSQL_DATABASE: reactpress
       MYSQL_USER: reactpress
       MYSQL_PASSWORD: reactpress
-    command: 
+    command:
       - --character-set-server=utf8mb4
       - --collation-server=utf8mb4_unicode_ci
       - --default-authentication-plugin=mysql_native_password
     volumes:
       - db_data:/var/lib/mysql
     ports:
-      - "3306:3306"
+      - '3306:3306'
     networks:
       - reactpress-network
 
   server:
-    build: 
+    build:
       context: .
       dockerfile: server/Dockerfile.dev
     container_name: reactpress_server_dev
@@ -159,7 +159,7 @@ services:
       - DB_DATABASE=reactpress
       - SERVER_SITE_URL=http://localhost:3002
     ports:
-      - "3002:3002"
+      - '3002:3002'
     volumes:
       - .:/app
       - /app/node_modules
@@ -180,7 +180,7 @@ services:
       - CLIENT_SITE_URL=http://localhost:3001
       - SERVER_API_URL=http://server:3002
     ports:
-      - "3001:3001"
+      - '3001:3001'
     volumes:
       - .:/app
       - /app/node_modules
@@ -275,15 +275,19 @@ docker exec -it reactpress_client sh
 ### 常见问题
 
 1. **端口冲突**
+
    ```
    ERROR: for reactpress_db  Cannot start service db: driver failed programming external connectivity on endpoint reactpress_db: Error starting userland proxy: listen tcp 0.0.0.0:3306: bind: address already in use
    ```
+
    解决方案：修改 docker-compose 文件中的端口映射，或停止占用端口的进程。
 
 2. **数据库连接失败**
+
    ```
    Error: connect ECONNREFUSED 127.0.0.1:3306
    ```
+
    解决方案：检查数据库服务是否正常启动，确认环境变量配置正确。
 
 3. **权限问题**
@@ -329,7 +333,7 @@ server:
 ```yaml
 db:
   # ... 其他配置
-  command: 
+  command:
     - --character-set-server=utf8mb4
     - --collation-server=utf8mb4_unicode_ci
     - --innodb-buffer-pool-size=256M

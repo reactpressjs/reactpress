@@ -1,7 +1,7 @@
 #!/bin/sh
 # Shared helpers for root husky hooks and web/.vite-hooks forwards.
 
-REPO_GIT_USER_NAME="${REPO_GIT_USER_NAME:-FECommunity}"
+REPO_GIT_USER_NAME="${REPO_GIT_USER_NAME:-reactpressjs}"
 REPO_GIT_USER_EMAIL="${REPO_GIT_USER_EMAIL:-admin@gaoredu.com}"
 # Space-separated legacy author names rewritten on commit.
 LEGACY_GIT_USER_NAMES="${LEGACY_GIT_USER_NAMES:-m0_37981569}"
