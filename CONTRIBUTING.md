@@ -158,6 +158,12 @@ Published packages: **toolkit**, **web**, **server** (deprecated), **cli** (`@fe
 
 Live docs: [reactpress.cc](https://reactpress.cc)
 
+### Docs site on Vercel
+
+Root [`vercel.json`](./vercel.json) builds the Docusaurus site (`pnpm run build:docs` → `docs/build`). Connect the GitHub repo in the Vercel dashboard (Root Directory = repository root). Production and preview deploys run automatically on push; builds skip when the commit does not touch `docs/`, lockfile, or the Vercel config paths listed in `ignoreCommand`.
+
+Optional project env: `DOCS_SITE_URL` (defaults to `https://reactpress.cc` in `docs/src/seo/headTags.ts`).
+
 ## Documentation language
 
 - **English**: `README.md`, package READMEs (`cli/`, `toolkit/`, `server/`, `web/`, etc.), `CHANGELOG.md`, API docs

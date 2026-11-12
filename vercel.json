@@ -1,10 +1,10 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "installCommand": "pnpm install --frozen-lockfile",
+  "installCommand": "pnpm install --frozen-lockfile --filter docs...",
   "buildCommand": "pnpm run build:docs",
   "outputDirectory": "docs/build",
   "framework": null,
-  "ignoreCommand": "git rev-parse --verify HEAD^ >/dev/null 2>&1 && git diff --quiet HEAD^ HEAD -- docs/ pnpm-lock.yaml || exit 1",
+  "ignoreCommand": "git rev-parse --verify HEAD^ >/dev/null 2>&1 && git diff --quiet HEAD^ HEAD -- docs/ pnpm-lock.yaml vercel.json package.json pnpm-workspace.yaml || exit 1",
   "redirects": [
     {
       "source": "/docs/tutorial-extras/help",
