@@ -1,31 +1,28 @@
 <p align="center">
-  <a href="https://blog.gaoredu.com">
-    <img src="./public/brand/logo.png" alt="ReactPress" width="320" />
+  <a href="https://www.reactpress.cc/">
+    <img src="./public/brand/logo.png" alt="ReactPress" width="280" />
   </a>
 </p>
 
 <h3 align="center">Write with Focus. Publish with Joy.</h3>
 
 <p align="center">
-  A self-hosted publishing platform to write, manage, and publish — all in one place.
+  Self-hosted publishing stack — CMS, Admin, Headless API, Next.js themes,<br />
+  plugins & desktop — one CLI. No Docker required to start.
 </p>
 
 <p align="center">
-  <a href="https://github.com/reactpressjs/reactpress/stargazers">
-    <img src="https://img.shields.io/github/stars/reactpressjs/reactpress?style=social" alt="GitHub stars" />
-  </a>
-  <a href="https://www.npmjs.com/package/@fecommunity/reactpress">
-    <img src="https://img.shields.io/npm/v/@fecommunity/reactpress" alt="npm version" />
-  </a>
-  <a href="./LICENSE">
-    <img src="https://img.shields.io/github/license/reactpressjs/reactpress" alt="License" />
-  </a>
+  <a href="https://github.com/reactpressjs/reactpress/stargazers"><img src="https://img.shields.io/github/stars/reactpressjs/reactpress?style=flat-square&logo=github" alt="Stars" /></a>
+  <a href="https://www.npmjs.com/package/@fecommunity/reactpress"><img src="https://img.shields.io/npm/v/@fecommunity/reactpress?style=flat-square&logo=npm&label=npm" alt="npm" /></a>
+  <a href="https://www.npmjs.com/package/@fecommunity/reactpress"><img src="https://img.shields.io/npm/dm/@fecommunity/reactpress?style=flat-square&label=downloads" alt="downloads" /></a>
+  <a href="./LICENSE"><img src="https://img.shields.io/github/license/reactpressjs/reactpress?style=flat-square" alt="License" /></a>
+  <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/node-%3E%3D20-brightgreen?style=flat-square&logo=node.js&logoColor=white" alt="Node.js" /></a>
 </p>
 
 <p align="center">
-  <a href="https://blog.gaoredu.com">Live Demo</a> ·
-  <a href="https://reactpress-theme-starter.vercel.app">Theme Demo</a> ·
-  <a href="https://reactpress.cc/">Documentation</a> ·
+  <a href="https://reactpress.cc/">Docs</a> ·
+  <a href="https://blog.gaoredu.com">Demo</a> ·
+  <a href="https://reactpress-theme-starter.vercel.app">Theme</a> ·
   <a href="./README-zh_CN.md">简体中文</a>
 </p>
 
@@ -33,19 +30,20 @@
   <img src="./public/poster.png" alt="ReactPress" width="100%" />
 </p>
 
-## Features
+## Why ReactPress
 
-<img src="./public/desktop.gif" alt="ReactPress Desktop App" width="100%" />
+WordPress-grade editing for frontend teams — without five repos, nginx, or a DBA.
 
-- ✍️ **Writing & Content** — Create, organize, and publish from a focused editor.
-- 🎨 **Themes** — Customize the look and feel of your site. [Starter](https://github.com/reactpressjs/reactpress-theme-starter) · [Guide](./themes/README.md)
-- 🧩 **Plugins** — Extend ReactPress with plugins. [Guide](./plugins/README.md)
-- 🖥️ **Desktop App** — The same experience, on the desktop. [Guide](./desktop/README.md)
-- 📱 **Multi-device** — Works on desktop, tablet, and mobile browsers.
+| Layer       | What you get                                                        |
+| :---------- | :------------------------------------------------------------------ |
+| **CMS API** | Headless NestJS REST — SQLite by default, MySQL optional            |
+| **Admin**   | Writing console at `/admin/` — posts, pages, media, plugins, themes |
+| **Themes**  | npm-installable Next.js frontends — swap without touching content   |
+| **Plugins** | Extend the platform without forking the core                        |
+| **Desktop** | Same stack as a native app                                          |
+| **CLI**     | `init` · `doctor` · `logs` · `stop` — operate from the terminal     |
 
 ## Quick Start
-
-Requires Node.js 20+.
 
 ```bash
 npm install -g @fecommunity/reactpress
@@ -53,55 +51,37 @@ mkdir my-site && cd my-site
 reactpress init
 ```
 
-| Service         | URL                          |
-| --------------- | ---------------------------- |
-| Website         | http://localhost:3001        |
-| Admin Dashboard | http://localhost:3001/admin/ |
+| Surface | URL                          |
+| :------ | :--------------------------- |
+| Site    | http://localhost:3001        |
+| Admin   | http://localhost:3001/admin/ |
+| API     | http://127.0.0.1:3002/api    |
 
-Default credentials: `admin` / `admin` — change the password before going public.
+Default login: `admin` / `admin` — change it before production.  
+Stuck? Run `reactpress doctor`.
 
-Run `reactpress doctor` to diagnose issues.
-
-### Deploy to Vercel
-
-<p align="left">
+<p>
   <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Freactpressjs%2Freactpress-theme-starter">
     <img src="https://vercel.com/button" alt="Deploy with Vercel" />
   </a>
 </p>
 
-Based on the [Theme Starter](https://github.com/reactpressjs/reactpress-theme-starter) · [Live Demo](https://reactpress-theme-starter.vercel.app)
+Theme starter · [repo](https://github.com/reactpressjs/reactpress-theme-starter) · [live](https://reactpress-theme-starter.vercel.app)
 
-## Resources
+## Ecosystem
 
-| Resource      | Link                                                                               |
-| ------------- | ---------------------------------------------------------------------------------- |
-| Site          | [reactpress.cc](https://www.reactpress.cc/)                                        |
-| Documentation | [reactpress.cc/docs](https://reactpress.cc/)                                       |
-| GitHub        | [github.com/reactpressjs](https://github.com/reactpressjs)                         |
-| Source repo   | [reactpressjs/reactpress](https://github.com/reactpressjs/reactpress) (official)   |
-| npm           | [npmjs.com/~reactpressjs](https://www.npmjs.com/~reactpressjs)                     |
-| CLI package   | [@fecommunity/reactpress](https://www.npmjs.com/package/@fecommunity/reactpress)   |
-| Live Website  | [blog.gaoredu.com](https://blog.gaoredu.com)                                       |
-| Theme Demo    | [reactpress-theme-starter.vercel.app](https://reactpress-theme-starter.vercel.app) |
-| Themes        | [Theme Guide](./themes/README.md)                                                  |
-| Plugins       | [Plugin Guide](./plugins/README.md)                                                |
-| Desktop App   | [Desktop Guide](./desktop/README.md)                                               |
+|                                         |                                |
+| :-------------------------------------- | :----------------------------- |
+| [Documentation](https://reactpress.cc/) | Guides, API, and architecture  |
+| [Themes](./themes/README.md)            | Build & publish Next.js themes |
+| [Plugins](./plugins/README.md)          | Extend Admin and the API       |
+| [Desktop](./desktop/README.md)          | Package the stack as an app    |
+| [CLI](./cli/README.md)                  | `@fecommunity/reactpress`      |
 
-## Community
+## Contributing
 
-- [GitHub Issues](https://github.com/reactpressjs/reactpress/issues)
-- [Contributing Guide](./CONTRIBUTING.md)
-- [Changelog](./CHANGELOG.md)
-
-If you find ReactPress useful, please consider giving it a star.
-
-<p align="center">
-  <a href="https://github.com/reactpressjs/reactpress">
-    <img src="https://img.shields.io/github/stars/reactpressjs/reactpress?style=social" alt="Star ReactPress" />
-  </a>
-</p>
+Issues and PRs welcome. See [CONTRIBUTING.md](./CONTRIBUTING.md) and [CHANGELOG.md](./CHANGELOG.md).
 
 ## License
 
-See [LICENSE](./LICENSE).
+[MIT](./LICENSE) © reactpressjs

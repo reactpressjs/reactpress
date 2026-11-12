@@ -1,31 +1,28 @@
 <p align="center">
-  <a href="https://blog.gaoredu.com">
-    <img src="./public/brand/logo.png" alt="ReactPress" width="320" />
+  <a href="https://www.reactpress.cc/">
+    <img src="./public/brand/logo.png" alt="ReactPress" width="280" />
   </a>
 </p>
 
 <h3 align="center">Write with Focus. Publish with Joy.</h3>
 
 <p align="center">
-  一个可自托管的发布平台，写作、管理、发布，一站式完成。
+  开源自托管发布平台。CMS、管理后台、无头 API、<br />
+  Next.js 主题、插件与桌面端，一条 CLI 全部装齐。
 </p>
 
 <p align="center">
-  <a href="https://github.com/reactpressjs/reactpress/stargazers">
-    <img src="https://img.shields.io/github/stars/reactpressjs/reactpress?style=social" alt="GitHub stars" />
-  </a>
-  <a href="https://www.npmjs.com/package/@fecommunity/reactpress">
-    <img src="https://img.shields.io/npm/v/@fecommunity/reactpress" alt="npm version" />
-  </a>
-  <a href="./LICENSE">
-    <img src="https://img.shields.io/github/license/reactpressjs/reactpress" alt="License" />
-  </a>
+  <a href="https://github.com/reactpressjs/reactpress/stargazers"><img src="https://img.shields.io/github/stars/reactpressjs/reactpress?style=flat-square&logo=github" alt="Stars" /></a>
+  <a href="https://www.npmjs.com/package/@fecommunity/reactpress"><img src="https://img.shields.io/npm/v/@fecommunity/reactpress?style=flat-square&logo=npm&label=npm" alt="npm" /></a>
+  <a href="https://www.npmjs.com/package/@fecommunity/reactpress"><img src="https://img.shields.io/npm/dm/@fecommunity/reactpress?style=flat-square&label=downloads" alt="downloads" /></a>
+  <a href="./LICENSE"><img src="https://img.shields.io/github/license/reactpressjs/reactpress?style=flat-square" alt="License" /></a>
+  <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/node-%3E%3D20-brightgreen?style=flat-square&logo=node.js&logoColor=white" alt="Node.js" /></a>
 </p>
 
 <p align="center">
+  <a href="https://reactpress.cc/">文档</a> ·
   <a href="https://blog.gaoredu.com">在线演示</a> ·
   <a href="https://reactpress-theme-starter.vercel.app">主题演示</a> ·
-  <a href="https://reactpress.cc/">文档</a> ·
   <a href="./README.md">English</a>
 </p>
 
@@ -33,15 +30,18 @@
   <img src="./public/poster.png" alt="ReactPress" width="100%" />
 </p>
 
-## 功能特性
+## 核心能力
 
-<img src="./public/desktop.gif" alt="ReactPress 桌面应用" width="100%" />
+写作体验对齐 WordPress，工程体验对齐现代前端栈。本地起步无需 Docker、nginx 或独立数据库。
 
-- ✍️ **写作与内容管理** — 在专注的编辑器中创建、整理并发布内容。
-- 🎨 **主题** — 自定义网站外观与风格。[起步模板](https://github.com/reactpressjs/reactpress-theme-starter) · [主题指南](./themes/README.md)
-- 🧩 **插件** — 通过插件扩展 ReactPress。[插件指南](./plugins/README.md)
-- 🖥️ **桌面应用** — 在桌面端获得同样的使用体验。[桌面端指南](./desktop/README.md)
-- 📱 **多端访问** — 支持桌面、平板与移动端浏览器。
+| 模块         | 说明                                      |
+| :----------- | :---------------------------------------- |
+| **CMS API**  | NestJS 无头 REST；默认 SQLite，可选 MySQL |
+| **管理后台** | `/admin/` — 文章、页面、媒体、插件、主题  |
+| **主题**     | 可 npm 安装的 Next.js 站点，换肤不动内容  |
+| **插件**     | 扩展能力，无需 fork 核心                  |
+| **桌面端**   | 同一套栈，打包为原生应用                  |
+| **CLI**      | `init` · `doctor` · `logs` · `stop`       |
 
 ## 快速开始
 
@@ -53,59 +53,34 @@ mkdir my-site && cd my-site
 reactpress init
 ```
 
-初始化完成后访问：
-
-| 服务     | 地址                         |
-| -------- | ---------------------------- |
+| 入口     | 地址                         |
+| :------- | :--------------------------- |
 | 网站     | http://localhost:3001        |
 | 管理后台 | http://localhost:3001/admin/ |
+| API      | http://127.0.0.1:3002/api    |
 
-默认账号：`admin` / `admin` —— 对外发布前请务必修改默认密码。
+默认账号 `admin` / `admin`，上线前请修改密码。排查问题：`reactpress doctor`。
 
-运行 `reactpress doctor` 可进行问题诊断。
-
-### 部署到 Vercel
-
-<p align="left">
+<p>
   <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Freactpressjs%2Freactpress-theme-starter">
     <img src="https://vercel.com/button" alt="Deploy with Vercel" />
   </a>
 </p>
 
-基于[主题起步模板](https://github.com/reactpressjs/reactpress-theme-starter) · [在线演示](https://reactpress-theme-starter.vercel.app)
+一键部署主题起步模板 · [仓库](https://github.com/reactpressjs/reactpress-theme-starter) · [预览](https://reactpress-theme-starter.vercel.app)
 
-## 相关资源
+## 生态
 
-| 资源     | 链接                                                                               |
-| -------- | ---------------------------------------------------------------------------------- |
-| 官网     | [reactpress.cc](https://www.reactpress.cc/)                                        |
-| 文档     | [reactpress.cc](https://reactpress.cc/)                                            |
-| GitHub   | [github.com/reactpressjs](https://github.com/reactpressjs)                         |
-| 源码仓库 | [reactpressjs/reactpress](https://github.com/reactpressjs/reactpress)（官方唯一）  |
-| npm      | [npmjs.com/~reactpressjs](https://www.npmjs.com/~reactpressjs)                     |
-| CLI 包   | [@fecommunity/reactpress](https://www.npmjs.com/package/@fecommunity/reactpress)   |
-| 线上网站 | [blog.gaoredu.com](https://blog.gaoredu.com)                                       |
-| 主题演示 | [reactpress-theme-starter.vercel.app](https://reactpress-theme-starter.vercel.app) |
-| 主题     | [主题指南](./themes/README.md)                                                     |
-| 插件     | [插件指南](./plugins/README.md)                                                    |
-| 桌面应用 | [桌面端指南](./desktop/README.md)                                                  |
+- [文档](https://reactpress.cc/) — 使用指南、API 与架构
+- [主题开发](./themes/README.md) — 构建并发布 Next.js 主题
+- [插件开发](./plugins/README.md) — 扩展后台与 API
+- [桌面端](./desktop/README.md) — 打包为桌面应用
+- [CLI](./cli/README.md) — `@fecommunity/reactpress`
 
-## 社区
+## 贡献
 
-欢迎贡献代码、反馈问题与提出想法。
-
-- [GitHub Issues](https://github.com/reactpressjs/reactpress/issues)
-- [贡献指南](./CONTRIBUTING.md)
-- [更新日志](./CHANGELOG.md)
-
-如果 ReactPress 对你有帮助，欢迎点个 Star 支持一下。
-
-<p align="center">
-  <a href="https://github.com/reactpressjs/reactpress">
-    <img src="https://img.shields.io/github/stars/reactpressjs/reactpress?style=social" alt="Star ReactPress" />
-  </a>
-</p>
+欢迎提交 Issue 与 Pull Request，详见 [贡献指南](./CONTRIBUTING.md) 与 [更新日志](./CHANGELOG.md)。
 
 ## 许可证
 
-详见 [LICENSE](./LICENSE)。
+[MIT](./LICENSE) © reactpressjs
