@@ -2,7 +2,7 @@
 
 Official npm theme catalog anchor — metadata in [`package.json`](./package.json) under `reactpress.theme`; theme source ships via npm (no `theme.json` here).
 
-**Live demo**: [reactpress-theme-starter.vercel.app](https://reactpress-theme-starter.vercel.app) · Lighthouse 95/100/100/100 · WordPress-style CMS, Next.js delivery
+**Live demo**: [demo.reactpress.cc](https://demo.reactpress.cc/) · Lighthouse 95/100/100/100 · WordPress-style CMS, Next.js delivery
 
 Schema: [`../npm-catalog.schema.json`](../npm-catalog.schema.json).
 
@@ -28,7 +28,7 @@ pnpm run --dir themes add:starter
 | :--------- | :------------------------------------------------------------------------------------------------------------- |
 | npm        | [@reactpressjs/reactpress-theme-starter](https://www.npmjs.com/package/@reactpressjs/reactpress-theme-starter) |
 | Repository | [github.com/reactpressjs/reactpress-theme-starter](https://github.com/reactpressjs/reactpress-theme-starter)   |
-| Live demo  | [reactpress-theme-starter.vercel.app](https://reactpress-theme-starter.vercel.app)                             |
+| Live demo  | [demo.reactpress.cc](https://demo.reactpress.cc/)                                                              |
 
 After install, materializes to `.reactpress/runtime/reactpress-theme-starter/`.
 

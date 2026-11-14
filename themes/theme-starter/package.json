@@ -12,7 +12,7 @@
       "id": "reactpress-theme-starter",
       "name": "ReactPress Theme Starter",
       "themeUri": "https://github.com/reactpressjs/reactpress-theme-starter",
-      "previewUrl": "https://reactpress-theme-starter.vercel.app",
+      "previewUrl": "https://demo.reactpress.cc/",
       "tags": [
         "official",
         "Tailwind",

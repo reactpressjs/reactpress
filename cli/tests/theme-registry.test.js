@@ -31,7 +31,7 @@ describe('lib/theme-registry', () => {
     });
     assert.equal(starter.featured, true);
     assert.equal(starter.dir, 'theme-starter');
-    assert.equal(starter.previewUrl, 'https://reactpress-theme-starter.vercel.app');
+    assert.equal(starter.previewUrl, 'https://demo.reactpress.cc/');
     assert.equal(catalog.source, 'themes/package.json');
   });
 
