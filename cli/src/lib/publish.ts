@@ -35,6 +35,11 @@ const CORE_PUBLISH_PACKAGES = [
     path: 'cli',
     description: 'Write with Focus. Publish with Joy.',
   },
+  {
+    name: 'reactpressjs',
+    path: 'packages/reactpressjs',
+    description: 'Unscoped global install alias (`npm i -g reactpressjs`).',
+  },
 ];
 
 function getWorkspaceRoot() {
@@ -335,11 +340,12 @@ async function executePublish(plan, options = {}) {
 
   console.log(chalk.green(`\n🎉 Published ${CORE_PUBLISH_PACKAGES.length} packages @ ${version} (${tag})`));
   console.log(chalk.cyan('\nVerify:'));
+  console.log(chalk.gray(`  npm view reactpressjs dist-tags`));
   console.log(chalk.gray(`  npm view @reactpressjs/reactpress dist-tags`));
   if (tag === 'beta') {
-    console.log(chalk.gray(`  npm i -g @reactpressjs/reactpress@beta`));
+    console.log(chalk.gray(`  npm i -g reactpressjs@beta`));
   } else {
-    console.log(chalk.gray(`  npm i -g @reactpressjs/reactpress@${version}`));
+    console.log(chalk.gray(`  npm i -g reactpressjs@${version}`));
   }
   console.log(chalk.cyan('\nNext:'));
   console.log(chalk.gray(`  git tag v${version} && git push && git push --tags`));

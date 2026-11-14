@@ -1,16 +1,16 @@
 {
   "name": "reactpress",
-  "version": "5.0.0",
+  "version": "5.0.0-beta.0",
   "private": true,
   "packageManager": "pnpm@9.15.9",
   "description": "ReactPress: Write with Focus. Publish with Joy. CMS, Admin, Headless API, Next.js themes, plugins, desktop — one CLI.",
   "homepage": "https://www.reactpress.cc/",
   "bugs": {
-    "url": "https://github.com/reactpressjs/reactpress/issues"
+    "url": "https://github.com/reactpressjs/reactpressjs/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/reactpressjs/reactpress.git"
+    "url": "git+https://github.com/reactpressjs/reactpressjs.git"
   },
   "author": "reactpressjs",
   "bin": {

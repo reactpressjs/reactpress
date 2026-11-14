@@ -1,8 +1,14 @@
-export const REACTPRESS_NPM_PACKAGE = '@reactpressjs/reactpress';
+/** Public unscoped install package (`npm i -g reactpressjs`). */
+export const REACTPRESS_NPM_PACKAGE = 'reactpressjs';
 
-export const REACTPRESS_NPM_REGISTRY_URL = 'https://registry.npmjs.org/@reactpressjs%2Freactpress';
+/** Implementation package published under the org scope. */
+export const REACTPRESS_CORE_NPM_PACKAGE = '@reactpressjs/reactpress';
 
-export const REACTPRESS_NPM_PAGE_URL = 'https://www.npmjs.com/package/@reactpressjs/reactpress';
+export const REACTPRESS_NPM_REGISTRY_URL = 'https://registry.npmjs.org/reactpressjs';
+
+export const REACTPRESS_NPM_PAGE_URL = 'https://www.npmjs.com/package/reactpressjs';
+
+export const REACTPRESS_CORE_NPM_PAGE_URL = 'https://www.npmjs.com/package/@reactpressjs/reactpress';
 
 /** npm.com version page, e.g. …/v/4.0.0 */
 export function buildNpmVersionPageUrl(version: string): string {
@@ -11,7 +17,7 @@ export function buildNpmVersionPageUrl(version: string): string {
 
 /** GitHub release tag page, e.g. …/releases/tag/v4.0.0 */
 export function buildGitHubReleaseTagUrl(version: string): string {
-  return `https://github.com/reactpressjs/reactpress/releases/tag/v${encodeURIComponent(version)}`;
+  return `https://github.com/reactpressjs/reactpressjs/releases/tag/v${encodeURIComponent(version)}`;
 }
 
 /** Fallback when the registry is unreachable (SSR / offline). */

@@ -50,27 +50,44 @@ describe('resolveNpmTag for stable promotion', () => {
   });
 });
 
-describe('5.0.0 stable release consistency', () => {
-  it('keeps core package versions aligned at 5.0.0 without prerelease', () => {
+describe('5.0.0-beta.0 release consistency', () => {
+  const EXPECTED = '5.0.0-beta.0';
+
+  it('keeps core package versions aligned at 5.0.0-beta.0', () => {
     const versions = new Map();
     for (const pkg of CORE_PUBLISH_PACKAGES) {
       const pkgJson = JSON.parse(fs.readFileSync(path.join(REPO_ROOT, pkg.path, 'package.json'), 'utf8'));
       versions.set(pkg.name, pkgJson.version);
-      assert.equal(pkgJson.version, '5.0.0', `${pkg.name} must be 5.0.0 for stable @latest`);
-      assert.equal(pkgJson.version.includes('-'), false, `${pkg.name} must not carry a prerelease suffix`);
+      assert.equal(pkgJson.version, EXPECTED, `${pkg.name} must be ${EXPECTED}`);
     }
 
     const rootVersion = JSON.parse(fs.readFileSync(path.join(REPO_ROOT, 'package.json'), 'utf8')).version;
     const desktopVersion = JSON.parse(fs.readFileSync(path.join(REPO_ROOT, 'desktop/package.json'), 'utf8')).version;
 
-    assert.equal(rootVersion, '5.0.0');
-    assert.equal(desktopVersion, '5.0.0');
-    assert.equal(versions.get('@reactpressjs/reactpress'), '5.0.0');
+    assert.equal(rootVersion, EXPECTED);
+    assert.equal(desktopVersion, EXPECTED);
+    assert.equal(versions.get('@reactpressjs/reactpress'), EXPECTED);
+    assert.equal(versions.get('reactpressjs'), EXPECTED);
   });
 
-  it('defaults docs install helpers to latest / 5.0.0', () => {
+  it('publishes reactpressjs after the scoped CLI package', () => {
+    const names = CORE_PUBLISH_PACKAGES.map((pkg) => pkg.name);
+    assert.ok(names.includes('reactpressjs'));
+    assert.ok(names.indexOf('reactpressjs') > names.indexOf('@reactpressjs/reactpress'));
+
+    const aliasPkg = JSON.parse(fs.readFileSync(path.join(REPO_ROOT, 'packages/reactpressjs/package.json'), 'utf8'));
+    assert.equal(aliasPkg.name, 'reactpressjs');
+    assert.equal(aliasPkg.bin.reactpress, './bin/reactpress.js');
+    assert.equal(aliasPkg.dependencies['@reactpressjs/reactpress'], 'workspace:*');
+    assert.match(aliasPkg.repository.url, /reactpressjs\/reactpressjs\.git/);
+  });
+
+  it('defaults docs install helpers to reactpressjs / 5.0.0 fallback', () => {
     const packageVersions = fs.readFileSync(path.join(REPO_ROOT, 'docs/src/npm/packageVersions.ts'), 'utf8');
     assert.match(packageVersions, /FALLBACK_REACTPRESS_LATEST\s*=\s*'5\.0\.0'/);
+    assert.match(packageVersions, /REACTPRESS_NPM_PACKAGE\s*=\s*'reactpressjs'/);
+    assert.match(packageVersions, /REACTPRESS_CORE_NPM_PACKAGE\s*=\s*'@reactpressjs\/reactpress'/);
+    assert.match(packageVersions, /github\.com\/reactpressjs\/reactpressjs/);
     assert.match(packageVersions, /export function buildInstallCommand\(\):\s*string/);
 
     const quickStart = fs.readFileSync(path.join(REPO_ROOT, 'docs/src/constants/quickStartCommands.ts'), 'utf8');

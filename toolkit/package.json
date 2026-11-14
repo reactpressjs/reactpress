@@ -1,6 +1,6 @@
 {
   "name": "@reactpressjs/reactpress-toolkit",
-  "version": "5.0.0",
+  "version": "5.0.0-beta.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
@@ -166,11 +166,11 @@
   },
   "homepage": "https://reactpress.cc/",
   "bugs": {
-    "url": "https://github.com/reactpressjs/reactpress/issues"
+    "url": "https://github.com/reactpressjs/reactpressjs/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/reactpressjs/reactpress.git",
+    "url": "git+https://github.com/reactpressjs/reactpressjs.git",
     "directory": "toolkit"
   },
   "publishConfig": {

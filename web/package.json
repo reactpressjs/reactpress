@@ -1,6 +1,6 @@
 {
   "name": "@reactpressjs/reactpress-web",
-  "version": "5.0.0",
+  "version": "5.0.0-beta.0",
   "description": "Official ReactPress Admin — WordPress-style writing UI for the publishing platform. Vite SPA with Express and Next.js /admin/ mount helpers",
   "keywords": [
     "admin",
@@ -18,13 +18,13 @@
   ],
   "homepage": "https://reactpress.cc/",
   "bugs": {
-    "url": "https://github.com/reactpressjs/reactpress/issues"
+    "url": "https://github.com/reactpressjs/reactpressjs/issues"
   },
   "license": "MIT",
   "author": "reactpressjs",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/reactpressjs/reactpress.git",
+    "url": "git+https://github.com/reactpressjs/reactpressjs.git",
     "directory": "web"
   },
   "bin": {

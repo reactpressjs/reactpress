@@ -1,0 +1,44 @@
+{
+  "name": "reactpressjs",
+  "version": "5.0.0-beta.0",
+  "description": "ReactPress — Write with Focus. Publish with Joy. Thin global install alias for @reactpressjs/reactpress.",
+  "author": "reactpressjs",
+  "license": "MIT",
+  "homepage": "https://reactpress.cc/",
+  "bugs": {
+    "url": "https://github.com/reactpressjs/reactpressjs/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reactpressjs/reactpressjs.git",
+    "directory": "packages/reactpressjs"
+  },
+  "keywords": [
+    "reactpress",
+    "reactpressjs",
+    "cms",
+    "blog",
+    "cli",
+    "headless-cms",
+    "self-hosted",
+    "nextjs"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "bin": {
+    "reactpress": "./bin/reactpress.js"
+  },
+  "files": [
+    "bin",
+    "README.md",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "@reactpressjs/reactpress": "workspace:*"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

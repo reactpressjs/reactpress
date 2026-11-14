@@ -1,16 +1,16 @@
 {
   "name": "@reactpressjs/reactpress",
-  "version": "5.0.0",
+  "version": "5.0.0-beta.0",
   "description": "ReactPress CLI — Write with Focus. Publish with Joy. CMS, Admin, Headless API, and Next.js themes in one command. Self-hosted, MIT. `npx @reactpressjs/reactpress init`",
   "author": "reactpressjs",
   "license": "MIT",
   "homepage": "https://reactpress.cc/",
   "bugs": {
-    "url": "https://github.com/reactpressjs/reactpress/issues"
+    "url": "https://github.com/reactpressjs/reactpressjs/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/reactpressjs/reactpress.git",
+    "url": "git+https://github.com/reactpressjs/reactpressjs.git",
     "directory": "cli"
   },
   "keywords": [

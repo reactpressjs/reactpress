@@ -16,9 +16,10 @@ const REQUIRED_SHIPPED = [
   'out/ui/interactive.js',
   'out/ui/banner.js',
   'out/ui/theme.js',
-  'dist/index.js',
+  // Monorepo publish uses sync-monorepo-server → cli/server (not legacy cli/dist).
   'templates/env.default',
   'templates/config.default.json',
+  'templates/nginx.prod.conf',
 ];
 
 describe('publish/local file parity', () => {
@@ -36,7 +37,7 @@ describe('publish/local file parity', () => {
       const top = required.split('/')[0];
       assert.ok(
         declared.has(top) || declared.has(required),
-        `package.json files[] missing "${top}" (needed for ${required})`,
+        `package.json files[] missing "${top}" (needed for ${required})`
       );
     }
     assert.ok(declared.has('toolkit'), 'package.json files[] must ship bundled toolkit');
