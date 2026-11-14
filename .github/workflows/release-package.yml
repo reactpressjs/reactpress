@@ -109,12 +109,11 @@ jobs:
                 ;;
             esac
             echo "Publishing ${name}@${VERSION} → GitHub Packages (tag=${TAG})"
-            # Override package.json publishConfig.registry (npmjs) for this publish.
-            pnpm --dir "$dir" publish \
-              --access public \
-              --tag "$TAG" \
-              --registry "$REGISTRY" \
-              --no-git-checks
+            # Use npm (not pnpm) so publishConfig.registry + NODE_AUTH_TOKEN from setup-node apply.
+            (
+              cd "$dir"
+              npm publish --access public --tag "$TAG" --registry "$REGISTRY"
+            )
           }
 
           # Dependency order: toolkit → web/server → cli
