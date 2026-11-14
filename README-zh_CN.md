@@ -12,10 +12,10 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/reactpressjs/reactpressjs/stargazers"><img src="https://img.shields.io/github/stars/reactpressjs/reactpressjs?style=flat-square&logo=github" alt="Stars" /></a>
+  <a href="https://github.com/reactpressjs/reactpress/stargazers"><img src="https://img.shields.io/github/stars/reactpressjs/reactpress?style=flat-square&logo=github" alt="Stars" /></a>
   <a href="https://www.npmjs.com/package/reactpressjs"><img src="https://img.shields.io/npm/v/reactpressjs?style=flat-square&logo=npm&label=npm" alt="npm" /></a>
   <a href="https://www.npmjs.com/package/reactpressjs"><img src="https://img.shields.io/npm/dm/reactpressjs?style=flat-square&label=downloads" alt="downloads" /></a>
-  <a href="./LICENSE"><img src="https://img.shields.io/github/license/reactpressjs/reactpressjs?style=flat-square" alt="License" /></a>
+  <a href="./LICENSE"><img src="https://img.shields.io/github/license/reactpressjs/reactpress?style=flat-square" alt="License" /></a>
   <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/node-%3E%3D20-brightgreen?style=flat-square&logo=node.js&logoColor=white" alt="Node.js" /></a>
 </p>
 
@@ -23,6 +23,7 @@
   <a href="https://reactpress.cc/">文档</a> ·
   <a href="https://blog.gaoredu.com">在线演示</a> ·
   <a href="https://reactpress-theme-starter.vercel.app">主题演示</a> ·
+  <a href="https://github.com/reactpressjs/reactpress">GitHub</a> ·
   <a href="./README.md">English</a>
 </p>
 
@@ -34,16 +35,16 @@
 
 写作体验对齐 WordPress，工程体验对齐现代前端栈。本地起步无需 Docker、nginx 或独立数据库。
 
-| 模块            | 说明                                                                                      |
-| :-------------- | :---------------------------------------------------------------------------------------- |
-| **CMS API**     | NestJS 无头 REST；默认 SQLite，可选 MySQL                                                 |
-| **管理后台**    | `/admin/` — 文章、页面、媒体、插件、主题                                                  |
-| **主题**        | 可 npm 安装的 Next.js 站点，换肤不动内容                                                  |
-| **插件**        | 扩展能力，无需 fork 核心                                                                  |
-| **AI Assist**   | 自带 API Key。Skill 写草稿，人工通过后发布                                                |
-| **Agent Skill** | `npx skills add reactpressjs/reactpressjs --skill blog-ai` — 在 Cursor 中安装、写稿、发布 |
-| **桌面端**      | 同一套栈，打包为原生应用                                                                  |
-| **CLI**         | `init` · `doctor` · `logs` · `stop`                                                       |
+| 模块            | 说明                                                                                    |
+| :-------------- | :-------------------------------------------------------------------------------------- |
+| **CMS API**     | NestJS 无头 REST；默认 SQLite，可选 MySQL                                               |
+| **管理后台**    | `/admin/` — 文章、页面、媒体、插件、主题                                                |
+| **主题**        | 可 npm 安装的 Next.js 站点，换肤不动内容                                                |
+| **插件**        | 扩展能力，无需 fork 核心                                                                |
+| **AI Assist**   | 自带 API Key。Skill 写草稿，人工通过后发布                                              |
+| **Agent Skill** | `npx skills add reactpressjs/reactpress --skill blog-ai` — 在 Cursor 中安装、写稿、发布 |
+| **桌面端**      | 同一套栈，打包为原生应用                                                                |
+| **CLI**         | `init` · `doctor` · `logs` · `stop`                                                     |
 
 ## 快速开始
 

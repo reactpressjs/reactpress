@@ -12,10 +12,10 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/reactpressjs/reactpressjs/stargazers"><img src="https://img.shields.io/github/stars/reactpressjs/reactpressjs?style=flat-square&logo=github" alt="Stars" /></a>
+  <a href="https://github.com/reactpressjs/reactpress/stargazers"><img src="https://img.shields.io/github/stars/reactpressjs/reactpress?style=flat-square&logo=github" alt="Stars" /></a>
   <a href="https://www.npmjs.com/package/reactpressjs"><img src="https://img.shields.io/npm/v/reactpressjs?style=flat-square&logo=npm&label=npm" alt="npm" /></a>
   <a href="https://www.npmjs.com/package/reactpressjs"><img src="https://img.shields.io/npm/dm/reactpressjs?style=flat-square&label=downloads" alt="downloads" /></a>
-  <a href="./LICENSE"><img src="https://img.shields.io/github/license/reactpressjs/reactpressjs?style=flat-square" alt="License" /></a>
+  <a href="./LICENSE"><img src="https://img.shields.io/github/license/reactpressjs/reactpress?style=flat-square" alt="License" /></a>
   <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/node-%3E%3D20-brightgreen?style=flat-square&logo=node.js&logoColor=white" alt="Node.js" /></a>
 </p>
 
@@ -23,6 +23,7 @@
   <a href="https://reactpress.cc/">Docs</a> ·
   <a href="https://blog.gaoredu.com">Demo</a> ·
   <a href="https://reactpress-theme-starter.vercel.app">Theme</a> ·
+  <a href="https://github.com/reactpressjs/reactpress">GitHub</a> ·
   <a href="./README-zh_CN.md">简体中文</a>
 </p>
 
@@ -34,16 +35,16 @@
 
 WordPress-grade editing for frontend teams — without five repos, nginx, or a DBA.
 
-| Layer           | What you get                                                                                     |
-| :-------------- | :----------------------------------------------------------------------------------------------- |
-| **CMS API**     | Headless NestJS REST — SQLite by default, MySQL optional                                         |
-| **Admin**       | Writing console at `/admin/` — posts, pages, media, plugins, themes                              |
-| **Themes**      | npm-installable Next.js frontends — swap without touching content                                |
-| **Plugins**     | Extend the platform without forking the core                                                     |
-| **AI Assist**   | Bring your own API Key. Skills draft; you approve before publish                                 |
-| **Agent Skill** | `npx skills add reactpressjs/reactpressjs --skill blog-ai` — install, write, publish from Cursor |
-| **Desktop**     | Same stack as a native app                                                                       |
-| **CLI**         | `init` · `doctor` · `logs` · `stop` — operate from the terminal                                  |
+| Layer           | What you get                                                                                   |
+| :-------------- | :--------------------------------------------------------------------------------------------- |
+| **CMS API**     | Headless NestJS REST — SQLite by default, MySQL optional                                       |
+| **Admin**       | Writing console at `/admin/` — posts, pages, media, plugins, themes                            |
+| **Themes**      | npm-installable Next.js frontends — swap without touching content                              |
+| **Plugins**     | Extend the platform without forking the core                                                   |
+| **AI Assist**   | Bring your own API Key. Skills draft; you approve before publish                               |
+| **Agent Skill** | `npx skills add reactpressjs/reactpress --skill blog-ai` — install, write, publish from Cursor |
+| **Desktop**     | Same stack as a native app                                                                     |
+| **CLI**         | `init` · `doctor` · `logs` · `stop` — operate from the terminal                                |
 
 ## Quick Start
 

@@ -25,7 +25,7 @@ You agree not to:
 
 ## Open-source software
 
-ReactPress software is distributed under the **MIT License**. Using, modifying, or deploying ReactPress is governed by the license in the [GitHub repository](https://github.com/reactpressjs/reactpressjs/blob/master/LICENSE), not by these website terms.
+ReactPress software is distributed under the **MIT License**. Using, modifying, or deploying ReactPress is governed by the license in the [GitHub repository](https://github.com/reactpressjs/reactpress/blob/master/LICENSE), not by these website terms.
 
 ## Documentation disclaimer
 

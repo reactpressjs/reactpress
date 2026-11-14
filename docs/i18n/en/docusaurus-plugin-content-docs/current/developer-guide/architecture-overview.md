@@ -9,7 +9,7 @@ keywords: [reactpress, architecture, monorepo, nestjs, next.js, toolkit, system 
 
 ReactPress uses a **Monorepo + multi-process** model: content management, visitor presentation, and API are decoupled; **Toolkit** unifies types and API contracts.
 
-Full details: repo [ARCHITECTURE.md](https://github.com/reactpressjs/reactpressjs/blob/master/ARCHITECTURE.md).
+Full details: repo [ARCHITECTURE.md](https://github.com/reactpressjs/reactpress/blob/master/ARCHITECTURE.md).
 
 ## Architecture diagram
 

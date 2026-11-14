@@ -17,7 +17,7 @@ export function buildNpmVersionPageUrl(version: string): string {
 
 /** GitHub release tag page, e.g. …/releases/tag/v4.0.0 */
 export function buildGitHubReleaseTagUrl(version: string): string {
-  return `https://github.com/reactpressjs/reactpressjs/releases/tag/v${encodeURIComponent(version)}`;
+  return `https://github.com/reactpressjs/reactpress/releases/tag/v${encodeURIComponent(version)}`;
 }
 
 /** Fallback when the registry is unreachable (SSR / offline). */

@@ -89,7 +89,7 @@ reactpress --help
 
 无需 CLI 也可使用 [桌面客户端](../tutorial-extras/desktop-client.md) 进行离线写作：
 
-- 下载：[GitHub Releases](https://github.com/reactpressjs/reactpressjs/releases)
+- 下载：[GitHub Releases](https://github.com/reactpressjs/reactpress/releases)
 - 本地 SQLite 模式，默认账号 `admin` / `admin`
 
 ## 下一步

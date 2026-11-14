@@ -56,7 +56,7 @@ See [Desktop client](../tutorial-extras/desktop-client.md).
 ## Option 3: Monorepo development
 
 ```bash
-git clone --depth=1 https://github.com/reactpressjs/reactpressjs.git
+git clone --depth=1 https://github.com/reactpressjs/reactpress.git
 cd reactpress
 npm i -g pnpm && pnpm install
 pnpm run build:plugins

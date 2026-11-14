@@ -7,7 +7,7 @@
   "license": "MIT",
   "homepage": "https://reactpress.cc/",
   "bugs": {
-    "url": "https://github.com/reactpressjs/reactpressjs/issues"
+    "url": "https://github.com/reactpressjs/reactpress/issues"
   },
   "main": "dist/main.js",
   "bin": {
@@ -35,7 +35,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/reactpressjs/reactpressjs.git",
+    "url": "git+https://github.com/reactpressjs/reactpress.git",
     "directory": "server"
   },
   "publishConfig": {

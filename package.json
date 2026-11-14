@@ -6,11 +6,11 @@
   "description": "ReactPress: Write with Focus. Publish with Joy. CMS, Admin, Headless API, Next.js themes, plugins, desktop — one CLI.",
   "homepage": "https://www.reactpress.cc/",
   "bugs": {
-    "url": "https://github.com/reactpressjs/reactpressjs/issues"
+    "url": "https://github.com/reactpressjs/reactpress/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/reactpressjs/reactpressjs.git"
+    "url": "git+https://github.com/reactpressjs/reactpress.git"
   },
   "author": "reactpressjs",
   "bin": {

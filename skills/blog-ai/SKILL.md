@@ -16,7 +16,7 @@ pasting into Admin.
 
 ```bash
 # 1) Install this skill (Cursor / compatible agents)
-npx skills add reactpressjs/reactpressjs --skill blog-ai -a cursor -y
+npx skills add reactpressjs/reactpress --skill blog-ai -a cursor -y
 
 # 2) Install CLI + bootstrap a site
 npm install -g reactpressjs

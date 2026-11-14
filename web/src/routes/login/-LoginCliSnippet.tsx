@@ -20,7 +20,7 @@ const QUICK_START_LINES = [
   "reactpress init",
 ] as const;
 
-const REPO_DISPLAY = "github.com/reactpressjs/reactpressjs";
+const REPO_DISPLAY = "github.com/reactpressjs/reactpress";
 
 const PULSE_SEGMENTS = 28;
 

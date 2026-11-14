@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="footer">
       <p>
         Powered by{' '}
-        <a href="https://github.com/reactpressjs/reactpressjs" rel="noopener noreferrer">
+        <a href="https://github.com/reactpressjs/reactpress" rel="noopener noreferrer">
           ReactPress
         </a>
       </p>

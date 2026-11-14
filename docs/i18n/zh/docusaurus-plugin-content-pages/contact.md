@@ -10,18 +10,18 @@ keywords: [reactpress, 联系, 支持, github issues]
 
 ## 支持渠道
 
-| 渠道                   | 适用场景                       | 链接                                                                                                         |
-| ---------------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| **GitHub Issues**      | Bug、可复现问题                | [github.com/reactpressjs/reactpressjs/issues](https://github.com/reactpressjs/reactpressjs/issues)           |
-| **GitHub Discussions** | 提问、想法、展示               | [github.com/reactpressjs/reactpressjs/discussions](https://github.com/reactpressjs/reactpressjs/discussions) |
-| **微信**               | 社区动态（任意页面右侧可扫码） | 见页面右侧浮动「微信」按钮                                                                                   |
-| **X**                  | 产品动态与公告                 | [x.com/reactpre](https://x.com/reactpre)                                                                     |
-| **邮件**               | 私人咨询、安全报告             | [admin@gaoredu.com](mailto:admin@gaoredu.com)                                                                |
+| 渠道                   | 适用场景                       | 链接                                                                                                     |
+| ---------------------- | ------------------------------ | -------------------------------------------------------------------------------------------------------- |
+| **GitHub Issues**      | Bug、可复现问题                | [github.com/reactpressjs/reactpress/issues](https://github.com/reactpressjs/reactpress/issues)           |
+| **GitHub Discussions** | 提问、想法、展示               | [github.com/reactpressjs/reactpress/discussions](https://github.com/reactpressjs/reactpress/discussions) |
+| **微信**               | 社区动态（任意页面右侧可扫码） | 见页面右侧浮动「微信」按钮                                                                               |
+| **X**                  | 产品动态与公告                 | [x.com/reactpre](https://x.com/reactpre)                                                                 |
+| **邮件**               | 私人咨询、安全报告             | [admin@gaoredu.com](mailto:admin@gaoredu.com)                                                            |
 
 ## 提交 Issue 前
 
 1. 在您的环境运行 `reactpress doctor` 与 `reactpress logs`
-2. 搜索[已有 Issue](https://github.com/reactpressjs/reactpressjs/issues) 避免重复
+2. 搜索[已有 Issue](https://github.com/reactpressjs/reactpress/issues) 避免重复
 3. 阅读 [FAQ](/zh/docs/reference/faq) 与[故障排查](/zh/docs/reference/troubleshooting)
 4. 附上 Node 版本、操作系统、ReactPress 版本与相关日志
 
@@ -33,12 +33,12 @@ keywords: [reactpress, 联系, 支持, github issues]
 
 ## 参与贡献
 
-欢迎向 [GitHub](https://github.com/reactpressjs/reactpressjs/pulls) 提交 Pull Request。文档可直接通过任意页面的 **Edit this page** 编辑。
+欢迎向 [GitHub](https://github.com/reactpressjs/reactpress/pulls) 提交 Pull Request。文档可直接通过任意页面的 **Edit this page** 编辑。
 
 ## 项目链接
 
 - [官网](https://www.reactpress.cc/) · [文档首页](/zh/docs/intro)
 - [关于 ReactPress](/zh/about)
-- [GitHub](https://github.com/reactpressjs) · [源码仓库](https://github.com/reactpressjs/reactpressjs)
+- [GitHub](https://github.com/reactpressjs) · [源码仓库](https://github.com/reactpressjs/reactpress)
 - [npm](https://www.npmjs.com/~reactpressjs) · [CLI 包](https://www.npmjs.com/package/@reactpressjs/reactpress)
 - [在线演示](https://blog.gaoredu.com/)

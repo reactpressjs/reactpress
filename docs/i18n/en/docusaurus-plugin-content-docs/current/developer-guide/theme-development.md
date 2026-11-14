@@ -56,7 +56,7 @@ Mock mode (no API): `pnpm dev:mock`
 
 ## npm theme catalog
 
-Standalone npm packages register via **anchor directories** — see repo [themes/README.md](https://github.com/reactpressjs/reactpressjs/blob/master/themes/README.md).
+Standalone npm packages register via **anchor directories** — see repo [themes/README.md](https://github.com/reactpressjs/reactpress/blob/master/themes/README.md).
 
 Install from Admin or `reactpress theme add @scope/pkg@version` (Monorepo).
 

@@ -53,7 +53,7 @@ Write-scoped API Keys grant admin write access. Never commit them to public repo
 External agents (Cursor and compatible tools) can install a portable skill for install → draft → publish:
 
 ```bash
-npx skills add reactpressjs/reactpressjs --skill blog-ai -a cursor -y
+npx skills add reactpressjs/reactpress --skill blog-ai -a cursor -y
 ```
 
 See [`skills/blog-ai/SKILL.md`](../../../../../../skills/blog-ai/SKILL.md) in the repository.

@@ -79,7 +79,7 @@ describe('5.0.0-beta.0 release consistency', () => {
     assert.equal(aliasPkg.name, 'reactpressjs');
     assert.equal(aliasPkg.bin.reactpress, './bin/reactpress.js');
     assert.equal(aliasPkg.dependencies['@reactpressjs/reactpress'], 'workspace:*');
-    assert.match(aliasPkg.repository.url, /reactpressjs\/reactpressjs\.git/);
+    assert.match(aliasPkg.repository.url, /reactpressjs\/reactpress\.git/);
   });
 
   it('defaults docs install helpers to reactpressjs / 5.0.0 fallback', () => {
@@ -87,7 +87,7 @@ describe('5.0.0-beta.0 release consistency', () => {
     assert.match(packageVersions, /FALLBACK_REACTPRESS_LATEST\s*=\s*'5\.0\.0'/);
     assert.match(packageVersions, /REACTPRESS_NPM_PACKAGE\s*=\s*'reactpressjs'/);
     assert.match(packageVersions, /REACTPRESS_CORE_NPM_PACKAGE\s*=\s*'@reactpressjs\/reactpress'/);
-    assert.match(packageVersions, /github\.com\/reactpressjs\/reactpressjs/);
+    assert.match(packageVersions, /github\.com\/reactpressjs\/reactpress/);
     assert.match(packageVersions, /export function buildInstallCommand\(\):\s*string/);
 
     const quickStart = fs.readFileSync(path.join(REPO_ROOT, 'docs/src/constants/quickStartCommands.ts'), 'utf8');

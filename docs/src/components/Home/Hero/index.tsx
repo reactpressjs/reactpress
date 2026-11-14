@@ -64,10 +64,10 @@ function Hero() {
             </div>
             <span className={styles.githubWrap}>
               <GitHubButton
-                href="https://github.com/reactpressjs/reactpressjs"
+                href="https://github.com/reactpressjs/reactpress"
                 data-size="large"
                 data-show-count="true"
-                aria-label="Star reactpressjs/reactpressjs on GitHub"
+                aria-label="Star reactpressjs/reactpress on GitHub"
               >
                 Star
               </GitHubButton>

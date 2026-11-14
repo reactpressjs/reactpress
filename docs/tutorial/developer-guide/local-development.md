@@ -12,7 +12,7 @@ keywords: [reactpress, monorepo, contributing, pnpm dev, local development]
 ## 环境准备
 
 ```bash
-git clone --depth=1 https://github.com/reactpressjs/reactpressjs.git
+git clone --depth=1 https://github.com/reactpressjs/reactpress.git
 cd reactpress
 npm i -g pnpm
 pnpm install
@@ -92,7 +92,7 @@ cd docs && pnpm dev
 
 - 代码与 commit message：**English**
 - 用户文档：英文 README + 中文 `README-zh_CN.md`；本站中文为主、英文 i18n 同步
-- 见仓库 [CONTRIBUTING.md](https://github.com/reactpressjs/reactpressjs/blob/master/CONTRIBUTING.md)
+- 见仓库 [CONTRIBUTING.md](https://github.com/reactpressjs/reactpress/blob/master/CONTRIBUTING.md)
 
 ## 与全局 CLI 的差异
 
@@ -106,4 +106,4 @@ cd docs && pnpm dev
 
 - [系统架构概览](./architecture-overview.md)
 - [CLI 命令参考](./cli-reference.md)
-- [ARCHITECTURE.md](https://github.com/reactpressjs/reactpressjs/blob/master/ARCHITECTURE.md)
+- [ARCHITECTURE.md](https://github.com/reactpressjs/reactpress/blob/master/ARCHITECTURE.md)

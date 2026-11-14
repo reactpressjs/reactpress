@@ -138,7 +138,7 @@ reactpress init --force   # 会清空数据，慎用
 
 ## 仍无法解决？
 
-提交 [GitHub Issue](https://github.com/reactpressjs/reactpressjs/issues) 时请包含：
+提交 [GitHub Issue](https://github.com/reactpressjs/reactpress/issues) 时请包含：
 
 - OS 与 Node 版本
 - `@reactpressjs/reactpress` 版本

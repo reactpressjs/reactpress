@@ -167,8 +167,8 @@ Monorepo 开发需 `pnpm run build:plugins` 后重启 API。确认 Admin 中插�
 ## 获取帮助
 
 1. `reactpress doctor` 与 `reactpress logs`
-2. [GitHub Issues](https://github.com/reactpressjs/reactpressjs/issues)
-3. [GitHub Discussions](https://github.com/reactpressjs/reactpressjs/discussions)
+2. [GitHub Issues](https://github.com/reactpressjs/reactpress/issues)
+3. [GitHub Discussions](https://github.com/reactpressjs/reactpress/discussions)
 
 提问前请阅读 [提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way)，附上 Node 版本、操作系统、`doctor` 输出与相关日志。
 

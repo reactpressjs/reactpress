@@ -64,7 +64,7 @@ Customization is stored in API; themes read via settings API.
 Developers fork the official starter or copy from `themes/hello-world`:
 
 - [Theme development guide](../developer-guide/theme-development.md)
-- Repo [themes/README.md](https://github.com/reactpressjs/reactpressjs/blob/master/themes/README.md)
+- Repo [themes/README.md](https://github.com/reactpressjs/reactpress/blob/master/themes/README.md)
 
 ## Architecture notes
 

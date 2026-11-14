@@ -103,7 +103,7 @@ Full comparison: [ReactPress vs WordPress](./getting-started/reactpress-vs-wordp
 | Resource                                                                           | Description                                      |
 | ---------------------------------------------------------------------------------- | ------------------------------------------------ |
 | [Site reactpress.cc](https://www.reactpress.cc/)                                   | Official website                                 |
-| [Source repo](https://github.com/reactpressjs/reactpressjs)                        | Official repository (reactpressjs)               |
+| [Source repo](https://github.com/reactpressjs/reactpress)                          | Official repository (reactpressjs)               |
 | [npm](https://www.npmjs.com/~reactpressjs)                                         | Official npm account                             |
 | [@reactpressjs/reactpress](https://www.npmjs.com/package/@reactpressjs/reactpress) | 5.0 main package (CLI + API + plugins + desktop) |
 | [Desktop client](./tutorial-extras/desktop-client.md)                              | Install, local / remote modes                    |
@@ -114,9 +114,9 @@ Full comparison: [ReactPress vs WordPress](./getting-started/reactpress-vs-wordp
 ## Community
 
 1. Run `reactpress doctor` and `reactpress logs` first
-2. [GitHub Issues](https://github.com/reactpressjs/reactpressjs/issues)
-3. [GitHub Discussions](https://github.com/reactpressjs/reactpressjs/discussions)
-4. [Contributing guide](https://github.com/reactpressjs/reactpressjs/blob/master/CONTRIBUTING.md)
+2. [GitHub Issues](https://github.com/reactpressjs/reactpress/issues)
+3. [GitHub Discussions](https://github.com/reactpressjs/reactpress/discussions)
+4. [Contributing guide](https://github.com/reactpressjs/reactpress/blob/master/CONTRIBUTING.md)
 
 Email: admin@gaoredu.com
 

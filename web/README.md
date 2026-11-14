@@ -5,7 +5,7 @@
 [![npm version](https://img.shields.io/npm/v/@reactpressjs/reactpress-web/beta.svg?label=beta)](https://www.npmjs.com/package/@reactpressjs/reactpress-web/v/beta)
 [![npm latest](https://img.shields.io/npm/v/@reactpressjs/reactpress-web.svg?label=latest)](https://www.npmjs.com/package/@reactpressjs/reactpress-web)
 [![npm downloads](https://img.shields.io/npm/dm/@reactpressjs/reactpress-web.svg)](https://www.npmjs.com/package/@reactpressjs/reactpress-web)
-[![License: MIT](https://img.shields.io/npm/l/@reactpressjs/reactpress-web.svg)](https://github.com/reactpressjs/reactpressjs/blob/master/web/LICENSE)
+[![License: MIT](https://img.shields.io/npm/l/@reactpressjs/reactpress-web.svg)](https://github.com/reactpressjs/reactpress/blob/master/web/LICENSE)
 
 The **ReactPress Admin** SPA — where authors write posts, manage media, install plugins, and configure themes. Built with Vite and TanStack Router; published as an npm static package with Express, Connect, and Next.js helpers for mounting at `/admin/`.
 
@@ -295,4 +295,4 @@ reactpress publish --publish
 
 Selecting `@reactpressjs/reactpress-web` builds `toolkit` and `web/dist` first, then publishes to npm.
 
-<p align="center"><sub>Part of <a href="https://github.com/reactpressjs/reactpressjs">ReactPress</a> — Write with Focus. Publish with Joy.</sub></p>
+<p align="center"><sub>Part of <a href="https://github.com/reactpressjs/reactpress">ReactPress</a> — Write with Focus. Publish with Joy.</sub></p>

@@ -106,7 +106,7 @@ reactpress init
 | 资源                                                                               | 说明                                |
 | ---------------------------------------------------------------------------------- | ----------------------------------- |
 | [官网 reactpress.cc](https://www.reactpress.cc/)                                   | 官方唯一站点                        |
-| [源码仓库](https://github.com/reactpressjs/reactpressjs)                           | 官方唯一仓库（reactpressjs）        |
+| [源码仓库](https://github.com/reactpressjs/reactpress)                             | 官方唯一仓库（reactpressjs）        |
 | [npm](https://www.npmjs.com/~reactpressjs)                                         | 官方 npm 账号                       |
 | [@reactpressjs/reactpress](https://www.npmjs.com/package/@reactpressjs/reactpress) | 5.0 主包（CLI + API + 插件 + 桌面） |
 | [桌面客户端](./tutorial-extras/desktop-client.md)                                  | 下载安装、本地 / 远程模式           |
@@ -117,9 +117,9 @@ reactpress init
 ## 社区互助
 
 1. 先运行 `reactpress doctor` 与 `reactpress logs`
-2. [GitHub Issues](https://github.com/reactpressjs/reactpressjs/issues)
-3. [GitHub Discussions](https://github.com/reactpressjs/reactpressjs/discussions)
-4. [贡献指南](https://github.com/reactpressjs/reactpressjs/blob/master/CONTRIBUTING.md)
+2. [GitHub Issues](https://github.com/reactpressjs/reactpress/issues)
+3. [GitHub Discussions](https://github.com/reactpressjs/reactpress/discussions)
+4. [贡献指南](https://github.com/reactpressjs/reactpress/blob/master/CONTRIBUTING.md)
 
 Email: admin@gaoredu.com
 

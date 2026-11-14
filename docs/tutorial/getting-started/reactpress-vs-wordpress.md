@@ -155,7 +155,7 @@ reactpress init
 完整教程：[5 分钟创建第一个站点](./first-site.md)。
 
 :::tip 名称消歧
-此处的 ReactPress 是 **reactpressjs/reactpressjs** — NestJS + Next.js 发布平台，**不是**把 React 应用嵌入现有 WP 站点的那个 WordPress 插件。
+此处的 ReactPress 是 **reactpressjs/reactpress** — NestJS + Next.js 发布平台，**不是**把 React 应用嵌入现有 WP 站点的那个 WordPress 插件。
 :::
 
 ## 常见问题

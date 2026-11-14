@@ -452,7 +452,7 @@ Need **WordPress workflow + React front end + one CLI**? ReactPress fits — the
 
 ### 4.3 Design principles
 
-From [ARCHITECTURE.md](https://github.com/reactpressjs/reactpressjs/blob/master/ARCHITECTURE.md):
+From [ARCHITECTURE.md](https://github.com/reactpressjs/reactpress/blob/master/ARCHITECTURE.md):
 
 **Maintainability → Extensibility → Tech fit → Low cost**
 
@@ -1184,9 +1184,9 @@ Self-hosted **open source CMS** must be safe by default and auditable by admins.
 
 ### 13.1 Highlights (3.7+)
 
-- **SQL injection:** whitelist filter columns in public list APIs ([GHSA-wmw4-mw6x-6vfm](https://github.com/reactpressjs/reactpressjs/security/advisories/GHSA-wmw4-mw6x-6vfm))
+- **SQL injection:** whitelist filter columns in public list APIs ([GHSA-wmw4-mw6x-6vfm](https://github.com/reactpressjs/reactpress/security/advisories/GHSA-wmw4-mw6x-6vfm))
 - **Stored XSS:** sanitize comment HTML post-Markdown; JWT required for `POST /comment`; Helmet CSP headers
-- **Reporting:** [SECURITY.md](https://github.com/reactpressjs/reactpressjs/blob/master/SECURITY.md)
+- **Reporting:** [SECURITY.md](https://github.com/reactpressjs/reactpress/blob/master/SECURITY.md)
 
 ### 13.2 Plugin sandboxing
 
@@ -1442,7 +1442,7 @@ Content yes (scripts/REST). Theme requires Next.js rewrite. Plan engineering for
 
 ### How do I report security issues?
 
-Follow [SECURITY.md](https://github.com/reactpressjs/reactpressjs/blob/master/SECURITY.md). Do not post exploitable details in public Issues first.
+Follow [SECURITY.md](https://github.com/reactpressjs/reactpress/blob/master/SECURITY.md). Do not post exploitable details in public Issues first.
 
 ### What Node version is required?
 
@@ -1517,7 +1517,7 @@ Enable in **Appearance → Themes**.
 
 ### 19.7 Try desktop (optional)
 
-Download from [GitHub Releases](https://github.com/reactpressjs/reactpressjs/releases) or `pnpm build:desktop` from monorepo.
+Download from [GitHub Releases](https://github.com/reactpressjs/reactpress/releases) or `pnpm build:desktop` from monorepo.
 
 ### 19.8 Next steps in docs
 
@@ -1530,7 +1530,7 @@ Download from [GitHub Releases](https://github.com/reactpressjs/reactpressjs/rel
 
 ### 19.9 Star and feedback
 
-If ReactPress saves you a weekend of CMS assembly, a [GitHub star](https://github.com/reactpressjs/reactpressjs/stargazers) helps the next developer searching **React CMS** or **WordPress alternative** find this path.
+If ReactPress saves you a weekend of CMS assembly, a [GitHub star](https://github.com/reactpressjs/reactpress/stargazers) helps the next developer searching **React CMS** or **WordPress alternative** find this path.
 
 ---
 
@@ -2125,7 +2125,7 @@ Further reading for publishing platform designers:
 - WordPress Plugin Handbook — Hook mental models
 - Next.js App Router docs — SSR/ISR semantics
 - NestJS modular architecture — extension boundaries
-- [ReactPress ARCHITECTURE.md](https://github.com/reactpressjs/reactpressjs/blob/master/ARCHITECTURE.md)
+- [ReactPress ARCHITECTURE.md](https://github.com/reactpressjs/reactpress/blob/master/ARCHITECTURE.md)
 - [ReactPress vs WordPress doc](/docs/getting-started/reactpress-vs-wordpress)
 - [ReactPress 4.0 guide](/docs/tutorial-extras/reactpress-4-0)
 
@@ -2351,7 +2351,7 @@ Leaked `X-API-Key` equals admin access. Mitigations:
 
 ### AB.4 Supply chain
 
-`npm i -g @reactpressjs/reactpress` — pin versions in production AMIs; verify checksums; monitor [GitHub security advisories](https://github.com/reactpressjs/reactpressjs/security).
+`npm i -g @reactpressjs/reactpress` — pin versions in production AMIs; verify checksums; monitor [GitHub security advisories](https://github.com/reactpressjs/reactpress/security).
 
 ---
 
@@ -2558,7 +2558,7 @@ _Document ID: `why-react-still-doesnt-have-wordpress-reactpress-4` · Character 
 
 ## Related links
 
-- [GitHub — reactpressjs/reactpressjs](https://github.com/reactpressjs/reactpressjs)
+- [GitHub — reactpressjs/reactpress](https://github.com/reactpressjs/reactpress)
 - [Live demo — blog.gaoredu.com](https://blog.gaoredu.com)
 - [Theme demo — reactpress-theme-starter.vercel.app](https://reactpress-theme-starter.vercel.app)
 - [Documentation — reactpress.cc](https://reactpress.cc)

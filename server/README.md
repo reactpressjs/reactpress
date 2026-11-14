@@ -4,7 +4,7 @@
 
 [![npm version](https://img.shields.io/npm/v/@reactpressjs/reactpress-server/beta.svg?label=beta)](https://www.npmjs.com/package/@reactpressjs/reactpress-server/v/beta)
 [![npm latest](https://img.shields.io/npm/v/@reactpressjs/reactpress-server.svg?label=latest)](https://www.npmjs.com/package/@reactpressjs/reactpress-server)
-[![License: MIT](https://img.shields.io/npm/l/@reactpressjs/reactpress-server.svg)](https://github.com/reactpressjs/reactpressjs/blob/master/server/LICENSE)
+[![License: MIT](https://img.shields.io/npm/l/@reactpressjs/reactpress-server.svg)](https://github.com/reactpressjs/reactpress/blob/master/server/LICENSE)
 
 > **Deprecated** — from ReactPress 3.1 onward, the API ships inside [`@reactpressjs/reactpress`](https://www.npmjs.com/package/@reactpressjs/reactpress) (CLI). New projects should run `npx @reactpressjs/reactpress init` instead of installing this package standalone.
 
@@ -17,7 +17,7 @@ This package remains available for legacy deployments and direct API integration
 | **API**           | Headless REST with JWT auth, rate limiting, Swagger/OpenAPI |
 | **Database**      | MySQL (production) or SQLite (local / desktop)              |
 
-[Documentation](https://reactpress.cc/) · [Migrate to CLI](../cli/) · [GitHub](https://github.com/reactpressjs/reactpressjs)
+[Documentation](https://reactpress.cc/) · [Migrate to CLI](../cli/) · [GitHub](https://github.com/reactpressjs/reactpress)
 
 ## Quick start
 
@@ -46,7 +46,7 @@ On first run, the install wizard opens in your browser, creates configuration, a
 ## Development
 
 ```bash
-git clone https://github.com/reactpressjs/reactpressjs.git
+git clone https://github.com/reactpressjs/reactpress.git
 cd reactpress
 pnpm install
 pnpm run --dir server dev
@@ -95,11 +95,11 @@ OpenAPI spec from this server drives toolkit code generation (`pnpm run --dir to
 ## Docs & support
 
 - [Documentation](https://reactpress.cc/)
-- [Issues](https://github.com/reactpressjs/reactpressjs/issues)
+- [Issues](https://github.com/reactpressjs/reactpress/issues)
 - [Contributing](../CONTRIBUTING.md)
 
 ## License
 
 MIT — see [LICENSE](LICENSE).
 
-<p align="center"><sub>Part of <a href="https://github.com/reactpressjs/reactpressjs">ReactPress</a> — content owned by the system, frontend owned by developers.</sub></p>
+<p align="center"><sub>Part of <a href="https://github.com/reactpressjs/reactpress">ReactPress</a> — content owned by the system, frontend owned by developers.</sub></p>

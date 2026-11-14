@@ -41,7 +41,7 @@ docker-compose --version
 ### 2. Clone the project
 
 ```bash
-git clone https://github.com/reactpressjs/reactpressjs.git
+git clone https://github.com/reactpressjs/reactpress.git
 cd reactpress
 ```
 

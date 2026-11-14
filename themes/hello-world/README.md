@@ -2,7 +2,7 @@
 
 > **Official ReactPress starter theme — learn the platform, ship your own.**
 
-**Minimal Next.js 15 theme** for the [ReactPress](https://github.com/reactpressjs/reactpressjs) publishing platform. Pages Router blog with home, articles, categories, tags, search, and custom pages — the reference template to copy and customize.
+**Minimal Next.js 15 theme** for the [ReactPress](https://github.com/reactpressjs/reactpress) publishing platform. Pages Router blog with home, articles, categories, tags, search, and custom pages — the reference template to copy and customize.
 
 | Item         | Details                                                 |
 | :----------- | :------------------------------------------------------ |
@@ -106,4 +106,4 @@ This package can be published as `@reactpressjs/reactpress-template-hello-world`
 - [ARCHITECTURE.md](../../ARCHITECTURE.md) — theme lifecycle
 - [toolkit/README.md](../../toolkit/README.md) — SDK reference
 
-<p align="center"><sub>Part of <a href="https://github.com/reactpressjs/reactpressjs">ReactPress</a> — Next.js delivery for the publishing platform.</sub></p>
+<p align="center"><sub>Part of <a href="https://github.com/reactpressjs/reactpress">ReactPress</a> — Next.js delivery for the publishing platform.</sub></p>

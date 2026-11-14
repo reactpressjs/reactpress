@@ -10,18 +10,18 @@ We welcome questions, bug reports, feature ideas, and contributions from the Rea
 
 ## Support channels
 
-| Channel                | Best for                                             | Link                                                                                                         |
-| ---------------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| **GitHub Issues**      | Bugs, reproducible problems                          | [github.com/reactpressjs/reactpressjs/issues](https://github.com/reactpressjs/reactpressjs/issues)           |
-| **GitHub Discussions** | Questions, ideas, show-and-tell                      | [github.com/reactpressjs/reactpressjs/discussions](https://github.com/reactpressjs/reactpressjs/discussions) |
-| **WeChat**             | Community updates (scan the floating QR on any page) | See the WeChat button on the right side of every page                                                        |
-| **X**                  | Product news and announcements                       | [x.com/reactpre](https://x.com/reactpre)                                                                     |
-| **Email**              | Private inquiries, security reports                  | [admin@gaoredu.com](mailto:admin@gaoredu.com)                                                                |
+| Channel                | Best for                                             | Link                                                                                                     |
+| ---------------------- | ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| **GitHub Issues**      | Bugs, reproducible problems                          | [github.com/reactpressjs/reactpress/issues](https://github.com/reactpressjs/reactpress/issues)           |
+| **GitHub Discussions** | Questions, ideas, show-and-tell                      | [github.com/reactpressjs/reactpress/discussions](https://github.com/reactpressjs/reactpress/discussions) |
+| **WeChat**             | Community updates (scan the floating QR on any page) | See the WeChat button on the right side of every page                                                    |
+| **X**                  | Product news and announcements                       | [x.com/reactpre](https://x.com/reactpre)                                                                 |
+| **Email**              | Private inquiries, security reports                  | [admin@gaoredu.com](mailto:admin@gaoredu.com)                                                            |
 
 ## Before opening an issue
 
 1. Run `reactpress doctor` and `reactpress logs` on your installation
-2. Search [existing issues](https://github.com/reactpressjs/reactpressjs/issues) for duplicates
+2. Search [existing issues](https://github.com/reactpressjs/reactpress/issues) for duplicates
 3. Read the [FAQ](/docs/reference/faq) and [Troubleshooting](/docs/reference/troubleshooting) guides
 4. Include Node.js version, OS, ReactPress version, and relevant log output
 
@@ -33,12 +33,12 @@ If you discover a security vulnerability, please **do not** open a public issue.
 
 ## Contributing
 
-Pull requests are welcome on [GitHub](https://github.com/reactpressjs/reactpressjs/pulls). Documentation edits can be submitted directly from any doc page via **Edit this page**.
+Pull requests are welcome on [GitHub](https://github.com/reactpressjs/reactpress/pulls). Documentation edits can be submitted directly from any doc page via **Edit this page**.
 
 ## Project links
 
 - [Official site](https://www.reactpress.cc/) · [Documentation](/docs/intro)
 - [About ReactPress](/about)
-- [GitHub](https://github.com/reactpressjs) · [Source repo](https://github.com/reactpressjs/reactpressjs)
+- [GitHub](https://github.com/reactpressjs) · [Source repo](https://github.com/reactpressjs/reactpress)
 - [npm](https://www.npmjs.com/~reactpressjs) · [CLI package](https://www.npmjs.com/package/@reactpressjs/reactpress)
 - [Live demo](https://blog.gaoredu.com/)

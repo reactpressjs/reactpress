@@ -16,13 +16,14 @@ pnpm export:brand
 | `favicon/` | Browser favicons: `favicon.ico`, `favicon-16/32/48.png`         |
 | `icons/`   | PWA / Apple Touch: `apple-touch-icon.png`, `icon-192/512.png`   |
 
-## Demo media
+## Marketing & screenshots
 
-Root-level demo media (`usage.gif`, `demo.gif`, `desktop.gif`, `lighthouse.png`) is referenced by [README.md](../README.md) and [README-zh_CN](../README-zh_CN.md).
+| Path         | Contents                                                                                                                                                                    |
+| :----------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `poster.png` | Hero banner used by [README.md](../README.md) and [README-zh_CN](../README-zh_CN.md)                                                                                        |
+| `admin/`     | Admin UI screenshots for [web/README](../web/README.md) and [docs site](https://reactpress.cc/): `post.png`, `midia.png`, `plugins.png`, `theme-custom.png`, `settings.png` |
 
-| Directory | Contents                                                                                                                                                                    |
-| :-------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `admin/`  | Admin UI screenshots for [web/README](../web/README.md) and [docs site](https://reactpress.cc/): `post.png`, `midia.png`, `plugins.png`, `theme-custom.png`, `settings.png` |
+Demo GIFs and lighthouse scores live under `docs/static/img/blog/` (docs home + blog posts), not at this root.
 
 A copy of `admin/` is synced to `docs/static/img/admin/` for the documentation site.
 

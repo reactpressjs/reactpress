@@ -16,7 +16,7 @@ keywords:
 
 <!--truncate-->
 
-## [5.0.0](https://github.com/reactpressjs/reactpressjs/compare/v4.0.0...v5.0.0) (2026-11-13)
+## [5.0.0](https://github.com/reactpressjs/reactpress/compare/v4.0.0...v5.0.0) (2026-11-13)
 
 **ReactPress 5.0 Intelligent** — BYOK AI Assist, draft-only Skills, human Review Inbox. Install: `npm i -g reactpressjs`.
 
@@ -28,9 +28,9 @@ keywords:
 
 ---
 
-## [4.0.0](https://github.com/reactpressjs/reactpressjs/compare/v4.0.0-beta.18...v4.0.0) (2026-08-09)
+## [4.0.0](https://github.com/reactpressjs/reactpress/compare/v4.0.0-beta.18...v4.0.0) (2026-08-09)
 
-**ReactPress 4.0.0 stable** — npm `@latest` ([#88](https://github.com/reactpressjs/reactpressjs/issues/88)). Install: `npm i -g reactpressjs`.
+**ReactPress 4.0.0 stable** — npm `@latest` ([#88](https://github.com/reactpressjs/reactpress/issues/88)). Install: `npm i -g reactpressjs`.
 
 - **Release**: promotes 4.x from `@beta` to `@latest`
 - **Docs / README / Admin**: default install path is stable 4.0.0
@@ -38,7 +38,7 @@ keywords:
 
 ---
 
-## [4.0.0-beta.18](https://github.com/reactpressjs/reactpressjs/compare/v4.0.0-beta.0...v4.0.0-beta.18) (2026-07-12)
+## [4.0.0-beta.18](https://github.com/reactpressjs/reactpress/compare/v4.0.0-beta.0...v4.0.0-beta.18) (2026-07-12)
 
 **ReactPress 4.0 beta.18** — npm `@beta` at the time. Install: `npm i -g reactpressjs@beta`.
 
@@ -49,18 +49,18 @@ keywords:
 
 ---
 
-## [4.0.0-beta.0](https://github.com/reactpressjs/reactpressjs/compare/v3.7.0...v4.0.0-beta.0) (2026-06-27)
+## [4.0.0-beta.0](https://github.com/reactpressjs/reactpress/compare/v3.7.0...v4.0.0-beta.0) (2026-06-27)
 
 **ReactPress 4.0 Extend (beta)** — plugins, desktop client, theme catalog. Install: `npm i -g reactpressjs@beta`.
 
-- **Plugins** ([#69](https://github.com/reactpressjs/reactpressjs/issues/69)): Hook system, `plugin.json` manifest, Admin slots; built-in `hello-world`, `seo`, `image-optimizer`
-- **Desktop** ([#70](https://github.com/reactpressjs/reactpressjs/issues/70)): Electron + SQLite local mode; remote API + sync to server
-- **Themes** ([#71](https://github.com/reactpressjs/reactpressjs/issues/71)): npm catalog (`theme-starter`), `theme add`/`list`, preview pool; hello-world docs refresh
+- **Plugins** ([#69](https://github.com/reactpressjs/reactpress/issues/69)): Hook system, `plugin.json` manifest, Admin slots; built-in `hello-world`, `seo`, `image-optimizer`
+- **Desktop** ([#70](https://github.com/reactpressjs/reactpress/issues/70)): Electron + SQLite local mode; remote API + sync to server
+- **Themes** ([#71](https://github.com/reactpressjs/reactpress/issues/71)): npm catalog (`theme-starter`), `theme add`/`list`, preview pool; hello-world docs refresh
 - **Migration**: [3.x → 4.0 guide](/docs/tutorial-extras/migration-3-to-4)
 
 ---
 
-## [3.7.0](https://github.com/reactpressjs/reactpressjs/compare/v3.6.0...v3.7.0) (2026-06-23)
+## [3.7.0](https://github.com/reactpressjs/reactpress/compare/v3.6.0...v3.7.0) (2026-06-23)
 
 **Security** — SQL injection and stored XSS fixes.
 
@@ -70,7 +70,7 @@ keywords:
 
 ---
 
-## [3.6.0](https://github.com/reactpressjs/reactpressjs/compare/v3.5.0...v3.6.0) (2026-06-14)
+## [3.6.0](https://github.com/reactpressjs/reactpress/compare/v3.5.0...v3.6.0) (2026-06-14)
 
 **Docs CI/CD & deployment** — automated docs pipeline and Vercel migration.
 
@@ -81,7 +81,7 @@ keywords:
 
 ---
 
-## [3.5.0](https://github.com/reactpressjs/reactpressjs/compare/v3.4.0...v3.5.0) (2026-06-14)
+## [3.5.0](https://github.com/reactpressjs/reactpress/compare/v3.4.0...v3.5.0) (2026-06-14)
 
 **Theme catalog** — npm-based theme discovery and management.
 
@@ -89,7 +89,7 @@ keywords:
 
 ---
 
-## [3.4.0](https://github.com/reactpressjs/reactpressjs/compare/v3.3.0...v3.4.0) (2026-06-12)
+## [3.4.0](https://github.com/reactpressjs/reactpress/compare/v3.3.0...v3.4.0) (2026-06-12)
 
 **Community** — clearer issue reporting.
 
@@ -97,7 +97,7 @@ keywords:
 
 ---
 
-## [3.3.0](https://github.com/reactpressjs/reactpressjs/compare/v3.2.0...v3.3.0) (2026-06-07)
+## [3.3.0](https://github.com/reactpressjs/reactpress/compare/v3.2.0...v3.3.0) (2026-06-07)
 
 **Community & security** — governance and vulnerability reporting.
 
@@ -105,7 +105,7 @@ keywords:
 
 ---
 
-## [3.2.0](https://github.com/reactpressjs/reactpressjs/compare/v3.1.1...v3.2.0) (2026-06-07)
+## [3.2.0](https://github.com/reactpressjs/reactpress/compare/v3.1.1...v3.2.0) (2026-06-07)
 
 **Theme development** — Next.js tooling for theme authors.
 
@@ -113,7 +113,7 @@ keywords:
 
 ---
 
-## [3.1.1](https://github.com/reactpressjs/reactpressjs/compare/v3.1.0...v3.1.1) (2026-06-07)
+## [3.1.1](https://github.com/reactpressjs/reactpress/compare/v3.1.0...v3.1.1) (2026-06-07)
 
 ### Bug Fixes
 
@@ -121,7 +121,7 @@ keywords:
 
 ---
 
-## [3.1.0](https://github.com/reactpressjs/reactpressjs/compare/v3.0.0...v3.1.0) (2026-06-07)
+## [3.1.0](https://github.com/reactpressjs/reactpress/compare/v3.0.0...v3.1.0) (2026-06-07)
 
 **Toolkit theme refactor** — modular exports, first-class theme development.
 
@@ -132,7 +132,7 @@ keywords:
 
 ---
 
-## [3.0.0](https://github.com/reactpressjs/reactpressjs/compare/v2.0.2...v3.0.0) (2026-05-17)
+## [3.0.0](https://github.com/reactpressjs/reactpress/compare/v2.0.2...v3.0.0) (2026-05-17)
 
 **ReactPress 3.0 Platform** — one package, one command, your CMS in about a minute.
 
@@ -143,48 +143,48 @@ keywords:
 
 ---
 
-## [2.0.1](https://github.com/reactpressjs/reactpressjs/compare/v2.0.0...v2.0.1) (2025-09-26)
+## [2.0.1](https://github.com/reactpressjs/reactpress/compare/v2.0.0...v2.0.1) (2025-09-26)
 
 ### Bug Fixes
 
-- correct HttpClient filename case sensitivity ([7dd892a](https://github.com/reactpressjs/reactpressjs/commit/7dd892a8d5b05a3ab24eaf73577848eb25b06450))
+- correct HttpClient filename case sensitivity ([7dd892a](https://github.com/reactpressjs/reactpress/commit/7dd892a8d5b05a3ab24eaf73577848eb25b06450))
 
 ### Features
 
-- add config for toolkit package ([0ed839d](https://github.com/reactpressjs/reactpressjs/commit/0ed839d4667d671ea06b088c0bac5a2890680445))
+- add config for toolkit package ([0ed839d](https://github.com/reactpressjs/reactpress/commit/0ed839d4667d671ea06b088c0bac5a2890680445))
 
-## [2.0.0](https://github.com/reactpressjs/reactpressjs/compare/v1.10.0...v2.0.0) (2025-09-21)
+## [2.0.0](https://github.com/reactpressjs/reactpress/compare/v1.10.0...v2.0.0) (2025-09-21)
 
 ### Bug Fixes
 
-- server load issue ([a6f759b](https://github.com/reactpressjs/reactpressjs/commit/a6f759b386e32727501b0eea3ea38f5a89dfe700))
-- type defs ([d6491d5](https://github.com/reactpressjs/reactpressjs/commit/d6491d56f2ffdd19d5a47fda7273958cd4243fb3))
+- server load issue ([a6f759b](https://github.com/reactpressjs/reactpress/commit/a6f759b386e32727501b0eea3ea38f5a89dfe700))
+- type defs ([d6491d5](https://github.com/reactpressjs/reactpress/commit/d6491d56f2ffdd19d5a47fda7273958cd4243fb3))
 
 ### Features
 
-- add hello-world template ([7e2c948](https://github.com/reactpressjs/reactpressjs/commit/7e2c9487ddc6023d7b382250b131fbe828013680))
-- add reactpress toolkit ([58f9312](https://github.com/reactpressjs/reactpressjs/commit/58f9312644736aceb362e517fad8c3b3a83f275f))
-- add swagger v2 ui ([ef9fdc1](https://github.com/reactpressjs/reactpressjs/commit/ef9fdc166955b4659c81fb559138ce38ef599cfe))
-- add twentytwentyfive theme ([715281f](https://github.com/reactpressjs/reactpressjs/commit/715281fedcf8072348e4b8b6794891c7e67e1f99))
-- support npx install server ([e7f7b97](https://github.com/reactpressjs/reactpressjs/commit/e7f7b970bb4dd8b845fcd8dde4048678a403557a))
-- support quick install ([96c1d0a](https://github.com/reactpressjs/reactpressjs/commit/96c1d0a7cc1c72b7f6c489ba236ab6eb78472dee))
+- add hello-world template ([7e2c948](https://github.com/reactpressjs/reactpress/commit/7e2c9487ddc6023d7b382250b131fbe828013680))
+- add reactpress toolkit ([58f9312](https://github.com/reactpressjs/reactpress/commit/58f9312644736aceb362e517fad8c3b3a83f275f))
+- add swagger v2 ui ([ef9fdc1](https://github.com/reactpressjs/reactpress/commit/ef9fdc166955b4659c81fb559138ce38ef599cfe))
+- add twentytwentyfive theme ([715281f](https://github.com/reactpressjs/reactpress/commit/715281fedcf8072348e4b8b6794891c7e67e1f99))
+- support npx install server ([e7f7b97](https://github.com/reactpressjs/reactpress/commit/e7f7b970bb4dd8b845fcd8dde4048678a403557a))
+- support quick install ([96c1d0a](https://github.com/reactpressjs/reactpress/commit/96c1d0a7cc1c72b7f6c489ba236ab6eb78472dee))
 
-## [1.10.0](https://github.com/reactpressjs/reactpressjs/compare/v1.9.0...v1.10.0) (2025-08-03)
-
-### Features
-
-- add type defs for config ([d8a6fed](https://github.com/reactpressjs/reactpressjs/commit/d8a6fed7bc13f74be0916f80497590c7e737fb86))
-
-## [1.9.0](https://github.com/reactpressjs/reactpressjs/compare/v1.8.0...v1.9.0) (2025-05-21)
-
-## [1.8.0](https://github.com/reactpressjs/reactpressjs/compare/v1.7.0...v1.8.0) (2025-03-22)
+## [1.10.0](https://github.com/reactpressjs/reactpress/compare/v1.9.0...v1.10.0) (2025-08-03)
 
 ### Features
 
-- upgrade next version ([64cac4d](https://github.com/reactpressjs/reactpressjs/commit/64cac4dcb9268a6bbb14fbbfe6995406638f7508))
+- add type defs for config ([d8a6fed](https://github.com/reactpressjs/reactpress/commit/d8a6fed7bc13f74be0916f80497590c7e737fb86))
 
-## [1.0.0](https://github.com/reactpressjs/reactpressjs/compare/a6b73a189090e0199cc6f803bfb498cdeb7868a5...v1.0.0) (2024-09-28)
+## [1.9.0](https://github.com/reactpressjs/reactpress/compare/v1.8.0...v1.9.0) (2025-05-21)
+
+## [1.8.0](https://github.com/reactpressjs/reactpress/compare/v1.7.0...v1.8.0) (2025-03-22)
 
 ### Features
 
-- init easy-blog project ([a6b73a1](https://github.com/reactpressjs/reactpressjs/commit/a6b73a189090e0199cc6f803bfb498cdeb7868a5))
+- upgrade next version ([64cac4d](https://github.com/reactpressjs/reactpress/commit/64cac4dcb9268a6bbb14fbbfe6995406638f7508))
+
+## [1.0.0](https://github.com/reactpressjs/reactpress/compare/a6b73a189090e0199cc6f803bfb498cdeb7868a5...v1.0.0) (2024-09-28)
+
+### Features
+
+- init easy-blog project ([a6b73a1](https://github.com/reactpressjs/reactpress/commit/a6b73a189090e0199cc6f803bfb498cdeb7868a5))

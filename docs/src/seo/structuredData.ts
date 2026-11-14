@@ -92,7 +92,7 @@ export function buildOrganizationGraph(baseUrl: string) {
         'sameAs': [
           `${baseUrl}/`,
           'https://github.com/reactpressjs',
-          'https://github.com/reactpressjs/reactpressjs',
+          'https://github.com/reactpressjs/reactpress',
           'https://www.npmjs.com/~reactpressjs',
           'https://www.npmjs.com/package/@reactpressjs/reactpress',
         ],

@@ -116,7 +116,7 @@ npx @reactpressjs/reactpress-server
 克隆 monorepo 开发时仍使用 `pnpm install` + `pnpm dev`，底层与全局 `reactpress dev` 一致：
 
 ```bash
-git clone https://github.com/reactpressjs/reactpressjs.git
+git clone https://github.com/reactpressjs/reactpress.git
 cd reactpress
 pnpm install
 pnpm dev

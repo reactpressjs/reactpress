@@ -105,7 +105,7 @@ Deeper model: [Core concepts](./core-concepts.md) · [Architecture overview](../
 - New installs activate AI Assist automatically
 - 4.0 plugins, desktop, npm themes, and default SQLite remain
 
-License: **MIT**. Package: [@reactpressjs/reactpress](https://www.npmjs.com/package/@reactpressjs/reactpress) · Source: [reactpressjs/reactpressjs](https://github.com/reactpressjs/reactpressjs) (official)
+License: **MIT**. Package: [@reactpressjs/reactpress](https://www.npmjs.com/package/@reactpressjs/reactpress) · Source: [reactpressjs/reactpress](https://github.com/reactpressjs/reactpress) (official)
 
 :::tip Name disambiguation
 ReactPress here is the **reactpressjs open-source publishing platform** (NestJS + Next.js CMS). It is **not** the WordPress plugin that embeds React apps into existing WP sites.

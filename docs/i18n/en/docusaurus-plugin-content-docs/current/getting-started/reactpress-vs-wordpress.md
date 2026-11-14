@@ -164,7 +164,7 @@ reactpress init
 Walkthrough: [Create your first site](./first-site.md).
 
 :::tip Name disambiguation
-This ReactPress is **reactpressjs/reactpressjs** — a NestJS + Next.js publishing platform. It is **not** the WordPress plugin that embeds React apps inside existing WP sites.
+This ReactPress is **reactpressjs/reactpress** — a NestJS + Next.js publishing platform. It is **not** the WordPress plugin that embeds React apps inside existing WP sites.
 :::
 
 ## FAQ

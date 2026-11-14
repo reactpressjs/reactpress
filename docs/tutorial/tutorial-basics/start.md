@@ -56,7 +56,7 @@ pnpm dev:desktop
 ## 方式三：Monorepo 本仓开发
 
 ```bash
-git clone --depth=1 https://github.com/reactpressjs/reactpressjs.git
+git clone --depth=1 https://github.com/reactpressjs/reactpress.git
 cd reactpress
 npm i -g pnpm && pnpm install
 pnpm run build:plugins

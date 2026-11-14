@@ -65,4 +65,4 @@ curl http://localhost:3002/api/health
 
 - [ReactPress 3.0 平台版（文档站）](./docs/tutorial/tutorial-extras/reactpress-3-0.md)
 - [3.0 发布方案（仓库内）](../3.0.md)
-- [GitHub Issues](https://github.com/reactpressjs/reactpressjs/issues)
+- [GitHub Issues](https://github.com/reactpressjs/reactpress/issues)

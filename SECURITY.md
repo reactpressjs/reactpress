@@ -27,7 +27,7 @@ npm i -g @reactpressjs/reactpress
 If you discover a security issue, report it privately so we can investigate and
 ship a fix before details are public:
 
-1. **Preferred:** [Open a private security advisory](https://github.com/reactpressjs/reactpressjs/security/advisories/new)
+1. **Preferred:** [Open a private security advisory](https://github.com/reactpressjs/reactpress/security/advisories/new)
    on GitHub (Repository → **Security** → **Report a vulnerability**).
 2. **Alternative:** Email the maintainers via a GitHub issue titled
    `Security report (private details)` and ask to move the conversation to a
@@ -65,4 +65,4 @@ When self-hosting ReactPress:
 - Rotate API keys and webhook secrets periodically
 
 For general bugs and feature requests (non-security), use
-[GitHub Issues](https://github.com/reactpressjs/reactpressjs/issues).
+[GitHub Issues](https://github.com/reactpressjs/reactpress/issues).

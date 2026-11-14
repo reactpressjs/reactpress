@@ -41,7 +41,7 @@ let mockSettings: Record<string, unknown> = {
     '[{"id":"n1","content":"欢迎使用 ReactPress！","enabled":true},{"id":"n2","content":"可在「设置 → 常规」管理多条公告并调整顺序。","enabled":true}]',
   seoKeyword: "React,博客,CMS,ReactPress",
   seoDesc: "使用 ReactPress 搭建的博客与内容站点。",
-  aboutUsGithubUrl: "https://github.com/reactpressjs/reactpressjs",
+  aboutUsGithubUrl: "https://github.com/reactpressjs/reactpress",
   aboutUsCommentQr: "https://www.gaoredu.com/wp-content/uploads/2024/08/WechatIMG23.jpg",
   aboutUsWechatQr: "https://www.gaoredu.com/wp-content/uploads/2024/11/wechat.png",
   globalSetting: JSON.stringify({

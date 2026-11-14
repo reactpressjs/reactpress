@@ -64,7 +64,7 @@ cd my-blog && pnpm dev:mock
 开发者 fork 官方 starter 或从 `themes/hello-world` 复制：
 
 - [主题开发指南](../developer-guide/theme-development.md)
-- 仓库 [themes/README.md](https://github.com/reactpressjs/reactpressjs/blob/master/themes/README.md)
+- 仓库 [themes/README.md](https://github.com/reactpressjs/reactpress/blob/master/themes/README.md)
 
 ## 架构要点
 

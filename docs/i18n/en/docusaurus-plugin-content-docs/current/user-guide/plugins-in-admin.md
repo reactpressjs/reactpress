@@ -67,7 +67,7 @@ Configure Webhooks in **Settings → Webhook**; they complement plugins.
 
 ## Develop custom plugins
 
-See [Plugin development guide](../developer-guide/plugin-development.md) and repo [plugins/README.md](https://github.com/reactpressjs/reactpressjs/blob/master/plugins/README.md).
+See [Plugin development guide](../developer-guide/plugin-development.md) and repo [plugins/README.md](https://github.com/reactpressjs/reactpress/blob/master/plugins/README.md).
 
 ## Related docs
 

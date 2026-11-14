@@ -11,7 +11,7 @@ keywords: [reactpress, plugin development, hook, plugin.json, extension]
 
 > **主题 = 呈现 · 插件 = 逻辑**
 
-完整规范见仓库 [plugins/README.md](https://github.com/reactpressjs/reactpressjs/blob/master/plugins/README.md)。
+完整规范见仓库 [plugins/README.md](https://github.com/reactpressjs/reactpress/blob/master/plugins/README.md)。
 
 ## 快速脚手架
 
