@@ -21,8 +21,8 @@
 
 <p align="center">
   <a href="https://reactpress.cc/">Docs</a> ·
-  <a href="https://blog.gaoredu.com">Demo</a> ·
-  <a href="https://reactpress-theme-starter.vercel.app">Theme</a> ·
+  <a href="https://blog.gaoredu.com/">Demo</a> ·
+  <a href="https://demo.reactpress.cc/">Theme</a> ·
   <a href="https://github.com/reactpressjs/reactpress">GitHub</a> ·
   <a href="./README-zh_CN.md">简体中文</a>
 </p>
@@ -69,7 +69,7 @@ Stuck? Run `reactpress doctor`.
   </a>
 </p>
 
-Theme starter · [repo](https://github.com/reactpressjs/reactpress-theme-starter) · [live](https://reactpress-theme-starter.vercel.app)
+Theme starter · [repo](https://github.com/reactpressjs/reactpress-theme-starter) · [live](https://demo.reactpress.cc/)
 
 ## Ecosystem
 

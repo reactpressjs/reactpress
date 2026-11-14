@@ -48,7 +48,7 @@ export const REACTPRESS_DOCS_BASE_URL =
   import.meta.env.VITE_REACTPRESS_DOCS_URL?.trim().replace(/\/$/, "") || "https://reactpress.cc";
 
 /** Live demo site (public blog). */
-export const REACTPRESS_DEMO_URL = "https://blog.gaoredu.com";
+export const REACTPRESS_DEMO_URL = "https://blog.gaoredu.com/";
 
 export function reactpressDocsPath(locale: string, path: string): string {
   const normalized = path.startsWith("/") ? path : `/${path}`;

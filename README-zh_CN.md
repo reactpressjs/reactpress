@@ -21,8 +21,8 @@
 
 <p align="center">
   <a href="https://reactpress.cc/">文档</a> ·
-  <a href="https://blog.gaoredu.com">在线演示</a> ·
-  <a href="https://reactpress-theme-starter.vercel.app">主题演示</a> ·
+  <a href="https://blog.gaoredu.com/">在线演示</a> ·
+  <a href="https://demo.reactpress.cc/">主题演示</a> ·
   <a href="https://github.com/reactpressjs/reactpress">GitHub</a> ·
   <a href="./README.md">English</a>
 </p>
@@ -70,7 +70,7 @@ reactpress init
   </a>
 </p>
 
-一键部署主题起步模板 · [仓库](https://github.com/reactpressjs/reactpress-theme-starter) · [预览](https://reactpress-theme-starter.vercel.app)
+一键部署主题起步模板 · [仓库](https://github.com/reactpressjs/reactpress-theme-starter) · [预览](https://demo.reactpress.cc/)
 
 ## 生态
 
