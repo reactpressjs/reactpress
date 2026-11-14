@@ -109,7 +109,7 @@ export function buildOrganizationGraph(baseUrl: string) {
         'applicationCategory': 'DeveloperApplication',
         'operatingSystem': 'macOS, Windows, Linux',
         'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'USD' },
-        'softwareVersion': '4.0',
+        'softwareVersion': '5.0',
         'url': `${baseUrl}/`,
         'downloadUrl': 'https://www.npmjs.com/package/@reactpressjs/reactpress',
         'author': { '@id': `${baseUrl}/#organization` },
@@ -128,5 +128,38 @@ export function buildFaqPageJsonLd(entries: FaqEntry[], pageUrl: string) {
       'acceptedAnswer': { '@type': 'Answer', 'text': answer },
     })),
     'url': pageUrl,
+  };
+}
+
+/** Documentation page as TechArticle — use only with the real page title/description. */
+export function buildTechArticleJsonLd(input: {
+  url: string;
+  headline: string;
+  description: string;
+  imageUrl: string;
+  locale: string;
+  dateModified?: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'TechArticle',
+    'headline': input.headline,
+    'description': input.description,
+    'url': input.url,
+    'image': input.imageUrl,
+    'inLanguage': input.locale === 'zh' ? 'zh-Hans' : 'en',
+    'author': {
+      '@type': 'Organization',
+      'name': 'ReactPress',
+    },
+    'publisher': {
+      '@type': 'Organization',
+      'name': 'ReactPress',
+      'logo': {
+        '@type': 'ImageObject',
+        'url': input.imageUrl.replace(/reactpress-social-card\.png$/, 'apple-touch-icon.png'),
+      },
+    },
+    ...(input.dateModified ? { dateModified: input.dateModified } : {}),
   };
 }

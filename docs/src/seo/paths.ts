@@ -62,6 +62,27 @@ export function isFaqDocPath(pathname: string): boolean {
   return localeNeutralPathKey(pathname) === '/docs/reference/faq';
 }
 
+export function isDocPath(pathname: string): boolean {
+  const key = localeNeutralPathKey(pathname);
+  return key === '/docs' || key.startsWith('/docs/');
+}
+
+export function isBlogPostPath(pathname: string): boolean {
+  const key = localeNeutralPathKey(pathname);
+  if (key === '/blog' || key === '/blog/') {
+    return false;
+  }
+  if (
+    key.startsWith('/blog/tags') ||
+    key.startsWith('/blog/authors') ||
+    key.startsWith('/blog/archive') ||
+    key === '/blog/README'
+  ) {
+    return false;
+  }
+  return key.startsWith('/blog/');
+}
+
 export function isHomePath(pathname: string): boolean {
   const key = localeNeutralPathKey(pathname);
   return key === '/';

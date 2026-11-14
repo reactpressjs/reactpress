@@ -12,7 +12,7 @@ export function buildSiteMetadata(): SiteMetaTag[] {
       content:
         'reactpress, self-hosted publishing, react cms, open source cms, themes, plugins, wordpress alternative, headless cms, next.js blog, react blog, nestjs, electron, desktop app, 自托管发布平台, 博客, 内容管理, 主题, 插件, 桌面客户端',
     },
-    { name: 'robots', content: 'index, follow, max-image-preview:large' },
+    { name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
     { name: 'googlebot', content: 'index, follow' },
     {
       name: 'google-site-verification',
@@ -22,7 +22,6 @@ export function buildSiteMetadata(): SiteMetaTag[] {
       name: 'algolia-site-verification',
       content: '597DB75F60C5A6DE',
     },
-    { name: 'twitter:card', content: 'summary_large_image' },
   ];
 
   const bingVerification = process.env.DOCS_BING_SITE_VERIFICATION?.trim();

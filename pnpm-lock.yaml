@@ -150,9 +150,15 @@ importers:
       '@docusaurus/core':
         specifier: 3.10.1
         version: 3.10.1(@mdx-js/react@3.1.0(@types/react@19.2.15)(react@18.3.1))(acorn@8.16.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.9.3)
+      '@docusaurus/plugin-content-docs':
+        specifier: 3.10.1
+        version: 3.10.1(@mdx-js/react@3.1.0(@types/react@19.2.15)(react@18.3.1))(acorn@8.16.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.9.3)
       '@docusaurus/preset-classic':
         specifier: 3.10.1
         version: 3.10.1(@algolia/client-search@5.55.1)(@mdx-js/react@3.1.0(@types/react@19.2.15)(react@18.3.1))(@types/react@19.2.15)(acorn@8.16.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(search-insights@2.17.3)(typescript@5.9.3)
+      '@docusaurus/theme-common':
+        specifier: 3.10.1
+        version: 3.10.1(@docusaurus/plugin-content-docs@3.10.1(@mdx-js/react@3.1.0(@types/react@19.2.15)(react@18.3.1))(acorn@8.16.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.9.3))(acorn@8.16.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@docusaurus/theme-mermaid':
         specifier: 3.10.1
         version: 3.10.1(@docusaurus/plugin-content-docs@3.10.1(@mdx-js/react@3.1.0(@types/react@19.2.15)(react@18.3.1))(acorn@8.16.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.9.3))(@mdx-js/react@3.1.0(@types/react@19.2.15)(react@18.3.1))(acorn@8.16.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.9.3)
@@ -7912,11 +7918,13 @@ packages:
   image-size@0.5.5:
     resolution: {integrity: sha512-6TDAlDPZxUFCv+fuOkIoXT/V/f3Qbq8e37p+YOiYrUv3v9cc3/6x78VdfPgFVaB9dZYeLUfKgHRebpkm/oP2VQ==}
     engines: {node: '>=0.10.0'}
+    deprecated: Please migrate to image-size@2.x
     hasBin: true
 
   image-size@2.0.2:
     resolution: {integrity: sha512-IRqXKlaXwgSMAMtpNzZa1ZAe8m+Sa1770Dhk8VkSsP9LS+iHD62Zd8FQKs8fbPiagBE7BzoFX23cxFnwshpV6w==}
     engines: {node: '>=16.x'}
+    deprecated: Use latest 2.x please
     hasBin: true
 
   immer@9.0.21:

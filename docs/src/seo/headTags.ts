@@ -1,4 +1,5 @@
 import type { Tag } from '@docusaurus/types';
+import { SOCIAL_CARD, TWITTER_SITE, socialCardUrl } from './social';
 import { buildOrganizationGraph } from './structuredData';
 
 /** Live production host (Cloudflare 301s apex → www). */
@@ -31,6 +32,7 @@ export function shouldEnableAdSense(): boolean {
 /** Site-wide head tags. Per-page hreflang and og:locale are handled by Docusaurus i18n. */
 export function buildGlobalHeadTags(siteUrl: string): Tag[] {
   const baseUrl = siteUrl.replace(/\/$/, '');
+  const imageUrl = socialCardUrl(baseUrl);
   const tags: Tag[] = [
     {
       tagName: 'link',
@@ -38,6 +40,34 @@ export function buildGlobalHeadTags(siteUrl: string): Tag[] {
     },
     { tagName: 'meta', attributes: { property: 'og:type', content: 'website' } },
     { tagName: 'meta', attributes: { property: 'og:site_name', content: 'ReactPress' } },
+    { tagName: 'meta', attributes: { property: 'og:image', content: imageUrl } },
+    {
+      tagName: 'meta',
+      attributes: { property: 'og:image:secure_url', content: imageUrl },
+    },
+    {
+      tagName: 'meta',
+      attributes: { property: 'og:image:type', content: SOCIAL_CARD.type },
+    },
+    {
+      tagName: 'meta',
+      attributes: { property: 'og:image:width', content: String(SOCIAL_CARD.width) },
+    },
+    {
+      tagName: 'meta',
+      attributes: { property: 'og:image:height', content: String(SOCIAL_CARD.height) },
+    },
+    {
+      tagName: 'meta',
+      attributes: { property: 'og:image:alt', content: SOCIAL_CARD.alt },
+    },
+    { tagName: 'meta', attributes: { name: 'twitter:card', content: 'summary_large_image' } },
+    { tagName: 'meta', attributes: { name: 'twitter:site', content: TWITTER_SITE } },
+    { tagName: 'meta', attributes: { name: 'twitter:image', content: imageUrl } },
+    {
+      tagName: 'meta',
+      attributes: { name: 'twitter:image:alt', content: SOCIAL_CARD.alt },
+    },
     {
       tagName: 'script',
       attributes: { type: 'application/ld+json' },
