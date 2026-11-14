@@ -56,7 +56,7 @@ External agents (Cursor and compatible tools) can install a portable skill for i
 npx skills add reactpressjs/reactpress --skill blog-ai -a cursor -y
 ```
 
-See [`skills/blog-ai/SKILL.md`](../../../../../../skills/blog-ai/SKILL.md) in the repository.
+See [`skills/blog-ai/SKILL.md`](https://github.com/reactpressjs/reactpress/blob/master/skills/blog-ai/SKILL.md) in the repository.
 
 ## Common endpoints
 

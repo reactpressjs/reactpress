@@ -56,7 +56,7 @@ Write-scoped API Key 等同于管理员写权限，勿提交到公开仓库。�
 npx skills add reactpressjs/reactpress --skill blog-ai -a cursor -y
 ```
 
-详见仓库 [`skills/blog-ai/SKILL.md`](../../../skills/blog-ai/SKILL.md)。
+详见仓库 [`skills/blog-ai/SKILL.md`](https://github.com/reactpressjs/reactpress/blob/master/skills/blog-ai/SKILL.md)。
 
 ## 常用端点
 
