@@ -1,14 +1,46 @@
-name: Release
+name: Release Packages
 
 on:
   release:
-    types: [created]
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Git tag to publish (e.g. v5.0.0-beta.0). Empty = current ref.
+        required: false
+        default: ''
+      dry_run:
+        description: Pack and upload release assets only (skip GitHub Packages publish)
+        type: boolean
+        required: false
+        default: false
+
+permissions:
+  contents: write
+  packages: write
+
+concurrency:
+  group: release-packages-${{ github.event.release.tag_name || inputs.tag || github.ref_name }}
+  cancel-in-progress: false
 
 jobs:
-  validate:
+  publish:
     runs-on: ubuntu-latest
     steps:
+      - name: Resolve checkout ref
+        id: ref
+        run: |
+          TAG="${{ github.event.release.tag_name || inputs.tag }}"
+          if [ -n "$TAG" ]; then
+            echo "ref=$TAG" >> "$GITHUB_OUTPUT"
+          else
+            echo "ref=${{ github.sha }}" >> "$GITHUB_OUTPUT"
+          fi
+          echo "tag=${TAG}" >> "$GITHUB_OUTPUT"
+
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.ref.outputs.ref }}
 
       - uses: pnpm/action-setup@v4
 
@@ -16,6 +48,8 @@ jobs:
         with:
           node-version: 24
           cache: pnpm
+          registry-url: https://npm.pkg.github.com
+          scope: '@reactpressjs'
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -28,3 +62,103 @@ jobs:
 
       - name: Build publishable packages
         run: pnpm run publish:build
+
+      - name: Resolve npm dist-tag
+        id: dist
+        run: |
+          VERSION=$(node -p "require('./cli/package.json').version")
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          if echo "$VERSION" | grep -q '-'; then
+            echo "tag=beta" >> "$GITHUB_OUTPUT"
+          else
+            echo "tag=latest" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Pack scoped packages
+        run: |
+          mkdir -p /tmp/rp-packs
+          for dir in toolkit web server cli; do
+            (cd "$dir" && npm pack --pack-destination /tmp/rp-packs)
+          done
+          ls -lh /tmp/rp-packs
+
+      - name: Upload package tarballs to GitHub Release
+        if: steps.ref.outputs.tag != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="${{ steps.ref.outputs.tag }}"
+          gh release upload "$TAG" /tmp/rp-packs/*.tgz --clobber
+
+      - name: Publish @reactpressjs/* to GitHub Packages
+        if: ${{ inputs.dry_run != true && inputs.dry_run != 'true' }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          REGISTRY=https://npm.pkg.github.com
+          TAG="${{ steps.dist.outputs.tag }}"
+          VERSION="${{ steps.dist.outputs.version }}"
+
+          publish_scoped() {
+            local dir="$1"
+            local name
+            name=$(node -p "require('./${dir}/package.json').name")
+            case "$name" in
+              @reactpressjs/*) ;;
+              *)
+                echo "Skip non-scoped package: $name"
+                return 0
+                ;;
+            esac
+            echo "Publishing ${name}@${VERSION} → GitHub Packages (tag=${TAG})"
+            # Override package.json publishConfig.registry (npmjs) for this publish.
+            pnpm --dir "$dir" publish \
+              --access public \
+              --tag "$TAG" \
+              --registry "$REGISTRY" \
+              --no-git-checks
+          }
+
+          # Dependency order: toolkit → web/server → cli
+          # Resolve workspace:* and point publishConfig at GitHub Packages.
+          node <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+          const pkgs = [
+            { name: '@reactpressjs/reactpress-toolkit', dir: 'toolkit' },
+            { name: '@reactpressjs/reactpress-web', dir: 'web' },
+            { name: '@reactpressjs/reactpress-server', dir: 'server' },
+            { name: '@reactpressjs/reactpress', dir: 'cli' },
+          ];
+          const versions = Object.fromEntries(
+            pkgs.map((p) => [p.name, JSON.parse(fs.readFileSync(path.join(p.dir, 'package.json'), 'utf8')).version]),
+          );
+          for (const p of pkgs) {
+            const file = path.join(p.dir, 'package.json');
+            const pkg = JSON.parse(fs.readFileSync(file, 'utf8'));
+            for (const depType of ['dependencies', 'devDependencies', 'peerDependencies', 'optionalDependencies']) {
+              if (!pkg[depType]) continue;
+              for (const [dep, val] of Object.entries(pkg[depType])) {
+                if (String(val).startsWith('workspace:') && versions[dep]) {
+                  pkg[depType][dep] = versions[dep];
+                }
+              }
+            }
+            pkg.publishConfig = {
+              ...(pkg.publishConfig || {}),
+              access: 'public',
+              registry: 'https://npm.pkg.github.com',
+            };
+            fs.writeFileSync(file, JSON.stringify(pkg, null, 2) + '\n');
+          }
+          NODE
+
+          publish_scoped toolkit
+          publish_scoped web
+          publish_scoped server
+          publish_scoped cli
+
+          echo "GitHub Packages publish complete."
+          echo "Install example:"
+          echo "  npm i -g @reactpressjs/reactpress@${VERSION} --registry=https://npm.pkg.github.com"
