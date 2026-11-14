@@ -23,7 +23,7 @@ The **visitor site** is rendered by a replaceable **Next.js theme**, fully separ
 | **hello-world**              | Local in repo | Learning, customization                                 |
 | **reactpress-theme-starter** | npm           | Production: search, knowledge base, comments, dark mode |
 
-Live demo: [reactpress-theme-starter.vercel.app](https://reactpress-theme-starter.vercel.app)
+Live demo: [demo.reactpress.cc](https://demo.reactpress.cc/)
 
 ## Install options
 

@@ -695,7 +695,7 @@ This is the WordPress "single front door" lesson — delivered as **React + Next
 
 ![Official theme — search, comments, knowledge base, dark mode](/img/blog/demo.gif)
 
-The official [reactpress-theme-starter](https://reactpress-theme-starter.vercel.app) demo includes:
+The official [reactpress-theme-starter](https://demo.reactpress.cc/) demo includes:
 
 - Full-text search
 - Comment system
@@ -714,11 +714,11 @@ For **Next.js CMS** evaluations, this matters: you should not trade WordPress-st
 
 ### 6.4 Live demos
 
-| Demo            | URL                                                                                |
-| :-------------- | :--------------------------------------------------------------------------------- |
-| Production blog | [blog.gaoredu.com](https://blog.gaoredu.com)                                       |
-| Theme starter   | [reactpress-theme-starter.vercel.app](https://reactpress-theme-starter.vercel.app) |
-| Documentation   | [reactpress.cc](https://reactpress.cc)                                             |
+| Demo            | URL                                               |
+| :-------------- | :------------------------------------------------ |
+| Production blog | [blog.gaoredu.com](https://blog.gaoredu.com/)     |
+| Theme starter   | [demo.reactpress.cc](https://demo.reactpress.cc/) |
+| Documentation   | [reactpress.cc](https://reactpress.cc)            |
 
 ### 6.5 Before / after assembly
 
@@ -1410,7 +1410,7 @@ Yes. MIT license. Commercial use allowed. Self-host without vendor fees.
 
 ### Is 4.0 production-ready?
 
-Yes. 4.0.0 is the current stable release on npm (`@reactpressjs/reactpress`). Core paths (`init`, Admin, API, theme, plugins) are battle-tested in community and dogfood sites like [blog.gaoredu.com](https://blog.gaoredu.com). When upgrading from 3.x, validate on staging; read [migration guide](/docs/tutorial-extras/migration-3-to-4).
+Yes. 4.0.0 is the current stable release on npm (`@reactpressjs/reactpress`). Core paths (`init`, Admin, API, theme, plugins) are battle-tested in community and dogfood sites like [blog.gaoredu.com](https://blog.gaoredu.com/). When upgrading from 3.x, validate on staging; read [migration guide](/docs/tutorial-extras/migration-3-to-4).
 
 ### Do I need Docker?
 
@@ -2559,8 +2559,8 @@ _Document ID: `why-react-still-doesnt-have-wordpress-reactpress-4` · Character 
 ## Related links
 
 - [GitHub — reactpressjs/reactpress](https://github.com/reactpressjs/reactpress)
-- [Live demo — blog.gaoredu.com](https://blog.gaoredu.com)
-- [Theme demo — reactpress-theme-starter.vercel.app](https://reactpress-theme-starter.vercel.app)
+- [Live demo — blog.gaoredu.com](https://blog.gaoredu.com/)
+- [Theme demo — demo.reactpress.cc](https://demo.reactpress.cc/)
 - [Documentation — reactpress.cc](https://reactpress.cc)
 - [中文版 / Chinese version](pathname:///zh/blog/why-react-still-doesnt-have-wordpress-reactpress-4)
 - [ReactPress 4.0 guide](/docs/tutorial-extras/reactpress-4-0)

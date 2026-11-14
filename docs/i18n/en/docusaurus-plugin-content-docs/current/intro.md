@@ -79,11 +79,11 @@ Based on the [Theme Starter](https://github.com/reactpressjs/reactpress-theme-st
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Freactpressjs%2Freactpress-theme-starter)
 
-Theme demo: [reactpress-theme-starter.vercel.app](https://reactpress-theme-starter.vercel.app)
+Theme demo: [demo.reactpress.cc](https://demo.reactpress.cc/)
 
 ## Live demos
 
-[ReactPress Demo](https://blog.gaoredu.com/) · [Official theme demo](https://reactpress-theme-starter.vercel.app)
+[ReactPress Demo](https://blog.gaoredu.com/) · [Official theme demo](https://demo.reactpress.cc/)
 
 ## Comparison
 

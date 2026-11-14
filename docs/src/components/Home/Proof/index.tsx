@@ -24,12 +24,17 @@ export default function Proof() {
             </Translate>
           </p>
           <div className={styles.links}>
-            <a className={styles.linkPrimary} href="https://blog.gaoredu.com" target="_blank" rel="noopener noreferrer">
+            <a
+              className={styles.linkPrimary}
+              href="https://blog.gaoredu.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Translate id="home.proof.demo">Live Demo</Translate>
             </a>
             <a
               className={styles.linkSecondary}
-              href="https://reactpress-theme-starter.vercel.app"
+              href="https://demo.reactpress.cc/"
               target="_blank"
               rel="noopener noreferrer"
             >

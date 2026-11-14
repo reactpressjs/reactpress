@@ -349,7 +349,7 @@ my-site/
 
 ![官方主题演示](/img/blog/demo.gif)
 
-在线演示：[reactpress-theme-starter.vercel.app](https://reactpress-theme-starter.vercel.app)
+在线演示：[demo.reactpress.cc](https://demo.reactpress.cc/)
 
 ### 6.3 Lighthouse
 
@@ -359,11 +359,11 @@ my-site/
 
 ### 6.4 在线 Demo
 
-| Demo      | URL                                                                                |
-| :-------- | :--------------------------------------------------------------------------------- |
-| 生产站点  | [blog.gaoredu.com](https://blog.gaoredu.com)                                       |
-| 主题 Demo | [reactpress-theme-starter.vercel.app](https://reactpress-theme-starter.vercel.app) |
-| 文档      | [reactpress.cc](https://reactpress.cc)                                             |
+| Demo      | URL                                               |
+| :-------- | :------------------------------------------------ |
+| 生产站点  | [blog.gaoredu.com](https://blog.gaoredu.com/)     |
+| 主题 Demo | [demo.reactpress.cc](https://demo.reactpress.cc/) |
+| 文档      | [reactpress.cc](https://reactpress.cc)            |
 
 ---
 
@@ -713,7 +713,7 @@ reactpress init
 ## 相关链接
 
 - [GitHub 仓库](https://github.com/reactpressjs/reactpress)
-- [在线 Demo](https://blog.gaoredu.com)
+- [在线 Demo](https://blog.gaoredu.com/)
 - [英文版长文](pathname:///blog/why-react-still-doesnt-have-wordpress-reactpress-4)
 - [ReactPress 4.0 指南](/docs/tutorial-extras/reactpress-4-0)
 - [ReactPress vs WordPress](/docs/getting-started/reactpress-vs-wordpress)

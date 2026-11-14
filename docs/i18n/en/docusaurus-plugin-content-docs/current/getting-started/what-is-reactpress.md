@@ -77,7 +77,7 @@ You can still go fully Headless — the REST API is on by default — but you ar
 - **Content apps** that consume `/api/article` and other endpoints from any React client
 - **Local-first writing** via the [desktop client](../tutorial-extras/desktop-client.md)
 
-Live demo: [blog.gaoredu.com](https://blog.gaoredu.com/) · Theme demo: [reactpress-theme-starter](https://reactpress-theme-starter.vercel.app)
+Live demo: [blog.gaoredu.com](https://blog.gaoredu.com/) · Theme demo: [reactpress-theme-starter](https://demo.reactpress.cc/)
 
 ## How the pieces fit
 

@@ -23,7 +23,7 @@ ReactPress 的**访客网站**由可替换的 **Next.js 主题**渲染，与 Adm
 | **hello-world**              | 仓库 local | 学习、二次开发                         |
 | **reactpress-theme-starter** | npm        | 生产站点：搜索、知识库、评论、暗色模式 |
 
-在线演示：[reactpress-theme-starter.vercel.app](https://reactpress-theme-starter.vercel.app)
+在线演示：[demo.reactpress.cc](https://demo.reactpress.cc/)
 
 ## 安装方式
 

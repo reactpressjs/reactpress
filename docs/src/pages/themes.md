@@ -20,11 +20,11 @@ See [Appearance & themes](/docs/user-guide/appearance-themes) for the full Admin
 
 ## Official starters
 
-| Resource                                                                             | Purpose                                                                            |
-| ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------- |
-| [reactpress-theme-starter](https://github.com/reactpressjs/reactpress-theme-starter) | Scaffold a production Next.js theme                                                |
-| Hello-world template                                                                 | Minimal theme for learning the contract                                            |
-| Live theme demo                                                                      | [reactpress-theme-starter.vercel.app](https://reactpress-theme-starter.vercel.app) |
+| Resource                                                                             | Purpose                                           |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------- |
+| [reactpress-theme-starter](https://github.com/reactpressjs/reactpress-theme-starter) | Scaffold a production Next.js theme               |
+| Hello-world template                                                                 | Minimal theme for learning the contract           |
+| Live theme demo                                                                      | [demo.reactpress.cc](https://demo.reactpress.cc/) |
 
 ## Templates {#templates}
 

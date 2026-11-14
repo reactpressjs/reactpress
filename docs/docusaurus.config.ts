@@ -175,7 +175,7 @@ const config: Config = {
           position: 'left',
           items: [
             { to: '/docs/tutorial-extras/desktop-client', label: 'Download' },
-            { href: 'https://blog.gaoredu.com', label: 'Demo' },
+            { href: 'https://blog.gaoredu.com/', label: 'Demo' },
           ],
         },
         {

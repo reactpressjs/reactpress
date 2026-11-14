@@ -82,11 +82,11 @@ reactpress init
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Freactpressjs%2Freactpress-theme-starter)
 
-主题演示：[reactpress-theme-starter.vercel.app](https://reactpress-theme-starter.vercel.app)
+主题演示：[demo.reactpress.cc](https://demo.reactpress.cc/)
 
 ## 在线示例
 
-[ReactPress Demo](https://blog.gaoredu.com/) · [官方主题演示](https://reactpress-theme-starter.vercel.app)
+[ReactPress Demo](https://blog.gaoredu.com/) · [官方主题演示](https://demo.reactpress.cc/)
 
 ## 框架对比
 

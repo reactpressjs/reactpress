@@ -66,7 +66,7 @@ ReactPress 是 **完整的自托管发布平台**（不是「React 版 WordPress
 - 任意 React 客户端消费 `/api/article` 等端点的 **内容应用**
 - 通过 [桌面客户端](../tutorial-extras/desktop-client.md) **本地优先写作**
 
-在线演示：[blog.gaoredu.com](https://blog.gaoredu.com/) · 主题演示：[reactpress-theme-starter](https://reactpress-theme-starter.vercel.app)
+在线演示：[blog.gaoredu.com](https://blog.gaoredu.com/) · 主题演示：[reactpress-theme-starter](https://demo.reactpress.cc/)
 
 ## 组件如何协作
 

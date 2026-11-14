@@ -21,7 +21,7 @@ The official **ReactPress CLI** — install a complete, self-hosted publishing s
 
 Built for frontend teams who want WordPress-grade editing without wiring five repos together.
 
-[Documentation](https://reactpress.cc/) · [Live demo](https://blog.gaoredu.com) · [Theme demo](https://reactpress-theme-starter.vercel.app) · [GitHub](https://github.com/reactpressjs/reactpress) · [Chinese overview](../README-zh_CN.md)
+[Documentation](https://reactpress.cc/) · [Live demo](https://blog.gaoredu.com/) · [Theme demo](https://demo.reactpress.cc/) · [GitHub](https://github.com/reactpressjs/reactpress) · [Chinese overview](../README-zh_CN.md)
 
 ## Install
 

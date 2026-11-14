@@ -19,11 +19,11 @@ ReactPress 主题驱动**访客站**。它们是消费 CMS 内容的 Next.js 应
 
 ## 官方起步资源
 
-| 资源                                                                                 | 用途                                                                               |
-| ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------- |
-| [reactpress-theme-starter](https://github.com/reactpressjs/reactpress-theme-starter) | 脚手架生产级 Next.js 主题                                                          |
-| Hello-world 模板                                                                     | 学习主题契约的最小示例                                                             |
-| 主题在线演示                                                                         | [reactpress-theme-starter.vercel.app](https://reactpress-theme-starter.vercel.app) |
+| 资源                                                                                 | 用途                                              |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------- |
+| [reactpress-theme-starter](https://github.com/reactpressjs/reactpress-theme-starter) | 脚手架生产级 Next.js 主题                         |
+| Hello-world 模板                                                                     | 学习主题契约的最小示例                            |
+| 主题在线演示                                                                         | [demo.reactpress.cc](https://demo.reactpress.cc/) |
 
 ## 模板 {#templates}
 
