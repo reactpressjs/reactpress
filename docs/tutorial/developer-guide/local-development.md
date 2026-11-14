@@ -28,7 +28,7 @@ pnpm install
 ## 仓库结构
 
 ```shell
-├─ cli/         # @fecommunity/reactpress 发布物
+├─ cli/         # @reactpressjs/reactpress 发布物
 ├─ server/      # NestJS API
 ├─ web/         # Vite Admin SPA
 ├─ desktop/     # Electron 桌面壳
@@ -96,11 +96,11 @@ cd docs && pnpm dev
 
 ## 与全局 CLI 的差异
 
-|          | 全局 `@fecommunity/reactpress` | Monorepo `pnpm dev`    |
-| -------- | ------------------------------ | ---------------------- |
-| API 来源 | bundled in CLI                 | workspace `server/`    |
-| 命令     | init / doctor / logs / stop    | 完整 dev / build / pm2 |
-| 适用     | 建站用户                       | core / 主题 / 插件贡献 |
+|          | 全局 `@reactpressjs/reactpress` | Monorepo `pnpm dev`    |
+| -------- | ------------------------------- | ---------------------- |
+| API 来源 | bundled in CLI                  | workspace `server/`    |
+| 命令     | init / doctor / logs / stop     | 完整 dev / build / pm2 |
+| 适用     | 建站用户                        | core / 主题 / 插件贡献 |
 
 ## 相关文档
 

@@ -18,11 +18,13 @@ const config: Config = {
   // Default meta description for non-home pages (home overrides in src/pages/index.tsx)
   favicon: 'img/favicon.ico',
 
-  // Set the production url of your site here (override via DOCS_SITE_URL in CI/Vercel)
+  // Production host is www (apex 301s → www). Override via DOCS_SITE_URL if needed.
   url: siteUrl,
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
+  // Match Cloudflare/Vercel redirects to `/path/` so crawled URL === canonical.
+  trailingSlash: true,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -42,12 +44,19 @@ const config: Config = {
 
   headTags: buildGlobalHeadTags(siteUrl),
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['zh', 'en'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+        htmlLang: 'en',
+      },
+      zh: {
+        label: '中文',
+        htmlLang: 'zh-Hans',
+      },
+    },
   },
 
   presets: [
@@ -283,7 +292,7 @@ const config: Config = {
             },
             {
               label: 'CLI package',
-              href: 'https://www.npmjs.com/package/@fecommunity/reactpress',
+              href: 'https://www.npmjs.com/package/@reactpressjs/reactpress',
             },
           ],
         },

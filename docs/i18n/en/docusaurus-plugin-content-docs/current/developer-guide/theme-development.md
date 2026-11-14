@@ -65,7 +65,7 @@ Install from Admin or `reactpress theme add @scope/pkg@version` (Monorepo).
 Use Toolkit theme API inside the theme:
 
 ```typescript
-import { createThemeApi } from '@fecommunity/reactpress-toolkit/theme';
+import { createThemeApi } from '@reactpressjs/reactpress-toolkit/theme';
 
 const api = createThemeApi({ baseURL: process.env.NEXT_PUBLIC_API_URL });
 const { data } = await api.article.list({ status: 'publish', page: 1 });

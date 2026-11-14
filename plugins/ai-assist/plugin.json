@@ -1,0 +1,62 @@
+{
+  "$schema": "../plugin.manifest.schema.json",
+  "id": "ai-assist",
+  "name": "AI Assist",
+  "version": "1.0.0",
+  "description": "BYOK AI Skills for writing, organizing, and pre-review. Humans approve before publish.",
+  "author": "ReactPress",
+  "requires": ">=5.0.0",
+  "server": {
+    "module": "./dist/index.js",
+    "hooks": {
+      "subscribe": []
+    }
+  },
+  "admin": {
+    "slots": {
+      "subscribe": ["article.editor.sidebar.afterPublish"]
+    },
+    "menu": {
+      "title": "AI Assist",
+      "path": "/plugins/ai-assist/settings",
+      "permission": "extension:manage",
+      "sort": 5
+    }
+  },
+  "settings": {
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "title": "Enable AI Assist",
+          "description": "When off, Skill runs are rejected.",
+          "default": true
+        },
+        "apiKey": {
+          "type": "string",
+          "title": "API Key",
+          "description": "Bring your own key (OpenAI-compatible). Encrypted at rest. Leave blank when saving to keep the current key.",
+          "default": ""
+        },
+        "baseUrl": {
+          "type": "string",
+          "title": "API Base URL",
+          "description": "OpenAI-compatible base URL ending with /v1.",
+          "default": "https://api.openai.com/v1"
+        },
+        "model": {
+          "type": "string",
+          "title": "Model",
+          "description": "Chat model id, e.g. gpt-4o-mini.",
+          "default": "gpt-4o-mini"
+        }
+      }
+    }
+  },
+  "permissions": ["article:read", "article:write"],
+  "capabilities": {
+    "headless": true
+  }
+}

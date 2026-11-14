@@ -19,7 +19,8 @@ function RouteSeoHead(): React.JSX.Element | null {
     return null;
   }
 
-  const pageUrl = `${siteConfig.url}${pathname}`.replace(/([^:]\/)\/+/g, '$1');
+  const normalizedPath = pathname.endsWith('/') || pathname === '' ? pathname || '/' : `${pathname}/`;
+  const pageUrl = `${siteConfig.url}${normalizedPath}`.replace(/([^:]\/)\/+/g, '$1');
   const faqEntries = i18n.currentLocale === 'zh' ? FAQ_ENTRIES_ZH : FAQ_ENTRIES_EN;
 
   return (

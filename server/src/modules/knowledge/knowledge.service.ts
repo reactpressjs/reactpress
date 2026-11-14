@@ -32,8 +32,7 @@ export class KnowledgeService {
     }
 
     const data = await this.repository.create(knowledge);
-    await this.repository.save(data);
-    return data;
+    return this.repository.save(data);
   }
 
   /**
@@ -59,7 +58,7 @@ export class KnowledgeService {
    * @param id
    */
   async deleteById(id) {
-    const data = await this.repository.findOne(id);
+    const data = await this.repository.findOne({ where: { id: id } });
     if (!data.parentId) {
       const query = this.repository
         .createQueryBuilder('knowledge')
@@ -81,16 +80,14 @@ export class KnowledgeService {
    * @param data
    */
   async updateById(id, data: Partial<Knowledge>): Promise<Knowledge> {
-    const oldData = await this.repository.findOne(id);
-    const { status } = oldData;
+    const oldData = await this.repository.findOne({ where: { id: id } });
     const newData = {
       ...data,
       views: oldData.views,
-      publishAt: oldData.status === 'draft' && status === 'publish' ? dateFormat() : oldData.publishAt,
+      publishAt: oldData.status === 'draft' && data.status === 'publish' ? dateFormat() : oldData.publishAt,
     };
     const result = await this.repository.merge(oldData, newData);
-    await this.repository.save(result);
-    return result;
+    return this.repository.save(result);
   }
 
   /**
@@ -99,7 +96,7 @@ export class KnowledgeService {
    * @param article
    */
   async updateViewsById(id): Promise<Knowledge> {
-    const oldData = await this.repository.findOne(id);
+    const oldData = await this.repository.findOne({ where: { id: id } });
     const newData = await this.repository.merge(oldData, {
       views: oldData.views + 1,
     });
@@ -112,7 +109,7 @@ export class KnowledgeService {
    * @returns
    */
   async updateLikesById(id, type): Promise<Knowledge> {
-    const oldData = await this.repository.findOne(id);
+    const oldData = await this.repository.findOne({ where: { id: id } });
     const newData = await this.repository.merge(oldData, {
       likes: type === 'like' ? oldData.likes + 1 : oldData.likes - 1,
     });
@@ -129,7 +126,7 @@ export class KnowledgeService {
       .where('knowledge.parentId is :parentId')
       .setParameter('parentId', null);
 
-    const { page = 1, pageSize = 12, status, ...otherParams } = queryParams;
+    const { page = 1, pageSize = 12, status } = queryParams;
     query.skip((+page - 1) * +pageSize);
     query.take(+pageSize);
     if (status) {
@@ -148,7 +145,7 @@ export class KnowledgeService {
    * @param id
    */
   async findById(id): Promise<Partial<Knowledge>> {
-    const data = (await this.repository.findOne(id)) as Partial<Knowledge>;
+    const data = (await this.repository.findOne({ where: { id: id } })) as Partial<Knowledge>;
 
     if (!data) {
       return null;

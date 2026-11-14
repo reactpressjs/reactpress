@@ -1,6 +1,6 @@
 {
   "name": "reactpress",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "private": true,
   "packageManager": "pnpm@9.15.9",
   "description": "ReactPress: Write with Focus. Publish with Joy. CMS, Admin, Headless API, Next.js themes, plugins, desktop — one CLI.",
@@ -71,7 +71,7 @@
     "export:brand": "node scripts/export-brand-assets.mjs"
   },
   "dependencies": {
-    "@fecommunity/reactpress": "workspace:*"
+    "@reactpressjs/reactpress": "workspace:*"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^7.18.0",
@@ -103,14 +103,12 @@
       "@typescript-eslint/parser": "^7.18.0",
       "eslint": "^8.57.0",
       "typescript": "~5.9.3",
-      "@fecommunity/reactpress-server>typescript": "~4.9.5",
-      "@fecommunity/reactpress-template-hello-world>react": "19.2.4",
-      "@fecommunity/reactpress-template-hello-world>react-dom": "19.2.4",
-      "@fecommunity/reactpress-template-hello-world>@types/react": "19.2.7",
-      "@fecommunity/reactpress-template-hello-world>@types/react-dom": "19.2.3",
-      "vite": "npm:@voidzero-dev/vite-plus-core@latest",
-      "vitest": "npm:@voidzero-dev/vite-plus-test@latest",
-      "@fecommunity/reactpress-desktop>vite": "^6.2.0"
+      "@reactpressjs/reactpress-template-hello-world>react": "19.2.4",
+      "@reactpressjs/reactpress-template-hello-world>react-dom": "19.2.4",
+      "@reactpressjs/reactpress-template-hello-world>@types/react": "19.2.7",
+      "@reactpressjs/reactpress-template-hello-world>@types/react-dom": "19.2.3",
+      "vite": "npm:@voidzero-dev/vite-plus-core@1.6.0",
+      "@reactpressjs/reactpress-desktop>vite": "^6.2.0"
     },
     "onlyBuiltDependencies": [
       "esbuild",

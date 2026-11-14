@@ -1,4 +1,4 @@
-import { createClient } from "@fecommunity/reactpress-toolkit/plugin/react";
+import { createClient } from "@reactpressjs/reactpress-toolkit/plugin/react";
 
 import i18n from "@/i18n";
 import { parsePaginated } from "@/shared/api/pagination";

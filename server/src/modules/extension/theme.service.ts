@@ -4,7 +4,7 @@ import type {
   ThemeConfigurationSchema,
   ThemeManifest,
   ThemeMods,
-} from '@fecommunity/reactpress-toolkit/theme/extension';
+} from '@reactpressjs/reactpress-toolkit/theme/extension';
 import {
   defaultSiteThemeState,
   getConfigurationSchemaFromManifest,
@@ -16,8 +16,8 @@ import {
   parseThemeManifest,
   validateAndMergeThemeConfiguration,
   validateThemeConfiguration,
-} from '@fecommunity/reactpress-toolkit/theme/extension';
-import { readThemeAdminLocaleFile } from '@fecommunity/reactpress-toolkit/theme/node';
+} from '@reactpressjs/reactpress-toolkit/theme/extension';
+import { readThemeAdminLocaleFile } from '@reactpressjs/reactpress-toolkit/theme/node';
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { spawn } from 'child_process';
@@ -95,7 +95,6 @@ function isResolvableThemeDirEntry(entry: fs.Dirent, parentDir: string): boolean
 }
 
 const THEME_ID_RE = /^[a-z0-9][a-z0-9-]*$/i;
-const PREVIEW_POOL_PORTS = [3003];
 const PREVIEW_POOL_MANIFEST = path.join('.reactpress', 'preview-pool.json');
 /** Ephemeral installed copies — under .reactpress/ with active-theme.json */
 const THEME_RUNTIME_REL = path.join('.reactpress', 'runtime');
@@ -120,7 +119,7 @@ export class ThemeService {
   constructor(
     @InjectRepository(Setting)
     private readonly settingRepository: Repository<Setting>,
-    private readonly settingService: SettingService,
+    private readonly settingService: SettingService
   ) {}
 
   private themesRoot(): string {
@@ -261,11 +260,7 @@ export class ThemeService {
     throw new NotFoundException(`Theme "${id}" not found`);
   }
 
-  private listDirThemes(
-    dir: string,
-    source: 'installed',
-    options?: { skipDirNames?: Set<string> },
-  ): ThemeManifest[] {
+  private listDirThemes(dir: string, source: 'installed', options?: { skipDirNames?: Set<string> }): ThemeManifest[] {
     if (!fs.existsSync(dir)) return [];
     const skip = options?.skipDirNames;
     return fs
@@ -324,10 +319,7 @@ export class ThemeService {
     return (tags ?? []).some((tag) => /^(official|官方)$/i.test(String(tag).trim()));
   }
 
-  private resolveThemeOfficial(
-    manifest: ThemeManifest,
-    catalog?: ThemeListItem['catalog'],
-  ): boolean {
+  private resolveThemeOfficial(manifest: ThemeManifest, catalog?: ThemeListItem['catalog']): boolean {
     if (this.isRegistryLocalTheme(manifest.id)) return true;
     if (catalog?.featured === true) return true;
     if (this.hasOfficialTag(manifest.tags)) return true;
@@ -356,7 +348,7 @@ export class ThemeService {
       manifest: ThemeManifest,
       source: 'local' | 'npm' | 'installed',
       npm?: ThemeNpmLockMeta,
-      catalog?: ThemeListItem['catalog'],
+      catalog?: ThemeListItem['catalog']
     ) => {
       const installed = installedSet.has(manifest.id) || source === 'installed';
       const merged = this.applyTemplateAppearanceSchema(manifest);
@@ -382,11 +374,7 @@ export class ThemeService {
         m,
         'installed',
         npm,
-        catalogEntry
-          ? this.catalogMetaFromEntry(catalogEntry)
-          : npm
-            ? { npm: npm.spec }
-            : undefined,
+        catalogEntry ? this.catalogMetaFromEntry(catalogEntry) : npm ? { npm: npm.spec } : undefined
       );
     }
 
@@ -405,7 +393,13 @@ export class ThemeService {
         },
         'npm',
         undefined,
-        { dependency: entry.dependency, npm: entry.npm, featured: entry.featured, themeUri: entry.themeUri, previewUrl: entry.previewUrl },
+        {
+          dependency: entry.dependency,
+          npm: entry.npm,
+          featured: entry.featured,
+          themeUri: entry.themeUri,
+          previewUrl: entry.previewUrl,
+        }
       );
     }
 
@@ -422,7 +416,7 @@ export class ThemeService {
   /** Customizer copy from `themes/{id}/locales/{locale}.json`. */
   async getThemeAdminLocale(
     themeId: string,
-    locale: string,
+    locale: string
   ): Promise<{ themeId: string; locale: string; messages: ThemeAdminLocaleMessages }> {
     if (!this.isValidThemeId(themeId)) {
       throw new BadRequestException(`Invalid theme id "${themeId}"`);
@@ -503,7 +497,7 @@ export class ThemeService {
   async updateThemeConfiguration(
     themeId: string,
     patch: Record<string, unknown>,
-    options?: { replace?: boolean; locale?: string },
+    options?: { replace?: boolean; locale?: string }
   ): Promise<{ themeId: string; configuration: Record<string, unknown> }> {
     if (!this.isValidThemeId(themeId)) {
       throw new BadRequestException(`Invalid theme id "${themeId}"`);
@@ -596,11 +590,7 @@ export class ThemeService {
     }
 
     const template = path.join(this.templatesDir(), id);
-    if (
-      fs.existsSync(template) &&
-      !THEMES_RESERVED_SUBDIRS.has(id) &&
-      this.isUnderDir(template, this.templatesDir())
-    ) {
+    if (fs.existsSync(template) && !THEMES_RESERVED_SUBDIRS.has(id) && this.isUnderDir(template, this.templatesDir())) {
       return template;
     }
 
@@ -624,11 +614,7 @@ export class ThemeService {
         return this.ensureSiteRuntimeLink(id, monoRuntime);
       }
       const monoTheme = path.join(mono, 'themes', id);
-      if (
-        fs.existsSync(monoTheme) &&
-        fs.statSync(monoTheme).isDirectory() &&
-        !THEMES_RESERVED_SUBDIRS.has(id)
-      ) {
+      if (fs.existsSync(monoTheme) && fs.statSync(monoTheme).isDirectory() && !THEMES_RESERVED_SUBDIRS.has(id)) {
         return monoTheme;
       }
     }
@@ -657,15 +643,13 @@ export class ThemeService {
     this.ensureRuntimeThemeTsconfigBase();
 
     const state = await this.getThemeState();
-    const installedThemes = state.installedThemes.includes(id)
-      ? state.installedThemes
-      : [...state.installedThemes, id];
+    const installedThemes = state.installedThemes.includes(id) ? state.installedThemes : [...state.installedThemes, id];
     return this.saveThemeState({ installedThemes });
   }
 
   async installThemeFromNpm(
     spec: string,
-    options?: { skipDependencies?: boolean },
+    options?: { skipDependencies?: boolean }
   ): Promise<SiteThemeState & { themeId: string; npmSpec: string }> {
     const trimmed = typeof spec === 'string' ? spec.trim() : '';
     if (!trimmed) {
@@ -689,7 +673,7 @@ export class ThemeService {
         installThemeFromNpm: (
           root: string,
           npmSpec: string,
-          opts?: { skipDependencies?: boolean },
+          opts?: { skipDependencies?: boolean }
         ) => Promise<{ themeId: string; npmSpec: string }>;
       };
       result = await installThemeFromNpm(projectRoot(), resolvedSpec, {
@@ -708,10 +692,7 @@ export class ThemeService {
     return { ...saved, themeId: result.themeId, npmSpec: result.npmSpec };
   }
 
-  private writeThemeDevManifest(
-    fileName: 'active-theme.json' | 'preview-theme.json',
-    themeId: string,
-  ): void {
+  private writeThemeDevManifest(fileName: 'active-theme.json' | 'preview-theme.json', themeId: string): void {
     if (!this.isValidThemeId(themeId)) return;
     const themeDir = this.resolveThemeDir(themeId);
     if (!themeDir) return;
@@ -800,10 +781,7 @@ export class ThemeService {
     }
   }
 
-  private readPreviewPoolManifest(): Record<
-    string,
-    { port?: string; url?: string; updatedAt?: string }
-  > {
+  private readPreviewPoolManifest(): Record<string, { port?: string; url?: string; updatedAt?: string }> {
     const poolPath = path.join(projectRoot(), PREVIEW_POOL_MANIFEST);
     if (!fs.existsSync(poolPath)) return {};
     try {
@@ -872,9 +850,7 @@ export class ThemeService {
     if (!themeDir) throw new NotFoundException(`Theme "${id}" not found`);
 
     const state = await this.getThemeState();
-    const installedThemes = state.installedThemes.includes(id)
-      ? state.installedThemes
-      : [...state.installedThemes, id];
+    const installedThemes = state.installedThemes.includes(id) ? state.installedThemes : [...state.installedThemes, id];
 
     const saved = await this.saveThemeState({
       activeTheme: id,
@@ -910,7 +886,7 @@ export class ThemeService {
     const state = await this.getThemeState();
     const themeMods = { ...(state.mods[themeId] ?? {}) };
     for (const [key, value] of Object.entries(mods)) {
-      if (value === "") {
+      if (value === '') {
         delete themeMods[key];
       } else {
         themeMods[key] = value;
@@ -950,8 +926,7 @@ export class ThemeService {
       ...saved,
       activeTheme: runtimeActiveTheme,
       siteUrl,
-      previewSiteUrl:
-        themeId !== runtimeActiveTheme ? this.resolvePreviewSiteUrl(siteUrl, themeId) : undefined,
+      previewSiteUrl: themeId !== runtimeActiveTheme ? this.resolvePreviewSiteUrl(siteUrl, themeId) : undefined,
     };
   }
 
@@ -1021,8 +996,7 @@ export class ThemeService {
     const bg = mods.backgroundColor ?? '#f0f0f1';
     const displayTitle = mods.displayTitle ?? name;
     const displayTagline = mods.displayTagline ?? manifest?.description ?? 'Theme preview';
-    const dark =
-      mods.darkMode === '1' || mods.darkMode === 'true' || mods.darkMode === 'yes';
+    const dark = mods.darkMode === '1' || mods.darkMode === 'true' || mods.darkMode === 'yes';
     const textColor = dark ? '#e8e8e8' : '#1d2327';
     const pageBg = dark ? '#1a1a1a' : bg;
     const bgImage = mods.backgroundImage?.trim();
@@ -1097,11 +1071,9 @@ export class ThemeService {
     return state.mods[themeId] ?? {};
   }
 
-  createPreviewDraft(payload: {
-    themeId?: string;
-    mods?: ThemeMods;
-    configuration?: Record<string, unknown>;
-  }): { token: string } {
+  createPreviewDraft(payload: { themeId?: string; mods?: ThemeMods; configuration?: Record<string, unknown> }): {
+    token: string;
+  } {
     const token = putPreviewDraft(payload);
     return { token };
   }
@@ -1121,12 +1093,7 @@ export class ThemeService {
   }
 
   private resolveFallbackActiveTheme(state: SiteThemeState): string | null {
-    const candidates = [
-      state.activeTheme,
-      'hello-world',
-      ...state.installedThemes,
-      defaultSiteThemeState.activeTheme,
-    ];
+    const candidates = [state.activeTheme, 'hello-world', ...state.installedThemes, defaultSiteThemeState.activeTheme];
     const seen = new Set<string>();
     for (const id of candidates) {
       if (!id || seen.has(id)) continue;

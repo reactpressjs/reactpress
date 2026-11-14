@@ -91,6 +91,8 @@ const sidebars: SidebarsConfig = {
       label: '版本与迁移',
       collapsed: true,
       items: [
+        'tutorial-extras/reactpress-5-0',
+        'tutorial-extras/migration-4-to-5',
         'tutorial-extras/reactpress-4-0',
         'tutorial-extras/reactpress-3-0',
         'tutorial-extras/migration-3-to-4',

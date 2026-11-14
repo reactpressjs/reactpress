@@ -79,7 +79,7 @@ Strapi、Payload（及同类）在这些场景很强：
 ReactPress 用一条 CLI 把这些层接好：
 
 ```bash
-npm i -g @fecommunity/reactpress
+npm i -g @reactpressjs/reactpress
 mkdir my-site && cd my-site
 reactpress init
 ```
@@ -98,7 +98,7 @@ ReactPress **具备** Headless 能力：
 
 - 文章、页面、分类等 REST 端点
 - API Key 与 Webhook
-- `@fecommunity/reactpress-toolkit` 类型化客户端
+- `@reactpressjs/reactpress-toolkit` 类型化客户端
 
 但产品承诺更广：**Admin 管内容 · 主题管呈现 · 插件管逻辑 · API 管数据**。
 

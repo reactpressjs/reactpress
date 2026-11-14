@@ -2,8 +2,8 @@ import type {
   PluginAdminLocaleMessages,
   PluginManifest,
   SitePluginState,
-} from '@fecommunity/reactpress-toolkit/plugin/extension';
-import { readPluginAdminLocaleFile } from '@fecommunity/reactpress-toolkit/plugin/node';
+} from '@reactpressjs/reactpress-toolkit/plugin/extension';
+import { readPluginAdminLocaleFile } from '@reactpressjs/reactpress-toolkit/plugin/node';
 import {
   getPluginStateFromGlobalSetting,
   isValidPluginId,
@@ -11,14 +11,15 @@ import {
   parsePluginManifest,
   resolvePluginServerModulePath,
   validatePluginSettings,
-} from '@fecommunity/reactpress-toolkit/plugin/extension';
-import type { PluginContext } from '@fecommunity/reactpress-toolkit/plugin/server';
+} from '@reactpressjs/reactpress-toolkit/plugin/extension';
+import type { PluginContext } from '@reactpressjs/reactpress-toolkit/plugin/server';
 import { BadRequestException, Injectable, Logger, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import * as fs from 'fs';
 import * as path from 'path';
 import { Repository } from 'typeorm';
 
+import { AI_ASSIST_PLUGIN_ID, prepareAiAssistConfigForStorage } from '../ai/ai-config';
 import { resolveProjectRoot } from '../../utils/project-root.util';
 import { SettingService } from '../setting/setting.service';
 import { Setting } from '../setting/setting.entity';
@@ -339,8 +340,37 @@ export class PluginService {
 
     const entries = { ...state.entries };
     const current = entries[id] ?? { version: '0.0.0', source: 'local' as const };
-    entries[id] = { ...current, config };
+    const nextConfig = id === AI_ASSIST_PLUGIN_ID ? prepareAiAssistConfigForStorage(config, current.config) : config;
+    entries[id] = { ...current, config: nextConfig };
     return this.savePluginState({ entries });
+  }
+
+  /**
+   * Fresh sites (no plugin state yet) install and activate AI Assist once.
+   * Sites that already installed or activated plugins are left unchanged.
+   */
+  async ensureDefaultPlugins(): Promise<void> {
+    const row = await this.getSettingRow();
+    const globalSetting = this.parseGlobalSetting(row);
+    if (globalSetting.pluginDefaultsSeeded === true) return;
+
+    const state = getPluginStateFromGlobalSetting(globalSetting);
+    const untouched =
+      state.installedPlugins.length === 0 &&
+      state.activePlugins.length === 0 &&
+      Object.keys(state.entries).length === 0;
+    const template = path.join(this.templatesDir(), AI_ASSIST_PLUGIN_ID, 'plugin.json');
+
+    if (untouched && fs.existsSync(template)) {
+      await this.installPlugin(AI_ASSIST_PLUGIN_ID);
+      await this.activatePlugin(AI_ASSIST_PLUGIN_ID);
+    }
+
+    const latest = await this.getSettingRow();
+    const next = this.parseGlobalSetting(latest);
+    next.pluginDefaultsSeeded = true;
+    latest.globalSetting = JSON.stringify(next);
+    await this.settingRepository.save(latest);
   }
 
   async createPluginContext(pluginId: string, manifest: PluginManifest): Promise<PluginContext> {

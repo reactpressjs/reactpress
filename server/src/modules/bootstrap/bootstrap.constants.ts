@@ -5,7 +5,7 @@ export const HELLO_WORLD_SEED_MARKER = 'reactpress-seed:v4';
 export const HELLO_WORLD_LEGACY_TITLES = ['Hello World', '世界，您好！'] as const;
 
 const SHARED_QUICK_START = `\`\`\`bash
-npm i -g @fecommunity/reactpress@3
+npm i -g @reactpressjs/reactpress@3
 mkdir my-blog && cd my-blog
 reactpress init
 reactpress dev

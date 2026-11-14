@@ -16,50 +16,47 @@ type SitemapItemInput = {
 
 function applyPriorityRules(item: SitemapItemInput): SitemapItemInput {
   const pathname = new URL(item.url).pathname;
+  const key = localeNeutralPathKey(pathname);
 
-  if (pathname === '/' || pathname === '/zh' || pathname === '/zh/') {
+  if (key === '/') {
     return { ...item, priority: 1.0, changefreq: 'daily' };
   }
-  if (pathname.endsWith('/docs/intro')) {
+  if (key === '/docs/intro') {
     return { ...item, priority: 0.9 };
   }
   if (
-    pathname.includes('/docs/getting-started/first-site') ||
-    pathname.includes('/docs/getting-started/installation') ||
-    pathname.includes('/docs/getting-started/what-is-reactpress') ||
-    pathname.includes('/docs/getting-started/build-nextjs-blog-in-60-seconds') ||
-    pathname.includes('/docs/getting-started/reactpress-vs-wordpress') ||
-    pathname.includes('/docs/getting-started/self-hosted-cms-for-react') ||
-    pathname.includes('/docs/tutorial-basics/create-a-post')
+    key === '/docs/getting-started/first-site' ||
+    key === '/docs/getting-started/installation' ||
+    key === '/docs/getting-started/what-is-reactpress' ||
+    key === '/docs/getting-started/build-nextjs-blog-in-60-seconds' ||
+    key === '/docs/getting-started/reactpress-vs-wordpress' ||
+    key === '/docs/getting-started/self-hosted-cms-for-react' ||
+    key === '/docs/tutorial-basics/create-a-post'
   ) {
     return { ...item, priority: 0.85, changefreq: 'weekly' };
   }
-  if (
-    localeNeutralPathKey(pathname) === '/themes' ||
-    localeNeutralPathKey(pathname) === '/plugins' ||
-    localeNeutralPathKey(pathname) === '/best-practices'
-  ) {
+  if (key === '/themes' || key === '/plugins' || key === '/best-practices') {
     return { ...item, priority: 0.88, changefreq: 'weekly' };
   }
-  if (localeNeutralPathKey(pathname) === '/about' || localeNeutralPathKey(pathname) === '/contact') {
+  if (key === '/about' || key === '/contact') {
     return { ...item, priority: 0.6, changefreq: 'monthly' };
   }
-  if (pathname.includes('/docs/developer-guide/headless-api')) {
+  if (key === '/docs/developer-guide/headless-api') {
     return { ...item, priority: 0.75 };
   }
   if (
-    pathname.includes('/blog/why-react-still-doesnt-have-wordpress-reactpress-4') ||
-    pathname.includes('/blog/reactpress-vs-strapi-payload-headless-cms') ||
-    pathname.includes('/blog/self-hosted-nextjs-cms-blog-guide') ||
-    pathname.includes('/blog/wordpress-alternatives-for-react-developers-2026') ||
-    pathname.includes('/blog/nextjs-blog-seo-checklist-reactpress')
+    key === '/blog/why-react-still-doesnt-have-wordpress-reactpress-4' ||
+    key === '/blog/reactpress-vs-strapi-payload-headless-cms' ||
+    key === '/blog/self-hosted-nextjs-cms-blog-guide' ||
+    key === '/blog/wordpress-alternatives-for-react-developers-2026' ||
+    key === '/blog/nextjs-blog-seo-checklist-reactpress'
   ) {
     return { ...item, priority: 0.85, changefreq: 'monthly' };
   }
-  if (localeNeutralPathKey(pathname) === '/blog') {
+  if (key === '/blog') {
     return { ...item, priority: 0.75, changefreq: 'weekly' };
   }
-  if (localeNeutralPathKey(pathname) === '/blog/changelog') {
+  if (key === '/blog/changelog') {
     return { ...item, priority: 0.8 };
   }
 
@@ -76,11 +73,15 @@ export function toAlternateLocaleUrl(url: string, siteUrl: string): string {
   }
   if (pathname.startsWith('/zh/')) {
     const enPath = pathname.slice(3) || '/';
-    return enPath === '/' ? `${base}/` : `${base}${enPath}`;
+    if (enPath === '/') {
+      return `${base}/`;
+    }
+    return `${base}${enPath}`;
   }
   if (pathname === '/') {
     return `${base}/zh/`;
   }
+  // Preserve trailing-slash style from the source URL.
   return `${base}/zh${pathname}`;
 }
 
@@ -89,10 +90,11 @@ function buildHreflangLinks(itemUrl: string, siteUrl: string): SitemapLink[] {
   const enUrl = locale === 'en' ? itemUrl : toAlternateLocaleUrl(itemUrl, siteUrl);
   const zhUrl = locale === 'zh' ? itemUrl : toAlternateLocaleUrl(itemUrl, siteUrl);
 
+  // Docusaurus sitemap emits `lang` as the hreflang attribute value.
   return [
-    { lang: 'en', hreflang: 'en', url: enUrl },
-    { lang: 'zh', hreflang: 'zh', url: zhUrl },
-    { lang: 'x-default', hreflang: 'x-default', url: enUrl },
+    { lang: 'en', url: enUrl },
+    { lang: 'zh-Hans', url: zhUrl },
+    { lang: 'x-default', url: enUrl },
   ];
 }
 

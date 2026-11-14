@@ -8,15 +8,11 @@ const serverDir = join(cliRoot, 'server');
 
 function npmInstall() {
   console.log('[reactpress-cli] installing bundled server runtime dependencies…');
-  const result = spawnSync(
-    'npm',
-    ['install', '--omit=dev', '--legacy-peer-deps', '--no-bin-links'],
-    {
-      cwd: serverDir,
-      stdio: 'inherit',
-      shell: process.platform === 'win32',
-    }
-  );
+  const result = spawnSync('npm', ['install', '--omit=dev', '--legacy-peer-deps', '--no-bin-links'], {
+    cwd: serverDir,
+    stdio: 'inherit',
+    shell: process.platform === 'win32',
+  });
   if (result.status !== 0) {
     process.exit(result.status ?? 1);
   }
@@ -32,7 +28,7 @@ const serverRuntimeModules = [
   ['node_modules', '@nestjs', 'typeorm'],
   ['node_modules', 'typeorm'],
   ['node_modules', 'express'],
-  ['node_modules', '@fecommunity', 'reactpress-toolkit'],
+  ['node_modules', '@reactpressjs', 'reactpress-toolkit'],
 ];
 
 const serverReady =

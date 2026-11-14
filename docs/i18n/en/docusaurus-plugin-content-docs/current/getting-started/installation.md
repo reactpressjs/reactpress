@@ -30,10 +30,10 @@ node -v   # should show v20.x or higher
 ## Install the CLI (recommended)
 
 ```bash
-npm install -g @fecommunity/reactpress
+npm install -g @reactpressjs/reactpress
 ```
 
-> 4.0 stable is on npm **`@latest`** (`npm i -g @fecommunity/reactpress`).
+> **5.0** is on npm **`@latest`** (`npm i -g @reactpressjs/reactpress`).
 
 The first `npm install -g` triggers `postinstall`, which downloads bundled server runtime dependencies (~1–2 minutes).
 
@@ -44,9 +44,9 @@ reactpress --version
 reactpress --help
 ```
 
-## 4.0 CLI commands
+## CLI commands
 
-4.0 streamlines the CLI for end users to four core commands; advanced operations such as themes and plugins are done in the **Admin** UI.
+The global CLI focuses end users on a few core commands; themes, plugins, and AI Assist are managed in the **Admin** UI.
 
 | Command                       | Description                                                    |
 | ----------------------------- | -------------------------------------------------------------- |

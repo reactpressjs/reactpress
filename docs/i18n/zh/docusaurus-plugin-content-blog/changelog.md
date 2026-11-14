@@ -1,16 +1,36 @@
 ---
 slug: changelog
 title: 更新日志
+description: >-
+  ReactPress 版本更新日志 — 5.0 智能版、CLI、Admin、桌面端、主题与插件变更。
+  跟踪 npm @latest 发布与升级要点。
 date: 2026-06-14
 authors: [reactpressjs]
 tags: [reactpress, release]
+keywords:
+  - ReactPress 更新日志
+  - ReactPress 版本发布
+  - ReactPress 5.0
+  - npm @reactpressjs/reactpress
 ---
 
 <!--truncate-->
 
+## [5.0.0](https://github.com/reactpressjs/reactpress/compare/v4.0.0...v5.0.0) (2026-11-13)
+
+**ReactPress 5.0 智能版** — 自带 API Key 的 AI Assist、只写草稿的 Skill、人工审核收件箱。安装：`npm i -g @reactpressjs/reactpress`。
+
+- **打包**：npm scope 统一为 `@reactpressjs/*`
+- **AI Assist**：`write` / `organize` / `polish` / `pre-review`；新安装自动启用
+- **审核收件箱**：对照提案、编辑、立即发布或定时发布
+- **密钥**：加密存储；设置页可测试连接
+- **升级**：[4.x → 5.0](/docs/tutorial-extras/migration-4-to-5)
+
+---
+
 ## [4.0.0](https://github.com/reactpressjs/reactpress/compare/v4.0.0-beta.18...v4.0.0) (2026-08-09)
 
-**ReactPress 4.0.0 稳定版** — npm `@latest`（[#88](https://github.com/reactpressjs/reactpress/issues/88)）。安装：`npm i -g @fecommunity/reactpress`。
+**ReactPress 4.0.0 稳定版** — npm `@latest`（[#88](https://github.com/reactpressjs/reactpress/issues/88)）。安装：`npm i -g @reactpressjs/reactpress`。
 
 ### 亮点
 
@@ -22,7 +42,7 @@ tags: [reactpress, release]
 
 ## [4.0.0-beta.18](https://github.com/reactpressjs/reactpress/compare/v4.0.0-beta.0...v4.0.0-beta.18) (2026-07-12)
 
-**ReactPress 4.0 beta.18** — 当时 npm `@beta` 标签。安装：`npm i -g @fecommunity/reactpress@beta`。
+**ReactPress 4.0 beta.18** — 当时 npm `@beta` 标签。安装：`npm i -g @reactpressjs/reactpress@beta`。
 
 ### 亮点
 
@@ -35,7 +55,7 @@ tags: [reactpress, release]
 
 ## [4.0.0-beta.0](https://github.com/reactpressjs/reactpress/compare/v3.7.0...v4.0.0-beta.0) (2026-06-27)
 
-**ReactPress 4.0 扩展版（beta）** — 插件、桌面客户端、主题 catalog。安装：`npm i -g @fecommunity/reactpress@beta`。
+**ReactPress 4.0 扩展版（beta）** — 插件、桌面客户端、主题 catalog。安装：`npm i -g @reactpressjs/reactpress@beta`。
 
 ### 新特性
 
@@ -143,20 +163,20 @@ tags: [reactpress, release]
 ### 三大重点
 
 - **零配置**：`reactpress init` + `reactpress dev`，自动生成 `.reactpress/config.json`、`.env` 与嵌入式 Docker MySQL
-- **唯一入口**：`npm i -g @fecommunity/reactpress@3`，命令统一为 `reactpress`
+- **唯一入口**：`npm i -g @reactpressjs/reactpress@3`，命令统一为 `reactpress`
 - **极致 DX**：交互菜单、`reactpress doctor`、`reactpress status`、dev 成功后的链接提示
 
 ### 新特性
 
-- **CLI**：主包 `@fecommunity/reactpress`；内置 API；`reactpress-cli` bin deprecated
+- **CLI**：主包 `@reactpressjs/reactpress`；内置 API；`reactpress-cli` bin deprecated
 - **Headless**：`GET /api/health`；API Key；Webhook（HMAC 签名）
 - **内容**：定时发布；文章修订历史与回滚
 - **运维**：生产 compose 示例；`reactpress db backup`
 
 ### Breaking Changes
 
-- `@fecommunity/reactpress-cli` → `@fecommunity/reactpress@3`
-- `@fecommunity/reactpress-server` deprecated
+- `@reactpressjs/reactpress-cli` → `@reactpressjs/reactpress@3`
+- `@reactpressjs/reactpress-server` deprecated
 - 迁移指南：[2.x → 3.0](/docs/tutorial-extras/migration-2-to-3)
 
 ---

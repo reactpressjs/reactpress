@@ -3,7 +3,7 @@ import {
   isLikelyValidAssetPath,
   resolvePublicAssetUrl,
   useSiteMeta,
-} from '@fecommunity/reactpress-toolkit/theme';
+} from '@reactpressjs/reactpress-toolkit/theme';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
@@ -30,10 +30,7 @@ export default function PageHead({ title, description, keywords, canonicalPath }
       <title>{fullTitle}</title>
       <meta name="description" content={metaDescription} />
       {metaKeywords ? <meta name="keywords" content={metaKeywords} /> : null}
-      <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1, viewport-fit=cover"
-      />
+      <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
       <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
       <meta name="robots" content="max-image-preview:large" />
       {showFavicon && favicon ? (

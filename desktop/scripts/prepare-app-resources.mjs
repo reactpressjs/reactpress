@@ -4,10 +4,10 @@
  *
  * Runtime deps: one hoisted server deploy — themes resolve via NODE_PATH (no per-theme deploy).
  */
-import { spawn } from "node:child_process";
-import fs from "node:fs";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
+import { spawn } from 'node:child_process';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 import {
   computeAppResourcesStagingFingerprint,
@@ -15,41 +15,41 @@ import {
   verifyStagedAppResources,
   writeBuildManifest,
   writeStagingFingerprint,
-} from "./build-freshness.mjs";
-import { formatBytes, pruneBundleNodeModules } from "./prune-bundle.mjs";
-import { CACHE_PATHS } from "./cache-dir.mjs";
+} from './build-freshness.mjs';
+import { formatBytes, pruneBundleNodeModules } from './prune-bundle.mjs';
+import { CACHE_PATHS } from './cache-dir.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const desktopDir = path.resolve(__dirname, "..");
-const root = path.resolve(desktopDir, "..");
+const desktopDir = path.resolve(__dirname, '..');
+const root = path.resolve(desktopDir, '..');
 const outDir = CACHE_PATHS.appResources;
 
 /** Theme paths never needed inside the desktop installer. */
-const THEME_SKIP_DIRS = new Set(["node_modules", ".git", ".turbo"]);
-const THEME_SKIP_UNDER_NEXT = new Set(["cache"]);
+const THEME_SKIP_DIRS = new Set(['node_modules', '.git', '.turbo']);
+const THEME_SKIP_UNDER_NEXT = new Set(['cache']);
 
 /** Plugin paths omitted from the desktop installer bundle. */
-const PLUGIN_SKIP_DIRS = new Set(["node_modules", ".git", ".turbo", "src", "coverage"]);
+const PLUGIN_SKIP_DIRS = new Set(['node_modules', '.git', '.turbo', 'src', 'coverage']);
 
 /** Packages themes expect via shared server NODE_PATH. */
-const SHARED_RUNTIME_PACKAGES = ["next", "react", "react-dom"];
+const SHARED_RUNTIME_PACKAGES = ['next', 'react', 'react-dom'];
 
 /** Hoisted deploy avoids duplicate .pnpm virtual store copies in the installer. */
-const PNPM_DEPLOY_FLAGS = ["--config.node-linker=hoisted"];
+const PNPM_DEPLOY_FLAGS = ['--config.node-linker=hoisted'];
 
 function runAsync(label, cmd, args, cwd = root, options = {}) {
   return new Promise((resolve, reject) => {
     const started = Date.now();
     const child = spawn(cmd, args, {
       cwd,
-      stdio: "inherit",
-      shell: process.platform === "win32",
+      stdio: 'inherit',
+      shell: process.platform === 'win32',
       env: options.env ? { ...process.env, ...options.env } : process.env,
     });
-    child.on("error", reject);
-    child.on("close", (code) => {
+    child.on('error', reject);
+    child.on('close', (code) => {
       if (code !== 0) {
-        reject(new Error(`${label} failed (exit ${code ?? "unknown"})`));
+        reject(new Error(`${label} failed (exit ${code ?? 'unknown'})`));
         return;
       }
       console.log(`[desktop] ✓ ${label} (${((Date.now() - started) / 1000).toFixed(1)}s)`);
@@ -91,7 +91,7 @@ function copyThemeTree(srcDir, destDir) {
 
     if (entry.isDirectory()) {
       if (THEME_SKIP_DIRS.has(entry.name)) continue;
-      if (entry.name === ".next" || entry.name === ".next-preview") {
+      if (entry.name === '.next' || entry.name === '.next-preview') {
         copyNextProduction(src, dest);
         continue;
       }
@@ -118,48 +118,44 @@ function copyNextProduction(srcNext, destNext) {
 
 /** Canonical Next/React versions for all packaged themes (from theme-starter when present). */
 export function resolveSharedRuntimeVersions() {
-  const runtimeSrc = path.join(root, ".reactpress", "runtime", "reactpress-theme-starter");
-  const runtimePkgPath = path.join(runtimeSrc, "package.json");
+  const runtimeSrc = path.join(root, '.reactpress', 'runtime', 'reactpress-theme-starter');
+  const runtimePkgPath = path.join(runtimeSrc, 'package.json');
   if (fs.existsSync(runtimePkgPath)) {
-    const pkg = JSON.parse(fs.readFileSync(runtimePkgPath, "utf8"));
+    const pkg = JSON.parse(fs.readFileSync(runtimePkgPath, 'utf8'));
     return {
-      next: pkg.dependencies?.next,
-      react: pkg.dependencies?.react,
-      "react-dom": pkg.dependencies?.["react-dom"],
+      'next': pkg.dependencies?.next,
+      'react': pkg.dependencies?.react,
+      'react-dom': pkg.dependencies?.['react-dom'],
     };
   }
 
   return {
-    next: "15.5.12",
-    react: "19.2.4",
-    "react-dom": "19.2.4",
+    'next': '15.5.12',
+    'react': '19.2.4',
+    'react-dom': '19.2.4',
   };
 }
 
 function assertSharedRuntimeDeps(bundleDir) {
-  const nodeModules = path.join(bundleDir, "node_modules");
-  const missing = SHARED_RUNTIME_PACKAGES.filter(
-    (pkg) => !fs.existsSync(path.join(nodeModules, pkg)),
-  );
+  const nodeModules = path.join(bundleDir, 'node_modules');
+  const missing = SHARED_RUNTIME_PACKAGES.filter((pkg) => !fs.existsSync(path.join(nodeModules, pkg)));
   if (missing.length === 0) return;
 
   throw new Error(
-    `Shared runtime bundle missing packages: ${missing.join(", ")}. ` +
-      "Adjust SHARED_RUNTIME_PACKAGES or resolveSharedRuntimeVersions().",
+    `Shared runtime bundle missing packages: ${missing.join(', ')}. ` +
+      'Adjust SHARED_RUNTIME_PACKAGES or resolveSharedRuntimeVersions().'
   );
 }
 
 function assertSharedNextVersion(bundleDir) {
-  const nextPkg = path.join(bundleDir, "node_modules", "next", "package.json");
+  const nextPkg = path.join(bundleDir, 'node_modules', 'next', 'package.json');
   if (!fs.existsSync(nextPkg)) {
-    throw new Error("Shared runtime deps missing next — themes cannot start");
+    throw new Error('Shared runtime deps missing next — themes cannot start');
   }
 
-  const nextVersion = JSON.parse(fs.readFileSync(nextPkg, "utf8")).version || "unknown";
-  if (!String(nextVersion).startsWith("15.")) {
-    throw new Error(
-      `Shared runtime resolved next@${nextVersion}, expected Next 15.x for packaged themes`,
-    );
+  const nextVersion = JSON.parse(fs.readFileSync(nextPkg, 'utf8')).version || 'unknown';
+  if (!String(nextVersion).startsWith('15.')) {
+    throw new Error(`Shared runtime resolved next@${nextVersion}, expected Next 15.x for packaged themes`);
   }
 }
 
@@ -167,11 +163,11 @@ async function deployServerBundle() {
   const serverBundle = CACHE_PATHS.serverBundle;
   rmrf(serverBundle);
 
-  console.log("[desktop] Deploying server production bundle (hoisted, shared runtime)…");
-  await runAsync("deploy server", "pnpm", [
-    "--filter",
-    "@fecommunity/reactpress-server",
-    "deploy",
+  console.log('[desktop] Deploying server production bundle (hoisted, shared runtime)…');
+  await runAsync('deploy server', 'pnpm', [
+    '--filter',
+    '@reactpressjs/reactpress-server',
+    'deploy',
     ...PNPM_DEPLOY_FLAGS,
     serverBundle,
   ]);
@@ -179,7 +175,7 @@ async function deployServerBundle() {
   const pruneStats = pruneBundleNodeModules(serverBundle);
   if (pruneStats.removed > 0) {
     console.log(
-      `[desktop] Pruned ${pruneStats.removed} dev packages from server (~${formatBytes(pruneStats.savedBytes)} saved)`,
+      `[desktop] Pruned ${pruneStats.removed} dev packages from server (~${formatBytes(pruneStats.savedBytes)} saved)`
     );
   }
 
@@ -190,11 +186,11 @@ async function deployCliBundle() {
   const cliBundle = CACHE_PATHS.cliBundle;
   rmrf(cliBundle);
 
-  console.log("[desktop] Deploying CLI runtime for theme preview (hoisted)…");
-  await runAsync("deploy cli runtime", "pnpm", [
-    "--filter",
-    "@fecommunity/reactpress",
-    "deploy",
+  console.log('[desktop] Deploying CLI runtime for theme preview (hoisted)…');
+  await runAsync('deploy cli runtime', 'pnpm', [
+    '--filter',
+    '@reactpressjs/reactpress',
+    'deploy',
     ...PNPM_DEPLOY_FLAGS,
     cliBundle,
   ]);
@@ -202,13 +198,13 @@ async function deployCliBundle() {
   const pruneStats = pruneBundleNodeModules(cliBundle);
   if (pruneStats.removed > 0) {
     console.log(
-      `[desktop] Pruned ${pruneStats.removed} dev packages from CLI runtime (~${formatBytes(pruneStats.savedBytes)} saved)`,
+      `[desktop] Pruned ${pruneStats.removed} dev packages from CLI runtime (~${formatBytes(pruneStats.savedBytes)} saved)`
     );
   }
 
-  const nodeModules = path.join(cliBundle, "node_modules");
-  if (!fs.existsSync(path.join(nodeModules, "chalk"))) {
-    throw new Error("CLI deploy missing chalk — theme preview cannot load cli/out/lib");
+  const nodeModules = path.join(cliBundle, 'node_modules');
+  if (!fs.existsSync(path.join(nodeModules, 'chalk'))) {
+    throw new Error('CLI deploy missing chalk — theme preview cannot load cli/out/lib');
   }
 
   return nodeModules;
@@ -221,95 +217,84 @@ async function installSharedRuntimeBundle() {
 
   const versions = resolveSharedRuntimeVersions();
   const minimalPkg = {
-    name: "reactpress-shared-theme-runtime",
+    name: 'reactpress-shared-theme-runtime',
     private: true,
     dependencies: versions,
   };
-  fs.writeFileSync(
-    path.join(sharedBundle, "package.json"),
-    `${JSON.stringify(minimalPkg, null, 2)}\n`,
-  );
+  fs.writeFileSync(path.join(sharedBundle, 'package.json'), `${JSON.stringify(minimalPkg, null, 2)}\n`);
 
-  console.log(
-    `[desktop] Installing shared theme runtime (Next ${versions.next}, hoisted, single copy)…`,
-  );
+  console.log(`[desktop] Installing shared theme runtime (Next ${versions.next}, hoisted, single copy)…`);
   await runAsync(
-    "install shared runtime",
-    "pnpm",
-    ["install", "--prod", "--ignore-workspace", ...PNPM_DEPLOY_FLAGS, "--no-frozen-lockfile"],
-    sharedBundle,
+    'install shared runtime',
+    'pnpm',
+    ['install', '--prod', '--ignore-workspace', ...PNPM_DEPLOY_FLAGS, '--no-frozen-lockfile'],
+    sharedBundle
   );
 
   const pruneStats = pruneBundleNodeModules(sharedBundle);
   if (pruneStats.removed > 0) {
     console.log(
-      `[desktop] Pruned ${pruneStats.removed} dev packages from shared runtime (~${formatBytes(pruneStats.savedBytes)} saved)`,
+      `[desktop] Pruned ${pruneStats.removed} dev packages from shared runtime (~${formatBytes(pruneStats.savedBytes)} saved)`
     );
   }
 
   assertSharedRuntimeDeps(sharedBundle);
   assertSharedNextVersion(sharedBundle);
 
-  return path.join(sharedBundle, "node_modules");
+  return path.join(sharedBundle, 'node_modules');
 }
 
 async function stageSharedRuntimeDeps(outDir, sharedNodeModules) {
-  const runtimeOut = path.join(outDir, "runtime-deps", "node_modules");
+  const runtimeOut = path.join(outDir, 'runtime-deps', 'node_modules');
   copyInto(sharedNodeModules, runtimeOut);
   rmrf(CACHE_PATHS.sharedRuntime);
 }
 
 async function stageCliRuntimeDeps(outDir, cliNodeModules) {
-  copyInto(cliNodeModules, path.join(outDir, "cli", "node_modules"));
+  copyInto(cliNodeModules, path.join(outDir, 'cli', 'node_modules'));
   rmrf(CACHE_PATHS.cliBundle);
 }
 
 async function ensureThemeStarterRuntimeBuilt() {
-  const runtimeSrc = path.join(root, ".reactpress", "runtime", "reactpress-theme-starter");
+  const runtimeSrc = path.join(root, '.reactpress', 'runtime', 'reactpress-theme-starter');
   if (!fs.existsSync(runtimeSrc)) {
     console.warn(
-      "[desktop] Skip theme-starter runtime — missing .reactpress/runtime/reactpress-theme-starter (run: pnpm --dir themes theme add reactpress-theme-starter)",
+      '[desktop] Skip theme-starter runtime — missing .reactpress/runtime/reactpress-theme-starter (run: pnpm --dir themes theme add reactpress-theme-starter)'
     );
     return;
   }
 
-  const visitorBuildId = path.join(runtimeSrc, ".next", "BUILD_ID");
+  const visitorBuildId = path.join(runtimeSrc, '.next', 'BUILD_ID');
   if (!fs.existsSync(visitorBuildId)) {
-    console.log("[desktop] Building reactpress-theme-starter .next for packaged visitor preview…");
-    await runAsync("build theme-starter visitor", "pnpm", ["run", "build"], runtimeSrc);
+    console.log('[desktop] Building reactpress-theme-starter .next for packaged visitor preview…');
+    await runAsync('build theme-starter visitor', 'pnpm', ['run', 'build'], runtimeSrc);
   }
 
-  const previewBuildId = path.join(runtimeSrc, ".next-preview", "BUILD_ID");
+  const previewBuildId = path.join(runtimeSrc, '.next-preview', 'BUILD_ID');
   if (!fs.existsSync(previewBuildId)) {
-    console.log("[desktop] Building reactpress-theme-starter .next-preview for admin theme preview…");
-    await runAsync(
-      "build theme-starter preview",
-      "pnpm",
-      ["run", "build"],
-      runtimeSrc,
-      {
-        env: {
-          NEXT_DIST_DIR: ".next-preview",
-          REACTPRESS_HONOR_PREVIEW: "1",
-        },
+    console.log('[desktop] Building reactpress-theme-starter .next-preview for admin theme preview…');
+    await runAsync('build theme-starter preview', 'pnpm', ['run', 'build'], runtimeSrc, {
+      env: {
+        NEXT_DIST_DIR: '.next-preview',
+        REACTPRESS_HONOR_PREVIEW: '1',
       },
-    );
+    });
   }
 }
 
 async function ensureHelloWorldBuilt() {
-  const helloWorldDir = path.join(root, "themes", "hello-world");
-  const helloWorldBuildId = path.join(helloWorldDir, ".next", "BUILD_ID");
+  const helloWorldDir = path.join(root, 'themes', 'hello-world');
+  const helloWorldBuildId = path.join(helloWorldDir, '.next', 'BUILD_ID');
   if (fs.existsSync(helloWorldDir) && !fs.existsSync(helloWorldBuildId)) {
-    console.log("[desktop] Building hello-world theme for visitor preview…");
-    await runAsync("build hello-world theme", "pnpm", ["run", "build"], helloWorldDir);
+    console.log('[desktop] Building hello-world theme for visitor preview…');
+    await runAsync('build hello-world theme', 'pnpm', ['run', 'build'], helloWorldDir);
   }
 }
 
 function copyBundledThemes(themesOut) {
   fs.mkdirSync(themesOut, { recursive: true });
-  for (const name of ["package.json", "hello-world", "theme-starter"]) {
-    const src = path.join(root, "themes", name);
+  for (const name of ['package.json', 'hello-world', 'theme-starter']) {
+    const src = path.join(root, 'themes', name);
     if (!fs.existsSync(src)) continue;
     const dest = path.join(themesOut, name);
     if (fs.statSync(src).isDirectory()) {
@@ -321,62 +306,62 @@ function copyBundledThemes(themesOut) {
 }
 
 function copyBundledPlugins(pluginsOut) {
-  const pluginsRoot = path.join(root, "plugins");
+  const pluginsRoot = path.join(root, 'plugins');
   if (!fs.existsSync(pluginsRoot)) return;
 
-  const registryPkg = path.join(pluginsRoot, "package.json");
+  const registryPkg = path.join(pluginsRoot, 'package.json');
   fs.mkdirSync(pluginsOut, { recursive: true });
   if (fs.existsSync(registryPkg)) {
-    copyInto(registryPkg, path.join(pluginsOut, "package.json"));
+    copyInto(registryPkg, path.join(pluginsOut, 'package.json'));
   }
 
   for (const entry of fs.readdirSync(pluginsRoot, { withFileTypes: true })) {
     if (!entry.isDirectory()) continue;
     if (PLUGIN_SKIP_DIRS.has(entry.name)) continue;
-    if (!fs.existsSync(path.join(pluginsRoot, entry.name, "plugin.json"))) continue;
+    if (!fs.existsSync(path.join(pluginsRoot, entry.name, 'plugin.json'))) continue;
     copyPluginTree(path.join(pluginsRoot, entry.name), path.join(pluginsOut, entry.name));
   }
 }
 
 async function ensurePluginsBuilt() {
-  const pluginsRoot = path.join(root, "plugins");
-  if (!fs.existsSync(path.join(pluginsRoot, "package.json"))) return;
+  const pluginsRoot = path.join(root, 'plugins');
+  if (!fs.existsSync(path.join(pluginsRoot, 'package.json'))) return;
 
-  const required = ["hello-world", "seo"]
-    .map((id) => path.join(pluginsRoot, id, "dist", "index.js"))
+  const required = ['hello-world', 'seo']
+    .map((id) => path.join(pluginsRoot, id, 'dist', 'index.js'))
     .filter((file) => {
       const pluginDir = path.dirname(path.dirname(file));
-      return fs.existsSync(path.join(pluginDir, "plugin.json"));
+      return fs.existsSync(path.join(pluginDir, 'plugin.json'));
     });
 
   if (required.length === 0) return;
   if (required.every((file) => fs.existsSync(file))) return;
 
-  console.log("[desktop] Building bundled plugins for packaged runtime…");
-  await runAsync("build plugins", "pnpm", ["run", "build:plugins"]);
+  console.log('[desktop] Building bundled plugins for packaged runtime…');
+  await runAsync('build plugins', 'pnpm', ['run', 'build:plugins']);
 }
 
 /** @param {{ force?: boolean }} [options] */
 export async function stageAppResources({ force = false } = {}) {
-  const toolkitDist = path.join(root, "toolkit/dist");
+  const toolkitDist = path.join(root, 'toolkit/dist');
   const sharedRuntimeVersions = resolveSharedRuntimeVersions();
   const stagingFingerprint = computeAppResourcesStagingFingerprint(sharedRuntimeVersions);
 
   if (!force && isAppResourcesStagingFresh(stagingFingerprint)) {
-    console.log("[desktop] App resources cache hit — skipping restage");
+    console.log('[desktop] App resources cache hit — skipping restage');
     verifyStagedAppResources(outDir);
     return;
   }
 
   if (!fs.existsSync(toolkitDist)) {
-    throw new Error("toolkit/dist missing — run pnpm run build:toolkit first");
+    throw new Error('toolkit/dist missing — run pnpm run build:toolkit first');
   }
 
   await ensureHelloWorldBuilt();
   await ensureThemeStarterRuntimeBuilt();
   await ensurePluginsBuilt();
 
-  console.log("[desktop] Deploying runtime bundles in parallel (server, cli, shared Next)…");
+  console.log('[desktop] Deploying runtime bundles in parallel (server, cli, shared Next)…');
   const [serverBundle, cliNodeModules, sharedNodeModules] = await Promise.all([
     deployServerBundle(),
     deployCliBundle(),
@@ -384,29 +369,29 @@ export async function stageAppResources({ force = false } = {}) {
   ]);
 
   rmrf(outDir);
-  console.log("[desktop] Assembling app resources (themes share runtime-deps NODE_PATH)…");
+  console.log('[desktop] Assembling app resources (themes share runtime-deps NODE_PATH)…');
   fs.mkdirSync(outDir, { recursive: true });
-  copyInto(serverBundle, path.join(outDir, "server"));
-  copyInto(toolkitDist, path.join(outDir, "toolkit", "dist"));
-  copyInto(path.join(root, "cli/out/lib"), path.join(outDir, "cli/out/lib"));
+  copyInto(serverBundle, path.join(outDir, 'server'));
+  copyInto(toolkitDist, path.join(outDir, 'toolkit', 'dist'));
+  copyInto(path.join(root, 'cli/out/lib'), path.join(outDir, 'cli/out/lib'));
   await stageCliRuntimeDeps(outDir, cliNodeModules);
-  copyBundledThemes(path.join(outDir, "themes"));
-  copyBundledPlugins(path.join(outDir, "plugins"));
+  copyBundledThemes(path.join(outDir, 'themes'));
+  copyBundledPlugins(path.join(outDir, 'plugins'));
   await stageSharedRuntimeDeps(outDir, sharedNodeModules);
 
-  const runtimeSrc = path.join(root, ".reactpress", "runtime", "reactpress-theme-starter");
+  const runtimeSrc = path.join(root, '.reactpress', 'runtime', 'reactpress-theme-starter');
   if (fs.existsSync(runtimeSrc)) {
-    const runtimeOut = path.join(outDir, ".reactpress", "runtime", "reactpress-theme-starter");
+    const runtimeOut = path.join(outDir, '.reactpress', 'runtime', 'reactpress-theme-starter');
     copyThemeTree(runtimeSrc, runtimeOut);
 
-    const runtimeMetaSrc = path.join(root, ".reactpress", "runtime", "tsconfig.base.json");
-    const runtimeMetaDst = path.join(outDir, ".reactpress", "runtime", "tsconfig.base.json");
+    const runtimeMetaSrc = path.join(root, '.reactpress', 'runtime', 'tsconfig.base.json');
+    const runtimeMetaDst = path.join(outDir, '.reactpress', 'runtime', 'tsconfig.base.json');
     if (fs.existsSync(runtimeMetaSrc)) {
       copyInto(runtimeMetaSrc, runtimeMetaDst);
     }
 
-    const lockSrc = path.join(root, ".reactpress", "themes.lock.json");
-    const lockDst = path.join(outDir, ".reactpress", "themes.lock.json");
+    const lockSrc = path.join(root, '.reactpress', 'themes.lock.json');
+    const lockDst = path.join(outDir, '.reactpress', 'themes.lock.json');
     if (fs.existsSync(lockSrc)) {
       copyInto(lockSrc, lockDst);
     }
@@ -445,7 +430,7 @@ const isMain = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPat
 
 if (isMain) {
   stageAppResources().catch((err) => {
-    console.error("[desktop]", err.message || err);
+    console.error('[desktop]', err.message || err);
     process.exit(1);
   });
 }

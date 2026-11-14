@@ -3,16 +3,43 @@
   flex-direction: column;
   gap: 0;
   min-height: 100%;
-  margin: -8px -12px 0;
+  margin: 0 -12px 0;
+}
+
+/* Reserve the Agent column and align the page title row with its toolbar. */
+.pageWithAgent {
+  padding-right: calc(var(--agent-panel-width, 400px) - var(--admin-content-padding, 20px) + 12px);
 }
 
 .pageHead {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 16px;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding: 4px 4px 0;
+}
+
+.pageWithAgent .pageHead {
   padding: 0 4px;
+}
+
+.pageHeadTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 32px;
+}
+
+.pageWithAgent .pageHeadTop {
+  box-sizing: border-box;
+  /* Same band as Agent toolbar: content pad + title row, flush under admin bar. */
+  height: calc(var(--admin-content-padding, 20px) + var(--agent-toolbar-height, 48px));
+  min-height: calc(var(--admin-content-padding, 20px) + var(--agent-toolbar-height, 48px));
+  margin: calc(-1 * var(--admin-content-padding, 20px)) -4px 0;
+  padding: var(--admin-content-padding, 20px) 4px 0;
+  background: var(--editor-surface);
+  border-bottom: 1px solid var(--editor-border-secondary);
 }
 
 .pageHeadMain {
@@ -20,12 +47,45 @@
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0;
+}
+
+.pageWithAgent .pageHeadMain {
+  padding-top: 10px;
 }
 
 .pageHeadActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   flex-shrink: 0;
-  padding-top: 36px;
+}
+
+.layoutWithAgent {
+  padding-right: 0;
+}
+
+@media (max-width: 720px) {
+  .pageWithAgent {
+    padding-right: 0;
+  }
+
+  .pageWithAgent .pageHead {
+    padding: 4px 4px 0;
+  }
+
+  .pageWithAgent .pageHeadTop {
+    height: auto;
+    min-height: 32px;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border-bottom: none;
+  }
+
+  .pageWithAgent .pageHeadMain {
+    padding-top: 0;
+  }
 }
 
 .pageTitle {

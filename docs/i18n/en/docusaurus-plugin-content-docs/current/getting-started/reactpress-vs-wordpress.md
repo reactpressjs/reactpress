@@ -29,7 +29,7 @@ New to the product? Start with [What is ReactPress?](./what-is-reactpress.md).
 | -------------------- | ------------------------------------------------------------------------------------------- | --------------------------------------------------------- |
 | **Positioning**      | **self-hosted publishing platform** for React developers (CMS + themes + plugins + desktop) | World’s most popular PHP CMS; huge plugin/theme market    |
 | **Stack**            | React, Next.js, NestJS, SQLite / MySQL                                                      | PHP, MySQL, classic themes                                |
-| **Time to live**     | `npm i -g @fecommunity/reactpress` → `reactpress init` — ~**60 seconds**                    | One-click host or LAMP — often minutes                    |
+| **Time to live**     | `npm i -g @reactpressjs/reactpress` → `reactpress init` — ~**60 seconds**                   | One-click host or LAMP — often minutes                    |
 | **Editing**          | Markdown-first Admin; familiar post/page/media model                                        | Gutenberg blocks; enormous editor ecosystem               |
 | **Visitor delivery** | Next.js SSR / ISR by default                                                                | PHP themes; caching plugins common                        |
 | **Headless**         | First-class REST + TypeScript toolkit                                                       | REST exists; Headless usually extra setup                 |
@@ -73,7 +73,7 @@ flowchart LR
 | Default DB                       | SQLite                              | MySQL                    |
 | CLI DX                           | `init` / `doctor` / `logs` / `stop` | WP-CLI + host panels     |
 | Desktop offline writing          | Official Electron client            | Third-party tools        |
-| TypeScript SDK                   | `@fecommunity/reactpress-toolkit`   | Community clients        |
+| TypeScript SDK                   | `@reactpressjs/reactpress-toolkit`  | Community clients        |
 | License                          | MIT                                 | GPLv2                    |
 
 ## SEO and performance
@@ -152,7 +152,7 @@ Ship a proof in a minute: [Build a Next.js blog in 60 seconds](./build-nextjs-bl
 ## Try ReactPress
 
 ```bash
-npm i -g @fecommunity/reactpress
+npm i -g @reactpressjs/reactpress
 mkdir my-blog && cd my-blog
 reactpress init
 ```
@@ -164,7 +164,7 @@ reactpress init
 Walkthrough: [Create your first site](./first-site.md).
 
 :::tip Name disambiguation
-This ReactPress is **fecommunity/reactpress** — a NestJS + Next.js publishing platform. It is **not** the WordPress plugin that embeds React apps inside existing WP sites.
+This ReactPress is **reactpressjs/reactpress** — a NestJS + Next.js publishing platform. It is **not** the WordPress plugin that embeds React apps inside existing WP sites.
 :::
 
 ## FAQ
@@ -173,7 +173,7 @@ This ReactPress is **fecommunity/reactpress** — a NestJS + Next.js publishing 
 Yes — MIT. Install from npm.
 
 **Is 4.0 production-ready?**  
-Yes — 4.0.0 is stable (`@latest`). Read [3.x → 4.0 migration](../tutorial-extras/migration-3-to-4.md) when upgrading from 3.x and validate on staging.
+Yes — 5.0.0 is the current recommended release (`@latest`). From 4.x see [4.x → 5.0 migration](../tutorial-extras/migration-4-to-5.md); from 3.x read [3.x → 4.0 migration](../tutorial-extras/migration-3-to-4.md) and validate on staging.
 
 **Can I use my own frontend?**  
 Yes — Headless REST + API keys.

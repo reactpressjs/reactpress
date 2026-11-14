@@ -10,7 +10,7 @@ import {
   useReportArticleView,
   useRouteParam,
   withThemeStaticProps,
-} from '@fecommunity/reactpress-toolkit/theme';
+} from '@reactpressjs/reactpress-toolkit/theme';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -41,18 +41,10 @@ const shellProps = THEME_SHELL;
 export default function ArticlePage({ article }: ArticleProps) {
   const router = useRouter();
   const routeArticleId = useRouteParam(article?.id, 'id');
-  const viewCount = useReportArticleView(
-    !router.isFallback && article ? routeArticleId : undefined,
-    article?.views,
-  );
+  const viewCount = useReportArticleView(!router.isFallback && article ? routeArticleId : undefined, article?.views);
 
   if (router.isFallback) {
-    return (
-      <SiteDocumentFallback
-        {...shellProps}
-        head={<PageHead title="Loading…" />}
-      />
-    );
+    return <SiteDocumentFallback {...shellProps} head={<PageHead title="Loading…" />} />;
   }
 
   if (!article) {
@@ -100,12 +92,7 @@ export default function ArticlePage({ article }: ArticleProps) {
 
         {article.cover ? (
           <div className="article-cover">
-            <img
-              src={article.cover}
-              alt={article.title}
-              loading="lazy"
-              decoding="async"
-            />
+            <img src={article.cover} alt={article.title} loading="lazy" decoding="async" />
           </div>
         ) : null}
 
@@ -134,9 +121,5 @@ export const getStaticPaths: GetStaticPaths = async () => themeOnDemandPaths;
 
 export const getStaticProps: GetStaticProps<ArticleProps> = async ({ params }) => {
   const id = params?.id as string | undefined;
-  return withThemeStaticProps(
-    'fetch article failed',
-    () => fetchArticlePageProps(themeApi, id),
-    { article: null },
-  );
+  return withThemeStaticProps('fetch article failed', () => fetchArticlePageProps(themeApi, id), { article: null });
 };

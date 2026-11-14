@@ -1,7 +1,7 @@
 import {
   getThemeStateFromGlobalSetting,
   type SiteThemeState,
-} from "@fecommunity/reactpress-toolkit/theme";
+} from "@reactpressjs/reactpress-toolkit/theme";
 import { useMemo } from "react";
 
 import { useSiteSettings } from "@/hooks/useSiteSettings";

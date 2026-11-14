@@ -3,6 +3,7 @@
   --admin-bar-icon-size: 16px;
   --admin-sidebar-width: 200px;
   --admin-sidebar-collapsed-width: 36px;
+  --admin-content-padding: 20px;
   --admin-content-bg: #f0f0f1;
   --admin-bar-bg: #1d2327;
   --admin-sidebar-bg: #1d2327;
@@ -10,6 +11,8 @@
   --admin-accent: #2271b1;
   --admin-bar-text: #f0f0f1;
   --admin-bar-text-muted: #a7aaad;
+  --agent-panel-width: 400px;
+  --agent-toolbar-height: 48px;
 }
 
 :root[data-theme="dark"] {
@@ -39,7 +42,7 @@
   flex-direction: column;
   overflow: auto;
   overscroll-behavior: contain;
-  padding: 20px;
+  padding: var(--admin-content-padding);
   background: var(--admin-content-bg);
 }
 

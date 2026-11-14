@@ -25,9 +25,7 @@ ReactPress 主题驱动**访客站**。它们是消费 CMS 内容的 Next.js 应
 | Hello-world 模板                                                                     | 学习主题契约的最小示例                                                             |
 | 主题在线演示                                                                         | [reactpress-theme-starter.vercel.app](https://reactpress-theme-starter.vercel.app) |
 
-<a id="templates"></a>
-
-## 模板
+## 模板 {#templates}
 
 模板是博客、文档站与营销站的现成起点。先选 starter 主题，再在后台调整布局与内容类型。
 

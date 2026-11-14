@@ -1,5 +1,14 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://reactpress.cc/sitemap.xml
-Sitemap: https://reactpress.cc/zh/sitemap.xml
+# Utility / aggregate surfaces (also noindex in HTML)
+Disallow: /search
+Disallow: /blog/tags
+Disallow: /zh/blog/tags
+Disallow: /blog/archive
+Disallow: /zh/blog/archive
+Disallow: /blog/authors
+Disallow: /zh/blog/authors
+
+Sitemap: https://www.reactpress.cc/sitemap.xml
+Sitemap: https://www.reactpress.cc/zh/sitemap.xml

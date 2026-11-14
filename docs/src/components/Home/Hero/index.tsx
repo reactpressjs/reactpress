@@ -67,7 +67,7 @@ function Hero() {
                 href="https://github.com/reactpressjs/reactpress"
                 data-size="large"
                 data-show-count="true"
-                aria-label="Star fecommunity/reactpress on GitHub"
+                aria-label="Star reactpressjs/reactpress on GitHub"
               >
                 Star
               </GitHubButton>

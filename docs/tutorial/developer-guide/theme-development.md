@@ -65,7 +65,7 @@ Admin 或 `reactpress theme add @scope/pkg@version`（Monorepo）安装。
 主题内使用 Toolkit theme API：
 
 ```typescript
-import { createThemeApi } from '@fecommunity/reactpress-toolkit/theme';
+import { createThemeApi } from '@reactpressjs/reactpress-toolkit/theme';
 
 const api = createThemeApi({ baseURL: process.env.NEXT_PUBLIC_API_URL });
 const { data } = await api.article.list({ status: 'publish', page: 1 });

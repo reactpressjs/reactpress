@@ -40,5 +40,5 @@ Pull requests are welcome on [GitHub](https://github.com/reactpressjs/reactpress
 - [Official site](https://www.reactpress.cc/) · [Documentation](/docs/intro)
 - [About ReactPress](/about)
 - [GitHub](https://github.com/reactpressjs) · [Source repo](https://github.com/reactpressjs/reactpress)
-- [npm](https://www.npmjs.com/~reactpressjs) · [CLI package](https://www.npmjs.com/package/@fecommunity/reactpress)
+- [npm](https://www.npmjs.com/~reactpressjs) · [CLI package](https://www.npmjs.com/package/@reactpressjs/reactpress)
 - [Live demo](https://blog.gaoredu.com/)

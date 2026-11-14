@@ -1,4 +1,4 @@
-/** Type declarations for `@fecommunity/reactpress-toolkit/app` JS factories. */
+/** Type declarations for `@reactpressjs/reactpress-toolkit/app` JS factories. */
 import type { ComponentType, ReactNode } from 'react';
 import type { ThemeMods } from '../theme/extension/branding-mods';
 
@@ -23,18 +23,18 @@ export type CreateReactPressAppOptions = {
       colorPrimary?: string;
       themeMods: ThemeMods;
       colorMode: string;
-    },
+    }
   ) => unknown;
   scrollToTopOnRouteChange?: boolean;
   transformBootstrap?: (
     bootstrap: Record<string, unknown>,
-    ctx: { pathname?: string; asPath?: string },
+    ctx: { pathname?: string; asPath?: string }
   ) => Record<string, unknown>;
 };
 
 export type CreateReactPressApp = (
   manifest: { id: string; options?: unknown },
-  options: CreateReactPressAppOptions,
+  options: CreateReactPressAppOptions
 ) => unknown;
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires

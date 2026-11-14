@@ -31,11 +31,7 @@ export async function loadEnvFile(envPath: string): Promise<EnvMap> {
 }
 
 export async function writeEnvFile(envPath: string, map: EnvMap): Promise<void> {
-  const lines = [
-    '# ReactPress — managed by reactpress-cli',
-    ...Object.entries(map).map(([k, v]) => `${k}=${v}`),
-    '',
-  ];
+  const lines = ['# ReactPress — managed by reactpress-cli', ...Object.entries(map).map(([k, v]) => `${k}=${v}`), ''];
   await fs.writeFile(envPath, lines.join('\n'), 'utf8');
 }
 
@@ -43,22 +39,16 @@ export function isSqliteMode(config: ReactPressConfig): boolean {
   return config.database.mode === 'embedded-sqlite';
 }
 
-export async function syncEnvFromConfig(
-  projectRoot: string,
-  config: ReactPressConfig,
-): Promise<void> {
+export async function syncEnvFromConfig(projectRoot: string, config: ReactPressConfig): Promise<void> {
   const { envPath, sqlitePath, uploadsDir } = getProjectPaths(projectRoot);
   const existing = (await fs.pathExists(envPath)) ? await loadEnvFile(envPath) : {};
 
   if (isSqliteMode(config)) {
     const rawDbFile = config.database.sqlitePath ?? sqlitePath;
     const dbFile =
-      rawDbFile === 'data/reactpress.db' || rawDbFile.endsWith('/data/reactpress.db')
-        ? SQLITE_REL_PATH
-        : rawDbFile;
+      rawDbFile === 'data/reactpress.db' || rawDbFile.endsWith('/data/reactpress.db') ? SQLITE_REL_PATH : rawDbFile;
     const port = config.server.port;
-    const siteUrl =
-      config.server.serverUrl ?? config.server.siteUrl ?? `http://127.0.0.1:${port}`;
+    const siteUrl = config.server.serverUrl ?? config.server.siteUrl ?? `http://127.0.0.1:${port}`;
     const clientUrl = config.server.clientUrl ?? 'http://localhost:3001';
     const merged: EnvMap = {
       ...existing,
@@ -87,55 +77,6 @@ export async function syncEnvFromConfig(
     SERVER_SITE_URL: config.server.serverUrl ?? existing.SERVER_SITE_URL ?? 'http://localhost:3002',
   };
   await writeEnvFile(envPath, merged);
-}
-
-export function setConfigValue(
-  config: ReactPressConfig,
-  keyPath: string,
-  value: string,
-): ReactPressConfig {
-  const parts = keyPath.split('.');
-  const clone = structuredClone(config) as unknown as Record<string, unknown>;
-  let cursor: Record<string, unknown> = clone;
-  for (let i = 0; i < parts.length - 1; i++) {
-    const part = parts[i];
-    if (typeof cursor[part] !== 'object' || cursor[part] === null) {
-      cursor[part] = {};
-    }
-    cursor = cursor[part] as Record<string, unknown>;
-  }
-  const last = parts[parts.length - 1];
-  const numericKeys = new Set(['port', 'version']);
-  cursor[last] = numericKeys.has(last) ? Number(value) : value;
-  return clone as unknown as ReactPressConfig;
-}
-
-export function getConfigValue(config: ReactPressConfig, keyPath: string): string {
-  const parts = keyPath.split('.');
-  let cursor: unknown = config;
-  for (const part of parts) {
-    if (typeof cursor !== 'object' || cursor === null) {
-      throw new Error(`配置项不存在: ${keyPath}`);
-    }
-    cursor = (cursor as Record<string, unknown>)[part];
-  }
-  if (cursor === undefined) {
-    throw new Error(`配置项不存在: ${keyPath}`);
-  }
-  return String(cursor);
-}
-
-export function listConfigKeys(obj: Record<string, unknown>, prefix = ''): string[] {
-  const keys: string[] = [];
-  for (const [key, value] of Object.entries(obj)) {
-    const fullPath = prefix ? `${prefix}.${key}` : key;
-    if (value !== null && typeof value === 'object' && !Array.isArray(value)) {
-      keys.push(...listConfigKeys(value as Record<string, unknown>, fullPath));
-    } else {
-      keys.push(fullPath);
-    }
-  }
-  return keys;
 }
 
 export async function isReactPressProject(projectRoot: string): Promise<boolean> {

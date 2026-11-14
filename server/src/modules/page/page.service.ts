@@ -39,8 +39,8 @@ export class PageService {
   async findAll(queryParams): Promise<[Page[], number]> {
     const query = this.pageRepository.createQueryBuilder('page').orderBy('publishAt', 'DESC');
 
-    if (typeof queryParams === 'object') {
-      const { page = 1, pageSize = 12, status, ...otherParams } = queryParams;
+    if (queryParams != null && typeof queryParams === 'object') {
+      const { page = 1, pageSize = 12, status } = queryParams;
       query.skip((+page - 1) * +pageSize);
       query.take(+pageSize);
 
@@ -77,7 +77,7 @@ export class PageService {
    * @param article
    */
   async updateViewsById(id): Promise<Page> {
-    const old = await this.pageRepository.findOne(id);
+    const old = await this.pageRepository.findOne({ where: { id: id } });
     const newData = await this.pageRepository.merge(old, {
       views: old.views + 1,
     });
@@ -90,7 +90,7 @@ export class PageService {
    * @param article
    */
   async updateById(id, page: Partial<Page>): Promise<Page> {
-    const old = await this.pageRepository.findOne(id);
+    const old = await this.pageRepository.findOne({ where: { id: id } });
     const { status } = page;
 
     const newPage = {
@@ -107,7 +107,7 @@ export class PageService {
    * @param id
    */
   async deleteById(id) {
-    const page = await this.pageRepository.findOne(id);
+    const page = await this.pageRepository.findOne({ where: { id: id } });
     return this.pageRepository.remove(page);
   }
 }

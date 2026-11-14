@@ -14,7 +14,7 @@ ReactPress **4.0** 在 3.x 之上新增插件系统、Electron 桌面客户端�
 ## 升级步骤
 
 ```bash
-npm i -g @fecommunity/reactpress
+npm i -g @reactpressjs/reactpress
 cd your-site
 reactpress doctor
 reactpress init    # 若需重新拉起服务（默认 SQLite）
@@ -31,7 +31,7 @@ pnpm dev
 
 ## CLI 变化（重要）
 
-4.0 全局 CLI（`@fecommunity/reactpress`）精简为：
+4.0 全局 CLI（`@reactpressjs/reactpress`）精简为：
 
 `init` · `doctor` · `logs` · `stop`
 
@@ -63,7 +63,7 @@ pnpm build:desktop    # 打包安装程序
 Monorepo：
 
 ```bash
-reactpress theme add @fecommunity/reactpress-theme-starter@1.0.0-beta.0
+reactpress theme add @reactpressjs/reactpress-theme-starter@1.0.0-beta.0
 ```
 
 ## Breaking Changes

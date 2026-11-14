@@ -1,6 +1,6 @@
-import { AdminSlotIds } from "@fecommunity/reactpress-toolkit/plugin/admin";
-import { AdminSlot, useAdminSlotFilled } from "@fecommunity/reactpress-toolkit/plugin/react";
-import type { ArticleEditorAdminSlotContext } from "@fecommunity/reactpress-toolkit/plugin/admin";
+import { AdminSlotIds } from "@reactpressjs/reactpress-toolkit/plugin/admin";
+import { AdminSlot, useAdminSlotFilled } from "@reactpressjs/reactpress-toolkit/plugin/react";
+import type { ArticleEditorAdminSlotContext } from "@reactpressjs/reactpress-toolkit/plugin/admin";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useNavigate } from "@tanstack/react-router";
 import { App, Button, Input, Spin } from "antd";
@@ -8,6 +8,10 @@ import { useCallback, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { useSiteSettings } from "@/hooks/useSiteSettings";
+import {
+  ArticleAgentPanel,
+  type AgentApplyPayload,
+} from "@/modules/ai/components/ArticleAgentPanel";
 import {
   type ArticleVisibility,
   buildArticleSaveBody,
@@ -22,9 +26,11 @@ import styles from "@/modules/article/components/article-editor.module.css";
 import { ArticleEditorSidebar } from "@/modules/article/components/ArticleEditorSidebar";
 import { EditorMetaPanel } from "@/modules/article/components/EditorMetaPanel";
 import type { ArticleListSearch } from "@/modules/article/pages/ArticleListPage";
+import { fetchAiStatus } from "@/shared/api/ai";
 import { getToolkitClient } from "@/shared/client";
 import { coerceApiString } from "@/shared/coerceApiString";
 import { MarkdownEditor } from "@/shared/components/Editor";
+import { getDefaultMarkdown } from "@/shared/components/Editor/DefaultMarkdown";
 import { ModulePlaceholder } from "@/shared/components/ModulePlaceholder";
 import { httpClient } from "@/utils/http";
 
@@ -82,6 +88,8 @@ const EMPTY_TAGS: EditorTag[] = [];
 
 type ArticleEditorPageProps = {
   articleId?: string;
+  /** Open the Agent side panel on mount (e.g. from list "Agent" entry). */
+  initialAgentOpen?: boolean;
 };
 
 type ArticleSaveResponse = {
@@ -93,7 +101,7 @@ type ArticleSaveResponse = {
   seoDescription?: string | null;
 };
 
-export function ArticleEditorPage({ articleId }: ArticleEditorPageProps) {
+export function ArticleEditorPage({ articleId, initialAgentOpen = false }: ArticleEditorPageProps) {
   const isCreate = !articleId;
   const navigate = useNavigate();
   const { message, modal } = App.useApp();
@@ -101,12 +109,29 @@ export function ArticleEditorPage({ articleId }: ArticleEditorPageProps) {
   const { data: siteSettings } = useSiteSettings();
   const seoSlotFilled = useAdminSlotFilled(AdminSlotIds.ARTICLE_EDITOR_META_AFTER_SUMMARY);
   const queryClient = useQueryClient();
-  const [draft, setDraft] = useState<ArticleDraft>(emptyDraft);
+  const [draft, setDraft] = useState<ArticleDraft>(() => {
+    const base = emptyDraft();
+    // Seed create mode with the same default Markdown the editor shows, so Agent
+    // context matches the left pane before Monaco finishes hydrating.
+    if (!articleId) {
+      return { ...base, content: getDefaultMarkdown() };
+    }
+    return base;
+  });
   const draftRef = useRef(draft);
   draftRef.current = draft;
   const [editorReady, setEditorReady] = useState(isCreate);
   const [savedId, setSavedId] = useState<string | undefined>(articleId);
   const [dirty, setDirty] = useState(false);
+  const [agentOpen, setAgentOpen] = useState(initialAgentOpen);
+  const [editorNonce, setEditorNonce] = useState(0);
+
+  const aiStatusQuery = useQuery({
+    queryKey: ["ai-status"],
+    queryFn: fetchAiStatus,
+    staleTime: 60_000,
+  });
+  const showAgentEntry = aiStatusQuery.data?.enabled !== false;
   const { data: categories = EMPTY_CATEGORIES, isLoading: categoriesLoading } = useQuery({
     queryKey: ["article-categories"],
     queryFn: fetchArticleCategories,
@@ -201,13 +226,20 @@ export function ArticleEditorPage({ articleId }: ArticleEditorPageProps) {
         seoKeywords: draft.seoKeywords,
         seoDescription: draft.seoDescription,
         status: draft.status,
+        content: draft.content,
       },
-      patch: (key, value) =>
-        patch(key as keyof ArticleDraft, value as ArticleDraft[keyof ArticleDraft]),
+      patch: (key, value) => {
+        if ((key as string) === "content") {
+          patch("content", String(value ?? ""));
+          return;
+        }
+        patch(key as keyof ArticleDraft, value as ArticleDraft[keyof ArticleDraft]);
+      },
       translate: t,
     }),
     [
       articleId,
+      draft.content,
       draft.seoDescription,
       draft.seoKeywords,
       draft.slug,
@@ -346,6 +378,25 @@ export function ArticleEditorPage({ articleId }: ArticleEditorPageProps) {
     window.open(url, "_blank", "noopener,noreferrer");
   }, [articleId, draft.slug, message, savedId, seoSlotFilled, siteSettings?.systemUrl, t]);
 
+  const handleAgentApply = useCallback((payload: AgentApplyPayload) => {
+    const hasContent = typeof payload.content === "string";
+    setDraft((prev) => ({
+      ...prev,
+      ...(typeof payload.title === "string" ? { title: payload.title } : {}),
+      ...(hasContent ? { content: payload.content! } : {}),
+      ...(typeof payload.summary === "string" ? { summary: payload.summary } : {}),
+      ...(typeof payload.slug === "string" ? { slug: payload.slug } : {}),
+      ...(typeof payload.seoKeywords === "string" ? { seoKeywords: payload.seoKeywords } : {}),
+      ...(typeof payload.seoDescription === "string"
+        ? { seoDescription: payload.seoDescription }
+        : {}),
+    }));
+    setDirty(true);
+    if (hasContent) {
+      setEditorNonce((n) => n + 1);
+    }
+  }, []);
+
   if (articleId && isLoading) {
     return (
       <div style={{ display: "flex", justifyContent: "center", padding: 48 }}>
@@ -364,10 +415,23 @@ export function ArticleEditorPage({ articleId }: ArticleEditorPageProps) {
   }
 
   return (
-    <div className={styles.page}>
+    <div className={`${styles.page} ${agentOpen ? styles.pageWithAgent : ""}`}>
       <div className={styles.pageHead}>
-        <div className={styles.pageHeadMain}>
+        <div className={styles.pageHeadTop}>
           <h1 className={styles.pageTitle}>{t("article.writeArticle")}</h1>
+          <div className={styles.pageHeadActions}>
+            {showAgentEntry ? (
+              <Button
+                type={agentOpen ? "primary" : "default"}
+                onClick={() => setAgentOpen((open) => !open)}
+              >
+                {t("ai.agentOpen")}
+              </Button>
+            ) : null}
+            <Button onClick={handleBack}>{t("common.cancel")}</Button>
+          </div>
+        </div>
+        <div className={styles.pageHeadMain}>
           <Input
             className={styles.titleInput}
             placeholder={t("article.titlePlaceholder")}
@@ -375,19 +439,16 @@ export function ArticleEditorPage({ articleId }: ArticleEditorPageProps) {
             onChange={(e) => patch("title", e.target.value)}
           />
         </div>
-        <div className={styles.pageHeadActions}>
-          <Button onClick={handleBack}>{t("common.cancel")}</Button>
-        </div>
       </div>
 
-      <div className={styles.layout}>
+      <div className={`${styles.layout} ${agentOpen ? styles.layoutWithAgent : ""}`}>
         <div className={styles.mainColumn}>
           <div className={styles.editorArea}>
             {editorReady ? (
               <MarkdownEditor
-                key={articleId ?? "create"}
+                key={`${articleId ?? "create"}-${editorNonce}`}
                 defaultValue={draft.content}
-                restoreCache={isCreate}
+                restoreCache={isCreate && editorNonce === 0}
                 onChange={handleEditorChange}
               />
             ) : (
@@ -448,8 +509,28 @@ export function ArticleEditorPage({ articleId }: ArticleEditorPageProps) {
           onPublish={() => handleSave("publish")}
           onPreview={handlePreview}
           onDelete={handleDelete}
+          afterPublishSlot={
+            <AdminSlot
+              slot={AdminSlotIds.ARTICLE_EDITOR_SIDEBAR_AFTER_PUBLISH}
+              context={articleEditorSlotContext}
+            />
+          }
         />
       </div>
+
+      <ArticleAgentPanel
+        open={agentOpen}
+        onClose={() => setAgentOpen(false)}
+        onApply={handleAgentApply}
+        editorContext={{
+          title: draft.title,
+          content: draft.content,
+          summary: draft.summary,
+          slug: draft.slug,
+          seoKeywords: draft.seoKeywords,
+          seoDescription: draft.seoDescription,
+        }}
+      />
     </div>
   );
 }

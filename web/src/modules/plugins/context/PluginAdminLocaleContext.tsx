@@ -1,4 +1,4 @@
-import type { PluginAdminLocaleMessages } from "@fecommunity/reactpress-toolkit/plugin/extension";
+import type { PluginAdminLocaleMessages } from "@reactpressjs/reactpress-toolkit/plugin/extension";
 import { createContext, useContext, useMemo, type ReactNode } from "react";
 import { useTranslation } from "react-i18next";
 

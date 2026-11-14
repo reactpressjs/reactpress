@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import type { PluginSettingsPanelProps } from "@fecommunity/reactpress-toolkit/plugin/admin";
+import type { PluginSettingsPanelProps } from "@reactpressjs/reactpress-toolkit/plugin/admin";
 import { App, Button, Form, Input, InputNumber, Spin, Switch, Tag, Typography } from "antd";
 import { ChevronLeft } from "lucide-react";
 import { useEffect, useMemo, useState, type ComponentType } from "react";
@@ -22,11 +22,12 @@ import {
   type PluginSettingsSchema,
 } from "@/modules/plugins/utils/pluginSettingsSchema";
 import { localizePluginSettingsSchema } from "@/modules/plugins/utils/resolvePluginManifestText";
+import { testAiConnection } from "@/shared/api/ai";
 import { fetchPlugin, type PluginListItem } from "@/shared/api/plugins";
 import { getApiErrorMessage } from "@/shared/api/getApiErrorMessage";
 import { ModulePlaceholder } from "@/shared/components/ModulePlaceholder";
 import { loadPluginAdminModule, pluginHasBundledAdminModule } from "@/shared/pluginAdmin/loaders";
-import { pluginManifestHasAdminUI } from "@fecommunity/reactpress-toolkit/plugin/extension";
+import { pluginManifestHasAdminUI } from "@reactpressjs/reactpress-toolkit/plugin/extension";
 
 type PluginSettingsPageProps = {
   pluginId: string;
@@ -36,7 +37,7 @@ function pluginShouldShowAdminPanelHint(plugin: { admin?: PluginListItem["admin"
   return pluginManifestHasAdminUI(plugin.admin);
 }
 
-function renderControl(prop: PluginSchemaProperty) {
+function renderControl(key: string, prop: PluginSchemaProperty) {
   if (prop.type === "boolean") {
     return <Switch />;
   }
@@ -49,6 +50,9 @@ function renderControl(prop: PluginSchemaProperty) {
         precision={0}
       />
     );
+  }
+  if (key === "apiKey") {
+    return <Input.Password className={styles.textInput} autoComplete="new-password" />;
   }
   return <Input className={styles.textInput} />;
 }
@@ -66,6 +70,7 @@ function PluginSettingsPageInner({ pluginId }: PluginSettingsPageProps) {
   const { message } = App.useApp();
   const navigate = useNavigate();
   const [form] = Form.useForm();
+  const [testingConnection, setTestingConnection] = useState(false);
   const { updateConfigMutation } = usePluginMutations();
   const { messages } = usePluginAdminLocaleText();
   // Store as `{ Component }` — never put a component function in useState directly
@@ -279,12 +284,23 @@ function PluginSettingsPageInner({ pluginId }: PluginSettingsPageProps) {
                       label={label}
                       valuePropName={prop.type === "boolean" ? "checked" : "value"}
                       extra={
-                        prop.description ? (
-                          <span className={styles.fieldHint}>{prop.description}</span>
-                        ) : undefined
+                        <>
+                          {prop.description ? (
+                            <span className={styles.fieldHint}>{prop.description}</span>
+                          ) : null}
+                          {key === "apiKey" && plugin.config?.apiKeyConfigured ? (
+                            <span className={styles.fieldHint}>
+                              {t("ai.apiKeySavedHint", {
+                                hint: plugin.config.apiKeyHint
+                                  ? ` (…${String(plugin.config.apiKeyHint)})`
+                                  : "",
+                              })}
+                            </span>
+                          ) : null}
+                        </>
                       }
                     >
-                      {renderControl(prop)}
+                      {renderControl(key, prop)}
                     </Form.Item>
                   );
                 })}
@@ -298,6 +314,31 @@ function PluginSettingsPageInner({ pluginId }: PluginSettingsPageProps) {
                 >
                   {t("plugins.settingsSave")}
                 </Button>
+                {pluginId === "ai-assist" ? (
+                  <Button
+                    loading={testingConnection}
+                    onClick={() => {
+                      const values = form.getFieldsValue() as Record<string, unknown>;
+                      const apiKey = typeof values.apiKey === "string" ? values.apiKey.trim() : "";
+                      const baseUrl =
+                        typeof values.baseUrl === "string" ? values.baseUrl.trim() : "";
+                      const model = typeof values.model === "string" ? values.model.trim() : "";
+                      setTestingConnection(true);
+                      void testAiConnection({
+                        ...(apiKey ? { apiKey } : {}),
+                        ...(baseUrl ? { baseUrl } : {}),
+                        ...(model ? { model } : {}),
+                      })
+                        .then((result) =>
+                          message.success(t("ai.testSuccess", { model: result.model })),
+                        )
+                        .catch((err: Error) => message.error(err.message || t("ai.testFailed")))
+                        .finally(() => setTestingConnection(false));
+                    }}
+                  >
+                    {t("ai.testConnection")}
+                  </Button>
+                ) : null}
                 <p className={styles.footerHint}>{t("plugins.settingsSaveHint")}</p>
               </div>
             </>

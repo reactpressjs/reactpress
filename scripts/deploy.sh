@@ -68,10 +68,10 @@ pm2 update 2>/dev/null || true
 
 log "Stopping existing ReactPress PM2 apps (if any)..."
 pm2 delete reactpress-server 2>/dev/null || true
-pm2 delete @fecommunity/reactpress-server 2>/dev/null || true
-pm2 delete @fecommunity/reactpress-client 2>/dev/null || true
+pm2 delete @reactpressjs/reactpress-server 2>/dev/null || true
+pm2 delete @reactpressjs/reactpress-client 2>/dev/null || true
 pm2 delete reactpress-client 2>/dev/null || true
-pm2 delete @fecommunity/reactpress-template-hello-world 2>/dev/null || true
+pm2 delete @reactpressjs/reactpress-template-hello-world 2>/dev/null || true
 
 log "Starting nginx reverse proxy (production)..."
 if docker info >/dev/null 2>&1; then

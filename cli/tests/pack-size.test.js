@@ -25,7 +25,7 @@ function packTarball() {
   return { tarball, filename };
 }
 
-describe('npm pack size', () => {
+describe('npm pack size', { concurrency: false }, () => {
   it('pruned tarball is under 10MB and excludes bundled node_modules', () => {
     const { tarball, filename } = packTarball();
     try {
@@ -33,10 +33,7 @@ describe('npm pack size', () => {
       assert.equal(fs.existsSync(path.join(CLI_ROOT, 'toolkit', 'node_modules')), false);
 
       const size = fs.statSync(tarball).size;
-      assert.ok(
-        size < MAX_PACK_BYTES,
-        `tarball ${filename} is ${(size / 1024 / 1024).toFixed(2)}MB (limit 10MB)`,
-      );
+      assert.ok(size < MAX_PACK_BYTES, `tarball ${filename} is ${(size / 1024 / 1024).toFixed(2)}MB (limit 10MB)`);
 
       const list = execFileSync('tar', ['-tzf', tarball], { encoding: 'utf8' });
       assert.doesNotMatch(list, /server\/node_modules\//);

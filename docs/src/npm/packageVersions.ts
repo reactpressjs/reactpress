@@ -1,8 +1,8 @@
-export const REACTPRESS_NPM_PACKAGE = '@fecommunity/reactpress';
+export const REACTPRESS_NPM_PACKAGE = '@reactpressjs/reactpress';
 
 export const REACTPRESS_NPM_REGISTRY_URL = 'https://registry.npmjs.org/@reactpressjs%2Freactpress';
 
-export const REACTPRESS_NPM_PAGE_URL = 'https://www.npmjs.com/package/@fecommunity/reactpress';
+export const REACTPRESS_NPM_PAGE_URL = 'https://www.npmjs.com/package/@reactpressjs/reactpress';
 
 /** npm.com version page, e.g. …/v/4.0.0 */
 export function buildNpmVersionPageUrl(version: string): string {
@@ -15,7 +15,7 @@ export function buildGitHubReleaseTagUrl(version: string): string {
 }
 
 /** Fallback when the registry is unreachable (SSR / offline). */
-export const FALLBACK_REACTPRESS_LATEST = '4.0.0';
+export const FALLBACK_REACTPRESS_LATEST = '5.0.0';
 
 /** @deprecated Use FALLBACK_REACTPRESS_LATEST */
 export const FALLBACK_REACTPRESS_VERSIONS = {

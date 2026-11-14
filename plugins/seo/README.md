@@ -53,8 +53,8 @@ The **SEO Settings** panel in the article editor is injected via Admin slot `art
 ## Development
 
 ```bash
-pnpm --filter @fecommunity/reactpress-plugin-seo run build
-pnpm --filter @fecommunity/reactpress-plugin-seo run typecheck
+pnpm --filter @reactpressjs/reactpress-plugin-seo run build
+pnpm --filter @reactpressjs/reactpress-plugin-seo run typecheck
 ```
 
 See [`../README.md`](../README.md) for the plugin system overview.

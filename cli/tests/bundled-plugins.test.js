@@ -19,7 +19,7 @@ describe('sync-bundled-plugins', () => {
 
     const bundled = path.join(CLI_ROOT, 'plugins');
     assert.ok(fs.existsSync(path.join(bundled, 'package.json')));
-    for (const id of ['hello-world', 'seo', 'image-optimizer']) {
+    for (const id of ['hello-world', 'seo', 'image-optimizer', 'ai-assist']) {
       assert.ok(fs.existsSync(path.join(bundled, id, 'plugin.json')), `missing bundled plugin ${id}/plugin.json`);
       assert.ok(
         fs.existsSync(path.join(bundled, id, 'dist', 'index.js')),
@@ -50,6 +50,7 @@ describe('ensureBundledPlugins', () => {
       assert.equal(ensureBundledPlugins(siteRoot), true);
       assert.ok(fs.existsSync(path.join(siteRoot, 'plugins', 'hello-world', 'plugin.json')));
       assert.ok(fs.existsSync(path.join(siteRoot, 'plugins', 'seo', 'plugin.json')));
+      assert.ok(fs.existsSync(path.join(siteRoot, 'plugins', 'ai-assist', 'plugin.json')));
       assert.equal(ensureBundledPlugins(siteRoot), false);
     } finally {
       fs.rmSync(siteRoot, { recursive: true, force: true });

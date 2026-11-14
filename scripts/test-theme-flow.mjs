@@ -27,7 +27,7 @@ async function api(token, method, path, body) {
   const res = await fetch(`${API}${path}`, {
     method,
     headers: {
-      Authorization: `Bearer ${token}`,
+      'Authorization': `Bearer ${token}`,
       'Content-Type': 'application/json',
     },
     body: body ? JSON.stringify(body) : undefined,
@@ -102,7 +102,7 @@ async function main() {
   if (!starter.installed) {
     console.log('Installing starter from npm…');
     const r = await api(token, 'POST', '/extension/themes/install-npm', {
-      spec: '@fecommunity/reactpress-theme-starter@1.0.0-beta.0',
+      spec: '@reactpressjs/reactpress-theme-starter@1.0.0-beta.0',
     });
     if (r.status >= 400) fail('install starter', r.json);
     else pass('install starter');

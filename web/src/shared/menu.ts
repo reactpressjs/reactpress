@@ -1,4 +1,4 @@
-import type { AdminMenuItem } from "@fecommunity/reactpress-toolkit/plugin/admin";
+import type { AdminMenuItem } from "@reactpressjs/reactpress-toolkit/plugin/admin";
 
 import type { MenuItem } from "@/api/schemas";
 

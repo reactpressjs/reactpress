@@ -1,8 +1,28 @@
 # Changelog
 
+## [5.0.0](https://github.com/reactpressjs/reactpress/compare/v4.0.0...v5.0.0) (2026-11-13)
+
+> **Intelligent** — Skills draft, humans approve. Install: `npm i -g @reactpressjs/reactpress`.
+
+### Packaging
+
+- npm scope unified to **`@reactpressjs/*`** (CLI, toolkit, web, server, plugins, themes)
+
+### AI Assist
+
+- First-party plugin `ai-assist` (BYOK OpenAI-compatible API Key, encrypted at rest)
+- New installs activate AI Assist automatically
+- Core API `/api/ai/*`: Skill run (`write` / `organize` / `polish` / `pre-review`), connection test, Review Inbox
+- Admin: editor **Agent** right panel (streaming chat), sidebar Skill actions, Review Inbox with proposal diff
+- Agent SSE: `POST /api/ai/agent/chat`; apply chat Markdown into the article editor
+- Approve publishes now or sets `scheduledPublishAt`
+- Hard rule: Skills write **drafts** only; human **Approve** publishes
+
+Upgrade: [docs/migration-4-to-5.md](./docs/migration-4-to-5.md).
+
 ## [4.0.0](https://github.com/reactpressjs/reactpress/compare/v4.0.0-beta.18...v4.0.0) (2026-08-09)
 
-> **Stable release** — promotes 4.x from `beta` to `latest` on npm ([#88](https://github.com/reactpressjs/reactpress/issues/88)). Install with `npm i -g @fecommunity/reactpress`.
+> **Stable release** — promotes 4.x from `beta` to `latest` on npm ([#88](https://github.com/reactpressjs/reactpress/issues/88)). Install with `npm i -g @reactpressjs/reactpress`.
 
 ### Publishing & packaging
 
@@ -16,14 +36,14 @@
 
 ### Upgrade from 3.x
 
-- Run `npm i -g @fecommunity/reactpress` (npm `@latest`)
+- Run `npm i -g @reactpressjs/reactpress` (npm `@latest`)
 - Use `reactpress init` in a new directory; see [migration guide](./docs/migration-3-to-4.md)
 
 ---
 
 # [4.0.0-beta.18](https://github.com/reactpressjs/reactpress/compare/v4.0.0-beta.0...v4.0.0-beta.18) (2026-07-12)
 
-> **Pre-release** — npm `@beta` tag at the time. Install: `npm i -g @fecommunity/reactpress@beta`.
+> **Pre-release** — npm `@beta` tag at the time. Install: `npm i -g @reactpressjs/reactpress@beta`.
 
 ### CLI & packaging
 
@@ -46,7 +66,7 @@
 
 # [4.0.0-beta.0](https://github.com/reactpressjs/reactpress/compare/v3.7.0...v4.0.0-beta.0) (2026-06-27)
 
-> **Pre-release** — install with `npm i -g @fecommunity/reactpress@beta` for testing. Final 4.0.0 followed after validation.
+> **Pre-release** — install with `npm i -g @reactpressjs/reactpress@beta` for testing. Final 4.0.0 followed after validation.
 
 ### Plugin System
 
@@ -121,7 +141,7 @@
 
 ### Toolkit Theme Refactor
 
-- **Toolkit 3.1**: `@fecommunity/reactpress-toolkit` split into `theme` / `ui` / `app` / `plugin` submodules; theme manifest parsing, appearance config (Formily), SSR bootstrap, site settings & preview
+- **Toolkit 3.1**: `@reactpressjs/reactpress-toolkit` split into `theme` / `ui` / `app` / `plugin` submodules; theme manifest parsing, appearance config (Formily), SSR bootstrap, site settings & preview
 - **Export paths**: `package.json` exports add `./theme`, `./ui`, `./app`, `./plugin/*` subpaths for on-demand theme and plugin imports
 
 ### CLI & Operations
@@ -143,12 +163,12 @@
 
 ### Platform 3.0 — CLI-first Headless
 
-- **CLI**: main package renamed to `@fecommunity/reactpress`; `reactpress dev` prints frontend/admin/API/Swagger URLs on ready; `doctor`/`dev` failures include actionable suggestions; CLI i18n (`REACTPRESS_LANG` / `--lang`); `reactpress-cli` bin deprecated
+- **CLI**: main package renamed to `@reactpressjs/reactpress`; `reactpress dev` prints frontend/admin/API/Swagger URLs on ready; `doctor`/`dev` failures include actionable suggestions; CLI i18n (`REACTPRESS_LANG` / `--lang`); `reactpress-cli` bin deprecated
 - **Headless**: `GET /api/health`; API Key (`X-API-Key` + `/api/article/headless/list`); Webhooks (`article.published`, `comment.created`, HMAC signature + 3 retries)
 - **Content**: scheduled article publishing (`scheduledPublishAt`); article revision history & rollback
 - **Config**: root `.env.example`; removed deprecated `.reactpress` config path
 - **Ops**: `cli/templates/docker-compose.prod.yml` production example; `scripts/benchmark-cold-start.mjs` cold-start benchmark
-- **Breaking**: `@fecommunity/reactpress-server` deprecated; use `@fecommunity/reactpress@3`; see [docs/migration-2-to-3.md](./docs/migration-2-to-3.md)
+- **Breaking**: `@reactpressjs/reactpress-server` deprecated; use `@reactpressjs/reactpress@3`; see [docs/migration-2-to-3.md](./docs/migration-2-to-3.md)
 
 # [2.0.0-beta-4-beta.1](https://github.com/reactpressjs/reactpress/compare/v2.0.1...v2.0.0-beta-4-beta.1) (2025-11-16)
 

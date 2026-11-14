@@ -46,15 +46,15 @@ flowchart TB
 
 ## Package responsibility matrix
 
-| Package      | npm                               | Responsibility                    | Rendering      | SEO            |
-| ------------ | --------------------------------- | --------------------------------- | -------------- | -------------- |
-| **server**   | `@fecommunity/reactpress-server`¹ | Business logic, persistence, auth | —              | —              |
-| **web**      | `@fecommunity/reactpress-web`     | Admin UI                          | Vite CSR       | No             |
-| **themes/**  | per-theme packages                | Visitor site                      | Next SSR/ISR   | Yes            |
-| **toolkit**  | `@fecommunity/reactpress-toolkit` | API client, types                 | —              | —              |
-| **plugins/** | per-plugin packages               | Hook logic + Admin slots          | Mixed          | Plugin-related |
-| **desktop**  | —                                 | Electron shell + local API        | loads web/dist | No             |
-| **cli**      | `@fecommunity/reactpress`         | init / doctor / orchestration     | —              | —              |
+| Package      | npm                                | Responsibility                    | Rendering      | SEO            |
+| ------------ | ---------------------------------- | --------------------------------- | -------------- | -------------- |
+| **server**   | `@reactpressjs/reactpress-server`¹ | Business logic, persistence, auth | —              | —              |
+| **web**      | `@reactpressjs/reactpress-web`     | Admin UI                          | Vite CSR       | No             |
+| **themes/**  | per-theme packages                 | Visitor site                      | Next SSR/ISR   | Yes            |
+| **toolkit**  | `@reactpressjs/reactpress-toolkit` | API client, types                 | —              | —              |
+| **plugins/** | per-plugin packages                | Hook logic + Admin slots          | Mixed          | Plugin-related |
+| **desktop**  | —                                  | Electron shell + local API        | loads web/dist | No             |
+| **cli**      | `@reactpressjs/reactpress`         | init / doctor / orchestration     | —              | —              |
 
 ¹ Standalone npm package deprecated; end users use CLI bundled API.
 

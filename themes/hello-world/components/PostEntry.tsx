@@ -4,7 +4,7 @@ import {
   formatPublishDateShort,
   resolveArchiveExcerpt,
   useThemeMod,
-} from '@fecommunity/reactpress-toolkit/theme';
+} from '@reactpressjs/reactpress-toolkit/theme';
 import Link from 'next/link';
 
 export interface PostEntryArticle {
@@ -39,9 +39,7 @@ export default function PostEntry({ article }: PostEntryProps) {
       {(article.publishAt || article.category) && (
         <p className="entry-meta">
           {article.publishAt ? (
-            <time dateTime={article.publishAt}>
-              {formatPublishDateShort(article.publishAt)}
-            </time>
+            <time dateTime={article.publishAt}>{formatPublishDateShort(article.publishAt)}</time>
           ) : null}
           {article.category ? (
             <span>

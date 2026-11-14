@@ -1,0 +1,64 @@
+.page {
+  padding: 8px 4px 32px;
+}
+
+.embedded {
+  padding: 0 0 24px;
+}
+
+.embeddedHint {
+  margin-bottom: 4px;
+}
+
+.filters {
+  margin: 8px 0 16px;
+}
+
+.diff {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.diffField {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fieldLabel {
+  font-weight: 600;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.columnLabel {
+  margin-bottom: 4px;
+  color: var(--ant-color-text-secondary);
+  font-size: 12px;
+}
+
+.pre {
+  max-height: 240px;
+  margin: 0;
+  padding: 8px;
+  overflow: auto;
+  white-space: pre-wrap;
+  background: var(--ant-color-fill-quaternary);
+  border-radius: 6px;
+}
+
+.publishMode {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.schedulePicker {
+  width: 100%;
+}

@@ -1,5 +1,5 @@
-import type { AdminModule } from "@fecommunity/reactpress-toolkit/plugin/admin";
-import { AdminSlotIds } from "@fecommunity/reactpress-toolkit/plugin/admin";
+import type { AdminModule } from "@reactpressjs/reactpress-toolkit/plugin/admin";
+import { AdminSlotIds } from "@reactpressjs/reactpress-toolkit/plugin/admin";
 
 /** Admin UI slots owned by the article module (see toolkit `AdminSlotIds`). */
 export const ARTICLE_ADMIN_SLOTS = [
@@ -63,5 +63,8 @@ export const articleModule: AdminModule = {
     routes.registerRoute({ path: "/article/editor", permission: "article:write" });
     routes.registerRoute({ path: "/article/category", permission: "article:write" });
     routes.registerRoute({ path: "/article/tags", permission: "article:write" });
+    routes.registerRoute({ path: "/ai/create", permission: "article:write" });
+    routes.registerRoute({ path: "/ai/agent", permission: "article:write" });
+    routes.registerRoute({ path: "/ai/review", permission: "article:publish" });
   },
 };

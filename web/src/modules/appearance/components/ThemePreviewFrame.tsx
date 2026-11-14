@@ -1,5 +1,5 @@
-import type { ThemeMods } from "@fecommunity/reactpress-toolkit/theme";
-import { appendPreviewTokenToUrl } from "@fecommunity/reactpress-toolkit/theme";
+import type { ThemeMods } from "@reactpressjs/reactpress-toolkit/theme";
+import { appendPreviewTokenToUrl } from "@reactpressjs/reactpress-toolkit/theme";
 import { Spin, Typography } from "antd";
 import type { CSSProperties } from "react";
 import { useEffect, useState } from "react";

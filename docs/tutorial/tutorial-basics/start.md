@@ -18,7 +18,7 @@ ReactPress 4.0 提供三条本地路径，按场景选择。
 ## 方式一：全局 CLI（推荐）
 
 ```bash
-npm i -g @fecommunity/reactpress
+npm i -g @reactpressjs/reactpress
 mkdir my-site && cd my-site
 reactpress init
 ```

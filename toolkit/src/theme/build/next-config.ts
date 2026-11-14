@@ -15,10 +15,7 @@ function resolveFromApp(appDir: string, spec: string): string {
 }
 
 /** Pin React to one copy so lazy-loaded page chunks share the same runtime (pnpm monorepo). */
-function applyThemeWebpackResolve(
-  config: Record<string, unknown>,
-  appDir: string,
-): Record<string, unknown> {
+function applyThemeWebpackResolve(config: Record<string, unknown>, appDir: string): Record<string, unknown> {
   const nextConfig = config as {
     resolve?: {
       alias?: Record<string, unknown>;
@@ -42,7 +39,7 @@ function applyThemeWebpackResolve(
     ...nextConfig.resolve.alias,
     // axios → follow-redirects → debug optional peer supports-color@9 (ESM-only)
     'supports-color': false,
-    react: reactDir,
+    'react': reactDir,
     'react-dom': reactDomDir,
     'react/jsx-runtime': resolveFromApp(appDir, 'react/jsx-runtime'),
     'react/jsx-dev-runtime': resolveFromApp(appDir, 'react/jsx-dev-runtime'),
@@ -54,9 +51,7 @@ function applyThemeWebpackResolve(
  * Baseline Next config for themes: strict mode, eslint relaxed in CI, axios webpack alias.
  * Pass overrides to extend (your `webpack` runs after the supports-color alias).
  */
-export function createReactPressNextConfig(
-  overrides: ReactPressNextConfig = {},
-): ReactPressNextConfig {
+export function createReactPressNextConfig(overrides: ReactPressNextConfig = {}): ReactPressNextConfig {
   const { webpack: userWebpack, eslint, transpilePackages, compress, ...rest } = overrides;
 
   return {
@@ -64,7 +59,7 @@ export function createReactPressNextConfig(
     // Themes rewrite `/api` to Nest. Next's compress middleware decompresses upstream
     // bodies but can still emit `Content-Encoding: br`, breaking admin fetch (ERR_CONTENT_DECODING_FAILED).
     compress: compress ?? false,
-    transpilePackages: ['@fecommunity/reactpress-toolkit', ...(transpilePackages ?? [])],
+    transpilePackages: ['@reactpressjs/reactpress-toolkit', ...(transpilePackages ?? [])],
     eslint: {
       ignoreDuringBuilds: true,
       ...(eslint || {}),

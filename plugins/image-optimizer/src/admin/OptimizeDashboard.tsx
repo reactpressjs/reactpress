@@ -1,4 +1,4 @@
-import type { PluginSettingsPanelProps } from '@fecommunity/reactpress-toolkit/plugin/admin';
+import type { PluginSettingsPanelProps } from '@reactpressjs/reactpress-toolkit/plugin/admin';
 import { App, Button, Progress, Spin } from 'antd';
 import { useCallback, useEffect, useRef, useState } from 'react';
 

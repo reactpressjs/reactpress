@@ -25,9 +25,15 @@ http://localhost:3002/api
 
 Admin SPA 使用登录后的 Bearer Token，适用于浏览器内请求。
 
-### API Key（Headless 推荐）
+### API Key（Headless / Agent 推荐）
 
-1. Admin → **设置 → API** → 创建 Key
+1. 创建带 `read,write` 的 Key：
+
+```bash
+reactpress content key --create --save
+# 或：Admin JWT → POST /api/api-key  body: { "name": "agent", "scopes": "read,write" }
+```
+
 2. 请求头携带：
 
 ```bash
@@ -35,23 +41,38 @@ curl -H "X-API-Key: YOUR_KEY" \
   "http://localhost:3002/api/article/headless/list?status=publish&page=1&pageSize=10"
 ```
 
+- `read`：`GET /api/article/headless/list`
+- `write`（或 `*`）：创建/更新/删除文章、标签、分类，以及上传媒体
+
 :::warning
-API Key 等同于管理员权限，勿提交到公开仓库。生产环境使用 HTTPS 并定期轮换。
+Write-scoped API Key 等同于管理员写权限，勿提交到公开仓库。生产环境使用 HTTPS 并定期轮换。
 :::
+
+### Agent Skill
+
+外部 Agent（Cursor 等）可安装便携 Skill，完成「安装站点 → 写稿 → 发布」：
+
+```bash
+npx skills add reactpressjs/reactpress --skill blog-ai -a cursor -y
+```
+
+详见仓库 [`skills/blog-ai/SKILL.md`](../../../skills/blog-ai/SKILL.md)。
 
 ## 常用端点
 
-| 方法 | 路径                         | 说明               |
-| ---- | ---------------------------- | ------------------ |
-| GET  | `/api/health`                | 健康检查           |
-| GET  | `/api/article/headless/list` | 已发布文章分页列表 |
-| GET  | `/api/article/:id`           | 单篇文章           |
-| GET  | `/api/page/list`             | 页面列表           |
-| GET  | `/api/category/list`         | 分类               |
-| GET  | `/api/tag/list`              | 标签               |
-| GET  | `/api/comment/list`          | 评论               |
-| GET  | `/api/setting/public`        | 公开站点设置       |
-| POST | `/api/article`               | 创建文章（需鉴权） |
+| 方法  | 路径                         | 说明                                          |
+| ----- | ---------------------------- | --------------------------------------------- |
+| GET   | `/api/health`                | 健康检查                                      |
+| GET   | `/api/article/headless/list` | 已发布文章分页列表（API Key `read`）          |
+| GET   | `/api/article/:id`           | 单篇文章                                      |
+| GET   | `/api/page/list`             | 页面列表                                      |
+| GET   | `/api/category`              | 分类                                          |
+| GET   | `/api/tag`                   | 标签                                          |
+| GET   | `/api/comment/list`          | 评论                                          |
+| GET   | `/api/setting/public`        | 公开站点设置                                  |
+| POST  | `/api/article`               | 创建文章（JWT admin 或 API Key `write`）      |
+| PATCH | `/api/article/:id`           | 更新/发布文章（JWT admin 或 API Key `write`） |
+| POST  | `/api/file/upload`           | 上传媒体（JWT admin 或 API Key `write`）      |
 
 精确路径与参数以 Swagger 为准。
 
@@ -78,11 +99,11 @@ curl -G "http://localhost:3002/api/article/headless/list" \
 推荐在 Node / React 中使用强类型客户端：
 
 ```bash
-npm install @fecommunity/reactpress-toolkit
+npm install @reactpressjs/reactpress-toolkit
 ```
 
 ```typescript
-import { api } from '@fecommunity/reactpress-toolkit';
+import { api } from '@reactpressjs/reactpress-toolkit';
 
 const articles = await api.article.findAll({
   status: 'publish',

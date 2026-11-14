@@ -1,40 +1,22 @@
 import fs from 'fs-extra';
 
-import type {
-  DatabaseEnsureResult,
-  MysqlCredentials,
-  ReactPressConfig,
-} from '../../../types/config';
+import type { DatabaseEnsureResult, MysqlCredentials, ReactPressConfig } from '../../../types/config';
 import { getDockerComposeCommand } from '../../utils/platform';
 import { getProjectPaths } from '../../utils/paths';
 import { findAvailablePort, isDockerPortBindError, isPortAvailable } from '../../utils/port';
 import { isDockerAvailable, runSync, sleep } from '../exec';
-import {
-  isSqliteMode,
-  loadConfig,
-  loadEnvFile,
-  saveConfig,
-  syncEnvFromConfig,
-} from '../config';
-import {
-  getDatabaseCredentials,
-  testMysqlConnection,
-  waitForMysql,
-} from './mysql';
-import { ensureSqliteDatabase, isSqliteReady } from './sqlite';
+import { isSqliteMode, loadConfig, loadEnvFile, saveConfig, syncEnvFromConfig } from '../config';
+import { getDatabaseCredentials, testMysqlConnection, waitForMysql } from './mysql';
+import { ensureSqliteDatabase } from './sqlite';
 
-export { getDatabaseCredentials, testMysqlConnection as testDatabaseConnection } from './mysql';
-export { ensureSqliteDatabase, probeSqliteDatabase, isSqliteReady } from './sqlite';
-export { resolveDatabaseProfile, requiresDocker, isLocalDatabaseMode } from './profile';
+export { getDatabaseCredentials, testMysqlConnection } from './mysql';
+export { ensureSqliteDatabase, probeSqliteDatabase } from './sqlite';
+export { resolveDatabaseProfile } from './profile';
 
 const DEFAULT_DB_HOST_PORT = 3306;
 const EMBEDDED_DB_ROOT_PASSWORD = 'reactpress_root';
 
-export async function waitForDatabase(
-  creds: MysqlCredentials,
-  maxAttempts = 40,
-  intervalMs = 1000,
-): Promise<boolean> {
+export async function waitForDatabase(creds: MysqlCredentials, maxAttempts = 40, intervalMs = 1000): Promise<boolean> {
   return waitForMysql(creds, maxAttempts, intervalMs);
 }
 
@@ -48,7 +30,7 @@ export function parseDockerPublishedPort(output: string): number | null {
 
 export async function getContainerPublishedHostPort(
   containerName: string,
-  containerPort = 3306,
+  containerPort = 3306
 ): Promise<number | null> {
   if (!isDockerAvailable()) return null;
   const result = runSync('docker', ['port', containerName, `${containerPort}/tcp`], {
@@ -58,11 +40,7 @@ export async function getContainerPublishedHostPort(
   return parseDockerPublishedPort(result.stdout);
 }
 
-async function persistDatabaseHostPort(
-  projectRoot: string,
-  config: ReactPressConfig,
-  port: number,
-): Promise<void> {
+async function persistDatabaseHostPort(projectRoot: string, config: ReactPressConfig, port: number): Promise<void> {
   const { configPath, envPath } = getProjectPaths(projectRoot);
   config.database.port = port;
   if (await fs.pathExists(configPath)) {
@@ -76,13 +54,8 @@ async function persistDatabaseHostPort(
 async function isContainerHealthy(containerName: string): Promise<boolean> {
   const result = runSync(
     'docker',
-    [
-      'inspect',
-      '-f',
-      '{{if .State.Health}}{{.State.Health.Status}}{{else}}healthy{{end}}',
-      containerName,
-    ],
-    { silent: true },
+    ['inspect', '-f', '{{if .State.Health}}{{.State.Health.Status}}{{else}}healthy{{end}}', containerName],
+    { silent: true }
   );
   if (!result.ok) return false;
   return result.stdout.trim() === 'healthy';
@@ -91,7 +64,7 @@ async function isContainerHealthy(containerName: string): Promise<boolean> {
 async function buildConnectionFailureMessage(
   projectRoot: string,
   config: ReactPressConfig,
-  creds: MysqlCredentials,
+  creds: MysqlCredentials
 ): Promise<string> {
   const containerName = config.database.containerName ?? 'reactpress_cli_db';
   const published = await getContainerPublishedHostPort(containerName);
@@ -116,7 +89,7 @@ async function buildConnectionFailureMessage(
 export async function ensureDatabaseHostPort(
   projectRoot: string,
   forcePort?: number,
-  configOverride?: ReactPressConfig,
+  configOverride?: ReactPressConfig
 ): Promise<{ port: number; changed: boolean; previousPort: number }> {
   const config = configOverride ?? (await loadConfig(projectRoot));
   if (isSqliteMode(config)) {
@@ -157,9 +130,7 @@ export async function ensureDatabaseHostPort(
   if (forcePort && (await isPortAvailable(forcePort))) {
     port = forcePort;
   } else {
-    const start =
-      forcePort ??
-      (currentPort === DEFAULT_DB_HOST_PORT ? DEFAULT_DB_HOST_PORT + 1 : currentPort + 1);
+    const start = forcePort ?? (currentPort === DEFAULT_DB_HOST_PORT ? DEFAULT_DB_HOST_PORT + 1 : currentPort + 1);
     port = await findAvailablePort(start);
   }
 
@@ -182,12 +153,7 @@ async function getDockerComposeEnv(projectRoot: string): Promise<Record<string, 
   };
 }
 
-function runDockerCompose(
-  composeFile: string,
-  cwd: string,
-  subcommand: string[],
-  env: Record<string, string>,
-) {
+function runDockerCompose(composeFile: string, cwd: string, subcommand: string[], env: Record<string, string>) {
   const composeV2 = runSync('docker', ['compose', 'version'], { silent: true });
   if (composeV2.ok) {
     return runSync('docker', ['compose', '-f', composeFile, ...subcommand], {
@@ -205,7 +171,7 @@ function runDockerCompose(
 
 export async function promoteToSqliteMode(
   projectRoot: string,
-  config: ReactPressConfig,
+  config: ReactPressConfig
 ): Promise<DatabaseEnsureResult> {
   const { sqlitePath } = getProjectPaths(projectRoot);
   const next: ReactPressConfig = structuredClone(config);
@@ -213,15 +179,13 @@ export async function promoteToSqliteMode(
   next.database.sqlitePath = config.database.sqlitePath ?? sqlitePath;
   await saveConfig(projectRoot, next);
   await syncEnvFromConfig(projectRoot, next);
-  console.log(
-    '[reactpress] Switched to SQLite zero-dependency mode (no Docker/nginx required)',
-  );
+  console.log('[reactpress] Switched to SQLite zero-dependency mode (no Docker/nginx required)');
   return ensureSqliteDatabase(projectRoot);
 }
 
 export async function startEmbeddedDatabase(
   projectRoot: string,
-  config: ReactPressConfig,
+  config: ReactPressConfig
 ): Promise<DatabaseEnsureResult> {
   if (isSqliteMode(config)) {
     await syncEnvFromConfig(projectRoot, config);
@@ -238,11 +202,7 @@ export async function startEmbeddedDatabase(
   const maxPortRetries = 5;
 
   for (let attempt = 0; attempt < maxPortRetries; attempt++) {
-    const { port, changed, previousPort } = await ensureDatabaseHostPort(
-      projectRoot,
-      undefined,
-      config,
-    );
+    const { port, changed, previousPort } = await ensureDatabaseHostPort(projectRoot, undefined, config);
     if (changed) {
       console.warn(`[reactpress] 宿主机端口 ${previousPort} 已被占用，已改用 ${port}（已更新 .env）`);
     }
@@ -270,21 +230,7 @@ export async function startEmbeddedDatabase(
   return { ok: true };
 }
 
-export async function stopEmbeddedDatabase(
-  projectRoot: string,
-  config: ReactPressConfig,
-): Promise<void> {
-  if (config.database.mode !== 'embedded-docker') return;
-  if (!isDockerAvailable()) return;
-  const { dockerComposePath, reactpressDir } = getProjectPaths(projectRoot);
-  const composeEnv = await getDockerComposeEnv(projectRoot);
-  runDockerCompose(dockerComposePath, reactpressDir, ['down'], composeEnv);
-}
-
-export async function ensureDatabase(
-  projectRoot: string,
-  config: ReactPressConfig,
-): Promise<DatabaseEnsureResult> {
+export async function ensureDatabase(projectRoot: string, config: ReactPressConfig): Promise<DatabaseEnsureResult> {
   if (isSqliteMode(config)) {
     await syncEnvFromConfig(projectRoot, config);
     return ensureSqliteDatabase(projectRoot);
@@ -304,13 +250,4 @@ export async function ensureDatabase(
     ok: false,
     message: `无法连接数据库 ${creds.host}:${creds.port}，请检查 .env 中的 DB_* 配置。`,
   };
-}
-
-export async function isDatabaseReady(projectRoot: string): Promise<boolean> {
-  const config = await loadConfig(projectRoot);
-  if (isSqliteMode(config)) {
-    return isSqliteReady(projectRoot);
-  }
-  const creds = await getDatabaseCredentials(projectRoot);
-  return testMysqlConnection(creds);
 }

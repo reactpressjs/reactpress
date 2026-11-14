@@ -1,14 +1,14 @@
 import {
+  buildThemePlaceholderCoverSvg,
   defaultSiteThemeState,
   getConfigurationSchemaFromManifest,
   getMergedThemeConfiguration,
   getThemeConfigurationSeed,
   validateAndMergeThemeConfiguration,
-} from "@fecommunity/reactpress-toolkit/theme";
+} from "@reactpressjs/reactpress-toolkit/theme";
 import { http, HttpResponse, passthrough } from "msw";
 
 import helloWorldAdminEn from "../../../../themes/hello-world/locales/en.json";
-import { buildThemePlaceholderCoverSvg } from "../../../../cli/out/lib/theme-placeholder-cover.js";
 import { successResponse, withDelay } from "../createHandler";
 import { getMockGlobalSetting, patchMockGlobalSettingTheme, setMockGlobalSetting } from "./page";
 
@@ -107,7 +107,7 @@ const MOCK_CATALOG_THEME: MockTheme = {
   official: true,
   coverUrl: "/api/extension/themes/reactpress-theme-starter/cover",
   catalog: {
-    npm: "@fecommunity/reactpress-theme-starter@1.0.0-beta.0",
+    npm: "@reactpressjs/reactpress-theme-starter@1.0.0-beta.0",
     featured: true,
     themeUri: "https://github.com/reactpressjs/reactpress-theme-starter",
   },

@@ -10,7 +10,7 @@ const SERVER_RUNTIME_MODULES = [
   '@nestjs/typeorm',
   'typeorm',
   'express',
-  '@fecommunity/reactpress-toolkit',
+  '@reactpressjs/reactpress-toolkit',
 ];
 
 function getBundledServerDir() {

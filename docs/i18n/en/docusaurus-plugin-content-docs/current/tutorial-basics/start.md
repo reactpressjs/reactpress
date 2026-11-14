@@ -18,7 +18,7 @@ ReactPress 4.0 offers three local paths — choose by scenario.
 ## Option 1: Global CLI (recommended)
 
 ```bash
-npm i -g @fecommunity/reactpress
+npm i -g @reactpressjs/reactpress
 mkdir my-site && cd my-site
 reactpress init
 ```

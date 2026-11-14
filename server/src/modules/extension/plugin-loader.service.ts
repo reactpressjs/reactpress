@@ -1,6 +1,5 @@
-import type { PluginManifest } from '@fecommunity/reactpress-toolkit/plugin/extension';
-import { isValidPluginId } from '@fecommunity/reactpress-toolkit/plugin/extension';
-import type { PluginContext } from '@fecommunity/reactpress-toolkit/plugin/server';
+import { isValidPluginId } from '@reactpressjs/reactpress-toolkit/plugin/extension';
+import type { PluginContext } from '@reactpressjs/reactpress-toolkit/plugin/server';
 import { Injectable, Logger } from '@nestjs/common';
 import * as fs from 'fs';
 
@@ -13,10 +12,16 @@ export class PluginLoaderService {
 
   constructor(
     private readonly hookService: HookService,
-    private readonly pluginService: PluginService,
+    private readonly pluginService: PluginService
   ) {}
 
   async loadActivePlugins(): Promise<void> {
+    try {
+      await this.pluginService.ensureDefaultPlugins();
+    } catch (err) {
+      const message = err instanceof Error ? err.message : String(err);
+      this.logger.warn(`Default plugin seed skipped: ${message}`);
+    }
     const state = await this.pluginService.getPluginState();
     for (const pluginId of state.activePlugins) {
       if (!isValidPluginId(pluginId)) {

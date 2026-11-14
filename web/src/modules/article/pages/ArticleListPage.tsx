@@ -6,6 +6,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { formatDateTime } from "@/i18n/format";
+import { ReviewInboxPanel } from "@/modules/ai/pages/ReviewInboxPage";
 import {
   type ArticleListRow,
   type ArticleListSearch,
@@ -15,6 +16,7 @@ import {
   fetchArticleTags,
   resolveArticleAuthor,
 } from "@/modules/article/articleListApi";
+import { ARTICLE_STATUS_AI_REVIEW } from "@/modules/article/articleStatus";
 import styles from "@/modules/article/components/article-list.module.css";
 import { ArticleListSubHeader } from "@/modules/article/components/ArticleListSubHeader";
 import { ArticleListTablenav } from "@/modules/article/components/ArticleListTablenav";
@@ -120,10 +122,13 @@ export function ArticleListPage({ search, routePath }: ArticleListPageProps) {
     [tags],
   );
 
+  const isAiReviewTab = search.status === ARTICLE_STATUS_AI_REVIEW;
+
   const { data, isLoading, isError } = useQuery({
     queryKey: ["articles", search, categories, defaultAuthor],
     queryFn: () => fetchArticles(search, categories, defaultAuthor),
     staleTime: 30_000,
+    enabled: !isAiReviewTab,
   });
 
   const { data: statusCounts } = useQuery({
@@ -136,6 +141,7 @@ export function ArticleListPage({ search, routePath }: ArticleListPageProps) {
     queryKey: ["article-comment-counts"],
     queryFn: fetchCommentCountsByArticle,
     staleTime: 60_000,
+    enabled: !isAiReviewTab,
   });
 
   const deleteMutation = useMutation({
@@ -405,7 +411,7 @@ export function ArticleListPage({ search, routePath }: ArticleListPageProps) {
     },
   };
 
-  if (isError) {
+  if (!isAiReviewTab && isError) {
     return (
       <ModulePlaceholder title={t("article.listTitle")} description={t("article.listLoadError")} />
     );
@@ -421,18 +427,24 @@ export function ArticleListPage({ search, routePath }: ArticleListPageProps) {
         onKeywordChange={setKeywordInput}
         onSearch={runSearch}
       />
-      <ArticleListTablenav position="top" {...tablenavProps} />
-      <div className={styles.tableCard}>
-        <Table<ArticleListRow>
-          rowKey="id"
-          size="small"
-          loading={isLoading}
-          dataSource={data?.list ?? []}
-          pagination={false}
-          columns={columns}
-        />
-      </div>
-      <ArticleListTablenav position="bottom" compact {...tablenavProps} />
+      {isAiReviewTab ? (
+        <ReviewInboxPanel embedded />
+      ) : (
+        <>
+          <ArticleListTablenav position="top" {...tablenavProps} />
+          <div className={styles.tableCard}>
+            <Table<ArticleListRow>
+              rowKey="id"
+              size="small"
+              loading={isLoading}
+              dataSource={data?.list ?? []}
+              pagination={false}
+              columns={columns}
+            />
+          </div>
+          <ArticleListTablenav position="bottom" compact {...tablenavProps} />
+        </>
+      )}
     </div>
   );
 }

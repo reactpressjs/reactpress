@@ -12,7 +12,7 @@ This tutorial is for **first-time ReactPress end users**. No repository clone or
 ## Step 1: Install the CLI
 
 ```bash
-npm install -g @fecommunity/reactpress
+npm install -g @reactpressjs/reactpress
 ```
 
 ## Step 2: Initialize the site

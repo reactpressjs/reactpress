@@ -1,6 +1,6 @@
 import '../styles/globals.css';
 
-import { createThemeApp } from '@fecommunity/reactpress-toolkit/app';
+import { createThemeApp } from '@reactpressjs/reactpress-toolkit/app';
 
 import themeManifest from '../theme.json';
 

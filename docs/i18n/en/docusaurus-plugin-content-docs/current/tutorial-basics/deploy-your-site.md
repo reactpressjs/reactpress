@@ -10,7 +10,7 @@ keywords: [reactpress, production, deploy, nginx, init, sqlite]
 With [Node.js 20+](https://nodejs.org/) on your server, the default stack uses embedded **SQLite** — no Docker required:
 
 ```bash
-npm i -g @fecommunity/reactpress
+npm i -g @reactpressjs/reactpress
 mkdir /path/to/your-site && cd /path/to/your-site
 reactpress init
 ```
@@ -96,6 +96,6 @@ pm2 restart all
 | API-only / split processes | Monorepo: `pnpm dev:api`, etc. — see [Monorepo development](../developer-guide/local-development.md) |
 | Desktop app                | `pnpm build:desktop` (local SQLite, not server deployment)                                           |
 
-`@fecommunity/reactpress-server` is deprecated — do not use it for new projects.
+`@reactpressjs/reactpress-server` is deprecated — do not use it for new projects.
 
 See [ReactPress 4.0 Extend](../tutorial-extras/reactpress-4-0.md), [CLI reference](../developer-guide/cli-reference.md), and [Docker deployment](../tutorial-extras/docker-deployment.md).

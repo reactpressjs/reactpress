@@ -80,12 +80,12 @@ keywords:
 | **ReactPress 是什么？**  | 自托管 **React 发布平台**：NestJS API + Vite Admin + Next.js 主题 + Hook 插件 + CLI + Electron 桌面端 |
 | **是 Headless CMS 吗？** | 包含 Headless REST，但交付更多——访客站、Admin、扩展开箱即用                                           |
 | **WordPress 替代？**     | 是，适合要 WordPress 式工作流 + 现代 React/Next.js 栈的团队                                           |
-| **多快能跑起来？**       | `npm i -g @fecommunity/reactpress` → `reactpress init` → 约 60 秒                                     |
+| **多快能跑起来？**       | `npm i -g @reactpressjs/reactpress` → `reactpress init` → 约 60 秒                                    |
 | **许可证**               | MIT——可 fork、自托管、商用                                                                            |
 | **当前版本**             | 4.0（代号 **Extend**）——插件、桌面、npm 主题 catalog                                                  |
 
 ```bash
-npm i -g @fecommunity/reactpress
+npm i -g @reactpressjs/reactpress
 mkdir my-site && cd my-site
 reactpress init
 ```
@@ -234,7 +234,7 @@ ReactPress 4.0 的每一项能力——bundled CLI、SQLite 默认、npm 主题�
 ### 4.3 三十秒上手
 
 ```bash
-npm i -g @fecommunity/reactpress
+npm i -g @reactpressjs/reactpress
 mkdir my-site && cd my-site
 reactpress init
 ```
@@ -243,10 +243,10 @@ reactpress init
 
 ### 4.4 两类用户
 
-| 用户         | 入口                                        |
-| :----------- | :------------------------------------------ |
-| **终端用户** | `npm i -g @fecommunity/reactpress` → `init` |
-| **贡献者**   | clone monorepo → `pnpm dev`                 |
+| 用户         | 入口                                         |
+| :----------- | :------------------------------------------- |
+| **终端用户** | `npm i -g @reactpressjs/reactpress` → `init` |
+| **贡献者**   | clone monorepo → `pnpm dev`                  |
 
 ### 4.5 与可视化建站器的边界
 
@@ -409,13 +409,13 @@ Markdown 编辑、草稿发布、分类标签、知识库与页面类型。
 | reactpress-theme-starter | npm        | 生产站点   |
 
 ```bash
-reactpress theme add @fecommunity/reactpress-theme-starter@1.0.0-beta.0
+reactpress theme add @reactpressjs/reactpress-theme-starter@1.0.0-beta.0
 ```
 
 ### 8.2 主题内拉取数据
 
 ```typescript
-import { createThemeApi } from '@fecommunity/reactpress-toolkit/theme';
+import { createThemeApi } from '@reactpressjs/reactpress-toolkit/theme';
 
 const api = createThemeApi({ baseURL: process.env.NEXT_PUBLIC_API_URL });
 const { data } = await api.article.list({ status: 'publish', page: 1 });
@@ -585,7 +585,7 @@ Swagger：`http://localhost:3002/api`
 让「React 技术栈的默认发布方式」像 WordPress 一样被脱口而出：
 
 ```bash
-npm i -g @fecommunity/reactpress
+npm i -g @reactpressjs/reactpress
 reactpress init
 ```
 
@@ -669,7 +669,7 @@ reactpress init
 ## 十九、快速开始
 
 ```bash
-npm i -g @fecommunity/reactpress
+npm i -g @reactpressjs/reactpress
 mkdir my-blog && cd my-blog
 reactpress init
 ```
@@ -701,7 +701,7 @@ ReactPress 4.0 把这些原则翻译到 React 时代：
 若你在搜索 **React CMS**、**Next.js CMS**、**WordPress alternative**、**open source CMS**——从这里开始：
 
 ```bash
-npm i -g @fecommunity/reactpress
+npm i -g @reactpressjs/reactpress
 mkdir my-blog && cd my-blog
 reactpress init
 ```

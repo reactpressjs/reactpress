@@ -90,12 +90,12 @@ This article is a long-form field guide. It explains:
 | **What is ReactPress?**    | A self-hosted **React publishing platform**: NestJS API + Vite Admin + Next.js theme + Hook plugins + CLI + Electron desktop. |
 | **Is it a Headless CMS?**  | It includes Headless REST, but delivers far more — visitor site, Admin, and extensions out of the box.                        |
 | **WordPress alternative?** | Yes, for teams that want WordPress-style workflows with a modern React / Next.js stack.                                       |
-| **How fast to start?**     | `npm i -g @fecommunity/reactpress` → `reactpress init` → live stack in ~60 seconds.                                           |
+| **How fast to start?**     | `npm i -g @reactpressjs/reactpress` → `reactpress init` → live stack in ~60 seconds.                                          |
 | **License**                | MIT — fork, self-host, commercial use allowed.                                                                                |
 | **Current release**        | 4.0 (codename **Extend**) — plugins, desktop, npm theme catalog.                                                              |
 
 ```bash
-npm i -g @fecommunity/reactpress
+npm i -g @reactpressjs/reactpress
 mkdir my-site && cd my-site
 reactpress init
 ```
@@ -233,7 +233,7 @@ WordPress users rarely choose among backend frameworks, front-end stacks, and de
 
 That "zero decisions" feels limiting to engineers. For most site owners, **fewer choices is the product**.
 
-ReactPress 4.0 adopts the lesson: `npm i -g @fecommunity/reactpress` → `reactpress init` → API + Admin + theme in ~60 seconds. No Docker by default. No hand-written `.env`. No three terminal tabs.
+ReactPress 4.0 adopts the lesson: `npm i -g @reactpressjs/reactpress` → `reactpress init` → API + Admin + theme in ~60 seconds. No Docker by default. No hand-written `.env`. No three terminal tabs.
 
 ### 2.2 Core / Theme / Plugin boundaries
 
@@ -465,15 +465,15 @@ Hard rules:
 
 ### 4.4 Two audiences, two paths
 
-| Audience         | Goal                         | Entry                                       |
-| :--------------- | :--------------------------- | :------------------------------------------ |
-| **Site owners**  | Launch blog, team publishing | `npm i -g @fecommunity/reactpress` → `init` |
-| **Contributors** | Core, themes, plugins        | Clone monorepo → `pnpm dev`                 |
+| Audience         | Goal                         | Entry                                        |
+| :--------------- | :--------------------------- | :------------------------------------------- |
+| **Site owners**  | Launch blog, team publishing | `npm i -g @reactpressjs/reactpress` → `init` |
+| **Contributors** | Core, themes, plugins        | Clone monorepo → `pnpm dev`                  |
 
 ### 4.5 Thirty-second start
 
 ```bash
-npm i -g @fecommunity/reactpress
+npm i -g @reactpressjs/reactpress
 mkdir my-site && cd my-site
 reactpress init
 ```
@@ -584,15 +584,15 @@ flowchart LR
 
 ### 5.3 Package responsibility matrix
 
-| Package      | npm                               | Role                                     | Rendering        | SEO           |
-| :----------- | :-------------------------------- | :--------------------------------------- | :--------------- | :------------ |
-| **server**   | Bundled in CLI                    | Business logic, persistence, auth, Hooks | —                | —             |
-| **web**      | Bundled in CLI                    | Admin UI                                 | Vite CSR         | No            |
-| **themes/**  | Per theme                         | Visitor site                             | Next SSR/ISR     | Yes           |
-| **toolkit**  | `@fecommunity/reactpress-toolkit` | API client, types                        | —                | —             |
-| **plugins/** | Per plugin                        | Hook logic + Admin slots                 | Mixed            | Plugin-driven |
-| **desktop**  | GitHub Releases                   | Electron + local API                     | Loads `web/dist` | No            |
-| **cli**      | `@fecommunity/reactpress`         | init, doctor, orchestration              | —                | —             |
+| Package      | npm                                | Role                                     | Rendering        | SEO           |
+| :----------- | :--------------------------------- | :--------------------------------------- | :--------------- | :------------ |
+| **server**   | Bundled in CLI                     | Business logic, persistence, auth, Hooks | —                | —             |
+| **web**      | Bundled in CLI                     | Admin UI                                 | Vite CSR         | No            |
+| **themes/**  | Per theme                          | Visitor site                             | Next SSR/ISR     | Yes           |
+| **toolkit**  | `@reactpressjs/reactpress-toolkit` | API client, types                        | —                | —             |
+| **plugins/** | Per plugin                         | Hook logic + Admin slots                 | Mixed            | Plugin-driven |
+| **desktop**  | GitHub Releases                    | Electron + local API                     | Loads `web/dist` | No            |
+| **cli**      | `@reactpressjs/reactpress`         | init, doctor, orchestration              | —                | —             |
 
 ### 5.4 Technology choices
 
@@ -664,7 +664,7 @@ Use API-only for mobile apps, secondary sites, or microservices — **same conte
 | `toolkit/` | Shared types and HTTP clients                      |
 | `desktop/` | Electron main/preload, local API bootstrap         |
 
-End users never clone this. They install `@fecommunity/reactpress` and run `init`.
+End users never clone this. They install `@reactpressjs/reactpress` and run `init`.
 
 ### 5.10 Failure modes and boundaries
 
@@ -818,7 +818,7 @@ Local `admin` / `admin` is for trial only. Change passwords before production; `
 | reactpress-theme-starter | npm catalog    | Production — search, KB, comments |
 
 ```bash
-reactpress theme add @fecommunity/reactpress-theme-starter@1.0.0-beta.0
+reactpress theme add @reactpressjs/reactpress-theme-starter@1.0.0-beta.0
 ```
 
 ### 8.3 Mock development without API
@@ -835,7 +835,7 @@ Theme authors iterate UI without booting full platform — faster design cycles.
 ### 8.4 Data fetching in themes
 
 ```typescript
-import { createThemeApi } from '@fecommunity/reactpress-toolkit/theme';
+import { createThemeApi } from '@reactpressjs/reactpress-toolkit/theme';
 
 const api = createThemeApi({ baseURL: process.env.NEXT_PUBLIC_API_URL });
 const { data } = await api.article.list({ status: 'publish', page: 1 });
@@ -925,7 +925,7 @@ Aligns with theme three-layer model — authors learn once.
 ### 9.3 Server plugin example
 
 ```typescript
-import type { PluginContext } from '@fecommunity/reactpress-toolkit/plugin';
+import type { PluginContext } from '@reactpressjs/reactpress-toolkit/plugin';
 
 export function register(hooks: PluginContext['hooks'], ctx: PluginContext) {
   hooks.addFilter('article.beforePublish', async (article) => {
@@ -1089,7 +1089,7 @@ curl -H "X-API-Key: YOUR_KEY" \
 ### 11.5 Toolkit TypeScript SDK
 
 ```typescript
-import { createApiClient } from '@fecommunity/reactpress-toolkit';
+import { createApiClient } from '@reactpressjs/reactpress-toolkit';
 
 const client = createApiClient({
   baseURL: process.env.REACTPRESS_API_URL,
@@ -1203,7 +1203,7 @@ Equivalent to admin power. Store in secrets manager; scope CI keys read-only whe
 - [ ] MySQL credentials not in git
 - [ ] Rate limiting at reverse proxy
 - [ ] Backup `.reactpress/` and `uploads/` on schedule
-- [ ] Keep `@fecommunity/reactpress` updated for security patches
+- [ ] Keep `@reactpressjs/reactpress` updated for security patches
 
 ### 13.5 Comments attack surface
 
@@ -1265,7 +1265,7 @@ CLI generates `.env` from `.reactpress/config.json`. Avoid hand-editing unless y
 ### 15.1 New sites
 
 ```bash
-npm i -g @fecommunity/reactpress
+npm i -g @reactpressjs/reactpress
 mkdir my-site && cd my-site
 reactpress init
 ```
@@ -1277,7 +1277,7 @@ Fastest path to a **React publishing platform** proof of concept.
 4.0 adds plugins, desktop, npm theme catalog — **no forced breaking config migration**.
 
 ```bash
-npm i -g @fecommunity/reactpress
+npm i -g @reactpressjs/reactpress
 cd your-site
 reactpress doctor
 ```
@@ -1387,7 +1387,7 @@ ReactPress shines when **Admin + default theme + CLI** matter — not API-only e
 When someone asks "what do we use for the company blog?", answers should include:
 
 ```bash
-npm i -g @fecommunity/reactpress
+npm i -g @reactpressjs/reactpress
 reactpress init
 ```
 
@@ -1410,7 +1410,7 @@ Yes. MIT license. Commercial use allowed. Self-host without vendor fees.
 
 ### Is 4.0 production-ready?
 
-Yes. 4.0.0 is the current stable release on npm (`@fecommunity/reactpress`). Core paths (`init`, Admin, API, theme, plugins) are battle-tested in community and dogfood sites like [blog.gaoredu.com](https://blog.gaoredu.com). When upgrading from 3.x, validate on staging; read [migration guide](/docs/tutorial-extras/migration-3-to-4).
+Yes. 4.0.0 is the current stable release on npm (`@reactpressjs/reactpress`). Core paths (`init`, Admin, API, theme, plugins) are battle-tested in community and dogfood sites like [blog.gaoredu.com](https://blog.gaoredu.com). When upgrading from 3.x, validate on staging; read [migration guide](/docs/tutorial-extras/migration-3-to-4).
 
 ### Do I need Docker?
 
@@ -1466,7 +1466,7 @@ No. It is optional for offline/local-first authors. Web Admin is complete.
 
 ### How do updates work?
 
-`npm i -g @fecommunity/reactpress@latest` for CLI; `reactpress doctor` after upgrade; review changelog at [/blog](/blog).
+`npm i -g @reactpressjs/reactpress@latest` for CLI; `reactpress doctor` after upgrade; review changelog at [/blog](/blog).
 
 ---
 
@@ -1475,10 +1475,10 @@ No. It is optional for offline/local-first authors. Web Admin is complete.
 ### 19.1 Install CLI
 
 ```bash
-npm i -g @fecommunity/reactpress
+npm i -g @reactpressjs/reactpress
 ```
 
-Install with `npm i -g @fecommunity/reactpress` (`@latest`). Prereleases use `@beta` — check [npm](https://www.npmjs.com/package/@fecommunity/reactpress).
+Install with `npm i -g @reactpressjs/reactpress` (`@latest`). Prereleases use `@beta` — check [npm](https://www.npmjs.com/package/@reactpressjs/reactpress).
 
 ### 19.2 Initialize site
 
@@ -1506,7 +1506,7 @@ reactpress init
 ### 19.5 Install official theme (optional)
 
 ```bash
-reactpress theme add @fecommunity/reactpress-theme-starter@1.0.0-beta.0
+reactpress theme add @reactpressjs/reactpress-theme-starter@1.0.0-beta.0
 ```
 
 Enable in **Appearance → Themes**.
@@ -1601,7 +1601,7 @@ Early packages split across names (`reactpress-cli`, `reactpress-server`, client
 Codename **Platform**. Goals:
 
 - **Zero config** — `init` + `dev`, embedded Docker MySQL default
-- **Single entry** — `@fecommunity/reactpress` globally
+- **Single entry** — `@reactpressjs/reactpress` globally
 - **DX** — interactive menu, `doctor`, `status`
 
 Proved **~60 second cold start** after global install. Docker MySQL helped production parity but felt heavy for "try on laptop."
@@ -1610,7 +1610,7 @@ Proved **~60 second cold start** after global install. Docker MySQL helped produ
 
 ### B.3 3.1+ Toolkit modern stack
 
-Unified `@fecommunity/reactpress-toolkit` contracts; Next.js 14 / React 18 alignment; theme development helpers. Reduced **API client drift** between Admin and themes.
+Unified `@reactpressjs/reactpress-toolkit` contracts; Next.js 14 / React 18 alignment; theme development helpers. Reduced **API client drift** between Admin and themes.
 
 **Lesson:** platforms need a **contract layer** more than more features.
 
@@ -1703,7 +1703,7 @@ Visitor port `:3001` reverse-proxies `/admin/` to Admin assets and API paths to 
 
 ## Appendix E: Module deep dive — CLI
 
-`@fecommunity/reactpress` is the **only package end users must know**.
+`@reactpressjs/reactpress` is the **only package end users must know**.
 
 ### E.1 Commands
 
@@ -1772,7 +1772,7 @@ Full reference: [Troubleshooting docs](/docs/reference/troubleshooting).
 | **Headless CMS**        | Content API with separate presentation responsibility            |
 | **Theme**               | Swappable Next.js visitor application                            |
 | **Plugin**              | Server-side Hook extension via `plugin.json`                     |
-| **Toolkit**             | `@fecommunity/reactpress-toolkit` shared types and HTTP clients  |
+| **Toolkit**             | `@reactpressjs/reactpress-toolkit` shared types and HTTP clients |
 | **Hook**                | In-process filter/action extension point                         |
 | **Webhook**             | Outbound HTTP notification on events                             |
 | **Registry**            | Source-of-truth list of installable themes/plugins               |
@@ -1868,7 +1868,7 @@ This appendix narrates a realistic **first week** deploying ReactPress as a **Wo
 The lead engineer runs:
 
 ```bash
-npm i -g @fecommunity/reactpress
+npm i -g @reactpressjs/reactpress
 mkdir acme-blog && cd acme-blog
 reactpress init
 ```
@@ -2026,7 +2026,7 @@ Illustrative article page pattern (simplified):
 
 ```typescript
 // theme: app/blog/[slug]/page.tsx
-import { createThemeApi } from '@fecommunity/reactpress-toolkit/theme';
+import { createThemeApi } from '@reactpressjs/reactpress-toolkit/theme';
 import { notFound } from 'next/navigation';
 
 const api = createThemeApi({ baseURL: process.env.NEXT_PUBLIC_API_URL! });
@@ -2088,7 +2088,7 @@ hooks.addFilter('article.beforePublish', async (article) => {
 
 ### Weekly
 
-- `npm i -g @fecommunity/reactpress@latest` on servers if release notes mention security
+- `npm i -g @reactpressjs/reactpress@latest` on servers if release notes mention security
 - Review API error logs via `reactpress logs`
 
 ### Monthly
@@ -2351,7 +2351,7 @@ Leaked `X-API-Key` equals admin access. Mitigations:
 
 ### AB.4 Supply chain
 
-`npm i -g @fecommunity/reactpress` — pin versions in production AMIs; verify checksums; monitor [GitHub security advisories](https://github.com/reactpressjs/reactpress/security).
+`npm i -g @reactpressjs/reactpress` — pin versions in production AMIs; verify checksums; monitor [GitHub security advisories](https://github.com/reactpressjs/reactpress/security).
 
 ---
 
@@ -2372,7 +2372,7 @@ Codenames **Platform** (3.0) and **Extend** (4.0) mark internal phase transition
 Share this launch in your networks — adapt freely:
 
 **Twitter/X (280 chars):**  
-React has no WordPress — until now. ReactPress 4.0: NestJS API + Admin + Next.js theme + plugins + desktop. One CLI. MIT. `npm i -g @fecommunity/reactpress` → `reactpress init` #ReactCMS #NextJS
+React has no WordPress — until now. ReactPress 4.0: NestJS API + Admin + Next.js theme + plugins + desktop. One CLI. MIT. `npm i -g @reactpressjs/reactpress` → `reactpress init` #ReactCMS #NextJS
 
 **LinkedIn (short):**  
 We built ReactPress 4.0 because every React team was assembling Strapi + Next + SEO + deploy from scratch. One CLI ships the full open-source publishing platform — WordPress workflow, modern SSR front end.
@@ -2399,7 +2399,7 @@ Saying no keeps ReactPress a **publishing platform** instead of an everything ba
 
 ```bash
 # Install
-npm i -g @fecommunity/reactpress
+npm i -g @reactpressjs/reactpress
 
 # New site
 mkdir site && cd site && reactpress init
@@ -2416,7 +2416,7 @@ reactpress doctor
 reactpress plugin install seo
 
 # Theme
-reactpress theme add @fecommunity/reactpress-theme-starter@1.0.0-beta.0
+reactpress theme add @reactpressjs/reactpress-theme-starter@1.0.0-beta.0
 
 # Headless fetch
 curl -H "X-API-Key: KEY" \
@@ -2541,7 +2541,7 @@ We are not claiming 60,000 plugins tomorrow. We are claiming the **mechanism and
 If you searched for **React CMS**, **Next.js CMS**, **WordPress alternative**, **open source CMS**, or **React publishing platform** — start here:
 
 ```bash
-npm i -g @fecommunity/reactpress
+npm i -g @reactpressjs/reactpress
 mkdir my-blog && cd my-blog
 reactpress init
 ```
@@ -2558,7 +2558,7 @@ _Document ID: `why-react-still-doesnt-have-wordpress-reactpress-4` · Character 
 
 ## Related links
 
-- [GitHub — fecommunity/reactpress](https://github.com/reactpressjs/reactpress)
+- [GitHub — reactpressjs/reactpress](https://github.com/reactpressjs/reactpress)
 - [Live demo — blog.gaoredu.com](https://blog.gaoredu.com)
 - [Theme demo — reactpress-theme-starter.vercel.app](https://reactpress-theme-starter.vercel.app)
 - [Documentation — reactpress.cc](https://reactpress.cc)
@@ -2573,7 +2573,7 @@ _Document ID: `why-react-still-doesnt-have-wordpress-reactpress-4` · Character 
 - [Headless API guide](/docs/developer-guide/headless-api)
 - [Installation](/docs/getting-started/installation)
 - [Troubleshooting](/docs/reference/troubleshooting)
-- [npm — @fecommunity/reactpress](https://www.npmjs.com/package/@fecommunity/reactpress)
+- [npm — @reactpressjs/reactpress](https://www.npmjs.com/package/@reactpressjs/reactpress)
 
 ---
 

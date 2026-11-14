@@ -1,10 +1,11 @@
 // 配置文件
-import { config } from '@fecommunity/reactpress-toolkit/config';
+import { config } from '@reactpressjs/reactpress-toolkit/config';
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { createTypeOrmOptions } from './database/typeorm-options';
+import { AiModule } from './modules/ai/ai.module';
 import { ApiKeyModule } from './modules/api-key/api-key.module';
 // 文章模块
 import { ArticleModule } from './modules/article/article.module';
@@ -63,6 +64,7 @@ import { WebhookModule } from './modules/webhook/webhook.module';
     ApiKeyModule,
     WebhookModule,
     ExtensionModule,
+    AiModule,
   ],
   controllers: [],
   providers: [],

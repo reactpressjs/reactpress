@@ -6,7 +6,7 @@ reactpress:
 release:
   label: Release
   permalink: /release
-  description: ReactPress version releases, changelogs, and migration notes for the 4.x publishing platform
+  description: ReactPress version releases, changelogs, and migration notes for the publishing platform
 
 article:
   label: Article

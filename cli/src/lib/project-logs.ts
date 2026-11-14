@@ -22,6 +22,19 @@ const PM2_LOG_FILES = {
   'pm2-error': 'pm2-error.log',
 };
 
+function belongsToProjectLogTree(candidateDir, projectRoot) {
+  const root = path.resolve(projectRoot);
+  const allowedRoots = [
+    path.join(root, '.reactpress', 'logs', 'server'),
+    path.resolve(path.join(getServerDir(root), 'logs')),
+    root,
+  ].map((entry) => path.resolve(entry));
+  const resolved = path.resolve(candidateDir);
+  return allowedRoots.some(
+    (base) => resolved === base || resolved.startsWith(`${base}${path.sep}`)
+  );
+}
+
 function measureLogDir(logDir) {
   if (!fs.existsSync(logDir)) return -1;
   let total = listLogFiles(logDir, 'all').reduce((sum, file) => sum + file.size, 0);
@@ -39,11 +52,15 @@ function measureLogDir(logDir) {
 }
 
 function getPm2ServerLogDir(projectRoot) {
+  const root = path.resolve(projectRoot);
   try {
     const app = getPm2App(projectRoot, PM2_API_APP);
     const dir = app?.pm2_env?.env?.REACTPRESS_SERVER_LOG_DIR;
     if (typeof dir === 'string' && dir.trim()) {
-      return path.resolve(dir.trim());
+      const resolved = path.resolve(dir.trim());
+      if (belongsToProjectLogTree(resolved, root)) {
+        return resolved;
+      }
     }
   } catch {
     // ignore
@@ -94,11 +111,16 @@ function resolveLogDirFromPid(pid) {
 }
 
 function resolveActiveServerLogDir(projectRoot) {
+  const root = path.resolve(projectRoot);
   const port = parseUrlPort(loadServerSiteUrl(projectRoot));
   if (!port) return null;
   const pid = resolveListeningPid(port);
   if (!pid) return null;
-  return resolveLogDirFromPid(pid);
+  const activeDir = resolveLogDirFromPid(pid);
+  if (!activeDir || !belongsToProjectLogTree(activeDir, root)) {
+    return null;
+  }
+  return path.resolve(activeDir);
 }
 
 function collectLogDirCandidates(projectRoot) {
@@ -114,33 +136,39 @@ function collectLogDirCandidates(projectRoot) {
 }
 
 function getProjectServerLogDir(projectRoot) {
-  const preferred = path.join(projectRoot, '.reactpress', 'logs', 'server');
-  const bundled = path.join(getServerDir(projectRoot), 'logs');
-  const pm2Dir = getPm2ServerLogDir(projectRoot);
-  const activeDir = resolveActiveServerLogDir(projectRoot);
+  const root = path.resolve(projectRoot);
+  const preferred = path.join(root, '.reactpress', 'logs', 'server');
+  const bundled = path.resolve(path.join(getServerDir(root), 'logs'));
 
-  const localCandidates = [preferred, bundled];
-  if (pm2Dir) localCandidates.push(pm2Dir);
-
-  let bestLocal = preferred;
-  let bestLocalScore = -1;
-  for (const dir of [...new Set(localCandidates.map((d) => path.resolve(d)))]) {
-    const score = measureLogDir(dir);
-    if (score > bestLocalScore) {
-      bestLocalScore = score;
-      bestLocal = dir;
-    }
+  // Prefer project-local logs first so a running monorepo/API on the same
+  // machine cannot steal log resolution for another project path.
+  const preferredScore = measureLogDir(preferred);
+  if (preferredScore > 0) {
+    return preferred;
   }
 
-  if (bestLocalScore > 0) {
-    return bestLocal;
+  const bundledScore = measureLogDir(bundled);
+  if (bundledScore > 0) {
+    return bundled;
   }
 
+  const pm2Dir = getPm2ServerLogDir(root);
+  if (pm2Dir && measureLogDir(pm2Dir) > 0) {
+    return path.resolve(pm2Dir);
+  }
+
+  const activeDir = resolveActiveServerLogDir(root);
   if (activeDir && fs.existsSync(activeDir) && measureLogDir(activeDir) > 0) {
-    return activeDir;
+    return path.resolve(activeDir);
   }
 
-  return bestLocal;
+  if (preferredScore >= 0) {
+    return preferred;
+  }
+  if (bundledScore >= 0) {
+    return bundled;
+  }
+  return preferred;
 }
 
 function normalizeSource(source) {

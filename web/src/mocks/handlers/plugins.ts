@@ -2,9 +2,11 @@ import {
   defaultSitePluginState,
   getPluginStateFromGlobalSetting,
   mergePluginStateIntoGlobalSetting,
-} from "@fecommunity/reactpress-toolkit/plugin/extension";
+} from "@reactpressjs/reactpress-toolkit/plugin/extension";
 import { http } from "msw";
 
+import aiAssistAdminEn from "../../../../plugins/ai-assist/src/locales/en.json";
+import aiAssistAdminZh from "../../../../plugins/ai-assist/src/locales/zh.json";
 import helloWorldAdminEn from "../../../../plugins/hello-world/src/locales/en.json";
 import helloWorldAdminZh from "../../../../plugins/hello-world/src/locales/zh.json";
 import imageOptimizerAdminEn from "../../../../plugins/image-optimizer/src/locales/en.json";
@@ -187,6 +189,10 @@ export const pluginHandlers = [
       const messages = locale.toLowerCase().startsWith("zh")
         ? imageOptimizerAdminZh
         : imageOptimizerAdminEn;
+      return successResponse({ pluginId: id, locale, messages });
+    }
+    if (id === "ai-assist") {
+      const messages = locale.toLowerCase().startsWith("zh") ? aiAssistAdminZh : aiAssistAdminEn;
       return successResponse({ pluginId: id, locale, messages });
     }
     return successResponse({ pluginId: id, locale, messages: {} });

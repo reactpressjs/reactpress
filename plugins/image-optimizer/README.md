@@ -36,8 +36,8 @@ Batch compression is executed by the core file optimization service; this plugin
 ## Development
 
 ```bash
-pnpm --filter @fecommunity/reactpress-plugin-image-optimizer run build
-pnpm --filter @fecommunity/reactpress-plugin-image-optimizer run typecheck
+pnpm --filter @reactpressjs/reactpress-plugin-image-optimizer run build
+pnpm --filter @reactpressjs/reactpress-plugin-image-optimizer run typecheck
 ```
 
 See [`../README.md`](../README.md) for the plugin system overview.

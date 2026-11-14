@@ -1,4 +1,4 @@
-import type { PluginContext } from '@fecommunity/reactpress-toolkit/plugin/server';
+import type { PluginContext } from '@reactpressjs/reactpress-toolkit/plugin/server';
 
 export interface ImageOptimizerConfig {
   batchSize: number;

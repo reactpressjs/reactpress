@@ -1,7 +1,7 @@
 import {
   resolvePluginAdminLocaleText,
   type PluginAdminLocaleMessages,
-} from "@fecommunity/reactpress-toolkit/plugin/extension";
+} from "@reactpressjs/reactpress-toolkit/plugin/extension";
 import { useMemo } from "react";
 
 import { usePluginAdminLocaleQuery } from "@/hooks/usePluginAdminLocale";

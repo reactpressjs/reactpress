@@ -151,7 +151,7 @@ Theme guidance: [Appearance & themes](/docs/user-guide/appearance-themes) · [Th
 | Fast local proof         | `reactpress init` ~60s  |
 
 ```bash
-npm i -g @fecommunity/reactpress
+npm i -g @reactpressjs/reactpress
 mkdir my-blog && cd my-blog
 reactpress init
 ```

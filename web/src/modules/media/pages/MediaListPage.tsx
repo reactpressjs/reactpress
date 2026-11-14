@@ -23,7 +23,7 @@ import { uploadFile } from "@/shared/api/uploadFile";
 import { getToolkitClient } from "@/shared/client";
 import { ModulePlaceholder } from "@/shared/components/ModulePlaceholder";
 import { useSettingsStore } from "@/stores/settings";
-import { Image as RpImage, resolveImageUrl } from "@fecommunity/reactpress-toolkit/ui/content";
+import { Image as RpImage, resolveImageUrl } from "@reactpressjs/reactpress-toolkit/ui/content";
 
 const GRID_PAGE_SIZE = 60;
 const LIST_PAGE_SIZE = 20;

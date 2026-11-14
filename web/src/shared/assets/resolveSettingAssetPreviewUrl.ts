@@ -1,4 +1,4 @@
-import { resolvePublicAssetUrl } from "@fecommunity/reactpress-toolkit/theme";
+import { resolvePublicAssetUrl } from "@reactpressjs/reactpress-toolkit/theme";
 
 import { publicAssetUrl } from "@/utils/constants";
 

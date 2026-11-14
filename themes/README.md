@@ -2,7 +2,7 @@
 
 Visitor-facing sites in ReactPress 4.0 are **swappable Next.js themes** — npm-installable frontends that fetch from the headless API. Themes own presentation; [plugins](../plugins/) own server-side logic.
 
-> Official starter: [@fecommunity/reactpress-theme-starter](https://github.com/reactpressjs/reactpress-theme-starter) · Lighthouse 95 · [live demo](https://reactpress-theme-starter.vercel.app)
+> Official starter: [@reactpressjs/reactpress-theme-starter](https://github.com/reactpressjs/reactpress-theme-starter) · Lighthouse 95 · [live demo](https://reactpress-theme-starter.vercel.app)
 
 The theme system uses **two sources and three directories**; local and npm themes follow separate registration rules.
 
@@ -170,4 +170,4 @@ pnpm run --dir themes sync:catalog
 | `functions.php`    | `pages/_app.tsx` → `createThemeApp()` |
 | Customizer         | `appearance.sections`                 |
 
-Full Next.js 15 capabilities: npm package **@fecommunity/reactpress-theme-starter** (install via `theme-starter` anchor).
+Full Next.js 15 capabilities: npm package **@reactpressjs/reactpress-theme-starter** (install via `theme-starter` anchor).

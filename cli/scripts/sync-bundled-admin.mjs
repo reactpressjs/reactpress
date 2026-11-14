@@ -19,10 +19,16 @@ function main() {
     process.exit(0);
   }
 
+  const staging = path.join(cliRoot, '.admin-dist-staging');
+  const previous = path.join(cliRoot, '.admin-dist-replaced');
+  fs.rmSync(staging, { recursive: true, force: true });
+  fs.rmSync(previous, { recursive: true, force: true });
+  fs.cpSync(webDist, staging, { recursive: true });
   if (fs.existsSync(bundledAdmin)) {
-    fs.rmSync(bundledAdmin, { recursive: true, force: true });
+    fs.renameSync(bundledAdmin, previous);
   }
-  fs.cpSync(webDist, bundledAdmin, { recursive: true });
+  fs.renameSync(staging, bundledAdmin);
+  fs.rmSync(previous, { recursive: true, force: true });
   console.log('[sync-bundled-admin] web/dist -> cli/admin-dist/');
 }
 

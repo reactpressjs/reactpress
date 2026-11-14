@@ -27,7 +27,7 @@ keywords: [reactpress 是什么, reactpress, 自托管发布平台, react cms, n
 | **CLI**       | `init` · `doctor` · `logs` · `stop` — 约 **60 秒**上线 |
 
 ```bash
-npm i -g @fecommunity/reactpress
+npm i -g @reactpressjs/reactpress
 mkdir my-site && cd my-site
 reactpress init
 ```
@@ -85,16 +85,16 @@ flowchart LR
 
 深入阅读：[核心概念](./core-concepts.md) · [系统架构概览](../developer-guide/architecture-overview.md)
 
-## ReactPress 4.0 一览
+## ReactPress 5.0 一览
 
-当前推荐线为 **ReactPress 4.0**（代号 **Extend**）：
+当前推荐线为 **ReactPress 5.0**（代号 **Intelligent**）：
 
-- 插件系统 + Admin 插槽
-- Electron 桌面客户端
-- npm 主题 catalog（Admin 安装；`init` 自动启用 featured 主题）
-- 默认嵌入式 SQLite（Docker / MySQL 可选）
+- AI Assist：自带 API Key，Skill 只写草稿
+- 审核收件箱：对照后立即发布或定时发布
+- 新安装自动启用 AI Assist
+- 4.0 的插件、桌面端、npm 主题与默认 SQLite 仍然保留
 
-许可：**MIT**。包：[@fecommunity/reactpress](https://www.npmjs.com/package/@fecommunity/reactpress) · 源码：[reactpressjs/reactpress](https://github.com/reactpressjs/reactpress)（官方唯一仓库）
+许可：**MIT**。包：[@reactpressjs/reactpress](https://www.npmjs.com/package/@reactpressjs/reactpress) · 源码：[reactpressjs/reactpress](https://github.com/reactpressjs/reactpress)（官方唯一仓库）
 
 :::tip 名称消歧
 此处的 ReactPress 指 **reactpressjs 开源发布平台**（NestJS + Next.js CMS），**不是**把 React 应用嵌入现有 WordPress 站点的那个 WordPress 插件。
@@ -102,13 +102,13 @@ flowchart LR
 
 ## 快速问答
 
-| 问题               | 答案                                                                             |
-| ------------------ | -------------------------------------------------------------------------------- |
-| 免费吗？           | 是 — MIT 开源                                                                    |
-| 需要 Docker 吗？   | 默认不需要（SQLite）；仅 embedded-docker / 外部 MySQL 时需要                     |
-| 能上生产吗？       | 4.0.0 为稳定版（`@latest`）；从 3.x 升级请先预发 — 见 [FAQ](../reference/faq.md) |
-| 能用自己的前端吗？ | 可以 — Headless REST + API Key                                                   |
-| 和 WordPress？     | 编辑理念相近，交付用 React/Next — [完整对比](./reactpress-vs-wordpress.md)       |
+| 问题               | 答案                                                                               |
+| ------------------ | ---------------------------------------------------------------------------------- |
+| 免费吗？           | 是 — MIT 开源                                                                      |
+| 需要 Docker 吗？   | 默认不需要（SQLite）；仅 embedded-docker / 外部 MySQL 时需要                       |
+| 能上生产吗？       | 5.0.0 为当前版本；从 4.x 升级见 [迁移指南](../tutorial-extras/migration-4-to-5.md) |
+| 能用自己的前端吗？ | 可以 — Headless REST + API Key                                                     |
+| 和 WordPress？     | 编辑理念相近，交付用 React/Next — [完整对比](./reactpress-vs-wordpress.md)         |
 
 ## 从这里开始
 

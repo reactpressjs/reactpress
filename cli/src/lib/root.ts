@@ -2,10 +2,10 @@
 const fs = require('fs');
 const path = require('path');
 
-const CLI_PACKAGE_NAME = '@fecommunity/reactpress';
+const CLI_PACKAGE_NAME = '@reactpressjs/reactpress';
 
 /**
- * Install root: monorepo checkout (repo root) or published @fecommunity/reactpress package root.
+ * Install root: monorepo checkout (repo root) or published @reactpressjs/reactpress package root.
  * cli/lib -> ../.. when pnpm-workspace.yaml exists; published lib/ -> .. only.
  */
 function getMonorepoRoot() {

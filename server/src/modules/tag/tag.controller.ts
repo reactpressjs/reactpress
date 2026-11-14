@@ -1,6 +1,7 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post, Query, UseGuards } from '@nestjs/common';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
 
+import { AdminAccessGuard } from '../api-key/admin-access.guard';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 import { Roles, RolesGuard } from '../auth/roles.guard';
 import { Tag } from './tag.entity';
@@ -18,8 +19,7 @@ export class TagController {
    */
   @ApiResponse({ status: 200, description: '创建标签', type: [Tag] })
   @Post()
-  @Roles('admin')
-  @UseGuards(JwtAuthGuard)
+  @UseGuards(AdminAccessGuard)
   create(@Body() tag) {
     return this.tagService.create(tag);
   }

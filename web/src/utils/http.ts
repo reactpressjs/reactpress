@@ -1,4 +1,4 @@
-import { resolveApiBaseUrl } from "@fecommunity/reactpress-toolkit/plugin/react";
+import { resolveApiBaseUrl } from "@reactpressjs/reactpress-toolkit/plugin/react";
 
 import { API_BASE_URL } from "./constants";
 

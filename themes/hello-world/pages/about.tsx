@@ -4,7 +4,7 @@ import {
   SiteDocument,
   themeApi,
   themeStaticProps,
-} from '@fecommunity/reactpress-toolkit/theme';
+} from '@reactpressjs/reactpress-toolkit/theme';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
 
@@ -17,10 +17,7 @@ interface AboutProps {
 
 export default function About({ siteInfo }: AboutProps) {
   return (
-    <SiteDocument
-      {...THEME_SHELL}
-      head={<PageHead title="About" description="About this site." />}
-    >
+    <SiteDocument {...THEME_SHELL} head={<PageHead title="About" description="About this site." />}>
       <h1 className="section-title">About</h1>
       {siteInfo ? (
         <>
@@ -29,9 +26,7 @@ export default function About({ siteInfo }: AboutProps) {
           </p>
         </>
       ) : (
-        <p>
-          ReactPress hello-world starter theme — copy this folder to build your own theme.
-        </p>
+        <p>ReactPress hello-world starter theme — copy this folder to build your own theme.</p>
       )}
 
       <hr className="hello-hr" aria-hidden="true" />

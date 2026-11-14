@@ -1,14 +1,19 @@
 {
-  "name": "@fecommunity/reactpress-plugins",
+  "name": "@reactpressjs/reactpress-plugins",
   "version": "1.0.0",
   "private": true,
   "description": "ReactPress plugin registry — local and npm plugin sources for the publishing platform",
   "license": "MIT",
   "scripts": {
-    "build": "pnpm --filter @fecommunity/reactpress-plugin-hello-world run build && pnpm --filter @fecommunity/reactpress-plugin-seo run build && pnpm --filter @fecommunity/reactpress-plugin-image-optimizer run build",
-    "typecheck": "pnpm --filter @fecommunity/reactpress-plugin-hello-world run typecheck && pnpm --filter @fecommunity/reactpress-plugin-seo run typecheck && pnpm --filter @fecommunity/reactpress-plugin-image-optimizer run typecheck"
+    "build": "pnpm --filter @reactpressjs/reactpress-plugin-hello-world run build && pnpm --filter @reactpressjs/reactpress-plugin-seo run build && pnpm --filter @reactpressjs/reactpress-plugin-image-optimizer run build && pnpm --filter @reactpressjs/reactpress-plugin-ai-assist run build",
+    "typecheck": "pnpm --filter @reactpressjs/reactpress-plugin-hello-world run typecheck && pnpm --filter @reactpressjs/reactpress-plugin-seo run typecheck && pnpm --filter @reactpressjs/reactpress-plugin-image-optimizer run typecheck && pnpm --filter @reactpressjs/reactpress-plugin-ai-assist run typecheck"
   },
   "reactpress": {
-    "local": ["hello-world", "seo", "image-optimizer"]
+    "local": [
+      "hello-world",
+      "seo",
+      "image-optimizer",
+      "ai-assist"
+    ]
   }
 }

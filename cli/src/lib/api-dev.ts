@@ -1,6 +1,5 @@
 // @ts-nocheck
 const { spawn } = require('child_process');
-const path = require('path');
 const { ensureProjectEnvironment } = require('./bootstrap');
 const { applyAutoLocalDevFallback } = require('./dev');
 const {
@@ -112,12 +111,7 @@ async function runApiDev(projectRoot = ensureOriginalCwd()) {
   startApiDev(projectRoot);
 }
 
-function getApiDevScriptPath() {
-  return path.join(__dirname, 'api-dev-runner.js');
-}
-
 module.exports = {
   runApiDev,
   stopApiDev,
-  getApiDevScriptPath,
 };

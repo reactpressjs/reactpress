@@ -2,8 +2,7 @@ import * as fs from 'fs-extra';
 import * as log4js from 'log4js';
 import { join } from 'path';
 
-const LOG_DIR =
-  process.env.REACTPRESS_SERVER_LOG_DIR?.trim() || join(__dirname, '../../logs');
+const LOG_DIR = process.env.REACTPRESS_SERVER_LOG_DIR?.trim() || join(__dirname, '../../logs');
 
 fs.ensureDirSync(LOG_DIR);
 void ['request', 'response', 'error'].forEach((t) => {
@@ -43,6 +42,5 @@ log4js.configure({
   },
 });
 
-export const requestLogger = log4js.getLogger('request');
 export const responseLogger = log4js.getLogger('response');
 export const errorLogger = log4js.getLogger('error');

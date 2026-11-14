@@ -1,17 +1,16 @@
-const { createReactPressNextConfig } = require('@fecommunity/reactpress-toolkit/theme/next-config');
+const { createReactPressNextConfig } = require('@reactpressjs/reactpress-toolkit/theme/next-config');
 
 let createAdminVercelRewrites;
 try {
-  ({ createAdminVercelRewrites } = require('@fecommunity/reactpress-web/next'));
+  ({ createAdminVercelRewrites } = require('@reactpressjs/reactpress-web/next'));
 } catch {
-  // Optional — nginx/custom server when @fecommunity/reactpress-web is not installed.
+  // Optional — nginx/custom server when @reactpressjs/reactpress-web is not installed.
 }
 
-const apiOrigin = (
-  process.env.SERVER_API_URL ||
-  process.env.REACTPRESS_API_URL ||
-  'http://localhost:3002/api'
-).replace(/\/api\/?$/, '');
+const apiOrigin = (process.env.SERVER_API_URL || process.env.REACTPRESS_API_URL || 'http://localhost:3002/api').replace(
+  /\/api\/?$/,
+  ''
+);
 
 function createApiRewrites() {
   return [

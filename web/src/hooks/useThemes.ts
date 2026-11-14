@@ -1,5 +1,5 @@
-import type { SiteThemeState, ThemeMods } from "@fecommunity/reactpress-toolkit/theme";
-import { mergeThemeStateIntoGlobalSetting } from "@fecommunity/reactpress-toolkit/theme";
+import type { SiteThemeState, ThemeMods } from "@reactpressjs/reactpress-toolkit/theme";
+import { mergeThemeStateIntoGlobalSetting } from "@reactpressjs/reactpress-toolkit/theme";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 import type { SiteSettings } from "@/hooks/useSiteSettings";

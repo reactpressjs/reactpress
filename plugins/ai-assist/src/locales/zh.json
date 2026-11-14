@@ -1,0 +1,34 @@
+{
+  "meta": {
+    "name": "AI 助手",
+    "description": "自带 API Key 的 Skill：写作、整理、润色、预审；发布前需人工审核。"
+  },
+  "settings": {
+    "enabled": {
+      "title": "启用 AI 助手",
+      "description": "关闭后将拒绝执行 Skill。"
+    },
+    "apiKey": {
+      "title": "API Key",
+      "description": "填写你自己的 OpenAI 兼容 API Key。密钥会加密存储，留空表示保持已保存的密钥。"
+    },
+    "baseUrl": {
+      "title": "API Base URL",
+      "description": "通常为 https://api.openai.com/v1 或兼容网关。"
+    },
+    "model": {
+      "title": "模型",
+      "description": "如 gpt-4o-mini。"
+    }
+  },
+  "ai": {
+    "panelTitle": "AI 助手",
+    "panelHint": "Skill 只会改草稿。正式发布需在「所有文章 → 待审」由人工通过。",
+    "organize": "补全 SEO / 标签",
+    "polish": "润色",
+    "preReview": "预审",
+    "skillApplied": "已应用到编辑器字段，请保存。",
+    "preReviewDone": "预审完成，请到「所有文章 → 待审」批准发布。",
+    "saveDraftFirst": "请先保存草稿，AI 才能读取文章。"
+  }
+}

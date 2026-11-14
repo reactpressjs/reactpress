@@ -17,6 +17,7 @@ import { JwtService } from '@nestjs/jwt';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
 
 import { ApiMsg } from '../../common/api-messages';
+import { AdminAccessGuard } from '../api-key/admin-access.guard';
 import { ApiKeyGuard } from '../api-key/api-key.guard';
 import { ApiKeyService } from '../api-key/api-key.service';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
@@ -43,8 +44,7 @@ export class ArticleController {
    */
   @ApiResponse({ status: 200, description: '创建文章', type: [Article] })
   @Post()
-  @Roles('admin')
-  @UseGuards(JwtAuthGuard)
+  @UseGuards(AdminAccessGuard)
   create(@Body() article) {
     return this.articleService.create(article);
   }
@@ -190,8 +190,7 @@ export class ArticleController {
    * @param article
    */
   @Patch(':id')
-  @Roles('admin')
-  @UseGuards(JwtAuthGuard)
+  @UseGuards(AdminAccessGuard)
   @HttpCode(HttpStatus.OK)
   updateById(@Param('id') id, @Body() article) {
     return this.articleService.updateById(id, article);
@@ -202,8 +201,7 @@ export class ArticleController {
    * @param id
    */
   @Delete(':id')
-  @Roles('admin')
-  @UseGuards(JwtAuthGuard)
+  @UseGuards(AdminAccessGuard)
   deleteById(@Param('id') id) {
     return this.articleService.deleteById(id);
   }

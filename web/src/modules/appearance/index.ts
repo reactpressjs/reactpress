@@ -1,4 +1,4 @@
-import type { AdminModule } from "@fecommunity/reactpress-toolkit/plugin/admin";
+import type { AdminModule } from "@reactpressjs/reactpress-toolkit/plugin/admin";
 
 export const appearanceModule: AdminModule = {
   id: "appearance",

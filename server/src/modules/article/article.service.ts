@@ -29,7 +29,7 @@ export class ArticleService {
     private readonly tagService: TagService,
     private readonly categoryService: CategoryService,
     private readonly webhookService: WebhookService,
-    private readonly hookService: HookService,
+    private readonly hookService: HookService
   ) {}
 
   private async saveRevision(article: Article) {
@@ -73,10 +73,7 @@ export class ArticleService {
     return next;
   }
 
-  private applyPublishFilterPatch(
-    patch: Partial<Article>,
-    filtered: Partial<Article>,
-  ): Partial<Article> {
+  private applyPublishFilterPatch(patch: Partial<Article>, filtered: Partial<Article>): Partial<Article> {
     const next = { ...patch };
     for (const key of ['summary', 'slug', 'seoKeywords', 'seoDescription'] as const) {
       if (filtered[key] !== undefined && filtered[key] !== null) {
@@ -88,10 +85,7 @@ export class ArticleService {
 
   private async assertSlugAvailable(slug: string | null | undefined, excludeId?: string): Promise<void> {
     if (!slug) return;
-    const query = this.articleRepository
-      .createQueryBuilder('article')
-      .where('article.slug = :slug', { slug })
-      .take(1);
+    const query = this.articleRepository.createQueryBuilder('article').where('article.slug = :slug', { slug }).take(1);
     if (excludeId) {
       query.andWhere('article.id != :excludeId', { excludeId });
     }
@@ -106,9 +100,7 @@ export class ArticleService {
    * @param article
    */
   async create(article: Partial<Article>): Promise<Article> {
-    let payload = this.normalizeSeoPayload(
-      await this.hookService.applyFilters('article.beforeCreate', { ...article }),
-    );
+    let payload = this.normalizeSeoPayload(await this.hookService.applyFilters('article.beforeCreate', { ...article }));
     const { title } = payload;
     const exist = await this.articleRepository.findOne({ where: { title } });
 
@@ -136,15 +128,15 @@ export class ArticleService {
       tags,
       needPassword: !!payload.password,
     });
-    await this.articleRepository.save(newArticle);
-    if (newArticle.status === 'publish') {
+    const savedArticle = await this.articleRepository.save(newArticle);
+    if (savedArticle.status === 'publish') {
       await this.hookService.doAction('article.afterPublish', {
-        article: newArticle,
+        article: savedArticle,
         isNew: true,
       });
     }
-    await this.notifyPublished(newArticle);
-    return newArticle;
+    await this.notifyPublished(savedArticle);
+    return savedArticle;
   }
 
   /**
@@ -157,7 +149,7 @@ export class ArticleService {
       .leftJoinAndSelect('article.category', 'category')
       .orderBy('article.publishAt', 'DESC');
 
-    const { page = 1, pageSize = 12, status, ...otherParams } = queryParams;
+    const { page = 1, pageSize = 12, status } = queryParams;
 
     query.skip((+page - 1) * +pageSize);
     query.take(+pageSize);
@@ -351,7 +343,7 @@ export class ArticleService {
    * @param article
    */
   async updateById(id, article: Partial<Article>): Promise<Article> {
-    const oldArticle = await this.articleRepository.findOne(id);
+    const oldArticle = await this.articleRepository.findOne({ where: { id: id } });
     await this.saveRevision(oldArticle);
     let { tags, category, status } = article; // eslint-disable-line prefer-const
 
@@ -374,7 +366,7 @@ export class ArticleService {
       ...patch,
       category: existCategory,
       publishAt: becomingPublish ? (dateFormat() as unknown as Date) : oldArticle.publishAt,
-      scheduledPublishAt: status === 'publish' ? null : article.scheduledPublishAt ?? oldArticle.scheduledPublishAt,
+      scheduledPublishAt: status === 'publish' ? null : (article.scheduledPublishAt ?? oldArticle.scheduledPublishAt),
     };
 
     if (tags) {
@@ -386,7 +378,7 @@ export class ArticleService {
         await this.applyPublishFilters({
           ...oldArticle,
           ...patch,
-        }),
+        })
       );
       patch = this.applyPublishFilterPatch(patch, filtered);
       await this.assertSlugAvailable(patch.slug, id);
@@ -414,11 +406,11 @@ export class ArticleService {
   }
 
   async restoreRevision(articleId: string, revisionId: string) {
-    const revision = await this.revisionRepository.findOne(revisionId);
+    const revision = await this.revisionRepository.findOne({ where: { id: revisionId } });
     if (!revision || revision.articleId !== articleId) {
       throw new HttpException(ApiMsg.REVISION_NOT_FOUND, HttpStatus.NOT_FOUND);
     }
-    const article = await this.articleRepository.findOne(articleId);
+    const article = await this.articleRepository.findOne({ where: { id: articleId } });
     await this.saveRevision(article);
     const restored = await this.articleRepository.merge(article, {
       title: revision.title,
@@ -435,7 +427,7 @@ export class ArticleService {
    * @param article
    */
   async updateViewsById(id): Promise<Article> {
-    const oldArticle = await this.articleRepository.findOne(id);
+    const oldArticle = await this.articleRepository.findOne({ where: { id: id } });
     const updatedArticle = await this.articleRepository.merge(oldArticle, {
       views: oldArticle.views + 1,
     });
@@ -448,7 +440,7 @@ export class ArticleService {
    * @returns
    */
   async updateLikesById(id, type): Promise<Article> {
-    const oldArticle = await this.articleRepository.findOne(id);
+    const oldArticle = await this.articleRepository.findOne({ where: { id: id } });
     const updatedArticle = await this.articleRepository.merge(oldArticle, {
       likes: type === 'like' ? oldArticle.likes + 1 : oldArticle.likes - 1,
     });
@@ -460,7 +452,7 @@ export class ArticleService {
    * @param id
    */
   async deleteById(id) {
-    const article = await this.articleRepository.findOne(id);
+    const article = await this.articleRepository.findOne({ where: { id: id } });
     return this.articleRepository.remove(article);
   }
 

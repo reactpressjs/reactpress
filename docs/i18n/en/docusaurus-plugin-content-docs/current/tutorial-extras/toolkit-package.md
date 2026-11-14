@@ -1,11 +1,11 @@
 ---
 sidebar_position: 4
 title: Toolkit Package Usage Guide
-description: '@fecommunity/reactpress-toolkit guide — TypeScript Headless API SDK auto-generated from OpenAPI for ReactPress REST endpoints.'
+description: '@reactpressjs/reactpress-toolkit guide — TypeScript Headless API SDK auto-generated from OpenAPI for ReactPress REST endpoints.'
 keywords: [reactpress, toolkit, headless, api sdk, typescript, openapi]
 ---
 
-# @fecommunity/reactpress-toolkit Usage Guide
+# @reactpressjs/reactpress-toolkit Usage Guide
 
 ReactPress Toolkit is a TypeScript-based API client toolkit automatically generated from OpenAPI/Swagger specifications for interacting with ReactPress backend services.
 
@@ -25,19 +25,19 @@ The toolkit is automatically generated from the ReactPress backend's OpenAPI spe
 ## Installation
 
 ```bash
-npm install @fecommunity/reactpress-toolkit
+npm install @reactpressjs/reactpress-toolkit
 ```
 
 or
 
 ```bash
-yarn add @fecommunity/reactpress-toolkit
+yarn add @reactpressjs/reactpress-toolkit
 ```
 
 or
 
 ```bash
-pnpm add @fecommunity/reactpress-toolkit
+pnpm add @reactpressjs/reactpress-toolkit
 ```
 
 ## Quick Start
@@ -45,7 +45,7 @@ pnpm add @fecommunity/reactpress-toolkit
 ### Using the Default API Instance
 
 ```typescript
-import { api } from '@fecommunity/reactpress-toolkit';
+import { api } from '@reactpressjs/reactpress-toolkit';
 
 // Get all articles
 const articles = await api.article.findAll();
@@ -64,7 +64,7 @@ const newArticle = await api.article.create({
 ### Using Named Exports
 
 ```typescript
-import { api, types, utils } from '@fecommunity/reactpress-toolkit';
+import { api, types, utils } from '@reactpressjs/reactpress-toolkit';
 
 // Working with typed data
 const article: types.IArticle = {
@@ -82,7 +82,7 @@ const formattedDate = utils.formatDate(new Date());
 You can create a custom API instance with specific configuration:
 
 ```typescript
-import { http } from '@fecommunity/reactpress-toolkit';
+import { http } from '@reactpressjs/reactpress-toolkit';
 
 const customApi = http.createApiInstance({
   baseURL: 'https://api.yourdomain.com',
@@ -99,7 +99,7 @@ const articles = await customApi.article.findAll();
 ### Automatic Retry Mechanisms
 
 ```typescript
-import { http } from '@fecommunity/reactpress-toolkit';
+import { http } from '@reactpressjs/reactpress-toolkit';
 
 // Configure retry settings
 const customApi = http.createApiInstance({
@@ -109,15 +109,15 @@ const customApi = http.createApiInstance({
     retryDelay: 1000,
     retryCondition: (error) => {
       return error.response?.status === 503 || error.code === 'ECONNABORTED';
-    }
-  }
+    },
+  },
 });
 ```
 
 ### Request/Response Interceptors
 
 ```typescript
-import { http } from '@fecommunity/reactpress-toolkit';
+import { http } from '@reactpressjs/reactpress-toolkit';
 
 const monitoredApi = http.createApiInstance({
   baseURL: 'https://api.yourdomain.com',
@@ -131,15 +131,15 @@ const monitoredApi = http.createApiInstance({
       // Add logging, metrics, etc.
       console.log(`Response: ${response.status} ${response.config.url}`);
       return response;
-    }
-  }
+    },
+  },
 });
 ```
 
 ### Authentication Handling
 
 ```typescript
-import { http, api, utils } from '@fecommunity/reactpress-toolkit';
+import { http, api, utils } from '@reactpressjs/reactpress-toolkit';
 
 // Automatic token refresh
 const secureApi = http.createApiInstance({
@@ -148,8 +148,8 @@ const secureApi = http.createApiInstance({
     tokenRefresh: async (refreshToken) => {
       const response = await api.auth.refresh({ refreshToken });
       return response.data.accessToken;
-    }
-  }
+    },
+  },
 });
 ```
 
@@ -158,7 +158,7 @@ const secureApi = http.createApiInstance({
 All data models are strongly typed and available through the `types` export:
 
 ```typescript
-import { types } from '@fecommunity/reactpress-toolkit';
+import { types } from '@reactpressjs/reactpress-toolkit';
 
 const user: types.IUser = {
   name: 'John Doe',
@@ -168,6 +168,7 @@ const user: types.IUser = {
 ```
 
 Available type definitions include:
+
 - `types.IUser`
 - `types.IArticle`
 - `types.ICategory`
@@ -185,7 +186,7 @@ Available type definitions include:
 The toolkit includes helpful utility functions:
 
 ```typescript
-import { utils } from '@fecommunity/reactpress-toolkit';
+import { utils } from '@reactpressjs/reactpress-toolkit';
 
 // Date formatting
 const formattedDate = utils.formatDate(new Date(), 'YYYY-MM-DD');
@@ -211,7 +212,7 @@ const slug = utils.createSlug('My Article Title');
 
 ```typescript
 import { useState, useEffect } from 'react';
-import { api, types } from '@fecommunity/reactpress-toolkit';
+import { api, types } from '@reactpressjs/reactpress-toolkit';
 
 const ArticleList = () => {
   const [articles, setArticles] = useState<types.IArticle[]>([]);
@@ -233,7 +234,7 @@ const ArticleList = () => {
   }, []);
 
   if (loading) return <div>Loading...</div>;
-  
+
   return (
     <div>
       {articles.map(article => (
@@ -250,19 +251,19 @@ const ArticleList = () => {
 ### Node.js Integration
 
 ```typescript
-import { api, types } from '@fecommunity/reactpress-toolkit';
+import { api, types } from '@reactpressjs/reactpress-toolkit';
 
 async function syncArticles() {
   try {
     // Fetch articles from ReactPress
     const response = await api.article.findAll({
       limit: 100,
-      offset: 0
+      offset: 0,
     });
-    
+
     // Process articles
     const articles: types.IArticle[] = response.data;
-    
+
     // Sync with another system
     for (const article of articles) {
       // Your sync logic here
@@ -281,7 +282,7 @@ syncArticles();
 ### Error Handling
 
 ```typescript
-import { api, utils } from '@fecommunity/reactpress-toolkit';
+import { api, utils } from '@reactpressjs/reactpress-toolkit';
 
 try {
   const articles = await api.article.findAll();
@@ -315,25 +316,25 @@ try {
 ### Pagination
 
 ```typescript
-import { api, types } from '@fecommunity/reactpress-toolkit';
+import { api, types } from '@reactpressjs/reactpress-toolkit';
 
 async function fetchAllArticles(): Promise<types.IArticle[]> {
   const allArticles: types.IArticle[] = [];
   let offset = 0;
   const limit = 50;
-  
+
   while (true) {
     const response = await api.article.findAll({ limit, offset });
     allArticles.push(...response.data);
-    
+
     if (response.data.length < limit) {
       // No more articles to fetch
       break;
     }
-    
+
     offset += limit;
   }
-  
+
   return allArticles;
 }
 ```

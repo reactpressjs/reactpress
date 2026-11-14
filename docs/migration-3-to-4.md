@@ -13,14 +13,14 @@ ReactPress **4.0** 在 3.x 平台能力之上新增：**插件系统**、**Elect
 | 已用 3.x `reactpress dev` + MySQL 的全栈 | 升级全局 CLI；注意 4.0 已精简命令；插件/桌面为增量 |
 | Headless / 仅 API                        | 无 Breaking；可按需启用插件                        |
 | 主题作者                                 | 无 Breaking；继续 `theme.json` + Pages Router      |
-| 新用户                                   | 直接安装 `@fecommunity/reactpress`                 |
+| 新用户                                   | 直接安装 `@reactpressjs/reactpress`                |
 
 ---
 
 ## 升级 CLI
 
 ```bash
-npm i -g @fecommunity/reactpress
+npm i -g @reactpressjs/reactpress
 cd your-site
 reactpress doctor
 reactpress init    # 4.0 全局 CLI：init 即启动（默认 SQLite）
@@ -66,12 +66,12 @@ pnpm build:desktop
 
 - `init` 自动安装 featured npm 主题
 - 也可在 **Admin → 外观 → 主题** 安装
-- 入门：`hello-world`（仓库 local）；生产：`@fecommunity/reactpress-theme-starter`
+- 入门：`hello-world`（仓库 local）；生产：`@reactpressjs/reactpress-theme-starter`
 
 Monorepo：
 
 ```bash
-reactpress theme add @fecommunity/reactpress-theme-starter@1.0.0-beta.0
+reactpress theme add @reactpressjs/reactpress-theme-starter@1.0.0-beta.0
 ```
 
 ---

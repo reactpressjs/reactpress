@@ -32,7 +32,7 @@ export class ApiKeyService {
   }
 
   async revoke(id: string) {
-    const key = await this.apiKeyRepository.findOne(id);
+    const key = await this.apiKeyRepository.findOne({ where: { id: id } });
     if (!key) {
       throw new HttpException(ApiMsg.API_KEY_NOT_FOUND, HttpStatus.NOT_FOUND);
     }

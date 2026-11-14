@@ -1,6 +1,6 @@
 {
-  "name": "@fecommunity/reactpress-desktop",
-  "version": "4.0.0",
+  "name": "@reactpressjs/reactpress-desktop",
+  "version": "5.0.0",
   "private": true,
   "description": "ReactPress desktop client — offline writing with SQLite, sync to production API",
   "main": "out/main/index.js",

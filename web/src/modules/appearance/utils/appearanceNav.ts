@@ -1,7 +1,7 @@
 import type {
   ThemeAppearancePanel,
   ThemeAppearanceSection,
-} from "@fecommunity/reactpress-toolkit/theme";
+} from "@reactpressjs/reactpress-toolkit/theme";
 
 import type { ThemeListItem } from "@/shared/api/themes";
 

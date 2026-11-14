@@ -26,9 +26,7 @@ See [Appearance & themes](/docs/user-guide/appearance-themes) for the full Admin
 | Hello-world template                                                                 | Minimal theme for learning the contract                                            |
 | Live theme demo                                                                      | [reactpress-theme-starter.vercel.app](https://reactpress-theme-starter.vercel.app) |
 
-<a id="templates"></a>
-
-## Templates
+## Templates {#templates}
 
 Templates are ready-made starting points for blogs, docs, and marketing sites. Use a starter theme, then tune layout and content types in Admin.
 

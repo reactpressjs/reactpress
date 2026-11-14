@@ -58,7 +58,7 @@ export function syncAdminDistToPublic(targetDir, options = {}) {
   const indexPath = path.join(distDir, "index.html");
   if (!fs.existsSync(indexPath)) {
     throw new Error(
-      `Admin dist not found at ${distDir}. Build @fecommunity/reactpress-web first or install a published package with dist/.`,
+      `Admin dist not found at ${distDir}. Build @reactpressjs/reactpress-web first or install a published package with dist/.`,
     );
   }
 

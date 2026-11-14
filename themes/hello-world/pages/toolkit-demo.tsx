@@ -1,10 +1,6 @@
-import {
-  fetchThemeCatalog,
-  themeApi,
-  themeStaticProps,
-} from '@fecommunity/reactpress-toolkit/theme';
-import type * as types from '@fecommunity/reactpress-toolkit/types';
-import * as utils from '@fecommunity/reactpress-toolkit/utils';
+import { fetchThemeCatalog, themeApi, themeStaticProps } from '@reactpressjs/reactpress-toolkit/theme';
+import type * as types from '@reactpressjs/reactpress-toolkit/types';
+import * as utils from '@reactpressjs/reactpress-toolkit/utils';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -419,7 +415,8 @@ export default function ToolkitDemo({ articles, categories, tags, stats }: Toolk
         body {
           padding: 0;
           margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+          font-family:
+            -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
             'Helvetica Neue', sans-serif;
           background-color: #f8f9fa;
         }

@@ -1,7 +1,7 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { InjectRepository } from '@nestjs/typeorm';
-import { FindManyOptions, Repository } from 'typeorm';
+import { FindOptionsWhere, Repository } from 'typeorm';
 
 import { ApiMsg } from '../../common/api-messages';
 import { isValidUsername } from '../../utils/user.util';
@@ -20,22 +20,22 @@ export class UserService {
     this.createUser({ name, password, role: 'admin' }, true)
       .then(() => {
         console.log(
-          `[reactpress] Admin account created (username: ${name}). Change the default password after first login.`,
+          `[reactpress] Admin account created (username: ${name}). Change the default password after first login.`
         );
       })
-      .catch(async (e) => {
+      .catch(async () => {
         const existAdminUser = await this.userRepository.findOne({ where: { name } });
         const isDefaultPasswd = User.comparePassword(password, existAdminUser.password);
         if (isDefaultPasswd) {
           console.log(
-            `[reactpress] Admin account already exists (username: ${name}). Change the default password if you still use factory credentials.`,
+            `[reactpress] Admin account already exists (username: ${name}). Change the default password if you still use factory credentials.`
           );
         }
       });
   }
 
   async findByConditions(conditions: Partial<User>) {
-    return await this.userRepository.findOne(conditions);
+    return await this.userRepository.findOne({ where: conditions as FindOptionsWhere<User> });
   }
 
   async findAll(queryParams): Promise<[User[], number]> {
@@ -88,8 +88,7 @@ export class UserService {
     }
 
     const newUser = await this.userRepository.create(user);
-    await this.userRepository.save(newUser);
-    return newUser;
+    return this.userRepository.save(newUser);
   }
 
   /**
@@ -151,7 +150,7 @@ export class UserService {
    * @param id
    */
   async findById(id): Promise<User> {
-    return this.userRepository.findOne(id);
+    return this.userRepository.findOne({ where: { id: id } });
   }
 
   /**
@@ -169,7 +168,7 @@ export class UserService {
       }
     }
 
-    const oldUser = await this.userRepository.findOne(id);
+    const oldUser = await this.userRepository.findOne({ where: { id: id } });
     delete user.password;
 
     if (user.name && user.name !== oldUser.name) {
@@ -189,7 +188,7 @@ export class UserService {
    * @param id
    */
   async updatePassword(id, user): Promise<User> {
-    const existUser = await this.userRepository.findOne(id);
+    const existUser = await this.userRepository.findOne({ where: { id: id } });
     const { oldPassword, newPassword } = user;
 
     if (!existUser || !(await User.comparePassword(oldPassword, existUser.password))) {

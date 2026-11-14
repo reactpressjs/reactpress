@@ -31,7 +31,7 @@ const items: HubItem[] = [
     Icon: IconPlugins,
     title: translate({ message: 'Plugins', id: 'home.ecosystem.plugins.title' }),
     description: translate({
-      message: 'Extend Admin and API with Hooks — SEO, summaries, image pipelines, and custom slots.',
+      message: 'Extend Admin and API with Hooks — SEO, summaries, image pipelines, and AI Assist.',
       id: 'home.ecosystem.plugins.desc',
     }),
     to: '/plugins',
@@ -45,7 +45,7 @@ const items: HubItem[] = [
       message: 'Start faster with theme-starter scaffolds and production-ready site templates.',
       id: 'home.ecosystem.templates.desc',
     }),
-    to: '/themes#templates',
+    to: '/themes/#templates',
     cta: translate({ message: 'Browse templates', id: 'home.ecosystem.templates.cta' }),
     accent: 'templates',
   },

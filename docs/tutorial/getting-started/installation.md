@@ -30,10 +30,10 @@ node -v   # 应显示 v20.x 或更高
 ## 安装 CLI（推荐）
 
 ```bash
-npm install -g @fecommunity/reactpress
+npm install -g @reactpressjs/reactpress
 ```
 
-> 4.0 稳定版在 npm **`@latest`**（`npm i -g @fecommunity/reactpress`）。
+> **5.0** 在 npm **`@latest`**（`npm i -g @reactpressjs/reactpress`）。
 
 首次 `npm install -g` 会触发 `postinstall`，下载 bundled server 运行时依赖，约需 1–2 分钟。
 
@@ -44,9 +44,9 @@ reactpress --version
 reactpress --help
 ```
 
-## 4.0 CLI 命令一览
+## CLI 命令一览
 
-4.0 面向终端用户精简为四个核心命令；主题、插件等高级操作在 **Admin 后台**完成。
+全局 CLI 面向终端用户精简为核心命令；主题、插件与 AI Assist 在 **Admin 后台**完成。
 
 | 命令                      | 说明                                       |
 | ------------------------- | ------------------------------------------ |

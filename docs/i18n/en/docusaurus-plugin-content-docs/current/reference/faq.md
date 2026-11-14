@@ -88,30 +88,37 @@ Content can be exported and re-imported via scripts or integrated through the He
 <details>
 <summary><strong>Is ReactPress free?</strong></summary>
 
-Yes. ReactPress is open source under the MIT license. Install globally: `npm i -g @fecommunity/reactpress`.
+Yes. ReactPress is open source under the MIT license. Install globally: `npm i -g @reactpressjs/reactpress`.
 
 </details>
 
 ## Versions & upgrades
 
 <details>
-<summary><strong>Is 4.0 production-ready?</strong></summary>
+<summary><strong>Is 5.0 production-ready?</strong></summary>
 
-4.0.0 is the current stable release (npm `@latest`). When upgrading from 3.x, read [3.x → 4.0 migration](../tutorial-extras/migration-3-to-4.md) and validate on staging.
+5.0.0 is the current recommended release (npm `@latest`, package `@reactpressjs/reactpress`). From 4.x, see [4.x → 5.0 migration](../tutorial-extras/migration-4-to-5.md). From 3.x, read [3.x → 4.0 migration](../tutorial-extras/migration-3-to-4.md) first and validate on staging.
+
+</details>
+
+<details>
+<summary><strong>How do I upgrade from 4.x to 5.0?</strong></summary>
+
+See [4.x → 5.0 migration](../tutorial-extras/migration-4-to-5.md). 5.0 is mainly AI Assist — **no directory breaking changes**; existing sites must install and activate the plugin once.
 
 </details>
 
 <details>
 <summary><strong>How do I upgrade from 3.x to 4.0?</strong></summary>
 
-See [migration guide](../tutorial-extras/migration-3-to-4.md). 4.0 has **no forced breaking changes**; plugins and desktop are additive.
+See [migration guide](../tutorial-extras/migration-3-to-4.md). 4.0 has **no forced breaking changes**; plugins and desktop are additive. New installs should use 5.0.
 
 </details>
 
 <details>
-<summary><strong>Can I still use @fecommunity/reactpress-server?</strong></summary>
+<summary><strong>Can I still use @reactpressjs/reactpress-server?</strong></summary>
 
-**Deprecated.** New projects should use `@fecommunity/reactpress` CLI bundled API or Monorepo source deployment.
+**Deprecated.** New projects should use `@reactpressjs/reactpress` CLI bundled API or Monorepo source deployment.
 
 </details>
 

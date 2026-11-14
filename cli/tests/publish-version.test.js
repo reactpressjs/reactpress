@@ -50,30 +50,30 @@ describe('resolveNpmTag for stable promotion', () => {
   });
 });
 
-describe('4.0.0 stable release consistency', () => {
-  it('keeps core package versions aligned at 4.0.0 without prerelease', () => {
+describe('5.0.0 stable release consistency', () => {
+  it('keeps core package versions aligned at 5.0.0 without prerelease', () => {
     const versions = new Map();
     for (const pkg of CORE_PUBLISH_PACKAGES) {
       const pkgJson = JSON.parse(fs.readFileSync(path.join(REPO_ROOT, pkg.path, 'package.json'), 'utf8'));
       versions.set(pkg.name, pkgJson.version);
-      assert.equal(pkgJson.version, '4.0.0', `${pkg.name} must be 4.0.0 for stable @latest`);
+      assert.equal(pkgJson.version, '5.0.0', `${pkg.name} must be 5.0.0 for stable @latest`);
       assert.equal(pkgJson.version.includes('-'), false, `${pkg.name} must not carry a prerelease suffix`);
     }
 
     const rootVersion = JSON.parse(fs.readFileSync(path.join(REPO_ROOT, 'package.json'), 'utf8')).version;
     const desktopVersion = JSON.parse(fs.readFileSync(path.join(REPO_ROOT, 'desktop/package.json'), 'utf8')).version;
 
-    assert.equal(rootVersion, '4.0.0');
-    assert.equal(desktopVersion, '4.0.0');
-    assert.equal(versions.get('@fecommunity/reactpress'), '4.0.0');
+    assert.equal(rootVersion, '5.0.0');
+    assert.equal(desktopVersion, '5.0.0');
+    assert.equal(versions.get('@reactpressjs/reactpress'), '5.0.0');
   });
 
-  it('defaults docs install helpers to latest / 4.0.0', () => {
+  it('defaults docs install helpers to latest / 5.0.0', () => {
     const packageVersions = fs.readFileSync(path.join(REPO_ROOT, 'docs/src/npm/packageVersions.ts'), 'utf8');
-    assert.match(packageVersions, /latest:\s*'4\.0\.0'/);
-    assert.match(packageVersions, /buildInstallCommand\(tag:\s*'beta'\s*\|\s*'latest'\s*=\s*'latest'\)/);
+    assert.match(packageVersions, /FALLBACK_REACTPRESS_LATEST\s*=\s*'5\.0\.0'/);
+    assert.match(packageVersions, /export function buildInstallCommand\(\):\s*string/);
 
     const quickStart = fs.readFileSync(path.join(REPO_ROOT, 'docs/src/constants/quickStartCommands.ts'), 'utf8');
-    assert.match(quickStart, /buildInstallCommand\('latest'\)/);
+    assert.match(quickStart, /buildInstallCommand\(\)/);
   });
 });

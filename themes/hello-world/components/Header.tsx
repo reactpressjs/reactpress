@@ -7,7 +7,7 @@ import {
   useNavActive,
   useSiteMeta,
   useThemeModBool,
-} from '@fecommunity/reactpress-toolkit/theme';
+} from '@reactpressjs/reactpress-toolkit/theme';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -28,12 +28,7 @@ export default function Header() {
         Skip to content
       </a>
       <Link href="/" className="site-brand">
-        <SiteLogo
-          className="site-logo"
-          alt={showBranding ? '' : siteName}
-          width={48}
-          height={48}
-        />
+        <SiteLogo className="site-logo" alt={showBranding ? '' : siteName} width={48} height={48} />
         {showBranding ? <SiteBranding className="site-title-text" as="span" /> : null}
       </Link>
       {showBranding ? <SiteTagline /> : null}
@@ -42,11 +37,7 @@ export default function Header() {
         activeId={activeId}
         className="site-nav"
         renderLink={({ item, active }) => (
-          <Link
-            href={item.href}
-            className={active ? 'active' : ''}
-            aria-current={active ? 'page' : undefined}
-          >
+          <Link href={item.href} className={active ? 'active' : ''} aria-current={active ? 'page' : undefined}>
             {item.label}
           </Link>
         )}

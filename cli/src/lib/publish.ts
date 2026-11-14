@@ -15,23 +15,23 @@ const NPM_REGISTRY = 'https://registry.npmjs.org';
 /** Publish order: dependencies first, CLI last. */
 const CORE_PUBLISH_PACKAGES = [
   {
-    name: '@fecommunity/reactpress-toolkit',
+    name: '@reactpressjs/reactpress-toolkit',
     path: 'toolkit',
     description: 'Official TypeScript SDK — API clients, theme SSR, plugin hooks',
   },
   {
-    name: '@fecommunity/reactpress-web',
+    name: '@reactpressjs/reactpress-web',
     path: 'web',
     description: 'Official Admin SPA — WordPress-style writing UI',
   },
   {
-    name: '@fecommunity/reactpress-server',
+    name: '@reactpressjs/reactpress-server',
     path: 'server',
     description: t('publish.pkg.server'),
     deprecated: true,
   },
   {
-    name: '@fecommunity/reactpress',
+    name: '@reactpressjs/reactpress',
     path: 'cli',
     description: 'Write with Focus. Publish with Joy.',
   },
@@ -335,11 +335,11 @@ async function executePublish(plan, options = {}) {
 
   console.log(chalk.green(`\n🎉 Published ${CORE_PUBLISH_PACKAGES.length} packages @ ${version} (${tag})`));
   console.log(chalk.cyan('\nVerify:'));
-  console.log(chalk.gray(`  npm view @fecommunity/reactpress dist-tags`));
+  console.log(chalk.gray(`  npm view @reactpressjs/reactpress dist-tags`));
   if (tag === 'beta') {
-    console.log(chalk.gray(`  npm i -g @fecommunity/reactpress@beta`));
+    console.log(chalk.gray(`  npm i -g @reactpressjs/reactpress@beta`));
   } else {
-    console.log(chalk.gray(`  npm i -g @fecommunity/reactpress@${version}`));
+    console.log(chalk.gray(`  npm i -g @reactpressjs/reactpress@${version}`));
   }
   console.log(chalk.cyan('\nNext:'));
   console.log(chalk.gray(`  git tag v${version} && git push && git push --tags`));

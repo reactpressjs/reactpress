@@ -1,6 +1,7 @@
 import { ConfigService } from '@nestjs/config';
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 
+import { AiReview } from '../modules/ai/ai-review.entity';
 import { ApiKey } from '../modules/api-key/api-key.entity';
 import { Article } from '../modules/article/article.entity';
 import { ArticleRevision } from '../modules/article/article-revision.entity';
@@ -33,6 +34,7 @@ const ENTITIES = [
   Search,
   ApiKey,
   Webhook,
+  AiReview,
 ];
 
 /** Default: SQLite / non-production sync on; production MySQL off (avoid ALTER wiping timestamps). Override with DB_SYNCHRONIZE=true|false. */

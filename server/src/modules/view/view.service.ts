@@ -31,9 +31,8 @@ export class ViewService {
     }
     const { data: uaInfo } = parseUserAgent(userAgent);
     const address = parseIp(ip);
-    const newData = await this.viewRepository.create({ ip, userAgent, url, address, ...uaInfo });
-    await this.viewRepository.save(newData);
-    return newData;
+    const newData = this.viewRepository.create({ ip, userAgent, url, address, ...uaInfo });
+    return this.viewRepository.save(newData);
   }
 
   /**
@@ -72,7 +71,7 @@ export class ViewService {
    * @param id
    */
   async findById(id): Promise<View> {
-    return this.viewRepository.findOne(id);
+    return this.viewRepository.findOne({ where: { id: id } });
   }
 
   /**
@@ -80,7 +79,7 @@ export class ViewService {
    * @param id
    */
   async deleteById(id) {
-    const data = await this.viewRepository.findOne(id);
+    const data = await this.viewRepository.findOne({ where: { id: id } });
     return this.viewRepository.remove(data);
   }
 }

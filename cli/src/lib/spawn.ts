@@ -58,23 +58,6 @@ function runNodeScript(scriptPath, args = [], options = {}) {
   });
 }
 
-function spawnDetached(scriptPath, args = [], options = {}) {
-  const child = spawn(process.execPath, [scriptPath, ...args], {
-    stdio: options.stdio ?? 'ignore',
-    detached: true,
-    cwd: options.cwd,
-    env: {
-      ...process.env,
-      REACTPRESS_LANG: process.env.REACTPRESS_LANG || resolveLocale(),
-      REACTPRESS_ORIGINAL_CWD:
-        options.cwd || process.env.REACTPRESS_ORIGINAL_CWD || process.cwd(),
-      ...options.env,
-    },
-  });
-  child.unref();
-  return child;
-}
-
 async function runReactpressCli(args, options = {}) {
   const { initProject } = require('../core/services/init');
   const directory = args[1] ?? options.cwd ?? ensureOriginalCwd();
@@ -100,7 +83,6 @@ function resolveCliScript(relativePath) {
 module.exports = {
   runSync,
   runNodeScript,
-  spawnDetached,
   runReactpressCli,
   resolveCliScript,
 };

@@ -1,14 +1,14 @@
-# @fecommunity/reactpress-server
+# @reactpressjs/reactpress-server
 
 > **ReactPress headless REST API — NestJS backend for the publishing platform.**
 
-[![npm version](https://img.shields.io/npm/v/@fecommunity/reactpress-server/beta.svg?label=beta)](https://www.npmjs.com/package/@fecommunity/reactpress-server/v/beta)
-[![npm latest](https://img.shields.io/npm/v/@fecommunity/reactpress-server.svg?label=latest)](https://www.npmjs.com/package/@fecommunity/reactpress-server)
-[![License: MIT](https://img.shields.io/npm/l/@fecommunity/reactpress-server.svg)](https://github.com/reactpressjs/reactpress/blob/master/server/LICENSE)
+[![npm version](https://img.shields.io/npm/v/@reactpressjs/reactpress-server/beta.svg?label=beta)](https://www.npmjs.com/package/@reactpressjs/reactpress-server/v/beta)
+[![npm latest](https://img.shields.io/npm/v/@reactpressjs/reactpress-server.svg?label=latest)](https://www.npmjs.com/package/@reactpressjs/reactpress-server)
+[![License: MIT](https://img.shields.io/npm/l/@reactpressjs/reactpress-server.svg)](https://github.com/reactpressjs/reactpress/blob/master/server/LICENSE)
 
-> **Deprecated** — from ReactPress 3.1 onward, the API ships inside [`@fecommunity/reactpress`](https://www.npmjs.com/package/@fecommunity/reactpress) (CLI). New projects should run `npx @fecommunity/reactpress init` instead of installing this package standalone.
+> **Deprecated** — from ReactPress 3.1 onward, the API ships inside [`@reactpressjs/reactpress`](https://www.npmjs.com/package/@reactpressjs/reactpress) (CLI). New projects should run `npx @reactpressjs/reactpress init` instead of installing this package standalone.
 
-This package remains available for legacy deployments and direct API integration. It powers themes, Admin, and desktop clients through [@fecommunity/reactpress-toolkit](../toolkit/).
+This package remains available for legacy deployments and direct API integration. It powers themes, Admin, and desktop clients through [@reactpressjs/reactpress-toolkit](../toolkit/).
 
 | Capability        | Detail                                                      |
 | :---------------- | :---------------------------------------------------------- |
@@ -22,9 +22,9 @@ This package remains available for legacy deployments and direct API integration
 ## Quick start
 
 ```bash
-npx @fecommunity/reactpress-server
+npx @reactpressjs/reactpress-server
 # production with PM2
-npx @fecommunity/reactpress-server --pm2
+npx @reactpressjs/reactpress-server --pm2
 ```
 
 On first run, the install wizard opens in your browser, creates configuration, and starts the API at `http://localhost:3002` (Swagger: `/api`).
@@ -85,7 +85,7 @@ The install wizard generates `.env`. Key variables:
 ## Integration
 
 ```typescript
-import { api } from '@fecommunity/reactpress-toolkit';
+import { api } from '@reactpressjs/reactpress-toolkit';
 
 const articles = await api.article.findAll();
 ```

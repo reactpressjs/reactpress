@@ -5,6 +5,7 @@
  */
 import fs from 'fs';
 import path from 'path';
+import { setTimeout as sleep } from 'node:timers/promises';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -22,32 +23,36 @@ const REMOVE_DIRS = [
 const PRUNE_DIRS = ['out', 'dist', 'server/dist', 'toolkit/dist'];
 
 function shouldPruneFile(name) {
-  return (
-    name.endsWith('.map') ||
-    name.endsWith('.d.ts') ||
-    name.endsWith('.d.ts.map') ||
-    name.endsWith('.tsbuildinfo')
-  );
+  return name.endsWith('.map') || name.endsWith('.d.ts') || name.endsWith('.d.ts.map') || name.endsWith('.tsbuildinfo');
 }
 
-function rmDir(rel) {
+async function rmDir(rel) {
   const abs = path.join(cliRoot, rel);
   if (!fs.existsSync(abs)) return;
-  fs.rmSync(abs, { recursive: true, force: true });
-  console.log(`[prune-bundled-pack] removed ${rel}`);
+  let lastError;
+  for (let attempt = 0; attempt < 10; attempt++) {
+    try {
+      fs.rmSync(abs, { recursive: true, force: true, maxRetries: 5, retryDelay: 100 });
+      console.log(`[prune-bundled-pack] removed ${rel}`);
+      return;
+    } catch (err) {
+      lastError = err;
+      await sleep(100 * (attempt + 1));
+    }
+  }
+  throw lastError;
 }
 
-function walkPrune(dir) {
+async function walkPrune(dir) {
   if (!fs.existsSync(dir)) return;
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const abs = path.join(dir, entry.name);
     if (entry.isDirectory()) {
       if (entry.name === 'node_modules') {
-        fs.rmSync(abs, { recursive: true, force: true });
-        console.log(`[prune-bundled-pack] removed ${path.relative(cliRoot, abs)}`);
+        await rmDir(path.relative(cliRoot, abs));
         continue;
       }
-      walkPrune(abs);
+      await walkPrune(abs);
       continue;
     }
     if (shouldPruneFile(entry.name)) {
@@ -56,14 +61,17 @@ function walkPrune(dir) {
   }
 }
 
-function main() {
+async function main() {
   for (const rel of REMOVE_DIRS) {
-    rmDir(rel);
+    await rmDir(rel);
   }
   for (const rel of PRUNE_DIRS) {
-    walkPrune(path.join(cliRoot, rel));
+    await walkPrune(path.join(cliRoot, rel));
   }
   console.log('[prune-bundled-pack] done');
 }
 
-main();
+main().catch((err) => {
+  console.error('[prune-bundled-pack] failed:', err);
+  process.exit(1);
+});

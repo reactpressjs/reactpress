@@ -310,11 +310,6 @@ function buildThemePublicApiUrl(projectRoot) {
   return buildLocalThemeApiUrl(projectRoot);
 }
 
-/** @deprecated use buildThemeServerApiUrl / buildThemePublicApiUrl */
-function buildThemeApiUrl(projectRoot) {
-  return buildThemeServerApiUrl(projectRoot);
-}
-
 function buildThemeChildEnv(projectRoot, { port, serverApiUrl, publicApiUrl, themeId }) {
   const keys = [
     'PATH',
@@ -835,7 +830,6 @@ module.exports = {
   startThemeSiteWithWatch,
   stopThemeSite,
   getClientPort,
-  buildThemeApiUrl,
   buildThemeServerApiUrl,
   buildThemePublicApiUrl,
   readManifestSignature,

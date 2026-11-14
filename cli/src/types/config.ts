@@ -52,13 +52,3 @@ export interface DatabaseEnsureResult {
   ok: boolean;
   message?: string;
 }
-
-export interface ServerStatus {
-  running: boolean;
-  pid?: number;
-  port?: number;
-  url?: string;
-  databaseReady: boolean;
-  databaseMode: DatabaseMode;
-  databaseType: DatabaseType;
-}

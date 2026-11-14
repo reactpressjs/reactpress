@@ -20,3 +20,5 @@ export {
 } from './twentytwentyfive-vars';
 export type { FetchSiteNavConfigOptions, SiteNavConfig } from './siteNav';
 export { fetchSiteNavConfig } from './siteNav';
+export type { ThemePlaceholderCoverOptions } from './theme-placeholder-cover';
+export { buildThemePlaceholderCoverSvg } from './theme-placeholder-cover';

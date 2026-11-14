@@ -3,30 +3,35 @@ import {
   type AdminMenuItem,
   createAdminRegistry,
   filterMenuByPermissions,
-} from "@fecommunity/reactpress-toolkit/plugin/admin";
+} from "@reactpressjs/reactpress-toolkit/plugin/admin";
 
+import { aiModule } from "@/modules/ai";
 import { appearanceModule } from "@/modules/appearance";
 import { articleModule } from "@/modules/article";
 import { commentModule } from "@/modules/comment";
 import { dashboardModule } from "@/modules/dashboard";
+import { dataModule } from "@/modules/data";
 import { mediaModule } from "@/modules/media";
 import { pageModule } from "@/modules/page";
 import { pluginsModule } from "@/modules/plugins";
 import { settingsModule } from "@/modules/settings";
 import { userModule } from "@/modules/user";
 
-/** 侧边栏暂时隐藏的模块，改为 true 即可恢复菜单 */
+/** Sidebar modules that can be temporarily hidden; set to true to restore. */
 const SHOW_APPEARANCE_IN_SIDEBAR = true;
 const SHOW_PLUGINS_IN_SIDEBAR = true;
+const SHOW_DATA_IN_SIDEBAR = true;
 
 const CORE_MODULES = [
   dashboardModule,
   articleModule,
+  aiModule,
   commentModule,
   mediaModule,
   pageModule,
   ...(SHOW_APPEARANCE_IN_SIDEBAR ? [appearanceModule] : []),
   ...(SHOW_PLUGINS_IN_SIDEBAR ? [pluginsModule] : []),
+  ...(SHOW_DATA_IN_SIDEBAR ? [dataModule] : []),
   userModule,
   settingsModule,
 ];

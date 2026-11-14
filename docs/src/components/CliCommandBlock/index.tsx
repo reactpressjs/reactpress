@@ -118,7 +118,7 @@ function OutputLine({ text }: { text: string }) {
     );
   }
 
-  if (text.startsWith('@fecommunity/')) {
+  if (text.startsWith('@reactpressjs/')) {
     return <span className={clsx(styles.outputText, styles.outputPackage)}>{text}</span>;
   }
 

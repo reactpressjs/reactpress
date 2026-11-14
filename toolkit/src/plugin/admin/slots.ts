@@ -32,16 +32,15 @@ export interface ArticleEditorDraftFields {
   seoKeywords: string;
   seoDescription: string;
   status: 'draft' | 'publish';
+  /** Markdown body — optional so older slot hosts stay compatible. */
+  content?: string;
 }
 
 /** Context passed to `article.editor.*` slot components from the article editor page. */
 export interface ArticleEditorAdminSlotContext {
   articleId?: string;
   draft: ArticleEditorDraftFields;
-  patch: <K extends keyof ArticleEditorDraftFields>(
-    key: K,
-    value: ArticleEditorDraftFields[K],
-  ) => void;
+  patch: <K extends keyof ArticleEditorDraftFields>(key: K, value: ArticleEditorDraftFields[K]) => void;
   /** Host-provided i18n helper (typically `react-i18next` `t`). */
   translate: (key: string) => string;
 }

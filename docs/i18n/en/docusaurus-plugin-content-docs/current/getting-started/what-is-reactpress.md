@@ -38,7 +38,7 @@ One global CLI ships:
 | **CLI**       | `init` · `doctor` · `logs` · `stop` — live in about **60 seconds**       |
 
 ```bash
-npm i -g @fecommunity/reactpress
+npm i -g @reactpressjs/reactpress
 mkdir my-site && cd my-site
 reactpress init
 ```
@@ -96,16 +96,16 @@ flowchart LR
 
 Deeper model: [Core concepts](./core-concepts.md) · [Architecture overview](../developer-guide/architecture-overview.md)
 
-## ReactPress 4.0 at a glance
+## ReactPress 5.0 at a glance
 
-**ReactPress 4.0** (codename **Extend**) is the current recommended line:
+**ReactPress 5.0** (codename **Intelligent**) is the current recommended line:
 
-- Plugin system + Admin slots
-- Electron desktop client
-- npm theme catalog (install in Admin; `init` auto-activates the featured theme)
-- Embedded SQLite by default (Docker / MySQL optional)
+- AI Assist: bring your own API Key; Skills write drafts only
+- Review Inbox: compare, then publish now or schedule
+- New installs activate AI Assist automatically
+- 4.0 plugins, desktop, npm themes, and default SQLite remain
 
-License: **MIT**. Package: [@fecommunity/reactpress](https://www.npmjs.com/package/@fecommunity/reactpress) · Source: [reactpressjs/reactpress](https://github.com/reactpressjs/reactpress) (official)
+License: **MIT**. Package: [@reactpressjs/reactpress](https://www.npmjs.com/package/@reactpressjs/reactpress) · Source: [reactpressjs/reactpress](https://github.com/reactpressjs/reactpress) (official)
 
 :::tip Name disambiguation
 ReactPress here is the **reactpressjs open-source publishing platform** (NestJS + Next.js CMS). It is **not** the WordPress plugin that embeds React apps into existing WP sites.
@@ -113,13 +113,13 @@ ReactPress here is the **reactpressjs open-source publishing platform** (NestJS 
 
 ## Quick answers
 
-| Question                   | Answer                                                                                            |
-| -------------------------- | ------------------------------------------------------------------------------------------------- |
-| Is it free?                | Yes — MIT open source                                                                             |
-| Do I need Docker?          | No by default (SQLite). Docker only for embedded-docker / external MySQL                          |
-| Is it production-ready?    | 4.0.0 is stable (`@latest`); stage first when upgrading from 3.x — see [FAQ](../reference/faq.md) |
-| Can I use my own frontend? | Yes — Headless REST + API keys                                                                    |
-| vs WordPress?              | Same editing idea, React/Next delivery — [full comparison](./reactpress-vs-wordpress.md)          |
+| Question                   | Answer                                                                                               |
+| -------------------------- | ---------------------------------------------------------------------------------------------------- |
+| Is it free?                | Yes — MIT open source                                                                                |
+| Do I need Docker?          | No by default (SQLite). Docker only for embedded-docker / external MySQL                             |
+| Is it production-ready?    | 5.0.0 is the current release; see [4.x → 5.0](../tutorial-extras/migration-4-to-5.md) when upgrading |
+| Can I use my own frontend? | Yes — Headless REST + API keys                                                                       |
+| vs WordPress?              | Same editing idea, React/Next delivery — [full comparison](./reactpress-vs-wordpress.md)             |
 
 ## Start here
 

@@ -26,7 +26,7 @@ describe('lib/theme-registry', () => {
     assert.ok(starter);
     assert.equal(starter.npm, OFFICIAL_THEME_STARTER_SPEC);
     assert.deepEqual(starter.dependency, {
-      name: '@fecommunity/reactpress-theme-starter',
+      name: '@reactpressjs/reactpress-theme-starter',
       version: '1.0.0-beta.0',
     });
     assert.equal(starter.featured, true);
@@ -36,10 +36,7 @@ describe('lib/theme-registry', () => {
   });
 
   it('resolveCatalogInstallSpec maps catalog id to npm spec', () => {
-    assert.equal(
-      resolveCatalogInstallSpec(REPO_ROOT, OFFICIAL_THEME_STARTER_ID),
-      OFFICIAL_THEME_STARTER_SPEC,
-    );
+    assert.equal(resolveCatalogInstallSpec(REPO_ROOT, OFFICIAL_THEME_STARTER_ID), OFFICIAL_THEME_STARTER_SPEC);
   });
 
   it('readThemesRegistryMeta lists local ids and npm anchor dirs', () => {
@@ -57,9 +54,7 @@ describe('lib/theme-registry', () => {
   it('readThemeSources exposes local and npm kinds', () => {
     const sources = readThemeSources(REPO_ROOT);
     assert.ok(sources.local.some((entry) => entry.id === 'hello-world' && entry.kind === 'local'));
-    assert.ok(
-      sources.npm.some((entry) => entry.id === OFFICIAL_THEME_STARTER_ID && entry.kind === 'npm'),
-    );
+    assert.ok(sources.npm.some((entry) => entry.id === OFFICIAL_THEME_STARTER_ID && entry.kind === 'npm'));
   });
 
   it('catalogEntryToManifest maps catalog metadata', () => {

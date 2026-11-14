@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 /**
- * Copy core CLI runtime (dist, server, templates) from the legacy npm package
- * so @fecommunity/reactpress-cli can be published as a self-contained package.
+ * Optional legacy sync: copy core CLI runtime (dist, server, templates) when a
+ * historical bundled package is present. Monorepo builds use sync-monorepo-server
+ * instead; missing legacy package is a no-op.
  */
 import fs from 'fs';
 import path from 'path';
@@ -12,7 +13,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const cliRoot = path.join(__dirname, '..');
 const require = createRequire(import.meta.url);
 
-const LEGACY_PKG = '@fecommunity/reactpress-cli-core';
+/** Optional historical package name; skip sync when unresolved. */
+const LEGACY_PKG = '@reactpressjs/reactpress-cli-core';
 
 const SKIP_DIRS = new Set(['node_modules', '.git', 'logs', '.reactpress']);
 const SKIP_FILES = new Set(['package-lock.json']);
@@ -37,9 +39,7 @@ function main() {
   try {
     legacyRoot = path.dirname(require.resolve(`${LEGACY_PKG}/package.json`));
   } catch {
-    console.warn(
-      `[sync-bundled-core] Skip: install devDependency ${LEGACY_PKG} (npm:@fecommunity/reactpress-cli@0.1.0) first`
-    );
+    console.warn(`[sync-bundled-core] Skip: ${LEGACY_PKG} not installed (monorepo uses sync-monorepo-server)`);
     process.exit(0);
   }
 
@@ -52,8 +52,8 @@ function main() {
     console.log(`[sync-bundled-core] ${name}/ -> cli/${name}/`);
   }
 
-  // Copy LICENSE only. Do not sync README.md — legacy @fecommunity/reactpress-cli-core
-  // ships a Chinese README that would overwrite the v4 English package docs on every prepare/prepack.
+  // Copy LICENSE only. Do not sync README.md — a legacy Chinese README would overwrite
+  // the English package docs on every prepare/prepack.
   for (const file of ['LICENSE']) {
     const src = path.join(legacyRoot, file);
     if (fs.existsSync(src)) {

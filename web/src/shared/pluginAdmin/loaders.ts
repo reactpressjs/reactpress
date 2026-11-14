@@ -1,5 +1,5 @@
-import type { PluginAdminModule } from "@fecommunity/reactpress-toolkit/plugin/admin";
-import { pluginManifestHasAdminUI } from "@fecommunity/reactpress-toolkit/plugin/extension";
+import type { PluginAdminModule } from "@reactpressjs/reactpress-toolkit/plugin/admin";
+import { pluginManifestHasAdminUI } from "@reactpressjs/reactpress-toolkit/plugin/extension";
 
 import type { PluginListItem } from "@/shared/api/plugins";
 

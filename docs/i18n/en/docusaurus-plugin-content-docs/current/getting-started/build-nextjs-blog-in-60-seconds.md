@@ -41,10 +41,10 @@ Docker is **not** required. Default database is embedded **SQLite**.
 ## Step 1 — Install the CLI (~15s)
 
 ```bash
-npm i -g @fecommunity/reactpress
+npm i -g @reactpressjs/reactpress
 ```
 
-Package: [@fecommunity/reactpress](https://www.npmjs.com/package/@fecommunity/reactpress).
+Package: [@reactpressjs/reactpress](https://www.npmjs.com/package/@reactpressjs/reactpress).
 
 ## Step 2 — Initialize the blog (~45s)
 

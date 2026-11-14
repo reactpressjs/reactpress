@@ -1,5 +1,5 @@
-import type { SitePluginState } from "@fecommunity/reactpress-toolkit/plugin/extension";
-import { mergePluginStateIntoGlobalSetting } from "@fecommunity/reactpress-toolkit/plugin/extension";
+import type { SitePluginState } from "@reactpressjs/reactpress-toolkit/plugin/extension";
+import { mergePluginStateIntoGlobalSetting } from "@reactpressjs/reactpress-toolkit/plugin/extension";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 import type { SiteSettings } from "@/hooks/useSiteSettings";

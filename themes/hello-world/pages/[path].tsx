@@ -7,7 +7,7 @@ import {
   themeOnDemandPaths,
   themeStaticNotFound,
   withThemeStaticProps,
-} from '@fecommunity/reactpress-toolkit/theme';
+} from '@reactpressjs/reactpress-toolkit/theme';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -32,12 +32,7 @@ export default function CmsPageView({ page }: CmsPageViewProps) {
   const router = useRouter();
 
   if (router.isFallback) {
-    return (
-      <SiteDocumentFallback
-        {...shellProps}
-        head={<PageHead title="Loading…" />}
-      />
-    );
+    return <SiteDocumentFallback {...shellProps} head={<PageHead title="Loading…" />} />;
   }
 
   if (!page) {
@@ -56,10 +51,7 @@ export default function CmsPageView({ page }: CmsPageViewProps) {
   }
 
   return (
-    <SiteDocument
-      {...shellProps}
-      head={<PageHead title={page.name} description={page.name} />}
-    >
+    <SiteDocument {...shellProps} head={<PageHead title={page.name} description={page.name} />}>
       <article className="cms-page">
         <h1 className="section-title">{page.name}</h1>
         {page.html ? (
@@ -79,11 +71,9 @@ export const getStaticPaths: GetStaticPaths = async () => themeOnDemandPaths;
 
 export const getStaticProps: GetStaticProps<CmsPageViewProps> = async ({ params }) => {
   const path = params?.path as string | undefined;
-  const result = await withThemeStaticProps(
-    'fetch cms page failed',
-    () => fetchCmsPageProps(themeApi, path),
-    { page: null },
-  );
+  const result = await withThemeStaticProps('fetch cms page failed', () => fetchCmsPageProps(themeApi, path), {
+    page: null,
+  });
   if (!result.props.page) {
     return themeStaticNotFound();
   }

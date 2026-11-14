@@ -54,8 +54,6 @@ export class CategoryService {
     });
 
     return data;
-
-    // return this.categoryRepository.find({ order: { createAt: 'ASC' } });
   }
 
   /**
@@ -74,17 +72,13 @@ export class CategoryService {
     return data;
   }
 
-  async findByIds(ids): Promise<Array<Category>> {
-    return this.categoryRepository.findByIds(ids);
-  }
-
   /**
    * 更新分类
    * @param id
    * @param Category
    */
   async updateById(id, category: Partial<Category>): Promise<Category> {
-    const oldCategory = await this.categoryRepository.findOne(id);
+    const oldCategory = await this.categoryRepository.findOne({ where: { id: id } });
     const updatedCategory = await this.categoryRepository.merge(oldCategory, category);
     return this.categoryRepository.save(updatedCategory);
   }
@@ -95,7 +89,7 @@ export class CategoryService {
    */
   async deleteById(id) {
     try {
-      const category = await this.categoryRepository.findOne(id);
+      const category = await this.categoryRepository.findOne({ where: { id: id } });
       await this.categoryRepository.remove(category);
       return true;
     } catch (e) {

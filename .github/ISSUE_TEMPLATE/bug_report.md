@@ -28,18 +28,16 @@ A clear, concise description of what went wrong.
 
 **Expected behavior**
 
-
 **Actual behavior**
-
 
 **Environment**
 
-| | |
-|---|---|
-| ReactPress version | <!-- e.g. `@fecommunity/reactpress@3.1.0` or git commit --> |
-| Node.js | <!-- e.g. 20.x --> |
-| OS | <!-- e.g. macOS 14 --> |
-| Setup | <!-- local `pnpm dev` / Docker / production PM2 --> |
+|                    |                                                              |
+| ------------------ | ------------------------------------------------------------ |
+| ReactPress version | <!-- e.g. `@reactpressjs/reactpress@3.1.0` or git commit --> |
+| Node.js            | <!-- e.g. 20.x -->                                           |
+| OS                 | <!-- e.g. macOS 14 -->                                       |
+| Setup              | <!-- local `pnpm dev` / Docker / production PM2 -->          |
 
 **Logs / errors**
 

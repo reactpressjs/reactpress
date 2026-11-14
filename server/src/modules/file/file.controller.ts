@@ -2,6 +2,7 @@ import { Controller, Delete, Get, Param, Post, Query, UploadedFile, UseGuards, U
 import { FileInterceptor } from '@nestjs/platform-express';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
 
+import { AdminAccessGuard } from '../api-key/admin-access.guard';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 import { Roles, RolesGuard } from '../auth/roles.guard';
 import { File } from './file.entity';
@@ -26,7 +27,7 @@ export class FileController {
       },
     })
   )
-  @UseGuards(JwtAuthGuard)
+  @UseGuards(AdminAccessGuard)
   uploadFile(@UploadedFile() file, @Query('unique') unique, @Query('scene') scene) {
     return this.fileService.uploadFile(file, unique, scene || 'default');
   }

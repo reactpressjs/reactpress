@@ -8,7 +8,7 @@ import {
   SiteDocumentFallback,
   themeOnDemandPaths,
   useRouteParam,
-} from '@fecommunity/reactpress-toolkit/theme';
+} from '@reactpressjs/reactpress-toolkit/theme';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -32,21 +32,12 @@ interface CategoryProps {
 
 const shellProps = THEME_SHELL;
 
-export default function CategoryPage({
-  category: categoryProp,
-  articles = [],
-  categories = [],
-}: CategoryProps) {
+export default function CategoryPage({ category: categoryProp, articles = [], categories = [] }: CategoryProps) {
   const router = useRouter();
   const category = useRouteParam(categoryProp, 'category');
 
   if (router.isFallback) {
-    return (
-      <SiteDocumentFallback
-        {...shellProps}
-        head={<PageHead title="Loading…" />}
-      />
-    );
+    return <SiteDocumentFallback {...shellProps} head={<PageHead title="Loading…" />} />;
   }
 
   const categoryData = categories.find((c) => c.value === category);
@@ -55,12 +46,7 @@ export default function CategoryPage({
   return (
     <SiteDocument
       {...shellProps}
-      head={
-        <PageHead
-          title={`Category: ${categoryName}`}
-          description={`Articles in ${categoryName}.`}
-        />
-      }
+      head={<PageHead title={`Category: ${categoryName}`} description={`Articles in ${categoryName}.`} />}
     >
       <PageHeader
         className="archive-header"
@@ -96,5 +82,5 @@ export const getStaticPaths: GetStaticPaths = async () => themeOnDemandPaths;
 export const getStaticProps: GetStaticProps<CategoryProps> = createArchiveGetStaticProps(
   'category',
   fetchCategoryArchive,
-  (category) => ({ category, articles: [], categories: [] }),
+  (category) => ({ category, articles: [], categories: [] })
 );

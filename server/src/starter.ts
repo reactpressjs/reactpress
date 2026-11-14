@@ -1,19 +1,20 @@
 import './node-polyfills';
 import { INestApplication } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import * as bodyParser from 'body-parser';
 import * as compression from 'compression';
 import * as express from 'express';
-import * as rateLimit from 'express-rate-limit';
-import * as helmet from 'helmet';
+import rateLimit from 'express-rate-limit';
+import helmet from 'helmet';
 import * as http from 'http';
 import * as net from 'net';
 import { existsSync } from 'fs';
 import { join } from 'path';
 import { SwaggerTheme, SwaggerThemeNameEnum } from 'swagger-themes';
 
-import { buildDevPortRedirectUrl, shouldRedirectDevPortToNginx } from '@fecommunity/reactpress-toolkit/plugin/dev';
+import { buildDevPortRedirectUrl, shouldRedirectDevPortToNginx } from '@reactpressjs/reactpress-toolkit/plugin/dev';
 
 import { AppModule } from './app.module';
 import { ApiMsg } from './common/api-messages';
@@ -117,7 +118,7 @@ export async function bootstrap() {
     const app = await NestFactory.create(AppModule, {
       logger: isLocalApiQuiet() ? ['error', 'warn'] : undefined,
     });
-    const configService = app.get('ConfigService');
+    const configService = app.get(ConfigService);
     const listenPort = Number(configService.get('SERVER_PORT', configuredPort));
 
     app.use((req: express.Request, res: express.Response, next: express.NextFunction) => {
@@ -190,7 +191,18 @@ export async function bootstrap() {
       }
     }
 
-    app.use(compression());
+    app.use(
+      compression({
+        // SSE must never be gzip-buffered — Agent chat streams token-by-token.
+        filter: (req, res) => {
+          const url = String(req.originalUrl || req.url || '');
+          if (/\/ai\/agent\/chat\/?(\?|$)/i.test(url)) return false;
+          const type = String(res.getHeader('Content-Type') || '');
+          if (type.includes('text/event-stream')) return false;
+          return compression.filter(req, res);
+        },
+      })
+    );
     app.use(
       helmet({
         contentSecurityPolicy: {

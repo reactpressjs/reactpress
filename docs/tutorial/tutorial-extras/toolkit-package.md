@@ -1,11 +1,11 @@
 ---
 sidebar_position: 4
 title: Toolkit Package 使用指南
-description: '@fecommunity/reactpress-toolkit 使用指南 — TypeScript Headless API SDK，从 OpenAPI 自动生成，对接 ReactPress REST。'
+description: '@reactpressjs/reactpress-toolkit 使用指南 — TypeScript Headless API SDK，从 OpenAPI 自动生成，对接 ReactPress REST。'
 keywords: [reactpress, toolkit, headless, api sdk, typescript, openapi]
 ---
 
-# @fecommunity/reactpress-toolkit 使用指南
+# @reactpressjs/reactpress-toolkit 使用指南
 
 ReactPress Toolkit 是一个基于 TypeScript 的 API 客户端工具包，从 OpenAPI/Swagger 规范自动生成，用于与 ReactPress 后端服务交互。
 
@@ -25,19 +25,19 @@ ReactPress Toolkit 是一个 API 客户端库，提供与 ReactPress 后端服�
 ## 安装
 
 ```bash
-npm install @fecommunity/reactpress-toolkit
+npm install @reactpressjs/reactpress-toolkit
 ```
 
 或
 
 ```bash
-yarn add @fecommunity/reactpress-toolkit
+yarn add @reactpressjs/reactpress-toolkit
 ```
 
 或
 
 ```bash
-pnpm add @fecommunity/reactpress-toolkit
+pnpm add @reactpressjs/reactpress-toolkit
 ```
 
 ## 快速开始
@@ -45,7 +45,7 @@ pnpm add @fecommunity/reactpress-toolkit
 ### 使用默认 API 实例
 
 ```typescript
-import { api } from '@fecommunity/reactpress-toolkit';
+import { api } from '@reactpressjs/reactpress-toolkit';
 
 // 获取所有文章
 const articles = await api.article.findAll();
@@ -64,7 +64,7 @@ const newArticle = await api.article.create({
 ### 使用命名导出
 
 ```typescript
-import { api, types, utils } from '@fecommunity/reactpress-toolkit';
+import { api, types, utils } from '@reactpressjs/reactpress-toolkit';
 
 // 使用类型化数据
 const article: types.IArticle = {
@@ -82,7 +82,7 @@ const formattedDate = utils.formatDate(new Date());
 您可以创建具有特定配置的自定义 API 实例：
 
 ```typescript
-import { http } from '@fecommunity/reactpress-toolkit';
+import { http } from '@reactpressjs/reactpress-toolkit';
 
 const customApi = http.createApiInstance({
   baseURL: 'https://api.yourdomain.com',
@@ -99,7 +99,7 @@ const articles = await customApi.article.findAll();
 ### 自动重试机制
 
 ```typescript
-import { http } from '@fecommunity/reactpress-toolkit';
+import { http } from '@reactpressjs/reactpress-toolkit';
 
 // 配置重试设置
 const customApi = http.createApiInstance({
@@ -109,15 +109,15 @@ const customApi = http.createApiInstance({
     retryDelay: 1000,
     retryCondition: (error) => {
       return error.response?.status === 503 || error.code === 'ECONNABORTED';
-    }
-  }
+    },
+  },
 });
 ```
 
 ### 请求/响应拦截器
 
 ```typescript
-import { http } from '@fecommunity/reactpress-toolkit';
+import { http } from '@reactpressjs/reactpress-toolkit';
 
 const monitoredApi = http.createApiInstance({
   baseURL: 'https://api.yourdomain.com',
@@ -131,15 +131,15 @@ const monitoredApi = http.createApiInstance({
       // 添加日志、指标等
       console.log(`响应: ${response.status} ${response.config.url}`);
       return response;
-    }
-  }
+    },
+  },
 });
 ```
 
 ### 认证处理
 
 ```typescript
-import { http, api, utils } from '@fecommunity/reactpress-toolkit';
+import { http, api, utils } from '@reactpressjs/reactpress-toolkit';
 
 // 自动令牌刷新
 const secureApi = http.createApiInstance({
@@ -148,8 +148,8 @@ const secureApi = http.createApiInstance({
     tokenRefresh: async (refreshToken) => {
       const response = await api.auth.refresh({ refreshToken });
       return response.data.accessToken;
-    }
-  }
+    },
+  },
 });
 ```
 
@@ -158,7 +158,7 @@ const secureApi = http.createApiInstance({
 所有数据模型都是强类型的，可通过 `types` 导出使用：
 
 ```typescript
-import { types } from '@fecommunity/reactpress-toolkit';
+import { types } from '@reactpressjs/reactpress-toolkit';
 
 const user: types.IUser = {
   name: 'John Doe',
@@ -168,6 +168,7 @@ const user: types.IUser = {
 ```
 
 可用的类型定义包括：
+
 - `types.IUser`
 - `types.IArticle`
 - `types.ICategory`
@@ -185,7 +186,7 @@ const user: types.IUser = {
 工具包包含有用的实用函数：
 
 ```typescript
-import { utils } from '@fecommunity/reactpress-toolkit';
+import { utils } from '@reactpressjs/reactpress-toolkit';
 
 // 日期格式化
 const formattedDate = utils.formatDate(new Date(), 'YYYY-MM-DD');
@@ -211,7 +212,7 @@ const slug = utils.createSlug('我的文章标题');
 
 ```typescript
 import { useState, useEffect } from 'react';
-import { api, types } from '@fecommunity/reactpress-toolkit';
+import { api, types } from '@reactpressjs/reactpress-toolkit';
 
 const ArticleList = () => {
   const [articles, setArticles] = useState<types.IArticle[]>([]);
@@ -233,7 +234,7 @@ const ArticleList = () => {
   }, []);
 
   if (loading) return <div>加载中...</div>;
-  
+
   return (
     <div>
       {articles.map(article => (
@@ -250,19 +251,19 @@ const ArticleList = () => {
 ### Node.js 集成
 
 ```typescript
-import { api, types } from '@fecommunity/reactpress-toolkit';
+import { api, types } from '@reactpressjs/reactpress-toolkit';
 
 async function syncArticles() {
   try {
     // 从 ReactPress 获取文章
     const response = await api.article.findAll({
       limit: 100,
-      offset: 0
+      offset: 0,
     });
-    
+
     // 处理文章
     const articles: types.IArticle[] = response.data;
-    
+
     // 与另一个系统同步
     for (const article of articles) {
       // 您的同步逻辑
@@ -281,7 +282,7 @@ syncArticles();
 ### 错误处理
 
 ```typescript
-import { api, utils } from '@fecommunity/reactpress-toolkit';
+import { api, utils } from '@reactpressjs/reactpress-toolkit';
 
 try {
   const articles = await api.article.findAll();
@@ -315,25 +316,25 @@ try {
 ### 分页
 
 ```typescript
-import { api, types } from '@fecommunity/reactpress-toolkit';
+import { api, types } from '@reactpressjs/reactpress-toolkit';
 
 async function fetchAllArticles(): Promise<types.IArticle[]> {
   const allArticles: types.IArticle[] = [];
   let offset = 0;
   const limit = 50;
-  
+
   while (true) {
     const response = await api.article.findAll({ limit, offset });
     allArticles.push(...response.data);
-    
+
     if (response.data.length < limit) {
       // 没有更多文章可获取
       break;
     }
-    
+
     offset += limit;
   }
-  
+
   return allArticles;
 }
 ```

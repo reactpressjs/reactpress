@@ -17,7 +17,7 @@ export interface PluginAdminModule {
   SettingsPanel?: (props: PluginSettingsPanelProps) => unknown;
 }
 
-/** Opaque component type — React `ComponentType` lives in `@fecommunity/reactpress-toolkit/plugin/react`. */
+/** Opaque component type — React `ComponentType` lives in `@reactpressjs/reactpress-toolkit/plugin/react`. */
 export type PluginAdminSlotComponent = (props: PluginAdminSlotComponentProps<unknown>) => unknown;
 
 export interface PluginAdminSlotComponentProps<TContext = unknown> {
@@ -37,7 +37,7 @@ export interface PluginAdminRegistry {
   registerSlot<TContext = unknown>(
     slot: AdminSlotId,
     component: (props: PluginAdminSlotComponentProps<TContext>) => unknown,
-    options?: { priority?: number },
+    options?: { priority?: number }
   ): void;
 }
 
@@ -46,7 +46,7 @@ export interface PluginAdminSlotHost {
     pluginId: string,
     slot: AdminSlotId,
     component: (props: PluginAdminSlotComponentProps<TContext>) => unknown,
-    options?: { priority?: number },
+    options?: { priority?: number }
   ): void;
   getContributions(slot: AdminSlotId): PluginAdminSlotContribution[];
   reset(): void;
@@ -58,9 +58,7 @@ export function createPluginAdminSlotHost(): PluginAdminSlotHost {
   return {
     registerSlot(pluginId, slot, component, options) {
       const priority = options?.priority ?? 10;
-      const existing = contributions.findIndex(
-        (item) => item.pluginId === pluginId && item.slot === slot,
-      );
+      const existing = contributions.findIndex((item) => item.pluginId === pluginId && item.slot === slot);
       const entry: PluginAdminSlotContribution = {
         pluginId,
         slot,
@@ -74,9 +72,7 @@ export function createPluginAdminSlotHost(): PluginAdminSlotHost {
       }
     },
     getContributions(slot) {
-      return contributions
-        .filter((item) => item.slot === slot)
-        .sort((a, b) => a.priority - b.priority);
+      return contributions.filter((item) => item.slot === slot).sort((a, b) => a.priority - b.priority);
     },
     reset() {
       contributions.length = 0;
@@ -85,10 +81,7 @@ export function createPluginAdminSlotHost(): PluginAdminSlotHost {
 }
 
 /** Registry passed to `registerAdmin` — scopes contributions to one plugin id. */
-export function createPluginAdminRegistry(
-  pluginId: string,
-  host: PluginAdminSlotHost,
-): PluginAdminRegistry {
+export function createPluginAdminRegistry(pluginId: string, host: PluginAdminSlotHost): PluginAdminRegistry {
   return {
     registerSlot(slot, component, options) {
       host.registerSlot(pluginId, slot, component, options);

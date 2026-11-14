@@ -1,6 +1,7 @@
 import { Module, forwardRef } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
+import { ApiKeyModule } from '../api-key/api-key.module';
 import { AuthModule } from '../auth/auth.module';
 import { ExtensionModule } from '../extension/extension.module';
 import { ArticleRevision } from '../article/article-revision.entity';
@@ -18,6 +19,7 @@ import { ImageOptimizerPluginGuard } from './image-optimizer-plugin.guard';
   imports: [
     TypeOrmModule.forFeature([File, Article, ArticleRevision, Page]),
     AuthModule,
+    ApiKeyModule,
     SettingModule,
     forwardRef(() => ExtensionModule),
   ],

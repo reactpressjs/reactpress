@@ -5,7 +5,7 @@ import {
   SiteDocument,
   themeApi,
   themeStaticProps,
-} from '@fecommunity/reactpress-toolkit/theme';
+} from '@reactpressjs/reactpress-toolkit/theme';
 import { GetStaticProps } from 'next';
 
 import PageHead from '../components/PageHead';
@@ -27,10 +27,7 @@ interface HomeProps {
 
 export default function Home({ articles = [], categories = [], tags = [] }: HomeProps) {
   return (
-    <SiteDocument
-      {...THEME_SHELL}
-      head={<PageHead title="Archives" description="Browse all published articles." />}
-    >
+    <SiteDocument {...THEME_SHELL} head={<PageHead title="Archives" description="Browse all published articles." />}>
       <h1 className="section-title">Archives</h1>
       <div className="content-layout">
         <section>

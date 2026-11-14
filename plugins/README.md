@@ -1,8 +1,8 @@
 # Plugin system
 
-ReactPress 4.0 plugins extend **server-side business logic** (hooks, content rules, integrations) — WordPress-style extensibility without touching core. **Themes = presentation; plugins = logic.**
+ReactPress plugins extend **server-side business logic** (hooks, content rules, integrations) — WordPress-style extensibility without touching core. **Themes = presentation; plugins = logic.**
 
-> Built-in: SEO · auto-summary · batch WebP optimization · [install from Admin or CLI](../README.md#plugins)
+> Built-in: SEO · auto-summary · batch WebP optimization · **AI Assist** (5.0, on by default for new installs) · [install from Admin or CLI](../README.md#plugins)
 
 Modeled after WordPress: install/enable from Admin, configure via `plugin.json`, integrate with `register()` and hook subscriptions.
 
@@ -166,7 +166,7 @@ Admin i18n lives in `src/locales/{locale}.json`; API `GET /extension/plugins/:id
 **Dependency rules**
 
 ```
-plugins/{id}/src/server  →  @fecommunity/reactpress-toolkit/plugin/server only
+plugins/{id}/src/server  →  @reactpressjs/reactpress-toolkit/plugin/server only
 plugins/{id}/src/admin   →  toolkit/plugin/admin + toolkit/plugin/react
 server core              →  HookService only, no direct plugin imports
 web / themes             →  load plugin admin via convention src/admin/index.ts
@@ -207,7 +207,7 @@ Symmetric with `server.hooks.subscribe`: **manifest declares slot enum**, **code
 **Core page mount:**
 
 ```tsx
-import { AdminSlot, AdminSlotIds } from '@fecommunity/reactpress-toolkit/plugin/react';
+import { AdminSlot, AdminSlotIds } from '@reactpressjs/reactpress-toolkit/plugin/react';
 
 <AdminSlot slot={AdminSlotIds.ARTICLE_EDITOR_META_AFTER_SUMMARY} context={slotContext} />;
 ```
@@ -220,7 +220,7 @@ import {
   type PluginAdminModule,
   type PluginAdminRegistry,
   type PluginAdminContext,
-} from '@fecommunity/reactpress-toolkit/plugin/admin';
+} from '@reactpressjs/reactpress-toolkit/plugin/admin';
 
 export function registerAdmin(registry: PluginAdminRegistry, ctx: PluginAdminContext): void {
   registry.registerSlot(AdminSlotIds.ARTICLE_EDITOR_META_AFTER_SUMMARY, MyPanel, {
@@ -238,13 +238,13 @@ When enabled and manifest includes `admin.slots` or `admin.menu`, `PluginAdminPr
 **Admin dependency rules**
 
 ```
-plugins/{id}/src/admin →  @fecommunity/reactpress-toolkit/plugin/admin + plugin/react + react/antd
+plugins/{id}/src/admin →  @reactpressjs/reactpress-toolkit/plugin/admin + plugin/react + react/antd
 ```
 
 Server entry contract:
 
 ```typescript
-import type { HookService, PluginContext } from '@fecommunity/reactpress-toolkit/plugin/server';
+import type { HookService, PluginContext } from '@reactpressjs/reactpress-toolkit/plugin/server';
 
 export function register(hooks: HookService, ctx: PluginContext): void {
   hooks.addFilter(
@@ -300,7 +300,7 @@ Persistence (`Setting.globalSetting.plugins`):
 Reject a filter (toolkit `createHookRejectValue` / `getHookReject`):
 
 ```typescript
-import { createHookRejectValue } from '@fecommunity/reactpress-toolkit/plugin/server';
+import { createHookRejectValue } from '@reactpressjs/reactpress-toolkit/plugin/server';
 
 return createHookRejectValue(comment, { message: 'Comment rejected', statusCode: 400 });
 ```

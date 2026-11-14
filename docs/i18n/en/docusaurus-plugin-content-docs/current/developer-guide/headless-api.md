@@ -25,9 +25,15 @@ Production: `https://your-api-domain.com/api`
 
 Admin SPA uses Bearer Token after login — for in-browser requests.
 
-### API Key (recommended for Headless)
+### API Key (recommended for Headless / agents)
 
-1. Admin → **Settings → API** → Create Key
+1. Create a `read,write` key:
+
+```bash
+reactpress content key --create --save
+# or: Admin JWT → POST /api/api-key  body: { "name": "agent", "scopes": "read,write" }
+```
+
 2. Send header:
 
 ```bash
@@ -35,23 +41,38 @@ curl -H "X-API-Key: YOUR_KEY" \
   "http://localhost:3002/api/article/headless/list?status=publish&page=1&pageSize=10"
 ```
 
+- `read`: `GET /api/article/headless/list`
+- `write` (or `*`): create/update/delete articles, tags, categories, and upload media
+
 :::warning
-API Keys grant admin-level access. Never commit them to public repos. Use HTTPS in production and rotate regularly.
+Write-scoped API Keys grant admin write access. Never commit them to public repos. Use HTTPS in production and rotate regularly.
 :::
+
+### Agent Skill
+
+External agents (Cursor and compatible tools) can install a portable skill for install → draft → publish:
+
+```bash
+npx skills add reactpressjs/reactpress --skill blog-ai -a cursor -y
+```
+
+See [`skills/blog-ai/SKILL.md`](../../../../../../skills/blog-ai/SKILL.md) in the repository.
 
 ## Common endpoints
 
-| Method | Path                         | Description                 |
-| ------ | ---------------------------- | --------------------------- |
-| GET    | `/api/health`                | Health check                |
-| GET    | `/api/article/headless/list` | Paginated published posts   |
-| GET    | `/api/article/:id`           | Single post                 |
-| GET    | `/api/page/list`             | Page list                   |
-| GET    | `/api/category/list`         | Categories                  |
-| GET    | `/api/tag/list`              | Tags                        |
-| GET    | `/api/comment/list`          | Comments                    |
-| GET    | `/api/setting/public`        | Public site settings        |
-| POST   | `/api/article`               | Create post (auth required) |
+| Method | Path                         | Description                                        |
+| ------ | ---------------------------- | -------------------------------------------------- |
+| GET    | `/api/health`                | Health check                                       |
+| GET    | `/api/article/headless/list` | Paginated published posts (API Key `read`)         |
+| GET    | `/api/article/:id`           | Single post                                        |
+| GET    | `/api/page/list`             | Page list                                          |
+| GET    | `/api/category`              | Categories                                         |
+| GET    | `/api/tag`                   | Tags                                               |
+| GET    | `/api/comment/list`          | Comments                                           |
+| GET    | `/api/setting/public`        | Public site settings                               |
+| POST   | `/api/article`               | Create post (JWT admin or API Key `write`)         |
+| PATCH  | `/api/article/:id`           | Update/publish post (JWT admin or API Key `write`) |
+| POST   | `/api/file/upload`           | Upload media (JWT admin or API Key `write`)        |
 
 Exact paths and parameters are defined in Swagger.
 
@@ -78,11 +99,11 @@ curl -G "http://localhost:3002/api/article/headless/list" \
 Recommended typed client for Node / React:
 
 ```bash
-npm install @fecommunity/reactpress-toolkit
+npm install @reactpressjs/reactpress-toolkit
 ```
 
 ```typescript
-import { api } from '@fecommunity/reactpress-toolkit';
+import { api } from '@reactpressjs/reactpress-toolkit';
 
 const articles = await api.article.findAll({
   status: 'publish',

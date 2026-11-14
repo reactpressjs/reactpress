@@ -1,4 +1,4 @@
-import { resolveVisitorLocale } from '@fecommunity/reactpress-toolkit/theme';
+import { resolveVisitorLocale } from '@reactpressjs/reactpress-toolkit/theme';
 import Document, { DocumentContext, Head, Html, Main, NextScript } from 'next/document';
 
 export default class HelloWorldDocument extends Document<{ locale?: string }> {

@@ -67,7 +67,7 @@ pnpm dev
 
 ```typescript
 // plugins/my-plugin/src/server/index.ts
-import type { PluginContext } from '@fecommunity/reactpress-toolkit/plugin';
+import type { PluginContext } from '@reactpressjs/reactpress-toolkit/plugin';
 
 export function register(hooks: PluginContext['hooks'], ctx: PluginContext) {
   hooks.addFilter('article.beforePublish', async (article) => {

@@ -52,7 +52,7 @@ Run `pnpm test` and `pnpm test:smoke` before submitting changes that touch the C
 
 ```
 reactpress/
-├── cli/             # @fecommunity/reactpress — init, dev, build, doctor
+├── cli/             # @reactpressjs/reactpress — init, dev, build, doctor
 ├── server/          # NestJS API (primary backend)
 ├── web/             # Admin SPA (Vite)
 ├── desktop/         # Electron desktop client
@@ -143,7 +143,7 @@ NPM_OTP=123456 pnpm run publish:packages -- --tag beta --version 4.0.0-beta.0 --
 pnpm run publish:build
 ```
 
-Published packages: **toolkit**, **web**, **server** (deprecated), **cli** (`@fecommunity/reactpress`).
+Published packages: **toolkit**, **web**, **server** (deprecated), **cli** (`@reactpressjs/reactpress`).
 
 ## Architecture & Documentation
 
@@ -158,11 +158,9 @@ Published packages: **toolkit**, **web**, **server** (deprecated), **cli** (`@fe
 
 Live docs: [reactpress.cc](https://reactpress.cc)
 
-### Docs site on Vercel
+### Docs site
 
-Root [`vercel.json`](./vercel.json) builds the Docusaurus site (`pnpm run build:docs` → `docs/build`). Connect the GitHub repo in the Vercel dashboard (Root Directory = repository root). Production and preview deploys run automatically on push; builds skip when the commit does not touch `docs/`, lockfile, or the Vercel config paths listed in `ignoreCommand`.
-
-Optional project env: `DOCS_SITE_URL` (defaults to `https://reactpress.cc` in `docs/src/seo/headTags.ts`).
+Build with `pnpm run build:docs` (output: `docs/build`). Optional env: `DOCS_SITE_URL` (defaults to `https://reactpress.cc` in `docs/src/seo/headTags.ts`).
 
 ## Documentation language
 

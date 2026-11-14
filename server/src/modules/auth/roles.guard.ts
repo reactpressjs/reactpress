@@ -8,7 +8,10 @@ export const Roles = (...roles: string[]) => SetMetadata('roles', roles);
 
 @Injectable()
 export class RolesGuard implements CanActivate {
-  constructor(private readonly reflector: Reflector, private readonly jwtService: JwtService) {}
+  constructor(
+    private readonly reflector: Reflector,
+    private readonly jwtService: JwtService
+  ) {}
 
   canActivate(context: ExecutionContext): boolean {
     const roles = this.reflector.get<string[]>('roles', context.getHandler());
@@ -29,6 +32,6 @@ export class RolesGuard implements CanActivate {
       return false;
     }
     const hasRole = roles.some((role) => role === user.role);
-    return user && user.role && hasRole;
+    return Boolean(user.role && hasRole);
   }
 }

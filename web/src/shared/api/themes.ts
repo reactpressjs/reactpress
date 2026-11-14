@@ -2,8 +2,8 @@ import type {
   SiteThemeState,
   ThemeConfigurationSchema,
   ThemeMods,
-} from "@fecommunity/reactpress-toolkit/theme";
-import { resolveApiBaseUrl } from "@fecommunity/reactpress-toolkit/plugin/react";
+} from "@reactpressjs/reactpress-toolkit/theme";
+import { resolveApiBaseUrl } from "@reactpressjs/reactpress-toolkit/plugin/react";
 
 import { isDesktopRuntime } from "@/shared/desktop/apiConfig";
 import { clearInvalidServerSession } from "@/shared/auth/session";
@@ -152,7 +152,7 @@ export function fetchThemeCatalog() {
   >("/extension/themes/catalog");
 }
 
-export const OFFICIAL_THEME_STARTER_SPEC = "@fecommunity/reactpress-theme-starter@1.0.0-beta.0";
+export const OFFICIAL_THEME_STARTER_SPEC = "@reactpressjs/reactpress-theme-starter@1.0.0-beta.0";
 
 export async function fetchTheme(id: string) {
   const theme = await themeFetch<ThemeListItem>(`/extension/themes/${id}`);

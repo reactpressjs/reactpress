@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Copy built API from monorepo `server/` into `cli/server/` for publish.
- * Runs after sync-bundled-core so security fixes in server/ ship with @fecommunity/reactpress.
+ * Runs after sync-bundled-core so security fixes in server/ ship with @reactpressjs/reactpress.
  */
 import fs from 'fs';
 import path from 'path';
@@ -55,13 +55,10 @@ function main() {
   const serverPkg = path.join(monorepoServer, 'package.json');
   if (fs.existsSync(serverPkg)) {
     const pkg = JSON.parse(fs.readFileSync(serverPkg, 'utf8'));
-    if (pkg.dependencies?.['@fecommunity/reactpress-toolkit']?.startsWith('workspace:')) {
-      pkg.dependencies['@fecommunity/reactpress-toolkit'] = 'file:../toolkit';
+    if (pkg.dependencies?.['@reactpressjs/reactpress-toolkit']?.startsWith('workspace:')) {
+      pkg.dependencies['@reactpressjs/reactpress-toolkit'] = 'file:../toolkit';
     }
-    fs.writeFileSync(
-      path.join(bundledServer, 'package.json'),
-      `${JSON.stringify(pkg, null, 2)}\n`,
-    );
+    fs.writeFileSync(path.join(bundledServer, 'package.json'), `${JSON.stringify(pkg, null, 2)}\n`);
   }
 
   console.log('[sync-monorepo-server] server/dist|public|bin|package.json -> cli/server/');

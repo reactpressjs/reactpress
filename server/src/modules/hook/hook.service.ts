@@ -5,7 +5,7 @@ import type {
   FilterCallback,
   HookContext,
   HookRegistrationOptions,
-} from '@fecommunity/reactpress-toolkit/plugin/server';
+} from '@reactpressjs/reactpress-toolkit/plugin/server';
 
 interface FilterRegistration {
   callback: FilterCallback;
@@ -48,7 +48,7 @@ export class HookService {
         this.logger.warn(
           `Filter "${name}" failed${reg.pluginId ? ` (plugin: ${reg.pluginId})` : ''}: ${
             err instanceof Error ? err.message : String(err)
-          }`,
+          }`
         );
       }
     }
@@ -64,17 +64,13 @@ export class HookService {
         this.logger.warn(
           `Action "${name}" failed${reg.pluginId ? ` (plugin: ${reg.pluginId})` : ''}: ${
             err instanceof Error ? err.message : String(err)
-          }`,
+          }`
         );
       }
     }
   }
 
-  addFilter<T>(
-    name: string,
-    callback: FilterCallback<T>,
-    options?: HookRegistrationOptions,
-  ): () => void {
+  addFilter<T>(name: string, callback: FilterCallback<T>, options?: HookRegistrationOptions): () => void {
     const reg: FilterRegistration = {
       callback: callback as FilterCallback,
       priority: options?.priority ?? 10,
@@ -87,7 +83,7 @@ export class HookService {
       const current = this.filters.get(name) ?? [];
       this.filters.set(
         name,
-        current.filter((item) => item !== reg),
+        current.filter((item) => item !== reg)
       );
     };
   }
@@ -105,7 +101,7 @@ export class HookService {
       const current = this.actions.get(name) ?? [];
       this.actions.set(
         name,
-        current.filter((item) => item !== reg),
+        current.filter((item) => item !== reg)
       );
     };
   }
@@ -114,13 +110,13 @@ export class HookService {
     for (const [name, list] of this.filters.entries()) {
       this.filters.set(
         name,
-        list.filter((reg) => reg.pluginId !== pluginId),
+        list.filter((reg) => reg.pluginId !== pluginId)
       );
     }
     for (const [name, list] of this.actions.entries()) {
       this.actions.set(
         name,
-        list.filter((reg) => reg.pluginId !== pluginId),
+        list.filter((reg) => reg.pluginId !== pluginId)
       );
     }
   }

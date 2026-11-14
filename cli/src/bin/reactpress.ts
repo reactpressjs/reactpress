@@ -2,8 +2,8 @@
 // @ts-nocheck
 
 /**
- * ReactPress 4 — zero-dependency publishing platform.
- * Commands: `reactpress init`, `reactpress doctor`. Run `reactpress` or `reactpress --help` for usage.
+ * ReactPress 5 — zero-dependency publishing platform.
+ * Commands: `reactpress init`, `reactpress doctor`, `reactpress content`. Run `reactpress --help` for usage.
  */
 
 const { Command } = require('commander');
@@ -21,6 +21,7 @@ const { describeProject } = require('../lib/project-type');
 const { refreshBannerWithStartup } = require('../ui/banner-startup');
 const { runDoctor } = require('../lib/doctor');
 const { runDoctorLogs } = require('../lib/project-logs');
+const { createApiKey, createArticleFromFile, publishArticle, uploadMedia } = require('../lib/content');
 
 const LEGACY_COMMANDS = new Set([
   'start',
@@ -171,6 +172,109 @@ doctorCommand
     process.exit(code);
   });
 
+const contentCommand = program.command('content').description(t('cli.content.description'));
+
+contentCommand
+  .command('key')
+  .description(t('cli.content.key.description'))
+  .option('--create', t('cli.content.key.create'))
+  .option('--save', t('cli.content.key.save'))
+  .option('--name <name>', t('cli.content.key.name'), 'agent')
+  .option('--scopes <scopes>', t('cli.content.key.scopes'), 'read,write')
+  .option('--username <username>', t('cli.content.key.username'))
+  .option('--password <password>', t('cli.content.key.password'))
+  .option('--api-url <url>', t('cli.content.apiUrl'))
+  .action(async (options) => {
+    const projectRoot = path.resolve(process.env.REACTPRESS_ORIGINAL_CWD || process.cwd());
+    if (!options.create) {
+      console.error(chalk.red('[reactpress]'), t('cli.content.key.createRequired'));
+      process.exit(1);
+    }
+    try {
+      const result = await createApiKey(projectRoot, options);
+      console.log(`${brand.success('✓')} ${t('cli.content.key.created')}`);
+      console.log(`  ${brand.muted('API')}  ${brand.primary(result.baseUrl)}`);
+      console.log(`  ${brand.muted('Key')}  ${brand.primary(result.rawKey)}`);
+      if (result.saved) {
+        console.log(brand.dim(t('cli.content.key.savedHint')));
+      } else {
+        console.log(brand.dim(t('cli.content.key.copyHint')));
+      }
+    } catch (err) {
+      console.error(chalk.red('[reactpress]'), err.message || err);
+      process.exit(1);
+    }
+  });
+
+const articleCommand = contentCommand.command('article').description(t('cli.content.article.description'));
+
+articleCommand
+  .command('create')
+  .description(t('cli.content.article.create'))
+  .requiredOption('--file <path>', t('cli.content.article.file'))
+  .option('--publish', t('cli.content.article.publishFlag'))
+  .option('--api-url <url>', t('cli.content.apiUrl'))
+  .option('--api-key <key>', t('cli.content.apiKey'))
+  .action(async (options) => {
+    const projectRoot = path.resolve(process.env.REACTPRESS_ORIGINAL_CWD || process.cwd());
+    try {
+      const article = await createArticleFromFile(projectRoot, options.file, options);
+      console.log(
+        `${brand.success('✓')} ${t('cli.content.article.created', {
+          id: article.id,
+          status: article.status || (options.publish ? 'publish' : 'draft'),
+        })}`
+      );
+      if (article.slug) {
+        console.log(`  ${brand.muted('slug')}  ${brand.primary(article.slug)}`);
+      }
+    } catch (err) {
+      console.error(chalk.red('[reactpress]'), err.message || err);
+      process.exit(1);
+    }
+  });
+
+articleCommand
+  .command('publish')
+  .description(t('cli.content.article.publish'))
+  .requiredOption('--id <id>', t('cli.content.article.id'))
+  .option('--api-url <url>', t('cli.content.apiUrl'))
+  .option('--api-key <key>', t('cli.content.apiKey'))
+  .action(async (options) => {
+    const projectRoot = path.resolve(process.env.REACTPRESS_ORIGINAL_CWD || process.cwd());
+    try {
+      const article = await publishArticle(projectRoot, options.id, options);
+      console.log(`${brand.success('✓')} ${t('cli.content.article.published', { id: article.id || options.id })}`);
+    } catch (err) {
+      console.error(chalk.red('[reactpress]'), err.message || err);
+      process.exit(1);
+    }
+  });
+
+contentCommand
+  .command('media')
+  .description(t('cli.content.media.description'))
+  .option('--upload', t('cli.content.media.upload'))
+  .requiredOption('--file <path>', t('cli.content.media.file'))
+  .option('--api-url <url>', t('cli.content.apiUrl'))
+  .option('--api-key <key>', t('cli.content.apiKey'))
+  .action(async (options) => {
+    const projectRoot = path.resolve(process.env.REACTPRESS_ORIGINAL_CWD || process.cwd());
+    if (!options.upload) {
+      console.error(chalk.red('[reactpress]'), t('cli.content.media.uploadRequired'));
+      process.exit(1);
+    }
+    try {
+      const file = await uploadMedia(projectRoot, options.file, options);
+      console.log(`${brand.success('✓')} ${t('cli.content.media.uploaded')}`);
+      if (file?.url) console.log(`  ${brand.muted('url')}  ${brand.primary(file.url)}`);
+      if (file?.id) console.log(`  ${brand.muted('id')}   ${brand.primary(file.id)}`);
+    } catch (err) {
+      console.error(chalk.red('[reactpress]'), err.message || err);
+      process.exit(1);
+    }
+  });
+
 program.on('--help', () => {
   console.log('');
   console.log(brand.bold(t('cli.help.examples')));
@@ -180,6 +284,7 @@ program.on('--help', () => {
     t('cli.help.doctor'),
     t('cli.help.logs'),
     t('cli.help.stop'),
+    t('cli.help.content'),
     t('cli.help.zeroDep'),
   ]) {
     console.log(brand.dim(line));

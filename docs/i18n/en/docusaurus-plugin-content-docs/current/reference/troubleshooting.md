@@ -34,7 +34,7 @@ Bundled runtime download failed during global install:
 
 ```bash
 # retry install
-npm install -g @fecommunity/reactpress --force
+npm install -g @reactpressjs/reactpress --force
 
 # check proxy and registry
 npm config get registry
@@ -141,7 +141,7 @@ See [Production deployment](../tutorial-basics/deploy-your-site.md) and [Docker 
 When opening a [GitHub Issue](https://github.com/reactpressjs/reactpress/issues), include:
 
 - OS and Node version
-- `@fecommunity/reactpress` version
+- `@reactpressjs/reactpress` version
 - Full `reactpress doctor` output
 - `reactpress logs --tail 200` (redacted)
 - Reproduction steps

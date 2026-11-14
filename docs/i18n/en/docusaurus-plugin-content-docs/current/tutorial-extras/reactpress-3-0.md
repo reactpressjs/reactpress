@@ -1,13 +1,13 @@
 ---
 sidebar_position: 4
 title: ReactPress 3.0 Platform
-description: ReactPress 3.0 Platform history — one CLI, embedded MySQL, Admin and Next.js themes. New users should use 4.0.
+description: ReactPress 3.0 Platform history — one CLI, embedded MySQL, Admin and Next.js themes. New users should use 5.0.
 keywords: [reactpress 3.0, platform, history, migration]
 ---
 
 # ReactPress 3.0 Platform
 
-> **Historical version.** New users should use [ReactPress 4.0 Extend](./reactpress-4-0.md). This page is kept for 3.x users.
+> **Historical version.** New users should use [ReactPress 5.0 Intelligent](./reactpress-5-0.md). This page is kept for 3.x users.
 
 > **One CLI, ~60 seconds — full publishing platform, not another CMS to assemble.**
 
@@ -15,53 +15,53 @@ Version 3.0 (codename **Platform**) focuses on **zero config**, a **single entry
 
 ## Three pillars
 
-| Pillar | What you feel | 3.0 delivery |
-|--------|----------------|--------------|
-| **Zero config** | No hand-written `.env`, no multi-package install | `init` + `dev`, embedded Docker MySQL by default |
-| **Single entry** | One package name, one command | `npm i -g @fecommunity/reactpress@3` → `reactpress` |
-| **Great DX** | Less docs, visible status | Interactive menu, `doctor`, `status`, dev success URLs |
+| Pillar           | What you feel                                    | 3.0 delivery                                           |
+| ---------------- | ------------------------------------------------ | ------------------------------------------------------ |
+| **Zero config**  | No hand-written `.env`, no multi-package install | `init` + `dev`, embedded Docker MySQL by default       |
+| **Single entry** | One package name, one command                    | `npm i -g @reactpressjs/reactpress@3` → `reactpress`   |
+| **Great DX**     | Less docs, visible status                        | Interactive menu, `doctor`, `status`, dev success URLs |
 
 ## Quick start (about one minute)
 
 After a **global install**, in an empty directory:
 
 ```bash
-npm i -g @fecommunity/reactpress@3
+npm i -g @reactpressjs/reactpress@3
 mkdir my-blog && cd my-blog
 reactpress init
 reactpress dev
 ```
 
-| URL | Purpose |
-|-----|---------|
-| http://localhost:3001 | Site |
-| http://localhost:3001/admin | Admin |
+| URL                              | Purpose      |
+| -------------------------------- | ------------ |
+| http://localhost:3001            | Site         |
+| http://localhost:3001/admin      | Admin        |
 | http://localhost:3002/api/health | Health check |
 
 Run `reactpress` with no args for the interactive menu.
 
 ## Commands
 
-| Command | Description |
-|---------|-------------|
-| `reactpress` | Interactive menu |
-| `reactpress init` | Zero-config setup |
-| `reactpress dev` | Full stack (default) |
-| `reactpress dev --api-only` | API only (Headless) |
-| `reactpress dev --client-only` | Client only |
-| `reactpress doctor` | Environment diagnostics |
-| `reactpress status` | Status summary |
-| `reactpress start` / `stop` / `restart` | Production lifecycle |
+| Command                                 | Description             |
+| --------------------------------------- | ----------------------- |
+| `reactpress`                            | Interactive menu        |
+| `reactpress init`                       | Zero-config setup       |
+| `reactpress dev`                        | Full stack (default)    |
+| `reactpress dev --api-only`             | API only (Headless)     |
+| `reactpress dev --client-only`          | Client only             |
+| `reactpress doctor`                     | Environment diagnostics |
+| `reactpress status`                     | Status summary          |
+| `reactpress start` / `stop` / `restart` | Production lifecycle    |
 
 ## Packages (3.0)
 
-| Package | Role |
-|---------|------|
-| **`@fecommunity/reactpress`** | **Main package** — CLI + bundled API |
-| `@fecommunity/reactpress-client` | Advanced: client-only deploy |
-| `@fecommunity/reactpress-toolkit` | Headless TS SDK |
-| `@fecommunity/reactpress-cli` | **Deprecated** alias |
-| `@fecommunity/reactpress-server` | **Deprecated** — use bundled API |
+| Package                            | Role                                 |
+| ---------------------------------- | ------------------------------------ |
+| **`@reactpressjs/reactpress`**     | **Main package** — CLI + bundled API |
+| `@reactpressjs/reactpress-client`  | Advanced: client-only deploy         |
+| `@reactpressjs/reactpress-toolkit` | Headless TS SDK                      |
+| `@reactpressjs/reactpress-cli`     | **Deprecated** alias                 |
+| `@reactpressjs/reactpress-server`  | **Deprecated** — use bundled API     |
 
 ## Upgrade from 2.x
 

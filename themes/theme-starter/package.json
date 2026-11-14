@@ -7,9 +7,6 @@
   "author": "ReactPress",
   "homepage": "https://github.com/reactpressjs/reactpress-theme-starter",
   "license": "MIT",
-  "dependencies": {
-    "@fecommunity/reactpress-theme-starter": "1.0.0-beta.0"
-  },
   "reactpress": {
     "theme": {
       "id": "reactpress-theme-starter",
@@ -23,7 +20,11 @@
         "Next.js 15"
       ],
       "featured": true,
-      "requires": ">=3.0.0"
+      "requires": ">=3.0.0",
+      "dependency": {
+        "name": "@reactpressjs/reactpress-theme-starter",
+        "version": "1.0.0-beta.0"
+      }
     }
   }
 }

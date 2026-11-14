@@ -19,10 +19,22 @@ module.exports = {
     '@typescript-eslint/interface-name-prefix': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
+    '@typescript-eslint/no-require-imports': 'off',
     'simple-import-sort/imports': 'off',
     'simple-import-sort/exports': 'off',
     // Server package pins Prettier 1.x; eslint-plugin-prettier cannot parse modern TS (`import type`).
     // Formatting is handled by root Prettier / lint-staged, not ESLint.
     'prettier/prettier': 'off',
   },
+  overrides: [
+    {
+      files: ['**/*.spec.ts', '**/__mocks__/**', '**/__fixtures__/**'],
+      rules: {
+        '@typescript-eslint/no-unused-vars': 'off',
+        '@typescript-eslint/no-var-requires': 'off',
+        '@typescript-eslint/no-require-imports': 'off',
+      },
+    },
+  ],
 };

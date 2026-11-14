@@ -1,4 +1,4 @@
-import type { PluginAdminModule } from '@fecommunity/reactpress-toolkit/plugin/admin';
+import type { PluginAdminModule } from '@reactpressjs/reactpress-toolkit/plugin/admin';
 
 export { SettingsPanel } from './OptimizeDashboard';
 

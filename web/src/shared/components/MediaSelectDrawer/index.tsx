@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 
 import { fetchMediaFiles, isImageType, type MediaFileRow } from "@/modules/media/mediaListApi";
 import { uploadFile } from "@/shared/api/uploadFile";
-import { Image as RpImage } from "@fecommunity/reactpress-toolkit/ui/content";
+import { Image as RpImage } from "@reactpressjs/reactpress-toolkit/ui/content";
 
 import styles from "./media-select-drawer.module.css";
 

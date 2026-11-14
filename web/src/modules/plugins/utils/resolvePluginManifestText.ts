@@ -2,7 +2,7 @@ import {
   localizePluginSettingsSchemaWithLocale,
   type PluginAdminLocaleMessages,
   type PluginSettingsSchema,
-} from "@fecommunity/reactpress-toolkit/plugin/extension";
+} from "@reactpressjs/reactpress-toolkit/plugin/extension";
 
 export function localizePluginSettingsSchema(
   schema: PluginSettingsSchema | null | undefined,

@@ -10,7 +10,7 @@ keywords: [reactpress, production, deploy, nginx, init, sqlite]
 服务器安装 [Node.js 20+](https://nodejs.org/) 后，默认使用嵌入式 **SQLite**，无需 Docker：
 
 ```bash
-npm i -g @fecommunity/reactpress
+npm i -g @reactpressjs/reactpress
 mkdir /path/to/your-site && cd /path/to/your-site
 reactpress init
 ```
@@ -98,6 +98,6 @@ pm2 restart all       # 或 pnpm run pm2
 | 仅 API / 拆分进程 | Monorepo：`pnpm dev:api` 等，见 [Monorepo 开发](../developer-guide/local-development.md) |
 | 桌面客户端        | `pnpm build:desktop`（本地 SQLite，非服务器部署）                                        |
 
-`@fecommunity/reactpress-server` 已 deprecated，请勿作为新项目的生产入口。
+`@reactpressjs/reactpress-server` 已 deprecated，请勿作为新项目的生产入口。
 
 更多说明见 [ReactPress 4.0 扩展版](../tutorial-extras/reactpress-4-0.md)、[CLI 命令参考](../developer-guide/cli-reference.md) 与 [Docker 部署](../tutorial-extras/docker-deployment.md)。

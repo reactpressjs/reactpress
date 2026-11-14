@@ -1,4 +1,4 @@
-const { config } = require('@fecommunity/reactpress-toolkit');
+const { config } = require('@reactpressjs/reactpress-toolkit');
 const cliDev = require('next/dist/cli/next-dev');
 const path = require('path');
 const { spawn } = require('child_process');
@@ -10,9 +10,7 @@ if (require('fs').existsSync(envPath)) {
   dotenv.config({ path: envPath });
 }
 
-const port = Number(
-  process.env.PORT || process.env.CLIENT_PORT || config.CLIENT_PORT || 3001,
-);
+const port = Number(process.env.PORT || process.env.CLIENT_PORT || config.CLIENT_PORT || 3001);
 
 function resolveNextBin() {
   try {

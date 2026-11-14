@@ -157,7 +157,7 @@ Managed with **pnpm workspace** (`pnpm-workspace.yaml`):
 
 ```yaml
 packages:
-  - 'cli' # Global CLI (@fecommunity/reactpress)
+  - 'cli' # Global CLI (@reactpressjs/reactpress)
   - 'server' # NestJS API
   - 'web' # Admin SPA
   - 'desktop' # Electron shell
@@ -196,13 +196,13 @@ reactpress/
 
 ### npm package mapping
 
-| Directory            | npm package                                    | Notes                                                            |
-| -------------------- | ---------------------------------------------- | ---------------------------------------------------------------- |
-| `cli/`               | `@fecommunity/reactpress`                      | 4.0 main package; global `reactpress` command                    |
-| `web/`               | `@fecommunity/reactpress-web`                  | Admin SPA                                                        |
-| `server/`            | `@fecommunity/reactpress-server`               | Monorepo source; standalone npm deprecated — use CLI bundled API |
-| `toolkit/`           | `@fecommunity/reactpress-toolkit`              | Shared SDK                                                       |
-| `themes/hello-world` | `@fecommunity/reactpress-template-hello-world` | Starter theme                                                    |
+| Directory            | npm package                                     | Notes                                                            |
+| -------------------- | ----------------------------------------------- | ---------------------------------------------------------------- |
+| `cli/`               | `@reactpressjs/reactpress`                      | 4.0 main package; global `reactpress` command                    |
+| `web/`               | `@reactpressjs/reactpress-web`                  | Admin SPA                                                        |
+| `server/`            | `@reactpressjs/reactpress-server`               | Monorepo source; standalone npm deprecated — use CLI bundled API |
+| `toolkit/`           | `@reactpressjs/reactpress-toolkit`              | Shared SDK                                                       |
+| `themes/hello-world` | `@reactpressjs/reactpress-template-hello-world` | Starter theme                                                    |
 
 ---
 
@@ -735,7 +735,7 @@ Shell `bootstrap()` registers core modules, then loads active plugins. Menu orde
 ### API connection
 
 - Dev: `VITE_API_BASE_URL=/api`, Vite proxy to `:3002`
-- Client: `getToolkitClient()` → `@fecommunity/reactpress-toolkit/react`
+- Client: `getToolkitClient()` → `@reactpressjs/reactpress-toolkit/react`
 - Mock: `VITE_AUTH_MODE=mock` + MSW
 - Live: `VITE_AUTH_MODE=server`
 
@@ -813,13 +813,13 @@ toolkit/src/
 
 ### Export paths
 
-| Path                                            | Use                       |
-| ----------------------------------------------- | ------------------------- |
-| `@fecommunity/reactpress-toolkit`               | Main entry                |
-| `@fecommunity/reactpress-toolkit/react`         | React client factory      |
-| `@fecommunity/reactpress-toolkit/theme`         | Theme SSR                 |
-| `@fecommunity/reactpress-toolkit/plugin/server` | Plugin Hook SDK           |
-| `@fecommunity/reactpress-toolkit/plugin/admin`  | Plugin Admin registration |
+| Path                                             | Use                       |
+| ------------------------------------------------ | ------------------------- |
+| `@reactpressjs/reactpress-toolkit`               | Main entry                |
+| `@reactpressjs/reactpress-toolkit/react`         | React client factory      |
+| `@reactpressjs/reactpress-toolkit/theme`         | Theme SSR                 |
+| `@reactpressjs/reactpress-toolkit/plugin/server` | Plugin Hook SDK           |
+| `@reactpressjs/reactpress-toolkit/plugin/admin`  | Plugin Admin registration |
 
 ### Regenerate
 
@@ -834,7 +834,7 @@ See [toolkit/README.md](./toolkit/README.md).
 
 ## 15. CLI (orchestration)
 
-Published as `@fecommunity/reactpress` — zero-config project lifecycle.
+Published as `@reactpressjs/reactpress` — zero-config project lifecycle.
 
 ### Core commands (global npm CLI)
 

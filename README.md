@@ -13,8 +13,8 @@
 
 <p align="center">
   <a href="https://github.com/reactpressjs/reactpress/stargazers"><img src="https://img.shields.io/github/stars/reactpressjs/reactpress?style=flat-square&logo=github" alt="Stars" /></a>
-  <a href="https://www.npmjs.com/package/@fecommunity/reactpress"><img src="https://img.shields.io/npm/v/@fecommunity/reactpress?style=flat-square&logo=npm&label=npm" alt="npm" /></a>
-  <a href="https://www.npmjs.com/package/@fecommunity/reactpress"><img src="https://img.shields.io/npm/dm/@fecommunity/reactpress?style=flat-square&label=downloads" alt="downloads" /></a>
+  <a href="https://www.npmjs.com/package/@reactpressjs/reactpress"><img src="https://img.shields.io/npm/v/@reactpressjs/reactpress?style=flat-square&logo=npm&label=npm" alt="npm" /></a>
+  <a href="https://www.npmjs.com/package/@reactpressjs/reactpress"><img src="https://img.shields.io/npm/dm/@reactpressjs/reactpress?style=flat-square&label=downloads" alt="downloads" /></a>
   <a href="./LICENSE"><img src="https://img.shields.io/github/license/reactpressjs/reactpress?style=flat-square" alt="License" /></a>
   <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/node-%3E%3D20-brightgreen?style=flat-square&logo=node.js&logoColor=white" alt="Node.js" /></a>
 </p>
@@ -34,19 +34,21 @@
 
 WordPress-grade editing for frontend teams — without five repos, nginx, or a DBA.
 
-| Layer       | What you get                                                        |
-| :---------- | :------------------------------------------------------------------ |
-| **CMS API** | Headless NestJS REST — SQLite by default, MySQL optional            |
-| **Admin**   | Writing console at `/admin/` — posts, pages, media, plugins, themes |
-| **Themes**  | npm-installable Next.js frontends — swap without touching content   |
-| **Plugins** | Extend the platform without forking the core                        |
-| **Desktop** | Same stack as a native app                                          |
-| **CLI**     | `init` · `doctor` · `logs` · `stop` — operate from the terminal     |
+| Layer           | What you get                                                                                   |
+| :-------------- | :--------------------------------------------------------------------------------------------- |
+| **CMS API**     | Headless NestJS REST — SQLite by default, MySQL optional                                       |
+| **Admin**       | Writing console at `/admin/` — posts, pages, media, plugins, themes                            |
+| **Themes**      | npm-installable Next.js frontends — swap without touching content                              |
+| **Plugins**     | Extend the platform without forking the core                                                   |
+| **AI Assist**   | Bring your own API Key. Skills draft; you approve before publish                               |
+| **Agent Skill** | `npx skills add reactpressjs/reactpress --skill blog-ai` — install, write, publish from Cursor |
+| **Desktop**     | Same stack as a native app                                                                     |
+| **CLI**         | `init` · `doctor` · `logs` · `stop` — operate from the terminal                                |
 
 ## Quick Start
 
 ```bash
-npm install -g @fecommunity/reactpress
+npm install -g @reactpressjs/reactpress
 mkdir my-site && cd my-site
 reactpress init
 ```
@@ -76,7 +78,7 @@ Theme starter · [repo](https://github.com/reactpressjs/reactpress-theme-starter
 | [Themes](./themes/README.md)            | Build & publish Next.js themes |
 | [Plugins](./plugins/README.md)          | Extend Admin and the API       |
 | [Desktop](./desktop/README.md)          | Package the stack as an app    |
-| [CLI](./cli/README.md)                  | `@fecommunity/reactpress`      |
+| [CLI](./cli/README.md)                  | `@reactpressjs/reactpress`     |
 
 ## Contributing
 

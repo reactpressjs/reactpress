@@ -1,0 +1,2463 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "ReactPress API Documentation",
+    "description": "Comprehensive API documentation for ReactPress - A modern content management system built with NestJS",
+    "version": "2.0",
+    "contact": {
+      "name": "ReactPress Team",
+      "url": "https://github.com/reactpressjs/reactpress",
+      "email": "admin@gaoredu.com"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://github.com/reactpressjs/reactpress/blob/main/LICENSE"
+    }
+  },
+  "tags": [],
+  "servers": [
+    {
+      "url": "http://localhost:3002",
+      "description": "API Server"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "User": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "avatar": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "createAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "updateAt": {
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "required": ["name", "password", "avatar", "email", "role", "status", "type", "createAt", "updateAt"]
+      },
+      "Setting": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "i18n": {
+            "type": "string"
+          },
+          "globalSetting": {
+            "type": "string"
+          },
+          "systemUrl": {
+            "type": "string"
+          },
+          "systemTitle": {
+            "type": "string"
+          },
+          "systemSubTitle": {
+            "type": "string"
+          },
+          "systemLogo": {
+            "type": "string"
+          },
+          "systemBg": {
+            "type": "string"
+          },
+          "systemFavicon": {
+            "type": "string"
+          },
+          "systemNoticeInfo": {
+            "type": "string"
+          },
+          "systemFooterInfo": {
+            "type": "string"
+          },
+          "aboutUsGithubUrl": {
+            "type": "string"
+          },
+          "aboutUsCommentQr": {
+            "type": "string"
+          },
+          "aboutUsWechatQr": {
+            "type": "string"
+          },
+          "adminSystemUrl": {
+            "type": "string"
+          },
+          "baiduAnalyticsId": {
+            "type": "string"
+          },
+          "googleAnalyticsId": {
+            "type": "string"
+          },
+          "seoKeyword": {
+            "type": "string"
+          },
+          "seoDesc": {
+            "type": "string"
+          },
+          "oss": {
+            "type": "string"
+          },
+          "smtpHost": {
+            "type": "string"
+          },
+          "smtpPort": {
+            "type": "string"
+          },
+          "smtpUser": {
+            "type": "string"
+          },
+          "smtpPass": {
+            "type": "string"
+          },
+          "smtpFromUser": {
+            "type": "string"
+          },
+          "createAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "updateAt": {
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "i18n",
+          "globalSetting",
+          "systemUrl",
+          "systemTitle",
+          "systemSubTitle",
+          "systemLogo",
+          "systemBg",
+          "systemFavicon",
+          "systemNoticeInfo",
+          "systemFooterInfo",
+          "aboutUsGithubUrl",
+          "aboutUsCommentQr",
+          "aboutUsWechatQr",
+          "adminSystemUrl",
+          "baiduAnalyticsId",
+          "googleAnalyticsId",
+          "seoKeyword",
+          "seoDesc",
+          "oss",
+          "smtpHost",
+          "smtpPort",
+          "smtpUser",
+          "smtpPass",
+          "smtpFromUser",
+          "createAt",
+          "updateAt"
+        ]
+      },
+      "SMTP": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "from": {
+            "type": "string"
+          },
+          "to": {
+            "type": "string"
+          },
+          "subject": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "html": {
+            "type": "string"
+          },
+          "createAt": {
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "required": ["id", "from", "to", "subject", "text", "html", "createAt"]
+      },
+      "File": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "originalname": {
+            "type": "string"
+          },
+          "filename": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "size": {
+            "type": "number"
+          },
+          "url": {
+            "type": "string"
+          },
+          "variants": {
+            "type": "object"
+          },
+          "createAt": {
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "required": ["id", "originalname", "filename", "type", "size", "url", "createAt"]
+      },
+      "Category": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "articles": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Article"
+            }
+          },
+          "createAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "updateAt": {
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "required": ["id", "label", "value", "articles", "createAt", "updateAt"]
+      },
+      "Tag": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "articles": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Article"
+            }
+          },
+          "createAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "updateAt": {
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "required": ["label", "value", "articles", "createAt", "updateAt"]
+      },
+      "Article": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "cover": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string",
+            "description": "URL 别名（slug）"
+          },
+          "seoKeywords": {
+            "type": "string",
+            "description": "SEO 关键词，逗号分隔"
+          },
+          "seoDescription": {
+            "type": "string",
+            "description": "SEO 描述（meta description）"
+          },
+          "content": {
+            "type": "string"
+          },
+          "html": {
+            "type": "string"
+          },
+          "toc": {
+            "type": "string"
+          },
+          "category": {
+            "$ref": "#/components/schemas/Category"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Tag"
+            }
+          },
+          "status": {
+            "type": "string"
+          },
+          "views": {
+            "type": "number"
+          },
+          "likes": {
+            "type": "number"
+          },
+          "isRecommended": {
+            "type": "boolean"
+          },
+          "password": {
+            "type": "string"
+          },
+          "needPassword": {
+            "type": "boolean"
+          },
+          "isCommentable": {
+            "type": "boolean"
+          },
+          "publishAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "scheduledPublishAt": {
+            "format": "date-time",
+            "type": "string",
+            "description": "定时发布时间（草稿状态下生效）"
+          },
+          "createAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "updateAt": {
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "cover",
+          "summary",
+          "slug",
+          "seoKeywords",
+          "seoDescription",
+          "content",
+          "html",
+          "toc",
+          "category",
+          "tags",
+          "status",
+          "views",
+          "likes",
+          "isRecommended",
+          "password",
+          "needPassword",
+          "isCommentable",
+          "publishAt",
+          "scheduledPublishAt",
+          "createAt",
+          "updateAt"
+        ]
+      },
+      "Knowledge": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "parentId": {
+            "type": "string"
+          },
+          "order": {
+            "type": "number"
+          },
+          "title": {
+            "type": "string"
+          },
+          "cover": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          },
+          "html": {
+            "type": "string"
+          },
+          "toc": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "views": {
+            "type": "number"
+          },
+          "likes": {
+            "type": "number"
+          },
+          "isCommentable": {
+            "type": "boolean"
+          },
+          "publishAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "createAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "updateAt": {
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "parentId",
+          "order",
+          "title",
+          "cover",
+          "summary",
+          "content",
+          "html",
+          "toc",
+          "status",
+          "views",
+          "likes",
+          "isCommentable",
+          "publishAt",
+          "createAt",
+          "updateAt"
+        ]
+      },
+      "Comment": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "avatar": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          },
+          "html": {
+            "type": "string"
+          },
+          "pass": {
+            "type": "boolean"
+          },
+          "userAgent": {
+            "type": "string"
+          },
+          "hostId": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "parentCommentId": {
+            "type": "string"
+          },
+          "replyUserName": {
+            "type": "string"
+          },
+          "replyUserEmail": {
+            "type": "string"
+          },
+          "createAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "updateAt": {
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "email",
+          "avatar",
+          "content",
+          "html",
+          "pass",
+          "userAgent",
+          "hostId",
+          "url",
+          "parentCommentId",
+          "replyUserName",
+          "replyUserEmail",
+          "createAt",
+          "updateAt"
+        ]
+      },
+      "Page": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "cover": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "order": {
+            "type": "number"
+          },
+          "content": {
+            "type": "string"
+          },
+          "html": {
+            "type": "string"
+          },
+          "toc": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "publishAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "views": {
+            "type": "number"
+          },
+          "createAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "updateAt": {
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "cover",
+          "name",
+          "path",
+          "order",
+          "content",
+          "html",
+          "toc",
+          "status",
+          "publishAt",
+          "views",
+          "createAt",
+          "updateAt"
+        ]
+      },
+      "View": {
+        "type": "object",
+        "properties": {
+          "ip": {
+            "type": "string"
+          },
+          "userAgent": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "count": {
+            "type": "number"
+          },
+          "address": {
+            "type": "string"
+          },
+          "browser": {
+            "type": "string"
+          },
+          "engine": {
+            "type": "string"
+          },
+          "os": {
+            "type": "string"
+          },
+          "device": {
+            "type": "string"
+          },
+          "createAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "updateAt": {
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "required": [
+          "ip",
+          "userAgent",
+          "url",
+          "count",
+          "address",
+          "browser",
+          "engine",
+          "os",
+          "device",
+          "createAt",
+          "updateAt"
+        ]
+      }
+    }
+  },
+  "paths": {
+    "/user": {
+      "get": {
+        "operationId": "UserController_findAll",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取用户列表",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "无权获取用户列表"
+          }
+        },
+        "tags": ["User"]
+      }
+    },
+    "/user/register": {
+      "post": {
+        "operationId": "UserController_register",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "创建用户",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["User"]
+      }
+    },
+    "/user/update": {
+      "post": {
+        "operationId": "UserController_update",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "更新用户成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["User"]
+      }
+    },
+    "/user/password": {
+      "post": {
+        "operationId": "UserController_updatePassword",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "更新密码成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["User"]
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "operationId": "AuthController_login",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Auth"]
+      }
+    },
+    "/auth/admin": {
+      "post": {
+        "operationId": "AuthController_createBook",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": ["Auth"]
+      }
+    },
+    "/auth/github": {
+      "post": {
+        "operationId": "AuthController_loginWithGithub",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": ["Auth"]
+      }
+    },
+    "/setting": {
+      "post": {
+        "operationId": "SettingController_update",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "更新设置",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Setting"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Setting"]
+      }
+    },
+    "/setting/get": {
+      "post": {
+        "operationId": "SettingController_findAll",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Setting"]
+      }
+    },
+    "/smtp": {
+      "post": {
+        "operationId": "SMTPController_create",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "发送邮件",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SMTP"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Smtp"]
+      },
+      "get": {
+        "operationId": "SMTPController_findAll",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Smtp"]
+      }
+    },
+    "/smtp/test": {
+      "post": {
+        "operationId": "SMTPController_testSend",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "发送测试邮件"
+          }
+        },
+        "tags": ["Smtp"]
+      }
+    },
+    "/smtp/{id}": {
+      "delete": {
+        "operationId": "SMTPController_deleteById",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Smtp"]
+      }
+    },
+    "/file/upload": {
+      "post": {
+        "operationId": "FileController_uploadFile",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "上传文件",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/File"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["File"]
+      }
+    },
+    "/file": {
+      "get": {
+        "operationId": "FileController_findAll",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["File"]
+      }
+    },
+    "/file/{id}": {
+      "get": {
+        "operationId": "FileController_findById",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["File"]
+      },
+      "delete": {
+        "operationId": "FileController_deleteById",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["File"]
+      }
+    },
+    "/file/optimize/report": {
+      "get": {
+        "operationId": "FileOptimizationController_getReport",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Analyze legacy image assets"
+          }
+        },
+        "tags": ["File"]
+      }
+    },
+    "/file/optimize/run": {
+      "post": {
+        "operationId": "FileOptimizationController_startRun",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Start batch image optimization job"
+          }
+        },
+        "tags": ["File"]
+      }
+    },
+    "/file/optimize/job/{id}": {
+      "get": {
+        "operationId": "FileOptimizationController_getJob",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get optimization job status"
+          }
+        },
+        "tags": ["File"]
+      }
+    },
+    "/file/optimize/rewrite": {
+      "post": {
+        "operationId": "FileOptimizationController_rewrite",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Rewrite article/page content URLs"
+          }
+        },
+        "tags": ["File"]
+      }
+    },
+    "/extension/themes/active/public": {
+      "get": {
+        "operationId": "ThemeController_getActivePublic",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Current active theme for local dev / public site"
+          }
+        },
+        "tags": ["Extension"]
+      }
+    },
+    "/extension/themes": {
+      "get": {
+        "operationId": "ThemeController_list",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "List installed and bundled themes"
+          }
+        },
+        "tags": ["Extension"]
+      }
+    },
+    "/extension/themes/catalog": {
+      "get": {
+        "operationId": "ThemeController_catalog",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Official npm theme catalog"
+          }
+        },
+        "tags": ["Extension"]
+      }
+    },
+    "/extension/themes/install-npm": {
+      "post": {
+        "operationId": "ThemeController_installFromNpm",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Install a theme from an npm package spec"
+          }
+        },
+        "tags": ["Extension"]
+      }
+    },
+    "/extension/themes/preview-draft": {
+      "post": {
+        "operationId": "ThemeController_createPreviewDraft",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Store customizer preview payload; returns short token for iframe URL"
+          }
+        },
+        "tags": ["Extension"]
+      }
+    },
+    "/extension/themes/preview-draft/{token}": {
+      "get": {
+        "operationId": "ThemeController_getPreviewDraft",
+        "parameters": [
+          {
+            "name": "token",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Public read of short-lived preview draft by token"
+          }
+        },
+        "tags": ["Extension"]
+      }
+    },
+    "/extension/themes/preview-session/end": {
+      "post": {
+        "operationId": "ThemeController_endPreviewSession",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Restore local dev theme to DB active theme"
+          }
+        },
+        "tags": ["Extension"]
+      }
+    },
+    "/extension/themes/{id}/preview-session": {
+      "post": {
+        "operationId": "ThemeController_beginPreviewSession",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Run local theme dev for preview without activating in DB"
+          }
+        },
+        "tags": ["Extension"]
+      }
+    },
+    "/extension/themes/{id}/cover": {
+      "get": {
+        "operationId": "ThemeController_cover",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Extension"]
+      }
+    },
+    "/extension/themes/{id}/preview": {
+      "get": {
+        "operationId": "ThemeController_preview",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "mods",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Extension"]
+      }
+    },
+    "/extension/themes/{id}/locales/{locale}": {
+      "get": {
+        "operationId": "ThemeController_getLocale",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "locale",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Customizer locale strings bundled with the theme"
+          }
+        },
+        "tags": ["Extension"]
+      }
+    },
+    "/extension/themes/{id}/configuration-schema": {
+      "get": {
+        "operationId": "ThemeController_getConfigurationSchema",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "JSON Schema for theme site configuration"
+          }
+        },
+        "tags": ["Extension"]
+      }
+    },
+    "/extension/themes/{id}/configuration": {
+      "get": {
+        "operationId": "ThemeController_getConfiguration",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Merged theme configuration (defaults + saved)"
+          }
+        },
+        "tags": ["Extension"]
+      },
+      "post": {
+        "operationId": "ThemeController_updateConfiguration",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Patch theme configuration (validated against schema)"
+          }
+        },
+        "tags": ["Extension"]
+      }
+    },
+    "/extension/themes/{id}": {
+      "get": {
+        "operationId": "ThemeController_getOne",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Extension"]
+      }
+    },
+    "/extension/themes/{id}/install": {
+      "post": {
+        "operationId": "ThemeController_install",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": ["Extension"]
+      }
+    },
+    "/extension/themes/{id}/activate": {
+      "post": {
+        "operationId": "ThemeController_activate",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": ["Extension"]
+      }
+    },
+    "/extension/themes/{id}/mods": {
+      "post": {
+        "operationId": "ThemeController_updateMods",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": ["Extension"]
+      }
+    },
+    "/extension/plugins": {
+      "get": {
+        "operationId": "PluginController_list",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "List registered and installed plugins"
+          }
+        },
+        "tags": ["Extension"]
+      }
+    },
+    "/extension/plugins/state": {
+      "get": {
+        "operationId": "PluginController_state",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Current plugin activation state"
+          }
+        },
+        "tags": ["Extension"]
+      }
+    },
+    "/extension/plugins/{id}/locales/{locale}": {
+      "get": {
+        "operationId": "PluginController_getLocale",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "locale",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Admin locale strings bundled with the plugin"
+          }
+        },
+        "tags": ["Extension"]
+      }
+    },
+    "/extension/plugins/{id}": {
+      "get": {
+        "operationId": "PluginController_getOne",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Extension"]
+      },
+      "delete": {
+        "operationId": "PluginController_uninstall",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Extension"]
+      }
+    },
+    "/extension/plugins/{id}/install": {
+      "post": {
+        "operationId": "PluginController_install",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": ["Extension"]
+      }
+    },
+    "/extension/plugins/{id}/activate": {
+      "post": {
+        "operationId": "PluginController_activate",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": ["Extension"]
+      }
+    },
+    "/extension/plugins/{id}/deactivate": {
+      "post": {
+        "operationId": "PluginController_deactivate",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": ["Extension"]
+      }
+    },
+    "/extension/plugins/{id}/config": {
+      "put": {
+        "operationId": "PluginController_updateConfig",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Extension"]
+      }
+    },
+    "/tag": {
+      "post": {
+        "operationId": "TagController_create",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "创建标签",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Tag"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Tag"]
+      },
+      "get": {
+        "operationId": "TagController_findAll",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Tag"]
+      }
+    },
+    "/tag/{id}": {
+      "get": {
+        "operationId": "TagController_findById",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Tag"]
+      },
+      "patch": {
+        "operationId": "TagController_updateById",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Tag"]
+      },
+      "delete": {
+        "operationId": "TagController_deleteById",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Tag"]
+      }
+    },
+    "/tag/{id}/article": {
+      "get": {
+        "operationId": "TagController_getArticleById",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Tag"]
+      }
+    },
+    "/article": {
+      "post": {
+        "operationId": "ArticleController_create",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "创建文章",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Article"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Article"]
+      },
+      "get": {
+        "operationId": "ArticleController_findAll",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Article"]
+      }
+    },
+    "/article/headless/list": {
+      "get": {
+        "operationId": "ArticleController_findHeadless",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Article"]
+      }
+    },
+    "/article/{id}/revisions": {
+      "get": {
+        "operationId": "ArticleController_listRevisions",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Article"]
+      }
+    },
+    "/article/{id}/revisions/{revisionId}/restore": {
+      "post": {
+        "operationId": "ArticleController_restoreRevision",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "revisionId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": ["Article"]
+      }
+    },
+    "/article/category/{id}": {
+      "get": {
+        "operationId": "ArticleController_findArticlesByCategory",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Article"]
+      }
+    },
+    "/article/tag/{id}": {
+      "get": {
+        "operationId": "ArticleController_findArticlesByTag",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Article"]
+      }
+    },
+    "/article/all/recommend": {
+      "get": {
+        "operationId": "ArticleController_getRecommendArticles",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Article"]
+      }
+    },
+    "/article/archives": {
+      "get": {
+        "operationId": "ArticleController_getArchives",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Article"]
+      }
+    },
+    "/article/recommend": {
+      "get": {
+        "operationId": "ArticleController_recommend",
+        "parameters": [
+          {
+            "name": "pageSize",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Article"]
+      }
+    },
+    "/article/{id}": {
+      "get": {
+        "operationId": "ArticleController_findById",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Article"]
+      },
+      "patch": {
+        "operationId": "ArticleController_updateById",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Article"]
+      },
+      "delete": {
+        "operationId": "ArticleController_deleteById",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Article"]
+      }
+    },
+    "/article/{id}/checkPassword": {
+      "post": {
+        "operationId": "ArticleController_checkPassword",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Article"]
+      }
+    },
+    "/article/{id}/views": {
+      "post": {
+        "operationId": "ArticleController_updateViewsById",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Article"]
+      }
+    },
+    "/article/{id}/likes": {
+      "post": {
+        "operationId": "ArticleController_updateLikesById",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Article"]
+      }
+    },
+    "/category": {
+      "post": {
+        "operationId": "CategoryController_create",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "添加分类",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Category"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Category"]
+      },
+      "get": {
+        "operationId": "CategoryController_findAll",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Category"]
+      }
+    },
+    "/category/{id}": {
+      "get": {
+        "operationId": "CategoryController_findById",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Category"]
+      },
+      "patch": {
+        "operationId": "CategoryController_updateById",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Category"]
+      },
+      "delete": {
+        "operationId": "CategoryController_deleteById",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Category"]
+      }
+    },
+    "/api-key": {
+      "get": {
+        "operationId": "ApiKeyController_list",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["ApiKey"]
+      },
+      "post": {
+        "operationId": "ApiKeyController_create",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": ["ApiKey"]
+      }
+    },
+    "/api-key/{id}": {
+      "delete": {
+        "operationId": "ApiKeyController_revoke",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["ApiKey"]
+      }
+    },
+    "/webhook": {
+      "get": {
+        "operationId": "WebhookController_list",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Webhook"]
+      },
+      "post": {
+        "operationId": "WebhookController_create",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": ["Webhook"]
+      }
+    },
+    "/webhook/{id}": {
+      "delete": {
+        "operationId": "WebhookController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Webhook"]
+      }
+    },
+    "/Knowledge/book": {
+      "post": {
+        "operationId": "KnowledgeController_createBook",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "创建知识库",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Knowledge"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Knowledge"]
+      }
+    },
+    "/Knowledge/chapter": {
+      "post": {
+        "operationId": "KnowledgeController_createChapter",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "创建知识章节",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Knowledge"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Knowledge"]
+      }
+    },
+    "/Knowledge/{id}": {
+      "delete": {
+        "operationId": "KnowledgeController_deleteById",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Knowledge"]
+      },
+      "patch": {
+        "operationId": "KnowledgeController_updateById",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Knowledge"]
+      },
+      "get": {
+        "operationId": "KnowledgeController_findById",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Knowledge"]
+      }
+    },
+    "/Knowledge": {
+      "get": {
+        "operationId": "KnowledgeController_findAll",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Knowledge"]
+      }
+    },
+    "/Knowledge/{id}/views": {
+      "post": {
+        "operationId": "KnowledgeController_updateViewsById",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Knowledge"]
+      }
+    },
+    "/Knowledge/{id}/likes": {
+      "post": {
+        "operationId": "KnowledgeController_updateLikesById",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Knowledge"]
+      }
+    },
+    "/comment": {
+      "post": {
+        "operationId": "CommentController_create",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "创建评论",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Comment"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Comment"]
+      },
+      "get": {
+        "operationId": "CommentController_findAll",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Comment"]
+      }
+    },
+    "/comment/{id}": {
+      "get": {
+        "operationId": "CommentController_findById",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Comment"]
+      },
+      "patch": {
+        "operationId": "CommentController_updateById",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Comment"]
+      },
+      "delete": {
+        "operationId": "CommentController_deleteById",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Comment"]
+      }
+    },
+    "/comment/host/{hostId}": {
+      "get": {
+        "operationId": "CommentController_getArticleComments",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Comment"]
+      }
+    },
+    "/page": {
+      "post": {
+        "operationId": "PageController_create",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "创建页面",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Page"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Page"]
+      },
+      "get": {
+        "operationId": "PageController_findAll",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Page"]
+      }
+    },
+    "/page/{id}": {
+      "get": {
+        "operationId": "PageController_findById",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Page"]
+      },
+      "patch": {
+        "operationId": "PageController_updateById",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Page"]
+      },
+      "delete": {
+        "operationId": "PageController_deleteById",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Page"]
+      }
+    },
+    "/page/{id}/views": {
+      "post": {
+        "operationId": "PageController_updateViewsById",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Page"]
+      }
+    },
+    "/view": {
+      "post": {
+        "operationId": "ViewController_create",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "访问记录添加成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/View"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["View"]
+      },
+      "get": {
+        "operationId": "ViewController_findAll",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["View"]
+      }
+    },
+    "/view/url": {
+      "get": {
+        "operationId": "ViewController_findByUrl",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["View"]
+      }
+    },
+    "/view/{id}": {
+      "get": {
+        "operationId": "ViewController_findById",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["View"]
+      },
+      "delete": {
+        "operationId": "ViewController_deleteById",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["View"]
+      }
+    },
+    "/search/article": {
+      "get": {
+        "operationId": "SearchController_searchArticle",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Search"]
+      }
+    },
+    "/search": {
+      "get": {
+        "operationId": "SearchController_findAll",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Search"]
+      }
+    },
+    "/search/{id}": {
+      "delete": {
+        "operationId": "SearchController_deleteById",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Search"]
+      }
+    },
+    "/health": {
+      "get": {
+        "operationId": "HealthController_check",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["Health"]
+      }
+    },
+    "/ai/status": {
+      "get": {
+        "operationId": "AiController_status",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["AI"]
+      }
+    },
+    "/ai/test": {
+      "post": {
+        "operationId": "AiController_test",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": ["AI"]
+      }
+    },
+    "/ai/skills/run": {
+      "post": {
+        "operationId": "AiController_runSkill",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": ["AI"]
+      }
+    },
+    "/ai/reviews": {
+      "get": {
+        "operationId": "AiController_listReviews",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["AI"]
+      }
+    },
+    "/ai/reviews/{id}": {
+      "get": {
+        "operationId": "AiController_getReview",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["AI"]
+      }
+    },
+    "/ai/reviews/{id}/approve": {
+      "post": {
+        "operationId": "AiController_approve",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": ["AI"]
+      }
+    },
+    "/ai/reviews/{id}/reject": {
+      "post": {
+        "operationId": "AiController_reject",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": ["AI"]
+      }
+    }
+  }
+}

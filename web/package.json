@@ -1,6 +1,6 @@
 {
-  "name": "@fecommunity/reactpress-web",
-  "version": "4.0.0",
+  "name": "@reactpressjs/reactpress-web",
+  "version": "5.0.0",
   "description": "Official ReactPress Admin — WordPress-style writing UI for the publishing platform. Vite SPA with Express and Next.js /admin/ mount helpers",
   "keywords": [
     "admin",
@@ -100,16 +100,26 @@
     "zustand": "^5.0.12"
   },
   "devDependencies": {
-    "@fecommunity/reactpress-toolkit": "workspace:*",
     "@playwright/test": "^1.58.2",
+    "@reactpressjs/reactpress-toolkit": "workspace:*",
     "@tanstack/router-plugin": "^1.166.13",
     "@types/react": "19.2.7",
     "@types/react-dom": "19.2.3",
     "@vitejs/plugin-react-swc": "^4.3.0",
     "msw": "^2.12.12",
     "typescript": "~5.9.3",
-    "vite": "npm:@voidzero-dev/vite-plus-core@latest",
-    "vite-plus": "latest"
+    "vite": "npm:@voidzero-dev/vite-plus-core@1.6.0",
+    "vite-plus": "1.6.0"
+  },
+  "optionalDependencies": {
+    "@voidzero-dev/vite-plus-darwin-arm64": "1.6.0",
+    "@voidzero-dev/vite-plus-darwin-x64": "1.6.0",
+    "@voidzero-dev/vite-plus-linux-arm64-gnu": "1.6.0",
+    "@voidzero-dev/vite-plus-linux-arm64-musl": "1.6.0",
+    "@voidzero-dev/vite-plus-linux-x64-gnu": "1.6.0",
+    "@voidzero-dev/vite-plus-linux-x64-musl": "1.6.0",
+    "@voidzero-dev/vite-plus-win32-arm64-msvc": "1.6.0",
+    "@voidzero-dev/vite-plus-win32-x64-msvc": "1.6.0"
   },
   "engines": {
     "node": ">=18"

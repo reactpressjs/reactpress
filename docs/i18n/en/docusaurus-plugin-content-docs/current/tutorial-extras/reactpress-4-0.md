@@ -1,13 +1,13 @@
 ---
 sidebar_position: 3
 title: ReactPress 4.0 Extend
-description: ReactPress 4.0 Extend — plugin system, Electron desktop client, npm theme catalog. The current recommended line on top of 3.x platform capabilities.
+description: ReactPress 4.0 Extend — plugin system, Electron desktop client, npm theme catalog. The line before 5.0 Intelligent.
 keywords: [reactpress 4.0, extend, plugin, desktop, theme catalog, wordpress alternative]
 ---
 
 # ReactPress 4.0 Extend
 
-> **Current recommended release.** 3.x platform capabilities + plugin ecosystem + desktop writing — still one CLI, one Admin.
+> **4.0 Extend line.** The current recommended release is [ReactPress 5.0 Intelligent](./reactpress-5-0.md). This page keeps the plugin, desktop, and theme catalog notes.
 
 4.0 (codename **Extend**) builds on [3.0 Platform](./reactpress-3-0.md) and [3.1 Toolkit theme work](/blog/changelog) with three headlines:
 
@@ -20,7 +20,7 @@ keywords: [reactpress 4.0, extend, plugin, desktop, theme catalog, wordpress alt
 ## Quick start (full stack)
 
 ```bash
-npm i -g @fecommunity/reactpress
+npm i -g @reactpressjs/reactpress
 mkdir my-site && cd my-site
 reactpress init
 ```
@@ -93,7 +93,7 @@ Plugin development: [plugins/README.md](https://github.com/reactpressjs/reactpre
 Monorepo contributors:
 
 ```bash
-reactpress theme add @fecommunity/reactpress-theme-starter@1.0.0-beta.0
+reactpress theme add @reactpressjs/reactpress-theme-starter@1.0.0-beta.0
 ```
 
 (`theme` / `plugin` are not on the global npm CLI.)

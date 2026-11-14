@@ -73,10 +73,36 @@ function resolveRemoteUpstreamHost(remoteApiOrigin) {
   }
 }
 
+/** Agent SSE chat — must disable proxy buffering or the UI waits until the full reply. */
+function renderAiAgentSseProxyBlock(proxyPassLine, hostHeader) {
+  return `    # AI Agent SSE (disable buffering for token streaming)
+    location /api/ai/agent/chat {
+        ${proxyPassLine}
+        proxy_http_version 1.1;
+        proxy_set_header Host ${hostHeader};
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header Connection '';
+        proxy_buffering off;
+        proxy_cache off;
+        chunked_transfer_encoding on;
+        proxy_read_timeout 3600;
+        proxy_send_timeout 3600;
+        proxy_connect_timeout 300;
+        proxy_redirect off;
+    }`;
+}
+
 function renderApiProxyBlock(remoteApiOrigin, apiPort) {
   if (remoteApiOrigin) {
     const upstreamHost = resolveRemoteUpstreamHost(remoteApiOrigin);
-    return `    # REST API (remote upstream)
+    const sseBlock = renderAiAgentSseProxyBlock(
+      `proxy_pass ${remoteApiOrigin};`,
+      upstreamHost
+    );
+    return `${sseBlock}
+    # REST API (remote upstream)
     location /api {
         proxy_pass ${remoteApiOrigin};
         proxy_ssl_server_name on;
@@ -95,7 +121,12 @@ function renderApiProxyBlock(remoteApiOrigin, apiPort) {
     }`;
   }
 
-  return `    # REST API (Nest on host :${apiPort}, keep /api prefix)
+  const sseBlock = renderAiAgentSseProxyBlock(
+    `proxy_pass http://host.docker.internal:${apiPort};`,
+    '$host'
+  );
+  return `${sseBlock}
+    # REST API (Nest on host :${apiPort}, keep /api prefix)
     location /api {
         proxy_pass http://host.docker.internal:${apiPort};
         proxy_http_version 1.1;
@@ -234,6 +265,10 @@ function isDevNginxConfigStale(projectRoot, configPath) {
   // Dev must not long-cache Next chunks (breaks client-side nav after on-demand compile).
   if (content.includes('expires 1y') && content.includes('/_next/')) return true;
   if (!content.includes('location /public/')) return true;
+  // Agent SSE requires an unbuffered location or chat appears only after the full reply.
+  if (!content.includes('location /api/ai/agent/chat') || !content.includes('proxy_buffering off')) {
+    return true;
+  }
   return false;
 }
 
@@ -251,6 +286,9 @@ function isProdNginxConfigStale(projectRoot, configPath) {
   if (!content.includes(`host.docker.internal:${visitorPort}`)) return true;
   if (!content.includes(`host.docker.internal:${apiPort}`)) return true;
   if (!content.includes('location /public/')) return true;
+  if (!content.includes('location /api/ai/agent/chat') || !content.includes('proxy_buffering off')) {
+    return true;
+  }
   return false;
 }
 

@@ -25,13 +25,13 @@ export const FAQ_ENTRIES_EN: FaqEntry[] = [
       'Yes. ReactPress provides Headless REST with API keys. Fork reactpress-theme-starter or integrate /api/article and other endpoints.',
   },
   {
-    question: 'Is ReactPress 4.0 production-ready?',
+    question: 'Is ReactPress 5.0 production-ready?',
     answer:
-      '4.0.0 is the current stable release. When upgrading from 3.x, validate on staging and read the 3.x to 4.0 migration guide.',
+      '5.0.0 is the current release. When upgrading from 4.x, read the 4.x to 5.0 migration guide. AI Assist writes drafts only; a person approves publish.',
   },
   {
     question: 'Is ReactPress free?',
-    answer: 'Yes. ReactPress is open source under the MIT license. Install via npm: npm i -g @fecommunity/reactpress.',
+    answer: 'Yes. ReactPress is open source under the MIT license. Install via npm: npm i -g @reactpressjs/reactpress.',
   },
 ];
 
@@ -57,12 +57,12 @@ export const FAQ_ENTRIES_ZH: FaqEntry[] = [
       '可以。ReactPress 提供带 API Key 的 Headless REST。可 fork reactpress-theme-starter 或直接对接 /api/article 等接口。',
   },
   {
-    question: 'ReactPress 4.0 可用于生产环境吗？',
-    answer: '4.0.0 为当前稳定版（npm `@latest`）。从 3.x 升级时请先在预发环境验证，并阅读 3.x 到 4.0 迁移指南。',
+    question: 'ReactPress 5.0 可用于生产环境吗？',
+    answer: '5.0.0 为当前版本。从 4.x 升级请阅读 4.x 到 5.0 迁移指南。AI Assist 只写草稿，发布必须人工通过。',
   },
   {
     question: 'ReactPress 免费吗？',
-    answer: '是的。ReactPress 基于 MIT 开源，可通过 npm i -g @fecommunity/reactpress 安装。',
+    answer: '是的。ReactPress 基于 MIT 开源，可通过 npm i -g @reactpressjs/reactpress 安装。',
   },
 ];
 
@@ -85,13 +85,16 @@ export function buildOrganizationGraph(baseUrl: string) {
         '@id': `${baseUrl}/#organization`,
         'name': 'ReactPress',
         'url': `${baseUrl}/`,
-        'logo': `${baseUrl}/img/reactpress-social-card.png`,
+        'logo': {
+          '@type': 'ImageObject',
+          'url': `${baseUrl}/img/apple-touch-icon.png`,
+        },
         'sameAs': [
-          'https://www.reactpress.cc/',
+          `${baseUrl}/`,
           'https://github.com/reactpressjs',
           'https://github.com/reactpressjs/reactpress',
           'https://www.npmjs.com/~reactpressjs',
-          'https://www.npmjs.com/package/@fecommunity/reactpress',
+          'https://www.npmjs.com/package/@reactpressjs/reactpress',
         ],
         'contactPoint': {
           '@type': 'ContactPoint',
@@ -108,7 +111,7 @@ export function buildOrganizationGraph(baseUrl: string) {
         'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'USD' },
         'softwareVersion': '4.0',
         'url': `${baseUrl}/`,
-        'downloadUrl': 'https://www.npmjs.com/package/@fecommunity/reactpress',
+        'downloadUrl': 'https://www.npmjs.com/package/@reactpressjs/reactpress',
         'author': { '@id': `${baseUrl}/#organization` },
       },
     ],

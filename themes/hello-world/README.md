@@ -4,13 +4,13 @@
 
 **Minimal Next.js 15 theme** for the [ReactPress](https://github.com/reactpressjs/reactpress) publishing platform. Pages Router blog with home, articles, categories, tags, search, and custom pages — the reference template to copy and customize.
 
-| Item         | Details                                                |
-| :----------- | :----------------------------------------------------- |
-| **Routing**  | Next.js Pages Router (`pages/`)                        |
-| **Entry**    | `pages/_app.tsx` → `createThemeApp(theme.json)`        |
-| **Build**    | `createReactPressNextConfig()` (`next.config.js`)      |
-| **Contract** | `theme.json` (manifest + appearance + templates)       |
-| **SDK**      | `@fecommunity/reactpress-toolkit/app`, `/theme`, `/ui` |
+| Item         | Details                                                 |
+| :----------- | :------------------------------------------------------ |
+| **Routing**  | Next.js Pages Router (`pages/`)                         |
+| **Entry**    | `pages/_app.tsx` → `createThemeApp(theme.json)`         |
+| **Build**    | `createReactPressNextConfig()` (`next.config.js`)       |
+| **Contract** | `theme.json` (manifest + appearance + templates)        |
+| **SDK**      | `@reactpressjs/reactpress-toolkit/app`, `/theme`, `/ui` |
 
 [Theme demo (production)](https://github.com/reactpressjs/reactpress-theme-starter) · [Theme system](../README.md) · [Documentation](https://reactpress.cc/)
 
@@ -78,7 +78,7 @@ Full schema: [`theme.manifest.schema.json`](../theme.manifest.schema.json).
 
 ```tsx
 // pages/index.tsx
-import { fetchArticles, themeStaticProps } from '@fecommunity/reactpress-toolkit/theme';
+import { fetchArticles, themeStaticProps } from '@reactpressjs/reactpress-toolkit/theme';
 
 export const getStaticProps = themeStaticProps(async () => {
   const articles = await fetchArticles({ page: 1, pageSize: 10 });
@@ -90,7 +90,7 @@ App shell entry:
 
 ```tsx
 // pages/_app.tsx
-import { createThemeApp } from '@fecommunity/reactpress-toolkit/app';
+import { createThemeApp } from '@reactpressjs/reactpress-toolkit/app';
 import themeManifest from '../theme.json';
 
 export default createThemeApp(themeManifest);
@@ -98,7 +98,7 @@ export default createThemeApp(themeManifest);
 
 ## Publishing
 
-This package can be published as `@fecommunity/reactpress-template-hello-world`. For production sites, prefer the full-featured [@fecommunity/reactpress-theme-starter](https://www.npmjs.com/package/@fecommunity/reactpress-theme-starter).
+This package can be published as `@reactpressjs/reactpress-template-hello-world`. For production sites, prefer the full-featured [@reactpressjs/reactpress-theme-starter](https://www.npmjs.com/package/@reactpressjs/reactpress-theme-starter).
 
 ## Related docs
 

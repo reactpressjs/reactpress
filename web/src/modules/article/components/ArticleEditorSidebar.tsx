@@ -1,5 +1,5 @@
 import { Button, Input, Select, Switch } from "antd";
-import { useState } from "react";
+import { type ReactNode, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import type {
@@ -41,6 +41,8 @@ export type ArticleEditorSidebarProps = {
   onPublish: () => void;
   onDelete: () => void;
   onPreview?: () => void;
+  /** Plugin slot under the publish box (e.g. AI Assist). */
+  afterPublishSlot?: ReactNode;
 };
 
 export function ArticleEditorSidebar({
@@ -69,6 +71,7 @@ export function ArticleEditorSidebar({
   onPublish,
   onDelete,
   onPreview,
+  afterPublishSlot,
 }: ArticleEditorSidebarProps) {
   const { t } = useTranslation();
   const [mediaOpen, setMediaOpen] = useState(false);
@@ -129,6 +132,7 @@ export function ArticleEditorSidebar({
               {t("common.delete")}
             </Button>
           ) : null}
+          {afterPublishSlot}
         </div>
       </section>
 

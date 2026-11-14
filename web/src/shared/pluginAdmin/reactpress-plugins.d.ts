@@ -1,5 +1,5 @@
 declare module "@reactpress-plugins/*/src/admin/index" {
-  import type { PluginAdminModule } from "@fecommunity/reactpress-toolkit/plugin/admin";
+  import type { PluginAdminModule } from "@reactpressjs/reactpress-toolkit/plugin/admin";
 
   const mod: PluginAdminModule;
   export default mod;

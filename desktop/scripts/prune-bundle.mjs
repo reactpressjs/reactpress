@@ -2,56 +2,56 @@
  * Remove dev-only and duplicate packages from pnpm deploy output.
  * Safe for desktop local API runtime (NestJS + toolkit dist).
  */
-import fs from "node:fs";
-import path from "node:path";
+import fs from 'node:fs';
+import path from 'node:path';
 
 /** pnpm virtual store folder names to drop (prefix match). */
 const DROP_PNPM_PREFIXES = [
-  "@playwright+",
-  "playwright-core@",
-  "playwright@",
-  "typescript@",
-  "prettier@",
-  "eslint@",
-  "@typescript-eslint+",
-  "@eslint+",
-  "jest@",
-  "ts-jest@",
-  "supertest@",
-  "husky@",
-  "lint-staged@",
-  "@nestjs+cli@",
-  "@nestjs+schematics@",
-  "@nestjs+testing@",
-  "ts-node@",
-  "ts-loader@",
-  "tslint@",
-  "@fecommunity+reactpress@file+cli", // entire CLI package pulled transitively
+  '@playwright+',
+  'playwright-core@',
+  'playwright@',
+  'typescript@',
+  'prettier@',
+  'eslint@',
+  '@typescript-eslint+',
+  '@eslint+',
+  'jest@',
+  'ts-jest@',
+  'supertest@',
+  'husky@',
+  'lint-staged@',
+  '@nestjs+cli@',
+  '@nestjs+schematics@',
+  '@nestjs+testing@',
+  'ts-node@',
+  'ts-loader@',
+  'tslint@',
+  '@reactpressjs+reactpress@file+cli', // entire CLI package pulled transitively
 ];
 
 /** Hoisted node_modules package names to drop (exact or prefix for scoped). */
 const DROP_HOISTED_EXACT = new Set([
-  "typescript",
-  "prettier",
-  "eslint",
-  "jest",
-  "ts-jest",
-  "supertest",
-  "husky",
-  "lint-staged",
-  "ts-node",
-  "ts-loader",
-  "tslint",
-  "playwright",
-  "playwright-core",
-  "@playwright/test",
-  "@nestjs/cli",
-  "@nestjs/schematics",
-  "@nestjs/testing",
-  "@fecommunity/reactpress",
+  'typescript',
+  'prettier',
+  'eslint',
+  'jest',
+  'ts-jest',
+  'supertest',
+  'husky',
+  'lint-staged',
+  'ts-node',
+  'ts-loader',
+  'tslint',
+  'playwright',
+  'playwright-core',
+  '@playwright/test',
+  '@nestjs/cli',
+  '@nestjs/schematics',
+  '@nestjs/testing',
+  '@reactpressjs/reactpress',
 ]);
 
-const DROP_HOISTED_PREFIXES = ["@typescript-eslint/", "@eslint/"];
+const DROP_HOISTED_PREFIXES = ['@typescript-eslint/', '@eslint/'];
 
 function rmrf(target) {
   if (!fs.existsSync(target)) return;
@@ -68,7 +68,7 @@ function shouldDropHoistedEntry(name) {
 }
 
 function prunePnpmVirtualStore(bundleDir) {
-  const pnpmDir = path.join(bundleDir, "node_modules", ".pnpm");
+  const pnpmDir = path.join(bundleDir, 'node_modules', '.pnpm');
   if (!fs.existsSync(pnpmDir)) {
     return { removed: 0, savedBytes: 0 };
   }
@@ -95,7 +95,7 @@ function prunePnpmVirtualStore(bundleDir) {
 }
 
 function pruneHoistedNodeModules(bundleDir) {
-  const nodeModules = path.join(bundleDir, "node_modules");
+  const nodeModules = path.join(bundleDir, 'node_modules');
   if (!fs.existsSync(nodeModules)) {
     return { removed: 0, savedBytes: 0 };
   }
@@ -105,7 +105,7 @@ function pruneHoistedNodeModules(bundleDir) {
 
   for (const entry of fs.readdirSync(nodeModules, { withFileTypes: true })) {
     if (!entry.isDirectory()) continue;
-    if (entry.name === ".pnpm") continue;
+    if (entry.name === '.pnpm') continue;
     if (!shouldDropHoistedEntry(entry.name)) continue;
 
     const full = path.join(nodeModules, entry.name);

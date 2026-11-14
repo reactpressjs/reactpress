@@ -1,11 +1,11 @@
-# @fecommunity/reactpress-toolkit
+# @reactpressjs/reactpress-toolkit
 
 > **Official TypeScript SDK for the ReactPress publishing platform.**
 
-[![npm version](https://img.shields.io/npm/v/@fecommunity/reactpress-toolkit/beta.svg?label=beta)](https://www.npmjs.com/package/@fecommunity/reactpress-toolkit/v/beta)
-[![npm latest](https://img.shields.io/npm/v/@fecommunity/reactpress-toolkit.svg?label=latest)](https://www.npmjs.com/package/@fecommunity/reactpress-toolkit)
-[![npm downloads](https://img.shields.io/npm/dm/@fecommunity/reactpress-toolkit.svg)](https://www.npmjs.com/package/@fecommunity/reactpress-toolkit)
-[![License: MIT](https://img.shields.io/npm/l/@fecommunity/reactpress-toolkit.svg)](https://github.com/reactpressjs/reactpress/blob/master/LICENSE)
+[![npm version](https://img.shields.io/npm/v/@reactpressjs/reactpress-toolkit/beta.svg?label=beta)](https://www.npmjs.com/package/@reactpressjs/reactpress-toolkit/v/beta)
+[![npm latest](https://img.shields.io/npm/v/@reactpressjs/reactpress-toolkit.svg?label=latest)](https://www.npmjs.com/package/@reactpressjs/reactpress-toolkit)
+[![npm downloads](https://img.shields.io/npm/dm/@reactpressjs/reactpress-toolkit.svg)](https://www.npmjs.com/package/@reactpressjs/reactpress-toolkit)
+[![License: MIT](https://img.shields.io/npm/l/@reactpressjs/reactpress-toolkit.svg)](https://github.com/reactpressjs/reactpress/blob/master/LICENSE)
 
 The shared foundation for **ReactPress themes, plugins, Admin extensions, and custom frontends**. Auto-generated OpenAPI clients, Next.js theme SSR helpers, plugin admin hooks, and headless React UI — so you extend the platform instead of duplicating API or rendering logic.
 
@@ -84,7 +84,7 @@ src/
 ## Install
 
 ```bash
-pnpm add @fecommunity/reactpress-toolkit
+pnpm add @reactpressjs/reactpress-toolkit
 ```
 
 ## Quick start
@@ -92,9 +92,9 @@ pnpm add @fecommunity/reactpress-toolkit
 ### API client
 
 ```typescript
-import { api } from '@fecommunity/reactpress-toolkit';
+import { api } from '@reactpressjs/reactpress-toolkit';
 // or
-import { api, createApiInstance } from '@fecommunity/reactpress-toolkit/api/instance';
+import { api, createApiInstance } from '@reactpressjs/reactpress-toolkit/api/instance';
 
 const articles = await api.article.findAll();
 ```
@@ -102,14 +102,14 @@ const articles = await api.article.findAll();
 Custom baseURL:
 
 ```typescript
-import { createApiInstance } from '@fecommunity/reactpress-toolkit/api/instance';
+import { createApiInstance } from '@reactpressjs/reactpress-toolkit/api/instance';
 
 const customApi = createApiInstance({ baseURL: 'https://api.example.com/api' });
 ```
 
 ### Utilities (`./utils`)
 
-Framework-agnostic logic belongs in `utils`; `theme` re-exports for `@fecommunity/reactpress-toolkit/theme` compatibility:
+Framework-agnostic logic belongs in `utils`; `theme` re-exports for `@reactpressjs/reactpress-toolkit/theme` compatibility:
 
 ```typescript
 import {
@@ -120,7 +120,7 @@ import {
   deepMerge,
   getByPath,
   pickSiteSettings,
-} from '@fecommunity/reactpress-toolkit/utils';
+} from '@reactpressjs/reactpress-toolkit/utils';
 ```
 
 | Module         | Typical use                                   |
@@ -137,14 +137,14 @@ import {
 ### Admin plugins
 
 ```typescript
-import type { AdminModule } from '@fecommunity/reactpress-toolkit/plugin/admin';
-import { permissionsForRole } from '@fecommunity/reactpress-toolkit/plugin/admin';
+import type { AdminModule } from '@reactpressjs/reactpress-toolkit/plugin/admin';
+import { permissionsForRole } from '@reactpressjs/reactpress-toolkit/plugin/admin';
 ```
 
 ### Web / Electron client
 
 ```typescript
-import { createClient, resolveApiBaseUrl } from '@fecommunity/reactpress-toolkit/plugin/client';
+import { createClient, resolveApiBaseUrl } from '@reactpressjs/reactpress-toolkit/plugin/client';
 ```
 
 ## App factories (`./app`)
@@ -157,8 +157,8 @@ Entry factories for theme `_app.tsx`, UI-framework agnostic:
 | `createReactPressApp` | Full theme: SSR catalog, i18n, analytics, PV; inject Ant Design etc. via `wrapContent` |
 
 ```typescript
-import { createThemeApp } from '@fecommunity/reactpress-toolkit/app';
-import { createReactPressApp } from '@fecommunity/reactpress-toolkit/app';
+import { createThemeApp } from '@reactpressjs/reactpress-toolkit/app';
+import { createReactPressApp } from '@reactpressjs/reactpress-toolkit/app';
 ```
 
 Also re-exported from `./theme` (legacy paths).
@@ -174,13 +174,13 @@ import {
   fetchThemeCatalog,
   themeStaticProps,
   unpackList,
-} from '@fecommunity/reactpress-toolkit/theme';
-import { createThemeApp } from '@fecommunity/reactpress-toolkit/app';
+} from '@reactpressjs/reactpress-toolkit/theme';
+import { createThemeApp } from '@reactpressjs/reactpress-toolkit/app';
 ```
 
 ```javascript
 // next.config.js
-const { createReactPressNextConfig } = require('@fecommunity/reactpress-toolkit/theme/next-config');
+const { createReactPressNextConfig } = require('@reactpressjs/reactpress-toolkit/theme/next-config');
 module.exports = createReactPressNextConfig();
 ```
 
@@ -194,7 +194,7 @@ export default createThemeApp(themeManifest);
 **Full-featured themes** — use `createReactPressApp` (UI-framework agnostic); keep Ant Design and heavy deps in the theme:
 
 ```typescript
-import { createReactPressApp } from '@fecommunity/reactpress-toolkit/app';
+import { createReactPressApp } from '@reactpressjs/reactpress-toolkit/app';
 import { ConfigProvider } from 'antd';
 import { NextIntlProvider } from 'next-intl';
 
@@ -214,7 +214,7 @@ export default createReactPressApp(themeManifest, {
 **REST providers** — avoid copying 14 provider files per theme:
 
 ```typescript
-import { createThemeAxiosClient, createThemeProviders } from '@fecommunity/reactpress-toolkit/theme';
+import { createThemeAxiosClient, createThemeProviders } from '@reactpressjs/reactpress-toolkit/theme';
 
 export const httpProvider = createThemeAxiosClient({ onError, onUnauthorized });
 export const { ArticleProvider, CategoryProvider, TagProvider } = createThemeProviders(httpProvider);
@@ -227,7 +227,7 @@ Env: `REACTPRESS_API_URL` (SSR), `NEXT_PUBLIC_REACTPRESS_API_URL` (browser), inj
 Also importable from `./theme`:
 
 ```typescript
-import { NavMenu, ArticleList, ReactPressProvider, useLocale } from '@fecommunity/reactpress-toolkit/ui';
+import { NavMenu, ArticleList, ReactPressProvider, useLocale } from '@reactpressjs/reactpress-toolkit/ui';
 ```
 
 | Symbol                                                   | Description                                      |
@@ -253,8 +253,8 @@ import { NavMenu, ArticleList, ReactPressProvider, useLocale } from '@fecommunit
 Types and validation in `theme/extension` are shared with **server** and **web appearance settings**, e.g. `ThemeConfigurationSchema`, `resolveSiteConfig`, `PUBLIC_SETTING_KEYS`. Server example:
 
 ```typescript
-import { PUBLIC_SETTING_KEYS, systemGlobalSettingDefaults } from '@fecommunity/reactpress-toolkit/theme';
-import { readThemeAdminLocaleFile } from '@fecommunity/reactpress-toolkit/theme/node';
+import { PUBLIC_SETTING_KEYS, systemGlobalSettingDefaults } from '@reactpressjs/reactpress-toolkit/theme';
+import { readThemeAdminLocaleFile } from '@reactpressjs/reactpress-toolkit/theme/node';
 ```
 
 ## Regenerate API from Swagger

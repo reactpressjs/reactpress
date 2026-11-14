@@ -24,7 +24,11 @@ function run(cmd, args, options = {}) {
 }
 
 function packCli() {
-  const prepack = spawnSync('npm', ['run', 'prepack'], { cwd: cliRoot, stdio: 'inherit', shell: process.platform === 'win32' });
+  const prepack = spawnSync('npm', ['run', 'prepack'], {
+    cwd: cliRoot,
+    stdio: 'inherit',
+    shell: process.platform === 'win32',
+  });
   if (prepack.status !== 0) {
     process.exit(prepack.status ?? 1);
   }
@@ -49,14 +53,7 @@ try {
   console.log('[simulate-global-install] installing tarball…');
   run('npm', ['install', '--prefix', installDir, tarball]);
 
-  const cliBin = path.join(
-    installDir,
-    'node_modules',
-    '@fecommunity',
-    'reactpress',
-    'bin',
-    'reactpress.js',
-  );
+  const cliBin = path.join(installDir, 'node_modules', '@reactpressjs', 'reactpress', 'bin', 'reactpress.js');
   if (!fs.existsSync(cliBin)) {
     console.error('[simulate-global-install] CLI bin not found:', cliBin);
     process.exit(1);

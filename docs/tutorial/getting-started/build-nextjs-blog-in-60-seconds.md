@@ -31,10 +31,10 @@ keywords: [next.js 博客, 用 next.js 建博客, next.js cms, reactpress, react
 ## 第 1 步 — 安装 CLI（约 15 秒）
 
 ```bash
-npm i -g @fecommunity/reactpress
+npm i -g @reactpressjs/reactpress
 ```
 
-包地址：[@fecommunity/reactpress](https://www.npmjs.com/package/@fecommunity/reactpress)。
+包地址：[@reactpressjs/reactpress](https://www.npmjs.com/package/@reactpressjs/reactpress)。
 
 ## 第 2 步 — 初始化博客（约 45 秒）
 

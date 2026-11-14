@@ -79,7 +79,7 @@ With Strapi/Payload you assemble those layers. Many teams underestimate that ass
 ReactPress ships the layers as one CLI:
 
 ```bash
-npm i -g @fecommunity/reactpress
+npm i -g @reactpressjs/reactpress
 mkdir my-site && cd my-site
 reactpress init
 ```
@@ -98,7 +98,7 @@ ReactPress **is** Headless-capable:
 
 - REST endpoints for articles, pages, categories, and more
 - API keys and webhooks
-- `@fecommunity/reactpress-toolkit` for typed clients
+- `@reactpressjs/reactpress-toolkit` for typed clients
 
 But the product promise is broader: **Admin manages content · Theme manages presentation · Plugin manages logic · API manages data**.
 

@@ -9,9 +9,19 @@ export class HttpExceptionFilter implements ExceptionFilter {
     const response = ctx.getResponse();
     const request = ctx.getRequest();
 
-    const url = request.originalUrl; // 请求路由
-    const status = exception instanceof HttpException ? exception.getStatus() : HttpStatus.INTERNAL_SERVER_ERROR;
-    const msg = exception.message.message || exception.message; // 错误信息
+    const url = request.originalUrl;
+    // Prefer getStatus()/getResponse() over instanceof — Jest resetModules can
+    // duplicate the HttpException class and break instanceof checks.
+    const status = typeof exception.getStatus === 'function' ? exception.getStatus() : HttpStatus.INTERNAL_SERVER_ERROR;
+    const responseBody = typeof exception.getResponse === 'function' ? exception.getResponse() : exception.message;
+    let msg: string | string[] | Record<string, unknown>;
+    if (typeof responseBody === 'string') {
+      msg = responseBody;
+    } else if (responseBody && typeof responseBody === 'object' && 'message' in responseBody) {
+      msg = (responseBody as { message: string | string[] }).message;
+    } else {
+      msg = exception.message;
+    }
     const errorResponse = {
       statusCode: status,
       msg,

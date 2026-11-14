@@ -1,4 +1,4 @@
-import { permissionsForRole } from "@fecommunity/reactpress-toolkit/plugin/admin";
+import { permissionsForRole } from "@reactpressjs/reactpress-toolkit/plugin/admin";
 import { http } from "msw";
 
 import { ERROR_CODES, errorResponse, successResponse, withDelay } from "../createHandler";

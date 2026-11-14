@@ -11,10 +11,10 @@
       "previewUrl": "https://reactpress-theme-starter.vercel.app",
       "tags": ["官方", "Tailwind", "App Router", "Next.js 15"],
       "dependency": {
-        "name": "@fecommunity/reactpress-theme-starter",
+        "name": "@reactpressjs/reactpress-theme-starter",
         "version": "1.0.0-beta.0"
       },
-      "npm": "@fecommunity/reactpress-theme-starter@1.0.0-beta.0",
+      "npm": "@reactpressjs/reactpress-theme-starter@1.0.0-beta.0",
       "featured": true,
       "requires": ">=3.0.0"
     }

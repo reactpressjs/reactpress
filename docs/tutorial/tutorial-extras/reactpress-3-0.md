@@ -1,13 +1,13 @@
 ---
 sidebar_position: 4
 title: ReactPress 3.0 平台版
-description: ReactPress 3.0 平台版历史说明 — 一条 CLI、嵌入式 MySQL、Admin 与 Next.js 主题。新用户请使用 4.0。
+description: ReactPress 3.0 平台版历史说明 — 一条 CLI、嵌入式 MySQL、Admin 与 Next.js 主题。新用户请使用 5.0。
 keywords: [reactpress 3.0, platform, history, migration]
 ---
 
 # ReactPress 3.0 平台版
 
-> **历史版本说明。** 新用户请直接使用 [ReactPress 4.0 扩展版](./reactpress-4-0.md)。本文档保留给仍在使用 3.x 的用户参考。
+> **历史版本说明。** 新用户请直接使用 [ReactPress 5.0 智能版](./reactpress-5-0.md)。本文档保留给仍在使用 3.x 的用户参考。
 
 > **一条 CLI，约 60 秒 — 全栈发布平台，不是又一个 CMS 拼装件。**
 
@@ -15,18 +15,18 @@ keywords: [reactpress 3.0, platform, history, migration]
 
 ## 三大重点
 
-| 重点         | 用户感知                        | 3.0 交付                                            |
-| ------------ | ------------------------------- | --------------------------------------------------- |
-| **零配置**   | 不用手写 `.env`、不用先装六个包 | `init` + `dev`，默认嵌入式 Docker MySQL             |
-| **唯一入口** | 只记一个包名、一个命令          | `npm i -g @fecommunity/reactpress@3` → `reactpress` |
-| **极致 DX**  | 少查文档、状态一眼可见          | 交互菜单、`doctor`、`status`、dev 成功链接提示      |
+| 重点         | 用户感知                        | 3.0 交付                                             |
+| ------------ | ------------------------------- | ---------------------------------------------------- |
+| **零配置**   | 不用手写 `.env`、不用先装六个包 | `init` + `dev`，默认嵌入式 Docker MySQL              |
+| **唯一入口** | 只记一个包名、一个命令          | `npm i -g @reactpressjs/reactpress@3` → `reactpress` |
+| **极致 DX**  | 少查文档、状态一眼可见          | 交互菜单、`doctor`、`status`、dev 成功链接提示       |
 
 ## 一分钟快速开始
 
 在**已完成全局安装**后，于空目录执行：
 
 ```bash
-npm i -g @fecommunity/reactpress@3
+npm i -g @reactpressjs/reactpress@3
 mkdir my-blog && cd my-blog
 reactpress init    # 生成 .reactpress、.env、Docker MySQL
 reactpress dev     # API + 前台 + 管理端
@@ -81,22 +81,22 @@ reactpress
 
 ## 包模型（3.0）
 
-| npm 包                               | 角色                                     |
-| ------------------------------------ | ---------------------------------------- |
-| **`@fecommunity/reactpress`**        | **唯一对外主包**：CLI + 内置 API + 模板  |
-| `@fecommunity/reactpress-client`     | 进阶：仅部署前台、连接远程 API           |
-| `@fecommunity/reactpress-toolkit`    | Headless / 自建前台用的 TS SDK           |
-| `@fecommunity/reactpress-template-*` | `reactpress new --template` 可选         |
-| `@fecommunity/reactpress-cli`        | **Deprecated**：re-export 主包，会打警告 |
-| `@fecommunity/reactpress-server`     | **Deprecated**：API 已内置主包           |
+| npm 包                                | 角色                                     |
+| ------------------------------------- | ---------------------------------------- |
+| **`@reactpressjs/reactpress`**        | **唯一对外主包**：CLI + 内置 API + 模板  |
+| `@reactpressjs/reactpress-client`     | 进阶：仅部署前台、连接远程 API           |
+| `@reactpressjs/reactpress-toolkit`    | Headless / 自建前台用的 TS SDK           |
+| `@reactpressjs/reactpress-template-*` | `reactpress new --template` 可选         |
+| `@reactpressjs/reactpress-cli`        | **Deprecated**：re-export 主包，会打警告 |
+| `@reactpressjs/reactpress-server`     | **Deprecated**：API 已内置主包           |
 
 ```bash
 # ✅ 3.0 推荐
-npm i -g @fecommunity/reactpress@3
+npm i -g @reactpressjs/reactpress@3
 
 # ❌ 不再作为新用户主路径
-npm i -g @fecommunity/reactpress-cli
-npx @fecommunity/reactpress-server
+npm i -g @reactpressjs/reactpress-cli
+npx @reactpressjs/reactpress-server
 ```
 
 ## 平台能力（Headless）
@@ -109,7 +109,7 @@ npx @fecommunity/reactpress-server
 - **定时发布**、**文章修订历史**与回滚
 - **生产示例**：`docker-compose.prod.yml`；`reactpress db backup`
 
-自建前台请使用 [@fecommunity/reactpress-toolkit](./toolkit-package) `@3`。
+自建前台请使用 [@reactpressjs/reactpress-toolkit](./toolkit-package.md) `@3`。
 
 ## 本仓库贡献者
 

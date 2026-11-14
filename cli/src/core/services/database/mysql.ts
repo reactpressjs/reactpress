@@ -3,8 +3,6 @@ import path from 'node:path';
 
 import type { DatabaseEnsureResult, MysqlCredentials } from '../../../types/config';
 
-export type ConnectionTester = (creds: MysqlCredentials) => Promise<boolean>;
-
 async function defaultConnectionTester(creds: MysqlCredentials): Promise<boolean> {
   try {
     // eslint-disable-next-line @typescript-eslint/no-require-imports
@@ -25,22 +23,11 @@ async function defaultConnectionTester(creds: MysqlCredentials): Promise<boolean
   }
 }
 
-let connectionTester: ConnectionTester = defaultConnectionTester;
-
-/** @internal test hook */
-export function setConnectionTesterForTests(tester: ConnectionTester | null): void {
-  connectionTester = tester ?? defaultConnectionTester;
-}
-
 export async function testMysqlConnection(creds: MysqlCredentials): Promise<boolean> {
-  return connectionTester(creds);
+  return defaultConnectionTester(creds);
 }
 
-export async function waitForMysql(
-  creds: MysqlCredentials,
-  maxAttempts = 40,
-  intervalMs = 1000,
-): Promise<boolean> {
+export async function waitForMysql(creds: MysqlCredentials, maxAttempts = 40, intervalMs = 1000): Promise<boolean> {
   for (let i = 0; i < maxAttempts; i++) {
     if (await testMysqlConnection(creds)) return true;
     await new Promise((r) => setTimeout(r, intervalMs));
@@ -79,7 +66,7 @@ export async function probeMysqlHost(
   port: number,
   user: string,
   password: string,
-  database: string,
+  database: string
 ): Promise<{ ok: boolean; error?: string }> {
   try {
     const ok = await testMysqlConnection({ host, port, user, password, database });

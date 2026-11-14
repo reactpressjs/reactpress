@@ -16,7 +16,8 @@ export class TransformInterceptor implements NestInterceptor {
   intercept(context: ExecutionContext, next: CallHandler): Observable<unknown> {
     const request = context.switchToHttp().getRequest();
     const url = String(request?.originalUrl || request?.url || '');
-    if (/\/health\/?(\?|$)/i.test(url)) {
+    // Health probes and SSE streams must not be wrapped in { success, data }.
+    if (/\/health\/?(\?|$)/i.test(url) || /\/ai\/agent\/chat\/?(\?|$)/i.test(url)) {
       return next.handle();
     }
 

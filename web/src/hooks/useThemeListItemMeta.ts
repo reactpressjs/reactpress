@@ -1,7 +1,7 @@
 import {
   resolveThemeAdminLocaleTags,
   resolveThemeAdminLocaleText,
-} from "@fecommunity/reactpress-toolkit/theme";
+} from "@reactpressjs/reactpress-toolkit/theme";
 import { useMemo } from "react";
 
 import { useThemeAdminLocaleQuery } from "@/hooks/useThemeAdminLocale";

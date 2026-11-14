@@ -1,16 +1,36 @@
 ---
 slug: changelog
 title: Changelog
+description: >-
+  ReactPress release notes — 5.0 Intelligent, CLI, Admin, desktop, themes, and plugin
+  updates. Track npm @latest changes and migration highlights.
 date: 2026-06-14
 authors: [reactpressjs]
 tags: [reactpress, release]
+keywords:
+  - ReactPress changelog
+  - ReactPress release notes
+  - ReactPress 5.0
+  - npm @reactpressjs/reactpress
 ---
 
 <!--truncate-->
 
+## [5.0.0](https://github.com/reactpressjs/reactpress/compare/v4.0.0...v5.0.0) (2026-11-13)
+
+**ReactPress 5.0 Intelligent** — BYOK AI Assist, draft-only Skills, human Review Inbox. Install: `npm i -g @reactpressjs/reactpress`.
+
+- **Packaging**: npm scope unified to `@reactpressjs/*`
+- **AI Assist**: `write` / `organize` / `polish` / `pre-review`; new installs activate the plugin
+- **Review Inbox**: compare proposed fields, edit, publish now or schedule
+- **Key storage**: encrypted at rest; settings page can test the connection
+- **Upgrade**: [4.x → 5.0](/docs/tutorial-extras/migration-4-to-5)
+
+---
+
 ## [4.0.0](https://github.com/reactpressjs/reactpress/compare/v4.0.0-beta.18...v4.0.0) (2026-08-09)
 
-**ReactPress 4.0.0 stable** — npm `@latest` ([#88](https://github.com/reactpressjs/reactpress/issues/88)). Install: `npm i -g @fecommunity/reactpress`.
+**ReactPress 4.0.0 stable** — npm `@latest` ([#88](https://github.com/reactpressjs/reactpress/issues/88)). Install: `npm i -g @reactpressjs/reactpress`.
 
 - **Release**: promotes 4.x from `@beta` to `@latest`
 - **Docs / README / Admin**: default install path is stable 4.0.0
@@ -20,7 +40,7 @@ tags: [reactpress, release]
 
 ## [4.0.0-beta.18](https://github.com/reactpressjs/reactpress/compare/v4.0.0-beta.0...v4.0.0-beta.18) (2026-07-12)
 
-**ReactPress 4.0 beta.18** — npm `@beta` at the time. Install: `npm i -g @fecommunity/reactpress@beta`.
+**ReactPress 4.0 beta.18** — npm `@beta` at the time. Install: `npm i -g @reactpressjs/reactpress@beta`.
 
 - **CLI**: zero-dependency bundled runtime, theme install/proxy improvements, `doctor` / logging polish
 - **Desktop**: cross-platform installer workflow; uploads to GitHub Releases on publish
@@ -31,7 +51,7 @@ tags: [reactpress, release]
 
 ## [4.0.0-beta.0](https://github.com/reactpressjs/reactpress/compare/v3.7.0...v4.0.0-beta.0) (2026-06-27)
 
-**ReactPress 4.0 Extend (beta)** — plugins, desktop client, theme catalog. Install: `npm i -g @fecommunity/reactpress@beta`.
+**ReactPress 4.0 Extend (beta)** — plugins, desktop client, theme catalog. Install: `npm i -g @reactpressjs/reactpress@beta`.
 
 - **Plugins** ([#69](https://github.com/reactpressjs/reactpress/issues/69)): Hook system, `plugin.json` manifest, Admin slots; built-in `hello-world`, `seo`, `image-optimizer`
 - **Desktop** ([#70](https://github.com/reactpressjs/reactpress/issues/70)): Electron + SQLite local mode; remote API + sync to server
@@ -117,9 +137,9 @@ tags: [reactpress, release]
 **ReactPress 3.0 Platform** — one package, one command, your CMS in about a minute.
 
 - **Zero config**: `reactpress init` + `reactpress dev`, embedded Docker MySQL
-- **Single entry**: `@fecommunity/reactpress@3`
+- **Single entry**: `@reactpressjs/reactpress@3`
 - **DX**: interactive menu, `doctor`, `status`, Headless (API Key, Webhook, health)
-- **Breaking**: `@fecommunity/reactpress-server` deprecated — [migration guide](/docs/tutorial-extras/migration-2-to-3)
+- **Breaking**: `@reactpressjs/reactpress-server` deprecated — [migration guide](/docs/tutorial-extras/migration-2-to-3)
 
 ---
 

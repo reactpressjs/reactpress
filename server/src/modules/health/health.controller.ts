@@ -1,19 +1,22 @@
 import { Controller, Get, HttpCode, HttpStatus } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
-import { InjectConnection } from '@nestjs/typeorm';
-import { Connection } from 'typeorm';
+import { InjectDataSource } from '@nestjs/typeorm';
+import { DataSource } from 'typeorm';
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { version: packageVersion } = require('../../../package.json') as { version: string };
 
 @ApiTags('Health')
 @Controller('health')
 export class HealthController {
-  constructor(@InjectConnection() private readonly connection: Connection) {}
+  constructor(@InjectDataSource() private readonly dataSource: DataSource) {}
 
   @Get()
   @HttpCode(HttpStatus.OK)
   async check() {
     let database: 'up' | 'down' = 'down';
     try {
-      await this.connection.query('SELECT 1');
+      await this.dataSource.query('SELECT 1');
       database = 'up';
     } catch {
       database = 'down';
@@ -21,7 +24,7 @@ export class HealthController {
 
     return {
       status: database === 'up' ? 'ok' : 'degraded',
-      version: '3.0.0',
+      version: packageVersion,
       database,
       timestamp: new Date().toISOString(),
     };

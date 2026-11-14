@@ -1,4 +1,4 @@
-import type { HookService, PluginContext } from '@fecommunity/reactpress-toolkit/plugin/server';
+import type { HookService, PluginContext } from '@reactpressjs/reactpress-toolkit/plugin/server';
 
 import { resolveConfig } from './config';
 

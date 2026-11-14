@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * @deprecated 3.0 起请使用 `reactpress`（@fecommunity/reactpress）。3.1 将移除此 bin。
+ * @deprecated 3.0 起请使用 `reactpress`（@reactpressjs/reactpress）。3.1 将移除此 bin。
  */
 const chalk = require('chalk');
 const { t } = require('../out/lib/i18n');

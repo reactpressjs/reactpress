@@ -1,5 +1,5 @@
 {
-  "name": "@fecommunity/reactpress-plugin-image-optimizer",
+  "name": "@reactpressjs/reactpress-plugin-image-optimizer",
   "version": "1.0.0",
   "private": true,
   "description": "Legacy image optimization plugin for ReactPress",
@@ -12,7 +12,7 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@fecommunity/reactpress-toolkit": "workspace:*"
+    "@reactpressjs/reactpress-toolkit": "workspace:*"
   },
   "devDependencies": {
     "typescript": "~5.9.3"

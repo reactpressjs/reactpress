@@ -9,12 +9,11 @@ import Head from '@docusaurus/Head';
 import { translate } from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Home from '@site/src/components/Home';
-import { buildFaqPageJsonLd, FAQ_ENTRIES_EN, FAQ_ENTRIES_ZH } from '@site/src/seo/structuredData';
 import Layout from '@theme/Layout';
 
 const Index = () => {
-  const { siteConfig, i18n } = useDocusaurusContext();
-  const canonicalUrl = `${siteConfig.url}${siteConfig.baseUrl}`.replace(/\/$/, '') + '/';
+  const { siteConfig } = useDocusaurusContext();
+  const canonicalUrl = `${siteConfig.url}${siteConfig.baseUrl}`.replace(/\/?$/, '/');
   const title = translate({
     id: 'home.meta.title',
     message: 'ReactPress — Write with Focus. Publish with Joy.',
@@ -24,8 +23,7 @@ const Index = () => {
       'ReactPress is a self-hosted publishing platform to write, manage, and publish — all in one place. Themes, plugins, desktop app, and one CLI. Live in about 60 seconds.',
     id: 'home.meta.description',
   });
-  const faqEntries = i18n.currentLocale === 'zh' ? FAQ_ENTRIES_ZH : FAQ_ENTRIES_EN;
-  const faqJsonLd = buildFaqPageJsonLd(faqEntries, canonicalUrl);
+  const socialImage = `${siteConfig.url}/img/reactpress-social-card.png`;
 
   return (
     <Layout description={description} wrapperClassName="homepage">
@@ -37,10 +35,9 @@ const Index = () => {
         <meta property="og:url" content={canonicalUrl} />
         <meta property="twitter:title" content={title} />
         <meta property="twitter:description" content={description} />
-        <meta property="og:image" content={`${siteConfig.url}/img/reactpress-social-card.png`} />
-        <meta property="twitter:image" content={`${siteConfig.url}/img/reactpress-social-card.png`} />
+        <meta property="og:image" content={socialImage} />
+        <meta property="twitter:image" content={socialImage} />
         <meta name="description" content={description} />
-        <script type="application/ld+json">{JSON.stringify(faqJsonLd)}</script>
       </Head>
       <Home />
     </Layout>

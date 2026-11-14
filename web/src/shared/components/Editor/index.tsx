@@ -165,7 +165,12 @@ export function MarkdownEditor({
     hydrated,
   ]);
 
-  useEffect(() => () => clearTimeout(saveTimer), []);
+  useEffect(
+    () => () => {
+      if (saveTimer != null) clearTimeout(saveTimer);
+    },
+    [],
+  );
 
   useEffect(() => {
     if (!mounted || !editorRef.current?.editor || !editorContainerRef.current) return;

@@ -5,10 +5,10 @@ export const ApiMsg = {
   INVALID_API_KEY: 'Invalid API Key',
   API_KEY_NOT_FOUND: 'API Key not found',
   API_KEY_MISSING_READ: 'API Key missing read permission',
+  API_KEY_MISSING_WRITE: 'API Key missing write permission',
   MISSING_PARAMS: 'Missing required parameters',
   EMAIL_SEND_FAILED: 'Failed to send email',
   EMAIL_CONFIG_INCOMPLETE: 'SMTP configuration is incomplete',
-  EMAIL_TEST_SENT: 'Test email sent successfully',
   OSS_CONFIG_INCOMPLETE: 'OSS configuration is incomplete',
   WEBHOOK_NOT_FOUND: 'Webhook not found',
 
@@ -45,4 +45,18 @@ export const ApiMsg = {
   EMAIL_TEST_SUBJECT: 'ReactPress SMTP test email',
   EMAIL_TEST_HTML:
     'This is a test email from your ReactPress site. If you received this message, SMTP is configured correctly.',
+
+  AI_DISABLED: 'AI Assist is disabled. Enable the ai-assist plugin in Admin.',
+  AI_API_KEY_REQUIRED: 'AI API Key is required. Configure it in Plugins → AI Assist.',
+  AI_UNKNOWN_SKILL: 'Unknown AI skill',
+  AI_BRIEF_REQUIRED: 'A topic or brief is required to write a draft',
+  AI_AGENT_MESSAGE_REQUIRED: 'At least one user message is required',
+  AI_AGENT_CONTENT_REQUIRED: 'Markdown content is required to create a draft',
+  AI_REVIEW_NOT_FOUND: 'AI review not found',
+  AI_REVIEW_NOT_PENDING: 'AI review is not pending',
+  AI_SCHEDULE_INVALID: 'Schedule time must be a future date',
+  AI_SECRET_UNREADABLE: 'Saved AI API Key could not be decrypted. Enter the key again in AI Assist settings.',
+  AI_PROVIDER_ERROR: 'AI provider request failed',
+  AI_PROVIDER_EMPTY: 'AI provider returned an empty response',
+  AI_PROVIDER_INVALID_RESPONSE: 'AI provider returned invalid JSON',
 } as const;

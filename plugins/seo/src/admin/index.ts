@@ -3,7 +3,7 @@ import {
   type PluginAdminModule,
   type PluginAdminRegistry,
   type PluginAdminContext,
-} from '@fecommunity/reactpress-toolkit/plugin/admin';
+} from '@reactpressjs/reactpress-toolkit/plugin/admin';
 
 import { ArticleEditorSeoPanel } from './ArticleEditorSeoPanel';
 

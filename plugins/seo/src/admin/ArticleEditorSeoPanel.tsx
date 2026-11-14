@@ -1,7 +1,7 @@
 import type {
   ArticleEditorAdminSlotContext,
   PluginAdminSlotComponentProps,
-} from '@fecommunity/reactpress-toolkit/plugin/admin';
+} from '@reactpressjs/reactpress-toolkit/plugin/admin';
 import { useState } from 'react';
 
 import styles from './article-editor-seo-panel.module.css';

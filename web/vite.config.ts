@@ -3,7 +3,7 @@ import { fileURLToPath } from "node:url";
 import { defineConfig, loadEnv } from "vite-plus";
 import react from "@vitejs/plugin-react-swc";
 import { tanstackRouter } from "@tanstack/router-plugin/vite";
-import { devPortRedirectPlugin } from "@fecommunity/reactpress-toolkit/plugin/dev";
+import { devPortRedirectPlugin } from "@reactpressjs/reactpress-toolkit/plugin/dev";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const webNodeModules = path.resolve(__dirname, "node_modules");
@@ -16,35 +16,35 @@ const toolkitAliases = [
     replacement: path.resolve(__dirname, "../plugins"),
   },
   {
-    find: "@fecommunity/reactpress-toolkit/plugin/react",
+    find: "@reactpressjs/reactpress-toolkit/plugin/react",
     replacement: toolkitEntry("plugin/react"),
   },
   {
-    find: "@fecommunity/reactpress-toolkit/plugin/admin",
+    find: "@reactpressjs/reactpress-toolkit/plugin/admin",
     replacement: toolkitEntry("plugin/admin"),
   },
   {
-    find: "@fecommunity/reactpress-toolkit/plugin/dev",
+    find: "@reactpressjs/reactpress-toolkit/plugin/dev",
     replacement: toolkitEntry("plugin/dev"),
   },
   {
-    find: "@fecommunity/reactpress-toolkit/plugin/extension",
+    find: "@reactpressjs/reactpress-toolkit/plugin/extension",
     replacement: toolkitEntry("plugin/extension"),
   },
   {
-    find: "@fecommunity/reactpress-toolkit/theme",
+    find: "@reactpressjs/reactpress-toolkit/theme",
     replacement: toolkitEntry("theme"),
   },
   {
-    find: "@fecommunity/reactpress-toolkit/utils",
+    find: "@reactpressjs/reactpress-toolkit/utils",
     replacement: toolkitEntry("utils"),
   },
   {
-    find: "@fecommunity/reactpress-toolkit/ui/content",
+    find: "@reactpressjs/reactpress-toolkit/ui/content",
     replacement: path.join(toolkitSrc, "ui/components/content/index.ts"),
   },
   {
-    find: "@fecommunity/reactpress-toolkit/ui",
+    find: "@reactpressjs/reactpress-toolkit/ui",
     replacement: toolkitEntry("ui"),
   },
 ];
@@ -98,6 +98,9 @@ export default defineConfig(({ mode: viteMode }) => {
           target: apiProxyTarget,
           changeOrigin: true,
           secure: true,
+          // Agent SSE can run for several minutes; do not let the proxy cut the stream early.
+          timeout: 3_600_000,
+          proxyTimeout: 3_600_000,
         },
       },
     },

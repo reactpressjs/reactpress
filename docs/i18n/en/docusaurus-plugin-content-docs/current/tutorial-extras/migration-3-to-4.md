@@ -14,7 +14,7 @@ Full overview: [ReactPress 4.0 Extend](./reactpress-4-0.md).
 ## Upgrade steps
 
 ```bash
-npm i -g @fecommunity/reactpress
+npm i -g @reactpressjs/reactpress
 cd your-site
 reactpress doctor
 reactpress init    # restart the stack if needed (SQLite by default)
@@ -31,7 +31,7 @@ pnpm dev
 
 ## CLI changes (important)
 
-The 4.0 global CLI (`@fecommunity/reactpress`) is:
+The 4.0 global CLI (`@reactpressjs/reactpress`) is:
 
 `init` · `doctor` · `logs` · `stop`
 
@@ -63,7 +63,7 @@ Local mode defaults to `admin` / `admin`, no Docker.
 Monorepo:
 
 ```bash
-reactpress theme add @fecommunity/reactpress-theme-starter@1.0.0-beta.0
+reactpress theme add @reactpressjs/reactpress-theme-starter@1.0.0-beta.0
 ```
 
 ## Breaking changes

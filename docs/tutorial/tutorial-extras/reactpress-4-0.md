@@ -1,13 +1,13 @@
 ---
 sidebar_position: 3
 title: ReactPress 4.0 扩展版
-description: ReactPress 4.0 扩展版 — 插件系统、Electron 桌面客户端、npm 主题 catalog。在 3.x 平台能力之上的当前推荐版本。
+description: ReactPress 4.0 扩展版 — 插件系统、Electron 桌面客户端、npm 主题 catalog。5.0 之前的扩展线。
 keywords: [reactpress 4.0, extend, plugin, desktop, theme catalog, wordpress alternative]
 ---
 
 # ReactPress 4.0 扩展版
 
-> **当前推荐版本。** 3.x 的平台能力 + 插件生态 + 桌面写作 — 仍是一条 CLI，一套 Admin。
+> **4.0 扩展线。** 当前推荐版本是 [ReactPress 5.0 智能版](./reactpress-5-0.md)。本文保留插件、桌面端与主题 catalog 的说明。
 
 4.0（代号 **Extend**）在 [3.0 平台版](./reactpress-3-0.md) 与 [3.1 Toolkit 主题重构](/blog/changelog) 之上，交付三件大事：
 
@@ -20,7 +20,7 @@ keywords: [reactpress 4.0, extend, plugin, desktop, theme catalog, wordpress alt
 ## 快速开始（全栈）
 
 ```bash
-npm i -g @fecommunity/reactpress
+npm i -g @reactpressjs/reactpress
 mkdir my-site && cd my-site
 reactpress init
 ```
@@ -93,7 +93,7 @@ pnpm dev:desktop
 Monorepo 贡献者：
 
 ```bash
-reactpress theme add @fecommunity/reactpress-theme-starter@1.0.0-beta.0
+reactpress theme add @reactpressjs/reactpress-theme-starter@1.0.0-beta.0
 ```
 
 （`theme` / `plugin` 子命令不在全局 npm CLI 中。）

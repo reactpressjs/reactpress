@@ -31,7 +31,7 @@ ReactPress 的**访客网站**由可替换的 **Next.js 主题**渲染，与 Adm
 - **Monorepo**：完整 CLI 支持 `theme` 子命令：
 
 ```bash
-reactpress theme add @fecommunity/reactpress-theme-starter@1.0.0-beta.0
+reactpress theme add @reactpressjs/reactpress-theme-starter@1.0.0-beta.0
 ```
 
 （全局 npm CLI 不含 `theme` 命令。）

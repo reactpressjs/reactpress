@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 import { resolveProjectRoot } from '../../utils/project-root.util';
-import { isValidPluginId } from '@fecommunity/reactpress-toolkit/plugin/extension';
+import { isValidPluginId } from '@reactpressjs/reactpress-toolkit/plugin/extension';
 
 function scanPluginDirectories(pluginsDir: string): string[] {
   if (!fs.existsSync(pluginsDir)) return [];
@@ -29,9 +29,7 @@ export function readPluginsPackageMeta(root = resolveProjectRoot()): { local: st
         reactpress?: { local?: string[] };
       };
       fromRegistry = Array.isArray(pkg.reactpress?.local)
-        ? pkg.reactpress.local.filter(
-            (id): id is string => typeof id === 'string' && isValidPluginId(id),
-          )
+        ? pkg.reactpress.local.filter((id): id is string => typeof id === 'string' && isValidPluginId(id))
         : [];
     } catch {
       fromRegistry = [];

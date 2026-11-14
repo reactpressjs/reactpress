@@ -23,6 +23,8 @@ import { Route as AuthMediaIndexRouteImport } from './routes/_auth/media/index';
 import { Route as AuthDashboardIndexRouteImport } from './routes/_auth/dashboard/index';
 import { Route as AuthArticleIndexRouteImport } from './routes/_auth/article/index';
 import { Route as Auth403IndexRouteImport } from './routes/_auth/403/index';
+import { Route as AuthAiCreateRouteImport } from './routes/_auth/ai/create';
+import { Route as AuthAiAgentRouteImport } from './routes/_auth/ai/agent';
 import { Route as AuthSettingsTabIndexRouteImport } from './routes/_auth/settings/$tab/index';
 import { Route as AuthPageEditorIndexRouteImport } from './routes/_auth/page/editor/index';
 import { Route as AuthDataImportIndexRouteImport } from './routes/_auth/data/import/index';
@@ -34,6 +36,7 @@ import { Route as AuthArticleCommentIndexRouteImport } from './routes/_auth/arti
 import { Route as AuthArticleCategoryIndexRouteImport } from './routes/_auth/article/category/index';
 import { Route as AuthAppearanceThemesIndexRouteImport } from './routes/_auth/appearance/themes/index';
 import { Route as AuthAppearanceCustomizeIndexRouteImport } from './routes/_auth/appearance/customize/index';
+import { Route as AuthAiReviewIndexRouteImport } from './routes/_auth/ai/review/index';
 import { Route as AuthPageEditorIdRouteImport } from './routes/_auth/page/editor/$id';
 import { Route as AuthArticleEditorIdRouteImport } from './routes/_auth/article/editor/$id';
 import { Route as AuthPluginsIdSettingsIndexRouteImport } from './routes/_auth/plugins/$id/settings/index';
@@ -109,6 +112,16 @@ const Auth403IndexRoute = Auth403IndexRouteImport.update({
   path: '/403/',
   getParentRoute: () => AuthRoute,
 } as any);
+const AuthAiCreateRoute = AuthAiCreateRouteImport.update({
+  id: '/ai/create',
+  path: '/ai/create',
+  getParentRoute: () => AuthRoute,
+} as any);
+const AuthAiAgentRoute = AuthAiAgentRouteImport.update({
+  id: '/ai/agent',
+  path: '/ai/agent',
+  getParentRoute: () => AuthRoute,
+} as any);
 const AuthSettingsTabIndexRoute = AuthSettingsTabIndexRouteImport.update({
   id: '/settings/$tab/',
   path: '/settings/$tab/',
@@ -167,6 +180,11 @@ const AuthAppearanceCustomizeIndexRoute =
     path: '/appearance/customize/',
     getParentRoute: () => AuthRoute,
   } as any);
+const AuthAiReviewIndexRoute = AuthAiReviewIndexRouteImport.update({
+  id: '/ai/review/',
+  path: '/ai/review/',
+  getParentRoute: () => AuthRoute,
+} as any);
 const AuthPageEditorIdRoute = AuthPageEditorIdRouteImport.update({
   id: '/page/editor/$id',
   path: '/page/editor/$id',
@@ -201,6 +219,8 @@ export interface FileRoutesByFullPath {
   '/404/': typeof R404IndexRoute;
   '/login/': typeof LoginIndexRoute;
   '/register/': typeof RegisterIndexRoute;
+  '/ai/agent': typeof AuthAiAgentRoute;
+  '/ai/create': typeof AuthAiCreateRoute;
   '/403/': typeof Auth403IndexRoute;
   '/article/': typeof AuthArticleIndexRoute;
   '/dashboard/': typeof AuthDashboardIndexRoute;
@@ -212,6 +232,7 @@ export interface FileRoutesByFullPath {
   '/users/': typeof AuthUsersIndexRoute;
   '/article/editor/$id': typeof AuthArticleEditorIdRoute;
   '/page/editor/$id': typeof AuthPageEditorIdRoute;
+  '/ai/review/': typeof AuthAiReviewIndexRoute;
   '/appearance/customize/': typeof AuthAppearanceCustomizeIndexRoute;
   '/appearance/themes/': typeof AuthAppearanceThemesIndexRoute;
   '/article/category/': typeof AuthArticleCategoryIndexRoute;
@@ -232,6 +253,8 @@ export interface FileRoutesByTo {
   '/404': typeof R404IndexRoute;
   '/login': typeof LoginIndexRoute;
   '/register': typeof RegisterIndexRoute;
+  '/ai/agent': typeof AuthAiAgentRoute;
+  '/ai/create': typeof AuthAiCreateRoute;
   '/403': typeof Auth403IndexRoute;
   '/article': typeof AuthArticleIndexRoute;
   '/dashboard': typeof AuthDashboardIndexRoute;
@@ -243,6 +266,7 @@ export interface FileRoutesByTo {
   '/users': typeof AuthUsersIndexRoute;
   '/article/editor/$id': typeof AuthArticleEditorIdRoute;
   '/page/editor/$id': typeof AuthPageEditorIdRoute;
+  '/ai/review': typeof AuthAiReviewIndexRoute;
   '/appearance/customize': typeof AuthAppearanceCustomizeIndexRoute;
   '/appearance/themes': typeof AuthAppearanceThemesIndexRoute;
   '/article/category': typeof AuthArticleCategoryIndexRoute;
@@ -265,6 +289,8 @@ export interface FileRoutesById {
   '/404/': typeof R404IndexRoute;
   '/login/': typeof LoginIndexRoute;
   '/register/': typeof RegisterIndexRoute;
+  '/_auth/ai/agent': typeof AuthAiAgentRoute;
+  '/_auth/ai/create': typeof AuthAiCreateRoute;
   '/_auth/403/': typeof Auth403IndexRoute;
   '/_auth/article/': typeof AuthArticleIndexRoute;
   '/_auth/dashboard/': typeof AuthDashboardIndexRoute;
@@ -276,6 +302,7 @@ export interface FileRoutesById {
   '/_auth/users/': typeof AuthUsersIndexRoute;
   '/_auth/article/editor/$id': typeof AuthArticleEditorIdRoute;
   '/_auth/page/editor/$id': typeof AuthPageEditorIdRoute;
+  '/_auth/ai/review/': typeof AuthAiReviewIndexRoute;
   '/_auth/appearance/customize/': typeof AuthAppearanceCustomizeIndexRoute;
   '/_auth/appearance/themes/': typeof AuthAppearanceThemesIndexRoute;
   '/_auth/article/category/': typeof AuthArticleCategoryIndexRoute;
@@ -298,6 +325,8 @@ export interface FileRouteTypes {
     | '/404/'
     | '/login/'
     | '/register/'
+    | '/ai/agent'
+    | '/ai/create'
     | '/403/'
     | '/article/'
     | '/dashboard/'
@@ -309,6 +338,7 @@ export interface FileRouteTypes {
     | '/users/'
     | '/article/editor/$id'
     | '/page/editor/$id'
+    | '/ai/review/'
     | '/appearance/customize/'
     | '/appearance/themes/'
     | '/article/category/'
@@ -329,6 +359,8 @@ export interface FileRouteTypes {
     | '/404'
     | '/login'
     | '/register'
+    | '/ai/agent'
+    | '/ai/create'
     | '/403'
     | '/article'
     | '/dashboard'
@@ -340,6 +372,7 @@ export interface FileRouteTypes {
     | '/users'
     | '/article/editor/$id'
     | '/page/editor/$id'
+    | '/ai/review'
     | '/appearance/customize'
     | '/appearance/themes'
     | '/article/category'
@@ -361,6 +394,8 @@ export interface FileRouteTypes {
     | '/404/'
     | '/login/'
     | '/register/'
+    | '/_auth/ai/agent'
+    | '/_auth/ai/create'
     | '/_auth/403/'
     | '/_auth/article/'
     | '/_auth/dashboard/'
@@ -372,6 +407,7 @@ export interface FileRouteTypes {
     | '/_auth/users/'
     | '/_auth/article/editor/$id'
     | '/_auth/page/editor/$id'
+    | '/_auth/ai/review/'
     | '/_auth/appearance/customize/'
     | '/_auth/appearance/themes/'
     | '/_auth/article/category/'
@@ -496,6 +532,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Auth403IndexRouteImport;
       parentRoute: typeof AuthRoute;
     };
+    '/_auth/ai/create': {
+      id: '/_auth/ai/create';
+      path: '/ai/create';
+      fullPath: '/ai/create';
+      preLoaderRoute: typeof AuthAiCreateRouteImport;
+      parentRoute: typeof AuthRoute;
+    };
+    '/_auth/ai/agent': {
+      id: '/_auth/ai/agent';
+      path: '/ai/agent';
+      fullPath: '/ai/agent';
+      preLoaderRoute: typeof AuthAiAgentRouteImport;
+      parentRoute: typeof AuthRoute;
+    };
     '/_auth/settings/$tab/': {
       id: '/_auth/settings/$tab/';
       path: '/settings/$tab';
@@ -573,6 +623,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthAppearanceCustomizeIndexRouteImport;
       parentRoute: typeof AuthRoute;
     };
+    '/_auth/ai/review/': {
+      id: '/_auth/ai/review/';
+      path: '/ai/review';
+      fullPath: '/ai/review/';
+      preLoaderRoute: typeof AuthAiReviewIndexRouteImport;
+      parentRoute: typeof AuthRoute;
+    };
     '/_auth/page/editor/$id': {
       id: '/_auth/page/editor/$id';
       path: '/page/editor/$id';
@@ -612,6 +669,8 @@ declare module '@tanstack/react-router' {
 }
 
 interface AuthRouteChildren {
+  AuthAiAgentRoute: typeof AuthAiAgentRoute;
+  AuthAiCreateRoute: typeof AuthAiCreateRoute;
   Auth403IndexRoute: typeof Auth403IndexRoute;
   AuthArticleIndexRoute: typeof AuthArticleIndexRoute;
   AuthDashboardIndexRoute: typeof AuthDashboardIndexRoute;
@@ -623,6 +682,7 @@ interface AuthRouteChildren {
   AuthUsersIndexRoute: typeof AuthUsersIndexRoute;
   AuthArticleEditorIdRoute: typeof AuthArticleEditorIdRoute;
   AuthPageEditorIdRoute: typeof AuthPageEditorIdRoute;
+  AuthAiReviewIndexRoute: typeof AuthAiReviewIndexRoute;
   AuthAppearanceCustomizeIndexRoute: typeof AuthAppearanceCustomizeIndexRoute;
   AuthAppearanceThemesIndexRoute: typeof AuthAppearanceThemesIndexRoute;
   AuthArticleCategoryIndexRoute: typeof AuthArticleCategoryIndexRoute;
@@ -640,6 +700,8 @@ interface AuthRouteChildren {
 }
 
 const AuthRouteChildren: AuthRouteChildren = {
+  AuthAiAgentRoute: AuthAiAgentRoute,
+  AuthAiCreateRoute: AuthAiCreateRoute,
   Auth403IndexRoute: Auth403IndexRoute,
   AuthArticleIndexRoute: AuthArticleIndexRoute,
   AuthDashboardIndexRoute: AuthDashboardIndexRoute,
@@ -651,6 +713,7 @@ const AuthRouteChildren: AuthRouteChildren = {
   AuthUsersIndexRoute: AuthUsersIndexRoute,
   AuthArticleEditorIdRoute: AuthArticleEditorIdRoute,
   AuthPageEditorIdRoute: AuthPageEditorIdRoute,
+  AuthAiReviewIndexRoute: AuthAiReviewIndexRoute,
   AuthAppearanceCustomizeIndexRoute: AuthAppearanceCustomizeIndexRoute,
   AuthAppearanceThemesIndexRoute: AuthAppearanceThemesIndexRoute,
   AuthArticleCategoryIndexRoute: AuthArticleCategoryIndexRoute,

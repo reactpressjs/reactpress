@@ -31,7 +31,7 @@ Live demo: [reactpress-theme-starter.vercel.app](https://reactpress-theme-starte
 - **Monorepo**: full CLI supports the `theme` subcommand:
 
 ```bash
-reactpress theme add @fecommunity/reactpress-theme-starter@1.0.0-beta.0
+reactpress theme add @reactpressjs/reactpress-theme-starter@1.0.0-beta.0
 ```
 
 (The global npm CLI does not include `theme`.)

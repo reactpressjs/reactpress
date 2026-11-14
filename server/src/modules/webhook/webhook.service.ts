@@ -27,7 +27,7 @@ export class WebhookService {
   }
 
   async remove(id: string) {
-    const hook = await this.webhookRepository.findOne(id);
+    const hook = await this.webhookRepository.findOne({ where: { id: id } });
     if (!hook) {
       throw new HttpException(ApiMsg.WEBHOOK_NOT_FOUND, HttpStatus.NOT_FOUND);
     }
@@ -35,10 +35,7 @@ export class WebhookService {
   }
 
   private signPayload(secret: string, body: string) {
-    return crypto
-      .createHmac('sha256', secret)
-      .update(body)
-      .digest('hex');
+    return crypto.createHmac('sha256', secret).update(body).digest('hex');
   }
 
   private async deliverOnce(webhook: Webhook, event: WebhookEvent, payload: Record<string, unknown>) {

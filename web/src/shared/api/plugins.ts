@@ -1,8 +1,8 @@
 import type {
   PluginAdminManifest,
   SitePluginState,
-} from "@fecommunity/reactpress-toolkit/plugin/extension";
-import { resolveApiBaseUrl } from "@fecommunity/reactpress-toolkit/plugin/react";
+} from "@reactpressjs/reactpress-toolkit/plugin/extension";
+import { resolveApiBaseUrl } from "@reactpressjs/reactpress-toolkit/plugin/react";
 
 import { clearInvalidServerSession } from "@/shared/auth/session";
 import { useAuthStore } from "@/stores/auth";

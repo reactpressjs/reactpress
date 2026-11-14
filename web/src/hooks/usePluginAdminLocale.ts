@@ -1,4 +1,4 @@
-import type { PluginAdminLocaleMessages } from "@fecommunity/reactpress-toolkit/plugin/extension";
+import type { PluginAdminLocaleMessages } from "@reactpressjs/reactpress-toolkit/plugin/extension";
 import { useQuery } from "@tanstack/react-query";
 import { useTranslation } from "react-i18next";
 

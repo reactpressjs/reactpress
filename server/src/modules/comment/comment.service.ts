@@ -1,5 +1,9 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { getHookReject, sanitizeHookRejectStatusCode, stripHookMeta } from '@fecommunity/reactpress-toolkit/plugin/server';
+import {
+  getHookReject,
+  sanitizeHookRejectStatusCode,
+  stripHookMeta,
+} from '@reactpressjs/reactpress-toolkit/plugin/server';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
@@ -30,7 +34,7 @@ export class CommentService {
     private readonly settingService: SettingService,
     private readonly userService: UserService,
     private readonly webhookService: WebhookService,
-    private readonly hookService: HookService,
+    private readonly hookService: HookService
   ) {}
 
   /**
@@ -50,10 +54,7 @@ export class CommentService {
     });
     const reject = getHookReject(filtered);
     if (reject) {
-      throw new HttpException(
-        reject.message,
-        sanitizeHookRejectStatusCode(reject.statusCode),
-      );
+      throw new HttpException(reject.message, sanitizeHookRejectStatusCode(reject.statusCode));
     }
     const payload = stripHookMeta(filtered as Record<string, unknown>) as Partial<Comment> & {
       reply?: string;
@@ -66,7 +67,7 @@ export class CommentService {
     comment.userAgent = uaText;
     comment.html = sanitizeHtml(marked(comment.content ?? content).html);
     const newComment = await this.commentRepository.create(comment);
-    await this.commentRepository.save(comment);
+    const savedComment = await this.commentRepository.save(newComment);
 
     if (!createByAdmin) {
       // 发送通知邮件
@@ -96,18 +97,18 @@ export class CommentService {
     }
 
     await this.webhookService.dispatch('comment.created', {
-      id: newComment.id,
-      hostId: newComment.hostId,
-      name: newComment.name,
-      email: newComment.email,
+      id: savedComment.id,
+      hostId: savedComment.hostId,
+      name: savedComment.name,
+      email: savedComment.email,
     });
 
     await this.hookService.doAction('comment.afterCreate', {
-      comment: newComment,
+      comment: savedComment,
       createByAdmin,
     });
 
-    return newComment;
+    return savedComment;
   }
 
   /**
@@ -118,7 +119,7 @@ export class CommentService {
     const query = this.commentRepository.createQueryBuilder('comment').orderBy('comment.createAt', 'DESC');
 
     if (typeof queryParams === 'object') {
-      const { page = 1, pageSize = 12, pass, ...otherParams } = queryParams;
+      const { page = 1, pageSize = 12, pass } = queryParams;
 
       query.skip((+page - 1) * +pageSize);
       query.take(+pageSize);
@@ -141,7 +142,7 @@ export class CommentService {
    * @param id
    */
   async findById(id): Promise<Comment> {
-    return this.commentRepository.findOne(id);
+    return this.commentRepository.findOne({ where: { id: id } });
   }
 
   /**
@@ -178,17 +179,13 @@ export class CommentService {
     return [data, count];
   }
 
-  async findByIds(ids): Promise<Array<Comment>> {
-    return this.commentRepository.findByIds(ids);
-  }
-
   /**
    * 更新评论
    * @param id
    * @param tag
    */
   async updateById(id, data: Partial<Comment>): Promise<Comment> {
-    const old = await this.commentRepository.findOne(id);
+    const old = await this.commentRepository.findOne({ where: { id: id } });
     const newData = await this.commentRepository.merge(old, data);
 
     if (newData.pass) {
@@ -219,7 +216,7 @@ export class CommentService {
   }
 
   async deleteById(id) {
-    const data = await this.commentRepository.findOne(id);
+    const data = await this.commentRepository.findOne({ where: { id: id } });
     return this.commentRepository.remove(data);
   }
 }

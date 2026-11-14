@@ -2,7 +2,7 @@ import {
   LocaleToggleButton,
   ThemeToggleButton,
   TOOLBAR_ICON_SIZE,
-} from "@fecommunity/reactpress-toolkit/ui";
+} from "@reactpressjs/reactpress-toolkit/ui";
 import { useTranslation } from "react-i18next";
 
 import { useAppLocale } from "@/hooks/useAppLocale";

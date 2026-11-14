@@ -58,7 +58,7 @@ Few tools hit all five. Here is how the common choices score.
 | License                     | MIT                        |
 
 ```bash
-npm i -g @fecommunity/reactpress
+npm i -g @reactpressjs/reactpress
 mkdir my-site && cd my-site
 reactpress init
 ```

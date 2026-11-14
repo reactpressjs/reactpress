@@ -4,9 +4,9 @@
  * ReactPress Admin SPA — static server & dist path helper.
  *
  * Usage:
- *   npx @fecommunity/reactpress-web
- *   npx @fecommunity/reactpress-web start --port 3000
- *   npx @fecommunity/reactpress-web path
+ *   npx @reactpressjs/reactpress-web
+ *   npx @reactpressjs/reactpress-web start --port 3000
+ *   npx @reactpressjs/reactpress-web path
  */
 
 import {
@@ -51,13 +51,13 @@ Options:
   --help, -h       Show help
 
 Examples:
-  npx @fecommunity/reactpress-web
-  npx @fecommunity/reactpress-web start --port 3000 --base /admin/
-  npx @fecommunity/reactpress-web path
-  npx @fecommunity/reactpress-web sync-public ./public/admin
+  npx @reactpressjs/reactpress-web
+  npx @reactpressjs/reactpress-web start --port 3000 --base /admin/
+  npx @reactpressjs/reactpress-web path
+  npx @reactpressjs/reactpress-web sync-public ./public/admin
 
 Programmatic:
-  import { resolveDistDir, createAdminStaticMiddleware, serveAdmin } from '@fecommunity/reactpress-web';
+  import { resolveDistDir, createAdminStaticMiddleware, serveAdmin } from '@reactpressjs/reactpress-web';
 `);
 }
 
@@ -80,7 +80,7 @@ if (command === "path") {
 }
 
 if (command === "middleware") {
-  console.log(`import { createAdminStaticMiddleware, resolveDistDir } from '@fecommunity/reactpress-web';
+  console.log(`import { createAdminStaticMiddleware, resolveDistDir } from '@reactpressjs/reactpress-web';
 
 // Express / Connect
 app.use(createAdminStaticMiddleware({ basePath: '${basePath}' }));

@@ -113,8 +113,7 @@ export class FileService {
         size: primary.size,
         variants: variantsMeta,
       });
-      await this.fileRepository.save(newFile);
-      return newFile;
+      return this.fileRepository.save(newFile);
     }
 
     const filename = +unique === 1 ? `${dataFolder}/${originalname}` : `${dataFolder}/${uniqueid()}.${ext}`;
@@ -126,8 +125,7 @@ export class FileService {
       type: mimetype,
       size,
     });
-    await this.fileRepository.save(newFile);
-    return newFile;
+    return this.fileRepository.save(newFile);
   }
 
   /**
@@ -156,13 +154,8 @@ export class FileService {
    * @param id
    */
   async findById(id): Promise<File> {
-    const file = await this.fileRepository.findOne(id);
+    const file = await this.fileRepository.findOne({ where: { id: id } });
     return file ? this.normalizeFile(file) : file;
-  }
-
-  async findByIds(ids): Promise<Array<File>> {
-    const files = await this.fileRepository.findByIds(ids);
-    return files.map((file) => this.normalizeFile(file));
   }
 
   /**
@@ -170,7 +163,7 @@ export class FileService {
    * @param id
    */
   async deleteById(id) {
-    const target = await this.fileRepository.findOne(id);
+    const target = await this.fileRepository.findOne({ where: { id: id } });
     if (!target) {
       throw new HttpException('File not found', 404);
     }

@@ -39,7 +39,7 @@ type ThemeRegistryModule = {
 
 let cached: ThemeRegistryModule | null = null;
 
-/** @fecommunity/reactpress npm package root (parent of bundled `server/`). */
+/** @reactpressjs/reactpress npm package root (parent of bundled `server/`). */
 function resolveBundledCliPackageRoot(): string | null {
   // server/dist/modules/extension -> server/
   const serverRoot = path.join(__dirname, '..', '..', '..');
@@ -52,7 +52,7 @@ function resolveBundledCliPackageRoot(): string | null {
     const pkgPath = path.join(cliRoot, 'package.json');
     if (!fs.existsSync(pkgPath)) return null;
     const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8')) as { name?: string };
-    if (pkg.name === '@fecommunity/reactpress') {
+    if (pkg.name === '@reactpressjs/reactpress') {
       return cliRoot;
     }
   } catch {
@@ -90,17 +90,11 @@ export function readThemeCatalogEntries(root = resolveProjectRoot()): ThemeRegis
   return loadThemeRegistry().readThemeCatalog(root).themes;
 }
 
-export function findThemeCatalogEntry(
-  idOrSpec: string,
-  root = resolveProjectRoot(),
-): ThemeRegistryCatalogEntry | null {
+export function findThemeCatalogEntry(idOrSpec: string, root = resolveProjectRoot()): ThemeRegistryCatalogEntry | null {
   return loadThemeRegistry().findCatalogTheme(root, idOrSpec);
 }
 
-export function resolveThemeCatalogInstallSpec(
-  input: string,
-  root = resolveProjectRoot(),
-): string | null {
+export function resolveThemeCatalogInstallSpec(input: string, root = resolveProjectRoot()): string | null {
   return loadThemeRegistry().resolveCatalogInstallSpec(root, input);
 }
 

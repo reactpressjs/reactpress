@@ -2,8 +2,8 @@ import {
   createPluginAdminRegistry,
   createPluginAdminSlotHost,
   type PluginAdminModule,
-} from "@fecommunity/reactpress-toolkit/plugin/admin";
-import { PluginAdminRuntimeProvider } from "@fecommunity/reactpress-toolkit/plugin/react";
+} from "@reactpressjs/reactpress-toolkit/plugin/admin";
+import { PluginAdminRuntimeProvider } from "@reactpressjs/reactpress-toolkit/plugin/react";
 import { Spin } from "antd";
 import { type ReactNode, useEffect, useMemo, useState } from "react";
 

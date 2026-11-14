@@ -1,6 +1,7 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post, Query, UseGuards } from '@nestjs/common';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
 
+import { AdminAccessGuard } from '../api-key/admin-access.guard';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 import { Roles, RolesGuard } from '../auth/roles.guard';
 import { Category } from './category.entity';
@@ -13,13 +14,12 @@ export class CategoryController {
   constructor(private readonly categoryService: CategoryService) {}
 
   /**
-   * 添加标签
+   * 添加分类
    * @param category
    */
   @ApiResponse({ status: 200, description: '添加分类', type: [Category] })
   @Post()
-  @Roles('admin')
-  @UseGuards(JwtAuthGuard)
+  @UseGuards(AdminAccessGuard)
   create(@Body() category) {
     return this.categoryService.create(category);
   }

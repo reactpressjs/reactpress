@@ -57,6 +57,8 @@ describe('lib/nginx', () => {
       apiPort: 3002,
     });
     assert.ok(content.includes('host.docker.internal:3002'));
+    assert.ok(content.includes('location /api/ai/agent/chat'));
+    assert.ok(content.includes('proxy_buffering off'));
   });
 
   it('ensureNginxConfig refreshes stale prod nginx (13001 → env ports)', () => {
@@ -65,11 +67,11 @@ describe('lib/nginx', () => {
       const configPath = path.join(root, 'nginx.conf');
       fs.writeFileSync(
         configPath,
-        'location / { proxy_pass http://host.docker.internal:13001; }\nlocation /api { proxy_pass http://host.docker.internal:13002; }\n',
+        'location / { proxy_pass http://host.docker.internal:13001; }\nlocation /api { proxy_pass http://host.docker.internal:13002; }\n'
       );
       fs.writeFileSync(
         path.join(root, '.env'),
-        'CLIENT_SITE_URL=http://localhost:3001\nSERVER_SITE_URL=http://localhost:3002\n',
+        'CLIENT_SITE_URL=http://localhost:3001\nSERVER_SITE_URL=http://localhost:3002\n'
       );
       const { changed } = ensureNginxConfig(root, { prod: true });
       assert.equal(changed, true);

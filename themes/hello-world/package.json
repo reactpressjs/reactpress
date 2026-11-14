@@ -1,5 +1,5 @@
 {
-  "name": "@fecommunity/reactpress-template-hello-world",
+  "name": "@reactpressjs/reactpress-template-hello-world",
   "version": "3.0.4",
   "description": "Official ReactPress hello-world theme — Next.js 15 Pages Router starter for blogs, categories, tags, and search",
   "homepage": "https://reactpress.cc/",
@@ -41,8 +41,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@fecommunity/reactpress-toolkit": "workspace:*",
-    "@fecommunity/reactpress-web": "workspace:*",
+    "@reactpressjs/reactpress-toolkit": "workspace:*",
+    "@reactpressjs/reactpress-web": "workspace:*",
     "dotenv": "^17.2.3",
     "next": "15.5.12",
     "react": "19.2.4",

@@ -1,0 +1,34 @@
+{
+  "meta": {
+    "name": "AI Assist",
+    "description": "BYOK Skills for write, organize, polish, and pre-review. Humans approve before publish."
+  },
+  "settings": {
+    "enabled": {
+      "title": "Enable AI Assist",
+      "description": "When off, Skill runs are rejected."
+    },
+    "apiKey": {
+      "title": "API Key",
+      "description": "Bring your own OpenAI-compatible API key. Encrypted at rest. Leave blank to keep the saved key."
+    },
+    "baseUrl": {
+      "title": "API Base URL",
+      "description": "Usually https://api.openai.com/v1 or a compatible gateway."
+    },
+    "model": {
+      "title": "Model",
+      "description": "Chat model id such as gpt-4o-mini."
+    }
+  },
+  "ai": {
+    "panelTitle": "AI Assist",
+    "panelHint": "Skills update the draft only. Publish requires human approval under All Posts → Pending review.",
+    "organize": "Fill SEO & tags",
+    "polish": "Polish",
+    "preReview": "Pre-review",
+    "skillApplied": "Skill applied to editor fields. Save when ready.",
+    "preReviewDone": "Pre-review complete. Open All Posts → Pending review to approve publish.",
+    "saveDraftFirst": "Save the draft first so AI can read the article."
+  }
+}

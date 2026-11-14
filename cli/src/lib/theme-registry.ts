@@ -22,7 +22,7 @@ const {
 } = require('./theme-sources');
 
 /** Official npm spec for the theme-starter package. */
-const OFFICIAL_THEME_STARTER_SPEC = '@fecommunity/reactpress-theme-starter@1.0.0-beta.0';
+const OFFICIAL_THEME_STARTER_SPEC = '@reactpressjs/reactpress-theme-starter@1.0.0-beta.0';
 const OFFICIAL_THEME_STARTER_ID = 'reactpress-theme-starter';
 /** Catalog anchor directory under themes/ (metadata in package.json). */
 const OFFICIAL_THEME_STARTER_DIR = 'theme-starter';

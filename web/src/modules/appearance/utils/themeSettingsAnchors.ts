@@ -1,4 +1,4 @@
-import type { ThemeConfigurationSchema } from "@fecommunity/reactpress-toolkit/theme";
+import type { ThemeConfigurationSchema } from "@reactpressjs/reactpress-toolkit/theme";
 
 export type ThemeSettingsAnchor = {
   key: string;

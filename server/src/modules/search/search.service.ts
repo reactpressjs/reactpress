@@ -68,7 +68,7 @@ export class SearchService {
    * @param id
    */
   async deleteById(id) {
-    const data = await this.searchRepository.findOne(id);
+    const data = await this.searchRepository.findOne({ where: { id: id } });
     return this.searchRepository.remove(data);
   }
 }

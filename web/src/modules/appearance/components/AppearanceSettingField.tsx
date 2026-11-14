@@ -1,4 +1,4 @@
-import type { ThemeAppearanceSetting } from "@fecommunity/reactpress-toolkit/theme";
+import type { ThemeAppearanceSetting } from "@reactpressjs/reactpress-toolkit/theme";
 import { resolveSettingAssetPreviewUrl } from "@/shared/assets/resolveSettingAssetPreviewUrl";
 import { App, Button, ColorPicker, Form, Input, Select, Switch, Typography } from "antd";
 import { useState } from "react";

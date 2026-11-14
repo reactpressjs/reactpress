@@ -96,7 +96,7 @@ pnpm --filter @reactpress/plugin-hello-world run typecheck
 
 Dependencies:
 
-- `@fecommunity/reactpress-toolkit/plugin/server` — `HookService`, `PluginContext` types
+- `@reactpressjs/reactpress-toolkit/plugin/server` — `HookService`, `PluginContext` types
 
 ## Use as a new plugin template
 

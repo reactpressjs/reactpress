@@ -39,11 +39,6 @@ function readDevRemoteDefault(projectRoot) {
   return readOriginFromEnv(projectRoot, 'REACTPRESS_DEV_REMOTE_ORIGIN');
 }
 
-/** @deprecated use readDevClientApiOrigin */
-function readDevRemoteOrigin(projectRoot) {
-  return readDevClientApiOrigin(projectRoot);
-}
-
 /** Remote admin API origin; null = local Nest. */
 function readDevAdminApiOrigin(projectRoot) {
   return readOriginFromEnv(projectRoot, 'REACTPRESS_DEV_ADMIN_API_ORIGIN');
@@ -142,17 +137,6 @@ function applyDevApiOriginsToEnv(origins) {
   }
 }
 
-/** @deprecated use resolveDevApiOrigins */
-function applyDevRemoteOrigin(cliValue) {
-  const normalized = normalizeRemoteOrigin(cliValue);
-  if (normalized) {
-    process.env.REACTPRESS_DEV_REMOTE_ORIGIN = normalized;
-    process.env.REACTPRESS_DEV_ADMIN_API_ORIGIN = normalized;
-    process.env.REACTPRESS_DEV_CLIENT_API_ORIGIN = normalized;
-  }
-  return normalized;
-}
-
 /** Nest client base URL (includes /api when origin is host-only). */
 function resolveRemoteThemeApiBase(origin) {
   const base = String(origin || '')
@@ -166,12 +150,10 @@ function resolveRemoteThemeApiBase(origin) {
 module.exports = {
   normalizeRemoteOrigin,
   readDevRemoteDefault,
-  readDevRemoteOrigin,
   readDevAdminApiOrigin,
   readDevClientApiOrigin,
   parseOriginSpec,
   resolveDevApiOrigins,
   applyDevApiOriginsToEnv,
-  applyDevRemoteOrigin,
   resolveRemoteThemeApiBase,
 };

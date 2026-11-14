@@ -27,8 +27,7 @@ export async function resolveDatabaseProfile(projectRoot: string): Promise<Datab
   const type = resolveDatabaseType(config, env);
 
   if (type === 'sqlite') {
-    const database =
-      env.DB_DATABASE ?? config.database.sqlitePath ?? sqlitePath;
+    const database = env.DB_DATABASE ?? config.database.sqlitePath ?? sqlitePath;
     return {
       type: 'sqlite',
       mode: config.database.mode,
@@ -47,12 +46,4 @@ export async function resolveDatabaseProfile(projectRoot: string): Promise<Datab
       database: env.DB_DATABASE ?? config.database.database ?? DEFAULT_MYSQL.database,
     },
   };
-}
-
-export function isLocalDatabaseMode(config: ReactPressConfig): boolean {
-  return config.database.mode === 'embedded-sqlite';
-}
-
-export function requiresDocker(config: ReactPressConfig): boolean {
-  return config.database.mode === 'embedded-docker';
 }

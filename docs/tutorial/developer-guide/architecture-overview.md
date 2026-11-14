@@ -46,15 +46,15 @@ flowchart TB
 
 ## 包职责矩阵
 
-| 包           | npm                               | 职责                   | 渲染          | SEO      |
-| ------------ | --------------------------------- | ---------------------- | ------------- | -------- |
-| **server**   | `@fecommunity/reactpress-server`¹ | 业务、持久化、鉴权     | —             | —        |
-| **web**      | `@fecommunity/reactpress-web`     | Admin UI               | Vite CSR      | 否       |
-| **themes/**  | 各主题包                          | 访客站                 | Next SSR/ISR  | 是       |
-| **toolkit**  | `@fecommunity/reactpress-toolkit` | API 客户端、类型       | —             | —        |
-| **plugins/** | 各插件                            | Hook 逻辑 + Admin 插槽 | 混合          | 插件相关 |
-| **desktop**  | —                                 | Electron 壳 + 本地 API | 加载 web/dist | 否       |
-| **cli**      | `@fecommunity/reactpress`         | init / doctor / 编排   | —             | —        |
+| 包           | npm                                | 职责                   | 渲染          | SEO      |
+| ------------ | ---------------------------------- | ---------------------- | ------------- | -------- |
+| **server**   | `@reactpressjs/reactpress-server`¹ | 业务、持久化、鉴权     | —             | —        |
+| **web**      | `@reactpressjs/reactpress-web`     | Admin UI               | Vite CSR      | 否       |
+| **themes/**  | 各主题包                           | 访客站                 | Next SSR/ISR  | 是       |
+| **toolkit**  | `@reactpressjs/reactpress-toolkit` | API 客户端、类型       | —             | —        |
+| **plugins/** | 各插件                             | Hook 逻辑 + Admin 插槽 | 混合          | 插件相关 |
+| **desktop**  | —                                  | Electron 壳 + 本地 API | 加载 web/dist | 否       |
+| **cli**      | `@reactpressjs/reactpress`         | init / doctor / 编排   | —             | —        |
 
 ¹ 独立 npm 已 deprecated；终端用户使用 CLI bundled API。
 

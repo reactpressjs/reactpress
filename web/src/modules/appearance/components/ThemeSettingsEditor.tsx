@@ -1,4 +1,4 @@
-import type { ThemeConfigurationSchema } from "@fecommunity/reactpress-toolkit/theme";
+import type { ThemeConfigurationSchema } from "@reactpressjs/reactpress-toolkit/theme";
 import { Button, Empty } from "antd";
 import { type ReactNode, useRef } from "react";
 import { useTranslation } from "react-i18next";

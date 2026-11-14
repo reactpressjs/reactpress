@@ -4,7 +4,7 @@ import {
   resolveStaticVisitorContext,
   SiteDocument,
   themeApi,
-} from '@fecommunity/reactpress-toolkit/theme';
+} from '@reactpressjs/reactpress-toolkit/theme';
 import { GetServerSideProps } from 'next';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -36,10 +36,7 @@ export default function SearchPage({ query = '', articles = [] }: SearchProps) {
   };
 
   return (
-    <SiteDocument
-      {...THEME_SHELL}
-      head={<PageHead title="Search" description="Search articles on this site." />}
-    >
+    <SiteDocument {...THEME_SHELL} head={<PageHead title="Search" description="Search articles on this site." />}>
       <h1 className="section-title">Search</h1>
 
       <form className="search-form" onSubmit={handleSubmit} role="search">

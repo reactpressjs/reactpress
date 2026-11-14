@@ -1,4 +1,4 @@
-import { type TaxonomyItem, TaxonomyList } from '@fecommunity/reactpress-toolkit/theme';
+import { type TaxonomyItem, TaxonomyList } from '@reactpressjs/reactpress-toolkit/theme';
 import Link from 'next/link';
 
 interface TagsCloudProps {

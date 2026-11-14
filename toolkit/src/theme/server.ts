@@ -1,29 +1,20 @@
 /**
  * SSR-safe theme exports for App Router / server components.
- * Does not re-export `@fecommunity/reactpress-toolkit/ui` (React context / hooks).
- * Client components should import UI from `@fecommunity/reactpress-toolkit/ui` directly.
+ * Does not re-export `@reactpressjs/reactpress-toolkit/ui` (React context / hooks).
+ * Client components should import UI from `@reactpressjs/reactpress-toolkit/ui` directly.
  */
 export type { ThemeApi } from './api/api';
-export {
-  createThemeApi,
-  getThemeApiBaseUrl,
-  resolveThemeApiBaseUrl,
-  themeApi,
-} from './api/api';
+export { createThemeApi, getThemeApiBaseUrl, resolveThemeApiBaseUrl, themeApi } from './api/api';
 export type { ApiEnvelope } from '../utils/api-envelope';
+export { unpackList, unpackOne, unpackPaginated, unpackPaginatedPair } from '../utils/api-envelope';
 export {
-  unpackList,
-  unpackOne,
-  unpackPaginated,
-  unpackPaginatedPair,
-} from '../utils/api-envelope';
-export { isLikelyValidAssetPath, isLikelyValidHeaderLogoPath, resolvePublicAssetUrl, rewriteArticleHtmlAssets } from './content/assets';
+  isLikelyValidAssetPath,
+  isLikelyValidHeaderLogoPath,
+  resolvePublicAssetUrl,
+  rewriteArticleHtmlAssets,
+} from './content/assets';
 export type { ArchiveExcerptMode, ResolveArchiveExcerptOptions } from './content/excerpt';
-export {
-  resolveArchiveExcerpt,
-  stripHtml,
-  truncateWords,
-} from './content/excerpt';
+export { resolveArchiveExcerpt, stripHtml, truncateWords } from './content/excerpt';
 export type { AppBootstrapResult, FetchAppBootstrapOptions } from './ssr/bootstrap';
 export {
   createDefaultAppBootstrap,
@@ -36,14 +27,8 @@ export {
   fetchRecommendArticles,
 } from './ssr/bootstrap';
 export type { SlimBootstrapOptions } from './ssr/slimBootstrap';
-export {
-  createBootstrapSlimmer,
-  slimAppBootstrapForRoute,
-} from './ssr/slimBootstrap';
-export type {
-  CarouselArticle,
-  ListArticle,
-} from './content/articleSlim';
+export { createBootstrapSlimmer, slimAppBootstrapForRoute } from './ssr/slimBootstrap';
+export type { CarouselArticle, ListArticle } from './content/articleSlim';
 export {
   slimArticleForCarousel,
   slimArticleForList,
@@ -51,12 +36,7 @@ export {
   slimArticlesForList,
 } from './content/articleSlim';
 export type { ArchiveArticle, ArchiveTree } from './content/archiveSlim';
-export {
-  countArchiveArticles,
-  formatArchiveDay,
-  slimArchiveTree,
-  sortedArchiveYears,
-} from './content/archiveSlim';
+export { countArchiveArticles, formatArchiveDay, slimArchiveTree, sortedArchiveYears } from './content/archiveSlim';
 export type { ResolveCarouselArticlesOptions } from './content/carouselArticles';
 export { resolveCarouselArticles } from './content/carouselArticles';
 export type {
@@ -101,17 +81,12 @@ export {
   withThemeStaticProps,
 } from './ssr/fetch';
 export type { SettingRow } from '../utils/setting';
-export {
-  formatPublishDate,
-  formatPublishDateShort,
-} from '../utils/date';
+export { formatPublishDate, formatPublishDateShort } from '../utils/date';
 export { pickSiteSettings } from '../utils/setting';
 export { safeJsonParse } from '../utils/json';
 export type { ImageVariant } from '../utils/image';
 export { resolveImageUrl } from '../utils/image';
-export type {
-  ThemeSessionUser,
-} from './visitor/authSession';
+export type { ThemeSessionUser } from './visitor/authSession';
 export {
   ADMIN_AUTH_STORAGE_KEY,
   clearThemeSession,
@@ -154,34 +129,13 @@ export {
 export type { SiteTitleSource } from './content/seo';
 export { getPageTitle, getSiteTitle } from './content/seo';
 export { jsonp } from '../utils/jsonp';
-export type {
-  CreateThemeAxiosClientOptions,
-  ThemeApiEnvelope,
-} from './api/httpClient';
-export {
-  createThemeAxiosClient,
-  encodeAxiosUrlPath,
-  resolveThemeAxiosBaseUrl,
-} from './api/httpClient';
-export type {
-  LocaleCatalog,
-  LocaleMessages,
-  ParseSiteLocaleOptions,
-  SiteLocaleState,
-} from './visitor/locale';
-export {
-  createTranslator,
-  parseSiteLocale,
-  resolveRequestLocale,
-} from './visitor/locale';
+export type { CreateThemeAxiosClientOptions, ThemeApiEnvelope } from './api/httpClient';
+export { createThemeAxiosClient, encodeAxiosUrlPath, resolveThemeAxiosBaseUrl } from './api/httpClient';
+export type { LocaleCatalog, LocaleMessages, ParseSiteLocaleOptions, SiteLocaleState } from './visitor/locale';
+export { createTranslator, parseSiteLocale, resolveRequestLocale } from './visitor/locale';
 export { mergeVisitorI18n, slimVisitorI18nForSsr } from './visitor/i18n';
 export type { NavItem } from './content/nav';
-export {
-  articlePath,
-  categoryPath,
-  getNavActiveId,
-  tagPath,
-} from './content/nav';
+export { articlePath, categoryPath, getNavActiveId, tagPath } from './content/nav';
 export type { ResolveThemeRuntimeOptions, ThemeRuntime } from './visitor/runtime';
 export { resolveThemeRuntime } from './visitor/runtime';
 export type { SiteMeta } from './ssr/setting';

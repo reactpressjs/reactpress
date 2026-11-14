@@ -26,11 +26,9 @@ function getCliPackageRoot() {
     return ownRoot;
   }
   try {
-    return path.dirname(
-      require.resolve('@fecommunity/reactpress-cli-core/package.json')
-    );
+    return path.dirname(require.resolve('@reactpressjs/reactpress/package.json'));
   } catch {
-    return path.dirname(require.resolve('@fecommunity/reactpress-cli/package.json'));
+    return ownRoot;
   }
 }
 
@@ -109,11 +107,6 @@ function getThemeBin(projectRoot) {
   throw err;
 }
 
-/** @deprecated Use getThemeBin */
-function getClientBin(projectRoot) {
-  return getThemeBin(projectRoot);
-}
-
 function getPidFile(projectRoot) {
   return path.join(resolveProjectRoot(projectRoot), '.reactpress', 'server.pid');
 }
@@ -138,7 +131,6 @@ module.exports = {
   getSwaggerPath,
   getServerMain,
   getThemeBin,
-  getClientBin,
   getPidFile,
   getClientPidFile,
 };

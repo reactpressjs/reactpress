@@ -14,16 +14,13 @@ export class LocalUpload {
     this.uploadRoot = resolveUploadRoot();
   }
 
-  // 递归创建目录 同步方法
+  /** Recursively create directories (sync). */
   private mkdDirsSync(dirname: string) {
     if (fs.existsSync(dirname)) {
-      return true;
+      return;
     }
-    if (this.mkdDirsSync(path.dirname(dirname))) {
-      fs.mkdirSync(dirname);
-      return true;
-    }
-    return false;
+    this.mkdDirsSync(path.dirname(dirname));
+    fs.mkdirSync(dirname);
   }
 
   public putFile(filename: string, buffer: Buffer) {

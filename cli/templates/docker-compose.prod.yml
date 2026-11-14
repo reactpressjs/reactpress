@@ -37,7 +37,7 @@ services:
       SERVER_API_PREFIX: /api
     ports:
       - '3002:3002'
-    command: sh -c "npm i -g @fecommunity/reactpress-cli@3 && reactpress-cli start --api-only"
+    command: sh -c "npm i -g @reactpressjs/reactpress-cli@3 && reactpress-cli start --api-only"
     # 生产建议挂载已 init 的项目目录，或使用自定义镜像内置 dist
 
   client:
@@ -50,7 +50,7 @@ services:
       SERVER_SITE_URL: http://api:3002
     ports:
       - '3001:3001'
-    command: sh -c "npm i -g @fecommunity/reactpress-client@3 && reactpress-client start"
+    command: sh -c "npm i -g @reactpressjs/reactpress-client@3 && reactpress-client start"
 
 volumes:
   reactpress_mysql_data:

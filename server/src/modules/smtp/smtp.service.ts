@@ -65,7 +65,7 @@ export class SMTPService {
         subject: ApiMsg.EMAIL_TEST_SUBJECT,
         html: ApiMsg.EMAIL_TEST_HTML,
       },
-      transport,
+      transport
     ).catch(() => {
       throw new HttpException(ApiMsg.EMAIL_SEND_FAILED, HttpStatus.BAD_REQUEST);
     });
@@ -86,8 +86,7 @@ export class SMTPService {
       throw new HttpException(ApiMsg.EMAIL_SEND_FAILED, HttpStatus.BAD_REQUEST);
     });
     const newSMTP = await this.smtpRepository.create(data);
-    await this.smtpRepository.save(newSMTP);
-    return newSMTP;
+    return this.smtpRepository.save(newSMTP);
   }
 
   /**
@@ -116,7 +115,7 @@ export class SMTPService {
    * @param id
    */
   async deleteById(id) {
-    const SMTP = await this.smtpRepository.findOne(id);
+    const SMTP = await this.smtpRepository.findOne({ where: { id: id } });
     return this.smtpRepository.remove(SMTP);
   }
 }

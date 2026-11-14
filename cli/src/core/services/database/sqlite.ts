@@ -1,7 +1,7 @@
 import fs from 'fs-extra';
 import path from 'node:path';
 
-import type { DatabaseEnsureResult, SqliteCredentials } from '../../../types/config';
+import type { DatabaseEnsureResult } from '../../../types/config';
 import { getProjectPaths, SQLITE_REL_PATH } from '../../utils/paths';
 import { loadEnvFile } from '../config';
 
@@ -19,14 +19,11 @@ async function maybeMigrateLegacySqlite(projectRoot: string, targetPath: string)
   await fs.ensureDir(path.dirname(normalizedTarget));
   await fs.copyFile(legacyPath, normalizedTarget);
   console.log(
-    `[reactpress] Migrated SQLite database: ${LEGACY_SQLITE_REL_PATH} → ${path.relative(projectRoot, normalizedTarget) || SQLITE_REL_PATH}`,
+    `[reactpress] Migrated SQLite database: ${LEGACY_SQLITE_REL_PATH} → ${path.relative(projectRoot, normalizedTarget) || SQLITE_REL_PATH}`
   );
 }
 
-export async function resolveSqlitePath(
-  projectRoot: string,
-  override?: string,
-): Promise<string> {
+export async function resolveSqlitePath(projectRoot: string, override?: string): Promise<string> {
   const paths = getProjectPaths(projectRoot);
   if (override) {
     const resolved = path.resolve(projectRoot, override);
@@ -48,11 +45,6 @@ export async function resolveSqlitePath(
   return target;
 }
 
-export async function getSqliteCredentials(projectRoot: string): Promise<SqliteCredentials> {
-  const database = await resolveSqlitePath(projectRoot);
-  return { database };
-}
-
 export async function ensureSqliteDatabase(projectRoot: string): Promise<DatabaseEnsureResult> {
   const database = await resolveSqlitePath(projectRoot);
   const dir = path.dirname(database);
@@ -71,9 +63,7 @@ export async function ensureSqliteDatabase(projectRoot: string): Promise<Databas
   return { ok: true };
 }
 
-export async function probeSqliteDatabase(
-  projectRoot: string,
-): Promise<{ ok: boolean; message?: string }> {
+export async function probeSqliteDatabase(projectRoot: string): Promise<{ ok: boolean; message?: string }> {
   const database = await resolveSqlitePath(projectRoot);
   const dir = path.dirname(database);
 
@@ -99,9 +89,4 @@ export async function probeSqliteDatabase(
     ok: true,
     message: `SQLite 将在启动时创建: ${database}`,
   };
-}
-
-export async function isSqliteReady(projectRoot: string): Promise<boolean> {
-  const result = await ensureSqliteDatabase(projectRoot);
-  return result.ok;
 }

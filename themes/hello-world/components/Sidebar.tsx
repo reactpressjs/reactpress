@@ -1,4 +1,4 @@
-import { type TaxonomyItem, TaxonomyList } from '@fecommunity/reactpress-toolkit/theme';
+import { type TaxonomyItem, TaxonomyList } from '@reactpressjs/reactpress-toolkit/theme';
 import Link from 'next/link';
 
 import TagsCloud from './TagsCloud';
@@ -10,12 +10,7 @@ interface SidebarProps {
   currentTag?: string;
 }
 
-export default function Sidebar({
-  categories = [],
-  tags = [],
-  currentCategory,
-  currentTag,
-}: SidebarProps) {
+export default function Sidebar({ categories = [], tags = [], currentCategory, currentTag }: SidebarProps) {
   const hasCategories = categories.length > 0;
   const hasTags = tags.length > 0;
 
@@ -35,9 +30,7 @@ export default function Sidebar({
             renderLink={({ item, href, active }) => (
               <Link href={href} className={active ? 'active' : ''}>
                 {item.label}
-                {item.articleCount != null ? (
-                  <span className="count">({item.articleCount})</span>
-                ) : null}
+                {item.articleCount != null ? <span className="count">({item.articleCount})</span> : null}
               </Link>
             )}
           />

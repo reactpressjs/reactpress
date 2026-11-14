@@ -1,7 +1,7 @@
 {
-  "name": "@fecommunity/reactpress",
-  "version": "4.0.0",
-  "description": "ReactPress CLI — Write with Focus. Publish with Joy. CMS, Admin, Headless API, and Next.js themes in one command. Self-hosted, MIT. `npx @fecommunity/reactpress init`",
+  "name": "@reactpressjs/reactpress",
+  "version": "5.0.0",
+  "description": "ReactPress CLI — Write with Focus. Publish with Joy. CMS, Admin, Headless API, and Next.js themes in one command. Self-hosted, MIT. `npx @reactpressjs/reactpress init`",
   "author": "reactpressjs",
   "license": "MIT",
   "homepage": "https://reactpress.cc/",
@@ -77,7 +77,6 @@
     "ora": "^5.4.1"
   },
   "devDependencies": {
-    "@fecommunity/reactpress-cli-core": "npm:@fecommunity/reactpress-cli@0.1.0",
     "@types/cross-spawn": "^6.0.6",
     "@types/fs-extra": "^11.0.4",
     "@types/inquirer": "^8.2.10",

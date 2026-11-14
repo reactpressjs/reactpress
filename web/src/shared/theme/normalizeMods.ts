@@ -1,4 +1,7 @@
-import { siteNoticeModInheritsSystem, type ThemeMods } from "@fecommunity/reactpress-toolkit/theme";
+import {
+  siteNoticeModInheritsSystem,
+  type ThemeMods,
+} from "@reactpressjs/reactpress-toolkit/theme";
 
 type ColorLike = {
   toHexString?: () => string;

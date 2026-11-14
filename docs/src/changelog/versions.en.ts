@@ -6,6 +6,10 @@ export type ChangelogNavItem = {
 
 export const CHANGELOG_VERSIONS_EN: ChangelogNavItem[] = [
   {
+    id: '500-2026-11-13',
+    label: '5.0.0 (2026-11-13)',
+  },
+  {
     id: '400-2026-08-09',
     label: '4.0.0 (2026-08-09)',
   },

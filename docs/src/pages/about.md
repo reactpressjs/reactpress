@@ -29,19 +29,19 @@ keywords: [reactpress, about, open source, self-hosted publishing, react cms]
 
 ## What we build
 
-| Layer   | Technology                | Purpose                                     |
-| ------- | ------------------------- | ------------------------------------------- |
-| CLI     | `@fecommunity/reactpress` | `init`, `doctor`, `logs`, `stop`            |
-| API     | NestJS + SQLite / MySQL   | Headless REST, webhooks, API keys           |
-| Admin   | Vite + React              | Content, media, themes, plugins             |
-| Theme   | Next.js (SSR)             | Visitor site with SEO, sitemap, OG tags     |
-| Desktop | Electron                  | Offline writing with SQLite local mode      |
-| Plugins | Hook + `plugin.json`      | SEO, auto-summary, WebP optimization, slots |
+| Layer   | Technology                 | Purpose                                 |
+| ------- | -------------------------- | --------------------------------------- |
+| CLI     | `@reactpressjs/reactpress` | `init`, `doctor`, `logs`, `stop`        |
+| API     | NestJS + SQLite / MySQL    | Headless REST, webhooks, API keys       |
+| Admin   | Vite + React               | Content, media, themes, plugins         |
+| Theme   | Next.js (SSR)              | Visitor site with SEO, sitemap, OG tags |
+| Desktop | Electron                   | Offline writing with SQLite local mode  |
+| Plugins | Hook + `plugin.json`       | SEO, auto-summary, WebP, AI Assist      |
 
-ReactPress 4.0 (codename **Extend**) is the current recommended release:
+ReactPress 5.0 (codename **Intelligent**) is the current recommended release:
 
 ```bash
-npm i -g @fecommunity/reactpress
+npm i -g @reactpressjs/reactpress
 ```
 
 ## Platform model
@@ -73,7 +73,7 @@ ReactPress is developed by [reactpressjs](https://github.com/reactpressjs) and r
 
 - [Official site](https://www.reactpress.cc/) · [Documentation](/docs/intro)
 - [GitHub](https://github.com/reactpressjs) · [Source repo](https://github.com/reactpressjs/reactpress)
-- [npm](https://www.npmjs.com/~reactpressjs) · [CLI package](https://www.npmjs.com/package/@fecommunity/reactpress)
+- [npm](https://www.npmjs.com/~reactpressjs) · [CLI package](https://www.npmjs.com/package/@reactpressjs/reactpress)
 - [Live demo](https://blog.gaoredu.com/) — production site powered by ReactPress
 - [Themes](/themes) · [Plugins](/plugins) · [Best practices](/best-practices) · [Changelog](/blog/changelog)
 

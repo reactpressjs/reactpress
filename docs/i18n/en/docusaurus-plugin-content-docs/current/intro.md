@@ -48,14 +48,14 @@ Choose a starting point by role. Every doc includes a summary and next-step link
 - 🖥️ **Desktop app** — The same experience on the desktop. [Guide](./tutorial-extras/desktop-client.md)
 - 📱 **Multi-device** — Works on desktop, tablet, and mobile browsers
 
-**ReactPress 4.0** (codename **Extend**) adds a **plugin system**, **desktop client**, and **npm theme catalog** on top of 3.x. See [ReactPress 4.0 Extend](./tutorial-extras/reactpress-4-0.md).
+**ReactPress 5.0** (codename **Intelligent**) adds **AI Assist** on top of 4.0: Skills write drafts, and a person approves them in Review Inbox. See [ReactPress 5.0 Intelligent](./tutorial-extras/reactpress-5-0.md).
 
 ## Quick start
 
 Requires **Node.js 20+**.
 
 ```bash
-npm install -g @fecommunity/reactpress
+npm install -g @reactpressjs/reactpress
 mkdir my-site && cd my-site
 reactpress init
 ```
@@ -69,8 +69,8 @@ Default credentials: `admin` / `admin` — **change the password before going pu
 
 Run `reactpress doctor` to diagnose issues. Stop services with `reactpress stop`.
 
-:::info 4.0 note
-`init` **auto-starts** API, Admin, and theme — no need to run `reactpress dev` (removed from the global CLI).
+:::info 5.0 note
+`init` **auto-starts** API, Admin, and theme, and activates **AI Assist**. No need to run `reactpress dev` (removed from the global CLI).
 :::
 
 ### Deploy to Vercel
@@ -100,16 +100,16 @@ Full comparison: [ReactPress vs WordPress](./getting-started/reactpress-vs-wordp
 
 ## Packages & docs
 
-| Resource                                                                         | Description                                      |
-| -------------------------------------------------------------------------------- | ------------------------------------------------ |
-| [Site reactpress.cc](https://www.reactpress.cc/)                                 | Official website                                 |
-| [Source repo](https://github.com/reactpressjs/reactpress)                        | Official repository (reactpressjs)               |
-| [npm](https://www.npmjs.com/~reactpressjs)                                       | Official npm account                             |
-| [@fecommunity/reactpress](https://www.npmjs.com/package/@fecommunity/reactpress) | 4.0 main package (CLI + API + plugins + desktop) |
-| [Desktop client](./tutorial-extras/desktop-client.md)                            | Install, local / remote modes                    |
-| [ReactPress 4.0](./tutorial-extras/reactpress-4-0.md)                            | 4.0 overview                                     |
-| [Migrate 3.x → 4.0](./tutorial-extras/migration-3-to-4.md)                       | Upgrade guide                                    |
-| [@fecommunity/reactpress-toolkit](./tutorial-extras/toolkit-package)             | TypeScript API SDK (Headless)                    |
+| Resource                                                                           | Description                                      |
+| ---------------------------------------------------------------------------------- | ------------------------------------------------ |
+| [Site reactpress.cc](https://www.reactpress.cc/)                                   | Official website                                 |
+| [Source repo](https://github.com/reactpressjs/reactpress)                          | Official repository (reactpressjs)               |
+| [npm](https://www.npmjs.com/~reactpressjs)                                         | Official npm account                             |
+| [@reactpressjs/reactpress](https://www.npmjs.com/package/@reactpressjs/reactpress) | 5.0 main package (CLI + API + plugins + desktop) |
+| [Desktop client](./tutorial-extras/desktop-client.md)                              | Install, local / remote modes                    |
+| [ReactPress 5.0](./tutorial-extras/reactpress-5-0.md)                              | Current release: AI Assist and Review Inbox      |
+| [Migrate 4.x → 5.0](./tutorial-extras/migration-4-to-5.md)                         | Upgrade guide                                    |
+| [@reactpressjs/reactpress-toolkit](./tutorial-extras/toolkit-package.md)           | TypeScript API SDK (Headless)                    |
 
 ## Community
 
@@ -132,7 +132,7 @@ A self-hosted publishing platform to write, manage, and publish in one place. On
 <details>
 <summary><strong>Is ReactPress free?</strong></summary>
 
-Yes — MIT open source. Install with `npm i -g @fecommunity/reactpress`.
+Yes — MIT open source. Install with `npm i -g @reactpressjs/reactpress`.
 
 </details>
 

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import { resolveApiBaseUrl } from '@fecommunity/reactpress-toolkit/plugin/react';
+import { resolveApiBaseUrl } from '@reactpressjs/reactpress-toolkit/plugin/react';
 
 type LocaleMessages = Record<string, unknown>;
 

@@ -49,14 +49,14 @@ keywords:
 - 🖥️ **桌面应用** — 在桌面端获得同样的使用体验。[桌面端指南](./tutorial-extras/desktop-client.md)
 - 📱 **多端访问** — 支持桌面、平板与移动端浏览器
 
-**ReactPress 4.0**（代号 **Extend**）在 3.x 之上新增**插件系统**、**桌面客户端**与 **npm 主题 catalog**。详见 [ReactPress 4.0 扩展版](./tutorial-extras/reactpress-4-0.md)。
+**ReactPress 5.0**（代号 **Intelligent**）在 4.0 之上加入 **AI Assist**：Skill 写草稿，人在审核收件箱通过后才发布。详见 [ReactPress 5.0 智能版](./tutorial-extras/reactpress-5-0.md)。
 
 ## 快速开始
 
 需要 **Node.js 20+**。
 
 ```bash
-npm install -g @fecommunity/reactpress
+npm install -g @reactpressjs/reactpress
 mkdir my-site && cd my-site
 reactpress init
 ```
@@ -72,8 +72,8 @@ reactpress init
 
 运行 `reactpress doctor` 可进行问题诊断。停止服务用 `reactpress stop`。
 
-:::info 4.0 说明
-`init` 会**自动启动** API、Admin 与主题，无需再执行 `reactpress dev`（该命令在全局 CLI 中已移除）。
+:::info 5.0 说明
+`init` 会**自动启动** API、Admin 与主题，并启用 **AI Assist**。无需再执行 `reactpress dev`（该命令在全局 CLI 中已移除）。
 :::
 
 ### 部署到 Vercel
@@ -103,16 +103,16 @@ reactpress init
 
 ## 包与文档
 
-| 资源                                                                             | 说明                                |
-| -------------------------------------------------------------------------------- | ----------------------------------- |
-| [官网 reactpress.cc](https://www.reactpress.cc/)                                 | 官方唯一站点                        |
-| [源码仓库](https://github.com/reactpressjs/reactpress)                           | 官方唯一仓库（reactpressjs）        |
-| [npm](https://www.npmjs.com/~reactpressjs)                                       | 官方 npm 账号                       |
-| [@fecommunity/reactpress](https://www.npmjs.com/package/@fecommunity/reactpress) | 4.0 主包（CLI + API + 插件 + 桌面） |
-| [桌面客户端](./tutorial-extras/desktop-client.md)                                | 下载安装、本地 / 远程模式           |
-| [ReactPress 4.0](./tutorial-extras/reactpress-4-0.md)                            | 4.0 能力总览                        |
-| [3.x → 4.0 迁移](./tutorial-extras/migration-3-to-4.md)                          | 升级指南                            |
-| [@fecommunity/reactpress-toolkit](./tutorial-extras/toolkit-package)             | TypeScript API SDK（Headless）      |
+| 资源                                                                               | 说明                                |
+| ---------------------------------------------------------------------------------- | ----------------------------------- |
+| [官网 reactpress.cc](https://www.reactpress.cc/)                                   | 官方唯一站点                        |
+| [源码仓库](https://github.com/reactpressjs/reactpress)                             | 官方唯一仓库（reactpressjs）        |
+| [npm](https://www.npmjs.com/~reactpressjs)                                         | 官方 npm 账号                       |
+| [@reactpressjs/reactpress](https://www.npmjs.com/package/@reactpressjs/reactpress) | 5.0 主包（CLI + API + 插件 + 桌面） |
+| [桌面客户端](./tutorial-extras/desktop-client.md)                                  | 下载安装、本地 / 远程模式           |
+| [ReactPress 5.0](./tutorial-extras/reactpress-5-0.md)                              | 当前版本：AI Assist 与审核收件箱    |
+| [4.x → 5.0 迁移](./tutorial-extras/migration-4-to-5.md)                            | 升级指南                            |
+| [@reactpressjs/reactpress-toolkit](./tutorial-extras/toolkit-package.md)           | TypeScript API SDK（Headless）      |
 
 ## 社区互助
 
@@ -135,7 +135,7 @@ Email: admin@gaoredu.com
 <details>
 <summary><strong>ReactPress 免费吗？</strong></summary>
 
-是，MIT 开源。安装：`npm i -g @fecommunity/reactpress`。
+是，MIT 开源。安装：`npm i -g @reactpressjs/reactpress`。
 
 </details>
 

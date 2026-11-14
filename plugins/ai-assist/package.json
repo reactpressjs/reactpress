@@ -1,0 +1,20 @@
+{
+  "name": "@reactpressjs/reactpress-plugin-ai-assist",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI Assist for ReactPress — BYOK Skills, draft writing, human review gate",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@reactpressjs/reactpress-toolkit": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.3"
+  }
+}

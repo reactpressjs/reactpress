@@ -83,10 +83,10 @@ my-site/
 
 ## Two user paths
 
-| Path            | For                   | Entry                                       |
-| --------------- | --------------------- | ------------------------------------------- |
-| **End user**    | Build sites, blog     | `npm i -g @fecommunity/reactpress` → `init` |
-| **Contributor** | Core, themes, plugins | clone monorepo → `pnpm dev`                 |
+| Path            | For                   | Entry                                        |
+| --------------- | --------------------- | -------------------------------------------- |
+| **End user**    | Build sites, blog     | `npm i -g @reactpressjs/reactpress` → `init` |
+| **Contributor** | Core, themes, plugins | clone monorepo → `pnpm dev`                  |
 
 ## Related docs
 

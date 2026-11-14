@@ -1,0 +1,48 @@
+.page {
+  max-width: 720px;
+  padding: 8px 4px 32px;
+}
+
+.title {
+  margin-bottom: 4px !important;
+}
+
+.alert {
+  margin: 12px 0 20px;
+}
+
+.label {
+  display: block;
+  margin: 16px 0 6px;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.textarea {
+  width: 100%;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 180px;
+  gap: 12px;
+}
+
+.field {
+  min-width: 0;
+}
+
+.select {
+  width: 100%;
+}
+
+.actions {
+  margin-top: 20px;
+  align-items: center;
+}
+
+@media (max-width: 640px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}

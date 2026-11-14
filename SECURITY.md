@@ -17,7 +17,7 @@ noted in a release announcement.
 Install the latest release:
 
 ```bash
-npm i -g @fecommunity/reactpress
+npm i -g @reactpressjs/reactpress
 ```
 
 ## Reporting a Vulnerability
@@ -58,7 +58,7 @@ We appreciate responsible disclosure. Valid reports may be credited in
 
 When self-hosting ReactPress:
 
-- Keep Node.js, dependencies, and `@fecommunity/reactpress` up to date
+- Keep Node.js, dependencies, and `@reactpressjs/reactpress` up to date
 - Use strong database credentials; do not commit `.env` files
 - Terminate TLS at your reverse proxy (see `reactpress nginx` in the CLI)
 - Restrict admin/API access in production networks where possible

@@ -28,7 +28,7 @@ pnpm install
 ## Repository layout
 
 ```shell
-├─ cli/         # @fecommunity/reactpress publish artifact
+├─ cli/         # @reactpressjs/reactpress publish artifact
 ├─ server/      # NestJS API
 ├─ web/         # Vite Admin SPA
 ├─ desktop/     # Electron desktop shell
@@ -96,11 +96,11 @@ Source docs: `docs/tutorial/` (Chinese). English translations: `docs/i18n/en/doc
 
 ## Global CLI vs Monorepo
 
-|            | Global `@fecommunity/reactpress` | Monorepo `pnpm dev`                |
-| ---------- | -------------------------------- | ---------------------------------- |
-| API source | bundled in CLI                   | workspace `server/`                |
-| Commands   | init / doctor / logs / stop      | full dev / build / pm2             |
-| For        | Site builders                    | core / theme / plugin contributors |
+|            | Global `@reactpressjs/reactpress` | Monorepo `pnpm dev`                |
+| ---------- | --------------------------------- | ---------------------------------- |
+| API source | bundled in CLI                    | workspace `server/`                |
+| Commands   | init / doctor / logs / stop       | full dev / build / pm2             |
+| For        | Site builders                     | core / theme / plugin contributors |
 
 ## Related docs
 

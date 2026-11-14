@@ -5,7 +5,7 @@ import {
   migrateLegacyAppearanceToThemeMods,
   pickSystemSettingPatch,
   resolveEffectiveSettingRow,
-} from '@fecommunity/reactpress-toolkit/theme/extension';
+} from '@reactpressjs/reactpress-toolkit/theme/extension';
 import { Injectable, OnModuleInit } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -17,7 +17,7 @@ import { Setting } from './setting.entity';
 import { getSystemSettingSeedDefaults } from '../bootstrap/bootstrap.constants';
 import { resolveInstallLocale } from '../bootstrap/install-locale';
 
-const THEMES_WITH_CONFIGURATION = ['reactpress-theme-starter'] as const;
+const THEMES_WITH_CONFIGURATION = ['reactpress-theme-starter', 'twentytwentyfive'] as const;
 
 function trimUrl(url: string): string {
   return url.replace(/\/+$/, '');
@@ -28,7 +28,7 @@ export class SettingService implements OnModuleInit {
   constructor(
     @InjectRepository(Setting)
     private readonly settingRepository: Repository<Setting>,
-    private readonly configService: ConfigService,
+    private readonly configService: ConfigService
   ) {}
 
   onModuleInit() {
@@ -53,11 +53,7 @@ export class SettingService implements OnModuleInit {
   }
 
   private settingRowScore(row: Setting): number {
-    return (
-      (row.globalSetting?.trim() ? 4 : 0) +
-      (row.i18n?.trim() ? 2 : 0) +
-      (row.systemTitle?.trim() ? 1 : 0)
-    );
+    return (row.globalSetting?.trim() ? 4 : 0) + (row.i18n?.trim() ? 2 : 0) + (row.systemTitle?.trim() ? 1 : 0);
   }
 
   private async ensureSettingRow(): Promise<Setting> {
@@ -156,9 +152,7 @@ export class SettingService implements OnModuleInit {
    * 初始化系统内置配置（站点标题、SEO、URL 等），仅填充空字段。
    */
   async initSystemSettings() {
-    const locale = resolveInstallLocale(
-      this.configService.get('REACTPRESS_LANG') || this.configService.get('LANG'),
-    );
+    const locale = resolveInstallLocale(this.configService.get('REACTPRESS_LANG') || this.configService.get('LANG'));
     const clientSiteUrl = this.configService.get('CLIENT_SITE_URL', 'http://localhost:3001');
     const urlDefaults = {
       systemUrl: clientSiteUrl,
@@ -173,6 +167,7 @@ export class SettingService implements OnModuleInit {
     for (const [key, defaultValue] of Object.entries(merged)) {
       const current = target[key];
       if (current != null && String(current).trim() !== '') continue;
+      if (defaultValue == null || String(defaultValue).trim() === '') continue;
       target[key] = defaultValue;
       changed = true;
     }
@@ -197,7 +192,7 @@ export class SettingService implements OnModuleInit {
       gs = {};
     }
 
-    const { global, changed } = migrateLegacyAppearanceToThemeMods(gs, (target as unknown) as Record<string, unknown>);
+    const { global, changed } = migrateLegacyAppearanceToThemeMods(gs, target as unknown as Record<string, unknown>);
     if (changed) {
       target.globalSetting = JSON.stringify(global);
       await this.settingRepository.save(target);
@@ -268,12 +263,12 @@ export class SettingService implements OnModuleInit {
       return res;
     }
 
-    const effective = (resolveEffectiveSettingRow((res as unknown) as Record<string, unknown>) as unknown) as Setting;
+    const effective = resolveEffectiveSettingRow(res as unknown as Record<string, unknown>) as unknown as Setting;
 
     if (innerInvoke) {
       return effective;
     }
-    return (buildPublicSettingView((effective as unknown) as Record<string, unknown>) as unknown) as Setting;
+    return buildPublicSettingView(effective as unknown as Record<string, unknown>) as unknown as Setting;
   }
 
   /** 更新系统设置（站点/SEO 为全站默认，主题 customizer 可覆盖） */

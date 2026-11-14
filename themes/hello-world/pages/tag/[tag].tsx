@@ -8,7 +8,7 @@ import {
   SiteDocumentFallback,
   themeOnDemandPaths,
   useRouteParam,
-} from '@fecommunity/reactpress-toolkit/theme';
+} from '@reactpressjs/reactpress-toolkit/theme';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -37,12 +37,7 @@ export default function TagPage({ tag: tagProp, articles = [], tags = [] }: TagP
   const tag = useRouteParam(tagProp, 'tag');
 
   if (router.isFallback) {
-    return (
-      <SiteDocumentFallback
-        {...shellProps}
-        head={<PageHead title="Loading…" />}
-      />
-    );
+    return <SiteDocumentFallback {...shellProps} head={<PageHead title="Loading…" />} />;
   }
 
   const tagData = tags.find((t) => t.value === tag);
@@ -51,12 +46,7 @@ export default function TagPage({ tag: tagProp, articles = [], tags = [] }: TagP
   return (
     <SiteDocument
       {...shellProps}
-      head={
-        <PageHead
-          title={`Tag: ${tagName}`}
-          description={`Articles tagged ${tagName}.`}
-        />
-      }
+      head={<PageHead title={`Tag: ${tagName}`} description={`Articles tagged ${tagName}.`} />}
     >
       <PageHeader
         className="archive-header"
@@ -89,8 +79,8 @@ export default function TagPage({ tag: tagProp, articles = [], tags = [] }: TagP
 
 export const getStaticPaths: GetStaticPaths = async () => themeOnDemandPaths;
 
-export const getStaticProps: GetStaticProps<TagProps> = createArchiveGetStaticProps(
-  'tag',
-  fetchTagArchive,
-  (tag) => ({ tag, articles: [], tags: [] }),
-);
+export const getStaticProps: GetStaticProps<TagProps> = createArchiveGetStaticProps('tag', fetchTagArchive, (tag) => ({
+  tag,
+  articles: [],
+  tags: [],
+}));

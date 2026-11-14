@@ -2,7 +2,7 @@ import {
   getDesktopApi,
   getRuntime,
   resolveApiBaseUrl,
-} from "@fecommunity/reactpress-toolkit/plugin/react";
+} from "@reactpressjs/reactpress-toolkit/plugin/react";
 
 import { resetToolkitClient } from "@/shared/client";
 import { API_BASE_URL } from "@/utils/constants";
@@ -44,11 +44,6 @@ export async function saveRemoteApiBaseUrl(url: string): Promise<string> {
   await desktop.setApiBaseUrl(url);
   resetToolkitClient();
   return desktop.getApiBaseUrl();
-}
-
-/** @deprecated use saveRemoteApiBaseUrl */
-export async function saveDesktopApiBaseUrl(url: string): Promise<string> {
-  return saveRemoteApiBaseUrl(url);
 }
 
 function normalizeApiBaseUrl(url: string): string {

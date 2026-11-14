@@ -88,30 +88,37 @@ WordPress 是面向广泛站长的 PHP CMS。ReactPress 强调 **React 开发者
 <details>
 <summary><strong>ReactPress 免费吗？</strong></summary>
 
-是，MIT 开源。全局安装：`npm i -g @fecommunity/reactpress`。
+是，MIT 开源。全局安装：`npm i -g @reactpressjs/reactpress`。
 
 </details>
 
 ## 版本与升级
 
 <details>
-<summary><strong>4.0 可以上生产吗？</strong></summary>
+<summary><strong>5.0 可以上生产吗？</strong></summary>
 
-4.0.0 为当前稳定版（npm `@latest`）。从 3.x 升级请阅读 [3.x → 4.0 迁移](../tutorial-extras/migration-3-to-4.md)，并先在预发验证。
+5.0.0 为当前推荐版本（npm `@latest`，包名 `@reactpressjs/reactpress`）。从 4.x 升级见 [4.x → 5.0 迁移](../tutorial-extras/migration-4-to-5.md)；从 3.x 先阅读 [3.x → 4.0 迁移](../tutorial-extras/migration-3-to-4.md)，并在预发验证。
+
+</details>
+
+<details>
+<summary><strong>如何从 4.x 升级到 5.0？</strong></summary>
+
+见 [4.x → 5.0 迁移](../tutorial-extras/migration-4-to-5.md)。5.0 以 AI Assist 为主，**无目录 Breaking**；已有站点需安装并启用该插件。
 
 </details>
 
 <details>
 <summary><strong>如何从 3.x 升级到 4.0？</strong></summary>
 
-见 [迁移指南](../tutorial-extras/migration-3-to-4.md)。4.0 **无强制 Breaking**，插件与桌面为增量能力。
+见 [迁移指南](../tutorial-extras/migration-3-to-4.md)。4.0 **无强制 Breaking**，插件与桌面为增量能力。新安装请直接使用 5.0。
 
 </details>
 
 <details>
-<summary><strong>@fecommunity/reactpress-server 还能用吗？</strong></summary>
+<summary><strong>@reactpressjs/reactpress-server 还能用吗？</strong></summary>
 
-已 **deprecated**。新项目请使用 `@fecommunity/reactpress` CLI bundled API，或 Monorepo 源码部署。
+已 **deprecated**。新项目请使用 `@reactpressjs/reactpress` CLI bundled API，或 Monorepo 源码部署。
 
 </details>
 
