@@ -60,7 +60,7 @@ representative at an online or offline event.
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported to the community leaders responsible for enforcement at
-[https://github.com/reactpressjs/reactpress/issues/new](https://github.com/reactpressjs/reactpress/issues/new).
+[https://github.com/reactpressjs/reactpressjs/issues/new](https://github.com/reactpressjs/reactpressjs/issues/new).
 Please use a descriptive title (for example, "Code of Conduct report") and
 include as much detail as possible. All complaints will be reviewed and
 investigated promptly and fairly.

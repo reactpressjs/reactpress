@@ -7,7 +7,7 @@ Electron desktop client for ReactPress 4.0 — offline-first writing with embedd
 - **Local mode**: SQLite API, no Docker required (default `admin` / `admin`)
 - **Remote mode**: Connect to your production API
 - **Docs**: [reactpress.cc](https://reactpress.cc/)
-- **Download**: [Desktop client](https://reactpress.cc/docs/tutorial-extras/desktop-client) · [GitHub Releases](https://github.com/reactpressjs/reactpress/releases)
+- **Download**: [Desktop client](https://reactpress.cc/docs/tutorial-extras/desktop-client) · [GitHub Releases](https://github.com/reactpressjs/reactpressjs/releases)
 
 ## Role
 
@@ -64,7 +64,7 @@ pnpm run --dir desktop dev
 
 ## Build & package
 
-Prebuilt installers are published on [GitHub Releases](https://github.com/reactpressjs/reactpress/releases) when a release is published (see `.github/workflows/release-desktop.yml`).
+Prebuilt installers are published on [GitHub Releases](https://github.com/reactpressjs/reactpressjs/releases) when a release is published (see `.github/workflows/release-desktop.yml`).
 
 ```bash
 # Parallel build + installer (release)

@@ -5,7 +5,7 @@
 [![npm version](https://img.shields.io/npm/v/@reactpressjs/reactpress-toolkit/beta.svg?label=beta)](https://www.npmjs.com/package/@reactpressjs/reactpress-toolkit/v/beta)
 [![npm latest](https://img.shields.io/npm/v/@reactpressjs/reactpress-toolkit.svg?label=latest)](https://www.npmjs.com/package/@reactpressjs/reactpress-toolkit)
 [![npm downloads](https://img.shields.io/npm/dm/@reactpressjs/reactpress-toolkit.svg)](https://www.npmjs.com/package/@reactpressjs/reactpress-toolkit)
-[![License: MIT](https://img.shields.io/npm/l/@reactpressjs/reactpress-toolkit.svg)](https://github.com/reactpressjs/reactpress/blob/master/LICENSE)
+[![License: MIT](https://img.shields.io/npm/l/@reactpressjs/reactpress-toolkit.svg)](https://github.com/reactpressjs/reactpressjs/blob/master/LICENSE)
 
 The shared foundation for **ReactPress themes, plugins, Admin extensions, and custom frontends**. Auto-generated OpenAPI clients, Next.js theme SSR helpers, plugin admin hooks, and headless React UI — so you extend the platform instead of duplicating API or rendering logic.
 
@@ -16,7 +16,7 @@ The shared foundation for **ReactPress themes, plugins, Admin extensions, and cu
 | **API integration** | `./api`, `./api/instance`, `./types`            |
 | **Headless UI**     | `./ui` — unstyled components and hooks          |
 
-[Documentation](https://reactpress.cc/) · [ReactPress CLI](../cli/) · [GitHub](https://github.com/reactpressjs/reactpress)
+[Documentation](https://reactpress.cc/) · [ReactPress CLI](../cli/) · [GitHub](https://github.com/reactpressjs/reactpressjs)
 
 ## Package exports (`package.json` → `exports`)
 
@@ -287,4 +287,4 @@ Output in `dist/`; `createApp.js` is emitted via `tsc` (`allowJs`) to `dist/them
 
 MIT © [reactpressjs](https://github.com/reactpressjs)
 
-<p align="center"><sub>Part of <a href="https://github.com/reactpressjs/reactpress">ReactPress</a> — the official SDK for themes, plugins, and custom frontends.</sub></p>
+<p align="center"><sub>Part of <a href="https://github.com/reactpressjs/reactpressjs">ReactPress</a> — the official SDK for themes, plugins, and custom frontends.</sub></p>

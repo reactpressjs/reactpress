@@ -2,7 +2,7 @@
 
 > ReactPress 4.0 — Write with Focus. Publish with Joy.
 >
-> Official repo: [reactpressjs/reactpress](https://github.com/reactpressjs/reactpress) · Site: [reactpress.cc](https://www.reactpress.cc/)
+> Official repo: [reactpressjs/reactpressjs](https://github.com/reactpressjs/reactpressjs) · Site: [reactpress.cc](https://www.reactpress.cc/)
 >
 > Core principle: **Admin manages content · Themes manage presentation · Plugins manage logic · API manages data · Toolkit manages contracts**
 

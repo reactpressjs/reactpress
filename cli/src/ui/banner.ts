@@ -36,8 +36,8 @@ const LOGO_GRADIENTS = [
   [palette.accent, palette.primary],
 ];
 
-const REPO_URL = 'https://github.com/reactpressjs/reactpress';
-const REPO_DISPLAY = 'github.com/reactpressjs/reactpress';
+const REPO_URL = 'https://github.com/reactpressjs/reactpressjs';
+const REPO_DISPLAY = 'github.com/reactpressjs/reactpressjs';
 const CARD_MIN = 68;
 const ASCII_CARD_PAD = 8;
 

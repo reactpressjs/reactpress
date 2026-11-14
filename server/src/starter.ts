@@ -232,8 +232,8 @@ export async function bootstrap() {
         'Comprehensive API documentation for ReactPress - A modern content management system built with NestJS'
       )
       .setVersion('3.0')
-      .setContact('ReactPress Team', 'https://github.com/reactpressjs/reactpress', 'admin@gaoredu.com')
-      .setLicense('MIT', 'https://github.com/reactpressjs/reactpress/blob/main/LICENSE')
+      .setContact('ReactPress Team', 'https://github.com/reactpressjs/reactpressjs', 'admin@gaoredu.com')
+      .setLicense('MIT', 'https://github.com/reactpressjs/reactpressjs/blob/main/LICENSE')
       .addServer(configService.get('SERVER_SITE_URL', 'http://localhost:3002'), 'API Server')
       .build();
 

@@ -68,7 +68,7 @@ const SEED_BY_LOCALE: Record<
 
 ![ReactPress 示例图片](/logo.png)
 
-项目链接：[ReactPress 项目主页](https://github.com/reactpressjs/reactpress)
+项目链接：[ReactPress 项目主页](https://github.com/reactpressjs/reactpressjs)
 
 ---
 
@@ -136,7 +136,7 @@ Site logo example (replace \`/logo.png\` with a URL from the media library):
 
 ![ReactPress sample image](/logo.png)
 
-Project link: [ReactPress on GitHub](https://github.com/reactpressjs/reactpress)
+Project link: [ReactPress on GitHub](https://github.com/reactpressjs/reactpressjs)
 
 ---
 

@@ -6,12 +6,12 @@
     "version": "2.0",
     "contact": {
       "name": "ReactPress Team",
-      "url": "https://github.com/reactpressjs/reactpress",
+      "url": "https://github.com/reactpressjs/reactpressjs",
       "email": "admin@gaoredu.com"
     },
     "license": {
       "name": "MIT",
-      "url": "https://github.com/reactpressjs/reactpress/blob/main/LICENSE"
+      "url": "https://github.com/reactpressjs/reactpressjs/blob/main/LICENSE"
     }
   },
   "tags": [],

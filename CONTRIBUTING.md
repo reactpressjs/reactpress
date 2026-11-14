@@ -2,21 +2,21 @@
 
 Thank you for your interest in contributing to ReactPress!
 
-Official hubs: [Site](https://www.reactpress.cc/) · [GitHub](https://github.com/reactpressjs/reactpress) · [npm](https://www.npmjs.com/~reactpressjs)
+Official hubs: [Site](https://www.reactpress.cc/) · [GitHub](https://github.com/reactpressjs/reactpressjs) · [npm](https://www.npmjs.com/~reactpressjs)
 
 Please read this guide before opening a pull request. By participating, you
 agree to abide by our [Code of Conduct](./CODE_OF_CONDUCT.md).
 
 ## Ways to Contribute
 
-| Type                 | How                                                                                                                                         |
-| :------------------- | :------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Bug reports**      | [Bug report](https://github.com/reactpressjs/reactpress/issues/new?template=bug_report.md) — steps, component, versions, logs               |
-| **Feature ideas**    | [Feature request](https://github.com/reactpressjs/reactpress/issues/new?template=feature_request.md) — problem, solution, area              |
-| **Community tasks**  | [Help wanted](https://github.com/reactpressjs/reactpress/issues/new?template=help_wanted.md) — scoped tasks labeled `help wanted` on GitHub |
-| **Product feedback** | [Feedback & suggestions](https://github.com/reactpressjs/reactpress/issues/new?template=feedback.md) — UX and operator ideas (not security) |
-| **Code & docs**      | Fork, branch, submit a PR (see below)                                                                                                       |
-| **Security issues**  | Follow [SECURITY.md](./SECURITY.md) — do **not** use public issues                                                                          |
+| Type                 | How                                                                                                                                           |
+| :------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Bug reports**      | [Bug report](https://github.com/reactpressjs/reactpressjs/issues/new?template=bug_report.md) — steps, component, versions, logs               |
+| **Feature ideas**    | [Feature request](https://github.com/reactpressjs/reactpressjs/issues/new?template=feature_request.md) — problem, solution, area              |
+| **Community tasks**  | [Help wanted](https://github.com/reactpressjs/reactpressjs/issues/new?template=help_wanted.md) — scoped tasks labeled `help wanted` on GitHub |
+| **Product feedback** | [Feedback & suggestions](https://github.com/reactpressjs/reactpressjs/issues/new?template=feedback.md) — UX and operator ideas (not security) |
+| **Code & docs**      | Fork, branch, submit a PR (see below)                                                                                                         |
+| **Security issues**  | Follow [SECURITY.md](./SECURITY.md) — do **not** use public issues                                                                            |
 
 ## Security Contributors
 
@@ -24,9 +24,9 @@ We thank researchers who practice responsible disclosure and help keep ReactPres
 secure. Valid reports are credited in [CHANGELOG.md](./CHANGELOG.md) and GitHub
 Security Advisories when applicable.
 
-| Contributor                               | Contribution                                                                                                                                                                                                                         |
-| :---------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [lsr365400](https://github.com/lsr365400) | Reported SQL injection and stored XSS ([GHSA-wmw4-mw6x-6vfm](https://github.com/reactpressjs/reactpress/security/advisories/GHSA-wmw4-mw6x-6vfm)); contributed fixes in [PR #83](https://github.com/reactpressjs/reactpress/pull/83) |
+| Contributor                               | Contribution                                                                                                                                                                                                                             |
+| :---------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [lsr365400](https://github.com/lsr365400) | Reported SQL injection and stored XSS ([GHSA-wmw4-mw6x-6vfm](https://github.com/reactpressjs/reactpressjs/security/advisories/GHSA-wmw4-mw6x-6vfm)); contributed fixes in [PR #83](https://github.com/reactpressjs/reactpressjs/pull/83) |
 
 ## Development Setup
 
@@ -39,7 +39,7 @@ Security Advisories when applicable.
 ### First run
 
 ```bash
-git clone https://github.com/reactpressjs/reactpress.git
+git clone https://github.com/reactpressjs/reactpressjs.git
 cd reactpress
 pnpm install
 pnpm run init      # .reactpress/config.json + .env
@@ -170,7 +170,7 @@ Build with `pnpm run build:docs` (output: `docs/build`). Optional env: `DOCS_SIT
 
 ## Questions?
 
-- [GitHub Discussions](https://github.com/reactpressjs/reactpress/discussions) (if enabled) or Issues for questions
+- [GitHub Discussions](https://github.com/reactpressjs/reactpressjs/discussions) (if enabled) or Issues for questions
 - [中文文档](./README-zh_CN.md) for deployment and monorepo details in Chinese
 
 Thank you for helping make ReactPress better!
