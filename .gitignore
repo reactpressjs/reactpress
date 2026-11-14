@@ -30,6 +30,7 @@ GEMINI.md
 *error.log
 *debug.log
 *.conf
+!cli/templates/*.conf
 sitemap.xml
 
 lib
