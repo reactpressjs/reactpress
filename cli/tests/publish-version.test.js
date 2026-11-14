@@ -75,7 +75,7 @@ describe('5.0.0-beta.0 release consistency', () => {
     assert.ok(names.includes('reactpressjs'));
     assert.ok(names.indexOf('reactpressjs') > names.indexOf('@reactpressjs/reactpress'));
 
-    const aliasPkg = JSON.parse(fs.readFileSync(path.join(REPO_ROOT, 'packages/reactpressjs/package.json'), 'utf8'));
+    const aliasPkg = JSON.parse(fs.readFileSync(path.join(REPO_ROOT, 'cli/alias/package.json'), 'utf8'));
     assert.equal(aliasPkg.name, 'reactpressjs');
     assert.equal(aliasPkg.bin.reactpress, './bin/reactpress.js');
     assert.equal(aliasPkg.dependencies['@reactpressjs/reactpress'], 'workspace:*');

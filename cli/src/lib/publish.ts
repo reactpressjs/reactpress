@@ -37,7 +37,7 @@ const CORE_PUBLISH_PACKAGES = [
   },
   {
     name: 'reactpressjs',
-    path: 'packages/reactpressjs',
+    path: 'cli/alias',
     description: 'Unscoped global install alias (`npm i -g reactpressjs`).',
   },
 ];

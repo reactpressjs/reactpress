@@ -2,7 +2,7 @@ packages:
   # CLI 工具链
   - 'cli'
   # Unscoped global install alias (`npm i -g reactpressjs`)
-  - 'packages/reactpressjs'
+  - 'cli/alias'
   # 后端 API
   - 'server'
   # Admin SPA
