@@ -9,7 +9,7 @@ ReactPress **5.0 Intelligent** adds the `ai-assist` plugin on top of 4.0. Themes
 The global CLI package is **`@reactpressjs/reactpress`**. If an older-scoped global install remains, uninstall it first, then:
 
 ```bash
-npm i -g @reactpressjs/reactpress
+npm i -g reactpressjs
 cd your-site
 reactpress doctor
 ```

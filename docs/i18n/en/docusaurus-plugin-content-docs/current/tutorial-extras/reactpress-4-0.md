@@ -20,7 +20,7 @@ keywords: [reactpress 4.0, extend, plugin, desktop, theme catalog, wordpress alt
 ## Quick start (full stack)
 
 ```bash
-npm i -g @reactpressjs/reactpress
+npm i -g reactpressjs
 mkdir my-site && cd my-site
 reactpress init
 ```
@@ -55,9 +55,9 @@ pnpm dev:desktop
 
 Package: `pnpm build:desktop` → `desktop/release/`.
 
-Prebuilt installers: [Desktop client docs](https://reactpress.cc/docs/tutorial-extras/desktop-client) · [GitHub Releases](https://github.com/reactpressjs/reactpress/releases)
+Prebuilt installers: [Desktop client docs](https://reactpress.cc/docs/tutorial-extras/desktop-client) · [GitHub Releases](https://github.com/reactpressjs/reactpressjs/releases)
 
-See [desktop/README.md](https://github.com/reactpressjs/reactpress/blob/master/desktop/README.md).
+See [desktop/README.md](https://github.com/reactpressjs/reactpressjs/blob/master/desktop/README.md).
 
 ## Plugin system (new)
 
@@ -74,7 +74,7 @@ Built-in plugins:
 | `seo`             | Slug, keywords, meta description; editor Admin slot |
 | `image-optimizer` | Analyze media history and batch WebP optimization   |
 
-Plugin development: [plugins/README.md](https://github.com/reactpressjs/reactpress/blob/master/plugins/README.md) · scaffold: [reactpress-plugin-starter](https://github.com/reactpressjs/reactpress-plugin-starter)
+Plugin development: [plugins/README.md](https://github.com/reactpressjs/reactpressjs/blob/master/plugins/README.md) · scaffold: [reactpress-plugin-starter](https://github.com/reactpressjs/reactpress-plugin-starter)
 
 | Template                  | Source     | Use case                       |
 | ------------------------- | ---------- | ------------------------------ |
@@ -127,4 +127,4 @@ See [3.x → 4.0 migration](./migration-3-to-4.md). **No forced breaking config 
 - [3.0 Platform](./reactpress-3-0.md)
 - [3.x → 4.0 migration](./migration-3-to-4.md)
 - [2.x → 3.0 migration](./migration-2-to-3.md)
-- [ARCHITECTURE.md](https://github.com/reactpressjs/reactpress/blob/master/ARCHITECTURE.md)
+- [ARCHITECTURE.md](https://github.com/reactpressjs/reactpressjs/blob/master/ARCHITECTURE.md)

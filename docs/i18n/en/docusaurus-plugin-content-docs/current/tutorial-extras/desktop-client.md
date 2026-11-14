@@ -11,7 +11,7 @@ The ReactPress desktop app is an **Electron shell around the same Admin SPA** â€
 
 ## Download and install
 
-Prebuilt installers are published on [GitHub Releases](https://github.com/reactpressjs/reactpress/releases) (built automatically by the **Release Desktop** workflow).
+Prebuilt installers are published on [GitHub Releases](https://github.com/reactpressjs/reactpressjs/releases) (built automatically by the **Release Desktop** workflow).
 
 | Platform    | Artifact                         | Notes                                              |
 | ----------- | -------------------------------- | -------------------------------------------------- |
@@ -63,7 +63,7 @@ pnpm build:desktop
 pnpm build:desktop:dir && pnpm open:desktop
 ```
 
-See [desktop/README.md](https://github.com/reactpressjs/reactpress/blob/master/desktop/README.md) in the repo.
+See [desktop/README.md](https://github.com/reactpressjs/reactpressjs/blob/master/desktop/README.md) in the repo.
 
 ## Related docs
 

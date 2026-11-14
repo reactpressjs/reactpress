@@ -24,7 +24,7 @@ Looking for a **self-hosted CMS for React** — not a SaaS Headless plan, not a 
 **ReactPress** is an open-source, **self-hosted publishing platform** for React developers: Admin + NestJS API + Next.js themes + plugins + optional desktop client, all started from one CLI. Your content and media stay on **your** machine or server.
 
 ```bash
-npm i -g @reactpressjs/reactpress
+npm i -g reactpressjs
 mkdir my-cms && cd my-cms
 reactpress init
 ```

@@ -55,7 +55,7 @@ Choose a starting point by role. Every doc includes a summary and next-step link
 Requires **Node.js 20+**.
 
 ```bash
-npm install -g @reactpressjs/reactpress
+npm install -g reactpressjs
 mkdir my-site && cd my-site
 reactpress init
 ```
@@ -103,7 +103,7 @@ Full comparison: [ReactPress vs WordPress](./getting-started/reactpress-vs-wordp
 | Resource                                                                           | Description                                      |
 | ---------------------------------------------------------------------------------- | ------------------------------------------------ |
 | [Site reactpress.cc](https://www.reactpress.cc/)                                   | Official website                                 |
-| [Source repo](https://github.com/reactpressjs/reactpress)                          | Official repository (reactpressjs)               |
+| [Source repo](https://github.com/reactpressjs/reactpressjs)                        | Official repository (reactpressjs)               |
 | [npm](https://www.npmjs.com/~reactpressjs)                                         | Official npm account                             |
 | [@reactpressjs/reactpress](https://www.npmjs.com/package/@reactpressjs/reactpress) | 5.0 main package (CLI + API + plugins + desktop) |
 | [Desktop client](./tutorial-extras/desktop-client.md)                              | Install, local / remote modes                    |
@@ -114,9 +114,9 @@ Full comparison: [ReactPress vs WordPress](./getting-started/reactpress-vs-wordp
 ## Community
 
 1. Run `reactpress doctor` and `reactpress logs` first
-2. [GitHub Issues](https://github.com/reactpressjs/reactpress/issues)
-3. [GitHub Discussions](https://github.com/reactpressjs/reactpress/discussions)
-4. [Contributing guide](https://github.com/reactpressjs/reactpress/blob/master/CONTRIBUTING.md)
+2. [GitHub Issues](https://github.com/reactpressjs/reactpressjs/issues)
+3. [GitHub Discussions](https://github.com/reactpressjs/reactpressjs/discussions)
+4. [Contributing guide](https://github.com/reactpressjs/reactpressjs/blob/master/CONTRIBUTING.md)
 
 Email: admin@gaoredu.com
 
@@ -132,7 +132,7 @@ A self-hosted publishing platform to write, manage, and publish in one place. On
 <details>
 <summary><strong>Is ReactPress free?</strong></summary>
 
-Yes — MIT open source. Install with `npm i -g @reactpressjs/reactpress`.
+Yes — MIT open source. Install with `npm i -g reactpressjs`.
 
 </details>
 

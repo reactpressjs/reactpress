@@ -80,4 +80,4 @@ Swagger：http://localhost:3002/api
 
 - [系统架构概览](../developer-guide/architecture-overview.md)
 - [Headless API](../developer-guide/headless-api.md)
-- [ARCHITECTURE.md §11 Server](https://github.com/reactpressjs/reactpress/blob/master/ARCHITECTURE.md#11-server-backend-api)
+- [ARCHITECTURE.md §11 Server](https://github.com/reactpressjs/reactpressjs/blob/master/ARCHITECTURE.md#11-server-backend-api)

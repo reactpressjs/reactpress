@@ -21,7 +21,7 @@ keywords: [reactpress 5.0, intelligent, ai assist, review inbox, byok]
 ## Quick start
 
 ```bash
-npm i -g @reactpressjs/reactpress
+npm i -g reactpressjs
 mkdir my-site && cd my-site
 reactpress init
 ```

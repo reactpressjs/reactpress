@@ -11,7 +11,7 @@ ReactPress 桌面端是 **Electron 壳 + 同一套 Admin SPA**，适合离线写
 
 ## 下载安装
 
-预构建安装包随 [GitHub Releases](https://github.com/reactpressjs/reactpress/releases) 发布（`Release Desktop` 工作流自动构建）。
+预构建安装包随 [GitHub Releases](https://github.com/reactpressjs/reactpressjs/releases) 发布（`Release Desktop` 工作流自动构建）。
 
 | 平台        | 安装包                           | 说明                                     |
 | ----------- | -------------------------------- | ---------------------------------------- |
@@ -63,7 +63,7 @@ pnpm build:desktop
 pnpm build:desktop:dir && pnpm open:desktop
 ```
 
-详见仓库 [desktop/README.md](https://github.com/reactpressjs/reactpress/blob/master/desktop/README.md)。
+详见仓库 [desktop/README.md](https://github.com/reactpressjs/reactpressjs/blob/master/desktop/README.md)。
 
 ## 相关文档
 

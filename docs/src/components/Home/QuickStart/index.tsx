@@ -31,7 +31,7 @@ const steps: Step[] = [
       message: 'Node.js 20+ required.',
       id: 'home.quickstart.step1.detail',
     }),
-    code: 'npm install -g @reactpressjs/reactpress',
+    code: 'npm install -g reactpressjs',
   },
   {
     n: '02',

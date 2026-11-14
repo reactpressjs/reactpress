@@ -30,10 +30,10 @@ node -v   # 应显示 v20.x 或更高
 ## 安装 CLI（推荐）
 
 ```bash
-npm install -g @reactpressjs/reactpress
+npm install -g reactpressjs
 ```
 
-> **5.0** 在 npm **`@latest`**（`npm i -g @reactpressjs/reactpress`）。
+> **5.0** 在 npm **`@latest`**（`npm i -g reactpressjs`）。`reactpressjs` 是无作用域安装别名，等价于 `npm i -g @reactpressjs/reactpress`。
 
 首次 `npm install -g` 会触发 `postinstall`，下载 bundled server 运行时依赖，约需 1–2 分钟。
 
@@ -89,7 +89,7 @@ reactpress --help
 
 无需 CLI 也可使用 [桌面客户端](../tutorial-extras/desktop-client.md) 进行离线写作：
 
-- 下载：[GitHub Releases](https://github.com/reactpressjs/reactpress/releases)
+- 下载：[GitHub Releases](https://github.com/reactpressjs/reactpressjs/releases)
 - 本地 SQLite 模式，默认账号 `admin` / `admin`
 
 ## 下一步

@@ -77,4 +77,4 @@ Default database moved from 3.x Docker MySQL to **SQLite**. For MySQL, see [Proj
 - [ReactPress 4.0 Extend](./reactpress-4-0.md)
 - [ReactPress 3.0 Platform](./reactpress-3-0.md)
 - [2.x → 3.0 migration](./migration-2-to-3.md)
-- Repo [migration-3-to-4.md](https://github.com/reactpressjs/reactpress/blob/master/docs/migration-3-to-4.md)
+- Repo [migration-3-to-4.md](https://github.com/reactpressjs/reactpressjs/blob/master/docs/migration-3-to-4.md)

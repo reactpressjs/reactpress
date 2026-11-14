@@ -7,7 +7,7 @@ keywords: [reactpress, config, env, config.json, sqlite, settings]
 
 ReactPress describes a site with **`.reactpress/config.json`** and a root **`.env`**. `reactpress init` generates both. End users default to embedded **SQLite** — no Docker required.
 
-> **Desktop local mode** uses a separate site directory (e.g. `.reactpress/desktop-dev-site/`) with a SQLite `.env` (`DB_TYPE=sqlite`). See [desktop/README.md](https://github.com/reactpressjs/reactpress/blob/master/desktop/README.md).
+> **Desktop local mode** uses a separate site directory (e.g. `.reactpress/desktop-dev-site/`) with a SQLite `.env` (`DB_TYPE=sqlite`). See [desktop/README.md](https://github.com/reactpressjs/reactpressjs/blob/master/desktop/README.md).
 
 ## `.reactpress/config.json` (default: SQLite)
 

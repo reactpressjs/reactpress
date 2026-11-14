@@ -48,7 +48,7 @@ docker-compose --version
 ### 2. 克隆项目
 
 ```bash
-git clone https://github.com/reactpressjs/reactpress.git
+git clone https://github.com/reactpressjs/reactpressjs.git
 cd reactpress
 ```
 

@@ -14,18 +14,18 @@ keywords: [reactpress, 关于, 开源, 自托管发布平台, react cms]
 
 ## 品牌定位
 
-| 项目     | 定义                                                                                  |
-| -------- | ------------------------------------------------------------------------------------- |
-| 品牌名称 | ReactPress                                                                            |
-| 口号     | **Write with Focus. Publish with Joy.**（专注写作，快乐发布）                         |
-| 官网     | [reactpress.cc](https://www.reactpress.cc/)                                           |
-| GitHub   | [github.com/reactpressjs](https://github.com/reactpressjs)                            |
-| 源码仓库 | [reactpressjs/reactpress](https://github.com/reactpressjs/reactpress)（官方唯一仓库） |
-| npm      | [npmjs.com/~reactpressjs](https://www.npmjs.com/~reactpressjs)                        |
-| 产品品类 | 自托管发布平台                                                                        |
-| 核心用户 | 创作者、React 开发者、独立开发者、站长                                                |
-| 核心产品 | ReactPress CMS                                                                        |
-| 使命     | 让写作、管理与发布更简单 — 自托管，由你掌控                                           |
+| 项目     | 定义                                                                                      |
+| -------- | ----------------------------------------------------------------------------------------- |
+| 品牌名称 | ReactPress                                                                                |
+| 口号     | **Write with Focus. Publish with Joy.**（专注写作，快乐发布）                             |
+| 官网     | [reactpress.cc](https://www.reactpress.cc/)                                               |
+| GitHub   | [github.com/reactpressjs](https://github.com/reactpressjs)                                |
+| 源码仓库 | [reactpressjs/reactpressjs](https://github.com/reactpressjs/reactpressjs)（官方唯一仓库） |
+| npm      | [npmjs.com/~reactpressjs](https://www.npmjs.com/~reactpressjs)                            |
+| 产品品类 | 自托管发布平台                                                                            |
+| 核心用户 | 创作者、React 开发者、独立开发者、站长                                                    |
+| 核心产品 | ReactPress CMS                                                                            |
+| 使命     | 让写作、管理与发布更简单 — 自托管，由你掌控                                               |
 
 ## 我们提供什么
 
@@ -41,7 +41,7 @@ keywords: [reactpress, 关于, 开源, 自托管发布平台, react cms]
 ReactPress 5.0（代号 **Intelligent**）为当前推荐版本：
 
 ```bash
-npm i -g @reactpressjs/reactpress
+npm i -g reactpressjs
 ```
 
 ## 平台模型
@@ -67,12 +67,12 @@ Marketplace（远期） → 发现、安装与交易扩展产品
 
 ## 开源与许可
 
-ReactPress 由 [reactpressjs](https://github.com/reactpressjs) 维护，采用 **MIT License** 发布。官方唯一源码仓库为 **[reactpressjs/reactpress](https://github.com/reactpressjs/reactpress)**，Issue 与贡献请提交到该仓库。
+ReactPress 由 [reactpressjs](https://github.com/reactpressjs) 维护，采用 **MIT License** 发布。官方唯一源码仓库为 **[reactpressjs/reactpressjs](https://github.com/reactpressjs/reactpressjs)**，Issue 与贡献请提交到该仓库。
 
 ## 在线演示与入口
 
 - [官网](https://www.reactpress.cc/) · [文档](/zh/docs/intro)
-- [GitHub](https://github.com/reactpressjs) · [源码仓库](https://github.com/reactpressjs/reactpress)
+- [GitHub](https://github.com/reactpressjs) · [源码仓库](https://github.com/reactpressjs/reactpressjs)
 - [npm](https://www.npmjs.com/~reactpressjs) · [CLI 包](https://www.npmjs.com/package/@reactpressjs/reactpress)
 - [在线演示](https://blog.gaoredu.com/) — ReactPress 驱动的生产站点
 - [主题](/zh/themes) · [插件](/zh/plugins) · [最佳实践](/zh/best-practices) · [更新日志](/zh/blog/changelog)

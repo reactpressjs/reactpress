@@ -67,7 +67,7 @@ Webhook 在 **设置 → Webhook** 配置，与插件互补。
 
 ## 开发自定义插件
 
-见 [插件开发指南](../developer-guide/plugin-development.md) 与仓库 [plugins/README.md](https://github.com/reactpressjs/reactpress/blob/master/plugins/README.md)。
+见 [插件开发指南](../developer-guide/plugin-development.md) 与仓库 [plugins/README.md](https://github.com/reactpressjs/reactpressjs/blob/master/plugins/README.md)。
 
 ## 相关文档
 

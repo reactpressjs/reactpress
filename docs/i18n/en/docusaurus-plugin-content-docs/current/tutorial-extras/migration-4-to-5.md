@@ -25,7 +25,7 @@ The global CLI package is **`@reactpressjs/reactpress`**. If an older-scoped glo
 
 ```bash
 npm uninstall -g reactpress 2>/dev/null || true
-npm i -g @reactpressjs/reactpress
+npm i -g reactpressjs
 cd your-site
 reactpress doctor
 ```

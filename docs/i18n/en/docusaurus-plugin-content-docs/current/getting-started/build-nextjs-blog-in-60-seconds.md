@@ -41,7 +41,7 @@ Docker is **not** required. Default database is embedded **SQLite**.
 ## Step 1 — Install the CLI (~15s)
 
 ```bash
-npm i -g @reactpressjs/reactpress
+npm i -g reactpressjs
 ```
 
 Package: [@reactpressjs/reactpress](https://www.npmjs.com/package/@reactpressjs/reactpress).

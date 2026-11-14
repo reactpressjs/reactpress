@@ -15,12 +15,12 @@ import {
 import styles from "./login-cli-snippet.module.css";
 
 const QUICK_START_LINES = [
-  "npm i -g @reactpressjs/reactpress",
+  "npm i -g reactpressjs",
   "mkdir my-site && cd my-site",
   "reactpress init",
 ] as const;
 
-const REPO_DISPLAY = "github.com/reactpressjs/reactpress";
+const REPO_DISPLAY = "github.com/reactpressjs/reactpressjs";
 
 const PULSE_SEGMENTS = 28;
 

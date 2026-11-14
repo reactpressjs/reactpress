@@ -31,7 +31,7 @@ export const FAQ_ENTRIES_EN: FaqEntry[] = [
   },
   {
     question: 'Is ReactPress free?',
-    answer: 'Yes. ReactPress is open source under the MIT license. Install via npm: npm i -g @reactpressjs/reactpress.',
+    answer: 'Yes. ReactPress is open source under the MIT license. Install via npm: npm i -g reactpressjs.',
   },
 ];
 
@@ -62,7 +62,7 @@ export const FAQ_ENTRIES_ZH: FaqEntry[] = [
   },
   {
     question: 'ReactPress 免费吗？',
-    answer: '是的。ReactPress 基于 MIT 开源，可通过 npm i -g @reactpressjs/reactpress 安装。',
+    answer: '是的。ReactPress 基于 MIT 开源，可通过 npm i -g reactpressjs 安装。',
   },
 ];
 
@@ -92,7 +92,7 @@ export function buildOrganizationGraph(baseUrl: string) {
         'sameAs': [
           `${baseUrl}/`,
           'https://github.com/reactpressjs',
-          'https://github.com/reactpressjs/reactpress',
+          'https://github.com/reactpressjs/reactpressjs',
           'https://www.npmjs.com/~reactpressjs',
           'https://www.npmjs.com/package/@reactpressjs/reactpress',
         ],

@@ -53,7 +53,7 @@ Write-scoped API Key 等同于管理员写权限，勿提交到公开仓库。�
 外部 Agent（Cursor 等）可安装便携 Skill，完成「安装站点 → 写稿 → 发布」：
 
 ```bash
-npx skills add reactpressjs/reactpress --skill blog-ai -a cursor -y
+npx skills add reactpressjs/reactpressjs --skill blog-ai -a cursor -y
 ```
 
 详见仓库 [`skills/blog-ai/SKILL.md`](../../../skills/blog-ai/SKILL.md)。

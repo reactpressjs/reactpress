@@ -10,7 +10,7 @@ keywords: [reactpress, production, deploy, nginx, init, sqlite]
 服务器安装 [Node.js 20+](https://nodejs.org/) 后，默认使用嵌入式 **SQLite**，无需 Docker：
 
 ```bash
-npm i -g @reactpressjs/reactpress
+npm i -g reactpressjs
 mkdir /path/to/your-site && cd /path/to/your-site
 reactpress init
 ```
@@ -52,7 +52,7 @@ cp .reactpress/reactpress.db /backup/reactpress-$(date +%F).db
 ### 环境准备
 
 ```bash
-git clone --depth=1 https://github.com/reactpressjs/reactpress.git
+git clone --depth=1 https://github.com/reactpressjs/reactpressjs.git
 cd reactpress
 npm i -g pnpm
 pnpm install

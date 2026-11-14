@@ -7,7 +7,7 @@ keywords: [reactpress, config, env, config.json, sqlite, settings]
 
 ReactPress 以 **`.reactpress/config.json`** 与根目录 **`.env`** 描述站点。`reactpress init` 会自动生成二者；4.0 终端用户默认使用嵌入式 **SQLite**，无需 Docker。
 
-> **桌面本地模式**使用独立站点目录（如 `.reactpress/desktop-dev-site/`），内含 SQLite 专用 `.env`（`DB_TYPE=sqlite`）。详见 [desktop/README.md](https://github.com/reactpressjs/reactpress/blob/master/desktop/README.md)。
+> **桌面本地模式**使用独立站点目录（如 `.reactpress/desktop-dev-site/`），内含 SQLite 专用 `.env`（`DB_TYPE=sqlite`）。详见 [desktop/README.md](https://github.com/reactpressjs/reactpressjs/blob/master/desktop/README.md)。
 
 ## `.reactpress/config.json`（默认：SQLite）
 

@@ -469,7 +469,7 @@ WordPress 没有原生的离线本地写作对等物。ReactPress Desktop = **El
 | **本地模式** | 离线写作、SQLite 内嵌 API |
 | **远程模式** | 对接生产/staging API      |
 
-安装包：[GitHub Releases](https://github.com/reactpressjs/reactpress/releases) · [桌面客户端文档](/docs/tutorial-extras/desktop-client)
+安装包：[GitHub Releases](https://github.com/reactpressjs/reactpressjs/releases) · [桌面客户端文档](/docs/tutorial-extras/desktop-client)
 
 ---
 
@@ -511,7 +511,7 @@ Swagger：`http://localhost:3002/api`
 
 - SQL 注入：公开列表 API 列名白名单
 - 存储型 XSS：评论 HTML 消毒、JWT、`Helmet` CSP
-- 报告：[SECURITY.md](https://github.com/reactpressjs/reactpress/blob/master/SECURITY.md)
+- 报告：[SECURITY.md](https://github.com/reactpressjs/reactpressjs/blob/master/SECURITY.md)
 
 生产清单：改默认密码、HTTPS、定期备份 `.reactpress/` 与 `uploads/`。
 
@@ -712,7 +712,7 @@ reactpress init
 
 ## 相关链接
 
-- [GitHub 仓库](https://github.com/reactpressjs/reactpress)
+- [GitHub 仓库](https://github.com/reactpressjs/reactpressjs)
 - [在线 Demo](https://blog.gaoredu.com)
 - [英文版长文](pathname:///blog/why-react-still-doesnt-have-wordpress-reactpress-4)
 - [ReactPress 4.0 指南](/docs/tutorial-extras/reactpress-4-0)

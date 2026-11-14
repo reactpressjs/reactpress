@@ -25,7 +25,7 @@ ReactPress **5.0 智能版**在 4.0 之上增加 AI Assist。内容、主题和�
 
 ```bash
 npm uninstall -g reactpress 2>/dev/null || true
-npm i -g @reactpressjs/reactpress
+npm i -g reactpressjs
 cd your-site
 reactpress doctor
 ```

@@ -56,7 +56,7 @@ Mock 模式（无 API）：`pnpm dev:mock`
 
 ## npm 主题 catalog
 
-独立 npm 包通过 **anchor 目录**注册，见仓库 [themes/README.md](https://github.com/reactpressjs/reactpress/blob/master/themes/README.md)。
+独立 npm 包通过 **anchor 目录**注册，见仓库 [themes/README.md](https://github.com/reactpressjs/reactpressjs/blob/master/themes/README.md)。
 
 Admin 或 `reactpress theme add @scope/pkg@version`（Monorepo）安装。
 

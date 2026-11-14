@@ -12,7 +12,7 @@ For developers **contributing to the ReactPress repository** or debugging core /
 ## Environment setup
 
 ```bash
-git clone --depth=1 https://github.com/reactpressjs/reactpress.git
+git clone --depth=1 https://github.com/reactpressjs/reactpressjs.git
 cd reactpress
 npm i -g pnpm
 pnpm install
@@ -92,7 +92,7 @@ Source docs: `docs/tutorial/` (Chinese). English translations: `docs/i18n/en/doc
 
 - Code and commit messages: **English**
 - User docs: English README + Chinese `README-zh_CN.md`; this site is Chinese-primary with English i18n sync
-- See repo [CONTRIBUTING.md](https://github.com/reactpressjs/reactpress/blob/master/CONTRIBUTING.md)
+- See repo [CONTRIBUTING.md](https://github.com/reactpressjs/reactpressjs/blob/master/CONTRIBUTING.md)
 
 ## Global CLI vs Monorepo
 
@@ -106,4 +106,4 @@ Source docs: `docs/tutorial/` (Chinese). English translations: `docs/i18n/en/doc
 
 - [Architecture overview](./architecture-overview.md)
 - [CLI command reference](./cli-reference.md)
-- [ARCHITECTURE.md](https://github.com/reactpressjs/reactpress/blob/master/ARCHITECTURE.md)
+- [ARCHITECTURE.md](https://github.com/reactpressjs/reactpressjs/blob/master/ARCHITECTURE.md)

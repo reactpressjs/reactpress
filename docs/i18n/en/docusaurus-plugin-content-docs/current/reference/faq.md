@@ -88,7 +88,7 @@ Content can be exported and re-imported via scripts or integrated through the He
 <details>
 <summary><strong>Is ReactPress free?</strong></summary>
 
-Yes. ReactPress is open source under the MIT license. Install globally: `npm i -g @reactpressjs/reactpress`.
+Yes. ReactPress is open source under the MIT license. Install globally: `npm i -g reactpressjs`.
 
 </details>
 
@@ -167,8 +167,8 @@ Monorepo dev requires `pnpm run build:plugins` then API restart. Confirm plugin 
 ## Getting help
 
 1. `reactpress doctor` and `reactpress logs`
-2. [GitHub Issues](https://github.com/reactpressjs/reactpress/issues)
-3. [GitHub Discussions](https://github.com/reactpressjs/reactpress/discussions)
+2. [GitHub Issues](https://github.com/reactpressjs/reactpressjs/issues)
+3. [GitHub Discussions](https://github.com/reactpressjs/reactpressjs/discussions)
 
 Before asking, read [How To Ask Questions The Smart Way](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way) and include Node version, OS, `doctor` output, and relevant logs.
 

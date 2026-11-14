@@ -20,7 +20,7 @@ keywords:
 | ------------ | ----------------------------------------------------------------------- | -------------------------------------------- |
 | **定位**     | 面向 React 开发者的 **现代化 Web 创作平台**（CMS + 主题 + 插件 + 桌面） | 全球最流行的 PHP CMS，插件与主题生态极其成熟 |
 | **技术栈**   | React、Next.js、NestJS、SQLite / MySQL                                  | PHP、MySQL、传统主题                         |
-| **上手**     | `npm i -g @reactpressjs/reactpress` → `reactpress init` — 约 **60 秒**  | 托管一键安装或 LAMP，通常分钟级              |
+| **上手**     | `npm i -g reactpressjs` → `reactpress init` — 约 **60 秒**              | 托管一键安装或 LAMP，通常分钟级              |
 | **编辑**     | Markdown 优先的 Admin；熟悉的文章/页面/媒体模型                         | Gutenberg 块编辑；编辑器生态庞大             |
 | **访客交付** | 默认 Next.js SSR / ISR                                                  | PHP 主题；常依赖缓存插件                     |
 | **Headless** | 一等公民 REST + TypeScript toolkit                                      | 有 REST；Headless 常需额外配置               |
@@ -143,7 +143,7 @@ ReactPress SEO 工作流：[站点设置与 SEO](../user-guide/site-settings-seo
 ## 快速试用
 
 ```bash
-npm i -g @reactpressjs/reactpress
+npm i -g reactpressjs
 mkdir my-blog && cd my-blog
 reactpress init
 ```
@@ -155,7 +155,7 @@ reactpress init
 完整教程：[5 分钟创建第一个站点](./first-site.md)。
 
 :::tip 名称消歧
-此处的 ReactPress 是 **reactpressjs/reactpress** — NestJS + Next.js 发布平台，**不是**把 React 应用嵌入现有 WP 站点的那个 WordPress 插件。
+此处的 ReactPress 是 **reactpressjs/reactpressjs** — NestJS + Next.js 发布平台，**不是**把 React 应用嵌入现有 WP 站点的那个 WordPress 插件。
 :::
 
 ## 常见问题

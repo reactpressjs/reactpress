@@ -14,7 +14,7 @@ keywords: [自托管 cms, 自托管 react cms, react cms, 开源 cms, next.js cm
 **ReactPress** 是面向 React 开发者的开源 **自托管发布平台**：Admin + NestJS API + Next.js 主题 + 插件 + 可选桌面客户端，一条 CLI 启动。内容与媒体留在 **你自己的** 机器或服务器上。
 
 ```bash
-npm i -g @reactpressjs/reactpress
+npm i -g reactpressjs
 mkdir my-cms && cd my-cms
 reactpress init
 ```

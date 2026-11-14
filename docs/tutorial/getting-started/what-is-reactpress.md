@@ -27,7 +27,7 @@ keywords: [reactpress 是什么, reactpress, 自托管发布平台, react cms, n
 | **CLI**       | `init` · `doctor` · `logs` · `stop` — 约 **60 秒**上线 |
 
 ```bash
-npm i -g @reactpressjs/reactpress
+npm i -g reactpressjs
 mkdir my-site && cd my-site
 reactpress init
 ```
@@ -94,7 +94,7 @@ flowchart LR
 - 新安装自动启用 AI Assist
 - 4.0 的插件、桌面端、npm 主题与默认 SQLite 仍然保留
 
-许可：**MIT**。包：[@reactpressjs/reactpress](https://www.npmjs.com/package/@reactpressjs/reactpress) · 源码：[reactpressjs/reactpress](https://github.com/reactpressjs/reactpress)（官方唯一仓库）
+许可：**MIT**。包：[@reactpressjs/reactpress](https://www.npmjs.com/package/@reactpressjs/reactpress) · 源码：[reactpressjs/reactpressjs](https://github.com/reactpressjs/reactpressjs)（官方唯一仓库）
 
 :::tip 名称消歧
 此处的 ReactPress 指 **reactpressjs 开源发布平台**（NestJS + Next.js CMS），**不是**把 React 应用嵌入现有 WordPress 站点的那个 WordPress 插件。

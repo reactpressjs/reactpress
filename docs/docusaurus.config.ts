@@ -82,7 +82,7 @@ const config: Config = {
           showLastUpdateTime: true,
           editUrl: ({ docPath, locale }) => {
             const branch = 'master';
-            const base = `https://github.com/reactpressjs/reactpress/edit/${branch}`;
+            const base = `https://github.com/reactpressjs/reactpressjs/edit/${branch}`;
             if (locale === 'en') {
               return `${base}/docs/i18n/en/docusaurus-plugin-content-docs/current/${docPath}`;
             }
@@ -100,7 +100,7 @@ const config: Config = {
           },
           editUrl: ({ blogPath, locale }) => {
             const branch = 'master';
-            const base = `https://github.com/reactpressjs/reactpress/edit/${branch}`;
+            const base = `https://github.com/reactpressjs/reactpressjs/edit/${branch}`;
             if (locale === 'zh') {
               return `${base}/docs/i18n/zh/docusaurus-plugin-content-blog/${blogPath}`;
             }
@@ -183,7 +183,7 @@ const config: Config = {
           position: 'right',
         },
         {
-          href: 'https://github.com/reactpressjs/reactpress',
+          href: 'https://github.com/reactpressjs/reactpressjs',
           label: 'GitHub',
           position: 'right',
         },
@@ -243,11 +243,11 @@ const config: Config = {
           items: [
             {
               label: 'GitHub Issues',
-              href: 'https://github.com/reactpressjs/reactpress/issues',
+              href: 'https://github.com/reactpressjs/reactpressjs/issues',
             },
             {
               label: 'GitHub Releases',
-              href: 'https://github.com/reactpressjs/reactpress/releases',
+              href: 'https://github.com/reactpressjs/reactpressjs/releases',
             },
             {
               label: 'X',

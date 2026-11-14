@@ -10,7 +10,7 @@ keywords: [reactpress, production, deploy, nginx, init, sqlite]
 With [Node.js 20+](https://nodejs.org/) on your server, the default stack uses embedded **SQLite** — no Docker required:
 
 ```bash
-npm i -g @reactpressjs/reactpress
+npm i -g reactpressjs
 mkdir /path/to/your-site && cd /path/to/your-site
 reactpress init
 ```
@@ -50,7 +50,7 @@ When you need the full lifecycle (`pm2`, split processes, official plugin builds
 ### Environment
 
 ```bash
-git clone --depth=1 https://github.com/reactpressjs/reactpress.git
+git clone --depth=1 https://github.com/reactpressjs/reactpressjs.git
 cd reactpress
 npm i -g pnpm
 pnpm install

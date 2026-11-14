@@ -26,7 +26,7 @@ Release blockers for API / Admin production build remain fixed. npm package scop
 ## 2. Scope rename (5.0 packaging)
 
 - All previous scoped package names and references → `@reactpressjs/*`
-- Install command: `npm i -g @reactpressjs/reactpress`
+- Install command: `npm i -g reactpressjs` (alias → `@reactpressjs/reactpress`)
 - Theme catalog anchor: `@reactpressjs/reactpress-theme-starter@1.0.0-beta.0`
 - Docs (EN/ZH): current-version claims updated to **5.0**; migration notes cover reinstall under the new scope
 - Health `/api/health` version reads from `server/package.json` (no longer hardcoded `3.0.0`)

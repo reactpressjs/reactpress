@@ -30,10 +30,10 @@ node -v   # should show v20.x or higher
 ## Install the CLI (recommended)
 
 ```bash
-npm install -g @reactpressjs/reactpress
+npm install -g reactpressjs
 ```
 
-> **5.0** is on npm **`@latest`** (`npm i -g @reactpressjs/reactpress`).
+> **5.0** is on npm **`@latest`** (`npm i -g reactpressjs`). `reactpressjs` is the unscoped install alias for `@reactpressjs/reactpress`.
 
 The first `npm install -g` triggers `postinstall`, which downloads bundled server runtime dependencies (~1–2 minutes).
 
@@ -89,7 +89,7 @@ See [Project configuration](../tutorial-extras/config-intro.md), [Docker deploym
 
 You can use the [desktop client](../tutorial-extras/desktop-client.md) for offline writing without the CLI:
 
-- Download: [GitHub Releases](https://github.com/reactpressjs/reactpress/releases)
+- Download: [GitHub Releases](https://github.com/reactpressjs/reactpressjs/releases)
 - Local SQLite mode, default account `admin` / `admin`
 
 ## Next steps

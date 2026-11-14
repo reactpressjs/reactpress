@@ -7,7 +7,7 @@
 [![npm latest](https://img.shields.io/npm/v/@reactpressjs/reactpress.svg?label=latest)](https://www.npmjs.com/package/@reactpressjs/reactpress)
 [![npm beta](https://img.shields.io/npm/v/@reactpressjs/reactpress/beta.svg?label=beta)](https://www.npmjs.com/package/@reactpressjs/reactpress/v/beta)
 [![npm downloads](https://img.shields.io/npm/dm/@reactpressjs/reactpress.svg)](https://www.npmjs.com/package/@reactpressjs/reactpress)
-[![License: MIT](https://img.shields.io/npm/l/@reactpressjs/reactpress.svg)](https://github.com/reactpressjs/reactpress/blob/master/LICENSE)
+[![License: MIT](https://img.shields.io/npm/l/@reactpressjs/reactpress.svg)](https://github.com/reactpressjs/reactpressjs/blob/master/LICENSE)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D20-brightgreen?style=flat-square&logo=node.js&logoColor=white)](https://nodejs.org/)
 
 The official **ReactPress CLI** — install a complete, self-hosted publishing stack in ~60 seconds. CMS API, Web Admin, and Next.js theme support ship together. No Docker, nginx, or external database required for local development.
@@ -21,16 +21,19 @@ The official **ReactPress CLI** — install a complete, self-hosted publishing s
 
 Built for frontend teams who want WordPress-grade editing without wiring five repos together.
 
-[Documentation](https://reactpress.cc/) · [Live demo](https://blog.gaoredu.com) · [Theme demo](https://reactpress-theme-starter.vercel.app) · [GitHub](https://github.com/reactpressjs/reactpress) · [Chinese overview](../README-zh_CN.md)
+[Documentation](https://reactpress.cc/) · [Live demo](https://blog.gaoredu.com) · [Theme demo](https://reactpress-theme-starter.vercel.app) · [GitHub](https://github.com/reactpressjs/reactpressjs) · [Chinese overview](../README-zh_CN.md)
 
 ## Install
 
 ```bash
-# Stable 4.x (npm @latest)
-npm install -g @reactpressjs/reactpress
+# Recommended (unscoped alias → @reactpressjs/reactpress)
+npm install -g reactpressjs
+
+# Or install the scoped package directly
+# npm install -g @reactpressjs/reactpress
 
 # Prerelease channel
-# npm install -g @reactpressjs/reactpress@beta
+# npm install -g reactpressjs@beta
 ```
 
 Requires Node.js 20+. On first install, `postinstall` downloads bundled server runtime dependencies (~1–2 minutes).
@@ -55,9 +58,9 @@ Run `reactpress doctor` if something does not start correctly.
 Install the portable Cursor skill, then bootstrap and publish without opening Admin:
 
 ```bash
-npx skills add reactpressjs/reactpress --skill blog-ai -a cursor -y
+npx skills add reactpressjs/reactpressjs --skill blog-ai -a cursor -y
 
-npm install -g @reactpressjs/reactpress
+npm install -g reactpressjs
 mkdir my-site && cd my-site
 reactpress init
 reactpress content key --create --save
@@ -95,4 +98,4 @@ Write-scoped API keys authenticate with `X-API-Key`. See [skills/blog-ai](../ski
 
 MIT © [reactpressjs](https://github.com/reactpressjs)
 
-<p align="center"><sub>Part of <a href="https://github.com/reactpressjs/reactpress">ReactPress</a> — Write with Focus. Publish with Joy.</sub></p>
+<p align="center"><sub>Part of <a href="https://github.com/reactpressjs/reactpressjs">ReactPress</a> — Write with Focus. Publish with Joy.</sub></p>
