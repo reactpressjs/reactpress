@@ -14,6 +14,8 @@ export type ShowcaseSite = {
   /** Display hostname or short name (not translated) */
   name: string;
   kind: ShowcaseKind;
+  /** Site favicon under /static/img/showcase */
+  icon: string;
 };
 
 /** Curated list rendered on the homepage. Keep official entries first. */
@@ -23,11 +25,13 @@ export const SHOWCASE_SITES: ShowcaseSite[] = [
     url: 'https://www.gaoredu.com/',
     name: 'gaoredu.com',
     kind: 'dogfood',
+    icon: '/img/showcase/gaoredu.png',
   },
   {
     id: 'theme-starter',
     url: 'https://demo.reactpress.cc/',
     name: 'demo.reactpress.cc',
     kind: 'theme-demo',
+    icon: '/img/showcase/theme-starter.png',
   },
 ];

@@ -6,6 +6,84 @@
   padding: var(--home-section-pad-y, 3rem) 0 calc(var(--home-section-pad-y, 3rem) + 0.75rem);
 }
 
+.interactive {
+  position: relative;
+  isolation: isolate;
+}
+
+.orbit {
+  position: absolute;
+  inset: 10% 12%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.active .orbit {
+  opacity: 1;
+}
+
+.orbit span {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(8, 126, 164, 0.14);
+  border-radius: 50%;
+  animation: orbitSpin 18s linear infinite;
+}
+
+.orbit span:nth-child(2) {
+  inset: 12% 18%;
+  border-color: rgba(65, 209, 255, 0.12);
+  animation-duration: 26s;
+  animation-direction: reverse;
+}
+
+@keyframes orbitSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.glow {
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  width: min(28rem, 70vw);
+  height: 10rem;
+  transform: translateX(-50%) scale(0.7);
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(8, 126, 164, 0.22), transparent 70%);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.active .glow {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+.header,
+.footerCta {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.footerCta {
+  transition-delay: 0.1s;
+}
+
+.active .header,
+.active .footerCta {
+  opacity: 1;
+  transform: none;
+}
+
 .wrapper::before {
   content: '';
   position: absolute;
@@ -90,9 +168,30 @@
 }
 
 .primaryButton {
+  position: relative;
+  overflow: hidden;
   background: linear-gradient(135deg, #087ea4 0%, #41d1ff 100%);
   color: #fff !important;
   box-shadow: 0 8px 28px rgba(8, 126, 164, 0.3);
+}
+
+.primaryButton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 35%, rgba(255, 255, 255, 0.32) 50%, transparent 65%);
+  transform: translateX(-130%);
+  pointer-events: none;
+}
+
+.primaryButton:hover::after {
+  animation: ctaShine 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes ctaShine {
+  to {
+    transform: translateX(130%);
+  }
 }
 
 .primaryButton:hover {
@@ -128,6 +227,23 @@ html[data-theme='dark'] .deployButton {
 html[data-theme='dark'] .deployButton:hover {
   color: #7ddfff !important;
   border-color: rgba(65, 209, 255, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glow,
+  .header,
+  .footerCta,
+  .active .glow,
+  .active .header,
+  .active .footerCta,
+  .orbit span,
+  .primaryButton::after,
+  .primaryButton:hover::after {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    animation: none;
+  }
 }
 
 @media (max-width: 600px) {

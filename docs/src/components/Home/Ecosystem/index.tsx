@@ -5,7 +5,10 @@ import { IconDesktop, IconPlugins, IconRocket, IconThemes } from '@site/src/comp
 import clsx from 'clsx';
 import React from 'react';
 
+import SectionAccent from '../SectionAccent';
 import sectionStyles from '../section.module.css';
+import { useReveal } from '../useReveal';
+import { useSpotlight } from '../useSpotlight';
 import styles from './styles.module.css';
 
 type HubItem = {
@@ -59,33 +62,71 @@ const items: HubItem[] = [
   },
 ];
 
-export default function Ecosystem() {
+function EcosystemCard({ item, index }: { item: HubItem; index: number }) {
+  const { ref, onPointerMove, onPointerEnter, onPointerLeave } = useSpotlight<HTMLAnchorElement>({
+    tilt: true,
+    maxTilt: 7,
+  });
+
   return (
-    <section className={sectionStyles.section} aria-labelledby="home-ecosystem-heading">
+    <Link
+      ref={ref}
+      className={clsx(styles.card, sectionStyles.spot, sectionStyles.tilt, sectionStyles.revealItem)}
+      to={item.to}
+      style={{ '--reveal-index': index } as React.CSSProperties}
+      onPointerMove={onPointerMove}
+      onPointerEnter={onPointerEnter}
+      onPointerLeave={onPointerLeave}
+    >
+      <span className={styles.borderDraw} aria-hidden />
+      <span className={styles.iconWrap} aria-hidden>
+        <item.Icon className={styles.icon} />
+      </span>
+      <h3 className={styles.cardTitle}>{item.title}</h3>
+      <p className={styles.cardDesc}>{item.description}</p>
+      <span className={styles.cta}>
+        {item.cta}
+        <span className={styles.ctaArrow} aria-hidden>
+          →
+        </span>
+      </span>
+    </Link>
+  );
+}
+
+export default function Ecosystem() {
+  const { ref, visible } = useReveal<HTMLElement>();
+
+  return (
+    <section
+      ref={ref}
+      id="home-ecosystem"
+      className={clsx(
+        sectionStyles.section,
+        sectionStyles.reveal,
+        visible && sectionStyles.revealed,
+        visible && styles.active
+      )}
+      aria-labelledby="home-ecosystem-heading"
+    >
       <div className={sectionStyles.inner}>
-        <header className={sectionStyles.header}>
+        <header className={clsx(sectionStyles.header, sectionStyles.revealHeader)}>
           <p className={sectionStyles.eyebrow}>
             <Translate id="home.ecosystem.eyebrow">Ecosystem</Translate>
           </p>
-          <h2 id="home-ecosystem-heading" className={clsx(sectionStyles.heading, sectionStyles.fadeUp)}>
+          <h2 id="home-ecosystem-heading" className={sectionStyles.heading}>
             <Translate id="home.ecosystem.title">Themes, plugins, and guides — one hub</Translate>
           </h2>
-          <p className={clsx(sectionStyles.subheading, sectionStyles.fadeUpDelay)}>
+          <p className={sectionStyles.subheading}>
             <Translate id="home.ecosystem.subtitle">
               Extend the core when you need more — themes, plugins, templates, and guides in one place.
             </Translate>
           </p>
+          <SectionAccent active={visible} />
         </header>
         <div className={styles.grid}>
           {items.map((item, index) => (
-            <Link key={item.to} className={styles.card} to={item.to} style={{ animationDelay: `${index * 0.06}s` }}>
-              <span className={styles.iconWrap} aria-hidden>
-                <item.Icon className={styles.icon} />
-              </span>
-              <h3 className={styles.cardTitle}>{item.title}</h3>
-              <p className={styles.cardDesc}>{item.description}</p>
-              <span className={styles.cta}>{item.cta}</span>
-            </Link>
+            <EcosystemCard key={item.to} item={item} index={index} />
           ))}
         </div>
       </div>

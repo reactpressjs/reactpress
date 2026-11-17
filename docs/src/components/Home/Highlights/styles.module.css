@@ -20,8 +20,37 @@
   position: relative;
   padding: 1.4rem 1.35rem 1.5rem;
   border-right: 1px solid var(--home-border);
-  animation: fadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
-  transition: background 0.25s ease;
+  cursor: default;
+  transition:
+    background 0.25s ease,
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.itemLine {
+  position: absolute;
+  left: 0.65rem;
+  right: 0.65rem;
+  bottom: 0.7rem;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, currentColor, transparent);
+  color: #087ea4;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+.item[data-accent='cyan'] .itemLine {
+  color: #41d1ff;
+}
+
+.item[data-accent='blue'] .itemLine {
+  color: #0ea5b4;
+}
+
+.item:hover .itemLine {
+  transform: scaleX(1);
 }
 
 .item::before {
@@ -57,11 +86,15 @@
 }
 
 .item:hover {
-  background: rgba(8, 126, 164, 0.04);
+  background: rgba(8, 126, 164, 0.05);
+}
+
+.item:hover .itemTitle {
+  transform: translateX(2px);
 }
 
 html[data-theme='dark'] .item:hover {
-  background: rgba(65, 209, 255, 0.04);
+  background: rgba(65, 209, 255, 0.05);
 }
 
 .iconWrap {
@@ -72,10 +105,23 @@ html[data-theme='dark'] .item:hover {
   height: 2.2rem;
   margin: 0 0 0.75rem 0.65rem;
   color: var(--home-button-primary);
+  border-radius: 10px;
+  background: rgba(8, 126, 164, 0.08);
+  transform: scale(0.86);
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1) calc(var(--reveal-index, 0) * 0.06s + 0.15s),
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.item:hover .iconWrap {
+  background: rgba(8, 126, 164, 0.14);
+  transform: scale(1.06);
 }
 
 html[data-theme='dark'] .iconWrap {
   color: #7ddfff;
+  background: rgba(65, 209, 255, 0.08);
 }
 
 .icon {
@@ -90,6 +136,7 @@ html[data-theme='dark'] .iconWrap {
   padding-left: 0.65rem;
   color: var(--home-text);
   letter-spacing: -0.01em;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .itemDesc {
@@ -100,20 +147,22 @@ html[data-theme='dark'] .iconWrap {
   color: var(--home-secondary-text);
 }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.active .iconWrap {
+  transform: scale(1);
+}
+
+html[data-theme='dark'] .item:hover .iconWrap {
+  background: rgba(65, 209, 255, 0.14);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .item {
-    animation: none;
+  .iconWrap,
+  .item:hover .iconWrap,
+  .item:hover,
+  .itemLine,
+  .item:hover .itemLine {
+    transform: none;
+    transition: none;
   }
 }
 

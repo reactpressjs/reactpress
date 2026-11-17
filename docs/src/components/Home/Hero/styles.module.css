@@ -1,7 +1,7 @@
 .container {
   position: relative;
   overflow: hidden;
-  padding: 1.1rem 1.25rem 2.25rem;
+  padding: 1.1rem 1.25rem 1.75rem;
 }
 
 .shell {
@@ -13,6 +13,15 @@
   align-items: center;
   max-width: 1180px;
   margin: 0 auto;
+  perspective: 1200px;
+}
+
+.interactive {
+  --px: 0;
+  --py: 0;
+  --spot-x: 50%;
+  --spot-y: 30%;
+  scroll-margin-top: 5rem;
 }
 
 .mesh {
@@ -21,6 +30,79 @@
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
+}
+
+.spotGlow {
+  position: absolute;
+  width: min(38rem, 76vw);
+  height: min(38rem, 76vw);
+  left: var(--spot-x);
+  top: var(--spot-y);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(65, 209, 255, 0.26), rgba(8, 126, 164, 0.08) 42%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  will-change: left, top;
+}
+
+.interactive[data-spot='on'] .spotGlow {
+  opacity: 1;
+}
+
+.constellation {
+  position: absolute;
+  inset: -10%;
+  opacity: 0.4;
+  background-image: radial-gradient(circle at 20% 30%, rgba(65, 209, 255, 0.55) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 70% 20%, rgba(8, 126, 164, 0.5) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 40% 70%, rgba(65, 209, 255, 0.4) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 85% 65%, rgba(8, 126, 164, 0.45) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 55% 45%, rgba(65, 209, 255, 0.35) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 12% 78%, rgba(65, 209, 255, 0.35) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 92% 42%, rgba(8, 126, 164, 0.4) 0 1px, transparent 1.5px);
+  background-size: 100% 100%;
+  transform: translate3d(calc(var(--px) * -22px), calc(var(--py) * -16px), 0);
+  will-change: transform;
+}
+
+.scanline {
+  position: absolute;
+  inset: 0;
+  opacity: 0.18;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(65, 209, 255, 0.08) 48%,
+    transparent 52%,
+    transparent 100%
+  );
+  background-size: 100% 220%;
+  animation: scanDrift 9s linear infinite;
+  mask-image: radial-gradient(ellipse 70% 55% at 50% 28%, black 15%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 55% at 50% 28%, black 15%, transparent 75%);
+  pointer-events: none;
+}
+
+@keyframes scanDrift {
+  from {
+    background-position: 0 -40%;
+  }
+  to {
+    background-position: 0 140%;
+  }
+}
+
+.parallaxNear {
+  transform: translate3d(calc(var(--px) * 14px), calc(var(--py) * 10px), 0);
+  will-change: transform;
+}
+
+.parallaxFar {
+  transform: translate3d(calc(var(--px) * -20px), calc(var(--py) * -14px), 0) rotateX(calc(var(--py) * -1.5deg))
+    rotateY(calc(var(--px) * 2.2deg));
+  transform-style: preserve-3d;
+  will-change: transform;
 }
 
 .orb1,
@@ -40,6 +122,7 @@
   left: 4%;
   background: radial-gradient(circle, rgba(8, 126, 164, 0.55) 0%, transparent 70%);
   opacity: 0.42;
+  translate: calc(var(--px) * 24px) calc(var(--py) * 18px);
 }
 
 .orb2 {
@@ -50,6 +133,7 @@
   background: radial-gradient(circle, rgba(65, 209, 255, 0.5) 0%, transparent 70%);
   animation-delay: -5s;
   opacity: 0.4;
+  translate: calc(var(--px) * -20px) calc(var(--py) * -14px);
 }
 
 .orb3 {
@@ -60,6 +144,7 @@
   background: radial-gradient(circle, rgba(14, 165, 180, 0.4) 0%, transparent 70%);
   animation-delay: -9s;
   opacity: 0.28;
+  translate: calc(var(--px) * 12px) calc(var(--py) * -10px);
 }
 
 .gridLines {
@@ -168,6 +253,14 @@ html[data-theme='dark'] .gridLines {
 
 .titleChar {
   display: inline-block;
+  opacity: 0;
+  transform-origin: 50% 90%;
+  perspective: 400px;
+  animation: titleCharIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) calc(var(--char-index, 0) * 42ms + 0.12s) both;
+}
+
+.titleCharInner {
+  display: inline-block;
   background: linear-gradient(
     115deg,
     #087ea4 0%,
@@ -183,9 +276,21 @@ html[data-theme='dark'] .gridLines {
   color: transparent;
   transform-origin: 50% 90%;
   animation:
-    titleWave 6.5s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite,
-    titleShine 6.5s ease-in-out infinite;
-  animation-delay: calc(var(--char-index, 0) * 55ms);
+    titleWave 6.5s cubic-bezier(0.45, 0.05, 0.55, 0.95) calc(var(--char-index, 0) * 55ms + 0.85s) infinite,
+    titleShine 6.5s ease-in-out calc(var(--char-index, 0) * 55ms + 0.85s) infinite;
+}
+
+@keyframes titleCharIn {
+  from {
+    opacity: 0;
+    transform: translateY(0.55em) rotateX(55deg) scale(0.92);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0) scale(1);
+    filter: blur(0);
+  }
 }
 
 .titleUnderline {
@@ -407,12 +512,32 @@ html[data-theme='dark'] .versionTagLatest:hover {
 }
 
 .primaryButton {
+  position: relative;
+  overflow: hidden;
   background: linear-gradient(135deg, #087ea4 0%, #41d1ff 100%);
   color: #fff !important;
   padding: 13px 26px;
   font-size: 0.98rem;
   box-shadow: 0 6px 22px rgba(8, 126, 164, 0.34);
   border: none;
+}
+
+.buttonShine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 35%, rgba(255, 255, 255, 0.35) 50%, transparent 65%);
+  transform: translateX(-130%);
+  pointer-events: none;
+}
+
+.primaryButton:hover .buttonShine {
+  animation: buttonShine 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes buttonShine {
+  to {
+    transform: translateX(130%);
+  }
 }
 
 .primaryButton:hover {
@@ -710,17 +835,43 @@ html[data-theme='light'] .mediaFrame {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .spotGlow,
+  .interactive[data-spot='on'] .spotGlow,
+  .constellation,
+  .scanline {
+    opacity: 0;
+    transition: none;
+    animation: none;
+  }
+
+  .parallaxNear,
+  .parallaxFar,
+  .orb1,
+  .orb2,
+  .orb3 {
+    transform: none;
+    translate: none;
+  }
+
   .orb1,
   .orb2,
   .orb3,
   .titleChar,
+  .titleCharInner,
   .titleText,
   .titleUnderline,
-  .deployButton::after {
+  .deployButton::after,
+  .scanline {
     animation: none;
   }
 
   .titleChar {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+
+  .titleCharInner {
     transform: none;
     background-position: 40% center;
   }

@@ -1,0 +1,50 @@
+.core,
+.soft {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  will-change: transform;
+}
+
+.soft {
+  width: 42rem;
+  height: 42rem;
+  margin: -21rem 0 0 -21rem;
+  background: radial-gradient(circle, rgba(65, 209, 255, 0.1), transparent 70%);
+  mix-blend-mode: screen;
+}
+
+.core {
+  width: 22rem;
+  height: 22rem;
+  margin: -11rem 0 0 -11rem;
+  background: radial-gradient(circle, rgba(65, 209, 255, 0.18), transparent 68%);
+  mix-blend-mode: screen;
+}
+
+.core[data-on='1'],
+.soft[data-on='1'] {
+  opacity: 1;
+}
+
+html[data-theme='light'] .soft {
+  mix-blend-mode: multiply;
+  background: radial-gradient(circle, rgba(8, 126, 164, 0.08), transparent 70%);
+}
+
+html[data-theme='light'] .core {
+  mix-blend-mode: multiply;
+  background: radial-gradient(circle, rgba(8, 126, 164, 0.12), transparent 68%);
+}
+
+@media (max-width: 900px), (pointer: coarse) {
+  .core,
+  .soft {
+    display: none;
+  }
+}

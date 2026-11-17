@@ -1,16 +1,78 @@
 .grid {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0;
   border-top: 1px solid var(--home-border);
 }
 
+.flowActive .grid::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #087ea4 0%, #0ea5b4 35%, #41d1ff 70%, transparent 100%);
+  background-size: 200% 100%;
+  animation: flowLine 1.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes flowLine {
+  from {
+    opacity: 0;
+    background-position: 100% 0;
+  }
+  to {
+    opacity: 1;
+    background-position: 0 0;
+  }
+}
+
 .card {
   position: relative;
   padding: 1.75rem 1.25rem 1.85rem;
   border-right: 1px solid var(--home-border);
-  animation: fadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
-  transition: background 0.25s ease;
+  cursor: default;
+  transition:
+    background 0.3s ease,
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card > *:not(.cardSweep) {
+  position: relative;
+  z-index: 1;
+}
+
+.cardSweep {
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.85rem;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, currentColor, transparent);
+  color: #087ea4;
+  transform: scaleX(0);
+  transform-origin: left;
+  opacity: 0.7;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+.card[data-accent='manage'] .cardSweep {
+  color: #0ea5b4;
+}
+
+.card[data-accent='extend'] .cardSweep,
+.card[data-accent='ai'] .cardSweep {
+  color: #41d1ff;
+}
+
+.card:hover .cardSweep {
+  transform: scaleX(1);
 }
 
 .card::before {
@@ -22,6 +84,13 @@
   width: 2px;
   border-radius: 1px;
   opacity: 0.85;
+  transform: scaleY(0.35);
+  transform-origin: top;
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1) calc(var(--reveal-index, 0) * 0.08s + 0.2s);
+}
+
+.flowActive .card::before {
+  transform: scaleY(1);
 }
 
 .card[data-accent='build']::before {
@@ -45,11 +114,20 @@
 }
 
 .card:hover {
-  background: rgba(8, 126, 164, 0.04);
+  background: rgba(8, 126, 164, 0.06);
+}
+
+.card:hover .step {
+  opacity: 1;
+  letter-spacing: 0.14em;
+}
+
+.card:hover .cardTitle {
+  transform: translateX(2px);
 }
 
 html[data-theme='dark'] .card:hover {
-  background: rgba(65, 209, 255, 0.04);
+  background: rgba(65, 209, 255, 0.06);
 }
 
 .step {
@@ -61,6 +139,9 @@ html[data-theme='dark'] .card:hover {
   letter-spacing: 0.1em;
   color: var(--home-button-primary);
   opacity: 0.75;
+  transition:
+    opacity 0.3s ease,
+    letter-spacing 0.35s ease;
 }
 
 html[data-theme='dark'] .step {
@@ -75,6 +156,7 @@ html[data-theme='dark'] .step {
   color: var(--home-text);
   letter-spacing: -0.03em;
   line-height: 1.15;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .tagline {
@@ -94,20 +176,18 @@ html[data-theme='dark'] .step {
   color: var(--home-secondary-text);
 }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .card {
+  .flowActive .grid::after {
     animation: none;
+  }
+
+  .card::before,
+  .flowActive .card::before,
+  .card:hover,
+  .cardSweep,
+  .card:hover .cardSweep {
+    transform: none;
+    transition: none;
   }
 }
 

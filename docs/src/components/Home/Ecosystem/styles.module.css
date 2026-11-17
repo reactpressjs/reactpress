@@ -6,6 +6,7 @@
 
 .card {
   display: block;
+  position: relative;
   text-decoration: none !important;
   color: inherit;
   background: var(--home-background);
@@ -13,11 +14,36 @@
   border-radius: var(--home-card-radius, 14px);
   padding: 1.3rem 1.35rem 1.25rem;
   box-shadow: var(--home-card-shadow);
+  overflow: hidden;
   transition:
     border-color 0.3s ease,
     box-shadow 0.3s ease,
     transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-  animation: fadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.borderDraw {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    linear-gradient(#087ea4, #087ea4) left top / 0 2px no-repeat,
+    linear-gradient(#41d1ff, #41d1ff) right top / 2px 0 no-repeat,
+    linear-gradient(#41d1ff, #41d1ff) right bottom / 0 2px no-repeat,
+    linear-gradient(#087ea4, #087ea4) left bottom / 2px 0 no-repeat;
+  opacity: 0;
+  transition:
+    opacity 0.2s ease,
+    background-size 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card:hover .borderDraw {
+  opacity: 1;
+  background-size:
+    100% 2px,
+    2px 100%,
+    100% 2px,
+    2px 100%;
 }
 
 html[data-theme='dark'] .card {
@@ -28,7 +54,11 @@ html[data-theme='dark'] .card {
 .card:hover {
   border-color: rgba(8, 126, 164, 0.35);
   box-shadow: var(--home-card-shadow-hover);
-  transform: translateY(-3px);
+}
+
+.card > *:not(.borderDraw) {
+  position: relative;
+  z-index: 1;
 }
 
 html[data-theme='dark'] .card:hover {
@@ -45,6 +75,10 @@ html[data-theme='dark'] .card:hover {
   margin-bottom: 0.75rem;
   background: rgba(8, 126, 164, 0.12);
   color: #087ea4;
+  transform: scale(0.9);
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1) calc(var(--reveal-index, 0) * 0.06s + 0.12s),
+    background 0.25s ease;
 }
 
 html[data-theme='dark'] .iconWrap {
@@ -72,6 +106,9 @@ html[data-theme='dark'] .iconWrap {
 }
 
 .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   font-size: 0.82rem;
   font-weight: 650;
   color: var(--home-button-primary);
@@ -81,25 +118,34 @@ html[data-theme='dark'] .cta {
   color: #7ddfff;
 }
 
-.card:hover .cta {
-  text-decoration: underline;
-  text-underline-offset: 3px;
+.ctaArrow {
+  display: inline-block;
+  transition: transform 0.25s ease;
 }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.card:hover .ctaArrow {
+  transform: translateX(4px);
+}
+
+.active .iconWrap {
+  transform: scale(1);
+}
+
+.card:hover .iconWrap {
+  transform: scale(1.08);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .card {
-    animation: none;
+  .iconWrap,
+  .active .iconWrap,
+  .card:hover .iconWrap,
+  .ctaArrow,
+  .card:hover .ctaArrow,
+  .borderDraw,
+  .card:hover .borderDraw {
+    transform: none;
+    transition: none;
+    opacity: 0;
   }
 }
 

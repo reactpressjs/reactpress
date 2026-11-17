@@ -4,7 +4,10 @@ import { IconApi, IconDesktop, IconLayers, IconPen, IconThemes } from '@site/src
 import clsx from 'clsx';
 import React from 'react';
 
+import SectionAccent from '../SectionAccent';
+import SpotSurface from '../SpotSurface';
 import sectionStyles from '../section.module.css';
+import { useReveal } from '../useReveal';
 import styles from './styles.module.css';
 
 type HighlightItem = {
@@ -63,36 +66,52 @@ const items: HighlightItem[] = [
 ];
 
 export default function Highlights() {
+  const { ref, visible } = useReveal<HTMLElement>();
+
   return (
-    <section className={sectionStyles.section} aria-labelledby="home-highlights-heading">
+    <section
+      ref={ref}
+      id="home-highlights"
+      className={clsx(
+        sectionStyles.section,
+        sectionStyles.reveal,
+        visible && sectionStyles.revealed,
+        visible && styles.active
+      )}
+      aria-labelledby="home-highlights-heading"
+    >
       <div className={sectionStyles.inner}>
-        <header className={sectionStyles.header}>
+        <header className={clsx(sectionStyles.header, sectionStyles.revealHeader)}>
           <p className={sectionStyles.eyebrow}>
             <Translate id="home.highlights.eyebrow">What you can ship</Translate>
           </p>
-          <h2 id="home-highlights-heading" className={clsx(sectionStyles.heading, sectionStyles.fadeUp)}>
+          <h2 id="home-highlights-heading" className={sectionStyles.heading}>
             <Translate id="home.highlights.title">Built for real publishing outcomes</Translate>
           </h2>
-          <p className={clsx(sectionStyles.subheading, sectionStyles.fadeUpDelay)}>
+          <p className={sectionStyles.subheading}>
             <Translate id="home.highlights.subtitle">
               From a focused blog to a headless content app — pick the surface you need, keep the same core.
             </Translate>
           </p>
+          <SectionAccent active={visible} />
         </header>
         <div className={styles.grid}>
           {items.map((item, index) => (
-            <article
+            <SpotSurface
               key={item.title}
-              className={styles.item}
+              as="article"
+              className={clsx(styles.item, sectionStyles.revealItem)}
               data-accent={item.accent}
-              style={{ animationDelay: `${index * 0.06}s` }}
+              maxTilt={5}
+              style={{ '--reveal-index': index } as React.CSSProperties}
             >
               <span className={styles.iconWrap} aria-hidden>
                 <item.Icon className={styles.icon} />
               </span>
               <h3 className={styles.itemTitle}>{item.title}</h3>
               <p className={styles.itemDesc}>{item.description}</p>
-            </article>
+              <span className={styles.itemLine} aria-hidden />
+            </SpotSurface>
           ))}
         </div>
       </div>

@@ -86,7 +86,8 @@
     "lint-staged": "^12.4.1",
     "prettier": "^3.4.2",
     "to-ico": "^1.1.5",
-    "typescript": "~5.9.3"
+    "typescript": "~5.9.3",
+    "wrangler": "^4.162.0"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx,mjs,json,md}": "prettier --write",

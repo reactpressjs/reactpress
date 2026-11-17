@@ -1,12 +1,17 @@
 import Link from '@docusaurus/Link';
 import { translate } from '@docusaurus/Translate';
 import Translate from '@docusaurus/Translate';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import CliCommandBlock from '@site/src/components/CliCommandBlock';
 import { THEME_STARTER_DEMO_URL, THEME_STARTER_REPO_URL, VERCEL_DEPLOY_URL } from '@site/src/constants/deploy';
 import clsx from 'clsx';
 import React, { useEffect, useState } from 'react';
 
+import Magnetic from '../Magnetic';
+import SectionAccent from '../SectionAccent';
+import SpotSurface from '../SpotSurface';
 import sectionStyles from '../section.module.css';
+import { useReveal } from '../useReveal';
 import styles from './styles.module.css';
 
 type Path = 'deploy' | 'local';
@@ -85,6 +90,8 @@ function VercelIcon() {
 
 export default function QuickStart() {
   const [path, setPath] = useState<Path>('deploy');
+  const demoGif = useBaseUrl('/img/blog/demo.gif');
+  const { ref, visible } = useReveal<HTMLElement>();
 
   useEffect(() => {
     const syncFromHash = () => {
@@ -107,31 +114,40 @@ export default function QuickStart() {
   return (
     <section
       id="quickstart"
-      className={clsx(sectionStyles.section, sectionStyles.bandB)}
+      ref={ref}
+      className={clsx(
+        sectionStyles.section,
+        sectionStyles.bandB,
+        sectionStyles.reveal,
+        visible && sectionStyles.revealed
+      )}
       aria-labelledby="home-quickstart-heading"
       aria-label={translate({ message: 'Quick start', id: 'home.quickstart.aria' })}
     >
       <div id="quickstart-local" className={styles.localAnchor} aria-hidden />
       <div className={sectionStyles.inner}>
-        <header className={sectionStyles.header}>
+        <header className={clsx(sectionStyles.header, sectionStyles.revealHeader)}>
           <p className={sectionStyles.eyebrow}>
             <Translate id="home.quickstart.eyebrow">How to start</Translate>
           </p>
-          <h2 id="home-quickstart-heading" className={clsx(sectionStyles.heading, sectionStyles.fadeUp)}>
+          <h2 id="home-quickstart-heading" className={sectionStyles.heading}>
             <Translate id="home.quickstart.title">From zero to a live site in ~60 seconds</Translate>
           </h2>
-          <p className={clsx(sectionStyles.subheading, sectionStyles.fadeUpDelay)}>
+          <p className={sectionStyles.subheading}>
             <Translate id="home.quickstart.desc">
               One-click cloud deploy, or three local commands with embedded SQLite. No Docker required.
             </Translate>
           </p>
+          <SectionAccent active={visible} />
         </header>
 
         <div
           className={styles.pathSwitch}
           role="tablist"
           aria-label={translate({ message: 'Start path', id: 'home.quickstart.path.aria' })}
+          data-path={path}
         >
+          <span className={styles.pathThumb} aria-hidden />
           <button
             type="button"
             role="tab"
@@ -153,8 +169,12 @@ export default function QuickStart() {
         </div>
 
         {path === 'deploy' ? (
-          <div className={styles.deployPane} role="tabpanel">
-            <div className={styles.deployCard}>
+          <div
+            className={clsx(styles.deployPane, sectionStyles.revealItem)}
+            style={{ '--reveal-index': 0 } as React.CSSProperties}
+            role="tabpanel"
+          >
+            <SpotSurface as="div" className={styles.deployCard}>
               <div className={styles.deployCopy}>
                 <h3 className={styles.deployTitle}>
                   <Translate id="home.quickstart.deploy.title">Ship a theme site on Vercel</Translate>
@@ -165,18 +185,27 @@ export default function QuickStart() {
                   </Translate>
                 </p>
                 <div className={styles.deployActions}>
-                  <a className={styles.deployButton} href={VERCEL_DEPLOY_URL} target="_blank" rel="noopener noreferrer">
-                    <VercelIcon />
-                    <Translate id="home.quickstart.vercel">Deploy to Vercel</Translate>
-                  </a>
-                  <a
-                    className={styles.deploySecondary}
-                    href={THEME_STARTER_DEMO_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Translate id="home.quickstart.deploy.demo">Theme Demo</Translate>
-                  </a>
+                  <Magnetic>
+                    <a
+                      className={styles.deployButton}
+                      href={VERCEL_DEPLOY_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <VercelIcon />
+                      <Translate id="home.quickstart.vercel">Deploy to Vercel</Translate>
+                    </a>
+                  </Magnetic>
+                  <Magnetic strength={0.2} max={8}>
+                    <a
+                      className={styles.deploySecondary}
+                      href={THEME_STARTER_DEMO_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Translate id="home.quickstart.deploy.demo">Theme Demo</Translate>
+                    </a>
+                  </Magnetic>
                 </div>
                 <p className={styles.deployMeta}>
                   <Translate id="home.quickstart.deploy.meta">Based on</Translate>{' '}
@@ -185,22 +214,51 @@ export default function QuickStart() {
                   </a>
                 </p>
               </div>
-              <div className={styles.deployVisual} aria-hidden>
-                <div className={styles.deployOrbit}>
-                  <span className={styles.deployPulse} />
-                  <VercelIcon />
+              <a
+                className={styles.deployVisual}
+                href={THEME_STARTER_DEMO_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={translate({
+                  message: 'Open theme demo',
+                  id: 'home.quickstart.deploy.demo',
+                })}
+              >
+                <div className={styles.deployBrowser} aria-hidden>
+                  <span className={styles.deployDot} />
+                  <span className={styles.deployDot} />
+                  <span className={styles.deployDot} />
+                  <span className={styles.deployUrl}>demo.reactpress.cc</span>
                 </div>
+                <img
+                  className={styles.deployGif}
+                  src={demoGif}
+                  alt={translate({
+                    message: 'ReactPress theme site demo — homepage with posts, tags, and reading list',
+                    id: 'home.quickstart.deploy.gif.alt',
+                  })}
+                  width={640}
+                  height={400}
+                  loading="lazy"
+                  decoding="async"
+                />
                 <p className={styles.deployVisualLabel}>
                   <Translate id="home.quickstart.deploy.visual">Click → clone → live</Translate>
                 </p>
-              </div>
-            </div>
+              </a>
+            </SpotSurface>
           </div>
         ) : (
           <div className={styles.localPane} role="tabpanel">
             <ol className={styles.steps}>
               {steps.map((step, index) => (
-                <li key={step.n} className={styles.step} style={{ animationDelay: `${index * 0.07}s` }}>
+                <SpotSurface
+                  key={step.n}
+                  as="li"
+                  className={clsx(styles.step, sectionStyles.revealItem)}
+                  tilt={false}
+                  style={{ '--reveal-index': index } as React.CSSProperties}
+                >
                   <span className={styles.stepNum} aria-hidden>
                     {step.n}
                   </span>
@@ -209,15 +267,22 @@ export default function QuickStart() {
                     <p className={styles.stepDetail}>{step.detail}</p>
                     {step.code ? <code className={styles.code}>{step.code}</code> : null}
                   </div>
-                </li>
+                  {index < steps.length - 1 ? <span className={styles.stepConnector} aria-hidden /> : null}
+                </SpotSurface>
               ))}
             </ol>
 
-            <div className={styles.cliWrap}>
+            <div
+              className={clsx(styles.cliWrap, sectionStyles.revealItem)}
+              style={{ '--reveal-index': 3 } as React.CSSProperties}
+            >
               <CliCommandBlock variant="section" showHint animate />
             </div>
 
-            <div className={styles.after}>
+            <div
+              className={clsx(styles.after, sectionStyles.revealItem)}
+              style={{ '--reveal-index': 4 } as React.CSSProperties}
+            >
               <p className={styles.afterLabel}>
                 <Translate id="home.quickstart.after">Then open</Translate>
               </p>

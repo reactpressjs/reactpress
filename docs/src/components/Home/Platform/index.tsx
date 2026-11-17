@@ -3,7 +3,10 @@ import Translate from '@docusaurus/Translate';
 import clsx from 'clsx';
 import React from 'react';
 
+import SectionAccent from '../SectionAccent';
+import SpotSurface from '../SpotSurface';
 import sectionStyles from '../section.module.css';
+import { useReveal } from '../useReveal';
 import styles from './styles.module.css';
 
 type Pillar = {
@@ -53,30 +56,46 @@ const pillars: Pillar[] = [
 ];
 
 export default function Platform() {
+  const { ref, visible } = useReveal<HTMLElement>();
+
   return (
-    <section className={clsx(sectionStyles.section, sectionStyles.bandB)} aria-labelledby="home-platform-heading">
+    <section
+      ref={ref}
+      id="home-platform"
+      className={clsx(
+        sectionStyles.section,
+        sectionStyles.bandB,
+        sectionStyles.reveal,
+        visible && sectionStyles.revealed,
+        visible && styles.flowActive
+      )}
+      aria-labelledby="home-platform-heading"
+    >
       <div className={sectionStyles.inner}>
-        <header className={sectionStyles.header}>
+        <header className={clsx(sectionStyles.header, sectionStyles.revealHeader)}>
           <p className={sectionStyles.eyebrow}>
             <Translate id="home.platform.eyebrow">What is ReactPress</Translate>
           </p>
-          <h2 id="home-platform-heading" className={clsx(sectionStyles.heading, sectionStyles.fadeUp)}>
+          <h2 id="home-platform-heading" className={sectionStyles.heading}>
             <Translate id="home.platform.title">Write. Manage. Publish.</Translate>
           </h2>
-          <p className={clsx(sectionStyles.subheading, sectionStyles.fadeUpDelay)}>
+          <p className={sectionStyles.subheading}>
             <Translate id="home.platform.subtitle">
               One CLI starts CMS, Admin, theme, and plugins — a full publishing stack without stitching five tools
               together.
             </Translate>
           </p>
+          <SectionAccent active={visible} />
         </header>
         <div className={styles.grid}>
           {pillars.map((pillar, index) => (
-            <article
+            <SpotSurface
               key={pillar.title}
-              className={styles.card}
+              as="article"
+              className={clsx(styles.card, sectionStyles.revealItem)}
               data-accent={pillar.accent}
-              style={{ animationDelay: `${index * 0.08}s` }}
+              maxTilt={5}
+              style={{ '--reveal-index': index } as React.CSSProperties}
             >
               <span className={styles.step} aria-hidden>
                 {String(index + 1).padStart(2, '0')}
@@ -84,7 +103,8 @@ export default function Platform() {
               <h3 className={styles.cardTitle}>{pillar.title}</h3>
               <p className={styles.tagline}>{pillar.tagline}</p>
               <p className={styles.cardDesc}>{pillar.description}</p>
-            </article>
+              <span className={styles.cardSweep} aria-hidden />
+            </SpotSurface>
           ))}
         </div>
       </div>

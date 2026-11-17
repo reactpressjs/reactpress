@@ -236,6 +236,9 @@
   "home.quickstart.deploy.visual": {
     "message": "点击 → 克隆 → 上线"
   },
+  "home.quickstart.deploy.gif.alt": {
+    "message": "ReactPress 主题站点演示 — 首页文章、标签与推荐阅读"
+  },
   "home.quickstart.vercel": {
     "message": "部署到 Vercel"
   },
@@ -314,6 +317,33 @@
   "home.highlight.multidevice.desc": {
     "message": "REST API、访问密钥与 Webhook — 任意 React 客户端消费内容，Admin 仍是真相源。"
   },
+  "home.rail.aria": {
+    "message": "页面分区"
+  },
+  "home.rail.hero": {
+    "message": "开场"
+  },
+  "home.rail.platform": {
+    "message": "平台"
+  },
+  "home.rail.highlights": {
+    "message": "场景"
+  },
+  "home.rail.quickstart": {
+    "message": "开始"
+  },
+  "home.rail.proof": {
+    "message": "SEO"
+  },
+  "home.rail.showcase": {
+    "message": "站点"
+  },
+  "home.rail.ecosystem": {
+    "message": "生态"
+  },
+  "home.rail.cta": {
+    "message": "行动"
+  },
   "home.proof.eyebrow": {
     "message": "性能"
   },
@@ -329,11 +359,53 @@
   "home.proof.lighthouse": {
     "message": "为 SEO 性能打造的 SSR 主题。"
   },
+  "home.proof.lighthouse.alt": {
+    "message": "Lighthouse 报告：Performance 95，Accessibility / Best Practices / SEO 均为 100"
+  },
   "home.proof.demo": {
     "message": "在线演示"
   },
   "home.proof.themeDemo": {
     "message": "主题演示"
+  },
+  "home.proof.point.ssr": {
+    "message": "SSR 主题，开箱即可被搜索引擎抓取"
+  },
+  "home.proof.point.seo": {
+    "message": "Sitemap、Open Graph 与元信息开箱可用"
+  },
+  "home.proof.point.cwv": {
+    "message": "Core Web Vitals 面向真实读者调优"
+  },
+  "home.proof.metric.lcp": {
+    "message": "LCP"
+  },
+  "home.proof.metric.fcp": {
+    "message": "FCP"
+  },
+  "home.proof.metric.cls": {
+    "message": "CLS"
+  },
+  "home.proof.metric.tbt": {
+    "message": "TBT"
+  },
+  "home.proof.score.eyebrow": {
+    "message": "Lighthouse · 生产主题"
+  },
+  "home.proof.score.aria": {
+    "message": "Lighthouse 评分"
+  },
+  "home.proof.score.performance": {
+    "message": "Performance"
+  },
+  "home.proof.score.accessibility": {
+    "message": "Accessibility"
+  },
+  "home.proof.score.practices": {
+    "message": "Best Practices"
+  },
+  "home.proof.score.seo": {
+    "message": "SEO"
   },
   "home.showcase.eyebrow": {
     "message": "站点"

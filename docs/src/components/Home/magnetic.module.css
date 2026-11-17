@@ -1,0 +1,33 @@
+.magnetic {
+  display: inline-flex;
+  transform: translate3d(var(--mx, 0px), var(--my, 0px), 0);
+  will-change: transform;
+}
+
+.magnetic > * {
+  width: 100%;
+  transition:
+    filter 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.magnetic[data-pull='on'] > * {
+  filter: brightness(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .magnetic {
+    transform: none;
+  }
+
+  .magnetic > * {
+    transition: none;
+    filter: none;
+  }
+}
+
+@media (pointer: coarse) {
+  .magnetic {
+    transform: none;
+  }
+}

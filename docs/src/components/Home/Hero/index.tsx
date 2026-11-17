@@ -1,29 +1,134 @@
 import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
 import Logo from '@site/src/components/Home/Logo';
+import Magnetic from '@site/src/components/Home/Magnetic';
 import { buildGitHubReleaseTagUrl } from '@site/src/npm/packageVersions';
 import { useReactPressVersions } from '@site/src/npm/useReactPressVersions';
 import clsx from 'clsx';
-import React from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import GitHubButton from 'react-github-btn';
 
 import HeroVideo from './HeroVideo';
 import styles from './styles.module.css';
 
+function prefersReducedMotion() {
+  return typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
 function Hero() {
   const { latest } = useReactPressVersions();
+  const rootRef = useRef<HTMLElement>(null);
+  const target = useRef({ x: 0, y: 0, sx: 50, sy: 30 });
+  const current = useRef({ x: 0, y: 0, sx: 50, sy: 30 });
+  const raf = useRef(0);
+  const hovering = useRef(false);
+
+  const apply = useCallback(() => {
+    const el = rootRef.current;
+    if (!el) {
+      return;
+    }
+    el.style.setProperty('--px', current.current.x.toFixed(3));
+    el.style.setProperty('--py', current.current.y.toFixed(3));
+    el.style.setProperty('--spot-x', `${current.current.sx.toFixed(1)}%`);
+    el.style.setProperty('--spot-y', `${current.current.sy.toFixed(1)}%`);
+  }, []);
+
+  const tick = useCallback(() => {
+    const ease = hovering.current ? 0.12 : 0.08;
+    current.current.x += (target.current.x - current.current.x) * ease;
+    current.current.y += (target.current.y - current.current.y) * ease;
+    current.current.sx += (target.current.sx - current.current.sx) * ease;
+    current.current.sy += (target.current.sy - current.current.sy) * ease;
+    apply();
+
+    const settled =
+      Math.abs(target.current.x - current.current.x) < 0.001 &&
+      Math.abs(target.current.y - current.current.y) < 0.001 &&
+      Math.abs(target.current.sx - current.current.sx) < 0.05 &&
+      Math.abs(target.current.sy - current.current.sy) < 0.05;
+
+    if (!settled || hovering.current) {
+      raf.current = requestAnimationFrame(tick);
+    } else {
+      raf.current = 0;
+      current.current = { ...target.current };
+      apply();
+    }
+  }, [apply]);
+
+  const ensureTick = useCallback(() => {
+    if (!raf.current) {
+      raf.current = requestAnimationFrame(tick);
+    }
+  }, [tick]);
+
+  useEffect(
+    () => () => {
+      if (raf.current) {
+        cancelAnimationFrame(raf.current);
+      }
+    },
+    []
+  );
+
+  const onPointerMove = useCallback(
+    (event: React.PointerEvent<HTMLElement>) => {
+      if (prefersReducedMotion()) {
+        return;
+      }
+      const el = rootRef.current;
+      if (!el) {
+        return;
+      }
+      const rect = el.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width - 0.5;
+      const y = (event.clientY - rect.top) / rect.height - 0.5;
+      target.current.x = x;
+      target.current.y = y;
+      target.current.sx = (x + 0.5) * 100;
+      target.current.sy = (y + 0.5) * 100;
+      hovering.current = true;
+      el.dataset.spot = 'on';
+      ensureTick();
+    },
+    [ensureTick]
+  );
+
+  const onPointerLeave = useCallback(() => {
+    hovering.current = false;
+    target.current.x = 0;
+    target.current.y = 0;
+    target.current.sx = 50;
+    target.current.sy = 30;
+    const el = rootRef.current;
+    if (el) {
+      delete el.dataset.spot;
+    }
+    ensureTick();
+  }, [ensureTick]);
 
   return (
-    <header className={styles.container}>
+    <header
+      id="home-hero"
+      ref={rootRef}
+      className={clsx(styles.container, styles.interactive)}
+      onPointerMove={onPointerMove}
+      onPointerLeave={onPointerLeave}
+      style={{ '--px': 0, '--py': 0, '--spot-x': '50%', '--spot-y': '30%' } as React.CSSProperties}
+    >
       <div className={styles.mesh} aria-hidden>
         <span className={styles.orb1} />
         <span className={styles.orb2} />
         <span className={styles.orb3} />
         <span className={styles.gridLines} />
+        <span className={styles.spotGlow} />
+        <span className={styles.constellation} />
+        <span className={styles.scanline} />
       </div>
 
       <div className={styles.shell}>
-        <div className={styles.intro}>
+        <div className={clsx(styles.intro, styles.parallaxNear)}>
           <Logo className={styles.logo} />
           <div className={styles.titleRow}>
             <h1 className={styles.title} aria-label="ReactPress">
@@ -34,7 +139,7 @@ function Hero() {
                     className={styles.titleChar}
                     style={{ '--char-index': index } as React.CSSProperties}
                   >
-                    {char}
+                    <span className={styles.titleCharInner}>{char}</span>
                   </span>
                 ))}
               </span>
@@ -76,17 +181,22 @@ function Hero() {
 
           <div className={styles.actions}>
             <div className={styles.buttonContainer}>
-              <Link className={styles.primaryButton} to="/docs/getting-started/first-site">
-                <Translate id="home.hero.intro">Get Started</Translate>
-              </Link>
-              <a
-                href="https://demo.reactpress.cc/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.secondaryButton}
-              >
-                <Translate id="home.hero.try">Live Demo</Translate>
-              </a>
+              <Magnetic>
+                <Link className={styles.primaryButton} to="/docs/getting-started/first-site">
+                  <span className={styles.buttonShine} aria-hidden />
+                  <Translate id="home.hero.intro">Get Started</Translate>
+                </Link>
+              </Magnetic>
+              <Magnetic strength={0.24} max={9}>
+                <a
+                  href="https://demo.reactpress.cc/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.secondaryButton}
+                >
+                  <Translate id="home.hero.try">Live Demo</Translate>
+                </a>
+              </Magnetic>
             </div>
 
             <p className={styles.localHint}>
@@ -98,7 +208,7 @@ function Hero() {
           </div>
         </div>
 
-        <div className={styles.mediaStage}>
+        <div className={clsx(styles.mediaStage, styles.parallaxFar)}>
           <HeroVideo />
         </div>
       </div>

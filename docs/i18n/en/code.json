@@ -583,6 +583,9 @@
   "home.quickstart.deploy.visual": {
     "message": "Click → clone → live"
   },
+  "home.quickstart.deploy.gif.alt": {
+    "message": "ReactPress theme site demo — homepage with posts, tags, and reading list"
+  },
   "home.quickstart.vercel": {
     "message": "Deploy to Vercel"
   },
@@ -634,6 +637,33 @@
   "home.highlight.multidevice.desc": {
     "message": "REST APIs, keys, and webhooks — feed any React client while Admin stays the source of truth."
   },
+  "home.rail.aria": {
+    "message": "Page sections"
+  },
+  "home.rail.hero": {
+    "message": "Intro"
+  },
+  "home.rail.platform": {
+    "message": "Platform"
+  },
+  "home.rail.highlights": {
+    "message": "Outcomes"
+  },
+  "home.rail.quickstart": {
+    "message": "Start"
+  },
+  "home.rail.proof": {
+    "message": "SEO"
+  },
+  "home.rail.showcase": {
+    "message": "Sites"
+  },
+  "home.rail.ecosystem": {
+    "message": "Hub"
+  },
+  "home.rail.cta": {
+    "message": "Go"
+  },
   "home.proof.eyebrow": {
     "message": "Performance"
   },
@@ -649,11 +679,53 @@
   "home.proof.lighthouse": {
     "message": "SSR themes built for SEO performance."
   },
+  "home.proof.lighthouse.alt": {
+    "message": "Lighthouse report showing Performance 95 and perfect Accessibility, Best Practices, and SEO scores"
+  },
   "home.proof.demo": {
     "message": "Live Demo"
   },
   "home.proof.themeDemo": {
     "message": "Theme Demo"
+  },
+  "home.proof.point.ssr": {
+    "message": "SSR themes for crawlable HTML out of the box"
+  },
+  "home.proof.point.seo": {
+    "message": "Sitemap, Open Graph, and meta ready for search"
+  },
+  "home.proof.point.cwv": {
+    "message": "Core Web Vitals tuned for real readers"
+  },
+  "home.proof.metric.lcp": {
+    "message": "LCP"
+  },
+  "home.proof.metric.fcp": {
+    "message": "FCP"
+  },
+  "home.proof.metric.cls": {
+    "message": "CLS"
+  },
+  "home.proof.metric.tbt": {
+    "message": "TBT"
+  },
+  "home.proof.score.eyebrow": {
+    "message": "Lighthouse · production theme"
+  },
+  "home.proof.score.aria": {
+    "message": "Lighthouse scores"
+  },
+  "home.proof.score.performance": {
+    "message": "Performance"
+  },
+  "home.proof.score.accessibility": {
+    "message": "Accessibility"
+  },
+  "home.proof.score.practices": {
+    "message": "Best Practices"
+  },
+  "home.proof.score.seo": {
+    "message": "SEO"
   },
   "home.showcase.eyebrow": {
     "message": "Sites"

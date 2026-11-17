@@ -26,6 +26,117 @@
   margin-bottom: 1.75rem;
 }
 
+/* Animated header accent line */
+.accent {
+  position: relative;
+  width: min(12rem, 48%);
+  height: 14px;
+  margin: 0.95rem auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accentLine {
+  display: block;
+  width: 100%;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, #087ea4 20%, #41d1ff 80%, transparent);
+  transform: scaleX(0.15);
+  opacity: 0.35;
+  transition:
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.5s ease;
+}
+
+.accentDot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #41d1ff;
+  box-shadow: 0 0 0 3px rgba(65, 209, 255, 0.2);
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.15s,
+    opacity 0.4s ease 0.15s;
+}
+
+.accentActive .accentLine {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+.accentActive .accentDot {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  animation: accentPulse 2.4s ease-in-out 0.6s infinite;
+}
+
+@keyframes accentPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 3px rgba(65, 209, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(65, 209, 255, 0.08);
+  }
+}
+
+/* Pointer spotlight surface */
+.spot {
+  --spot-x: 50%;
+  --spot-y: 40%;
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.spot::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    520px circle at var(--spot-x) var(--spot-y),
+    rgba(65, 209, 255, 0.22),
+    rgba(8, 126, 164, 0.06) 42%,
+    transparent 62%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spot[data-spot='on']::after {
+  opacity: 1;
+}
+
+.tilt {
+  --lift-y: 0px;
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y))
+    translate3d(0, var(--lift-y), 0);
+  transition:
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+  will-change: transform;
+}
+
+.tilt[data-tilt='on'] {
+  --lift-y: -3px;
+  box-shadow:
+    0 22px 48px rgba(8, 126, 164, 0.16),
+    0 0 0 1px rgba(65, 209, 255, 0.1);
+}
+
 .eyebrow {
   display: inline-block;
   margin: 0 0 0.5rem;
@@ -76,9 +187,108 @@ html[data-theme='dark'] .eyebrow {
   animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both;
 }
 
+/* Scroll-triggered reveal (paired with useReveal).
+   Uses animation without fill-forwards so hover transforms still work. */
+.reveal {
+  --reveal-y: 28px;
+  --reveal-duration: 0.78s;
+  --reveal-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(var(--reveal-y)) scale(0.975);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes revealHeaderUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.revealHeader > * {
+  opacity: 0;
+}
+
+.revealed .revealHeader > *:nth-child(1) {
+  opacity: 1;
+  animation: revealHeaderUp var(--reveal-duration) var(--reveal-ease) 0s backwards;
+}
+
+.revealed .revealHeader > *:nth-child(2) {
+  opacity: 1;
+  animation: revealHeaderUp var(--reveal-duration) var(--reveal-ease) 0.07s backwards;
+}
+
+.revealed .revealHeader > *:nth-child(3) {
+  opacity: 1;
+  animation: revealHeaderUp var(--reveal-duration) var(--reveal-ease) 0.14s backwards;
+}
+
+.revealed .revealHeader > *:nth-child(4) {
+  opacity: 1;
+  animation: revealHeaderUp var(--reveal-duration) var(--reveal-ease) 0.2s backwards;
+}
+
+.revealItem {
+  opacity: 0;
+}
+
+.revealed .revealItem {
+  opacity: 1;
+  animation: revealUp var(--reveal-duration) var(--reveal-ease)
+    calc(var(--reveal-index, 0) * 0.08s + 0.08s) backwards;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .fadeUp,
   .fadeUpDelay {
     animation: none;
+  }
+
+  .revealHeader > *,
+  .revealItem,
+  .revealed .revealHeader > *,
+  .revealed .revealItem {
+    opacity: 1;
+    animation: none;
+    filter: none;
+    transform: none;
+  }
+
+  .accentLine,
+  .accentDot,
+  .accentActive .accentLine,
+  .accentActive .accentDot {
+    transform: none;
+    opacity: 1;
+    animation: none;
+    transition: none;
+  }
+
+  .spot::after {
+    display: none;
+  }
+
+  .tilt,
+  .tilt[data-tilt='on'] {
+    transform: none;
+    transition: none;
+    box-shadow: none;
   }
 }
