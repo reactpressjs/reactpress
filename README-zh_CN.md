@@ -22,7 +22,8 @@
 <p align="center">
   <a href="https://reactpress.cc/">文档</a> ·
   <a href="https://demo.reactpress.cc/">在线演示</a> ·
-  <a href="https://demo.reactpress.cc/">主题演示</a> ·
+  <a href="https://demo.reactpress.cc/">Next.js 主题</a> ·
+  <a href="https://wordpress.org/themes/reactpress-blog/">WordPress 主题</a> ·
   <a href="https://github.com/reactpressjs/reactpress">GitHub</a> ·
   <a href="./README.md">English</a>
 </p>
@@ -87,6 +88,7 @@ npx skills add reactpressjs/reactpress --skill blog-ai   # 可选 Agent 工作�
 | :--------------------------------------------------------------------- | :------------------------------------------ |
 | [文档](https://reactpress.cc/)                                         | 指南、API、架构                             |
 | [主题开发](./themes/README.md)                                         | 构建并发布 Next.js 主题                     |
+| [WordPress 主题](https://wordpress.org/themes/reactpress-blog/)        | 官方 WordPress 区块主题                     |
 | [插件开发](./plugins/README.md)                                        | 扩展后台与 API                              |
 | [桌面端](./desktop/README.md)                                          | 同一套栈的原生应用                          |
 | [CLI](./cli/README.md)                                                 | `reactpressjs` → `@reactpressjs/reactpress` |

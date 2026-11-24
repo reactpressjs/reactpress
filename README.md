@@ -22,7 +22,8 @@
 <p align="center">
   <a href="https://reactpress.cc/">Docs</a> ·
   <a href="https://demo.reactpress.cc/">Demo</a> ·
-  <a href="https://demo.reactpress.cc/">Theme</a> ·
+  <a href="https://demo.reactpress.cc/">Next.js Theme</a> ·
+  <a href="https://wordpress.org/themes/reactpress-blog/">WordPress Theme</a> ·
   <a href="https://github.com/reactpressjs/reactpress">GitHub</a> ·
   <a href="./README-zh_CN.md">简体中文</a>
 </p>
@@ -87,6 +88,7 @@ Theme starter · [repo](https://github.com/reactpressjs/reactpress-theme-starter
 | :--------------------------------------------------------------------- | :------------------------------------------ |
 | [Documentation](https://reactpress.cc/)                                | Guides, API, architecture                   |
 | [Themes](./themes/README.md)                                           | Build & publish Next.js themes              |
+| [WordPress Theme](https://wordpress.org/themes/reactpress-blog/)       | Official block theme for WordPress sites    |
 | [Plugins](./plugins/README.md)                                         | Extend Admin and API                        |
 | [Desktop](./desktop/README.md)                                         | Same stack as a native app                  |
 | [CLI](./cli/README.md)                                                 | `reactpressjs` → `@reactpressjs/reactpress` |
