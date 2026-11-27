@@ -7,7 +7,7 @@ keywords: [reactpress, install, installation, node.js, sqlite, cli, requirements
 
 # Installation & Requirements
 
-ReactPress 4.0 offers two paths for **end users** and **repository contributors**. Most site-building scenarios only need the global CLI — one command runs the full publishing stack.
+ReactPress 5.0 offers two paths for **end users** and **repository contributors**. Most site-building scenarios only need the global CLI — one command runs the full publishing stack.
 
 ## System Requirements
 
@@ -57,7 +57,7 @@ The global CLI focuses end users on a few core commands; themes, plugins, and AI
 | `reactpress stop`             | Stop API and theme processes for the current site              |
 
 :::info About `reactpress dev`
-Since 4.0, **`init` includes startup**: after `reactpress init`, services run automatically — no separate `dev` step. Monorepo contributors still use `pnpm dev`; see [Monorepo local development](../developer-guide/local-development.md).
+In 5.0, **`init` includes startup**: after `reactpress init`, services run automatically — no separate `dev` step. Monorepo contributors still use `pnpm dev`; see [Monorepo local development](../developer-guide/local-development.md).
 :::
 
 ## Ports and firewall
